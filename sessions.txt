@@ -2718,3 +2718,328 @@ Richard A. Eisenberg
 Dimitrios Vytiniotis
 Simon Peyton Jones
 Stephanie Weirich
+
+
+* 2015
+** 9:30-10:30 Keynote address (Chair: Sriram Rajamani, Microsoft Research)
+
+*** Automating Repetitive Tasks for the Masses 
+Sumit Gulwani
+
+** Session 1A: Types I
+
+*** Functors are Type Refinement Systems 
+Paul-André Melliès 
+Noam Zeilberger
+
+*** Integrating Linear and Dependent Types 
+Neel Krishnaswami 
+Pierre Pradic 
+Nick Benton
+
+*** Higher Inductive Types as Homotopy-Initial Algebras 
+Kristina Sojakova
+
+** Session 1B: Security
+
+*** Runtime Enforcement of Security Policies on Black Box Reactive Programs 
+Minh Ngo 
+Fabio Massacci 
+Dimiter Milushev 
+Frank Piessens
+
+*** Higher-Order Approximate Relational Refinement Types for Mechanism Design and Differential Privacy 
+Gilles Barthe 
+Marco Gaboardi 
+Emilio Gallego Arias 
+Justin Hsu 
+Aaron Roth 
+Pierre-Yves Strub
+
+*** Differential Privacy: Now it's Getting Personal 
+Hamid Ebadi 
+David Sands 
+Gerardo Schneider
+
+** Session 2A: Program Analysis I
+
+*** Summary-Based Context-Sensitive Data-Dependence Analysis in Presence of Callbacks 
+Hao Tang 
+Xiaoyin Wang 
+Lingming Zhang 
+Bing Xie 
+Lu Zhang 
+Hong Mei
+
+*** Faster Algorithms for Algebraic Path Properties in RSMs with Constant Treewidth 
+Krishnendu Chatterjee 
+Prateesh Goyal 
+Rasmus Ibsen-Jensen 
+Andreas Pavlogiannis
+
+*** Predicting Program Properties from "Big Code" 
+Veselin Raychev 
+Martin Vechev 
+Andreas Krause
+
+** Session 2B: Domain-specific Languages
+
+*** DReX: A Declarative Language for Efficiently Computable Regular String Transformations 
+Rajeev Alur 
+Loris D'Antoni 
+Mukund Raghothaman
+
+*** Data Parallel String Manipulating Programs 
+Margus Veanes 
+Todd Mytkowicz 
+David Molnar 
+Ben Livshits
+
+*** Ur/Web: A Simple Model for Programming the Web 
+Adam Chlipala
+
+** Session 3A: Dynamic Verification
+
+*** Safe and Efficient Gradual Typing for TypeScript 
+Aseem Rastogi 
+Nikhil Swamy 
+Cedric Fournet 
+Gavin Bierman 
+Panagiotis Vekris
+
+*** Space-Efficient Manifest Contracts 
+Michael Greenberg
+
+*** Manifest Contracts for Datatypes 
+Taro Sekiyama 
+Yuki Nishida 
+Atsushi Igarashi
+
+** Session 3B: Concurrency I
+
+*** Common Compiler Optimisations are Invalid in the C11 Memory Model and What We Can Do About It 
+Viktor Vafeiadis 
+Thibaut Balabonski 
+Soham Chakraborty 
+Robin Morisset 
+Francesco Zappa Nardelli
+
+*** From Communicating Machines to Graphical Choreographies 
+Julien Lange 
+Emilio Tuosto 
+Nobuko Yoshida
+
+*** A Scalable, Correct Time-Stamped Stack 
+Mike Dodds 
+Andreas Haas 
+Christoph M. Kirsch
+
+** Session 4A: Compiler Correctness
+
+*** Formal Verification of a C Static Analyzer 
+Jacques-Henri Jourdan 
+Vincent Laporte 
+Sandrine Blazy 
+Xavier Leroy 
+David Pichardie
+
+*** Analyzing Program Analyses 
+Roberto Giacobazzi 
+Francesco Logozzo 
+Francesco Ranzato
+
+*** Compositional CompCert 
+Gordon Stewart 
+Lennart Beringer 
+Santiago Cuellar 
+Andrew W. Appel
+
+** Session 4B: Types II
+
+*** Polymorphic Functions with Set-Theoretic Types. Part 2: Local Type Inference and Type Reconstruction 
+Giuseppe Castagna 
+Kim Nguyen 
+Zhiwu Xu 
+Pietro Abate
+
+*** Principal Type Schemes for Gradual Programs 
+Ronald Garcia 
+Matteo Cimini
+
+*** Dependent Information Flow Types 
+Luísa Lourenço 
+Luís Caires
+
+** Session 5A: Regular Languages and Automata
+
+*** Abstract Symbolic Automata 
+Mila Dalla Preda 
+Roberto Giacobazzi 
+Arun Lakhotia 
+Isabella Mastroeni
+
+*** A Coalgebraic Decision Procedure for NetKAT 
+Nate Foster 
+Dexter Kozen 
+Matthew Milano 
+Alexandra Silva 
+Laure Thompson
+
+*** Symbolic Algorithms for Language Equivalence and Kleene Algebra with Tests 
+Damien Pous
+
+** Session 5B: Programming Models I
+
+*** Programming up to Congruence 
+Vilhelm Sjöberg 
+Stephanie Weirich
+
+*** A Meta Lambda Calculus with Cross-Level Computation 
+Kazunori Tobisawa
+
+*** Algebraic Effects, Linearity, and Quantum Programming Languages 
+Sam Staton
+
+** Session 6A: Concurrency II
+
+*** Proof Spaces for Unbounded Parallelism 
+Azadeh Farzan 
+Zachary Kincaid 
+Andreas Podelski
+
+*** Equations, Contractions, and Unique Solutions 
+Davide Sangiorgi
+
+*** Succinct Representation of Concurrent Trace Sets 
+Ashutosh Gupta 
+Thomas A. Henzinger 
+Arjun Radhakrishna 
+Roopsha Samanta 
+Thorsten Tarrach
+
+** Session 6B: Semantics
+
+*** K-Java: A Complete Semantics of Java 
+Denis Bogdanas 
+Grigore Rosu
+
+*** Towards the Essence of Hygiene 
+Michael D. Adams
+
+*** Self-Representation in Girard's System U 
+Matt Brown 
+Jens Palsberg
+
+** 4:00-5:00 Keynote address
+
+*** Coding by Everyone, Every Day 
+Peter Lee
+
+** 9:00-10:00 Keynote address
+
+*** Databases and Programming: Two Subjects Divided by a Common Language? 
+Peter Buneman
+
+** Session 7A: Probabilistic Programs
+
+*** Probabilistic Termination 
+Luis Maria Ferrer Fioriti 
+Holger Hermanns
+
+*** Leveraging Weighted Automata to Compositional Reasoning about Concurrent Probabilistic Systems 
+Fei He 
+Xiaowei Gao 
+Bow-Yaw Wang 
+Lijun Zhang
+
+** Session 7B: Programming Models II
+
+*** Full Abstraction for Signal Flow Graphs 
+Filippo Bonchi 
+Pawel Sobocinski 
+Fabio Zanasi 
+Nicolas Wu 
+Jeremy Gibbons
+
+** Session 8A: Program Analysis II
+
+*** Quantitative Interprocedural Analysis 
+Krishnendu Chatterjee 
+Andreas Pavlogiannis 
+Yaron Velner
+
+*** Specification Inference Using Context-Free Language Reachability 
+Osbert Bastani 
+Saswat Anand 
+Alex Aiken
+
+*** On Characterizing the Data Access Complexity of Programs 
+Venmugil Elango 
+Fabrice Rastello 
+Louis-Noel Pouchet 
+J. Ramanujam 
+P. Sadayappan
+
+** Session 8B: Verification
+
+*** Sound Modular Verification of C Code Executing in an Unverified Context 
+Pieter Agten 
+Bart Jacobs 
+Frank Piessens
+
+*** Deep Specifications and Certified Abstraction Layers 
+Ronghui Gu 
+Jeremie Koenig 
+Tahina Ramananandro 
+Zhong Shao 
+Newman Wu 
+Shu-chun Weng 
+Haozhong Zhang 
+Yu Guo
+
+*** From Network Interface to Multithreaded Web Applications: A Case Study in Modular Program Verification 
+Adam Chlipala
+
+** Session 9A: Concurrency III
+
+*** A Calculus for Relaxed Memory 
+Karl Crary 
+Michael Sullivan
+
+*** Iris: Monoids and Invariants as an Orthogonal Basis for Concurrent Reasoning 
+Ralf Jung 
+David Swasey 
+Filip Sieczkowski 
+Kasper Svendsen 
+Aaron Turon 
+Lars Birkedal 
+Derek Dreyer
+
+*** Tractable Refinement Checking for Concurrent Objects 
+Ahmed Bouajjani 
+Michael Emmi 
+Constantin Enea 
+Jad Hamza
+
+** Session 9B: Synthesis
+
+*** Decentralizing SDN Policies 
+Oded Padon 
+Neil Immerman 
+Aleksandr Karbyshev 
+Ori Lahav 
+Mooly Sagiv 
+Sharon Shoham
+
+*** Program Boosting: Program Synthesis via Crowd-Sourcing 
+Robert A Cochran 
+Loris D'Antoni 
+Benjamin Livshits 
+David Molnar 
+Margus Veanes
+
+*** Fiat: Deductive Synthesis of Abstract Data Types in a Proof Assistant 
+Benjamin Delaware 
+Clément Pit-Claudel 
+Jason Gross 
+Adam Chlipala
