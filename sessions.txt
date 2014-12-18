@@ -79,7 +79,8 @@ Venkatesan Chakaravarthy
 
 *** Incremental Algorithms for Dispatching in Dynamically Typed Languages
 
-Yoav Zibin and Joseph Gil
+Yoav Zibin
+Joseph Gil
 
 ** Session Chair: Joe Wells
 
@@ -196,9 +197,11 @@ Marcelo Fiore
 ** 16:00-17:30. Session 3
 
 *** Polymorphic Typed Defunctionalization
-François Pottier and Nadji Gauthier
+François Pottier
+Nadji Gauthier
 *** Free Theorems in the Presence of seq
-Patricia Johann and Janis Voigtländer
+Patricia Johann
+Janis Voigtländer
 *** Parsing Expression Grammars: A Recognition-Based Syntactic Foundation
 Bryan Ford
 
@@ -220,13 +223,16 @@ Charles Meyssonnier
 *** Channel Dependent Types for Higher-Order Mobile Processes
 Nobuko Yoshida
 *** A Bisimulation for Dynamic Sealing
-Eijiro Sumii and Benjamin C. Pierce
+Eijiro Sumii
+Benjamin C. Pierce
 ** 14:00-15:30. Session 5
 
 *** An Abstract Interpretation-Based Framework for Software Watermarking
-Patrick Cousot and Radhia Cousot
+Patrick Cousot
+Radhia Cousot
 *** Abstract Non-Interference: Parameterizing Non-Interference by Abstract Interpretation
-Roberto Giacobazzi and Isabella Mastroeni
+Roberto Giacobazzi
+Isabella Mastroeni
 *** A Semantics for Web Services Authentication
 Karthikeyan Bhargavan
 Cédric Fournet
@@ -266,11 +272,13 @@ John C. Reynolds
 ** 14:00-15:30. Session 8
 
 *** Tridirectional Typechecking
-Joshua Dunfield and Frank Pfenning
+Joshua Dunfield
+Frank Pfenning
 *** A Type System for Well-Founded Recursion
 Derek Dreyer
 *** Principal Typings for Java-Like Languages
-Davide Ancona and Elena Zucca
+Davide Ancona
+Elena Zucca
 ** 16:00-17:30. Session 9
 
 *** Non-linear Loop Invariant Generation using Gröbner Bases
@@ -278,9 +286,11 @@ Sriram Sankaranarayanan
 Henny B. Sipma
 Zohar Manna
 *** Precise Interprocedural Analysis through Linear Algebra
-Markus Müller-Olm and Helmut Seidl
+Markus Müller-Olm
+Helmut Seidl
 *** Global Value Numbering using Random Interpretation
-Sumit Gulwani and George C. Necula
+Sumit Gulwani
+George C. Necula
 
 * 2005
 
@@ -424,31 +434,17 @@ Sarita Adve
  
 * 2006
 
-Weds
-
-08:30
-
 ** Invited talk:  The Scala Experiment - Can We Provide Better Language Support for Component Systems
 
 Martin Odersky
 
-Ecole Polytechnique Fédérale de
-Lausanne
-
-** Weds
-
-10:00
+** Weds 10:00
 
 *** The Next 700 Data Description Languages
 
 Kathleen Fisher
-Yitzhak Mandelbaum and David Walker
-
-AT&T Research and Princeton University
-
-Weds
-
-10:25
+Yitzhak Mandelbaum
+David Walker
 
 *** A Hierarchical Model of Data Locality
 
@@ -457,41 +453,15 @@ Yutao Zhong
 Mitsunori Ogihara
 Chen Ding
 
-University of Rochester
-
-Weds
-
-10:50
-
 *** Simplifying Reductions
 
 Gautam Gupta and Sanjay Rajopadhye
 
-Colorado State University
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Weds
-
-11:40
+** Weds 11:40
 
 *** Formal certification of a compiler back-end, or: programming a compiler with a proof assistant
 
 Xavier Leroy
-
-INRIA Rocquencourt
-
-Weds
-
-12:05
 
 *** Engineering with Logic: HOL Specification and Symbolic-Evaluation Testing for TCP Implementations
 
@@ -501,153 +471,59 @@ Michael Norrish
 Peter Sewell
 Michael Smith and Keith Wansbrough
 
-University of Cambridge
-
- 
-
- 
- 
-
- 
-
- 
-
-** Weds
-
-14:00
+** Weds 14:00
 
 *** Decidability and Proof Systems for Language-Based Noninterference Relations
 
 Mads Dam
 
-KTH
-
-Weds
-
-14:25
-
 *** On Flow-Sensitive Security Types
 
 Sebastian Hunt and David Sands
-
-City University
-
-Weds
-
-14:50
 
 *** A Logic for Information Flow in Object-Oriented Programs
 
 Torben Amtoft
 Sruthi Bandhakavi and Anindya Banerjee
 
-Kansas State University
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Weds
-
-15:45
+** Weds 15:45
 
 *** Polymorphic Regular Tree Types and Patterns
 
 Jérôme Vouillon
 
-CNRS and Université Paris 7
-
-Weds
-
-16:10
-
 *** Verifying Properties of Well-Founded Linked Lists
 
-Shuvendu K. Lahiri and Shaz Qadeer
-
-Microsoft Research
-
-Weds
-
-16:35
+Shuvendu K. Lahiri
+Shaz Qadeer
 
 *** Environmental Analysis via Delta-CFA
 
-Matthew Might and Olin Shivers
+Matthew Might
+Olin Shivers
 
-Georgia Institute of Technology
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Weds
-
-17:25
+** Weds 17:25
 
 *** Small Bisimulations for Reasoning About Higher-Order Imperative Programs
 
-Vasileios Koutavas and Mitchell Wand
-
-Northeastern University
-
-Weds
-
-17:50
+Vasileios Koutavas
+Mitchell Wand
 
 *** A Fixpoint Calculus for Local and Global Program Flows
 
 Rajeev Alur
 Swarat Chaudhuri
 P. Madhusudan
-
-University of Pennsylvania
-
  
-
- 
-
-
-
- 
-
- 
-
-Thurs
-
-08:30
-
 ** Invited talk:  The next mainstream programming language: a game developer's perspective
 
 Tim Sweeney
 
-Epic Games Inc
-
-** Thurs
-
-10:00
+** Thurs 10:00
 
 *** Adventures in Time and Space
 
 James S. Royer
-
-Syracuse University
-
-Thurs
-
-10:25
 
 *** N-Synchronous Kahn Networks$N$: A Relaxed Model of Synchrony for Real-Time Systems
 
@@ -658,33 +534,13 @@ Claire Pagetti
 Florence Plateau
 Marc Pouzet
 
-INRIA Futurs
-
-Thurs
-
-10:50
-
 *** Compiler-Directed Channel Allocation for Saving Power in On-Chip Networks
 
 Guangyu Chen
 Feihui Li
 Mahmut Kandemir
 
-Pennsylvania State University
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Thurs
-
-11:40
+** Thurs 11:40
 
 *** Fast and Loose Reasoning is Morally Correct
 
@@ -693,220 +549,93 @@ Jeremy Gibbons
 John Hughes
 Patrik Jansson
 
-Chalmers University of Technology
-
-Thurs
-
-12:05
-
 *** Modular Set-Based Analysis from Contracts
 
 Philippe Meunier
 Robert Bruce Findler
 Matthias Felleisen
 
-Northeastern University
-
- 
-
- 
-
-
-
- 
-
- 
-
-** Thurs
-
-14:00
+** Thurs 14:00
 
 *** Stratified type inference for generalized algebraic data types
 
-François Pottier and Yann Régis-Gianas
-
-INRIA
-
-Thurs
-
-14:25
+François Pottier
+Yann Régis-Gianas
 
 *** Hybrid Type Checking
 
 Cormac Flanagan
 
-UCSC
-
-Thurs
-
-14:50
-
 *** A Polymorphic Modal Type System for Lisp-like Multi-Staged Languages
 
 Ik-Soon Kim
-Kwangkeun Yi and Cristiano Calcagno
-
-Seoul National University
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Fri
-
-08:30
+Kwangkeun Yi
+Cristiano Calcagno
 
 ** Invited talk:  Why Dependent Types Matter
 
 James McKinna
 
-St Andrews University
-
-** Fri
-
-10:00
+** Fri 10:00
 
 *** A Virtual Class Calculus
 
 Erik Ernst
-Klaus Ostermann and William R. Cook
-
-University of Aarhus
-
-Fri
-
-10:25
+Klaus Ostermann
+William R. Cook
 
 *** Interruptible Iterators
 
 Jed Liu
-Aaron Kimball and Andrew C. Myers
-
-Cornell University
-
-Fri
-
-10:50
+Aaron Kimball
+Andrew C. Myers
 
 *** Specifying C++ concepts
 
-Gabriel Dos Reis Bjarne Stroustrup
+Gabriel Dos Reis
+Bjarne Stroustrup
 
-Texas A&M University
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Fri
-
-11:40
+** Fri 11:40
 
 *** Frame rules from answer types for code pointers
 
 Hayo Thielecke
 
-University of Birmingham
-
-Fri
-
-12:05
-
 *** Certified Assembly Programming with Embedded Code Pointers
 
-Zhaozhong Ni and Zhong Shao
+Zhaozhong Ni
+Zhong Shao
 
-Yale University
-
- 
-
- 
-
-
-
- 
-
- 
-
-** Fri
-
-14:00
+** Fri 14:00
 
 *** Associating Synchronization Constraints with Data in an Object-Oriented Language
 
 Mandana Vaziri
-Frank Tip and Julian Dolby
-
-IBM Research
-
-Fri
-
-14:25
+Frank Tip
+Julian Dolby
 
 *** Autolocker: Synchronization Inference for Atomic Sections
 
 Bill McCloskey
 Feng Zhou
-David Gay and Eric Brewer
-
-UC Berkeley
-
-Fri
-
-14:50
+David Gay
+Eric Brewer
 
 *** Protecting Representation with Effect Encapsulation
 
-Yi Lu and John Potter
+Yi Lu
+John Potter
 
-UNSW
-
- 
-
- 
-
- 
-
- 
-
- 
-
-** Fri
-
-15:45
+** Fri 15:45
 
 *** The Essence of Command Injection Attacks in Web Applications
 
-Zhendong Su and Gary Wassermann
-
-University of California
-Davis
-
-Fri
-
-16:10
+Zhendong Su
+Gary Wassermann
 
 *** Harmless Advice
 
 Daniel S. Dantas and David Walker
-
-Princeton University
-
-Fri
-
-16:35
 
 *** A Verifiable SSA Program Representation for Aggressive Compiler Optimization
 
@@ -915,21 +644,17 @@ Neal Glew
 Brian R Murphy
 Andrew McCreight
 Tatiana Shpeisman
-Ali-Reza Adl-Tabatabai and Leaf Petersen
+Ali-Reza Adl-Tabatabai
+Leaf Petersen
 
-Intel Corporation
 
-Fri
+** 17:00
 
-17:00
-
-Staged Allocation: A Compositional Technique for Specifying and Implementing Procedure Calling Conventions
+*** Staged Allocation: A Compositional Technique for Specifying and Implementing Procedure Calling Conventions
 
 Reuben Olinsky
-Christian Lindig and Norman Ramsey
-
-Harvard University
-
+Christian Lindig
+Norman Ramsey
  
 
 * 2007
@@ -940,7 +665,8 @@ Audrey Tang
 
 ** Session
 *** Operational Semantics for Multi-Language Programs
-Jacob Matthews and Robert Bruce Findler
+Jacob Matthews
+Robert Bruce Findler
 *** Semantics of Static Pointcuts in AspectJ
 Pavel Avgustinov
 Elnar Hajiyev
@@ -953,7 +679,8 @@ Mathieu Verbaere
 Juan Chen
 ** Session
 *** Cork: Dynamic Memory Leak Detection for Garbage-Collected Languages
-Maria Jump and Kathryn S McKinley
+Maria Jump
+Kathryn S McKinley
 *** Dynamic Heap Type Inference for Program Understanding and Debugging
 Marina Polishchuk
 Ben Liblit
@@ -973,7 +700,8 @@ Robert Harper
 Manuel M.T. Chakravarty
 
 *** First-Class Nonstandard Interpretations by Opening Closures
-Jeffrey Mark Siskind and Barak A. Pearlmutter
+Jeffrey Mark Siskind
+Barak A. Pearlmutter
 *** PADS/ML: A Functional Data Description Language
 Yitzhak Mandelbaum
 Kathleen Fisher
@@ -1011,11 +739,13 @@ Ralf Lammel
 Atsushi Ohori
 Isao Sasano
 *** Lazy Multivariate Higher-Order Forward-Mode AD
-Barak A. Pearlmutter and Jeffrey Mark Siskind
+Barak A. Pearlmutter
+Jeffrey Mark Siskind
 ** Session
 *** A Complete
 Co-Inductive Syntactic Theory of Sequential Control and State
-Kristian Stoevring and Soren B. Lassen
+Kristian Stoevring
+Soren B. Lassen
 *** Towards a Mechanized Metatheory of Standard ML
 Daniel K. Lee
 Karl Crary
@@ -1024,7 +754,8 @@ Robert Harper
 *** Logic-Flow Analysis of Higher-Order Programs
 Matthew Might
 *** Extracting Queries by Static Analysis of Transparent Persistence
-Ben Wiedermann and William R. Cook
+Ben Wiedermann
+William R. Cook
 *** Variance analyses from invariance analyses
 Josh Berdine
 Aziem Chawdhary
@@ -1040,7 +771,8 @@ Ajay Chander
 Nayeem Islam
 Igor Serikov
 *** Secure Implementations of Typed Channel Abstractions
-Michele Bugliesi and Marco Giunti
+Michele Bugliesi
+Marco Giunti
 ** Keynote
 Advanced Programming Languages in Enterprise Software: A lambda-calculus theorist wanders into an enterprise datacenter
 
@@ -1054,7 +786,8 @@ Andreas Podelski
 Andrey Rybalchenko
 Moshe Vardi
 *** Program Verification as Probabilistic Inference
-Sumit Gulwani and Nebojsa Jojic
+Sumit Gulwani
+Nebojsa Jojic
 ** Session
 *** Lock Allocation
 Michael Emmi
@@ -1063,15 +796,18 @@ Ranjit Jhala
 Rupak Majumdar
 *** Modular Verification of a Non-Blocking Stack
 Matthew Parkinson
-Richard Bornat and Peter O'Hearn
+Richard Bornat
+Peter O'Hearn
 *** On the Analysis of Interacting Pushdown Systems
-Vineet Kahlon and Aarti Gupta
+Vineet Kahlon
+Aarti Gupta
 ** Session
 *** Specialization of CML message-passing primitives
 John Reppy
 Yingqi Xiao
 *** Conditional Must Not Aliasing for Static Race Detection
-Mayur Naik and Alex Aiken
+Mayur Naik
+Alex Aiken
 *** Interprocedural Analysis of Asynchronous Programs
 Ranjit Jhala
 Rupak Majumdar
@@ -1105,10 +841,12 @@ Walter Fontana
 Brian Aydemir
 Arthur Chargueraud
 Benjamin C. Pierce
-Randy Pollack and Stephanie Weirich
+Randy Pollack
+Stephanie Weirich
 
 *** FORMAL VERIFICATION OF TRANSLATION VALIDATORS. A CASE STUDY ON INSTRUCTION SCHEDULING OPTIMIZATIONS
-Jean-Baptiste Tristan and Xavier Leroy
+Jean-Baptiste Tristan
+Xavier Leroy
 
 *** MUCH ADO ABOUT TWO
 Janis Voigtlaender
@@ -1118,45 +856,49 @@ Janis Voigtlaender
 *** CONTEXTUAL EFFECTS FOR VERSION-CONSISTENT DYNAMIC SOFTWARE UPDATING AND SAFE CONCURRENT PROGRAMMING
 Iulian Neamtiu
 Michael Hicks
-Jeffrey Foster and Polyvios Pratikakis
+Jeffrey Foster
+Polyvios Pratikakis
 *** 
 HIGH-LEVEL SMALL-STEP OPERATIONAL SEMANTICS FOR TRANSACTIONS
-Katherine Moore and Dan Grossman
+Katherine Moore
+Dan Grossman
 
 *** SEMANTICS OF TRANSACTIONAL MEMORY AND AUTOMATIC MUTUAL EXCLUSION
 Martin Abadi
 Andrew Birrell
-Tim Harris and Michael Isard
-** Session 3
-14.30-15.30
+Tim Harris
+Michael Isard
 
-*** SEPARATION LOGIC
-ABSTRACTION AND INHERITANCE
-Matthew Parkinson and Gavin Bierman
+** Session 3 14.30-15.30
+
+*** SEPARATION LOGIC ABSTRACTION AND INHERITANCE
+Matthew Parkinson
+Gavin Bierman
 
 *** ENHANCING MODULAR OO VERIFICATION WITH SEPARATION LOGIC
 Wei-Ngan Chin
 Cristina David
-Huu Hai Nguyen and Shengchao Qin
+Huu Hai Nguyen
+Shengchao Qin
 
 *** CYCLIC PROOFS OF PROGRAM TERMINATION IN SEPARATION LOGIC
 James Brotherston
-Richard Bornat and Cristiano Calcagno
-** Session 4
-16.00-17.00
+Richard Bornat
+Cristiano Calcagno
+
+** Session 4 16.00-17.00
 
 *** THE INTENSIONAL CONTENT OF RICE'S THEOREM
 Andrea Asperti
 
 *** A LOGICAL ACCOUNT OF PSPACE
 Marco Gaboardi
-Jean-Yves Marion and Simona Ronchi Della Rocca
+Jean-Yves Marion
+Simona Ronchi Della Rocca
 
 *** LIGHTWEIGHT SEMIFORMAL TIME COMPLEXITY ANALYSIS FOR PURELY FUNCTIONAL DATA STRUCTURES
 Nils Anders Danielsson
 
-
-Friday January 11
 
 ** Invited talk
 9.00-10.00
@@ -1170,62 +912,67 @@ Ken McMillan
 Ashutosh Gupta
 Thomas Henzinger
 Rupak Majumdar
-Andrey Rybalchenko and Ru-Gang Xu
+Andrey Rybalchenko
+Ru-Gang Xu
 
 *** SUBCUBIC ALGORITHMS FOR RECURSIVE STATE MACHINES
 Swarat Chaudhuri
 
 *** BACK TO THE FUTURE: REVISITING PRECISE PROGRAM VERIFICATION USING SMT SOLVERS
-Shuvendu Lahiri and Shaz Qadeer
-** Session 6
-12.00-13.00
+Shuvendu Lahiri
+Shaz Qadeer
+
+** Session 6 12.00-13.00
 
 *** AUTOMATIC INFERENCE OF STATIONARY FIELDS: A GENERALIZATION OF JAVA'S FINAL FIELDS
-Christopher Unkel and Monica S. Lam
+Christopher Unkel
+Monica S. Lam
 
 *** DEMAND-DRIVEN ALIAS ANALYSIS FOR C
-Xin Zheng and Radu Rugina
+Xin Zheng
+Radu Rugina
 
 *** A THEORY OF PLATFORM-DEPENDENT LOW-LEVEL SOFTWARE
 Marius Nita
-Dan Grossman and Craig Chambers
-** Session 7
-14.30-15.30
+Dan Grossman
+Craig Chambers
+
+** Session 7 14.30-15.30
 
 *** GENERATING PRECISE AND CONCISE PROCEDURE SUMMARIES
 Greta Yorsh
-Eran Yahav and Satish Chandra
+Eran Yahav
+Satish Chandra
 
 *** LIFTING ABSTRACT INTERPRETERS TO QUANTIFIED LOGICAL DOMAINS
 Sumit Gulwani
-Bill McCloskey and Ashish Tiwari
+Bill McCloskey
+Ashish Tiwari
 
 *** RELATIONAL INDUCTIVE SHAPE ANALYSIS
-Bor-Yuh Evan Chang and Xavier Rival
-** Session 8
-16.00-17.00
+Bor-Yuh Evan Chang
+Xavier Rival
+
+** Session 8 16.00-17.00
 
 *** A THEORY OF CONTRACTS FOR WEB SERVICES
 Giuseppe Castagna
-Nils Gesbert and Luca Padovani
+Nils Gesbert
+Luca Padovani
 
 *** MULTIPARTY ASYNCHRONOUS SESSION TYPES
 Kohei Honda
-Nobuko Yoshida and Marco Carbone
+Nobuko Yoshida
+Marco Carbone
 
 
-Saturday January 12
-
-** Invited talk
-9.00-10.00
+** Invited talk 9.00-10.00
 
 Yaron Minsky
 
-** Session 9
-10.30-11.30
+** Session 9 10.30-11.30
 
-*** CLOWNS TO THE LEFT OF ME
-JOKERS TO THE RIGHT
+*** CLOWNS TO THE LEFT OF ME JOKERS TO THE RIGHT
 Conor McBride
 
 *** FOUNDATIONS FOR STRUCTURED PROGRAMMING WITH GADTS
@@ -1233,21 +980,24 @@ Patricia Johann and Neil Ghani
 
 *** IMPERATIVE SELF-ADJUSTING COMPUTATION
 Umut Acar
-Amal Ahmed and Matthias Blume
-** Session 10
-12.00-13.00
+Amal Ahmed
+Matthias Blume
+
+** Session 10 12.00-13.00
 
 *** CRYPTOGRAPHICALLY SOUND IMPLEMENTATIONS FOR TYPED INFORMATION-FLOW SECURITY
-Cedric Fournet and Tamara Rezk
+Cedric Fournet
+Tamara Rezk
 
 *** ON THE COMPUTATIONAL SOUNDNESS OF CRYPTOGRAPHICALLY MASKED FLOWS
 Peeter Laud
 
 *** EXTENSIBLE SUBTYPING ENCODING
 Hamed Alavi
-Seth Gilbert and Rachid Guerraoui
-** Session 11
-14.30-15.30
+Seth Gilbert
+Rachid Guerraoui
+
+** Session 11 14.30-15.30
 
 *** FOCUSING AND HIGHER-ORDER ABSTRACT SYNTAX
 Noam Zeilberger
@@ -1256,363 +1006,258 @@ Noam Zeilberger
 Brigitte Pientka
 
 *** AN APPROACH TO CALL-BY-NAME DELIMITED CONTINUATIONS
-Hugo Herbelin and Silvia Ghilezan
-** Session 12
-16.00-17.00
+Hugo Herbelin
+Silvia Ghilezan
+
+** Session 12 16.00-17.00
 
 *** THE DESIGN AND IMPLEMENTATION OF TYPED SCHEME
-Sam Tobin-Hochstadt and Matthias Felleisen
+Sam Tobin-Hochstadt
+Matthias Felleisen
 
 *** BOOMERANG: RESOURCEFUL LENSES FOR STRING DATA
 Aaron Bohannon
 J. Nathan Foster
 Benjamin C. Pierce
-Alexandre Pilkiewicz and Alan Schmitt
+Alexandre Pilkiewicz
+Alan Schmitt
 
 *** FROM DIRT TO SHOVELS: FULLY AUTOMATIC TOOL GENERATION FROM AD HOC DATA
 Kathleen Fisher
 David Walker
-Kenny Zhu and Peter White
+Kenny Zhu
+Peter White
 
 * 2009
 
 ** Invited talk 9:00-10:00
 
 Tim Harris
-Microsoft Research
-UK
 
 ** Concurrency   10:30-11:30
 
 *** A Calculus of Atomic Actions
     Tayfun Elmas
-Koc University 
     Shaz Qadeer
-Microsoft Research 
     Serdar Tasiran
-Koc University 
 
 *** Proving that non-blocking algorithms don't block
     Alexey Gotsman
-University of Cambridge
     Byron Cook
-Microsoft Research
     Matthew Parkinson
-University of Cambridge
     Viktor Vafeiadis
-Microsoft Research
 
 *** A Model of Cooperative Threads
     Martin Abadi
-Microsoft and UCSC
     Gordon Plotkin
-University of Edinburgh and Microsoft
+
 ** Types I   12:00-1:00
 
 *** Static Contract Checking for Haskell
     Dana N. Xu
-University of Cambridge
     Simon Peyton Jones
-Microsoft Research
     Koen Claessen
-Chalmers University of Technology
 
 *** Masked types for sound object initialization
     Xin Qi
-Cornell University
     Andrew C. Myers
-Cornell University
 
 *** Flexible types: Robust type inference for first-class polymorphism
     Daan Leijen
-Microsoft Research
+
 ** Medley I   2:30-3:30
 
 *** Modular Code Generation from Synchronous Block Diagrams: Modularity vs. Code Size
     Roberto Lublinerman
-The Pennsylvania State University
     Christian Szegedy
-Cadence Research Laboratories
     Stavros Tripakis
-Cadence Research Laboratories
 
 *** Formal Certification of Code-Based Cryptographic Proofs
     Gilles Barthe
-IMDEA Software
-Madrid and Microsoft Research - INRIA Joint Centre
     Benjamin Gregoire
-INRIA Sophia Antipolis and Microsoft Research - INRIA Joint Centre
     Santiago Zanella
-INRIA Sophia Antipolis and Microsoft Research - INRIA Joint Centre
 
 *** Verifying Liveness for Asynchronous Programs
     Pierre Ganty
-UC Los Angeles
     Rupak Majumdar
-UC Los Angeles
     Andrey Rybalchenko
-MPI SWS
+
 ** Static Analysis I   4:00-5:00
 
 *** A Foundation for Flow-Based Program Matching Using Temporal Logic and Model Checking 
     Julien Brunel
-DIKU
-University of Copenhagen
     Damien Doligez
-INRIA
-Gallium Project
     René Rydhof Hansen
-Aalborg University
     Julia L. Lawall
-DIKU
-University of Copenhagen
     Gilles Muller
-Ecole des Mines de Nantes
 
 *** SPEED: Precise and Efficient Static Estimation of Program Computational Complexity 
     Sumit Gulwani
-Microsoft Research
     Krishna Mehra
-Microsoft Research
     Trishul Chilimbi
-Microsoft Research
 
 *** Automatic modular abstractions for linear constraints
     David Monniaux
-CNRS / VERIMAG
 
 ** Invited talk   9:00-10:00
 
 Chris Barker
-NYU
-USA
 
 ** Functional Programming   10:30-11:30
 
 *** Lazy Evaluation and Delimited Control 
     Ronald Garcia
-Indiana University
     Andrew Lumsdaine
-Indiana University
     Amr Sabry
-Indiana University
 
 *** Bidirectionalization for Free! 
     Janis Voigtlander
-Technische Universitat Dresden
 
 *** The Third Homomorphism Theorem on Trees: Downward & Upward Lead to Divide-and-Conquer 
     Akimasa Morihata
-University of Tokyo
     Kiminori Matsuzaki
-University of Tokyo
     Zhenjiang Hu
-National Institute of Informatics
     Masato Takeichi
-University of Tokyo
+
 ** Medley II   12:00-1:00
 
 *** A Cost Semantics for Self-Adjusting Computation
     Ruy Ley Wild
-Carnegie Mellon University
     Umut A. Acar
-Toyota Technological Institute
     Matthew Fluet
-Toyota Technological Institute
 
 *** Copy-on-Write in the PHP Language 
     Akihiko Tozawa
-IBM Tokyo Research Lab
     Michiaki Tatsubori
-IBM Tokyo Research Lab
     Tamiya Onodera
-IBM Tokyo Research Lab
     Yasuhiko Minamide
-Tsukuba University
 
 *** Feedback-Directed Barrier Optimization in a Strongly Isolated STM 
     Nathan Bronson
-Stanford CS
     Christos Kozyrakis
-Stanford CS
     Kunle Olukotun
-Stanford CS
+
 ** Static Analysis II   2:30-3:30
 *** Semi-Sparse Flow-Sensitive Pointer Analysis 
     Ben Hardekopf
-The University of Texas at Austin
     Calvin Lin
-The University of Texas at Austin
 
 *** A Combination Framework for Tracking Partition Sizes 
     Sumit Gulwani
-Microsoft Research
     Tal Lev-Ami
-Tel-Aviv University
     Mooly Sagiv
-Tel-Aviv University
 
 *** The Theory of Deadlock Avoidance via Discrete Control 
     Yin Wang
-Discrete Event Systems Lab
-U. Michigan EECS
     Stephane Lafortune
-Discrete Event Systems Lab
-U. Michigan EECS
     Terence Kelly
-HP Labs
     Manjunath Kudlur
-Advanced Computer Architecture Lab
-U. Michigan EECS
     Scott Mahlke
-Advanced Computer Architecture Lab
-U. Michigan EECS
+
 ** Static Analysis III   4:00-5:00
 *** Equality Saturation: a new Approach to Optimization 
     Ross Tate
-UC San Diego
     Michael Stepp
-UC San Diego
     Zachary Tatlock
-UC San Diego
     Sorin Lerner
-UC San Diego
 
 *** Positive Supercompilation for a higher order call-by-value language 
     Peter A. Jonsson
-Lulea University of Technology
     Johan Nordlander
-Lulea University of Technology
 
 *** Compositional Shape Analysis by means of Bi-Abduction
     Cristiano Calcagno
-Imperial College
-London
     Dino Distefano
-Queen Mary
-University of London
     Peter O'Hearn
-Queen Mary
-University of London
     Hongseok Yang
-Queen Mary
-University of London
 
 ** Invited talk   9:00-10:00
 
 Alex Simpson
-University of Edinburgh
-UK
 
 ** Program Logics   10:30-11:30
 
 *** Unifying Type Checking and Property Checking for Low-Level Code
     Jeremy Condit
-Microsoft Research
     Brian Hackett
-Stanford University
     Shuvendu Lahiri
-Microsoft Research
     Shaz Qadeer
-Microsoft Research
 
 *** Local Rely-Guarantee Reasoning 
     Xinyu Feng
-Toyota Technological Institute at Chicago
 
 *** Classical BI (A Logic for Reasoning about Dualising Resource) 
     James Brotherston
-Imperial College London
     Cristiano Calcagno
-Imperial College London
+
 ** Types II   12:00-1:00
 
 *** State-Dependent Representation Independence 
     Amal Ahmed
-TTI-C
     Derek Dreyer
-MPI-SWS
     Andreas Rossberg
-MPI-SWS
 
 *** Modeling Abstract Types in Modules with Open Existential Types
     Benoit Montagu
-INRIA
     Didier Remy
-INRIA
 
 *** Focusing on Pattern Matching 
     Neelakantan Krishnaswami
-Carnegie Mellon University
+
 ** Multicore   2:30-3:30
 
 *** The Semantics of x86-CC Multiprocessor Machine Code 
     Susmit Sarkar
-University of Cambridge
     Peter Sewell
-University of Cambridge
     Francesco Zappa Nardelli
-INRIA
     Scott Owens
-University of Cambridge
     Tom Ridge
-University of Cambridge 
     Thomas Braibant
-INRIA
     Magnus Myreen
-University of Cambridge
     Jade Alglave
-INRIA
 
 *** Relaxed memory models: an operational approach 
     Gerard Boudol
-INRIA Sophia Antipolis
     Gustavo Petri
-INRIA Sophia Antipolis
 
 *** The Semantics of Progress in Lock-Based Transactional Memory
     Rachid Guerraoui
-EPFL
     Michal Kapalka
-EPFL
+
 ** Verification   4:00-5:00
 
 *** Types and Higher-Order Recursion Schemes for Verification of Higher-Order Programs 
     Naoki Kobayashi
-Tohoku University
 
 *** Verifying Distributed Systems: the Operational Approach
     Tom Ridge
-University of Cambridge
 
 *** Automated Verification of Practical Garbage Collectors 
     Chris Hawblitzel
-Microsoft Research
     Erez Petrank
-Microsoft Research
 
 
 * 2010
 
-** Invited talk: 9:00-10:00 
-Session Chair: Jens Palsberg
+** Invited talk: 9:00-10:00
 
-Reconfigurable Asynchronous Logic Automata. Neil Gershenfeld
+*** Reconfigurable Asynchronous Logic Automata
+Neil Gershenfeld
 
 ** Concurrency: 10:30-11:30 
 
-*** On the Verification Problem for Weak Memory Models. 
+*** On the Verification Problem for Weak Memory Models
 Mohamed Faouzi Atig
 Ahmed Bouajjani
 Sebastian Burckhardt
 Madan Musuvathi
 
-*** Coarse-Grained Transactions. 
+*** Coarse-Grained Transactions
 Eric Koskinen
 Matthew Parkinson
 Maurice Herlihy
 
-*** Sequential Verification of Serializability. 
+*** Sequential Verification of Serializability
 H. Attiya
 G. Ramalingam
 N. Rinetzky
@@ -1666,12 +1311,12 @@ Oege de Moor
 
 ** Invited talk: 9:00-10:00
 
-From Boolean to Quantitative Notions of Correctness
+*** From Boolean to Quantitative Notions of Correctness
 Thomas A. Henzinger
 
 ** Reasoning about Programs: 10:30-11:30 
 
-*** Nominal System T. 
+*** Nominal System T
 Andrew M. Pitts
 
 *** A Theory of Indirection via Approximation. 
@@ -1738,10 +1383,6 @@ Vasco T Vasconcelos
 Antonio Ravara
 Nils Gesbert
 Alexandre Z Caldeira
-
-Friday
-January 22
-2010
 
 ** Program Synthesis: 9:00-10:00 
 
@@ -1835,6 +1476,7 @@ Hiroshi Unno
 * 2011
 
 ** Invited talk
+*** some title
 Xavier Leroy
 
 ** Pointer Analysis   [Session Chair: Ganesan Ramalingam]
@@ -1949,9 +1591,8 @@ S. Peyton-Jones
 S. Zdancewic
  
 ** Invited Talk   [Session Chair: Mooly Sagiv]
-The Design of Kodu: A Tiny Visual Programming Language for Children on the Xbox 360
+*** The Design of Kodu: A Tiny Visual Programming Language for Children on the Xbox 360
 Matthew MacLaurin
-Microsoft
  
 ** Separation Logic   [Session Chair: Hongseok Yang]
 
@@ -2148,7 +1789,8 @@ Gareth Smith
 
 *** Higher-Order Functional Reactive Programming in Bounded Space
 Neelakantan R. Krishnaswami
-Nick Benton and Jan Hoffmann
+Nick Benton
+Jan Hoffmann
 
 *** The Marriage of Bisimulations and Kripke Logical Relations
 Chung-Kil Hur
@@ -2157,7 +1799,8 @@ Georg Neis
 Viktor Vafeiadis
 
 *** Information Effects
-Roshan P. James and Amr Sabry
+Roshan P. James
+Amr Sabry
 
 ** 2.A: Privacy and Access Control
 
@@ -2199,10 +1842,12 @@ Philippe Suter
 ** Security
 
 *** Multiple Facets for Dynamic Information Flow
-Thomas H. Austin and Cormac Flanagan
+Thomas H. Austin
+Cormac Flanagan
 
 *** Defining Code-Injection Attacks
-Donald Ray and Jay Ligatti
+Donald Ray
+Jay Ligatti
 
 ** 3.B: Complexity for Concurrency
 *** Deciding Choreography Realizability
@@ -2211,11 +1856,11 @@ Tevfik Bultan
 Meriem Ouederni
 
 *** Analysis of Recursively Parallel Programs
-Ahmed Bouajjani and Michael Emmi
+Ahmed Bouajjani
+Michael Emmi
 
 ** Invited Talk: Programming Languages for Programmable Networks
 Jennifer Rexford
-Princeton University
 
 ** Medley
 *** A Compiler and Run-time System for Network Programming Languages
@@ -2230,7 +1875,8 @@ Patrick M. Rondon
 Ranjit Jhala
 
 *** An Abstract Interpretation Framework for Termination
-Patrick Cousot and Radhia Cousot
+Patrick Cousot
+Radhia Cousot
 
 ** Mechanized Proofs
 *** Playing in the Grey Area of Proofs
@@ -2239,7 +1885,8 @@ Laura Kovacs
 Andrei Voronkov
 
 *** Static and User-Extensible Proof Checking
-Antonis Stampoulis and Zhong Shao
+Antonis Stampoulis
+Zhong Shao
 
 *** Run Your Research: On the Effectiveness of Lightweight Mechanization
 Casey Klein
@@ -2256,7 +1903,8 @@ Robert Bruce Findler
 ** Concurrency
 
 *** Verification of Parameterized Concurrent Programs By Modular Reasoning about Data and Control
-Azadeh Farzan and Zachary Kincaid
+Azadeh Farzan
+Zachary Kincaid
 
 *** Resource-Sensitive Synchronization Inference by Abduction
 Matko Botinčan
@@ -2264,17 +1912,21 @@ Mike Dodds
 Suresh Jagannathan
 
 *** Syntactic Control of Interference for Separation Logic
-Uday S. Reddy and John C. Reynolds
+Uday S. Reddy
+John C. Reynolds
 
 ** Type Theory
 *** Canonicity for 2-Dimensional Type Theory
-Daniel R. Licata and Robert Harper
+Daniel R. Licata
+Robert Harper
 
 *** Algebraic Foundations for Effect-Dependent Optimisations
-Ohad Kammar and Gordon D. Plotkin
+Ohad Kammar
+Gordon D. Plotkin
 
 *** On the Power of Coercion Abstraction
-Julien Cretin and Didier Rémy
+Julien Cretin
+Didier Rémy
 
 ** Dynamic Analysis
 
@@ -2300,7 +1952,8 @@ Bartek Klin
 Slawomir Lasota
 
 *** Programming with Binders and Indexed Data-Types
-Andrew Cave and Brigitte Pientka
+Andrew Cave
+Brigitte Pientka
 
 ** 9:30-10:30	Invited talk: Meta-level Features in an Industrial-Strength Theorem Prover
 
@@ -2358,7 +2011,8 @@ Gabriel Dos Reis
 Xavier Leroy
 
 *** An Executable Formal Semantics of C with Applications
-Chucky Ellison and Grigore Rosu
+Chucky Ellison
+Grigore Rosu
 
 ** Type Systems
 
@@ -2382,11 +2036,11 @@ Juan Chen
 
 * 2013
 
-** Invited Georges Gonthier<br />
-Engineering mathematics: the odd order theorem proof</b><br />
-<i>Chair: Manuel Hermenegildo</i></td>
+** Invited 
+*** Engineering mathematics: the odd order theorem proof</b>
+Georges Gonthier
 
-** Semantics</b><br /><i>Chair: Peter O'Hearn</i></td>
+** Semantics</b><i>Chair: Peter O'Hearn</i></td>
 
 *** Full abstraction for nominal Scott domains
 S. Lösch
@@ -2401,7 +2055,7 @@ B. Pientka
 D. Thibodeau
 A. Setzer
 
-** Verification &amp; Static Analysis</b><br /><i>Chair: Laurent Mauborgne</i></td>
+** Verification &amp; Static Analysis</b><i>Chair: Laurent Mauborgne</i></td>
 
 
 
@@ -2423,7 +2077,7 @@ L. Clemente
 
 
 
-** Types</b><br /><i>Chair: Benjamin Pierce</i></td>
+** Types</b><i>Chair: Benjamin Pierce</i></td>
 *** Automating relatively complete verification of higher-order functional programs
 H. Unno
 T. Terauchi
@@ -2440,7 +2094,7 @@ G. Castagna
 K. Nguyễn
 J. Siméon
 
-** Abstract Interpretation</b><br /><i>Chair: Francesco Ranzato</i></td>
+** Abstract Interpretation</b><i>Chair: Francesco Ranzato</i></td>
 
 
 
@@ -2463,7 +2117,7 @@ L. Haller
 D. Kroening
 
 
-** Semantics</b><br /><i>Chair: Eijiro Sumii</i></td>
+** Semantics</b><i>Chair: Eijiro Sumii</i></td>
 *** The lambda lambda-bar calculus: a dual calculus for unconstrained strategies
 A. Goyet
 
@@ -2476,7 +2130,7 @@ S. Staton
 P. Levy
 
 
-** Proofs &amp; Verification</b><br /><i>Chair: Xavier Leroy</i></td>
+** Proofs &amp; Verification</b><i>Chair: Xavier Leroy</i></td>
 
 
 *** The power of parameterization in coinductive proof
@@ -2498,12 +2152,12 @@ J. Seo
 S. Park
 
 
-** Invited Shriram Krishnamurthi - SIGPLAN Robin Milner young researcher award<br />
-From principles to programming languages</b><br />
-<i>Chair: Derek Dreyer</i></td>
+** Invited  - SIGPLAN Robin Milner young researcher award
+*** From principles to programming languages
 
+Shriram Krishnamurthi
 
-** Concurrency &amp; Design</b><br /><i>Chair: Andreas Rossberg</i></td>
+** Concurrency &amp; Design</b><i>Chair: Andreas Rossberg</i></td>
 *** Library abstraction for C/C++ concurrency
 M. Batty
 M. Dodds
@@ -2517,7 +2171,7 @@ K. Vaswani
 M. Carbone
 F. Montesi
 
-** Separation Logic</b><br /><i>Chair: David Walker</i></td>
+** Separation Logic</b><i>Chair: David Walker</i></td>
 
 
 *** The type discipline of behavioral separation
@@ -2539,13 +2193,13 @@ N. Benton
 A. Kennedy
 
 
-** Invited Andrew Myers<br />
-How languages can save distributed computing</b><br />
-<i>Chair: Francesco Logozzo</i></td>
+** Invited 
+*** How languages can save distributed computing
+
+Andrew Myers
 
 
-
-** Concurrency</b><br /><i>Chair: Peter Sewell</i></td>
+** Concurrency</b><i>Chair: Peter Sewell</i></td>
 
 *** relaxation of concurrent data structures
 T. Henzinger
@@ -2569,7 +2223,7 @@ A. Ahmed
 L. Birkedal
 D. Dreyer
 
-** Security</b><br /><i>Chair: Kwang Yi</i></td>
+** Security</b><i>Chair: Kwang Yi</i></td>
 
 
 
@@ -2596,13 +2250,13 @@ B. Livshits
 S. Chong
 
 
-** Invited Noah Goodman<br />
-The principles and practice of probabilistic programming</b><br />
-<i>Chair: Andy Gordon</i></td>
+** Invited 
+*** The principles and practice of probabilistic programming</b>
+
+Noah Goodman
 
 
-
-** Models &amp; Semantics</b><br /><i>Chair: Tobias Wrigstad</i></td>
+** Models &amp; Semantics</b><i>Chair: Tobias Wrigstad</i></td>
 
 *** A model-learner pattern for Bayesian reasoning
 A. Gordon
@@ -2625,7 +2279,7 @@ S. Peyton Jones
 K. Claessen
 D. Rosén
 
-** Synthesis &amp; Verification</b><br /><i>Chair: Josh Berdine</i></td>
+** Synthesis &amp; Verification</b><i>Chair: Josh Berdine</i></td>
 
 
 *** Sigma*: Symbolic Learning of Stream Filters
@@ -2647,15 +2301,15 @@ J. Fisher
 N. Piterman
 
 
-** Invited Doug Mcllroy<br />
-POPL in 1973
-an idea whose time had come. An amarcord of POPL 1973</b><br />
-<i>Chair: Roberto Giacobazzi</i></td>
+** Invited 
+*** POPL in 1973: an idea whose time had come. An amarcord of POPL 1973</b>
 
-** The 90th of Corrado B&ouml;hm by EATCS and SIGPLAN
-Mariangiola Dezani</b></td>
+Doug Mcllroy
 
-** Compilation</b><br /><i>Chair: Manuel Fahndich</i></td>
+*** The 90th of Corrado B&ouml;hm by EATCS and SIGPLAN
+Mariangiola Dezani
+
+** Compilation</b><i>Chair: Manuel Fahndich</i></td>
 
 *** scheduling using (unit-)two-variable-per-inequality polyhedra
 R. Upadrasta
@@ -2675,7 +2329,7 @@ M. Odersky
 *** parsing for indentation-sensitive languages
 M. Adams
 
-** Analysis &amp; Logics</b><br /><i>Chair: Eric Koskinen</i></td>
+** Analysis &amp; Logics</b><i>Chair: Eric Koskinen</i></td>
 
 
 *** ramifications of sharing in data structures
