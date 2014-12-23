@@ -9,7 +9,7 @@ def parse(file):
     # if ('title' not in doc): print file + " is missing a title"
     
     text = doc.get('title',"") + " " + doc.get('abs',"")
-    return gensim.utils.simple_preprocess(text)
+    return (text,gensim.utils.simple_preprocess(text))
    
 
 class PoplCorpus(object):
@@ -19,7 +19,7 @@ class PoplCorpus(object):
         self.documents = []
         for root,dirs,files in os.walk(self.dir):
             for file in filter(lambda f: f.endswith('.txt'), files):
-                self.documents.append(parse(os.path.join(root,file)))
+                self.documents.append(parse(os.path.join(root,file))[1])
         
         self.metadata = None
         self.dictionary = gensim.corpora.Dictionary(self.documents)
@@ -59,7 +59,7 @@ def model(dir, **kw):
         topics[year] = []
         years[year] = {}
         for doc in glob.glob(os.path.join(root,"*.txt")):
-            tokens = c.dictionary.doc2bow(parse(doc))
+            tokens = c.dictionary.doc2bow(parse(doc)[1])
             vec = lsi[tokens]
             topics[year].append(vec)
 
@@ -75,3 +75,39 @@ def model(dir, **kw):
                 
     return (c,tfidf,lsi,topics,years,s)
 
+def POPLdocs(dict,dir):
+    years = {}
+    for root in glob.glob(os.path.join(dir,"POPL*")):
+
+        year = os.path.basename(root)
+        years[year] = []
+        
+        for f in glob.glob(os.path.join(root,"*.txt")):
+            text,doc = parse(f)
+            bow = dict.doc2bow(doc)
+            years[year].append((text,bow))
+
+    return years
+
+def summary(lsi,years):
+    summaries = {}
+    
+    for year in years:
+        summaries[year] = []
+        
+        for text,bow in years[year]:
+            topics = lsi[bow]
+            
+            def compare(v1,v2):
+                return cmp(v1[1],v2[1])
+            
+            topics.sort(cmp=compare,reverse=True)
+            summaries[year].append((text,bow,topics))
+
+    return summaries
+
+lsi = gensim.models.lsimodel.LsiModel.load("sigplan.lsi")
+d = lsi.id2word
+docs = POPLdocs(d,"scrape/full")
+s = summary(lsi,docs)
+        
