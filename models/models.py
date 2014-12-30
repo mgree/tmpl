@@ -89,6 +89,10 @@ def POPLdocs(dict,dir):
 
     return years
 
+def cmp_on_topics(v1,v2):
+    return cmp(v1[1],v2[1])
+
+
 def summary(lsi,years):
     summaries = {}
     
@@ -97,11 +101,8 @@ def summary(lsi,years):
         
         for text,bow in years[year]:
             topics = lsi[bow]
-            
-            def compare(v1,v2):
-                return cmp(v1[1],v2[1])
-            
-            topics.sort(cmp=compare,reverse=True)
+                        
+            topics.sort(cmp=cmp_on_topics, reverse=True)
             summaries[year].append((text,bow,topics))
 
     return summaries
@@ -111,3 +112,57 @@ d = lsi.id2word
 docs = POPLdocs(d,"scrape/full")
 s = summary(lsi,docs)
         
+def topics(text, threshold = 0.25):
+    bow = d.doc2bow(gensim.utils.simple_preprocess(text))
+    tp = lsi[bow]
+    tp.sort(cmp=cmp_on_topics, reverse=True)
+
+    return set(map(lambda v: v[0], filter(lambda v: v[1] > threshold,tp)))
+    
+def contribution(v,ts):
+    contrib = 0
+
+    vs = dict(v[2])
+    
+    for t in ts:
+        contrib = contrib + max(vs.get(t,0),0)
+    return contrib
+
+def summary_by_topic(s,topic1,topic2):
+    summaries = {}
+    
+    for year in s:
+        summaries[year] = { 't1': 0, 't2': 0 }
+        
+        for v in s[year]:
+            summaries[year]['t1'] = summaries[year]['t1'] + contribution(v,topic1)
+            summaries[year]['t2'] = summaries[year]['t2'] + contribution(v,topic2)
+
+    return summaries
+
+def compare_topics(s,text1,text2):
+    t1 = topics(text1)
+    t2 = topics(text2)
+
+    i = t1.intersection(t2)
+    t1.difference_update(i)
+    t2.difference_update(i)
+
+    return summary_by_topic(s,t1,t2)
+
+def as_csv(of,s,topic1,topic2):
+    stdout = sys.stdout
+    sys.stdout = open(of,"w")
+    
+    print "Year," + topic1 + "," + topic2
+    for year in s:
+        print year + "," + str(s[year]['t1']) + "," + str(s[year]['t2'])
+    sys.stdout.close()
+
+    sys.stdout = stdout
+
+# compare FP and OO
+fp_text = "functional programming higher-order function application applicative abstraction pure lambda arrow type immutable algebraic datatype scheme ml ocaml sml sml/nj racket haskell miranda lazy eager cbv call by value call by name call by need"
+oo_text = "object-oriented programming object class prototype instance field method application inheritance hierarchy inherited interface self modula-3 java c++ scala virtual table abstract"
+st = compare_topics(s,fp_text,oo_text)
+as_csv('fpvsoo.csv',st,'FP','OO')
