@@ -3,7 +3,8 @@ import gensim
 import sys, os, glob
 import codecs
 
-stops = set(file("stopwords.dat"))
+stops = set(map(lambda s: s.strip(),
+                codecs.open("stopwords.dat","r","utf8").readlines()))
 
 def tokenize(text):
     words = gensim.utils.simple_preprocess(text)
@@ -18,17 +19,17 @@ def parse(f):
 
     conf = os.path.basename(os.path.dirname(f))
     title = doc.get('title',"")
-    authors = ' '.joindoc.get('authors',"")
-    return (title + " - " + authors + " (" + conf ")",
+    authors = ' '.join(doc.get('authors',""))
+    return (title + " - " + authors + " (" + conf + ")",
             tokenize(title + " " + doc.get('abs',"")))
 
-def POPLdocs(of,d):
+def load_docs(of,d):
     years = {}
     words = []
 
     doclist = codecs.open(of,"w","utf8")
                           
-    for root in glob.glob(os.path.join(d,"POPL*")):
+    for root in glob.glob(os.path.join(d,"*")):
 
         year = os.path.basename(root)
         years[year] = []
@@ -97,3 +98,21 @@ def as_vocab(of, words):
         out.write(word + u'\n')
 
     out.close()
+
+
+def run(d,doc_file,dat_file,vocab_file):
+    years,words = load_docs(doc_file, d)
+
+    d = words_to_dict(words)
+    bows = docs_to_bow(years,d)
+    as_dat(dat_file,bows)
+    as_vocab(vocab_file,words)
+
+if __name__ == '__main__':
+    args = dict(enumerate(sys.argv))
+    d = args.get(1,"../scrape/main/")
+    doc_file = args.get(2,"docs.dat")
+    dat_file = args.get(3,"abstracts.dat")
+    vocab_file = args.get(4,"vocab.dat")
+    
+    run(d,doc_file,dat_file,vocab_file)
