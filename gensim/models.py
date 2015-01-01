@@ -35,6 +35,17 @@ class PoplCorpus(object):
         for doc in self.documents:
             yield doc
 
+def tfidf(d, **kw):
+    print "Loading SIGPLAN corpus..."
+    c = PoplCorpus(d)
+    
+    # tfidf transformation to get discover and normalize away stopwords
+    print "Calculating TF-IDF..."
+    tfidf = gensim.models.tfidfmodel.TfidfModel(corpus=c, id2word=c.dictionary)
+    tc = tfidf[c]
+
+    return (tc,tfidf)
+            
 def run_model(dir, model, **kw):
     print "Loading SIGPLAN corpus..."
     c = PoplCorpus(dir)
