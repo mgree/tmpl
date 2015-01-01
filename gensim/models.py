@@ -2,6 +2,13 @@ import json
 import gensim
 import sys, os, glob
 
+stops = set(file("stopwords.dat"))
+
+def tokenize(text):
+    words = gensim.utils.simple_preprocess(text)
+
+    return filter(lambda w: w not in stops, words)
+
 def parse(file):
     doc = json.loads(open(file).read())
     
