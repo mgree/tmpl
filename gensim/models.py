@@ -35,7 +35,7 @@ class PoplCorpus(object):
         for doc in self.documents:
             yield doc
 
-def model(dir, **kw):
+def run_model(dir, model, **kw):
     print "Loading SIGPLAN corpus..."
     c = PoplCorpus(dir)
     
@@ -45,8 +45,8 @@ def model(dir, **kw):
     tc = tfidf[c]
 
     # run latent semantic indexing to train some topics
-    print "Running LSI..."
-    lsi = gensim.models.lsimodel.LsiModel(corpus=tc, id2word=c.dictionary, **kw)
+    print "Running model..."
+    m = model(corpus=tc, id2word=c.dictionary, **kw)
 
     print "Assembling topics..."
     topics = {}
@@ -60,7 +60,7 @@ def model(dir, **kw):
         years[year] = {}
         for doc in glob.glob(os.path.join(root,"*.txt")):
             tokens = c.dictionary.doc2bow(parse(doc)[1])
-            vec = lsi[tokens]
+            vec = m[tokens]
             topics[year].append(vec)
 
             # just grab the positive contributions
@@ -73,7 +73,13 @@ def model(dir, **kw):
         for id in years[year]:
             s[year].append(years[year][id])
                 
-    return (c,tfidf,lsi,topics,years,s)
+    return (c,tfidf,m,topics,years,s)
+
+def lsimodel(root, **kw):
+    return run_model(root, gensim.models.lsimodel.LsiModel, **kw)
+
+def ldamodel(root, **kw):
+    return run_model(root, gensim.models.ldamodel.LdaModel, **kw)
 
 def POPLdocs(dict,dir):
     years = {}
@@ -88,6 +94,23 @@ def POPLdocs(dict,dir):
             years[year].append((text,bow))
 
     return years
+
+def as_dat(of, years):
+    out = open(of,"w")
+
+    for year in years:
+        for text,bow in years[year]:
+            out.write(str(len(bow)))
+            out.write(" ")
+
+            for term,count in bow:
+                out.write(str(term))
+                out.write(":")
+                out.write(str(count))
+                out.write(" ")
+            out.write("\n")
+            
+    out.close()
 
 def cmp_on_topics(v1,v2):
     return cmp(v1[1],v2[1])
@@ -107,14 +130,16 @@ def summary(lsi,years):
 
     return summaries
 
+lda = gensim.models.ldamodel.LdaModel.load("sigplan.lda")
 lsi = gensim.models.lsimodel.LsiModel.load("sigplan.lsi")
 d = lsi.id2word
 docs = POPLdocs(d,"scrape/full")
-s = summary(lsi,docs)
+#s = summary(lsi,docs)
+s = summary(lda,docs)
         
-def topics(text, threshold = 0.25):
+def topics(model,text, threshold = 0):
     bow = d.doc2bow(gensim.utils.simple_preprocess(text))
-    tp = lsi[bow]
+    tp = model[bow]
     tp.sort(cmp=cmp_on_topics, reverse=True)
 
     return set(map(lambda v: v[0], filter(lambda v: v[1] > threshold,tp)))
@@ -125,7 +150,7 @@ def contribution(v,ts):
     vs = dict(v[2])
     
     for t in ts:
-        contrib = contrib + max(vs.get(t,0),0)
+        contrib = max(contrib, int(vs.get(t,0) > 0)) # contrib + max(vs.get(t,0),0)
     return contrib
 
 def summary_by_topic(s,topic1,topic2):
@@ -140,9 +165,9 @@ def summary_by_topic(s,topic1,topic2):
 
     return summaries
 
-def compare_topics(s,text1,text2):
-    t1 = topics(text1)
-    t2 = topics(text2)
+def compare_topics(s,model,text1,text2):
+    t1 = topics(model,text1)
+    t2 = topics(model,text2)
 
     i = t1.intersection(t2)
     t1.difference_update(i)
@@ -155,8 +180,14 @@ def as_csv(of,s,topic1,topic2):
     sys.stdout = open(of,"w")
     
     print "Year," + topic1 + "," + topic2
+    def as_str(v):
+        if v > 0:
+            return str(v)
+        else:
+            return ""
+        
     for year in s:
-        print year + "," + str(s[year]['t1']) + "," + str(s[year]['t2'])
+        print year + "," + as_str(s[year]['t1']) + "," + as_str(s[year]['t2'])
     sys.stdout.close()
 
     sys.stdout = stdout
@@ -164,5 +195,12 @@ def as_csv(of,s,topic1,topic2):
 # compare FP and OO
 fp_text = "functional programming higher-order function application applicative abstraction pure lambda arrow type immutable algebraic datatype scheme ml ocaml sml sml/nj racket haskell miranda lazy eager cbv call by value call by name call by need"
 oo_text = "object-oriented programming object class prototype instance field method application inheritance hierarchy inherited interface self modula-3 java c++ scala virtual table abstract"
-st = compare_topics(s,fp_text,oo_text)
-as_csv('fpvsoo.csv',st,'FP','OO')
+as_csv('fpvsoo.csv',compare_topics(s,lda,fp_text,oo_text),'FP','OO')
+
+tt_text = "type theory judgment arrow type syntactic denotational inductive semantic lf logical framework pts pure type system logic inference rules static semantics"
+sa_text = "static analysis flow data dataflow control  controlflow dfa cfa use-def use definition abstraction abstract semantics abstract interpretation galois connection"
+as_csv('ttvssa.csv',compare_topics(s,lda,tt_text,sa_text),'type theory','static analysis')
+
+sub_text = "subtyping subtype subtypes sub-type sub supertype contravariant covariant coherence coercion bounds bounded ocaml java"
+dep_text = "dependent types dependent sum dependent product pure type systems type conversion coq agda cayenne"
+as_csv('subvsdep.csv',compare_topics(s,lda,sub_text,dep_text),'subtyping','dependent types')

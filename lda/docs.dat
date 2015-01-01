@@ -1,0 +1,1074 @@
+Temporal abstract interpretation
+Shape analysis for mobile ambients
+Semantics-preserving procedure extraction
+Sparse code motion
+Resource bound certification
+Type systems for distributed data structures
+Deciding type equivalence in a language with singleton kinds
+Type elaboration and subtype completion for Java bytecode
+A semantic model of types and machine instructions for proof-carrying code
+A type system for expressive security policies
+Verifying secrets and relative secrecy
+A framework for combining analysis and verification
+A debate on language and tool support for design patterns
+A type system for dynamic Web documents
+Authentication primitives and their compilation
+Generalized certificate revocation
+Paths vs. trees in set-based program analysis
+Analytic constraint solving and interval arithmetic
+Controlling interference in ambients
+Anytime, anywhere: modal logics for mobile ambients
+Reducing sweep time for a nearly empty heap
+Modular refinement of hierarchic reactive machines
+Transforming out timing leaks
+Enforcing trace properties by program transformation
+On the complexity of flow-sensitive dataflow analyses
+Projection merging: reducing redundancies in inclusion constraint graphs
+(Optimal) duplication is not elementary recursive
+A new approach to generic functional programming
+First-class macros have types
+Extensionality and intensionality of the ambient logics
+Nomadic pict: correct communication infrastructure for mobile computation
+A generic type system for the Pi-calculus
+Oracle-based checking of untrusted software
+Stratified operational semantics for safety and correctness of the region calculus
+Type-preserving garbage collectors
+A compiler technique for improving whole-program locality
+Avoiding exponential explosion: generating compact verification conditions
+What packets may come: automata for network monitoring
+Computational flux
+Modules, abstract types, and distributed versioning
+BI as an assertion language for mutable data structures
+Typing a multi-language intermediate code
+Type-indexed rows
+Subtyping arithmetical types
+Combining subsumption and binary methods: an object calculus with views
+Verifying safety properties of concurrent Java programs using 3-valued logic
+Colored local type inference
+Type-base flow analysis: from polymorphic subtyping to CFL-reachability
+Regular expression pattern matching for XML
+The size-change principle for program termination
+An abstract Monte-Carlo method for the analysis of probabilistic programs
+Efficient deductive methods for program analysis
+Mining specifications
+Towards automatic construction of staged compilers
+From POPL to the classroom and back
+CCured: type-safe retrofitting of legacy code
+An efficient profile-analysis framework for data-layout optimizations
+Stochastic lambda calculus and monads of probability distributions
+Representation independence, confinement and access control [extended abstract]
+Systematic design of program transformation frameworks by abstract interpretation
+Predicate abstraction for software verification
+The first-order theory of subtyping constraints
+A type system for certified binaries
+Role analysis
+Functional logic overloading
+Scalable formal design methods for asynchronous VLSI
+Adaptive functional programming
+The strength of non-size increasing computation
+Composing dataflow analyses and transformations
+Proving correctness of compiler optimizations by temporal logic
+Exploiting prolific types for memory management and optimizations
+Stack inspection: theory and variants
+Information flow inference for ML
+Resource usage analysis
+Analyzing security protocols with secrecy types and logic programs
+Types as models: model checking message-passing programs
+Lazy abstraction
+Bisimulation congruences in safe ambients
+A uniform type structure for secure information flow
+Bounding space usage of conservative garbage collectors
+The hardness of cache conscious data placement
+Selective memoization
+New results on the computability and complexity of points--to analysis
+Incremental algorithms for dispatching in dynamically typed languages
+From control effects to typed continuation passing
+Coercive subtyping for the calculus of constructions
+Efficient algorithms for isomorphisms of simple types
+A type theory for memory allocation and data layout
+Static prediction of heap space usage for first-order functional programs
+Toward a foundational typed assembly language
+Ownership types for object encapsulation
+Guarded recursive datatype constructors
+Environment classifiers
+A type system for higher-order modules
+Pure patterns type systems
+Destructors, finalizers, and synchronization
+Interprocedural compatibility analysis for static object preallocation
+A real-time garbage collector with low overhead and consistent utilization
+Bigraphs and transitions
+The m-calculus: a higher-order distributed process calculus
+A generic approach to the static analysis of concurrent programs with procedures
+Discovering affine equalities using random interpretation
+Bitwidth aware global register allocation
+From symptom to cause: localizing errors in counterexample traces
+Folklore confirmed: reducible flow graphs are exponentially larger
+Simple relational correctness proofs for static analyses and program transformations
+Asynchronous and deterministic objects
+A logic you can count on
+Channel dependent types for higher-order mobile processes
+A bisimulation for dynamic sealing
+An abstract interpretation-based framework for software watermarking
+Abstract non-interference: parameterizing non-interference by abstract interpretation
+A semantics for web services authentication
+The space cost of lazy reference counting
+Local reasoning about a copying garbage collector
+Abstractions from proofs
+Incremental execution of transformation specifications
+Summarizing procedures in concurrent programs
+Atomizer: a dynamic atomicity checker for multithreaded programs
+Separation and information hiding
+Tridirectional typechecking
+A type system for well-founded recursion
+Principal typings for Java-like languages
+Non-linear loop invariant generation using Gröbner bases
+Precise interprocedural analysis through linear algebra
+Global value numbering using random interpretation
+Formalization of generics for the .NET common language runtime
+Semantic types: a fresh look at the ideal model for types
+Extensional normalisation and type-directed partial evaluation for typed lambda calculus with sums
+Isomorphisms of generic recursive polynomial types
+Polymorphic typed defunctionalization
+Free theorems in the presence of seq
+Parsing expression grammars: a recognition-based syntactic foundation
+Environmental acquisition revisited
+Proof-guided underapproximation-widening for multi-process systems
+Transition predicate abstraction and fair termination
+Communicating quantum processes
+Downgrading policies and relaxed noninterference
+A probabilistic language based upon sampling functions
+Mutatis mutandis: safe and predictable dynamic software updating
+Transactors: a programming model for maintaining globally consistent distributed state in unreliable environments
+Theoretical foundations for compensations in flow composition languages
+From sequential programs to multi-tier applications by program transformation
+Combinators for bi-directional tree transformations: a linguistic approach to the view update problem
+Polymorphic bytecode: compositional compilation for Java-like languages
+Separation logic and abstraction
+Permission accounting in separation logic
+Context logic and tree update
+Connecting effects and uniqueness with adoption
+A semantics for procedure local heaps and its abstractions
+Region-based shape analysis with tracked locations
+Precise interprocedural analysis using random interpretation
+A framework for numeric analysis of array operations
+Scalable error detection using boolean satisfiability
+Automated soundness proofs for dataflow analyses and transformations via local rules
+A simple typed intermediate language for object-oriented languages
+The Java memory model
+Parametric polymorphism for XML
+A bisimulation for type abstraction and recursion
+A syntactic approach to eta equality in type theory
+Slot games: a quantitative model of computation
+Synthesis of interface specifications for Java classes
+Dynamic partial-order reduction for model checking software
+Why dependent types matter
+Polymorphic regular tree types and patterns
+Verifying properties of well-founded linked lists
+Environment analysis via ΔCFA
+Small bisimulations for reasoning about higher-order imperative programs
+A fixpoint calculus for local and global program flows
+Adventures in time and space
+N-synchronous Kahn networks: a relaxed model of synchrony for real-time systems
+Compiler-directed channel allocation for saving power in on-chip networks
+Fast and loose reasoning is morally correct
+Modular set-based analysis from contracts
+The next 700 data description languages
+Stratified type inference for generalized algebraic data types
+Hybrid type checking
+A polymorphic modal type system for lisp-like multi-staged languages
+The next mainstream programming language: a game developer's perspective
+A virtual class calculus
+Interruptible iterators
+Specifying C++ concepts
+Frame rules from answer types for code pointers
+Certified assembly programming with embedded code pointers
+Associating synchronization constraints with data in an object-oriented language
+A hierarchical model of data locality
+Autolocker: synchronization inference for atomic sections
+Protecting representation with effect encapsulation
+The essence of command injection attacks in web applications
+Harmless advice
+A verifiable SSA program representation for aggressive compiler optimization
+Simplifying reductions
+Formal certification of a compiler back-end or: programming a compiler with a proof assistant
+Engineering with logic: HOL specification and symbolic-evaluation testing for TCP implementations
+Decidability and proof systems for language-based noninterference relations
+On flow-sensitive security types
+A logic for information flow in object-oriented programs
+Perl 6: reconciling the irreconcilable
+First-class nonstandard interpretations by opening closures
+PADS/ML: a functional data description language
+Generative unbinding of names
+Types, bytes, and separation logic
+A very modal model of a modern, major, general type system
+Context logic as modal logic: completeness and parametric inexpressivity
+From implementation to theory in product synthesis
+Scrap your boilerplate with XPath-like combinators
+Lightweight fusion by fixed point promotion
+Lazy multivariate higher-order forward-mode AD
+Operational semantics for multi-language programs
+A complete, co-inductive syntactic theory of sequential control and state
+Towards a mechanized metatheory of standard ML
+Logic-flow analysis of higher-order programs
+Extracting queries by static analysis of transparent persistence
+Variance analyses from invariance analyses
+Assessing security threats of looping constructs
+JavaScript instrumentation for browser security
+Secure implementations of typed channel abstractions
+Advanced programming language design in enterprise software: a lambda-calculus theorist wanders into a datacenter
+Proving that programs eventually do something good
+Semantics of static pointcuts in aspectJ
+Program verification as probabilistic inference
+Lock allocation
+Modular verification of a non-blocking stack
+On the analysis of interacting pushdown systems
+Specialization of CML message-passing primitives
+Conditional must not aliasing for static race detection
+Interprocedural analysis of asynchronous programs
+Preferential path profiling: compactly numbering interesting paths
+Geometry of synthesis: a structured approach to VLSI design
+A typed intermediate language for compiling multiple inheritance
+Cork: dynamic memory leak detection for garbage-collected languages
+Dynamic heap type inference for program understanding and debugging
+Compositional dynamic test generation
+Locality approximation using time
+Modular type classes
+Formal verification of translation validators: a case study on instruction scheduling optimizations
+A logical account of pspace
+Lightweight semiformal time complexity analysis for purely functional data structures
+Proving non-termination
+Subcubic algorithms for recursive state machines
+Back to the future: revisiting precise program verification using SMT solvers
+Automatic inference of stationary fields: a generalization of java's final fields
+Demand-driven alias analysis for C
+A theory of platform-dependent low-level software
+Generating precise and concise procedure summaries
+Lifting abstract interpreters to quantified logical domains
+Much ado about two (pearl): a pearl on parallel prefix computation
+Relational inductive shape analysis
+A theory of contracts for web services
+Multiparty asynchronous session types
+Clowns to the left of me, jokers to the right (pearl): dissecting data structures
+Foundations for structured programming with GADTs
+Imperative self-adjusting computation
+Cryptographically sound implementations for typed information-flow security
+On the computational soundness of cryptographically masked flows
+Extensible encoding of type hierarchies
+Focusing and higher-order abstract syntax
+Contextual effects for version-consistent dynamic software updating and safe concurrent programming
+A type-theoretic foundation for programming with higher-order abstract syntax and first-class substitutions
+An approach to call-by-name delimited continuations
+The design and implementation of typed scheme
+Boomerang: resourceful lenses for string data
+From dirt to shovels: fully automatic tool generation from ad hoc data
+Systems biology, models, and concurrency
+Relevance heuristics for program analysis
+Caml trading
+High-level small-step operational semantics for transactions
+Semantics of transactional memory and automatic mutual exclusion
+Separation logic, abstraction and inheritance
+Enhancing modular OO verification with separation logic
+Cyclic proofs of program termination in separation logic
+The intensional content of Rice's theorem
+A calculus of atomic actions
+A foundation for flow-based program matching: using temporal logic and model checking
+SPEED: precise and efficient static estimation of program computational complexity
+Automatic modular abstractions for linear constraints
+Wild control operators
+Lazy evaluation and delimited control
+Bidirectionalization for free! (Pearl)
+The third homomorphism theorem on trees: downward & upward lead to divide-and-conquer
+A cost semantics for self-adjusting computation
+Copy-on-write in the PHP language
+Feedback-directed barrier optimization in a strongly isolated STM
+Proving that non-blocking algorithms don't block
+Semi-sparse flow-sensitive pointer analysis
+A combination framework for tracking partition sizes
+The theory of deadlock avoidance via discrete control
+Equality saturation: a new approach to optimization
+Positive supercompilation for a higher order call-by-value language
+Compositional shape analysis by means of bi-abduction
+Linear types for computational effects
+Unifying type checking and property checking for low-level code
+Local rely-guarantee reasoning
+Classical BI: a logic for reasoning about dualising resources
+A model of cooperative threads
+State-dependent representation independence
+Modeling abstract types in modules with open existential types
+Focusing on pattern matching
+The semantics of x86-CC multiprocessor machine code
+Relaxed memory models: an operational approach
+The semantics of progress in lock-based transactional memory
+Types and higher-order recursion schemes for verification of higher-order programs
+Verifying distributed systems: the operational approach
+Automated verification of practical garbage collectors
+Static contract checking for Haskell
+Masked types for sound object initialization
+Flexible types: robust type inference for first-class polymorphism
+Modular code generation from synchronous block diagrams: modularity vs. code size
+Formal certification of code-based cryptographic proofs
+Verifying liveness for asynchronous programs
+Reconfigurable asynchronous logic automata: (RALA)
+Verified just-in-time compiler on x86
+Dependent types from counterexamples
+Low-level liquid types
+Type inference for datalog with complex type hierarchies
+From Boolean to quantitative notions of correctness
+Nominal system T
+A theory of indirection via approximation
+A relational modal logic for higher-order stateful ADTs
+Decision procedures for algebraic data types with abstractions
+Automatic numeric abstractions for heap-manipulating programs
+On the verification problem for weak memory models
+Static determination of quantitative resource usage for higher-order programs
+Toward a verified relational database management system
+Counterexample-guided focus
+Structuring the verification of heap-manipulating programs
+Dependent types and program equivalence
+Pure subtype systems
+Modular session types for distributed object-oriented programming
+From program verification to program synthesis
+Abstraction-guided synthesis of synchronization
+Programming with angelic nondeterminism
+Coarse-grained transactions
+Contracts made manifest
+Threesomes, with and without blame
+Integrating typed and untyped code in a scripting language
+Generating compiler optimizations from proofs
+Automatically generating instruction selectors using declarative machine descriptions
+Semantics and algorithms for data-dependent grammars
+Paralocks: role-based information flow control and beyond
+Modular verification of security protocol code by typing
+Dynamically checking ownership policies in concurrent c/c++ programs
+Nested interpolants
+Sequential verification of serializability
+Monads in action
+Compositional may-must program analysis: unleashing the power of alternation
+Continuity analysis of programs
+Program analysis via satisfiability modulo path programs
+A simple, verified validator for software pipelining
+A verified compiler for an impure functional language
+Points-to analysis with efficient strong updates
+Step-indexed kripke models over recursive worlds
+A kripke logical relation between ML and assembly
+A typed store-passing translation for general references
+A shape analysis for optimizing parallel graph programs
+Calling context abstraction with shapes
+Precise reasoning for programs using containers
+Blame for all
+Correct blame for contracts: no more scapegoating
+Generative type abstraction and type-level computation
+The design of kodu: a tiny visual programming language for children on the Xbox 360
+Pick your contexts well: understanding object-sensitivity
+A separation logic for refining concurrent objects
+Modular reasoning for deterministic parallelism
+Expressive modular fine-grained concurrency specification
+The tree width of auxiliary storage
+Fresh-register automata
+Vector addition system reachability problem: a short self-contained proof
+Automating string processing in spreadsheets using input-output examples
+Predicate abstraction and refinement for verifying multi-threaded programs
+Geometry of synthesis III: resource management through type inference
+Multivariate amortized resource analysis
+Learning minimal abstractions
+Symmetric lenses
+Regular expression containment: coinductive axiomatization and computational interpretation
+Making prophecies with decision predicates
+Delay-bounded scheduling
+On interference abstractions
+Dynamic multirole session types
+Practical affine types
+Dynamic inference of static types for ruby
+Robin Milner 1934--2010: verification, languages, and concurrency
+Laws of order: expensive synchronization in concurrent algorithms cannot be eliminated
+Relaxed-memory concurrency and verified compilation
+Complexity of pattern-based verification for multithreaded programs
+EigenCFA: accelerating flow analysis with GPUs
+Bisimulation for quantum processes
+Safe nondeterminism in a deterministic-by-default parallel language
+Loop transformations: convexity, pruning and optimization
+The essence of compiling with traces
+Resourceable, retargetable, modular instruction selection using a machine-independent, type-based tiling of low-level intermediate code
+Verifying higher-order functional programs with pattern-matching algebraic data types
+Streaming transducers for algorithmic verification of single-pass list-processing programs
+Decidable logics combining heap structures and data
+Mathematizing C++ concurrency
+A technique for the effective and automatic reuse of classical compiler optimizations on multithreaded code
+Formal verification of object layout for c++ multiple inheritance
+Static analysis of multi-staged programs via unstaging translation
+Static analysis of interrupt-driven programs synchronized via the priority ceiling protocol
+A parametric segmentation functor for fully automatic and scalable array content analysis
+Underspecified harnesses and interleaved bugs
+Symbolic finite state transducers: algorithms and applications
+Constraints as control
+Multiple facets for dynamic information flow
+Defining code-injection attacks
+Deciding choreography realizability
+Analysis of recursively parallel programs
+Programming languages for programmable networks
+A compiler and run-time system for network programming languages
+Nested refinements: a logic for duck typing
+An abstract interpretation framework for termination
+Towards a program logic for JavaScript
+Playing in the grey area of proofs
+Static and user-extensible proof checking
+Run your research: on the effectiveness of lightweight mechanization
+Verification of parameterized concurrent programs by modular reasoning about data and control
+Resource-sensitive synchronization inference by abduction
+Syntactic control of interference for separation logic
+Canonicity for 2-dimensional type theory
+Algebraic foundations for effect-dependent optimisations
+On the power of coercion abstraction
+Abstractions from tests
+Higher-order functional reactive programming in bounded space
+Sound predictive race detection in polynomial time
+Towards nominal computation
+Programming with binders and indexed data-types
+Meta-level features in an industrial-strength theorem prover
+Formalizing the LLVM intermediate representation for verified program transformations
+Randomized accuracy-aware program transformations for efficient approximate computations
+A rely-guarantee-based simulation for verifying concurrent program transformations
+A unified approach to fully lazy sharing
+The ins and outs of gradual type inference
+Edit lenses
+The marriage of bisimulations and Kripke logical relations
+Clarifying and compiling C/C++ concurrency: from C++11 to POWER
+A mechanized semantics for C++ object construction and destruction, with applications to resource management
+An executable formal semantics of C with applications
+A type theory for probability density functions
+A type system for borrowing permissions
+Self-certification: bootstrapping certified typecheckers in F* with Coq
+Information effects
+A language for automatically enforcing privacy policies
+Probabilistic relational reasoning for differential privacy
+Access permission contracts for scripting languages
+Recursive proofs for inductive tree data-structures
+Full abstraction for nominal Scott domains
+Quantitative abstraction refinement
+Inductive data flow graphs
+Abstract conflict driven learning
+The Lambda Lambda-Bar calculus: a dual calculus for unconstrained strategies
+The geometry of types
+Universal properties of impure programming languages
+The power of parameterization in coinductive proof
+Meta-theory à la carte
+A theorem prover for Boolean BI
+From principles to programming languages (and back)
+The sequential semantics of producer effect systems
+Fault tolerance via idempotence
+Deadlock-freedom-by-design: multiparty asynchronous global programming
+The type discipline of behavioral separation
+Views: compositional reasoning for concurrent programs
+High-level separation logic for low-level code
+How languages can save distributed computing
+Plan B: a buffered memory model for Java
+Logical relations for fine-grained concurrency
+Linear dependent types for differential privacy
+Fully abstract compilation to JavaScript
+Copatterns: programming infinite structures by observations
+Towards fully automatic placement of security sanitizers and declassifiers
+The principles and practice of probabilistic programming
+Hyperstream processing systems: nonstandard modeling of continuous-time signals
+HALO: haskell to logic through denotational semantics
+Sigma*: symbolic learning of input-output specifications
+Checking NFA equivalence with bisimulations up to congruence
+Synthesis of biological models from mutation experiments
+Sub-polyhedral scheduling using (unit-)two-variable-per-inequality polyhedra
+Optimizing data structures in high-level programs: new directions for extensible compilers based on staging
+Principled parsing for indentation-sensitive languages: revisiting landin's offside rule
+Cache and I/O efficent functional algorithms
+The ramifications of sharing in data structures
+Complete instantiation-based interpolation
+Automatic detection of floating-point exceptions
+Subjective auxiliary state for coarse-grained concurrency
+On the linear ranking problem for integer linear-constraint loops
+Advanced automata minimization
+Automating relatively complete verification of higher-order functional programs
+Abstraction and invariance for algebraically indexed types
+Static and dynamic semantics of NoSQL languages
+A galois connection calculus for abstract interpretation
+NetKAT: semantic foundations for networks
+Bias-variance tradeoffs in program analysis
+Abstract satisfaction
+Proofs that count
+A verified information-flow architecture
+CakeML: a verified implementation of ML
+Probabilistic relational verification for cryptographic implementations
+Bridging boolean and quantitative synthesis using smoothed proof search
+A constraint-based approach to solving games on infinite graphs
+Sound compilation of reals
+Polymorphic functions with set-theoretic types: part 1: syntax, semantics, and evaluation
+The essence of Reynolds
+Freeze after writing: quasi-deterministic parallel programming with LVars
+Replicated data types: specification, verification, optimality
+Verifying eventual consistency of optimistic replication systems
+On coinductive equivalences for higher-order probabilistic functional programs
+Probabilistic coherence spaces are fully abstract for probabilistic PCF
+Tabular: a schema-driven probabilistic programming language
+Modular, higher-order cardinality analysis in theory and practice
+Profiling for laziness
+Fair reactive programming
+Backpack: retrofitting Haskell with interfaces
+Optimal dynamic partial order reduction
+Modular reasoning about heap paths via effectively propositional formulas
+A sound and complete abstraction for reasoning about parallel prefix sums
+Authenticated data structures, generically
+Gradual typing embedded securely in JavaScript
+Sound input filter generation for integer overflow errors
+Parametric completeness for separation theories
+Proof search for propositional abstract separation logics via labelled sequents
+A proof system for separation logic with magic wand
+From parametricity to conservation laws, via Noether's theorem
+Combining proofs and programs in a dependently typed language
+A relationally parametric model of dependent type theory
+Game semantics for interface middleweight Java
+Abstract acceleration of general linear loops
+Minimization of symbolic automata
+Consistency analysis of decision-making programs
+Toward general diagnosis of static errors
+Counter-factual typing for debugging type errors
+Battery transition systems
+Symbolic optimization with SMT solvers
+Abstract effects and proof-relevant logical relations
+Tracing compilation by abstract interpretation
+Parametric effect monads and semantics of effect systems
+Applying quantitative semantics to higher-order quantum computing
+A nonstandard standardization theorem
+A type-directed abstraction refinement approach to higher-order model checking
+Fissile type analysis: modular checking of almost everywhere invariants
+A trusted mechanised JavaScript specification
+An operational and axiomatic semantics for non-determinism and sequence points in C
+Deterministic parsing of ambiguous grammars
+Advice on structuring compilers and proving them correct
+Actor induction and meta-evaluation
+Reasoning about programs
+Procedure linkage optimization working paper
+A unified approach to global program optimization
+Analysis of a simple algorithm for global data flow problems
+Transitions in extendible arrays
+Strict deterministic versus LR(0) parsing
+Labelled precedence parsing
+Practical syntactic error recovery in compilers
+Programming language semantics and closed applicative languages
+On the definitional method of standard PL/I
+Mathematical semantics of SNOBOL4
+Types are not sets
+Mode modules as representations of domains: preliminary report
+Node listings applied to data flow analysis
+A description of path expressions by Petri nets
+Even simple programs are hard to analyze
+On the complexity of the circularity test for attribute grammars
+On the complexity of LR(k) testing
+Programming languages, natural languages, and mathematics
+An assertion language for data structures
+Program schemas with concurrency: execution time and hangups
+New control structures to aid gotolessness
+Structured exception handling
+An algebra of relations for machine computation
+A fast and usually linear algorithm for global flow analysis
+Some optimization techniques for an extensible language
+Automatic data structure choice in a language of very high level
+A mathematical approach to language design
+Correctness-preserving program transformations
+Actor semantics of PLANNER-73
+Reduction: a new method of proving properties of systems of processes
+A semantic model for parallel systems with scheduling
+The influence of productions on derivations and parsing (Extended Abstract)
+Induction variables in very high level languages
+An algorithm for structuring programs (Extended Abstract)
+On directly constructing LR(k) parsers without chain reductions
+PLAN2D - syntactic analysis of precedence graph grammars
+Program improvement by source to source transformation
+Goal-directed program transformation
+Primitive recursive program transformation
+Mathematical semantics and data flow programming
+Procedure referencing environments in SL5
+Verifying formal specifications of synchronous processes
+A complexity theory of grammar problems
+Code generation for expressions with common subexpressions (Extended Abstract)
+Automatic generation of efficient evaluators for attribute grammars
+Automatic design of data processing systems
+Techniques for the automatic selection of data structures
+A methodology for LISP program construction from examples
+Binding time optimization in programming languages: Some thoughts toward the design of an ideal language
+A lazy evaluator
+Programming language constructs for which it is impossible to obtain good hoare-like axiom systems
+Symbolic evaluation and the global value graph
+An interprocedural data flow analysis algorithm
+Implementation of an array bound checker
+The evolution of programs: a system for automatic program modification
+Parallel program correctness through refinement
+Generalized left corner parsing
+Elimination of single productions from LR parsers in conjunction with the use of default reductions
+The competence/performance dichotomy in programming preliminary report
+Structuring
+Minimal and optimal computations of recursive programs
+Code-generation for machines with multiregister operations
+Threshold evaluation and the semantics of call by value, assignment and generic procedures
+Abstract interpretation: a unified lattice model for static analysis of programs by construction or approximation of fixpoints
+The equivalence problem for program schemata with nonintersecting loops
+A new strategy for code generation: the general purpose optimizing compiler
+Applications of high level control flow
+Generalized common subexpressions in very high level languages
+Expression continuity and the formal differentiation of algorithms
+Applications of a graph grammar for program control flow analysis
+On the covering of left recursive grammars
+An efficient insertion-only error-corrector for LL(1) parsers
+Compilation and delayed evaluation in APL
+A portable compiler: theory and practice
+Automating proofs of the absence of common runtime errors
+Unrestricted procedure calls in Hoare's logic
+A simplifier based on efficient decision algorithms
+Reasoning about recursively defined data structures
+Off-line and on-line algorithms for deducing equalities
+Verification and design aspects of "true concurrency"
+Almost control-free (indeterministic) parallel computation on permit schemes
+Complexity of expressions allowing concurrency
+A partial evaluator, and its use for compiling iterative statements in LISP
+The Smalltalk-76 programming system design and implementation
+Nondeterminism in logics of programs
+A straightforward denotational semantics for non-determinate data flow programs
+A new method for compiler code generation
+A forward move algorithm for LR error recovery
+Clauses: scope structures and defined functions in Lucid
+Data types as values: polymorphism, type-checking, encapsulation
+Type definitions with parameters
+Syntactic control of interference
+Monoids for rapid data flow analysis
+A general scheme for the automatic inference of variable types
+Symbolic program analysis in almost linear time
+A compact, machine-independent peephole optimizer
+Universality of data retrieval languages
+Automatic generation of near-optimal linear-time translators for non-circular attribute grammars
+Space-time tradeoffs for linear recursion
+Characterization and elimination of redundancy in recursive programs
+An interpreter generator using tree pattern matching
+Specifying programming language semantics: a tutorial and critique of a paper by Hoare and Lauer
+Decisions for "type" in APL
+Automatic data structure selection in SETL
+Synthesis of resource invariants for concurrent programs
+String pattern matching in polynomial time
+A PL/CV precis
+Predicate path expressions
+Type checking in an imperfect world
+Flow analysis and optimization of LISP-like structures
+Data flow analysis of communicating processes
+Systematic design of program analysis frameworks
+Inductively computable constructs in very high level languages
+Principles of proving concurrent programs in Gypsy
+The evolution of list-copying algorithms and the need for structured program verification
+First order programming logic
+Recursion in logics of programs
+Process logic: preliminary report
+The logic of a relational data manipulation language
+Analysis of pointer rotation
+Prime subprogram parsing of a program
+On specifying verifiers
+A case study in specifying the semantics of a programming language
+Final data type specifications: a new data type specification method
+Expressiveness of the operation set of a data abstraction
+On proving inductive properties of abstract data types
+On the temporal analysis of fairness
+"Sometime" is sometimes "not never": on the temporal logic of programs
+Propositional logics of programs: systems, models, and complexity
+A dynamic logic of multiprocessing with incomplete information
+Data types, parameters and type checking
+Axiomatic definitions of programming languages: a theoretical assessment (preliminary report)
+Efficient algorithms for structural similarity of grammars
+Theoretical and empirical studies on using program mutation to test the functional correctness of programs
+"Type-completeness" as a language principle
+An indeterminate constructor for applicative programming
+A high-level approach to computer document formatting
+Experience with an applicative string processing language
+An overview of the SUMMER programming language
+Analysis of simple programs over different sets of primitives
+Synchronous schemes and their decision problems
+Qualified data flow problems
+Interprocedural data flow analysis in the presence of pointers, procedure variables, and label variables
+Carrier arrays: an idiom-preserving extension to APL
+Formal program testing
+On the advantages of free choice: a symmetric and fully distributed solution to the dining philosophers problem
+Axiomatic definitions of programming languages, II
+Program verification based on denotation semantics
+Program logic without binding is decidable
+The temporal logic of branching time
+Verification of attribute grammar
+Inferring types in Smalltalk
+Program optimization and exception handling
+Dependence graphs and compiler optimizations
+Paths: an abstract alternative to pointers
+Program improvement by internal specialization
+Programming primitives for database languages
+Paging as a "language processing" task
+Making the world safe for garbage collection
+A program development tool
+Incremental evaluation for attribute grammars with application to syntax-directed editors
+Linear cost is sometimes quadratic
+Termination of probabilistic concurrent programs: (extended abstract)
+Description-driven code generation using attribute grammars
+Code generation and reorganization in the presence of pipeline constraints
+Eliminating redundant object code
+A type declaration and inference system for smalltalk
+Unified dialogue management in the carousel system
+Maple: a programming language and operating system
+Optimal-time incremental semantic analysis for syntax-directed editors
+Practical error recovery in LR parsing
+Building friendly parsers
+On the composition of processes
+Guardians and actions: linguistic support for robust, distributed programs
+Semantics-directed machine architecture
+Partial evaluation as a means for inferencing data structures in an applicative language: a theory and implementation in the case of prolog
+A logic for expressions with side-effects
+Semantics and correctness of a query language translation: (preliminary version)
+Algorithmic program diagnosis
+On effective axiomatizations of Hoare logics
+Modular verification of concurrent programs
+Axiomatic definability and completeness for recursive programs
+Is the interesting part of process logic uninteresting?: a translation from PL to PDL
+On the expressive power of query languages for relational databases
+Specification and synthesis of communicating processes using an extended temporal logic: (preliminary version)
+Messages as active agents
+Extended naming conventions for communicating processes
+Unbounded speed variability in distributed communication systems
+Programming aspects of VLSI: (preliminary version)
+A flexible approach to interprocedural data flow analysis and programs with recursive data structures
+Experience with an attribute grammar-based compiler
+Five paradigm shifts in programming language design and their realization in Viron, a dataflow programming environment
+Polymorphic type inference
+Computer experiments with the REVE term rewriting system generator
+Precise typing of abstract data type specifications
+Automatic verification of finite state concurrent system using temporal logic specifications: a practical approach
+"Sometimes" and "not never" revisited: on branching versus linear time (preliminary report)
+How to cook a temporal proof system for your pet language
+Structural semantics for polymorphic data types (preliminary report)
+Incremental data flow analysis
+Conversion of control dependence to data dependence
+Loops in combinator-based compilers
+Uncovering principles of novice programming
+Compilation of data-driven programs for synchronous execution
+Summarizing graphs by regular expressions
+A program form based on data dependency in predicate regions
+Practical use of a polymorphic applicative language
+On the unification of data and program abstraction in Ada
+Incremental polymorphic type checking in B
+Mechanisms for compile-time enforcement of security
+Abstraction mechanisms in the BETA programming language
+Code generation for silicon
+Derivation of efficient DAG marking algorithms
+Reasoning about nonatomic operations
+Verifying reachability invariants of linked structures
+Practical program verification: automatic program proving for real-time embedded software
+Making variables abstract: an equational theory for Russell
+Transformational programming: applications to algorithms and systems
+Expressional loops
+Inverse currying transformation on attribute grammars
+The global storage needs of a subcomputation
+A types-as-sets semantics for milner-style polymorphism
+Coercion and type inference
+Editing by example
+Direct implementation of compiler specifications or the pascal p-code compiler revisited
+Pattern driven lazy reduction: A unifying evaluation mechanism for functional and logic programs
+Static inference of properties of applicative programs
+The semantics of local storage, or what makes the free-list free?(Preliminary Report)
+On relative completeness of programming logics
+Interactive proof checking
+A good Hoare axiom system for an ALGOL-like language
+A less dynamic memory allocation scheme for algol-like languages
+Creating efficient systems for object-oriented languages
+Generalized fair termination
+Temporal verification of carrier-sense local area network protocols
+Stop losing sleep over incomplete data type specifications
+Systems programming in concurrent prolog
+Constraining-unification and the programming language unicorn
+Implementation of an interpreter for abstract equations
+Treat - an applicative code generator
+Embedding type structure in semantics
+A greedy concurrent approach to incremental code generation
+On linearizing parallel code
+Compiling path expressions into VLSI circuits
+Constraints: a uniform approach to aliasing and typing
+High-level language facilities for low-level services
+Matchmaker: an interface specification language for distributed processing
+Smart recompilation
+Constraining control
+Closurize and concentrate
+Functional programing and the logical variable
+Declaration-free type checking
+Analyzing aliases of reference formal parameters
+The aggregate update problem in functional programming systems
+Optimal scheduling of arithmetic operations in parallel with memory access (preliminary version)
+Types as intervals
+Program specification and development in standard ML
+What it means for a concurrent program to satisfy a specification: why no one has specified priority
+Checking that finite state concurrent programs satisfy their linear specification
+Denotational semantics and rewrite rules for FP
+A model and temporal proof system for networks of processes
+Incremental compilation of optimized code
+Remote attribute updating for language-based editors
+Retargetable high-level alias analysis
+High-quality code generation via bottom-up tree pattern matching
+A parallel language and its compilation to multiprocessor machines or VLSI
+Towards programming with knowledge expressions
+Limitations of synchronous communication with static process structure in languages for distributed computing
+Atomic data abstractions in a distributed collaborative editing system
+A really abstract concurrent model and its temporal logic
+Expressing interesting properties of programs in propositional temporal logic
+Operational semantics of a parallel object-oriented language
+Equational logic programming: an extension to equational programming
+Dynamically bypassing copy rule chains in attribute grammars
+Logic and inheritance
+Unification in many-sorted algebras as a device for incremental semantic analysis
+Distributed data structures in Linda
+Para-functional programming: a paradigm for programming multiprocessor systems
+Annotations for distributed programming in logic
+Representation independence and data abstraction
+Using dependent types to express modular structure
+"Type" is not a type
+Data flow analysis of applicative programs using minimal function graphs
+A mechanically certified theorem about optimal concurrency of sorting networks
+Global storage allocation in attribute evaluation
+Finding the source of type errors
+A maximum-flow approach to anomaly isolation in unification-based incremental type inference
+Hierarchical VLSI design systems based on attribute grammars
+Code motion of control structures in high-level languages
+Compilers and staging transformations
+Higher-order strictness analysis in untyped lambda calculus
+Specification and verification of concurrent programs by A∀automata
+Constraint logic programming
+Strictness analysis and denotational abstract interpretation
+On strictness and its analysis
+LUSTRE: a declarative language for real-time programming
+Appraising fairness in distributed languages
+Concurrent transition system semantics of process networks
+Full abstraction of a real-time denotational semantics for an OCCAM-like language
+Computable values can be classical
+Skinny and fleshy failures of relative completeness
+Empty types in polymorphic lambda calculus
+Axioms for concurrent objects
+Scheduling arithmetic and load operations in parallel with no spilling
+Computation of aliases and support sets
+A realistic compiler generator based on high-level semantics: another progress report
+Extensions for multi-module records in conventional programming languages
+Views: a way for pattern matching to cohabit with data abstraction
+Completeness and incompleteness of trace-based network proof systems
+Semantic parallelization: a practical exercise in abstract interpretation
+The concurrent logic programming language CP: Definition and operational semantics
+Automatic decomposition of scientific programs for parallel execution
+Macro-by-example: Deriving syntactic transformations from their specifications
+Binding performance at language design time
+Environments as first class objects
+The essence of ML
+On the adequacy of program dependence graphs for representing programs
+Sacrificing simplicity for convenience: Where do you draw the line?
+The theory and practice of first-class prompts
+Towards fully abstract semantics for local variables
+Correct flow analysis in continuation semantics
+Inductive methods for reasoning about abstract data types
+Bisimulation can't be traced
+A compositional approach to superimposition
+A temporal fixpoint calculus
+Efficient dataflow analysis of logic programs
+Polymorphic effect systems
+Incremental data flow analysis via dominator and attribute update
+Lifetime analysis of dynamically allocated objects
+Optimal code generation for expression trees: an application BURS theory
+Compiler optimizations for asynchronous systolic array programs
+A proper extension of ML with an effective type-assignment
+Inheritance in smalltalk-80: a denotational definition
+Type inference with subtypes
+Automatic binding time analysis for a typed &lgr;-calculus
+A collecting interpretation of expressions
+Strictness analysis aids time analysis
+Integrating non-intering versions of programs
+A rewriting semantics for program dependence graphs
+Fully abstract compositional semantics for logic programs
+A calculus of higher order communicating systems
+A fully abstract trace model for dataflow networks
+Efficient temporal reasoning (extended abstract)
+On the synthesis of a reactive module
+Synthesis of concurrent systems with many similar sequential processes (extended abstract)
+The Modula–3 type system
+Dynamic typing in a statically-typed language
+Relating models of polymorphism
+Generalized conjunctive types
+An efficient method of computing static single assignment form
+Rewrite, rewrite, rewrite, rewrite, rewrite...
+Partial order programming (extended abstract)
+Temporal logic programming is complete and expressive
+Realistic compilation by program transformation (detailed summary)
+Continuation-passing, closure-passing style
+Copy elimination in functional languages
+Incremental computation via function caching
+Bisimulation through probabilistic testing (preliminary report)
+Fast interprocedual alias analysis
+How to make ad-hoc polymorphism less ad hoc
+Type checking records and variants in a natural extension of ML
+Extracting &ohgr;'s programs from proofs in the calculus of constructions
+Polymorphic unification and ML typing
+Moded type systems for logic programming
+CLP and constraint abstraction
+On laziness and optimality in lambda interpreters: tools for specification and analysis
+Inheritance is not subtyping
+A type system for Smalltalk
+A relationship between abstract interpretation and projection analysis
+On determining lifetime and aliasing of dynamically allocated data in higher-order functional specifications
+Small domains spell fast strictness analysis
+An efficient hybrid algorithm for incremental data flow analysis
+A finite presentation theorem for approximating logic programs
+Program transformation in the presence of errors
+Making asynchronous parallelism safe for the world
+Concurrent constraint programming
+An algorithm for optimal lambda calculus reduction
+Combining generational and conservative garbage collection: framework and implementations
+Scheduling time-critical instructions on RISC machines
+Automata-driven indexing of Prolog clauses
+Fairness and hyperfairness in multi-party interactions
+Relating total and partial correctness interpretations of non-deterministic programs
+On oraclizable networks and Kahn's principle
+On the relations computable by a class of concurrent automata
+Higher-order modules and the phase distinction
+Safe run-time overloading
+Quasi-static typing
+Explicit substitutions
+A formulae-as-type notion of control
+Implicative formulae in the proofs of computations' analogy
+Computable process
+The chemical abstract machine
+Interaction nets
+Toward a typed foundation for method specialization and inheritance
+The geometry of optimal lambda reduction
+A semantics for ML concurrency primitives
+Compile-time analysis of parallel programs that share memory
+A comprehensive study of the complexity of multiparty interaction
+A compilation method for ML-style polymorphic record calculi
+Typing record concatenation for free
+Unboxed objects and polymorphic typing
+Principal signatures for higher-order program modules
+Type isomorphisms in a type-assignment framework
+Pattern-based tree attribution
+Composable attribute grammars: support for modularity in translator design and implementation
+Linear continuations
+Recognizing substrings of LR(k) languages in linear time
+Generalized dominators and post-dominators
+Generating a compiler for a lazy language by partial evaluation
+Partial evaluation of high-level imperative programming languages with applications in hard real-time systems
+Algorithmic aspects of type inference with subtypes
+Bounded quantification is undecidable
+PER models of subtyping, recursive types and higher-order polymorphism
+Model checking and abstraction
+Abstract semantics for a higher-order functional language with logic variables
+Garbage collecting the world
+A mark-and-sweep collector C++
+Optimally profiling and tracing programs
+Bounded fixed point iteration
+Inductive definitions, semantics and abstract interpretations
+Modelling Prolog control
+Semantic foundations of Jade
+Array-data flow analysis and its use in array privatization
+Separating stages in the continuation-passing style transformation
+Specifying the correctness of binding-time analysis
+A natural semantics for lazy evaluation
+Formal parametric polymorphism
+Relational parametricity and local variables
+Algebraic reasoning and completeness in typed languages
+Graph types
+Explicit polymorphism and CPS conversion
+Polymorphism by name for references and continuations
+Efficient flow-sensitive interprocedural computation of pointer-induced aliases and side effects
+Automatic array alignment in data-parallel programs
+Automatic generation and management of interprocedural program analyses
+Static single assignment for explicitly parallel programs
+Safe type checking in a statically-typed object-oriented programming language
+Object-oriented programming without recursive types
+A constructive logic of multiple subtyping
+The 3 R's of optimizing constraint logic programs: refinement, removal and reordering
+Layer sharing: an improved structure-sharing framework
+Differential logic programming
+Evicted variables and the interaction of global register allocation and symbolic debugging
+Incremental program testing using program dependence graphs
+A novel framework of register allocation for software pipelining
+Complexity of bi-directional data flow analysis
+Type checking type classes
+Efficient recursive subtyping
+A sort inference algorithm for the polyadic &pgr;-calculus
+Smartest recompilation
+Compositional analysis of modular logic programs
+Extending record typing to type parametric modules with sharing
+Quasi-static scoping: sharing variable bindings across multiple lexical scopes
+Tutorial notes on partial evaluation
+Call by name, assignment, and the lambda calculus
+On the orthogonality of assignments and procedures in Algol
+Imperative functional programming
+Communicating reactive processes
+Semantics for communication primitives in a polymorphic language
+A concurrent, generational garbage collector for a multithreaded implementation of ML
+Memory subsystem performance of programs using copying garbage collection
+Manifest types, modules, and separate compilation
+A type-theoretic approach to higher-order modules with sharing
+A type system for prototyping languages
+Decidable bounded quantification
+Soft typing with conditional types
+Automated synthesis of interface adapters for reusable classes
+Implementation of the typed call-by-value λ-calculus using a stack of regions
+Deriving algorithms from type inference systems: application to strictness analysis
+Formally optimal boxing
+Combinations of abstract domains for logic programming
+Correctness of trap-based breakpoint implementations
+Analyzing logic programs with dynamic scheduling
+Higher-order equational logic programming
+A needed narrowing strategy
+An incremental algorithm for maintaining the dominator tree of a reducible flowgraph
+Value dependence graphs: representation without taxation
+Lazy array data-flow dependence analysis
+An operational framework for value-passing processes
+CHOCOLATE: Calculi of Higher Order COmmunication and LAmbda TErms (preliminary report)
+Combinatory representation of mobile processes
+Multi-pass execution of functional logic programs
+Dominators, super blocks, and program coverage
+Composing tree attributions
+A staging calculus and its application to the verification of translators (preliminary report)
+Reducing indirect function call overhead in C++ programs
+Call forwarding: a simple interprocedural optimization technique for dynamically typed languages
+The revival transformation
+Selective and lightweight closure conversion
+Representing monads
+A generic account of continuation-passing styles
+The typed polymorphic label-selective λ-calculus
+A functional theory of local names
+From λσ to λν: a journey through calculi of explicit substitutions
+Portable, unobtrusive garbage collection for multiprocessor systems
+Higher-order concurrent programs with finite communication topology (extended abstract)
+Proving concurrent constraint programs correct
+Sequential algorithms, deterministic parallelism, and intensional expressiveness
+Extensional polymorphism
+Compiling polymorphism using intensional type analysis
+Applicative functors and fully transparent higher-order modules
+Higher-order functors with transparent signatures
+Structural decidable extensions of bounded quantification
+Positive subtyping
+The geometry of interaction machine
+The semantics of future and its use in program optimization
+Total correctness by local improvement in program transformation
+A call-by-need lambda calculus
+Using functor categories to generate intermediate code
+Unification factoring for efficient execution of logic programs
+Separation constraint partitioning: a new algorithm for partitioning non-strict programs into sequential threads
+Default timed concurrent constraint programming
+A language with distributed scope
+A formal model and specification language for procedure calling conventions
+Obtaining sequential efficiency for concurrent object-oriented languages
+Optimizing an ANSI C interpreter with superoperators
+Monad transformers and modular interpreters
+Structuring depth-first search algorithms in Haskell
+Time and space profiling for non-strict, higher-order functional languages
+Demand-driven computation of interprocedural data flow
+A type system equivalent to flow analysis
+Parametric program slicing
+A unified treatment of flow analysis in higher-order languages
+Corrigendum: decidable bounded quantification
+Precise interprocedural dataflow analysis via graph reachability
+A linear time algorithm for placing &phgr;-nodes
+An extended form of must alias analysis for dynamic allocation
+Reasoning about rings
+Verifying infinite state processes with sequential and parallel composition
+Structured operational semantics as a specification language
