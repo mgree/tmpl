@@ -2,23 +2,25 @@ import json
 import gensim
 import sys, os, glob
 import codecs
-import stop_words
 
-stops = stop_words.get_stop_words("english")
+stops = set(file("stopwords.dat"))
+
 def tokenize(text):
     words = gensim.utils.simple_preprocess(text)
 
     return filter(lambda w: w not in stops, words)
 
-def parse(file):
-    doc = json.loads(open(file).read())
+def parse(f):
+    doc = json.loads(open(f).read())
     
     # if ('abs' not in doc): print file + " is missing an abstract"
     # if ('title' not in doc): print file + " is missing a title"
 
+    conf = os.path.basename(os.path.dirname(f))
     title = doc.get('title',"")
-    text = title + " " + doc.get('abs',"")
-    return (title,tokenize(text))
+    authors = ' '.joindoc.get('authors',"")
+    return (title + " - " + authors + " (" + conf ")",
+            tokenize(title + " " + doc.get('abs',"")))
 
 def POPLdocs(of,d):
     years = {}
