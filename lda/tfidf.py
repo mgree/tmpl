@@ -55,7 +55,7 @@ def tfidf(d):
 
 num_docs,d,dfs = tfidf("../scrape/main")
 
-threshold = num_docs / 5.0
+threshold = num_docs / 4.0
 
 for stop in map(lambda v: d[v[0]], filter(lambda v: v[1] > threshold, dfs)):
     print stop
