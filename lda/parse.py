@@ -53,8 +53,8 @@ def words_to_dict(words):
     index = 0
     
     for word in words:
-        index = index + 1
         d[word] = index
+        index = index + 1
 
     return d
 
