@@ -17,3 +17,4 @@ for i in ${PREFIX}_lda*; do
     python topics.py ${i}/final.beta vocab.dat 15 > ${i}_topics.txt
 done
 
+echo All done. Started at ${PREFIX}, done at `date "+%Y-%m-%d_%H:%M"`.
