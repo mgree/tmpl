@@ -3,6 +3,16 @@ import gensim
 import sys, os, glob
 import codecs
 
+import nltk
+
+use_wordnet = True
+if use_wordnet:
+    stemmer = nltk.stem.wordnet.WordNetLemmatizer()
+    stem = stemmer.lemmatize
+else:
+    stemmer = nltk.stem.porter.PorterStemmer()
+    stem = stemmer.stem
+
 stops = set(map(lambda s: s.strip(),
                 codecs.open("stopwords.dat","r","utf8").readlines()))
 
@@ -37,6 +47,8 @@ def load_docs(of,d):
         for f in glob.glob(os.path.join(root,"*.txt")):
             title,doc = parse(f)
 
+            doc = map(stem,doc)
+            
             doclist.write(title + u'\n')
             
             for word in doc:

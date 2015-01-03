@@ -1,20 +1,39 @@
 #!/bin/bash
 
-PREFIX=`date "+%Y-%m-%d_%H:%M"`
+KS="50 75 100 125 150 175 200"
 
-lda est 1/50  50 settings.txt abstracts.dat seeded ${PREFIX}_lda50 &
-lda est 1/50  75 settings.txt abstracts.dat seeded ${PREFIX}_lda75 &
-lda est 1/50 100 settings.txt abstracts.dat seeded ${PREFIX}_lda100 &
-lda est 1/50 125 settings.txt abstracts.dat seeded ${PREFIX}_lda125 &
-lda est 1/50 150 settings.txt abstracts.dat seeded ${PREFIX}_lda150 &
-lda est 1/50 175 settings.txt abstracts.dat seeded ${PREFIX}_lda175 &
-lda est 1/50 200 settings.txt abstracts.dat seeded ${PREFIX}_lda200 &
+PREFIX=`date "+%Y-%m-%d_%H:%M"`
+START=`date "+%Y-%m-%d %H:%M"`
+
+echo "PARSING"
+
+python parse.py
+
+for dat in abstracts.dat vocab.dat doc.dat; do
+    cp ${dat} ${PREFIX}_${dat}
+done
+
+echo "RUNNING LDA"
+
+ABS=${PREFIX}_abstracts.dat
+
+for k in ${KS}; do
+    lda est 1/50 ${k} settings.txt ${ABS} seeded ${PREFIX}_lda${k} &
+done
 
 wait
-echo "DONE, outputting topics..."
+echo "PROCESSING TOPICS"
 
 for i in ${PREFIX}_lda*; do
     python topics.py ${i}/final.beta vocab.dat 15 > ${i}_topics.txt
 done
 
-echo All done. Started at ${PREFIX}, done at `date "+%Y-%m-%d_%H:%M"`.
+echo "GENERATING CSV"
+
+for i in ${PREFIX}_lda*; do
+    test -d $i && python post.py ${i}/final.gamma docs.dat > ${i}.csv
+done
+
+
+echo "DONE"
+echo All done. Started at ${START}, done at `date "+%Y-%m-%d %H:%M"`.
