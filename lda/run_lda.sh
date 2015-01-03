@@ -9,7 +9,7 @@ echo "PARSING"
 
 python parse.py
 
-for dat in abstracts.dat vocab.dat doc.dat; do
+for dat in abstracts.dat vocab.dat docs.dat stopwords.dat; do
     cp ${dat} ${PREFIX}_${dat}
 done
 
@@ -25,13 +25,13 @@ wait
 echo "PROCESSING TOPICS"
 
 for i in ${PREFIX}_lda*; do
-    python topics.py ${i}/final.beta ${PREFIX}_vocab.dat 15 > ${i}_topics.txt
+    test -d ${i} && python topics.py ${i}/final.beta ${PREFIX}_vocab.dat 15 > ${i}_topics.txt
 done
 
 echo "GENERATING CSV"
 
 for i in ${PREFIX}_lda*; do
-    test -d $i && python post.py ${i}/final.gamma ${PREFIX}_docs.dat > ${i}.csv
+    test -d ${i} && python post.py ${i}/final.gamma ${PREFIX}_docs.dat > ${i}.csv
 done
 
 
