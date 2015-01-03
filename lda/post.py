@@ -2,10 +2,13 @@ import codecs
 import re
 import sys
 
+def quote(s):
+    return '"' + s + '"'
+
 title = re.compile(u'(.*) \((.*)\)$')
 def split_title(doc):
     m = title.match(doc)
-    return [m.group(1),m.group(2)]
+    return [quote(m.group(1)),quote(m.group(2))]
 
 
 def run(docs,gammas):
@@ -16,7 +19,6 @@ def run(docs,gammas):
 
     # topics per document
     for d,g in zip(docs, gammas):
-        print d,g
         print ','.join(split_title(d) + g.split())
         
 
