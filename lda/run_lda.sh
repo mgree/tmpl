@@ -32,6 +32,7 @@ echo "GENERATING CSV"
 
 for i in ${PREFIX}_lda*; do
     test -d ${i} && python post.py ${i}/final.gamma ${PREFIX}_docs.dat > ${i}.csv
+    test -d ${i} && python by_year.py ${i}/final.gamma ${PREFIX}_docs.dat > ${i}_by_year.csv
 done
 
 

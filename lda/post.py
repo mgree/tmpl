@@ -5,16 +5,16 @@ import sys
 def quote(s):
     return '"' + s + '"'
 
-title = re.compile(u'(.*) \((.*)\)$')
+title = re.compile(u'(.*) \((.*) (\\d*)\)$')
 def split_title(doc):
     m = title.match(doc)
-    return [quote(m.group(1)),quote(m.group(2))]
+    return [m.group(3),quote(m.group(2)),quote(m.group(1))]
 
 
 def run(docs,gammas):
     # show the header
     num_topics = len(gamma[0].split())
-    print ','.join(["Title","Conference"] +
+    print ','.join(["Year","Conference","Title"] +
                    ["Topic " + str(i) for i in range(0,num_topics)])
 
     # topics per document
