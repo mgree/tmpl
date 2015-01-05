@@ -14,14 +14,15 @@ def split_title(doc):
 def run(docs,gammas,topic,num_papers):
     print "Showing top " + str(num_papers) + " papers for topic #" + str(topic)
 
-    papers = zip(docs,gammas)
+    papers = zip(docs,map(lambda s: map(float,s.split()), gammas))
     def on_topic(v1,v2):
-        return cmp(v1[1][topic],v2[topic])
+        return cmp(v1[1][topic],v2[1][topic])
     papers.sort(cmp=on_topic, reverse=True)
     
     # topics per document
     for p in papers[:num_papers]:
         print p[0]
+        print "\t" + str(p[1][topic])
         
 
 def read(f, enc="utf8"):
@@ -34,4 +35,4 @@ if (__name__ == '__main__'):
     topic = int(args.get(3,0))
     num_papers = int(args.get(4,10))
 
-    run(docs, gamma,topic,num_papers)
+    run(docs,gamma,topic,num_papers)
