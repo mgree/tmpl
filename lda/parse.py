@@ -21,6 +21,9 @@ def tokenize(text):
 
     return filter(lambda w: w not in stops, words)
 
+def no_crlf(s):
+    return ' '.join(s.split())
+
 def parse(f):
     doc = json.loads(open(f).read())
     
@@ -28,9 +31,10 @@ def parse(f):
     # if ('title' not in doc): print file + " is missing a title"
 
     conf = os.path.basename(os.path.dirname(f))
-    title = doc.get('title',"")
-    authors = ' '.join(doc.get('authors',""))
-    return (title + " - " + authors + " (" + conf + ")",
+    title = doc.get('title',"").strip()
+    authors = ' '.join(map(no_crlf, doc.get('authors',"")))
+    meta = title + " - " + authors + " (" + conf + ")"
+    return (meta.replace('"','\\"'),
             tokenize(title + " " + doc.get('abs',"")))
 
 def load_docs(of,d):
