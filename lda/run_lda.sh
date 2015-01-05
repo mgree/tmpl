@@ -27,6 +27,7 @@ ABS=${PREFIX}_abstracts.dat
 
 for k in ${KS}; do
     lda est 1/50 ${k} settings.txt ${ABS} seeded ${PREFIX}_lda${k} &
+    echo ${PREFIX}_lda${k} >>.gitignore
 done
 
 wait
