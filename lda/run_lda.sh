@@ -10,7 +10,7 @@ echo "PARSING"
 python parse.py
 
 for dat in abstracts.dat vocab.dat docs.dat stopwords.dat; do
-    cp ${dat} ${PREFIX}_${dat}
+    mv ${dat} ${PREFIX}_${dat}
 done
 
 echo "RUNNING LDA"
