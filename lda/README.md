@@ -78,6 +78,15 @@ of conferences: the year, and then for each conference, there is a
 column for the number of papers that year and a column for each of the
 K topics.
 
+* `top_papers.py`
+
+This script lists the top papers for a given topic. It should be run
+manually, as in:
+
+```
+  python top_papers.py PFX_ldaK/final.gamma PFX_ldaK_docs.dat 0-based-topic# num-papers
+```
+
 # File formats
 
 There are many file formats involved in all of these tools, all only
@@ -92,22 +101,24 @@ The data is structured such that each conference/year is a directory
 in `../scrape/main` holding JSON data on each abstract. For example,
 `../scrape/main/POPL 2015/15.txt` contains the text:
 
->{"title":"Space-Efficient Manifest Contracts",
-> "authors":["Michael Greenberg"],
-> "abs":"The standard algorithm for higher-order contract checking can
->  lead to unbounded space consumption and can destroy tail recursion,
->  altering a program's asymptotic space complexity. While space
->  efficiency for gradual types---contracts mediating untyped and
->  typed code---is well studied, sound space efficiency for manifest
->  contracts---contracts that check stronger properties than simple
->  types, e.g., \"is a natural'' instead of \"is an
->  integer''---remains an open problem. We show how to achieve sound
->  space efficiency for manifest contracts with strong predicate
->  contracts. The essential trick is breaking the contract checking
->  down into coercions: structured, blame-annotated lists of
->  checks. By carefully preventing duplicate coercions from appearing,
->  we can restore space efficiency while keeping the same observable
->  behavior."}
+```
+{"title":"Space-Efficient Manifest Contracts",
+ "authors":["Michael Greenberg"],
+ "abs":"The standard algorithm for higher-order contract checking can
+  lead to unbounded space consumption and can destroy tail recursion,
+  altering a program's asymptotic space complexity. While space
+  efficiency for gradual types---contracts mediating untyped and
+  typed code---is well studied, sound space efficiency for manifest
+  contracts---contracts that check stronger properties than simple
+  types, e.g., \"is a natural'' instead of \"is an
+  integer''---remains an open problem. We show how to achieve sound
+  space efficiency for manifest contracts with strong predicate
+  contracts. The essential trick is breaking the contract checking
+  down into coercions: structured, blame-annotated lists of
+  checks. By carefully preventing duplicate coercions from appearing,
+  we can restore space efficiency while keeping the same observable
+  behavior."}
+```
 
 (NB that I've wrapped the text, and there are no newlines in the abstracts.)
 
@@ -156,4 +167,6 @@ reflection
 ```
 
 Unsurprisingly, 'reflection' is also the first non-stopword in the
-title of the first paper.
+title of the first paper. More surprisingly, the paper mentioned above
+wasn't written by Simon et al.---this documentation was written when
+the web scraper was acting buggy. Here we are.

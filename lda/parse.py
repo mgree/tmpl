@@ -17,6 +17,13 @@ stops = set(map(lambda s: s.strip(),
                 codecs.open("stopwords.dat","r","utf8").readlines()))
 
 def tokenize(text):
+    replacements = [("---"," "),
+                    ("--"," "),
+                    ("-", "")] # trying to capture multi-word keywords
+
+    for (src,tgt) in replacements:
+        text = text.replace(src,tgt)
+    
     words = gensim.utils.simple_preprocess(text)
 
     return filter(lambda w: w not in stops, words)
