@@ -14,9 +14,12 @@ echo "PARSING"
 
 python parse.py
 
-for dat in abstracts.dat vocab.dat docs.dat stopwords.dat; do
+for dat in abstracts.dat vocab.dat docs.dat; do
     mv ${dat} ${PREFIX}_${dat}
 done
+
+# we don't want to lose this one!
+cp stopwords.dat ${PREFIX}_stopwords.dat
 
 echo "RUNNING LDA"
 
