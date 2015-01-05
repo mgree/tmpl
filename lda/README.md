@@ -32,6 +32,14 @@ The general plan for a run is:
      weights are normalized by the number of papers in the
      conference.
 
+`run_lda.sh` takes the list of numbers of topics as its arguments. By
+default, it runs as if it were invoked as:
+
+```
+./run_lda.sh 50 75 100 125 150 175 200
+```
+
+
 * `parse.py`
 
 This script reads the scraped data and generates three files:

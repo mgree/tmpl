@@ -1,6 +1,11 @@
 #!/bin/bash
 
-KS="50 75 100 125 150 175 200"
+if test $# -ne 0;
+then
+    KS="$*";
+else
+    KS="50 75 100 125 150 175 200"
+fi
 
 PREFIX=`date "+%Y-%m-%d_%H:%M"`
 START=`date "+%Y-%m-%d %H:%M"`
