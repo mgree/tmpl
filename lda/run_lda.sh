@@ -33,8 +33,8 @@ done
 wait
 echo "PROCESSING TOPICS"
 
-for i in ${PREFIX}_lda*; do
-    test -d ${i} && python topics.py ${i}/final.beta ${PREFIX}_vocab.dat 15 > ${i}_topics.txt
+for k in ${KS}; do
+    python debug_topics.py ${PREFIX} ${k} > ${PREFIX}_${k}_topics.txt
 done
 
 echo "GENERATING CSV"
