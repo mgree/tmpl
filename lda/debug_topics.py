@@ -2,6 +2,9 @@ import codecs
 import re
 import sys,os
 
+def mean(l):
+    return sum(l) / float(len(l))
+
 def run(docs,betas,gammas,vocab,num):
     papers = zip(docs,map(lambda s: map(float,s.split()), gammas))
 
@@ -9,15 +12,15 @@ def run(docs,betas,gammas,vocab,num):
     for i,raw_betas in enumerate(betas):
         print 'Topic %03d' % i
         print '---------'
-        print 'Words'
-        
-        betas = map(float, raw_betas.split())
 
-        words = range(len(betas))
-        words.sort(lambda x,y: -cmp(betas[x],betas[y]))
+        bs = map(float, raw_betas.split())
+        print 'Words (mean weight: %f)' % mean(bs)
+
+        words = range(len(bs))
+        words.sort(lambda x,y: -cmp(bs[x],bs[y]))
 
         for word in words[:num]:
-            print '  %s (%f)' % (vocab[word], betas[word])
+            print '  %s (%f)' % (vocab[word], bs[word])
 
         print '---------'
         print 'Papers'

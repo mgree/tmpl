@@ -34,7 +34,7 @@ wait
 echo "PROCESSING TOPICS"
 
 for k in ${KS}; do
-    python debug_topics.py ${PREFIX} ${k} > ${PREFIX}_${k}_topics.txt
+    python debug_topics.py ${PREFIX} ${k} > ${PREFIX}_lda${k}_topics.txt
 done
 
 echo "GENERATING CSV"
