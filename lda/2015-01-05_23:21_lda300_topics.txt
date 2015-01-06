@@ -1,6 +1,6 @@
 Topic 000
 ---------
-Words (mean weight: -393.547657)
+Words (mean weight: -393.547657, min weight: -741.740637)
   continuation (-1.842495)
   cps (-2.791292)
   firstclass (-3.575036)
@@ -37,7 +37,7 @@ Size and access inference for data-parallel programs - Siddhartha Chatterjee, Gu
 
 Topic 001
 ---------
-Words (mean weight: -356.389440)
+Words (mean weight: -356.389440, min weight: -749.918361)
   code (-0.145345)
   generates (-4.098280)
   immutability (-4.822573)
@@ -74,7 +74,7 @@ Program manipulation via interactive transformations - Marat Boshernitsan (OOPSL
 
 Topic 002
 ---------
-Words (mean weight: -397.003979)
+Words (mean weight: -397.003979, min weight: -749.873283)
   interprocedural (-2.188019)
   dataflow (-2.391077)
   alias (-2.759063)
@@ -111,7 +111,7 @@ Ruby refactoring plug-in for eclipse - Thomas Corbat, Lukas Felber, Mirko Stocke
 
 Topic 003
 ---------
-Words (mean weight: -331.257096)
+Words (mean weight: -331.257096, min weight: -748.207435)
   operation (-0.318310)
   represented (-2.436441)
   performed (-3.693288)
@@ -148,7 +148,7 @@ Leveraging integrated model-driven development and software product line develop
 
 Topic 004
 ---------
-Words (mean weight: -330.908328)
+Words (mean weight: -330.908328, min weight: -737.399522)
   incremental (-1.416364)
   exploit (-1.817760)
   specialization (-2.275496)
@@ -185,7 +185,7 @@ Better extensibility through modular syntax - Robert Grimm (PLDI 2006)
 
 Topic 005
 ---------
-Words (mean weight: -339.670534)
+Words (mean weight: -339.670534, min weight: -736.391843)
   method (-0.121582)
   metric (-3.448500)
   override (-4.928265)
@@ -222,7 +222,7 @@ The design and verification of Java's memory model - Jeremy Manson (OOPSLA 2002)
 
 Topic 006
 ---------
-Words (mean weight: -375.458257)
+Words (mean weight: -375.458257, min weight: -751.727665)
   function (-0.529499)
   inlining (-3.258761)
   fusion (-3.480965)
@@ -259,7 +259,7 @@ Optimizing parallel programs with explicit synchronization - Arvind Krishnamurth
 
 Topic 007
 ---------
-Words (mean weight: -378.527545)
+Words (mean weight: -378.527545, min weight: -746.858643)
   precision (-2.021434)
   precise (-2.082508)
   analyze (-2.374718)
@@ -296,7 +296,7 @@ Type-indexed rows - Mark Shields, Erik Meijer (POPL 2001)
 
 Topic 008
 ---------
-Words (mean weight: -302.788403)
+Words (mean weight: -302.788403, min weight: -709.274773)
   efficiently (-1.255755)
   step (-1.309326)
   strategy (-1.574974)
@@ -333,7 +333,7 @@ A serializability violation detector for shared-memory server programs - Min Xu,
 
 Topic 009
 ---------
-Words (mean weight: -374.314755)
+Words (mean weight: -374.314755, min weight: -747.171484)
   process (-0.660730)
   quantum (-3.424559)
   among (-3.877680)
@@ -370,7 +370,7 @@ Hybrid type checking - Cormac Flanagan (POPL 2006)
 
 Topic 010
 ---------
-Words (mean weight: -299.605547)
+Words (mean weight: -299.605547, min weight: -692.877870)
   addition (-0.604259)
   combination (-0.803378)
   demand (-5.199173)
@@ -407,7 +407,7 @@ The impact of higher-order state and control effects on local relational reasoni
 
 Topic 011
 ---------
-Words (mean weight: -299.174987)
+Words (mean weight: -299.174987, min weight: -700.864739)
   number (-0.269645)
   require (-1.446514)
   come (-6.956746)
@@ -444,7 +444,7 @@ Recursion and dynamic data-structures in bounded space: towards embedded ML prog
 
 Topic 012
 ---------
-Words (mean weight: -393.106229)
+Words (mean weight: -393.106229, min weight: -744.515555)
   array (-1.547556)
   element (-2.499835)
   apl (-3.788242)
@@ -481,7 +481,7 @@ A functional representation of data structures with a hole - Yasuhiko Minamide (
 
 Topic 013
 ---------
-Words (mean weight: -376.316165)
+Words (mean weight: -376.316165, min weight: -740.396299)
   context (-1.214826)
   profiling (-2.891812)
   calling (-3.131566)
@@ -518,7 +518,7 @@ Innovate! - Laura Hill, Dick Gabriel, Harlan Sexton, Kevin Tyson, David West (OO
 
 Topic 014
 ---------
-Words (mean weight: -378.387168)
+Words (mean weight: -378.387168, min weight: -750.156937)
   equational (-2.240766)
   talk (-3.319705)
   pearl (-3.328599)
@@ -555,7 +555,7 @@ Maple: a programming language and operating system - P. J. Voda (POPL 1982)
 
 Topic 015
 ---------
-Words (mean weight: -298.907018)
+Words (mean weight: -298.907018, min weight: -697.752002)
   used (-0.005255)
   coside (-5.944354)
   exel (-6.637501)
@@ -592,7 +592,7 @@ Global code motion/global value numbering - Cliff Click (PLDI 1995)
 
 Topic 016
 ---------
-Words (mean weight: -308.593403)
+Words (mean weight: -308.593403, min weight: -690.142226)
   value (-0.421128)
   prototype (-1.614753)
   applying (-3.031974)
@@ -629,7 +629,7 @@ Inductive, coinductive, and pointed types - Brian T. Howard (ICFP 1996)
 
 Topic 017
 ---------
-Words (mean weight: -306.135266)
+Words (mean weight: -306.135266, min weight: -708.631352)
   state (-0.518292)
   local (-1.342471)
   certain (-2.709488)
@@ -666,7 +666,7 @@ A fully abstract trace model for dataflow networks - B. Jonsson (POPL 1989)
 
 Topic 018
 ---------
-Words (mean weight: -307.125268)
+Words (mean weight: -307.125268, min weight: -695.096637)
   addressed (-1.601135)
   true (-1.662821)
   incorporated (-1.969233)
@@ -703,7 +703,7 @@ Combining abstract interpreters - Sumit Gulwani, Ashish Tiwari (PLDI 2006)
 
 Topic 019
 ---------
-Words (mean weight: -346.505275)
+Words (mean weight: -346.505275, min weight: -747.318992)
   research (-1.461074)
   developer (-1.551433)
   evolution (-2.230623)
@@ -740,7 +740,7 @@ Time Conscious Objects™ - Jorn Bettin, Jeff Hoare (OOPSLA 2003)
 
 Topic 020
 ---------
-Words (mean weight: -339.735776)
+Words (mean weight: -339.735776, min weight: -749.188331)
   name (-1.398930)
   dynamically (-2.269390)
   connection (-2.515990)
@@ -777,7 +777,7 @@ Inheritance is not subtyping - William R. Cook, Walter Hill, Peter S. Canning (P
 
 Topic 021
 ---------
-Words (mean weight: -299.702689)
+Words (mean weight: -299.702689, min weight: -668.918087)
   must (-0.049870)
   actually (-4.146033)
   choose (-4.636763)
@@ -814,7 +814,7 @@ A types-as-sets semantics for milner-style polymorphism - Mitchell Wand (POPL 19
 
 Topic 022
 ---------
-Words (mean weight: -307.884317)
+Words (mean weight: -307.884317, min weight: -705.757464)
   effort (-1.082334)
   modification (-1.776090)
   constructing (-1.841642)
@@ -851,7 +851,7 @@ On strictness and its analysis - T.-M. Kuo, P. Mishra (POPL 1987)
 
 Topic 023
 ---------
-Words (mean weight: -300.715258)
+Words (mean weight: -300.715258, min weight: -712.008193)
   allow (-1.056286)
   enable (-1.885708)
   apply (-1.928417)
@@ -888,7 +888,7 @@ CLP and constraint abstraction - T. J. Hickey (POPL 1989)
 
 Topic 024
 ---------
-Words (mean weight: -345.464928)
+Words (mean weight: -345.464928, min weight: -740.620989)
   functional (-0.406633)
   purely (-2.594534)
   unique (-2.989787)
@@ -925,7 +925,7 @@ A relationally parametric model of dependent type theory - Robert Atkey, Neil Gh
 
 Topic 025
 ---------
-Words (mean weight: -386.009360)
+Words (mean weight: -386.009360, min weight: -744.096576)
   reduction (-1.458609)
   optimal (-2.003965)
   production (-2.519840)
@@ -962,7 +962,7 @@ Partitioning dataflow analyses using types - Erik Ruf (POPL 1997)
 
 Topic 026
 ---------
-Words (mean weight: -306.641781)
+Words (mean weight: -306.641781, min weight: -698.273983)
   express (-0.621505)
   supporting (-0.931660)
   utility (-3.580383)
@@ -999,7 +999,7 @@ Higher-order unCurrying - John Hannan, Patrick Hicks (POPL 1998)
 
 Topic 027
 ---------
-Words (mean weight: -364.164750)
+Words (mean weight: -364.164750, min weight: -751.231081)
   embedded (-1.968091)
   enterprise (-3.173756)
   increasing (-3.291037)
@@ -1036,7 +1036,7 @@ ABCD: eliminating array bounds checks on demand - Rastislav Bodík, Rajiv Gupta,
 
 Topic 028
 ---------
-Words (mean weight: -359.106170)
+Words (mean weight: -359.106170, min weight: -750.092203)
   java (-0.249454)
   compatible (-3.997428)
   compatibility (-4.712762)
@@ -1073,7 +1073,7 @@ GraphTrace—understanding object-oriented systems using concurrently animated v
 
 Topic 029
 ---------
-Words (mean weight: -370.373263)
+Words (mean weight: -370.373263, min weight: -743.494499)
   structured (-2.335832)
   section (-2.402365)
   lower (-3.072827)
@@ -1110,7 +1110,7 @@ Strategies for scientific prototyping in Smalltalk - S. S. Walther, R. L. Peskin
 
 Topic 030
 ---------
-Words (mean weight: -358.261092)
+Words (mean weight: -358.261092, min weight: -749.969740)
   library (-1.001097)
   highlevel (-1.718145)
   lowlevel (-2.444717)
@@ -1147,7 +1147,7 @@ Dynamic optimistic interprocedural analysis: a framework and an application - Ig
 
 Topic 031
 ---------
-Words (mean weight: -329.518958)
+Words (mean weight: -329.518958, min weight: -742.277422)
   space (-0.725767)
   factor (-1.978991)
   constant (-2.122316)
@@ -1184,7 +1184,7 @@ Proving that non-blocking algorithms don't block - Alexey Gotsman, Byron Cook, M
 
 Topic 032
 ---------
-Words (mean weight: -369.295965)
+Words (mean weight: -369.295965, min weight: -742.497832)
   memory (-0.752185)
   copy (-2.824300)
   leak (-3.446831)
@@ -1221,7 +1221,7 @@ Modular session types for distributed object-oriented programming - Simon J. Gay
 
 Topic 033
 ---------
-Words (mean weight: -320.969125)
+Words (mean weight: -320.969125, min weight: -724.658076)
   static (-0.071371)
   necessary (-3.487510)
   hence (-5.232480)
@@ -1258,7 +1258,7 @@ Multi-pass execution of functional logic programs - Jukka Paakki (POPL 1994)
 
 Topic 034
 ---------
-Words (mean weight: -354.292759)
+Words (mean weight: -354.292759, min weight: -745.516508)
   data (-0.012896)
   considerable (-6.610755)
   accessing (-6.666529)
@@ -1295,7 +1295,7 @@ Faith, evolution, and programming languages: from Haskell to Java to links - Phi
 
 Topic 035
 ---------
-Words (mean weight: -329.897642)
+Words (mean weight: -329.897642, min weight: -742.567707)
   implementation (-0.022378)
   typical (-3.898410)
   simulating (-7.134775)
@@ -1332,7 +1332,7 @@ Incremental evaluation for attribute grammars with application to syntax-directe
 
 Topic 036
 ---------
-Words (mean weight: -370.186215)
+Words (mean weight: -370.186215, min weight: -748.557674)
   web (-1.636652)
   service (-1.984924)
   business (-2.638630)
@@ -1369,7 +1369,7 @@ Designing a flexible services-based architecture for Internet applications - Vij
 
 Topic 037
 ---------
-Words (mean weight: -385.578999)
+Words (mean weight: -385.578999, min weight: -739.465723)
   parallelism (-2.298641)
   parallelization (-2.564186)
   speculative (-2.798079)
@@ -1406,7 +1406,7 @@ Automatic generation of fast optimizing code generators - C. W. Fraser, A. L. We
 
 Topic 038
 ---------
-Words (mean weight: -373.887279)
+Words (mean weight: -373.887279, min weight: -749.031579)
   resource (-1.669799)
   stage (-2.708557)
   hiding (-4.077624)
@@ -1443,7 +1443,7 @@ A type based sharing analysis for update avoidance and optimisation - Jörgen Gu
 
 Topic 039
 ---------
-Words (mean weight: -316.718032)
+Words (mean weight: -316.718032, min weight: -687.986485)
   reason (-1.151003)
   one (-1.955740)
   combined (-2.016813)
@@ -1480,7 +1480,7 @@ Fold and unfold for program semantics - Graham Hutton (ICFP 1998)
 
 Topic 040
 ---------
-Words (mean weight: -403.246802)
+Words (mean weight: -403.246802, min weight: -751.011356)
   student (-2.400812)
   course (-2.849055)
   teaching (-2.987765)
@@ -1517,7 +1517,7 @@ Dynamics/V (abstract) - Alfred Peisl (OOPSLA 1992)
 
 Topic 041
 ---------
-Words (mean weight: -303.350853)
+Words (mean weight: -303.350853, min weight: -716.435377)
   produce (-0.959749)
   experiment (-1.267824)
   limited (-1.633414)
@@ -1554,7 +1554,7 @@ Reality abstraction and OO pedagogy: results from 5 weeks in virtual reality - J
 
 Topic 042
 ---------
-Words (mean weight: -380.437292)
+Words (mean weight: -380.437292, min weight: -735.323956)
   distributed (-1.164551)
   fault (-3.060567)
   partitioning (-3.209361)
@@ -1591,7 +1591,7 @@ Using objects to manage in-memory data intensive expert systems - Steven Marney,
 
 Topic 043
 ---------
-Words (mean weight: -309.982121)
+Words (mean weight: -309.982121, min weight: -715.782915)
   increase (-1.443223)
   significantly (-1.660612)
   compared (-1.698497)
@@ -1628,7 +1628,7 @@ Java interfaces in CS 1 textbooks - Thomas VanDrunen (OOPSLA 2006)
 
 Topic 044
 ---------
-Words (mean weight: -313.093822)
+Words (mean weight: -313.093822, min weight: -732.327889)
   complex (-0.778637)
   expressive (-1.216949)
   capture (-1.578549)
@@ -1665,7 +1665,7 @@ Principled parsing for indentation-sensitive languages: revisiting landin's offs
 
 Topic 045
 ---------
-Words (mean weight: -309.537344)
+Words (mean weight: -309.537344, min weight: -667.501212)
   investigate (-1.459955)
   aim (-1.484614)
   modest (-2.195300)
@@ -1702,7 +1702,7 @@ Using predicate fields in a highly flexible industrial control system - Shay Art
 
 Topic 046
 ---------
-Words (mean weight: -337.961471)
+Words (mean weight: -337.961471, min weight: -746.178477)
   taken (-2.379007)
   accurate (-2.395634)
   forward (-2.456260)
@@ -1739,7 +1739,7 @@ First-class macros have types - Alan Bawden (POPL 2000)
 
 Topic 047
 ---------
-Words (mean weight: -315.271753)
+Words (mean weight: -315.271753, min weight: -715.615770)
   decision (-1.125621)
   along (-1.675352)
   attempt (-1.869633)
@@ -1776,7 +1776,7 @@ Extending the ODMG object model with composite objects - Elisa Bertino, Giovanna
 
 Topic 048
 ---------
-Words (mean weight: -364.172991)
+Words (mean weight: -364.172991, min weight: -746.161710)
   parameterized (-2.507592)
   principle (-2.643382)
   treatment (-2.858148)
@@ -1813,7 +1813,7 @@ Higher-order abstract syntax - F. Pfenning, C. Elliot (PLDI 1988)
 
 Topic 049
 ---------
-Words (mean weight: -283.642329)
+Words (mean weight: -283.642329, min weight: -655.977358)
   showing (-0.680786)
   improved (-0.746663)
   achieves (-4.019788)
@@ -1850,7 +1850,7 @@ MLF: raising ML to the power of system F - Didier Le Botlan, Didier Rémy (ICFP 
 
 Topic 050
 ---------
-Words (mean weight: -367.717087)
+Words (mean weight: -367.717087, min weight: -749.269837)
   computation (-0.784766)
   lattice (-3.103368)
   derivation (-3.244433)
@@ -1887,7 +1887,7 @@ Access permission contracts for scripting languages - Phillip Heidegger, Annette
 
 Topic 051
 ---------
-Words (mean weight: -388.925091)
+Words (mean weight: -388.925091, min weight: -746.262196)
   module (-1.369943)
   recursive (-1.489301)
   signature (-3.429541)
@@ -1924,7 +1924,7 @@ Sound Modular Verification of C Code Executing in an Unverified Context - Pieter
 
 Topic 052
 ---------
-Words (mean weight: -313.729786)
+Words (mean weight: -313.729786, min weight: -714.211350)
   example (-0.010255)
   inherent (-4.832418)
   determines (-6.152742)
@@ -1961,7 +1961,7 @@ Tracing piece by piece: affordable debugging for lazy functional languages - Hen
 
 Topic 053
 ---------
-Words (mean weight: -314.175337)
+Words (mean weight: -314.175337, min weight: -712.866221)
   order (-0.289721)
   higher (-2.432644)
   ordering (-2.753908)
@@ -1998,7 +1998,7 @@ Contaminated garbage collection - Dante J. Cannarozzi, Michael P. Plezbert, Ron 
 
 Topic 054
 ---------
-Words (mean weight: -291.218514)
+Words (mean weight: -291.218514, min weight: -641.792624)
   make (-0.026877)
   represents (-4.094799)
   heavy (-4.622203)
@@ -2035,7 +2035,7 @@ Applicative programming and digital design - Steven D. Johnson (POPL 1984)
 
 Topic 055
 ---------
-Words (mean weight: -332.044429)
+Words (mean weight: -332.044429, min weight: -731.424636)
   environment (-0.687672)
   change (-0.909723)
   evolving (-4.681206)
@@ -2072,7 +2072,7 @@ Space and time-efficient memory layout for multiple inheritance - Peter F. Sween
 
 Topic 056
 ---------
-Words (mean weight: -313.129151)
+Words (mean weight: -313.129151, min weight: -720.330259)
   large (-0.255215)
   scale (-1.875422)
   portion (-3.187332)
@@ -2109,7 +2109,7 @@ Type systems for distributed data structures - Ben Liblit, Alexander Aiken (POPL
 
 Topic 057
 ---------
-Words (mean weight: -319.663666)
+Words (mean weight: -319.663666, min weight: -724.572149)
   automatic (-0.800831)
   automated (-1.560796)
   manually (-2.506905)
@@ -2146,7 +2146,7 @@ Structuring graphical paradigms in TkGofer - Koen Claessen, Ton Vullinghs, Erik 
 
 Topic 058
 ---------
-Words (mean weight: -297.433905)
+Words (mean weight: -297.433905, min weight: -697.704113)
   much (-1.004978)
   although (-1.628195)
   better (-2.042815)
@@ -2183,7 +2183,7 @@ Defunctionalized interpreters for programming languages - Olivier Danvy (ICFP 20
 
 Topic 059
 ---------
-Words (mean weight: -337.584447)
+Words (mean weight: -337.584447, min weight: -714.691536)
   time (-0.221912)
   equality (-3.581710)
   polynomial (-3.847723)
@@ -2220,7 +2220,7 @@ An optimizer for Ada - design, experiences and results - B. Schwarz, W. Kirchgä
 
 Topic 060
 ---------
-Words (mean weight: -328.549765)
+Words (mean weight: -328.549765, min weight: -745.289454)
   building (-1.214437)
   specify (-1.874048)
   combining (-2.129478)
@@ -2257,7 +2257,7 @@ CEAL: a C-based language for self-adjusting computation - Matthew A. Hammer, Umu
 
 Topic 061
 ---------
-Words (mean weight: -323.155881)
+Words (mean weight: -323.155881, min weight: -743.741773)
   level (-0.630085)
   high (-1.275785)
   low (-2.801481)
@@ -2294,7 +2294,7 @@ Declaratively programming the mobile web with Mobl - Zef Hemel, Eelco Visser (OO
 
 Topic 062
 ---------
-Words (mean weight: -370.020771)
+Words (mean weight: -370.020771, min weight: -744.654880)
   thread (-1.414885)
   safety (-1.686086)
   stack (-2.201471)
@@ -2331,7 +2331,7 @@ On determining lifetime and aliasing of dynamically allocated data in higher-ord
 
 Topic 063
 ---------
-Words (mean weight: -342.115172)
+Words (mean weight: -342.115172, min weight: -736.037956)
   property (-0.183652)
   liveness (-3.300183)
   learning (-4.696367)
@@ -2368,7 +2368,7 @@ Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
 
 Topic 064
 ---------
-Words (mean weight: -364.085952)
+Words (mean weight: -364.085952, min weight: -750.601182)
   modeling (-1.534911)
   domainspecific (-2.270337)
   concept (-2.474219)
@@ -2405,7 +2405,7 @@ MAS-ML: a multi-agent system modeling language - Viviane Torres da Silva, Carlos
 
 Topic 065
 ---------
-Words (mean weight: -287.422573)
+Words (mean weight: -287.422573, min weight: -658.235684)
   direct (-0.528088)
   avoid (-0.909749)
   promising (-4.886974)
@@ -2442,7 +2442,7 @@ On the relations computable by a class of concurrent automata - Eugene W. Stark 
 
 Topic 066
 ---------
-Words (mean weight: -347.400556)
+Words (mean weight: -347.400556, min weight: -746.138005)
   recursion (-1.740804)
   assumption (-2.299684)
   place (-2.651925)
@@ -2479,7 +2479,7 @@ A semi-automated approach for analyzing, separating, and modeling of concerns in
 
 Topic 067
 ---------
-Words (mean weight: -358.304267)
+Words (mean weight: -358.304267, min weight: -751.915626)
   application (-0.225629)
   processing (-4.681918)
   netbeans (-4.990648)
@@ -2516,7 +2516,7 @@ Post-pass binary adaptation for software-based speculative precomputation - Stev
 
 Topic 068
 ---------
-Words (mean weight: -385.750470)
+Words (mean weight: -385.750470, min weight: -748.958388)
   logic (-0.946635)
   reasoning (-1.960234)
   temporal (-2.559498)
@@ -2553,7 +2553,7 @@ Probabilistic Termination: Soundness, Completeness, and Compositionality - Luis 
 
 Topic 069
 ---------
-Words (mean weight: -361.020551)
+Words (mean weight: -361.020551, min weight: -749.694505)
   constraint (-0.838005)
   solving (-2.378875)
   interval (-3.311652)
@@ -2590,7 +2590,7 @@ Events in Haskell, and how to implement them - George Russell (ICFP 2001)
 
 Topic 070
 ---------
-Words (mean weight: -359.962062)
+Words (mean weight: -359.962062, min weight: -731.371343)
   theory (-1.136594)
   haskell (-1.565207)
   algebraic (-2.410222)
@@ -2627,7 +2627,7 @@ Verifying distributed systems: the operational approach - Thomas Ridge (POPL 200
 
 Topic 071
 ---------
-Words (mean weight: -329.509065)
+Words (mean weight: -329.509065, min weight: -737.810406)
   modular (-1.135378)
   extensible (-1.867098)
   composition (-2.577201)
@@ -2664,7 +2664,7 @@ Logic and inheritance - Hassan Aït-Kaci, Roger Nasr (POPL 1986)
 
 Topic 072
 ---------
-Words (mean weight: -279.355985)
+Words (mean weight: -279.355985, min weight: -648.610436)
   early (-0.752592)
   later (-1.010976)
   adapted (-2.064240)
@@ -2701,7 +2701,7 @@ The META4 programming language overview (poster session) - Jason W. Kim (OOPSLA 
 
 Topic 073
 ---------
-Words (mean weight: -325.976618)
+Words (mean weight: -325.976618, min weight: -748.061443)
   problem (-0.100215)
   solve (-2.595243)
   solved (-4.110772)
@@ -2738,7 +2738,7 @@ On the temporal analysis of fairness - Dov Gabbay, Amir Pnueli, Saharon Shelah, 
 
 Topic 074
 ---------
-Words (mean weight: -326.334368)
+Words (mean weight: -326.334368, min weight: -740.511724)
   efficiency (-1.336534)
   uniform (-2.408111)
   comparable (-2.697645)
@@ -2775,7 +2775,7 @@ Local type inference - Benjamin C. Pierce, David N. Turner (POPL 1998)
 
 Topic 075
 ---------
-Words (mean weight: -310.536820)
+Words (mean weight: -310.536820, min weight: -709.123977)
   open (-1.299278)
   underlying (-1.384751)
   kind (-1.676597)
@@ -2812,7 +2812,7 @@ Precise interprocedural dataflow analysis via graph reachability - Thomas Reps, 
 
 Topic 076
 ---------
-Words (mean weight: -304.326066)
+Words (mean weight: -304.326066, min weight: -709.758580)
   address (-1.241852)
   improvement (-1.423418)
   quality (-2.041414)
@@ -2849,7 +2849,7 @@ Towards fully abstract semantics for local variables - A. R. Meyer, K. Sieber (P
 
 Topic 077
 ---------
-Words (mean weight: -341.308104)
+Words (mean weight: -341.308104, min weight: -746.284019)
   written (-1.555184)
   message (-2.225294)
   optimizing (-2.250866)
@@ -2886,7 +2886,7 @@ Component based development of UDBC - Xiaobing Liu, Kai Qian, Andy J. Wang, Hong
 
 Topic 078
 ---------
-Words (mean weight: -313.104689)
+Words (mean weight: -313.104689, min weight: -700.235829)
   correct (-0.637922)
   contains (-1.989854)
   remove (-2.091836)
@@ -2923,7 +2923,7 @@ Extensible algebraic datatypes with defaults - Matthias Zenger, Martin Odersky (
 
 Topic 079
 ---------
-Words (mean weight: -352.758146)
+Words (mean weight: -352.758146, min weight: -734.219294)
   compositional (-2.217340)
   probabilistic (-2.335327)
   distribution (-2.450976)
@@ -2960,7 +2960,7 @@ Synchronization transformations for parallel computing - Pedro Diniz, Martin Rin
 
 Topic 080
 ---------
-Words (mean weight: -291.246043)
+Words (mean weight: -291.246043, min weight: -674.037837)
   area (-0.858293)
   add (-1.166365)
   almost (-1.330405)
@@ -2997,7 +2997,7 @@ ESP: path-sensitive program verification in polynomial time - Manuvir Das, Sorin
 
 Topic 081
 ---------
-Words (mean weight: -372.046019)
+Words (mean weight: -372.046019, min weight: -744.051411)
   policy (-1.785694)
   phase (-2.184212)
   ownership (-2.758801)
@@ -3034,7 +3034,7 @@ Non-syntactic attribute flow in language based editors - Gregory F. Johnson, Cha
 
 Topic 082
 ---------
-Words (mean weight: -321.240007)
+Words (mean weight: -321.240007, min weight: -731.097142)
   best (-1.407060)
   scalable (-1.971578)
   yield (-2.026363)
@@ -3071,7 +3071,7 @@ Constructing a metacircular Virtual machine in an exploratory programming enviro
 
 Topic 083
 ---------
-Words (mean weight: -349.237344)
+Words (mean weight: -349.237344, min weight: -751.207003)
   correctness (-0.856135)
   termination (-2.075583)
   proving (-2.757770)
@@ -3108,7 +3108,7 @@ Decisions for \"type\" in APL - W. E. Gull, M. A. Jenkins (POPL 1979)
 
 Topic 084
 ---------
-Words (mean weight: -298.556755)
+Words (mean weight: -298.556755, min weight: -684.334677)
   previous (-0.001827)
   hide (-6.411643)
   compiling (-9.461085)
@@ -3145,7 +3145,7 @@ Why dependent types matter - James McKinna (POPL 2006)
 
 Topic 085
 ---------
-Words (mean weight: -319.651063)
+Words (mean weight: -319.651063, min weight: -735.075999)
   efficient (-0.275110)
   generate (-2.102571)
   expensive (-2.756588)
@@ -3182,7 +3182,7 @@ Automating Repetitive Tasks for the Masses - Sumit Gulwani (POPL 2015)
 
 Topic 086
 ---------
-Words (mean weight: -327.535471)
+Words (mean weight: -327.535471, min weight: -750.964506)
   concurrency (-1.286010)
   implementing (-1.789193)
   firstclass (-1.895435)
@@ -3219,7 +3219,7 @@ Call forwarding: a simple interprocedural optimization technique for dynamically
 
 Topic 087
 ---------
-Words (mean weight: -376.786683)
+Words (mean weight: -376.786683, min weight: -745.264416)
   partial (-1.513215)
   elimination (-2.414267)
   redundancy (-2.953864)
@@ -3256,7 +3256,7 @@ Register allocation over the program dependence graph - Cindy Norris, Lori L. Po
 
 Topic 088
 ---------
-Words (mean weight: -278.137004)
+Words (mean weight: -278.137004, min weight: -646.354368)
   effectively (-0.001813)
   indicate (-6.644895)
   extract (-8.580486)
@@ -3293,7 +3293,7 @@ Advanced programming language design in enterprise software: a lambda-calculus t
 
 Topic 089
 ---------
-Words (mean weight: -329.937482)
+Words (mean weight: -329.937482, min weight: -749.455117)
   runtime (-0.227553)
   compiletime (-2.007751)
   eliminate (-4.276515)
@@ -3330,7 +3330,7 @@ Exploring the acceptability envelope - Martin Rinard, Cristian Cadar, Huu Hai Ng
 
 Topic 090
 ---------
-Words (mean weight: -347.416928)
+Words (mean weight: -347.416928, min weight: -744.030120)
   instance (-1.649891)
   argument (-1.994189)
   closure (-2.597270)
@@ -3367,7 +3367,7 @@ Quantitative relaxation of concurrent data structures - Thomas A. Henzinger, Chr
 
 Topic 091
 ---------
-Words (mean weight: -365.099265)
+Words (mean weight: -365.099265, min weight: -738.833111)
   complexity (-1.233508)
   lazy (-2.152117)
   equation (-2.596221)
@@ -3404,7 +3404,7 @@ Helping students appreciate test-driven development (TDD) - Jaime Spacco, Willia
 
 Topic 092
 ---------
-Words (mean weight: -316.502583)
+Words (mean weight: -316.502583, min weight: -739.796471)
   program (-0.000000)
   compute (-14.802403)
   prior (-17.132077)
@@ -3441,7 +3441,7 @@ Structural semantics for polymorphic data types (preliminary report) - Daniel Le
 
 Topic 093
 ---------
-Words (mean weight: -297.433905)
+Words (mean weight: -297.433905, min weight: -697.704113)
   much (-1.004978)
   although (-1.628195)
   better (-2.042815)
@@ -3478,7 +3478,7 @@ Defunctionalized interpreters for programming languages - Olivier Danvy (ICFP 20
 
 Topic 094
 ---------
-Words (mean weight: -370.194168)
+Words (mean weight: -370.194168, min weight: -749.898539)
   search (-1.881917)
   checker (-2.475116)
   multithreaded (-2.857922)
@@ -3515,7 +3515,7 @@ Creating efficient systems for object-oriented languages - Norihisa Suzuki, Mino
 
 Topic 095
 ---------
-Words (mean weight: -351.970273)
+Words (mean weight: -351.970273, min weight: -743.916337)
   typed (-1.125926)
   scheme (-1.191399)
   strongly (-3.145090)
@@ -3552,7 +3552,7 @@ Limitations of synchronous communication with static process structure in langua
 
 Topic 096
 ---------
-Words (mean weight: -348.768549)
+Words (mean weight: -348.768549, min weight: -734.349895)
   control (-0.532471)
   operator (-1.805778)
   go (-3.111470)
@@ -3589,7 +3589,7 @@ Foundations for the implementation of higher-order subtyping - Karl Crary (ICFP 
 
 Topic 097
 ---------
-Words (mean weight: -298.567398)
+Words (mean weight: -298.567398, min weight: -718.337979)
   show (-0.000001)
   derive (-14.014594)
   naturally (-19.399827)
@@ -3626,7 +3626,7 @@ Domain driven web development with WebJinn - Sergei Kojarski, David H. Lorenz (O
 
 Topic 098
 ---------
-Words (mean weight: -358.212805)
+Words (mean weight: -358.212805, min weight: -750.310918)
   requirement (-1.666676)
   relationship (-1.926040)
   diagram (-2.666388)
@@ -3663,7 +3663,7 @@ Why C++ is not just an object-oriented programming language - Bjarne Stroustrup 
 
 Topic 099
 ---------
-Words (mean weight: -372.526721)
+Words (mean weight: -372.526721, min weight: -741.072946)
   dependent (-1.977713)
   counterexample (-3.243061)
   sketch (-3.713311)
@@ -3700,7 +3700,7 @@ Security testing with Selenium - Vidar Kongsli (OOPSLA 2007)
 
 Topic 100
 ---------
-Words (mean weight: -353.672343)
+Words (mean weight: -353.672343, min weight: -751.202442)
   equivalence (-2.086641)
   setting (-2.149446)
   decidable (-2.352243)
@@ -3737,7 +3737,7 @@ Lazy array data-flow dependence analysis - Vadim Maslov (POPL 1994)
 
 Topic 101
 ---------
-Words (mean weight: -325.022084)
+Words (mean weight: -325.022084, min weight: -749.983632)
   set (-0.014131)
   tuples (-4.690445)
   pitt (-6.005756)
@@ -3774,7 +3774,7 @@ Unfold/fold transformations and loop optimization of logic programs - S. K. Debr
 
 Topic 102
 ---------
-Words (mean weight: -352.115997)
+Words (mean weight: -352.115997, min weight: -733.356135)
   guarantee (-1.607169)
   strong (-1.896492)
   expressiveness (-2.415786)
@@ -3811,7 +3811,7 @@ The essence of ML - J. C. Mitchell, R. Harper (POPL 1988)
 
 Topic 103
 ---------
-Words (mean weight: -396.223688)
+Words (mean weight: -396.223688, min weight: -747.043928)
   race (-1.874529)
   detection (-2.124249)
   detecting (-3.589419)
@@ -3848,7 +3848,7 @@ The power of parameterization in coinductive proof - Chung-Kil Hur, Georg Neis, 
 
 Topic 104
 ---------
-Words (mean weight: -329.527949)
+Words (mean weight: -329.527949, min weight: -736.718355)
   formal (-0.994712)
   semantic (-1.163469)
   variant (-1.992282)
@@ -3885,7 +3885,7 @@ Kremlin: rethinking and rebooting gprof for the multicore age - Saturnino Garcia
 
 Topic 105
 ---------
-Words (mean weight: -338.108423)
+Words (mean weight: -338.108423, min weight: -736.373174)
   expression (-0.734991)
   give (-2.007251)
   answer (-3.026277)
@@ -3922,7 +3922,7 @@ Profile-guided static typing for dynamic scripting languages - Michael Furr, Jon
 
 Topic 106
 ---------
-Words (mean weight: -367.263976)
+Words (mean weight: -367.263976, min weight: -743.898466)
   subtyping (-1.706334)
   hierarchy (-1.831028)
   structural (-2.118824)
@@ -3959,7 +3959,7 @@ Object-oriented units of measurement - Eric Allen, David Chase, Victor Luchangco
 
 Topic 107
 ---------
-Words (mean weight: -322.582385)
+Words (mean weight: -322.582385, min weight: -714.145632)
   condition (-0.999529)
   conventional (-1.548656)
   output (-1.756580)
@@ -3996,7 +3996,7 @@ Safety consideration for storage allocation optimizations - D. R. Chase (PLDI 19
 
 Topic 108
 ---------
-Words (mean weight: -316.609495)
+Words (mean weight: -316.609495, min weight: -745.322108)
   benchmark (-1.040708)
   automatically (-1.092415)
   point (-1.191115)
@@ -4033,7 +4033,7 @@ Semantic types: a fresh look at the ideal model for types - Jerome Vouillon, Pau
 
 Topic 109
 ---------
-Words (mean weight: -306.135266)
+Words (mean weight: -306.135266, min weight: -708.631352)
   state (-0.518292)
   local (-1.342471)
   certain (-2.709488)
@@ -4070,7 +4070,7 @@ A fully abstract trace model for dataflow networks - B. Jonsson (POPL 1989)
 
 Topic 110
 ---------
-Words (mean weight: -342.487137)
+Words (mean weight: -342.487137, min weight: -748.411450)
   model (-0.263241)
   relaxed (-3.799575)
   weak (-5.021676)
@@ -4107,7 +4107,7 @@ A typed intermediate language for compiling multiple inheritance - Juan Chen (PO
 
 Topic 111
 ---------
-Words (mean weight: -350.376601)
+Words (mean weight: -350.376601, min weight: -738.925109)
   framework (-0.098945)
   matchmaker (-4.621820)
   interacting (-4.653069)
@@ -4144,7 +4144,7 @@ Automatically generating instruction selectors using declarative machine descrip
 
 Topic 112
 ---------
-Words (mean weight: -381.497047)
+Words (mean weight: -381.497047, min weight: -743.523844)
   inheritance (-1.726247)
   field (-1.873669)
   record (-2.114364)
@@ -4181,7 +4181,7 @@ Principality and decidable type inference for finite-rank intersection types - A
 
 Topic 113
 ---------
-Words (mean weight: -369.035095)
+Words (mean weight: -369.035095, min weight: -746.481142)
   event (-1.754593)
   quantitative (-2.639591)
   sum (-2.932888)
@@ -4218,7 +4218,7 @@ Bytecode compression via profiled grammar rewriting - William S. Evans, Christop
 
 Topic 114
 ---------
-Words (mean weight: -369.250329)
+Words (mean weight: -369.250329, min weight: -749.748574)
   compiler (-0.273988)
   produced (-4.395935)
   infrastructure (-4.542565)
@@ -4255,7 +4255,7 @@ Designed animism - Brenda Laurel (OOPSLA 2006)
 
 Topic 115
 ---------
-Words (mean weight: -302.980095)
+Words (mean weight: -302.980095, min weight: -685.508186)
   whose (-0.622612)
   introduces (-1.053422)
   develops (-2.540012)
@@ -4292,7 +4292,7 @@ Compiling strictness into streams - C. V. Hall, D. S. Wise (POPL 1987)
 
 Topic 116
 ---------
-Words (mean weight: -333.069031)
+Words (mean weight: -333.069031, min weight: -746.485193)
   intermediate (-1.476661)
   idea (-1.766724)
   end (-2.422559)
@@ -4329,7 +4329,7 @@ Probabilistic coherence spaces are fully abstract for probabilistic PCF - Thomas
 
 Topic 117
 ---------
-Words (mean weight: -351.744639)
+Words (mean weight: -351.744639, min weight: -745.029021)
   highly (-2.261899)
   popular (-2.383175)
   match (-3.012951)
@@ -4366,7 +4366,7 @@ Temporal abstract interpretation - Patrick Cousot, Radhia Cousot (POPL 2000)
 
 Topic 118
 ---------
-Words (mean weight: -316.090714)
+Words (mean weight: -316.090714, min weight: -700.135072)
   small (-0.814790)
   wide (-1.716892)
   failure (-2.473741)
@@ -4403,7 +4403,7 @@ Prototype-based languages: object lessons from class-free programming - Randall 
 
 Topic 119
 ---------
-Words (mean weight: -353.364099)
+Words (mean weight: -353.364099, min weight: -748.929544)
   synchronization (-1.622512)
   critical (-2.240636)
   lock (-2.382418)
@@ -4440,7 +4440,7 @@ Optimal code selection in DAGs - M. Anton Ertl (POPL 1999)
 
 Topic 120
 ---------
-Words (mean weight: -332.820490)
+Words (mean weight: -332.820490, min weight: -740.601567)
   construct (-0.819214)
   primitive (-1.539717)
   facility (-2.054352)
@@ -4477,7 +4477,7 @@ Synchronous schemes and their decision problems - Zohar Manna, Amir Pnueli (POPL
 
 Topic 121
 ---------
-Words (mean weight: -390.980224)
+Words (mean weight: -390.980224, min weight: -751.840651)
   reference (-1.657633)
   cache (-2.564502)
   branch (-2.707083)
@@ -4514,7 +4514,7 @@ From implementation to theory in product synthesis - Don Batory (POPL 2007)
 
 Topic 122
 ---------
-Words (mean weight: -352.301836)
+Words (mean weight: -352.301836, min weight: -743.726577)
   workshop (-1.836218)
   technical (-2.276162)
   oopsla (-2.727193)
@@ -4551,7 +4551,7 @@ Bootstrapping one-sided flexible arrays - Ralf Hinze (ICFP 2002)
 
 Topic 123
 ---------
-Words (mean weight: -348.490597)
+Words (mean weight: -348.490597, min weight: -747.833373)
   higherorder (-1.004539)
   imperative (-1.738253)
   firstorder (-2.285866)
@@ -4588,7 +4588,7 @@ Cause clue clauses: error localization using maximum satisfiability - Manu Jose,
 
 Topic 124
 ---------
-Words (mean weight: -364.909044)
+Words (mean weight: -364.909044, min weight: -737.017580)
   variable (-0.763191)
   binding (-2.248268)
   scope (-2.743218)
@@ -4625,7 +4625,7 @@ The power of assignment motion - Jens Knoop, Oliver Rüthing, Bernhard Steffen (
 
 Topic 125
 ---------
-Words (mean weight: -383.547631)
+Words (mean weight: -383.547631, min weight: -743.057800)
   smalltalk (-1.347839)
   declaration (-3.529434)
   active (-3.965275)
@@ -4662,7 +4662,7 @@ Syntactic accidents in program analysis: on the impact of the CPS transformation
 
 Topic 126
 ---------
-Words (mean weight: -373.089509)
+Words (mean weight: -373.089509, min weight: -751.759644)
   type (-0.049181)
   overloading (-4.316810)
   adhoc (-4.931008)
@@ -4699,7 +4699,7 @@ On coinductive equivalences for higher-order probabilistic functional programs -
 
 Topic 127
 ---------
-Words (mean weight: -361.406562)
+Words (mean weight: -361.406562, min weight: -723.145528)
   pointer (-1.286775)
   list (-1.943632)
   assignment (-2.080965)
@@ -4736,7 +4736,7 @@ Algebraic Effects, Linearity, and Quantum Programming Languages - Sam Staton (PO
 
 Topic 128
 ---------
-Words (mean weight: -390.812169)
+Words (mean weight: -390.812169, min weight: -748.696439)
   aspect (-1.778856)
   concern (-2.397320)
   aspectoriented (-2.829251)
@@ -4773,7 +4773,7 @@ Lock elision for read-only critical sections in Java - Takuya Nakaike, Maged M. 
 
 Topic 129
 ---------
-Words (mean weight: -362.863784)
+Words (mean weight: -362.863784, min weight: -731.978557)
   effect (-1.140730)
   computational (-2.122439)
   monad (-2.122440)
@@ -4810,7 +4810,7 @@ How to analyze large programs efficiently and informatively - Dhananjay M. Dhamd
 
 Topic 130
 ---------
-Words (mean weight: -391.930019)
+Words (mean weight: -391.930019, min weight: -750.586017)
   bug (-1.749649)
   false (-3.087869)
   finding (-3.238577)
@@ -4847,7 +4847,7 @@ A framework for run-time systems and its visual programming language - Alan M. D
 
 Topic 131
 ---------
-Words (mean weight: -373.686087)
+Words (mean weight: -373.686087, min weight: -748.600319)
   net (-2.636506)
   visualization (-2.825248)
   template (-2.887003)
@@ -4884,7 +4884,7 @@ Jazz: a collaborative application development environment - Li-Te Cheng, Susanne
 
 Topic 132
 ---------
-Words (mean weight: -404.725886)
+Words (mean weight: -404.725886, min weight: -748.086814)
   life (-3.913117)
   book (-4.116819)
   theme (-4.498584)
@@ -4921,7 +4921,7 @@ Visualizing and AspectJ-enabling eclipse plugins using bytecode instrumentation 
 
 Topic 133
 ---------
-Words (mean weight: -337.294034)
+Words (mean weight: -337.294034, min weight: -749.272276)
   development (-0.276826)
   objective (-3.033094)
   management (-3.361023)
@@ -4958,7 +4958,7 @@ Processes (panel session): the roles of ceremony and adaptation - Brian Henderso
 
 Topic 134
 ---------
-Words (mean weight: -335.036959)
+Words (mean weight: -335.036959, min weight: -744.976923)
   structure (-0.098485)
   constructed (-4.701196)
   active (-5.227210)
@@ -4995,7 +4995,7 @@ Computable values can be classical - V. Breazu-Tannen, A. R. Meyer (POPL 1987)
 
 Topic 135
 ---------
-Words (mean weight: -394.337230)
+Words (mean weight: -394.337230, min weight: -751.896436)
   class (-0.576850)
   file (-3.187211)
   beta (-3.814489)
@@ -5032,7 +5032,7 @@ Polymorphism and page tables: systems programming from a functional programmer's
 
 Topic 136
 ---------
-Words (mean weight: -277.024277)
+Words (mean weight: -277.024277, min weight: -644.584678)
   nature (-0.249929)
   performing (-1.531995)
   might (-5.637115)
@@ -5069,7 +5069,7 @@ How to cook a temporal proof system for your pet language - Zohar Manna, Amir Pn
 
 Topic 137
 ---------
-Words (mean weight: -375.364932)
+Words (mean weight: -375.364932, min weight: -736.271962)
   translation (-1.583017)
   target (-1.864909)
   selfadjusting (-3.192455)
@@ -5106,7 +5106,7 @@ Fissile type analysis: modular checking of almost everywhere invariants - Devin 
 
 Topic 138
 ---------
-Words (mean weight: -359.072587)
+Words (mean weight: -359.072587, min weight: -742.828222)
   check (-1.342621)
   range (-1.448091)
   propagation (-2.880707)
@@ -5143,7 +5143,7 @@ Web testing made easy - Marc Guillemot, Dierk König (OOPSLA 2006)
 
 Topic 139
 ---------
-Words (mean weight: -377.549775)
+Words (mean weight: -377.549775, min weight: -737.176914)
   query (-1.615693)
   database (-2.079409)
   individual (-2.593486)
@@ -5180,7 +5180,7 @@ Modular typechecking for hierarchically extensible datatypes and functions - Tod
 
 Topic 140
 ---------
-Words (mean weight: -324.518267)
+Words (mean weight: -324.518267, min weight: -737.106685)
   construction (-1.254267)
   introduced (-1.993052)
   fixed (-2.145017)
@@ -5217,7 +5217,7 @@ End users - Bob Marcus (OOPSLA 1991)
 
 Topic 141
 ---------
-Words (mean weight: -311.302903)
+Words (mean weight: -311.302903, min weight: -715.396763)
   proposed (-0.800757)
   respect (-1.223347)
   moreover (-1.593795)
@@ -5254,7 +5254,7 @@ Lower bounds on type inference with subtypes - My Hoang, John C. Mitchell (POPL 
 
 Topic 142
 ---------
-Words (mean weight: -342.487137)
+Words (mean weight: -342.487137, min weight: -748.411450)
   model (-0.263241)
   relaxed (-3.799575)
   weak (-5.021676)
@@ -5291,7 +5291,7 @@ A typed intermediate language for compiling multiple inheritance - Juan Chen (PO
 
 Topic 143
 ---------
-Words (mean weight: -356.447975)
+Words (mean weight: -356.447975, min weight: -742.549053)
   annotation (-1.501917)
   infer (-2.447629)
   version (-2.520628)
@@ -5328,7 +5328,7 @@ Learning and reuse in visual programming environments: simulation builder for te
 
 Topic 144
 ---------
-Words (mean weight: -381.031660)
+Words (mean weight: -381.031660, min weight: -749.065871)
   pattern (-0.954379)
   regular (-2.558773)
   matching (-2.597351)
@@ -5365,7 +5365,7 @@ Register promotion in C programs - John Lu, Keith D. Cooper (PLDI 1997)
 
 Topic 145
 ---------
-Words (mean weight: -351.987590)
+Words (mean weight: -351.987590, min weight: -742.820678)
   computing (-1.441924)
   mobile (-2.353445)
   agent (-2.760590)
@@ -5402,7 +5402,7 @@ Fair stateless model checking - Madanlal Musuvathi, Shaz Qadeer (PLDI 2008)
 
 Topic 146
 ---------
-Words (mean weight: -345.824046)
+Words (mean weight: -345.824046, min weight: -749.567230)
   evaluation (-0.856534)
   linear (-1.360392)
   consequently (-3.574519)
@@ -5439,7 +5439,7 @@ Recursion and dynamic data-structures in bounded space: towards embedded ML prog
 
 Topic 147
 ---------
-Words (mean weight: -400.756168)
+Words (mean weight: -400.756168, min weight: -751.667061)
   network (-1.738052)
   device (-3.713225)
   sensor (-3.754764)
@@ -5476,7 +5476,7 @@ A translation approach to component specification - Fei Cao, Barrett R. Bryant, 
 
 Topic 148
 ---------
-Words (mean weight: -389.916924)
+Words (mean weight: -389.916924, min weight: -744.035164)
   flow (-1.074694)
   graph (-1.280484)
   node (-3.130642)
@@ -5513,7 +5513,7 @@ The functional guts of the Kleisli query system - Limsoon Wong (ICFP 2000)
 
 Topic 149
 ---------
-Words (mean weight: -365.822544)
+Words (mean weight: -365.822544, min weight: -751.467709)
   core (-1.563907)
   platform (-2.247710)
   composition (-2.263445)
@@ -5550,7 +5550,7 @@ Contaminated garbage collection - Dante J. Cannarozzi, Michael P. Plezbert, Ron 
 
 Topic 150
 ---------
-Words (mean weight: -338.798821)
+Words (mean weight: -338.798821, min weight: -729.144672)
   algorithm (-0.015013)
   depthfirst (-5.626635)
   derive (-5.670421)
@@ -5587,7 +5587,7 @@ Saving legacy with objects - W. C. Dietrich, Jr., L. R. Nackman, F. Gracer (OOPS
 
 Topic 151
 ---------
-Words (mean weight: -313.332408)
+Words (mean weight: -313.332408, min weight: -737.859134)
   language (-0.000004)
   external (-12.540641)
   come (-15.644093)
@@ -5624,7 +5624,7 @@ Teaching software testing: automatic grading meets test-first coding - Stephen H
 
 Topic 152
 ---------
-Words (mean weight: -375.222633)
+Words (mean weight: -375.222633, min weight: -747.515940)
   debugging (-1.977256)
   debugger (-2.739397)
   optimized (-3.010195)
@@ -5661,7 +5661,7 @@ Parametric completeness for separation theories - James Brotherston, Jules Villa
 
 Topic 153
 ---------
-Words (mean weight: -297.534131)
+Words (mean weight: -297.534131, min weight: -684.187073)
   include (-0.681925)
   modern (-0.704560)
   stateoftheart (-10.566817)
@@ -5698,7 +5698,7 @@ Introducing computer science with Project Hoshimi - Javier Gonzalez Sanchez, Ram
 
 Topic 154
 ---------
-Words (mean weight: -362.037832)
+Words (mean weight: -362.037832, min weight: -748.157261)
   mathematical (-2.678076)
   difficulty (-2.744232)
   ocaml (-3.261841)
@@ -5735,7 +5735,7 @@ On the expressive power of query languages for relational databases - Eric C. Co
 
 Topic 155
 ---------
-Words (mean weight: -318.195506)
+Words (mean weight: -318.195506, min weight: -727.985310)
   may (-0.425991)
   part (-1.121261)
   depends (-4.559710)
@@ -5772,7 +5772,7 @@ Complete instantiation-based interpolation - Nishant Totla, Thomas Wies (POPL 20
 
 Topic 156
 ---------
-Words (mean weight: -351.727135)
+Words (mean weight: -351.727135, min weight: -741.607852)
   selection (-2.253321)
   declarative (-2.276916)
   applicable (-2.300981)
@@ -5809,7 +5809,7 @@ Java type inference is broken: can we fix it? - Daniel Smith, Robert Cartwright 
 
 Topic 157
 ---------
-Words (mean weight: -347.290784)
+Words (mean weight: -347.290784, min weight: -744.159601)
   architecture (-0.831453)
   instrumentation (-2.813652)
   bit (-2.974150)
@@ -5846,7 +5846,7 @@ Visitor combination and traversal control - Joost Visser (OOPSLA 2001)
 
 Topic 158
 ---------
-Words (mean weight: -317.764067)
+Words (mean weight: -317.764067, min weight: -749.388737)
   programmer (-0.502658)
   write (-1.800268)
   improve (-1.971229)
@@ -5883,7 +5883,7 @@ The design and verification of Java's memory model - Jeremy Manson (OOPSLA 2002)
 
 Topic 159
 ---------
-Words (mean weight: -368.853172)
+Words (mean weight: -368.853172, min weight: -749.221883)
   test (-1.231555)
   testing (-1.449607)
   suite (-2.799401)
@@ -5920,7 +5920,7 @@ Beyond AOP: toward naturalistic programming - Cristina Videira Lopes, Paul Douri
 
 Topic 160
 ---------
-Words (mean weight: -364.592818)
+Words (mean weight: -364.592818, min weight: -734.868379)
   computer (-1.768518)
   role (-2.529757)
   science (-3.212505)
@@ -5957,7 +5957,7 @@ An ideal model for recursive polymorphic types - David MacQueen, Gordon Plotkin,
 
 Topic 161
 ---------
-Words (mean weight: -288.172571)
+Words (mean weight: -288.172571, min weight: -641.643121)
   every (-0.201026)
   reduces (-1.893360)
   applies (-3.460662)
@@ -5994,7 +5994,7 @@ Using dependency models to manage software architecture - Neeraj Sangal, Ev Jord
 
 Topic 162
 ---------
-Words (mean weight: -353.379677)
+Words (mean weight: -353.379677, min weight: -744.713590)
   definition (-1.007644)
   syntax (-1.938565)
   syntactic (-2.129867)
@@ -6031,7 +6031,7 @@ Better static memory management: improving region-based analysis of higher-order
 
 Topic 163
 ---------
-Words (mean weight: -326.692215)
+Words (mean weight: -326.692215, min weight: -749.180749)
   system (-0.000067)
   serve (-9.799038)
   coordinated (-11.895273)
@@ -6068,7 +6068,7 @@ A constraint-based approach to solving games on infinite graphs - Tewodros Beyen
 
 Topic 164
 ---------
-Words (mean weight: -327.141014)
+Words (mean weight: -327.141014, min weight: -726.119768)
   approach (-0.001944)
   decreased (-6.865719)
   retrieving (-7.016758)
@@ -6105,7 +6105,7 @@ A fully abstract trace model for dataflow networks - B. Jonsson (POPL 1989)
 
 Topic 165
 ---------
-Words (mean weight: -301.476601)
+Words (mean weight: -301.476601, min weight: -695.315308)
   take (-0.646644)
   advantage (-0.870948)
   taking (-3.311960)
@@ -6142,7 +6142,7 @@ Variance analyses from invariance analyses - Josh Berdine, Aziem Chawdhary, Byro
 
 Topic 166
 ---------
-Words (mean weight: -355.567624)
+Words (mean weight: -355.567624, min weight: -743.862345)
   future (-1.900145)
   reflection (-2.952391)
   qualifier (-3.090486)
@@ -6179,7 +6179,7 @@ A monotonic superclass linearization for Dylan - Kim Barrett, Bob Cassels, Paul 
 
 Topic 167
 ---------
-Words (mean weight: -416.249746)
+Words (mean weight: -416.249746, min weight: -745.296823)
   type (-0.888200)
   typing (-2.831655)
   discipline (-3.636945)
@@ -6216,7 +6216,7 @@ Managing ambiguity in programming by finding unambiguous examples - Kenneth C. A
 
 Topic 168
 ---------
-Words (mean weight: -312.686410)
+Words (mean weight: -312.686410, min weight: -731.930033)
   result (-0.161530)
   experimental (-1.902860)
   indicate (-10.958046)
@@ -6253,7 +6253,7 @@ A delta-driven execution model for semantic computing - Roly Perera, Jeff Foster
 
 Topic 169
 ---------
-Words (mean weight: -307.125268)
+Words (mean weight: -307.125268, min weight: -695.096637)
   addressed (-1.601135)
   true (-1.662821)
   incorporated (-1.969233)
@@ -6290,7 +6290,7 @@ Combining abstract interpreters - Sumit Gulwani, Ashish Tiwari (PLDI 2006)
 
 Topic 170
 ---------
-Words (mean weight: -371.820460)
+Words (mean weight: -371.820460, min weight: -742.171083)
   error (-0.981124)
   server (-2.468286)
   cause (-3.318709)
@@ -6327,7 +6327,7 @@ Quantitative information flow as network flow capacity - Stephen McCamant, Micha
 
 Topic 171
 ---------
-Words (mean weight: -353.821174)
+Words (mean weight: -353.821174, min weight: -749.425692)
   system (-1.170320)
   choice (-2.318323)
   operating (-2.390365)
@@ -6364,7 +6364,7 @@ The essence of Reynolds - Stephen Brookes, Peter W. O'Hearn, Uday Reddy (POPL 20
 
 Topic 172
 ---------
-Words (mean weight: -382.318284)
+Words (mean weight: -382.318284, min weight: -742.644360)
   verification (-1.166427)
   contract (-2.453346)
   verify (-2.651645)
@@ -6401,7 +6401,7 @@ Minimization of symbolic automata - Loris D'Antoni, Margus Veanes (POPL 2014)
 
 Topic 173
 ---------
-Words (mean weight: -299.982996)
+Words (mean weight: -299.982996, min weight: -705.917654)
   implemented (-0.027319)
   simultaneously (-3.613891)
   external (-13.718679)
@@ -6438,7 +6438,7 @@ Higher-order concurrent programs with finite communication topology (extended ab
 
 Topic 174
 ---------
-Words (mean weight: -380.108391)
+Words (mean weight: -380.108391, min weight: -740.144130)
   specification (-0.722088)
   pass (-4.309482)
   precise (-4.398211)
@@ -6475,7 +6475,7 @@ Conditional must not aliasing for static race detection - Mayur Naik, Alex Aiken
 
 Topic 175
 ---------
-Words (mean weight: -283.653753)
+Words (mean weight: -283.653753, min weight: -659.300362)
   across (-0.343583)
   interest (-1.240405)
   divide (-6.520344)
@@ -6512,7 +6512,7 @@ Iterate applications not just prototypes - John A. Cupparo (OOPSLA 1993)
 
 Topic 176
 ---------
-Words (mean weight: -369.918249)
+Words (mean weight: -369.918249, min weight: -751.202268)
   consistency (-2.659412)
   consistent (-2.811057)
   ad (-3.014646)
@@ -6549,7 +6549,7 @@ Modular set-based analysis from contracts - Philippe Meunier, Robert Bruce Findl
 
 Topic 177
 ---------
-Words (mean weight: -341.962485)
+Words (mean weight: -341.962485, min weight: -747.918266)
   design (-0.060910)
   designer (-3.686702)
   collaboration (-4.310007)
@@ -6586,7 +6586,7 @@ Building and performance tuning a distributed reporting application for an OODBM
 
 Topic 178
 ---------
-Words (mean weight: -409.137059)
+Words (mean weight: -409.137059, min weight: -743.565421)
   api (-2.574835)
   client (-2.716388)
   apis (-3.367505)
@@ -6623,7 +6623,7 @@ Towards a two-dimensional separation of concerns (poster session) - Constantinos
 
 Topic 179
 ---------
-Words (mean weight: -337.070343)
+Words (mean weight: -337.070343, min weight: -741.744309)
   representation (-0.706963)
   dependency (-2.032625)
   permit (-2.342004)
@@ -6660,7 +6660,7 @@ Checking type safety of foreign function calls - Michael Furr, Jeffrey S. Foster
 
 Topic 180
 ---------
-Words (mean weight: -336.289998)
+Words (mean weight: -336.289998, min weight: -735.356705)
   block (-1.467663)
   generated (-1.569595)
   subset (-1.912899)
@@ -6697,7 +6697,7 @@ GOOAL: an educational object oriented analysis laboratory - H. G. Pérez-Gonzál
 
 Topic 181
 ---------
-Words (mean weight: -342.742791)
+Words (mean weight: -342.742791, min weight: -748.541049)
   extension (-0.720833)
   ml (-1.412844)
   extend (-2.038471)
@@ -6734,7 +6734,7 @@ Team approaches to OO design - Steven D. Fraser, Lynn Marshall, Tony Bailetti (O
 
 Topic 182
 ---------
-Words (mean weight: -422.556049)
+Words (mean weight: -422.556049, min weight: -743.699730)
   collection (-1.875016)
   garbage (-2.010710)
   collector (-2.302730)
@@ -6771,7 +6771,7 @@ OO design methodology of a DSL using EMF: (demonstration for the telco revenue a
 
 Topic 183
 ---------
-Words (mean weight: -347.267926)
+Words (mean weight: -347.267926, min weight: -740.255126)
   unit (-2.106775)
   measurement (-2.292193)
   expressed (-2.373400)
@@ -6808,7 +6808,7 @@ Region inference for an object-oriented language - Wei-Ngan Chin, Florin Craciun
 
 Topic 184
 ---------
-Words (mean weight: -308.593403)
+Words (mean weight: -308.593403, min weight: -690.142226)
   value (-0.421128)
   prototype (-1.614753)
   applying (-3.031974)
@@ -6845,7 +6845,7 @@ Inductive, coinductive, and pointed types - Brian T. Howard (ICFP 1996)
 
 Topic 185
 ---------
-Words (mean weight: -373.742217)
+Words (mean weight: -373.742217, min weight: -746.964782)
   dynamic (-0.489455)
   dynamically (-3.193860)
   slice (-3.685543)
@@ -6882,7 +6882,7 @@ Creating an informative workspace - Rachel Davies, David Hussman (OOPSLA 2006)
 
 Topic 186
 ---------
-Words (mean weight: -310.634061)
+Words (mean weight: -310.634061, min weight: -727.837015)
   practice (-1.047993)
   useful (-1.123454)
   specifying (-2.380910)
@@ -6919,7 +6919,7 @@ Transactional events for ML - Laura Effinger-Dean, Matthew Kehrt, Dan Grossman (
 
 Topic 187
 ---------
-Words (mean weight: -395.581470)
+Words (mean weight: -395.581470, min weight: -744.324495)
   calculus (-1.041487)
   lambda (-2.132362)
   lgr (-3.260303)
@@ -6956,7 +6956,7 @@ Differential register allocation - Xiaotong Zhuang, Santosh Pande (PLDI 2005)
 
 Topic 188
 ---------
-Words (mean weight: -371.253706)
+Words (mean weight: -371.253706, min weight: -746.116605)
   protocol (-1.676533)
   trace (-1.752448)
   monitoring (-2.657571)
@@ -6993,7 +6993,7 @@ Experience with CST: programming and implementation - W. Horwat, A. A. Chien, W.
 
 Topic 189
 ---------
-Words (mean weight: -345.140970)
+Words (mean weight: -345.140970, min weight: -740.469505)
   interpretation (-0.964616)
   family (-1.980266)
   strict (-2.887499)
@@ -7030,7 +7030,7 @@ Spill code minimization via interference region spilling - Peter Bergner, Peter 
 
 Topic 190
 ---------
-Words (mean weight: -323.939322)
+Words (mean weight: -323.939322, min weight: -731.231553)
   soundness (-1.298233)
   separate (-1.303388)
   proven (-2.635605)
@@ -7067,7 +7067,7 @@ Applicative functors and fully transparent higher-order modules - Xavier Leroy (
 
 Topic 191
 ---------
-Words (mean weight: -296.495814)
+Words (mean weight: -296.495814, min weight: -677.974494)
   known (-0.054084)
   allowed (-3.886536)
   variation (-4.516788)
@@ -7104,7 +7104,7 @@ Trampolined style - Steven E. Ganz, Daniel P. Friedman, Mitchell Wand (ICFP 1999
 
 Topic 192
 ---------
-Words (mean weight: -351.490195)
+Words (mean weight: -351.490195, min weight: -748.440534)
   analysis (-0.013347)
   analyzes (-5.830652)
   concerning (-6.200896)
@@ -7141,7 +7141,7 @@ Incremental exploratory visualization of relationships in large codebases for pr
 
 Topic 193
 ---------
-Words (mean weight: -337.346986)
+Words (mean weight: -337.346986, min weight: -747.349286)
   checking (-0.623436)
   explicit (-1.512945)
   checked (-2.588104)
@@ -7178,7 +7178,7 @@ Simplifying subtyping constraints - François Pottier (ICFP 1996)
 
 Topic 194
 ---------
-Words (mean weight: -330.865806)
+Words (mean weight: -330.865806, min weight: -747.535017)
   programming (-0.000000)
   excellent (-19.217149)
   language (-20.262682)
@@ -7215,7 +7215,7 @@ Parametric polymorphism for Java: a reflective solution - Jose H. Solorzano, Sua
 
 Topic 195
 ---------
-Words (mean weight: -399.872153)
+Words (mean weight: -399.872153, min weight: -748.074969)
   atomic (-2.489184)
   transactional (-2.787946)
   transaction (-3.041833)
@@ -7252,7 +7252,7 @@ Dependence flow graphs: an algebraic approach to program dependencies - Keshav P
 
 Topic 196
 ---------
-Words (mean weight: -342.392524)
+Words (mean weight: -342.392524, min weight: -750.374315)
   interaction (-1.344187)
   session (-2.265197)
   criterion (-2.516517)
@@ -7289,7 +7289,7 @@ Experience report: scheme in commercial web application development - Noel Welsh
 
 Topic 197
 ---------
-Words (mean weight: -301.199131)
+Words (mean weight: -301.199131, min weight: -691.751910)
   requires (-0.507344)
   combine (-0.944061)
   track (-4.726202)
@@ -7326,7 +7326,7 @@ Modal logic & ownership types: uniting three worlds - Pradeep Kumar (OOPSLA 2006
 
 Topic 198
 ---------
-Words (mean weight: -384.188339)
+Words (mean weight: -384.188339, min weight: -750.721355)
   object (-0.375850)
   sharing (-2.623844)
   group (-3.980473)
@@ -7363,7 +7363,7 @@ An execution model for distributed object-oriented computation - Edward H. Bensl
 
 Topic 199
 ---------
-Words (mean weight: -379.073957)
+Words (mean weight: -379.073957, min weight: -741.295762)
   bounded (-2.538987)
   reactive (-2.790290)
   synchronous (-3.059153)
@@ -7400,7 +7400,7 @@ Bamboo: a data-centric, object-oriented approach to many-core software - Jin Zho
 
 Topic 200
 ---------
-Words (mean weight: -408.495029)
+Words (mean weight: -408.495029, min weight: -750.613957)
   parser (-2.475313)
   automaton (-2.567211)
   parsing (-2.637774)
@@ -7437,7 +7437,7 @@ Dynamically updatable component-based system (DUCS) - Robert Bialek (OOPSLA 2003
 
 Topic 201
 ---------
-Words (mean weight: -378.521046)
+Words (mean weight: -378.521046, min weight: -751.011373)
   compilation (-1.329561)
   virtual (-1.673464)
   jit (-3.483497)
@@ -7474,7 +7474,7 @@ Fast and flexible instruction selection with on-demand tree-parsing automata - M
 
 Topic 202
 ---------
-Words (mean weight: -320.455240)
+Words (mean weight: -320.455240, min weight: -721.255423)
   language (-0.963272)
   writing (-1.053059)
   expressing (-1.841696)
@@ -7511,7 +7511,7 @@ Grids: A new program structuring mechanism based on layered graphs - Harold L. O
 
 Topic 203
 ---------
-Words (mean weight: -321.420313)
+Words (mean weight: -321.420313, min weight: -739.957227)
   designed (-1.203745)
   provided (-1.833108)
   action (-2.063703)
@@ -7548,7 +7548,7 @@ Mining implementation recipes of framework-provided concepts in dynamic framewor
 
 Topic 204
 ---------
-Words (mean weight: -350.400813)
+Words (mean weight: -350.400813, min weight: -738.743432)
   user (-1.053026)
   interface (-1.166708)
   window (-2.925401)
@@ -7585,7 +7585,7 @@ The design and implementation of a certifying compiler - George C. Necula, Peter
 
 Topic 205
 ---------
-Words (mean weight: -326.606641)
+Words (mean weight: -326.606641, min weight: -741.645935)
   input (-0.838975)
   parameter (-1.707714)
   specified (-2.299089)
@@ -7622,7 +7622,7 @@ Putting type annotations to work - Martin Odersky, Konstantin Läufer (POPL 1996
 
 Topic 206
 ---------
-Words (mean weight: -336.038099)
+Words (mean weight: -336.038099, min weight: -751.037022)
   style (-1.451176)
   asynchronous (-1.971978)
   top (-2.602714)
@@ -7659,7 +7659,7 @@ A VHDL compiler based on attribute grammar methodology - R. Farrow, A. G. Stancu
 
 Topic 207
 ---------
-Words (mean weight: -323.754788)
+Words (mean weight: -323.754788, min weight: -736.429107)
   information (-0.106818)
   minimal (-2.599880)
   actually (-4.453066)
@@ -7696,7 +7696,7 @@ Pattern-based tree attribution - Charles Farnum (POPL 1992)
 
 Topic 208
 ---------
-Words (mean weight: -325.759212)
+Words (mean weight: -325.759212, min weight: -741.156522)
   illustrate (-1.546704)
   describing (-2.178206)
   lead (-2.267392)
@@ -7733,7 +7733,7 @@ The JastAdd extensible Java compiler - Torbjörn Ekman, Görel Hedin (OOPSLA 200
 
 Topic 209
 ---------
-Words (mean weight: -303.821720)
+Words (mean weight: -303.821720, min weight: -679.867110)
   general (-0.136615)
   discussed (-2.060465)
   seems (-8.116821)
@@ -7770,7 +7770,7 @@ A functional macro expansion system for optimizing code generation: gaining cont
 
 Topic 210
 ---------
-Words (mean weight: -376.366280)
+Words (mean weight: -376.366280, min weight: -748.445738)
   power (-1.681605)
   behaviour (-2.684056)
   saving (-3.396269)
@@ -7807,7 +7807,7 @@ From Network Interface to Multithreaded Web Applications: A Case Study in Modula
 
 Topic 211
 ---------
-Words (mean weight: -371.050939)
+Words (mean weight: -371.050939, min weight: -719.985203)
   statement (-1.638637)
   dependence (-1.668421)
   vector (-2.970185)
@@ -7844,7 +7844,7 @@ Autolocker: synchronization inference for atomic sections - Bill McCloskey, Feng
 
 Topic 212
 ---------
-Words (mean weight: -351.867584)
+Words (mean weight: -351.867584, min weight: -746.418435)
   generation (-1.245287)
   integrated (-2.112355)
   generating (-2.390465)
@@ -7881,7 +7881,7 @@ Efficient multiple and predicated dispatching - Craig Chambers, Weimin Chen (OOP
 
 Topic 213
 ---------
-Words (mean weight: -328.389376)
+Words (mean weight: -328.389376, min weight: -747.968788)
   solution (-0.803033)
   evaluate (-1.839551)
   poster (-2.394967)
@@ -7918,7 +7918,7 @@ Perl 6: reconciling the irreconcilable - Audrey Tang (POPL 2007)
 
 Topic 214
 ---------
-Words (mean weight: -352.684396)
+Words (mean weight: -352.684396, min weight: -744.988356)
   paradigm (-1.794577)
   kernel (-2.341671)
   suggest (-2.736679)
@@ -7955,7 +7955,7 @@ Teaching software testing: automatic grading meets test-first coding - Stephen H
 
 Topic 215
 ---------
-Words (mean weight: -390.130512)
+Words (mean weight: -390.130512, min weight: -747.479119)
   proof (-0.911240)
   coq (-2.897635)
   assistant (-3.284240)
@@ -7992,7 +7992,7 @@ Time and space profiling for non-strict, higher-order functional languages - Pat
 
 Topic 216
 ---------
-Words (mean weight: -353.299137)
+Words (mean weight: -353.299137, min weight: -746.047175)
   rule (-0.899907)
   sequence (-1.717570)
   rewriting (-2.701716)
@@ -8029,7 +8029,7 @@ A compact, machine-independent peephole optimizer - Christopher W. Fraser (POPL 
 
 Topic 217
 ---------
-Words (mean weight: -302.788403)
+Words (mean weight: -302.788403, min weight: -709.274773)
   efficiently (-1.255755)
   step (-1.309326)
   strategy (-1.574974)
@@ -8066,7 +8066,7 @@ A serializability violation detector for shared-memory server programs - Min Xu,
 
 Topic 218
 ---------
-Words (mean weight: -299.435113)
+Words (mean weight: -299.435113, min weight: -699.049857)
   two (-0.010810)
   complementary (-4.532674)
   applicability (-15.556938)
@@ -8103,7 +8103,7 @@ Unrestricted procedure calls in Hoare's logic - Robert Cartwright, Derek Oppen (
 
 Topic 219
 ---------
-Words (mean weight: -344.633032)
+Words (mean weight: -344.633032, min weight: -750.972656)
   technology (-1.367909)
   university (-2.874885)
   degree (-2.917071)
@@ -8140,7 +8140,7 @@ CLAM: an OO framework for developing audio and music applications - Xavier Amatr
 
 Topic 220
 ---------
-Words (mean weight: -383.516111)
+Words (mean weight: -383.516111, min weight: -750.620427)
   relation (-1.712238)
   logical (-2.415291)
   theorem (-2.853574)
@@ -8177,7 +8177,7 @@ From λσ to λν: a journey through calculi of explicit substitutions - Pierre 
 
 Topic 221
 ---------
-Words (mean weight: -299.209185)
+Words (mean weight: -299.209185, min weight: -675.406990)
   compare (-0.894463)
   map (-1.345525)
   namely (-1.550989)
@@ -8214,7 +8214,7 @@ Using dependency models to manage software architecture - Neeraj Sangal, Ev Jord
 
 Topic 222
 ---------
-Words (mean weight: -386.756997)
+Words (mean weight: -386.756997, min weight: -743.258698)
   javascript (-2.222597)
   web (-3.148061)
   browser (-4.015209)
@@ -8251,7 +8251,7 @@ Edge profiling versus path profiling: the showdown - Thomas Ball, Peter Mataga, 
 
 Topic 223
 ---------
-Words (mean weight: -325.215239)
+Words (mean weight: -325.215239, min weight: -680.180858)
   program (-1.123290)
   treat (-1.753621)
   illustrated (-1.982316)
@@ -8288,7 +8288,7 @@ Idiomatic design - Andrew Koenig (OOPSLA 1995)
 
 Topic 224
 ---------
-Words (mean weight: -353.606094)
+Words (mean weight: -353.606094, min weight: -751.131109)
   heap (-1.338636)
   past (-2.352032)
   deal (-2.382058)
@@ -8325,7 +8325,7 @@ Realizing adaptive systems - William J. Ray (OOPSLA 2002)
 
 Topic 225
 ---------
-Words (mean weight: -288.676580)
+Words (mean weight: -288.676580, min weight: -661.129232)
   explicitly (-0.836607)
   occur (-1.271727)
   also (-1.493888)
@@ -8362,7 +8362,7 @@ Resourceable, retargetable, modular instruction selection using a machine-indepe
 
 Topic 226
 ---------
-Words (mean weight: -312.846042)
+Words (mean weight: -312.846042, min weight: -740.527774)
   new (-0.001774)
   integrates (-6.335235)
   largely (-16.099873)
@@ -8399,7 +8399,7 @@ A bisimulation for type abstraction and recursion - Eijiro Sumii, Benjamin C. Pi
 
 Topic 227
 ---------
-Words (mean weight: -306.453893)
+Words (mean weight: -306.453893, min weight: -699.312798)
   source (-0.424171)
   available (-1.139216)
   widespread (-4.365065)
@@ -8436,7 +8436,7 @@ Principal type-schemes for functional programs - Luis Damas, Robin Milner (POPL 
 
 Topic 228
 ---------
-Words (mean weight: -311.921331)
+Words (mean weight: -311.921331, min weight: -719.825437)
   machine (-0.295518)
   unified (-2.518252)
   consists (-3.629714)
@@ -8473,7 +8473,7 @@ A hierarchical model of data locality - Chengliang Zhang, Chen Ding, Mitsunori O
 
 Topic 229
 ---------
-Words (mean weight: -374.501020)
+Words (mean weight: -374.501020, min weight: -750.695016)
   finite (-2.108369)
   game (-2.688057)
   callbyvalue (-3.193550)
@@ -8510,7 +8510,7 @@ Modular verification of concurrent programs - Brent Hailpern, Susan Owicki (POPL
 
 Topic 230
 ---------
-Words (mean weight: -373.763630)
+Words (mean weight: -373.763630, min weight: -748.476518)
   communication (-1.510717)
   channel (-2.813875)
   remote (-3.456428)
@@ -8547,7 +8547,7 @@ A software product line architecture for distributed real-time and embedded syst
 
 Topic 231
 ---------
-Words (mean weight: -328.437949)
+Words (mean weight: -328.437949, min weight: -743.036758)
   overhead (-1.159931)
   reduce (-1.717583)
   goal (-1.747210)
@@ -8584,7 +8584,7 @@ A laboratory for teaching object oriented thinking - K. Beck, W. Cunningham (OOP
 
 Topic 232
 ---------
-Words (mean weight: -366.056857)
+Words (mean weight: -366.056857, min weight: -750.653855)
   tool (-0.490198)
   refactoring (-2.567464)
   refactorings (-3.949569)
@@ -8621,7 +8621,7 @@ Portable resource control in Java - Walter Binder, Jane G. Hulaas, Alex Villazó
 
 Topic 233
 ---------
-Words (mean weight: -380.563119)
+Words (mean weight: -380.563119, min weight: -747.779521)
   access (-1.816594)
   region (-1.978504)
   shared (-2.951031)
@@ -8658,7 +8658,7 @@ Automated upgrading of component-based applications - Danny Dig, Ralph Johnson (
 
 Topic 234
 ---------
-Words (mean weight: -338.826295)
+Words (mean weight: -338.826295, min weight: -724.681859)
   semantics (-0.299715)
   operational (-1.939955)
   denotational (-2.908609)
@@ -8695,7 +8695,7 @@ Runtime Enforcement of Security Policies on Black Box Reactive Programs - Minh N
 
 Topic 235
 ---------
-Words (mean weight: -304.326066)
+Words (mean weight: -304.326066, min weight: -709.758580)
   address (-1.241852)
   improvement (-1.423418)
   quality (-2.041414)
@@ -8732,7 +8732,7 @@ Towards fully abstract semantics for local variables - A. R. Meyer, K. Sieber (P
 
 Topic 236
 ---------
-Words (mean weight: -359.757389)
+Words (mean weight: -359.757389, min weight: -751.117015)
   description (-1.758419)
   simulation (-2.295778)
   executable (-2.337805)
@@ -8769,7 +8769,7 @@ The strength of non-size increasing computation - Martin Hofmann (POPL 2002)
 
 Topic 237
 ---------
-Words (mean weight: -332.049990)
+Words (mean weight: -332.049990, min weight: -751.736606)
   technique (-0.008974)
   applicability (-5.974360)
   analogous (-6.782266)
@@ -8806,7 +8806,7 @@ Optimizing JIT-compilation subsystem for Rotor 2.0 - Sophia Chilingarova (OOPSLA
 
 Topic 238
 ---------
-Words (mean weight: -357.112548)
+Words (mean weight: -357.112548, min weight: -744.696287)
   world (-2.081090)
   oriented (-2.346948)
   concept (-3.296885)
@@ -8843,7 +8843,7 @@ GIVE-N-TAKE—a balanced code placement framework - Reinhard von Hanxleden, Ken 
 
 Topic 239
 ---------
-Words (mean weight: -343.093590)
+Words (mean weight: -343.093590, min weight: -733.923588)
   component (-0.616662)
   reusable (-2.646280)
   becomes (-2.739168)
@@ -8880,7 +8880,7 @@ Efficiently and precisely locating memory leaks and bloat - Gene Novark, Emery D
 
 Topic 240
 ---------
-Words (mean weight: -378.294282)
+Words (mean weight: -378.294282, min weight: -745.944952)
   type (-0.784271)
   inference (-1.570957)
   instantiation (-3.696422)
@@ -8917,7 +8917,7 @@ State-dependent representation independence - Amal Ahmed, Derek Dreyer, Andreas 
 
 Topic 241
 ---------
-Words (mean weight: -296.054734)
+Words (mean weight: -296.054734, min weight: -680.446066)
   main (-0.356657)
   consequence (-1.779602)
   contribution (-2.346079)
@@ -8954,7 +8954,7 @@ Object-oriented technology for health care and medical information systems: work
 
 Topic 242
 ---------
-Words (mean weight: -387.136829)
+Words (mean weight: -387.136829, min weight: -747.294204)
   update (-1.857799)
   view (-2.154625)
   lens (-3.123465)
@@ -8991,7 +8991,7 @@ Translation validation for an optimizing compiler - George C. Necula (PLDI 2000)
 
 Topic 243
 ---------
-Words (mean weight: -340.513328)
+Words (mean weight: -340.513328, min weight: -737.289296)
   product (-1.971801)
   towards (-2.230050)
   configuration (-2.283802)
@@ -9028,7 +9028,7 @@ Object database behavior, benchmarks, and performance: workshop addendum - Benja
 
 Topic 244
 ---------
-Words (mean weight: -320.482173)
+Words (mean weight: -320.482173, min weight: -723.000185)
   prove (-0.675802)
   equivalent (-1.700252)
   always (-2.268365)
@@ -9065,7 +9065,7 @@ Program optimization and parallelization using idioms - Shlomit S. Pinter, Ron Y
 
 Topic 245
 ---------
-Words (mean weight: -355.293608)
+Words (mean weight: -355.293608, min weight: -743.705595)
   loop (-1.238217)
   assertion (-2.376344)
   iteration (-2.994171)
@@ -9102,7 +9102,7 @@ Using framework interfaces with design fragments - George Fairbanks, David Garla
 
 Topic 246
 ---------
-Words (mean weight: -309.537344)
+Words (mean weight: -309.537344, min weight: -667.501212)
   investigate (-1.459955)
   aim (-1.484614)
   modest (-2.195300)
@@ -9139,7 +9139,7 @@ Using predicate fields in a highly flexible industrial control system - Shay Art
 
 Topic 247
 ---------
-Words (mean weight: -384.826655)
+Words (mean weight: -384.826655, min weight: -750.308502)
   instruction (-1.710369)
   scheduling (-2.137713)
   binary (-2.893897)
@@ -9176,7 +9176,7 @@ A framework for combining analysis and verification - Nevin Heintze, Joxan Jaffa
 
 Topic 248
 ---------
-Words (mean weight: -340.812219)
+Words (mean weight: -340.812219, min weight: -746.537516)
   procedure (-0.783720)
   call (-0.916945)
   controlflow (-3.086045)
@@ -9213,7 +9213,7 @@ Supporting systems QoS design and evolution through model transformations - Amog
 
 Topic 249
 ---------
-Words (mean weight: -283.952366)
+Words (mean weight: -283.952366, min weight: -660.923793)
   also (-0.006741)
   program (-5.485075)
   prior (-5.964223)
@@ -9250,7 +9250,7 @@ Safe run-time overloading - Francois Rouaix (POPL 1990)
 
 Topic 250
 ---------
-Words (mean weight: -327.148201)
+Words (mean weight: -327.148201, min weight: -733.744497)
   complete (-0.927984)
   sound (-1.145868)
   sense (-2.482285)
@@ -9287,7 +9287,7 @@ Concurrent programming with revisions and isolation types - Sebastian Burckhardt
 
 Topic 251
 ---------
-Words (mean weight: -371.796615)
+Words (mean weight: -371.796615, min weight: -739.729334)
   objectoriented (-0.502056)
   tutorial (-2.784571)
   encapsulation (-2.926121)
@@ -9324,7 +9324,7 @@ Bidirectionalization transformation based on automatic derivation of view comple
 
 Topic 252
 ---------
-Words (mean weight: -362.025708)
+Words (mean weight: -362.025708, min weight: -751.463981)
   transformation (-0.533186)
   driven (-2.746493)
   mda (-3.589922)
@@ -9361,7 +9361,7 @@ Chameleon: adaptive selection of collections - Ohad Shacham, Martin Vechev, Eran
 
 Topic 253
 ---------
-Words (mean weight: -321.252054)
+Words (mean weight: -321.252054, min weight: -728.303314)
   running (-1.144420)
   particularly (-1.984603)
   compiled (-2.149830)
@@ -9398,7 +9398,7 @@ Computational flux - Robin Milner (POPL 2001)
 
 Topic 254
 ---------
-Words (mean weight: -382.975435)
+Words (mean weight: -382.975435, min weight: -751.811901)
   optimization (-0.751755)
   optimizing (-3.117560)
   iterative (-3.601628)
@@ -9435,7 +9435,7 @@ A really abstract concurrent model and its temporal logic - Howard Barringer, Ru
 
 Topic 255
 ---------
-Words (mean weight: -321.771469)
+Words (mean weight: -321.771469, min weight: -727.827180)
   term (-0.336931)
   establish (-2.149717)
   presentation (-2.498792)
@@ -9472,7 +9472,7 @@ A portable compiler: theory and practice - S. C. Johnson (POPL 1978)
 
 Topic 256
 ---------
-Words (mean weight: -334.827381)
+Words (mean weight: -334.827381, min weight: -748.227368)
   interactive (-1.795888)
   task (-1.997734)
   understand (-2.134530)
@@ -9509,7 +9509,7 @@ Dependent Information Flow Types - Luísa Lourenço, Luís Caires (POPL 2015)
 
 Topic 257
 ---------
-Words (mean weight: -418.204187)
+Words (mean weight: -418.204187, min weight: -750.873425)
   register (-1.858642)
   allocation (-1.937254)
   allocator (-3.585255)
@@ -9546,7 +9546,7 @@ Environment classifiers - Walid Taha, Michael Florentin Nielsen (POPL 2003)
 
 Topic 258
 ---------
-Words (mean weight: -378.775519)
+Words (mean weight: -378.775519, min weight: -749.608510)
   predicate (-1.699686)
   approximate (-2.691069)
   dispatch (-2.799711)
@@ -9583,7 +9583,7 @@ Cyclic proofs of program termination in separation logic - James Brotherston, Ri
 
 Topic 259
 ---------
-Words (mean weight: -350.020082)
+Words (mean weight: -350.020082, min weight: -738.241852)
   abstraction (-0.394962)
   transition (-3.706678)
   contain (-3.764719)
@@ -9620,7 +9620,7 @@ A generic editor - Art Griesser (OOPSLA 1997)
 
 Topic 260
 ---------
-Words (mean weight: -340.946716)
+Words (mean weight: -340.946716, min weight: -735.503487)
   mechanism (-0.556823)
   upon (-2.355620)
   hierarchical (-2.879173)
@@ -9657,7 +9657,7 @@ An experimental study of renewal-older-first garbage collection - Lars T. Hansen
 
 Topic 261
 ---------
-Words (mean weight: -279.417683)
+Words (mean weight: -279.417683, min weight: -648.835937)
   following (-0.515977)
   evidence (-1.450521)
   also (-1.883602)
@@ -9694,7 +9694,7 @@ Semantic analysis in a concurrent compiler - V. Seshadri, S. Weber, D. B. Wortma
 
 Topic 262
 ---------
-Words (mean weight: -396.812784)
+Words (mean weight: -396.812784, min weight: -748.666643)
   tree (-1.946577)
   grammar (-2.014286)
   attribute (-2.043721)
@@ -9731,7 +9731,7 @@ Program verification based on denotation semantics - Wolfgang Polak (POPL 1981)
 
 Topic 263
 ---------
-Words (mean weight: -396.286424)
+Words (mean weight: -396.286424, min weight: -744.983905)
   path (-1.307715)
   slicing (-3.072133)
   slice (-4.104460)
@@ -9768,7 +9768,7 @@ Towards agile security in web applications - Vidar Kongsli (OOPSLA 2006)
 
 Topic 264
 ---------
-Words (mean weight: -311.921331)
+Words (mean weight: -311.921331, min weight: -719.825437)
   machine (-0.295518)
   unified (-2.518252)
   consists (-3.629714)
@@ -9805,7 +9805,7 @@ A hierarchical model of data locality - Chengliang Zhang, Chen Ding, Mitsunori O
 
 Topic 265
 ---------
-Words (mean weight: -337.906025)
+Words (mean weight: -337.906025, min weight: -749.846636)
   execution (-0.219178)
   prevent (-3.454313)
   detect (-3.809540)
@@ -9842,7 +9842,7 @@ Cryptographically sound implementations for typed information-flow security - C�
 
 Topic 266
 ---------
-Words (mean weight: -325.475648)
+Words (mean weight: -325.475648, min weight: -731.699282)
   feature (-0.236441)
   incorporate (-3.060628)
   attention (-3.620761)
@@ -9879,7 +9879,7 @@ Scalable and precise dynamic datarace detection for structured parallelism - Rag
 
 Topic 267
 ---------
-Words (mean weight: -362.810189)
+Words (mean weight: -362.810189, min weight: -745.707387)
   engineering (-1.597723)
   line (-1.751874)
   product (-2.901546)
@@ -9916,7 +9916,7 @@ Status of object-oriented COBOL (panel) - Joel Van Stee, Megan Adams, Dmitry Len
 
 Topic 268
 ---------
-Words (mean weight: -346.259055)
+Words (mean weight: -346.259055, min weight: -749.999433)
   software (-0.139243)
   extracted (-4.687954)
   watermarking (-4.971575)
@@ -9953,7 +9953,7 @@ Vclusters: a flexible, fine-grained object clustering mechanism - Mark L. Mcauli
 
 Topic 269
 ---------
-Words (mean weight: -384.559079)
+Words (mean weight: -384.559079, min weight: -750.800587)
   real (-2.045920)
   integer (-2.482093)
   arithmetic (-2.829061)
@@ -9990,7 +9990,7 @@ Grammar-driven generation of domain-specific language testing tools - Hui Wu (OO
 
 Topic 270
 ---------
-Words (mean weight: -386.036743)
+Words (mean weight: -386.036743, min weight: -751.752495)
   parallel (-1.056673)
   processor (-2.461565)
   parallelism (-2.867676)
@@ -10027,7 +10027,7 @@ On relative completeness of programming logics - Michal Grabowski (POPL 1984)
 
 Topic 271
 ---------
-Words (mean weight: -373.738434)
+Words (mean weight: -373.738434, min weight: -749.806586)
   generic (-1.431655)
   xml (-2.321992)
   document (-3.044589)
@@ -10064,7 +10064,7 @@ A reduced multipipeline machine description that preserves scheduling constraint
 
 Topic 272
 ---------
-Words (mean weight: -354.743462)
+Words (mean weight: -354.743462, min weight: -733.291001)
   security (-1.732655)
   safe (-1.851823)
   form (-2.642004)
@@ -10101,7 +10101,7 @@ Software pipelining showdown: optimal vs. heuristic methods in a production comp
 
 Topic 273
 ---------
-Words (mean weight: -358.502063)
+Words (mean weight: -358.502063, min weight: -744.205769)
   exception (-1.706035)
   handling (-1.991321)
   realtime (-2.069327)
@@ -10138,7 +10138,7 @@ Principal typings for Java-like languages - Davide Ancona, Elena Zucca (POPL 200
 
 Topic 274
 ---------
-Words (mean weight: -337.175918)
+Words (mean weight: -337.175918, min weight: -733.292126)
   natural (-1.353150)
   pair (-2.314909)
   gpu (-3.209243)
@@ -10175,7 +10175,7 @@ Programming up to Congruence - Vilhelm Sjöberg, Stephanie Weirich (POPL 2015)
 
 Topic 275
 ---------
-Words (mean weight: -364.445343)
+Words (mean weight: -364.445343, min weight: -743.291711)
   polymorphic (-1.465958)
   polymorphism (-1.631988)
   parametric (-2.309839)
@@ -10212,7 +10212,7 @@ Incremental evaluation for attribute grammars with application to syntax-directe
 
 Topic 276
 ---------
-Words (mean weight: -297.782446)
+Words (mean weight: -297.782446, min weight: -676.638389)
   also (-0.000005)
   explain (-12.697807)
   appears (-13.498862)
@@ -10249,7 +10249,7 @@ Operational semantics of a parallel object-oriented language - Pierre America, J
 
 Topic 277
 ---------
-Words (mean weight: -309.805828)
+Words (mean weight: -309.805828, min weight: -720.774432)
   us (-0.301932)
   contrast (-2.069335)
   relative (-2.314793)
@@ -10286,7 +10286,7 @@ The influence of productions on derivations and parsing (Extended Abstract) - Be
 
 Topic 278
 ---------
-Words (mean weight: -281.230387)
+Words (mean weight: -281.230387, min weight: -651.850316)
   latter (-1.191502)
   generally (-1.280975)
   also (-1.452159)
@@ -10323,7 +10323,7 @@ Concurrent Haskell - Simon Peyton Jones, Andrew Gordon, Sigbjorn Finne (POPL 199
 
 Topic 279
 ---------
-Words (mean weight: -368.916760)
+Words (mean weight: -368.916760, min weight: -738.339250)
   bound (-1.630213)
   invariant (-1.853749)
   symbolic (-1.972645)
@@ -10360,7 +10360,7 @@ Graph types - Nils Klarlund, Michael I. Schwartzbach (POPL 1993)
 
 Topic 280
 ---------
-Words (mean weight: -303.974015)
+Words (mean weight: -303.974015, min weight: -723.969687)
   simple (-0.326642)
   develop (-1.277770)
   simplification (-16.681451)
@@ -10397,7 +10397,7 @@ First-class synchronization barriers - Franklyn Turbak (ICFP 1996)
 
 Topic 281
 ---------
-Words (mean weight: -349.976601)
+Words (mean weight: -349.976601, min weight: -734.232579)
   statically (-1.384035)
   constructor (-1.926900)
   typechecking (-2.238113)
@@ -10434,7 +10434,7 @@ Method-level phase behavior in java workloads - Andy Georges, Dries Buytaert, Li
 
 Topic 282
 ---------
-Words (mean weight: -314.114691)
+Words (mean weight: -314.114691, min weight: -725.410558)
   case (-1.108443)
   identify (-1.468289)
   special (-1.989506)
@@ -10471,7 +10471,7 @@ Efficient recursive subtyping - Dexter Kozen, Jens Palsberg, Michael I. Schwartz
 
 Topic 283
 ---------
-Words (mean weight: -355.293608)
+Words (mean weight: -355.293608, min weight: -743.705595)
   loop (-1.238217)
   assertion (-2.376344)
   iteration (-2.994171)
@@ -10508,7 +10508,7 @@ Using framework interfaces with design fragments - George Fairbanks, David Garla
 
 Topic 284
 ---------
-Words (mean weight: -304.892712)
+Words (mean weight: -304.892712, min weight: -708.889031)
   practical (-0.465982)
   enables (-1.000664)
   bidding (-6.159715)
@@ -10545,7 +10545,7 @@ Implications of test-driven development: a pilot study - Reid Kaufmann, David Ja
 
 Topic 285
 ---------
-Words (mean weight: -342.667171)
+Words (mean weight: -342.667171, min weight: -749.820692)
   performance (-0.372209)
   hardware (-1.721483)
   average (-4.514859)
@@ -10582,7 +10582,7 @@ OOPSLA '95 Doctoral Symposium - Mary Beth Rosson (OOPSLA 1995)
 
 Topic 286
 ---------
-Words (mean weight: -367.242122)
+Words (mean weight: -367.242122, min weight: -745.880060)
   concurrent (-0.760661)
   interference (-3.153147)
   passing (-3.397936)
@@ -10619,7 +10619,7 @@ Deriving algorithms from type inference systems: application to strictness analy
 
 Topic 287
 ---------
-Words (mean weight: -307.222055)
+Words (mean weight: -307.222055, min weight: -723.958936)
   allows (-0.457097)
   knowledge (-1.632262)
   flexible (-1.808412)
@@ -10656,7 +10656,7 @@ Numbering matters: first-order canonical forms for second-order recursive types 
 
 Topic 288
 ---------
-Words (mean weight: -315.898374)
+Words (mean weight: -315.898374, min weight: -737.665194)
   multiple (-0.873735)
   specific (-1.358887)
   focus (-1.586979)
@@ -10693,7 +10693,7 @@ Safe metaclass programming - Noury M. N. Bouraqadi-Saâdani, Thomas Ledoux, Fred
 
 Topic 289
 ---------
-Words (mean weight: -300.715258)
+Words (mean weight: -300.715258, min weight: -712.008193)
   allow (-1.056286)
   enable (-1.885708)
   apply (-1.928417)
@@ -10730,7 +10730,7 @@ CLP and constraint abstraction - T. J. Hickey (POPL 1989)
 
 Topic 290
 ---------
-Words (mean weight: -295.124717)
+Words (mean weight: -295.124717, min weight: -673.438775)
   used (-0.746802)
   also (-0.781771)
   actually (-2.681529)
@@ -10767,7 +10767,7 @@ Implementing design patterns as language constructs - Yan-David Erlich (ICFP 199
 
 Topic 291
 ---------
-Words (mean weight: -347.558352)
+Words (mean weight: -347.558352, min weight: -751.624819)
   abstract (-0.656299)
   domain (-1.372674)
   fully (-2.204946)
@@ -10804,7 +10804,7 @@ Relational parametricity and local variables - P. W. O'Hearn, R. D. Tennent (POP
 
 Topic 292
 ---------
-Words (mean weight: -391.317000)
+Words (mean weight: -391.317000, min weight: -744.525831)
   separation (-2.120117)
   logic (-2.190352)
   completeness (-2.876125)
@@ -10841,7 +10841,7 @@ Total correctness by local improvement in program transformation - David Sands (
 
 Topic 293
 ---------
-Words (mean weight: -353.022924)
+Words (mean weight: -353.022924, min weight: -745.202477)
   cost (-1.057309)
   sequential (-1.546969)
   distance (-3.416582)
@@ -10878,7 +10878,7 @@ Formally optimal boxing - Fritz Henglein, Jesper Jørgensen (POPL 1994)
 
 Topic 294
 ---------
-Words (mean weight: -335.687796)
+Words (mean weight: -335.687796, min weight: -739.646572)
   global (-1.223313)
   determine (-1.962447)
   among (-2.033895)
@@ -10915,7 +10915,7 @@ Composing security policies with polymer - Lujo Bauer, Jay Ligatti, David Walker
 
 Topic 295
 ---------
-Words (mean weight: -386.121414)
+Words (mean weight: -386.121414, min weight: -750.667651)
   synthesis (-2.043408)
   text (-3.199364)
   editing (-3.309856)
@@ -10952,7 +10952,7 @@ Automatic inline allocation of objects - Julian Dolby (PLDI 1997)
 
 Topic 296
 ---------
-Words (mean weight: -371.846954)
+Words (mean weight: -371.846954, min weight: -750.810706)
   size (-1.458644)
   interpreter (-2.074837)
   bytecode (-2.575145)
@@ -10989,7 +10989,7 @@ Bitwidth aware global register allocation - Sriraman Tallam, Rajiv Gupta (POPL 2
 
 Topic 297
 ---------
-Words (mean weight: -318.173805)
+Words (mean weight: -318.173805, min weight: -740.157085)
   issue (-0.871765)
   rich (-2.346472)
   difference (-2.558178)
@@ -11026,7 +11026,7 @@ Sound, complete and scalable path-sensitive analysis - Isil Dillig, Thomas Dilli
 
 Topic 298
 ---------
-Words (mean weight: -388.858504)
+Words (mean weight: -388.858504, min weight: -747.274533)
   project (-1.752916)
   team (-3.001147)
   agile (-3.029522)
@@ -11063,7 +11063,7 @@ Workshop on pragmatic and theoretical directions in object-oriented software met
 
 Topic 299
 ---------
-Words (mean weight: -345.561678)
+Words (mean weight: -345.561678, min weight: -741.081371)
   run (-1.128143)
   storage (-1.823647)
   mapping (-2.685798)
