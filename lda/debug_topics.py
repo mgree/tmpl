@@ -14,7 +14,7 @@ def run(docs,betas,gammas,vocab,num):
         print '---------'
 
         bs = map(float, raw_betas.split())
-        print 'Words (mean weight: %f)' % mean(bs)
+        print 'Words (mean weight: %f, min weight: %f)' % (mean(bs),min(bs))
 
         words = range(len(bs))
         words.sort(lambda x,y: -cmp(bs[x],bs[y]))

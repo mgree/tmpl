@@ -1,6 +1,6 @@
 Topic 000
 ---------
-Words (mean weight: -190.433476)
+Words (mean weight: -190.433476, min weight: -753.366939)
   type (-2.732176)
   system (-2.817062)
   module (-3.072523)
@@ -37,7 +37,7 @@ A generic account of continuation-passing styles - John Hatcliff, Olivier Danvy 
 
 Topic 001
 ---------
-Words (mean weight: -191.125853)
+Words (mean weight: -191.125853, min weight: -753.612102)
   process (-3.621771)
   concurrent (-3.630785)
   semantics (-3.789941)
@@ -74,7 +74,7 @@ Modern languages for modern parallel computing (invited lecture, abstract only) 
 
 Topic 002
 ---------
-Words (mean weight: -183.939914)
+Words (mean weight: -183.939914, min weight: -753.071459)
   language (-1.921984)
   programming (-2.649280)
   design (-4.434631)
@@ -111,7 +111,7 @@ How to make ad-hoc polymorphism less ad hoc - P. Wadler, S. Blott (POPL 1989)
 
 Topic 003
 ---------
-Words (mean weight: -182.854817)
+Words (mean weight: -182.854817, min weight: -751.424220)
   programming (-3.536041)
   student (-3.917253)
   network (-3.952034)
@@ -148,7 +148,7 @@ The integrated model development environment (abstract): an object-oriented appr
 
 Topic 004
 ---------
-Words (mean weight: -193.832206)
+Words (mean weight: -193.832206, min weight: -752.178079)
   type (-1.963179)
   language (-3.577204)
   system (-3.748753)
@@ -185,7 +185,7 @@ Replicated data types: specification, verification, optimality - Sebastian Burck
 
 Topic 005
 ---------
-Words (mean weight: -194.203879)
+Words (mean weight: -194.203879, min weight: -753.242323)
   effect (-3.090136)
   continuation (-3.752396)
   language (-3.963063)
@@ -222,7 +222,7 @@ Fluid AOP join point models - Terry Hon, Gregor Kiczales (OOPSLA 2006)
 
 Topic 006
 ---------
-Words (mean weight: -186.008496)
+Words (mean weight: -186.008496, min weight: -753.559374)
   algorithm (-3.258906)
   graph (-3.299441)
   problem (-3.431714)
@@ -259,7 +259,7 @@ Obtaining sequential efficiency for concurrent object-oriented languages - John 
 
 Topic 007
 ---------
-Words (mean weight: -190.300418)
+Words (mean weight: -190.300418, min weight: -752.257477)
   proof (-2.922169)
   language (-3.864393)
   program (-3.890803)
@@ -296,7 +296,7 @@ Efficient representations and abstractions for quantifying and exploiting data r
 
 Topic 008
 ---------
-Words (mean weight: -190.741414)
+Words (mean weight: -190.741414, min weight: -753.265317)
   grammar (-3.208474)
   error (-3.252525)
   algorithm (-3.455974)
@@ -333,7 +333,7 @@ Agility vs. stability at a successful start-up: steps to progress amidst chaos a
 
 Topic 009
 ---------
-Words (mean weight: -192.076695)
+Words (mean weight: -192.076695, min weight: -753.929295)
   analysis (-1.999790)
   program (-3.303249)
   flow (-3.566626)
@@ -370,7 +370,7 @@ Type-indexed rows - Mark Shields, Erik Meijer (POPL 2001)
 
 Topic 010
 ---------
-Words (mean weight: -187.495752)
+Words (mean weight: -187.495752, min weight: -752.538854)
   variable (-3.248272)
   relation (-3.461349)
   abstract (-3.480159)
@@ -407,7 +407,7 @@ A complete, co-inductive syntactic theory of sequential control and state - Kris
 
 Topic 011
 ---------
-Words (mean weight: -192.128022)
+Words (mean weight: -192.128022, min weight: -752.816470)
   program (-2.751401)
   specification (-3.686592)
   bug (-4.081629)
@@ -444,7 +444,7 @@ Rethinking computer science education from a test-first perspective - Stephen H.
 
 Topic 012
 ---------
-Words (mean weight: -193.544946)
+Words (mean weight: -193.544946, min weight: -751.841653)
   system (-3.036532)
   class (-3.175305)
   object (-3.325548)
@@ -481,7 +481,7 @@ Polymorphism and page tables: systems programming from a functional programmer's
 
 Topic 013
 ---------
-Words (mean weight: -190.820420)
+Words (mean weight: -190.820420, min weight: -752.845593)
   logic (-2.547927)
   program (-3.405011)
   separation (-4.008491)
@@ -518,7 +518,7 @@ Programming languages for programmable networks - Jennifer Rexford (POPL 2012)
 
 Topic 014
 ---------
-Words (mean weight: -194.954313)
+Words (mean weight: -194.954313, min weight: -752.895031)
   parallel (-3.646065)
   data (-3.800664)
   program (-3.856973)
@@ -555,7 +555,7 @@ Formal design constraints - Nils Klarlund, Jari Koistinen, Michael I. Schwartzba
 
 Topic 015
 ---------
-Words (mean weight: -190.930275)
+Words (mean weight: -190.930275, min weight: -752.433524)
   code (-3.246123)
   compiler (-3.395147)
   register (-3.929567)
@@ -592,7 +592,7 @@ Building software for sensor networks - Steffen Schäfer, Tzilla Elrad, Jens Web
 
 Topic 016
 ---------
-Words (mean weight: -187.736507)
+Words (mean weight: -187.736507, min weight: -752.581276)
   functional (-2.921286)
   language (-3.506730)
   update (-3.703011)
@@ -629,7 +629,7 @@ Transitions in extendible arrays - Arnold L. Rosenberg (POPL 1973)
 
 Topic 017
 ---------
-Words (mean weight: -196.811344)
+Words (mean weight: -196.811344, min weight: -753.389984)
   program (-2.940995)
   abstraction (-3.174209)
   function (-3.307713)
@@ -666,7 +666,7 @@ Higher-order unCurrying - John Hannan, Patrick Hicks (POPL 1998)
 
 Topic 018
 ---------
-Words (mean weight: -194.512927)
+Words (mean weight: -194.512927, min weight: -753.574769)
   calculus (-3.028219)
   type (-3.645110)
   lambda (-4.025554)
@@ -703,7 +703,7 @@ Explicit polymorphism and CPS conversion - Robert Harper, Mark Lillibridge (POPL
 
 Topic 019
 ---------
-Words (mean weight: -189.430403)
+Words (mean weight: -189.430403, min weight: -751.743927)
   data (-3.696849)
   type (-4.004937)
   haskell (-4.011331)
@@ -740,7 +740,7 @@ Synthesis of biological models from mutation experiments - Ali Sinan Koksal, Yew
 
 Topic 020
 ---------
-Words (mean weight: -185.246522)
+Words (mean weight: -185.246522, min weight: -753.070144)
   pattern (-3.298348)
   software (-3.478007)
   product (-3.841034)
@@ -777,7 +777,7 @@ biXid: a bidirectional transformation language for XML - Shinya Kawanaka, Haruo 
 
 Topic 021
 ---------
-Words (mean weight: -192.333754)
+Words (mean weight: -192.333754, min weight: -753.360610)
   framework (-2.818892)
   model (-3.793336)
   modeling (-3.805409)
@@ -814,7 +814,7 @@ Hardware/software codesign in neo smalltalk - Jecel Mattos de Assumpccao, Jr. (O
 
 Topic 022
 ---------
-Words (mean weight: -189.821815)
+Words (mean weight: -189.821815, min weight: -752.800064)
   application (-3.220209)
   model (-3.554098)
   system (-3.586619)
@@ -851,7 +851,7 @@ Integrating an object-oriented programming system with a database system - Won K
 
 Topic 023
 ---------
-Words (mean weight: -199.837631)
+Words (mean weight: -199.837631, min weight: -753.948608)
   program (-3.691904)
   data (-3.803291)
   optimization (-3.865647)
@@ -888,7 +888,7 @@ A calculus of higher order communicating systems - B. Thomsen (POPL 1989)
 
 Topic 024
 ---------
-Words (mean weight: -189.160263)
+Words (mean weight: -189.160263, min weight: -753.179472)
   software (-2.534825)
   development (-3.372838)
   system (-3.838897)
@@ -925,7 +925,7 @@ Legacy systems and object technology: workshop summary - Yeona Jang (OOPSLA 1995
 
 Topic 025
 ---------
-Words (mean weight: -185.365265)
+Words (mean weight: -185.365265, min weight: -752.845107)
   field (-3.714324)
   program (-4.107631)
   code (-4.238066)
@@ -962,7 +962,7 @@ Adaptive object-models (poster session) - Joseph W. Yoder, Reza Razavi (OOPSLA 2
 
 Topic 026
 ---------
-Words (mean weight: -191.837050)
+Words (mean weight: -191.837050, min weight: -753.325188)
   language (-3.618433)
   program (-3.668468)
   higherorder (-3.787913)
@@ -999,7 +999,7 @@ Reactive imperative programming with dataflow constraints - Camil Demetrescu, Ir
 
 Topic 027
 ---------
-Words (mean weight: -195.506306)
+Words (mean weight: -195.506306, min weight: -752.906143)
   object (-2.735674)
   garbage (-3.429118)
   memory (-3.636867)
@@ -1036,7 +1036,7 @@ Folklore confirmed: reducible flow graphs are exponentially larger - Larry Carte
 
 Topic 028
 ---------
-Words (mean weight: -199.085917)
+Words (mean weight: -199.085917, min weight: -753.456016)
   design (-3.115906)
   component (-4.004174)
   tool (-4.189852)
@@ -1073,7 +1073,7 @@ What is Java binary compatibility? - Sophia Drossopoulou, David Wragg, Susan Eis
 
 Topic 029
 ---------
-Words (mean weight: -197.487235)
+Words (mean weight: -197.487235, min weight: -753.607363)
   procedure (-3.234484)
   program (-3.499190)
   data (-3.618615)
