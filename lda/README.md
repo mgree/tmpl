@@ -87,6 +87,41 @@ manually, as in:
   python top_papers.py PFX_ldaK/final.gamma PFX_ldaK_docs.dat 0-based-topic# num-papers
 ```
 
+* `similar.py`
+
+This script finds papers that are simialr to one given by a query. By
+default, it finds papers similar to Peter O'Hearn's seminal 2001 work,
+_BI as an Assertion Language for Mutable Data Structures_. For our LDA
+model with k=20, we find:
+
+```
+Proof search for propositional abstract separation logics via labelled sequents - Zhé Hóu, Ranald Clouston, Rajeev Goré, Alwen Tiu (POPL 2014) (4)
+Context logic as modal logic: completeness and parametric inexpressivity - Cristiano Calcagno, Philippa Gardner, Uri Zarfaty (POPL 2007) (4)
+Verifying infinite state processes with sequential and parallel composition - Ahmed Bouajjani, Rachid Echahed, Peter Habermehl (POPL 1995) (6)
+First order programming logic - Robert Cartwright, John McCarthy (POPL 1979) (6)
+Verified decision procedures for MSO on words based on derivatives of regular expressions - Dmitriy Traytel, Tobias Nipkow (ICFP 2013) (8)
+Axiomatic definability and completeness for recursive programs - Albert R. Meyer, John C. Mitchell (POPL 1982) (8)
+Symbolic Algorithms for Language Equivalence and Kleene Algebra with Tests - Damien Pous (POPL 2015) (10)
+The power of parameterization in coinductive proof - Chung-Kil Hur, Georg Neis, Derek Dreyer, Viktor Vafeiadis (POPL 2013) (10)
+Conjugate Hylomorphisms -- Or: The Mother of All Structured Recursion Schemes - Ralf Hinze, Nicolas Wu, Jeremy Gibbons (POPL 2015) (12)
+Shape analysis with inductive recursion synthesis - Bolei Guo, Neil Vachharajani, David I. August (PLDI 2007) (12)
+```
+
+The number at the end is the Euclidean distance of the topic vectors
+of the two documents.
+
+To run the script on another document, write a search term, like:
+
+  $ python similar.py "Your title search term here"
+
+You can ask the script to print more similar papers by giving a number
+after the search term. For example,
+
+  $ python similar.py "edit lenses" 20
+
+will print out the 20 most similar papers to Hofmann, Wagner, and
+Pierce's POPL 2012 paper.
+
 # File formats
 
 There are many file formats involved in all of these tools, all only
