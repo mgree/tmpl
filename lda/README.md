@@ -9,7 +9,7 @@ The main program to run is `run_lda.sh`. You'll need to have installed
 You may need to set `PYTHONIOENCODING=utf8` when running some of these
 scripts, but perhaps not on platforms other than OS X.
 
-* `run_lda.sh`
+## `run_lda.sh`
 
 This program ties together all of the programs described below to
 create a 'run' of analysis. All of the files for a run share a
@@ -40,24 +40,24 @@ default, it runs as if it were invoked as:
 ```
 
 
-* `parse.py`
+## `parse.py`
 
 This script reads the scraped data and generates three files:
 
-** `abstracts.dat`, which represents each document as a bag of words
-** `docs.dat`, which tracks each document's name, conference, and year
-** `vocab.dat`, which maps word ids to actual words
+* `abstracts.dat`, which represents each document as a bag of words
+* `docs.dat`, which tracks each document's name, conference, and year
+* `vocab.dat`, which maps word ids to actual words
   
 By default, `parse.py` generates prefixless `.dat` files, which
 `run_lda.sh` renames to the prefixed form.
 
-* `topics.py`
+## `topics.py`
 
 This script has been copied wholesale from David Blei's LDA-C. It
 looks up the assignments in `PFX_ldaK/final.beta` and correlates the
 word ids in each topic with the mapping `PFX_vocab.dat`.
 
-* `post.py`
+## `post.py`
 
 This script combines the information in `PFX_ldaK/final.gamma` with
 the document names recorded in `PFX_docs.dat`.
@@ -65,7 +65,7 @@ the document names recorded in `PFX_docs.dat`.
 The CSV file is output with K + 3 columns: the year, the conference,
 the document title, and then one column for each topic.
 
-* `by_year.py`
+## `by_year.py`
 
 This script aggregates information in `PFX_ldaK/final.gamma` with the
 conference and year information stored in `PFX_docs.dat`. It sums up
@@ -78,7 +78,7 @@ of conferences: the year, and then for each conference, there is a
 column for the number of papers that year and a column for each of the
 K topics.
 
-* `top_papers.py`
+## `top_papers.py`
 
 This script lists the top papers for a given topic. It should be run
 manually, as in:
@@ -87,7 +87,7 @@ manually, as in:
   python top_papers.py PFX_ldaK/final.gamma PFX_ldaK_docs.dat 0-based-topic# num-papers
 ```
 
-* `similar.py`
+## `similar.py`
 
 This script finds papers that are simialr to one given by a query. By
 default, it finds papers similar to Peter O'Hearn's seminal 2001 work,
@@ -127,7 +127,7 @@ Pierce's POPL 2012 paper.
 There are many file formats involved in all of these tools, all only
 somewhat documented.
 
-* scraped data
+## scraped data
 
 By default the scraped data is kept in `../scrape/main`. It's not
 included in this repository for copyright reasons.
@@ -157,7 +157,7 @@ in `../scrape/main` holding JSON data on each abstract. For example,
 
 (NB that I've wrapped the text, and there are no newlines in the abstracts.)
 
-* `abstracts.dat`
+## `abstracts.dat`
 
 This file follows the format specified by
 [LDA-C](http://www.cs.princeton.edu/~blei/lda-c/readme.txt):
@@ -181,7 +181,7 @@ documents is stored in `docs.dat` on a line-by-line basis: line n in
 
 The `[term_1]` is a _word id_, and the numbering of words begins at 0.
 
-* `docs.dat`
+## `docs.dat`
 
 Each line in this file gives the title, authors, conference, and year
 for a paper. For example, the first line of `2015-01-03_13:26_docs.dat` is:
@@ -190,7 +190,7 @@ for a paper. For example, the first line of `2015-01-03_13:26_docs.dat` is:
 A reflection on call-by-value - Simon Peyton Jones Will Partain André Santos (ICFP 1996)
 ```
 
-* `vocab.dat`
+## `vocab.dat`
 
 This file is a mapping from a word id (called a 'term' in LDA-C) to an
 actual word. Since word id's are _numbered from 0_, the first line in
