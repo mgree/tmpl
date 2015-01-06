@@ -44,9 +44,9 @@ default, it runs as if it were invoked as:
 
 This script reads the scraped data and generates three files:
 
-  ** `abstracts.dat`, which represents each document as a bag of words
-  ** `docs.dat`, which tracks each document's name, conference, and year
-  ** `vocab.dat`, which maps word ids to actual words
+** `abstracts.dat`, which represents each document as a bag of words
+** `docs.dat`, which tracks each document's name, conference, and year
+** `vocab.dat`, which maps word ids to actual words
   
 By default, `parse.py` generates prefixless `.dat` files, which
 `run_lda.sh` renames to the prefixed form.
