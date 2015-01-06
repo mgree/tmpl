@@ -44,12 +44,10 @@ def parse(f):
     return (meta.replace('"','\\"'),
             tokenize(title + " " + doc.get('abs',"")))
 
-def load_docs(of,d):
+def load_docs(d):
     years = {}
     words = []
 
-    doclist = codecs.open(of,"w","utf8")
-                          
     for root in glob.glob(os.path.join(d,"*")):
 
         year = os.path.basename(root)
@@ -60,15 +58,12 @@ def load_docs(of,d):
 
             doc = map(stem,doc)
             
-            doclist.write(title + u'\n')
-            
             for word in doc:
                 if word not in words:
                     words.append(word)
             
-            years[year].append(doc)
+            years[year].append((title,doc))
 
-    doclist.close()
     return (years,words)
 
 def words_to_dict(words):
@@ -87,21 +82,25 @@ def docs_to_bow(years,d):
     for year in years:
         bows[year] = []
 
-        for doc in years[year]:
+        for (title,doc) in years[year]:
             bow = {}
             for word in doc:
                 wordid = d[word]
                 bow[wordid] = bow.get(wordid,0) + 1
 
-            bows[year].append(bow)
+            bows[year].append((title,bow))
 
     return bows
 
-def as_dat(of, bows):
-    out = open(of,"w")
-    
+def as_dat(bows, abs_of="abstracts.dat", doc_of="docs.dat"):
+    out = open(abs_of,"w")
+
+    doclist = codecs.open(doc_of,"w","utf8")
+
     for year in bows:
-        for bow in bows[year]:
+        for (title,bow) in bows[year]:
+            doclist.write(title + u'\n')
+
             out.write(str(len(bow)))
             out.write(' ')
             for term in bow:
@@ -112,10 +111,11 @@ def as_dat(of, bows):
 
             out.write('\n')
 
+    doclist.close()
     out.close()
 
-def as_vocab(of, words):
-    out = codecs.open(of,"w","utf8")
+def as_vocab(words, vocab_of="vocab.dat"):
+    out = codecs.open(vocab_of,"w","utf8")
 
     for word in words:
         out.write(word + u'\n')
@@ -124,12 +124,12 @@ def as_vocab(of, words):
 
 
 def run(d,doc_file,dat_file,vocab_file):
-    years,words = load_docs(doc_file, d)
+    years,words = load_docs(d)
 
     d = words_to_dict(words)
     bows = docs_to_bow(years,d)
-    as_dat(dat_file,bows)
-    as_vocab(vocab_file,words)
+    as_dat(bows, abs_of=dat_file, doc_of=doc_file)
+    as_vocab(words, vocab_of=vocab_file)
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
