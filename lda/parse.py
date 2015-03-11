@@ -32,7 +32,7 @@ def no_crlf(s):
     return ' '.join(s.split())
 
 def parse(f):
-    doc = json.loads(open(f).read())
+    doc = json.load(open(f))
     
     # if ('abs' not in doc): print file + " is missing an abstract"
     # if ('title' not in doc): print file + " is missing a title"
@@ -44,13 +44,14 @@ def parse(f):
 
     (base,_) = os.path.splitext(f)
     pdf = base + "-fulltext.txt"
-    if os.path.exists(pdf): # we've got fulltext
+    if os.path.exists(pdf):
+        # we've got fulltext
         text = open(pdf).read()
     elif 'abs' in doc:
         # just an abstract
         text = title + " " + doc.get('abs',"")
     else:
-        print "Couldn't find an abstract or a PDF for " + title + "/" + base
+        print "Couldn't find an abstract or a PDF for " + title + " (" + base + ")"
         text = title
 
     return (meta.replace('"','\\"'), tokenize(text))
@@ -70,9 +71,7 @@ def load_docs(d):
                 continue
             
             title,doc = parse(f)
-
             doc = map(stem,doc)
-
             words.update(doc)
                     
             years[year].append((title,doc))
@@ -80,7 +79,7 @@ def load_docs(d):
     return (years,words)
 
 def words_to_dict(words):
-    return dict(zip(words, range(0, len(words) - 1)))
+    return dict(zip(words, range(0, len(words))))
 
 def make_bow(doc,d):
     bow = {}
@@ -146,12 +145,13 @@ def as_vocab(words, vocab_of="vocab.dat"):
 
 
 by_year = False
-def run(d,doc_file,dat_file,vocab_file):
+def run(doc_dir,doc_file,dat_file,vocab_file):
     global by_year
     
-    years,words = load_docs(d)
+    years,words = load_docs(doc_dir)
 
     d = words_to_dict(words)
+    print d.keys()
     if by_year:
         print "Running by year"
         bows = years_to_bow(years,d)
@@ -162,7 +162,7 @@ def run(d,doc_file,dat_file,vocab_file):
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
-    d = args.get(1,"../scrape/fulltext/")
+    d = args.get(1,"../scrape/popl_pldi/")
     doc_file = args.get(2,"docs.dat")
     dat_file = args.get(3,"abstracts.dat")
     vocab_file = args.get(4,"vocab.dat")
