@@ -41,40 +41,55 @@ def parse(f):
     title = doc.get('title',"").strip()
     authors = ' '.join(map(no_crlf, doc.get('authors',"")))
     meta = title + " - " + authors + " (" + conf + ")"
-    return (meta.replace('"','\\"'),
-            tokenize(title + " " + doc.get('abs',"")))
+
+    (base,_) = os.path.splitext(f)
+    pdf = base + "-fulltext.txt"
+    if os.path.exists(pdf): # we've got fulltext
+        text = open(pdf).read()
+    elif 'abs' in doc:
+        # just an abstract
+        text = title + " " + doc.get('abs',"")
+    else:
+        print "Couldn't find an abstract or a PDF for " + title + "/" + base
+        text = title
+
+    return (meta.replace('"','\\"'), tokenize(text))
 
 def load_docs(d):
     years = {}
-    words = []
+    words = set()
 
     for root in glob.glob(os.path.join(d,"*")):
 
         year = os.path.basename(root)
+
         years[year] = []
         
         for f in glob.glob(os.path.join(root,"*.txt")):
+            if "fulltext" in os.path.basename(f):
+                continue
+            
             title,doc = parse(f)
 
             doc = map(stem,doc)
-            
-            for word in doc:
-                if word not in words:
-                    words.append(word)
-            
+
+            words.update(doc)
+                    
             years[year].append((title,doc))
 
     return (years,words)
 
 def words_to_dict(words):
-    d = {}
-    index = 0
-    
-    for word in words:
-        d[word] = index
-        index = index + 1
+    return dict(zip(words, range(0, len(words) - 1)))
 
-    return d
+def make_bow(doc,d):
+    bow = {}
+    
+    for word in doc:
+        wordid = d[word]
+        bow[wordid] = bow.get(wordid,0) + 1
+
+    return bow
 
 def docs_to_bow(years,d):
     bows = {}
@@ -83,12 +98,19 @@ def docs_to_bow(years,d):
         bows[year] = []
 
         for (title,doc) in years[year]:
-            bow = {}
-            for word in doc:
-                wordid = d[word]
-                bow[wordid] = bow.get(wordid,0) + 1
+            bows[year].append((title,make_bow(doc,d)))
 
-            bows[year].append((title,bow))
+    return bows
+
+def years_to_bow(years,d):
+    bows = {}
+
+    for year in years:
+        year_doc = []
+        for (title,doc) in years[year]:
+            year_doc += doc
+
+        bows[year] = [(year,make_bow(year_doc,d))] # list for compatibility w/docs_to_bow
 
     return bows
 
@@ -123,19 +145,27 @@ def as_vocab(words, vocab_of="vocab.dat"):
     out.close()
 
 
+by_year = False
 def run(d,doc_file,dat_file,vocab_file):
+    global by_year
+    
     years,words = load_docs(d)
 
     d = words_to_dict(words)
-    bows = docs_to_bow(years,d)
+    if by_year:
+        print "Running by year"
+        bows = years_to_bow(years,d)
+    else:
+        bows = docs_to_bow(years,d)
     as_dat(bows, abs_of=dat_file, doc_of=doc_file)
     as_vocab(words, vocab_of=vocab_file)
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
-    d = args.get(1,"../scrape/main/")
+    d = args.get(1,"../scrape/fulltext/")
     doc_file = args.get(2,"docs.dat")
     dat_file = args.get(3,"abstracts.dat")
     vocab_file = args.get(4,"vocab.dat")
+    by_year = args.get(5,"") == "--by-year"
     
     run(d,doc_file,dat_file,vocab_file)

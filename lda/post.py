@@ -29,5 +29,6 @@ if (__name__ == '__main__'):
     args = dict(enumerate(sys.argv))
     gamma = read(args.get(1,"final.gamma"))
     docs = read(args.get(2,"../docs.dat"))
+    by_year = args.get(3,"") == "--by-year"
 
     run(docs, gamma)
