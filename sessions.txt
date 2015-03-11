@@ -901,12 +901,10 @@ Nils Anders Danielsson
 
 
 ** Invited talk
-9.00-10.00
 
 Ken McMillan
 
 ** Session 5
-10.30-11.30
 
 *** PROVING NON-TERMINATION
 Ashutosh Gupta
