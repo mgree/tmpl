@@ -26,6 +26,8 @@ $owa->trackPageView();
 
 <center>
   <a href="http://www.textfiles.com/underconstruction/"><img src="construction.gif" /></a>
+  
+  <div>You can also look at our analysis of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL 2015</a>.</div>
 </center>
 </body>
 </html>
