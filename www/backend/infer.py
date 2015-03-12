@@ -38,7 +38,7 @@ def make_bow(doc,d):
     return bow
 
 
-modes = ["fulltext","abstracts"]
+modes = ["abstracts","fulltext"]
 ks = ["20","50","100","200"]
 
 if __name__ == '__main__':
@@ -91,7 +91,8 @@ if __name__ == '__main__':
     out.write('\n')
     out.close()
 
-    os.system("lda inf settings.txt %s %s %s" % (model,dat_file,base))
+    log = base + ".log"
+    os.system("lda inf settings.txt %s %s %s >%s 2>&1" % (model,dat_file,base,log))
     # XXX capture output, handle errors
     inf = read(base + "-gamma.dat")
     
