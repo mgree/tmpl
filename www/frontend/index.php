@@ -7,7 +7,9 @@ require_once('../../owa/owa_php.php');
 
 $owa = new owa_php();
 $owa->setSiteId('101db06411ab85d334726f4ec2344077');
+
 $owa->setPageTitle('index.php');
+$owa->setPageType(isset($_FILES['userpdf']) ? 'upload' : 'view');
 $owa->trackPageView();
 
 ?>
