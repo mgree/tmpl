@@ -1,7 +1,6 @@
 import sys, os
 import pickle
 
-import gensim
 import nltk
 
 from utils import *
@@ -16,8 +15,8 @@ if use_wordnet:
 else:
     stemmer = nltk.stem.porter.PorterStemmer()
     stem = stemmer.stem
-
-def tokenize(text):
+    
+def tokens(text):
     replacements = [("---"," "),
                     ("--"," "),
                     ("-", "")] # trying to capture multi-word keywords
@@ -25,9 +24,7 @@ def tokenize(text):
     for (src,tgt) in replacements:
         text = text.replace(src,tgt)
     
-    words = gensim.utils.simple_preprocess(text) # XXX can we drop this requirement?
-
-    return words
+    return preprocess(text)
 
 def make_bow(doc,d):
     bow = {}
@@ -80,7 +77,7 @@ if __name__ == '__main__':
 
     vocab = words_to_dict(open(words).read().split())
     
-    bow = make_bow(map(stem,tokenize(text)),vocab)
+    bow = make_bow(map(stem,tokens(text)),vocab)
 
     dat_file = base + ".dat"
     out = open(dat_file,"w")
@@ -103,6 +100,7 @@ if __name__ == '__main__':
 
     tgt = ["INPUT PDF"] + map(lambda s: map(float,s.split()), inf)
     # XXX these are the topic values, if we want to visualize them
+    # XXX be careful to not leak our filenames
     
     papers = map(lambda s: (distance(s[1],tgt[1]),s), papers)
     papers.sort(lambda x,y: cmp(x[0],y[0]))
