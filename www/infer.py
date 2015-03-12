@@ -9,13 +9,6 @@ from utils import *
 def words_to_dict(words):
     return dict(zip(words, range(0, len(words))))
 
-# XXX make these parameters
-model = "../lda/2015-03-10_09:16_lda20/final"
-words = "../lda/2015-03-10_09:16_vocab.dat"
-vocab = words_to_dict(open(words).read().split())
-docs = "../lda/2015-03-10_09:16_docs.dat"
-num = 20
-
 use_wordnet = True
 if use_wordnet:
     stemmer = nltk.stem.wordnet.WordNetLemmatizer()
@@ -47,11 +40,45 @@ def make_bow(doc,d):
             
     return bow
 
+
+modes = ["fulltext","abstracts"]
+ks = ["20","50","100","200"]
+
 if __name__ == '__main__':
-    pdf_file = sys.argv[1]
+    args = sys.argv[1:]
+
+    mode = modes[0]
+    k = ks[0]
+    num = 20
+    while len(args) > 1:
+        if args[0] == "-k":
+            if args[1] in ks:
+                k = args[1]
+
+            args = args[2:]
+
+        if args[0] in ["-m","--mode"]:
+            if args[1] in modes:
+                mode = args[1]
+
+            args = args[2:]
+
+        if args[0] in ["-n","--num"]:
+            if args[1] in range(1,50):
+                num = args[1]
+
+            args = args[2:]
+
+    model = os.path.join(mode,"lda" + k,"final")
+    words = os.path.join(mode,"vocab.dat")
+    docs = os.path.join(mode,"docs.dat")
+            
+    pdf_file = args[0]
     (base,_) = os.path.splitext(pdf_file)
     
     text = os.popen("pdftotext \"%s\" -" % pdf_file).read() # XXX safe filenames!
+
+    vocab = words_to_dict(open(words).read().split())
     
     bow = make_bow(map(stem,tokenize(text)),vocab)
 
@@ -68,6 +95,7 @@ if __name__ == '__main__':
     out.close()
 
     os.system("lda inf settings.txt %s %s %s" % (model,dat_file,base))
+    # XXX capture output, handle errors
     inf = read(base + "-gamma.dat")
     
     gammas = read(model + ".gamma")
