@@ -25,6 +25,10 @@ $owa->trackPageView();
   </h3>
 </center>
 
+<p>Upload a PDF and we'll give you the 10 most closely related papers
+according to the topic model we've built on the abstracts of POPL and
+PLDI.</p>
+
 <form id="upload" enctype="multipart/form-data" action="index.php" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="41943040" />
     <input name="userpdf" type="file" />
@@ -39,9 +43,12 @@ if ($_FILES['userpdf']['error'] == UPLOAD_ERR_OK &&
     is_uploaded_file($_FILES['userpdf']['tmp_name'])) {
    // okay, we have the file
 
+   echo "<p>Processing " . $_FILES['userpdf']['name'] . "...</p>";
    echo "<pre>";
    $pdf = tempnam($upload_dir, "doc-");
    if (move_uploaded_file($_FILES['userpdf']['tmp_name'],$pdf)) {
+      $owa->trackAction("upload","PDF",$pdf);
+
       chdir($backend_dir);
       putenv('PATH=~/.local/bin:~/lda-c-dist:$PATH');
       putenv('PYTHONIOENCODING=utf8');
@@ -57,6 +64,7 @@ if ($_FILES['userpdf']['error'] == UPLOAD_ERR_OK &&
 
 <center>
   <a href="http://www.textfiles.com/underconstruction/"><img src="construction.gif" /></a>
+  <p><b>Coming soon:</b> your choice of fancier topic models!</p>
   
   <div>You can also look at our analysis of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL 2015</a>.</div>
 
