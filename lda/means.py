@@ -31,8 +31,6 @@ def error(years, avgs, num_confs, num_topics):
             start = 1 + (num_topics+1)*c
             end = start + num_topics
 
-#            if y == 1:
-#                print years[y][start:end], avgs[y-1][start:end]
             cs.append(distance(years[y][start:end], avgs[y-1][start:end]))
         errs.append(cs)
 
