@@ -3,6 +3,7 @@ import gensim
 import sys, os, glob
 import codecs
 
+import utils
 import nltk
 
 use_wordnet = True
@@ -24,7 +25,7 @@ def tokenize(text):
     for (src,tgt) in replacements:
         text = text.replace(src,tgt)
     
-    words = gensim.utils.simple_preprocess(text)
+    words = utils.preprocess(text)
 
     return filter(lambda w: w not in stops, words)
 
