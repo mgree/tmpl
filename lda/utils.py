@@ -11,6 +11,9 @@ def mean(l):
 def read(f, enc="utf8"):
     return map(lambda s: s.strip(),codecs.open(f,"r",enc).readlines())
 
+def floats(l):
+    return [map(float,s.split()) for s in l]
+
 def squared(v):
     return v * v
 
