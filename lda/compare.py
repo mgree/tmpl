@@ -23,9 +23,8 @@ if (__name__ == '__main__'):
     args = dict(enumerate(sys.argv))
     pfx1 = args.get(1,"fulltext/ft")
     pfx2 = args.get(2,"abstracts/abs")
-    k = args.get(3,20)
-    
-    num = int(args.get(3,50))
+    k = int(args.get(3,20))
+    num = int(args.get(4,50))
     
     (betas1, docs1) = read_model(pfx1, k)
     (betas2, docs2) = read_model(pfx2, k)
@@ -34,8 +33,8 @@ if (__name__ == '__main__'):
     for (i, (b1, b2)) in enumerate(zip(betas1, betas2)):
 
         # make copies
-        top1 = [d for d in docs1]
-        top2 = [d for d in docs2]
+        top1 = list(docs1)
+        top2 = list(docs2)
 
         # sort by weight in topic i
         compare = cmp_on(i)
