@@ -21,14 +21,18 @@ def cmp_on(i):
 
 if (__name__ == '__main__'):
     args = dict(enumerate(sys.argv))
-    pfx1 = args.get(1,"fulltext/ft")
-    pfx2 = args.get(2,"abstracts/abs")
-    k = int(args.get(3,20))
+    k = int(args.get(1,20))
+    pfx1 = args.get(2,"fulltext/ft")
+    pfx2 = args.get(3,"abstracts/abs")
     num = int(args.get(4,50))
+    rankings = args.get(5,"rankings.csv")
     
     (betas1, docs1) = read_model(pfx1, k)
     (betas2, docs2) = read_model(pfx2, k)
 
+    rs = codecs.open(rankings, "w","utf8")
+    rs.write("Topic,Index1,Index2,Title\n")
+    
     counts = []
     for (i, (b1, b2)) in enumerate(zip(betas1, betas2)):
 
@@ -63,6 +67,7 @@ if (__name__ == '__main__'):
 
         for (d,_,i1,i2) in common:
             print "%s (#%d/#%d)" % (d,i1,i2)
+            rs.write(unicode(csv([i,i1,i2])) + u',' + quote(d) + u'\n')
 
         print "\n"
 

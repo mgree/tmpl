@@ -23,6 +23,9 @@ def distance(s1,s2):
 def csv(l):
     return ','.join(map(str,l))
 
+def quote(s):
+    return '"' + s.replace('\\', '\\\\').replace('"','\\"') + '"'
+
 # the following definitions are taken from gensim.utils
 # see https://github.com/piskvorky/gensim/blob/develop/gensim/utils.py
 
