@@ -25,6 +25,14 @@ $owa->trackPageView();
   </h3>
 </center>
 
+<p>Check out our <a href="http://snapl.org/2015/">SNAPL</a> paper,
+titled <a href="http://www.cs.princeton.edu/~mg19/papers/snapl2015.pdf">Tracking
+the flow of ideas through the programming languages
+literature</a>. We've built a tool to help search for related work
+using the topic models we built. You can also look at our analysis
+of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL
+2015</a>.</p>
+
 <p>Upload a PDF and we'll give you the 10 most closely related papers
 according to the topic model we've built on the abstracts of POPL and
 PLDI.</p>
@@ -65,9 +73,6 @@ if ($_FILES['userpdf']['error'] == UPLOAD_ERR_OK &&
 <center>
   <a href="http://www.textfiles.com/underconstruction/"><img src="construction.gif" /></a>
   <p><b>Coming soon:</b> your choice of fancier topic models!</p>
-  
-  <div>You can also look at our analysis of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL 2015</a>.</div>
-
 </center>
 </body>
 </html>
