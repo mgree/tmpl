@@ -28,8 +28,10 @@ $owa->trackPageView();
 <p>Check out our <a href="http://snapl.org/2015/">SNAPL</a> paper,
 titled <a href="http://www.cs.princeton.edu/~mg19/papers/snapl2015.pdf">Tracking
 the flow of ideas through the programming languages
-literature</a>. We've built a tool to help search for related work
-using the topic models we built. You can also look at our analysis
+literature</a>. We've put up some of
+the <a href="figures.php">figures</a> from the paper in a larger
+format. We've also built a tool to help search for related work using
+the topic models we built. You can also look at our analysis
 of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL
 2015</a>.</p>
 
