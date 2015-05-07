@@ -2,4 +2,8 @@
 *.hi
 *.o
 sessions
-.DS_STORE
+.DS_STOREscrape
+sessions.py
+scrape
+swarat
+fulltext
