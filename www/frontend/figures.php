@@ -51,6 +51,15 @@ manifest contracts</a>, and TAL
 is <a href="http://dl.acm.org/citation.cfm?id=268954">From system F to
 typed assembly language</a>.</p>
 
+<a href="figs/cite_with_random_kl.pdf"><img src="figs/cite_with_random_kl.png" /></a>
+<p>This graph is for the same data as the previous one, but
+using <a href="http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">symmetrized
+Kullback&ndash;Leibler divergence</a> as the distance metric instead
+of Euclidean distance. Symmetrized KL divergence even more
+dramatically separates related and unrelated work. The related work
+search has been updated to use this metric, instead of Euclidean
+distance.</p>
+
 <a href="figs/abs_vs_fulltext_lda20_by_topic.pdf">
   <img src="figs/abs_vs_fulltext_lda20_by_topic.png" />
 </a>
