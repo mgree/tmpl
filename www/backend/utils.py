@@ -11,12 +11,41 @@ def mean(l):
 def read(f, enc="utf8"):
     return map(lambda s: s.strip(),codecs.open(f,"r",enc).readlines())
 
+def floats(l):
+    return [map(float,s.split()) for s in l]
+
 def squared(v):
     return v * v
+
+def to_probability(v):
+    total = float(sum(v))
+    
+    return [vi / total for vi in v]
+
+def kl_asym(p, q):
+    return sum([pi * math.log(pi / qi) for (pi,qi) in zip(p,q)])
+
+def kl_divergence(p, q):
+    pn = to_probability(p)
+    qn = to_probability(q)
+    
+    return kl_asym(pn,qn) + kl_asym(qn,pn)
 
 def distance(s1,s2):
     return math.sqrt(sum([squared(v1 - v2) for v1,v2 in zip(s1,s2)]))
 
+def csv(l):
+    return ','.join(map(str,l))
+
+def from_csv(l):
+    return [s.split(',') for s in l]
+
+def to_csv(f,l):
+    codecs.open(f,"w","utf8").write('\n'.join([','.join(map(unicode,s)) for s in l]))
+
+
+def quote(s):
+    return '"' + s.replace('\\', '\\\\').replace('"','\\"') + '"'
 
 # the following definitions are taken from gensim.utils
 # see https://github.com/piskvorky/gensim/blob/develop/gensim/utils.py
