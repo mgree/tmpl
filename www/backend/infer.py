@@ -40,12 +40,14 @@ def make_bow(doc,d):
 
 modes = ["abstracts","fulltext"]
 ks = ["20","50","100","200"]
+dist = ["kl","euclidean"]
 
 if __name__ == '__main__':
     args = sys.argv[1:]
 
     mode = modes[0]
     k = ks[0]
+    dfun = dist[0]
     num = 20
     while len(args) > 1:
         if args[0] == "-k":
@@ -61,15 +63,21 @@ if __name__ == '__main__':
             args = args[2:]
 
         if args[0] in ["-n","--num"]:
-            if args[1] in range(1,50):
-                num = args[1]
+            if int(args[1]) in range(1,50):
+                num = int(args[1])
 
             args = args[2:]
 
+        if args[0] in ["-d","--distance"]:
+            if args[1] in dist:
+                dfun = args[1]
+
+            args = args[2:]
+            
     model = os.path.join(mode,"lda" + k,"final")
     words = os.path.join(mode,"vocab.dat")
     docs = os.path.join(mode,"docs.dat")
-            
+
     pdf_file = args[0]
     (base,_) = os.path.splitext(pdf_file)
     
@@ -102,10 +110,20 @@ if __name__ == '__main__':
     tgt = ["INPUT PDF"] + map(lambda s: map(float,s.split()), inf)
     # XXX these are the topic values, if we want to visualize them
     # XXX be careful to not leak our filenames
+
+    if dfun == "euclidean":
+        metric = distance
+        fmt = '%d'
+    elif dfun == "kl":
+        metric = kl_divergence
+        fmt = '%f'
+    else:
+        metric = kl_divergence
+        fmt = '%f'
     
-    papers = map(lambda s: (distance(s[1],tgt[1]),s), papers)
+    papers = map(lambda s: (metric(s[1],tgt[1]),s), papers)
     papers.sort(lambda x,y: cmp(x[0],y[0]))
 
     print "\nRelated papers:\n"
     for (d,(doc,gs)) in papers[0:num]:
-        print '  %s (%d)' % (doc,d)   
+        print ('  %s (' + fmt + ')') % (doc,d)   
