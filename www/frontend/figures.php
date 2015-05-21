@@ -71,9 +71,10 @@ POPL.</p>
   <img src="figs/topic_distributions_abs_lda20.png" />
 </a>
 <p>Log likelihood of words by topic for k=20 topics learned over
-abstracts. The x-axis is the rank of each word, i.e., the first point
-in a topic's graph is the most likely word for that topic; the y-axis
-is the log-likelihood of each word.</p>
+abstracts. The x-axis is the rank of each word, i.e., the left-most
+point in a topic's graph is the most likely word for <i>that
+topic</i>; word #1 is different for each topic. The y-axis is the
+log-likelihood of each word.</p>
 
 
 </body>
