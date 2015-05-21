@@ -67,5 +67,14 @@ distance.</p>
 k=20 topics learned over abstracts and full text for PLDI and
 POPL.</p>
 
+<a href="figs/topic_distributions_abs_lda20.pdf">
+  <img src="figs/topic_distributions_abs_lda20.png" />
+</a>
+<p>Log likelihood of words by topic for k=20 topics learned over
+abstracts. The x-axis is the rank of each word, i.e., the first point
+in a topic's graph is the most likely word for that topic; the y-axis
+is the log-likelihood of each word.</p>
+
+
 </body>
 </html>
