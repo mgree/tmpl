@@ -1,0 +1,2250 @@
+topic 000
+   testing
+   race
+   data
+   races
+   detection
+   programs
+   analysis
+   dynamic
+   java
+   execution
+   conditions
+   bugs
+   number
+   executions
+   technique
+
+
+topic 001
+   framework
+   frameworks
+   checking
+   set
+   properties
+   automatically
+   checks
+   box
+   general
+   space
+   allows
+   remaining
+   incorporate
+   express
+   checker
+
+
+topic 002
+   systems
+   system
+   critical
+   properties
+   operating
+   code
+   fairness
+   must
+   developers
+   scheduling
+   resources
+   programming
+   fully
+   acceptability
+   effort
+
+
+topic 003
+   path
+   paths
+   program
+   dynamic
+   slicing
+   statements
+   value
+   slices
+   slice
+   executed
+   control
+   along
+   execution
+   hot
+   branches
+
+
+topic 004
+   object
+   oriented
+   design
+   objects
+   tutorial
+   smalltalk
+   programming
+   systems
+   abstract
+   concepts
+   issues
+   inheritance
+   environment
+   paradigm
+   university
+
+
+topic 005
+   performance
+   applications
+   java
+   copy
+   trace
+   benchmarks
+   large
+   problems
+   copies
+   runtime
+   scale
+   ruby
+   metrics
+   benchmark
+   time
+
+
+topic 006
+   problem
+   solution
+   solutions
+   may
+   solve
+   systems
+   uses
+   consistency
+   fluid
+   show
+   inconsistency
+   forms
+   sites
+   chemical
+   management
+
+
+topic 007
+   memory
+   relaxed
+   performance
+   shared
+   hardware
+   heap
+   allocation
+   implementation
+   sc
+   multiprocessors
+   processor
+   safety
+   multi
+   pointers
+   architectures
+
+
+topic 008
+   code
+   source
+   tool
+   generation
+   also
+   space
+   available
+   cases
+   generated
+   generate
+   generating
+   allows
+   results
+   diagrams
+   sites
+
+
+topic 009
+   garbage
+   collection
+   collector
+   heap
+   objects
+   memory
+   time
+   space
+   collectors
+   generational
+   performance
+   object
+   allocation
+   copying
+   gc
+
+
+topic 010
+   languages
+   programming
+   general
+   features
+   typed
+   advantages
+   power
+   expressive
+   modern
+   simple
+   wide
+   show
+   limited
+   partial
+   flexible
+
+
+topic 011
+   constructs
+   core
+   main
+   level
+   extension
+   programming
+   dependency
+   control
+   syntactic
+   abstractions
+   allows
+   extend
+   system
+   expression
+   access
+
+
+topic 012
+   concurrent
+   threads
+   concurrency
+   thread
+   sequential
+   synchronization
+   abstractions
+   shared
+   interference
+   threaded
+   communication
+   may
+   guarantee
+   new
+   programming
+
+
+topic 013
+   compiler
+   code
+   optimizations
+   compilers
+   compilation
+   optimization
+   implementation
+   optimizing
+   performance
+   compiled
+   generated
+   generate
+   implemented
+   new
+   optimized
+
+
+topic 014
+   atomic
+   fine
+   blocks
+   updates
+   grained
+   locking
+   dynamic
+   sections
+   grain
+   performance
+   code
+   system
+   automatically
+   execution
+   implemented
+
+
+topic 015
+   attribute
+   grammar
+   grammars
+   tree
+   automata
+   context
+   free
+   parsing
+   attributes
+   evaluation
+   new
+   syntax
+   efficient
+   incremental
+   semantic
+
+
+topic 016
+   code
+   source
+   tool
+   generation
+   also
+   space
+   available
+   cases
+   generated
+   generate
+   generating
+   allows
+   results
+   diagrams
+   sites
+
+
+topic 017
+   efficient
+   implementation
+   simple
+   efficiency
+   practical
+   cost
+   inefficient
+   practice
+   addition
+   system
+   representations
+   interaction
+   optimization
+   computation
+   investigate
+
+
+topic 018
+   cache
+   data
+   performance
+   memory
+   locality
+   prediction
+   branch
+   profiling
+   reference
+   profile
+   prefetching
+   average
+   instruction
+   instructions
+   execution
+
+
+topic 019
+   research
+   poster
+   session
+   parametric
+   impact
+   programming
+   templates
+   new
+   polymorphism
+   concepts
+   aspects
+   programmers
+   notation
+   methods
+   understand
+
+
+topic 020
+   programmer
+   programmers
+   code
+   write
+   place
+   programming
+   intended
+   assumptions
+   performance
+   process
+   data
+   assumption
+   new
+   must
+   add
+
+
+topic 021
+   order
+   higher
+   rules
+   functions
+   new
+   equational
+   previous
+   syntactic
+   power
+   simple
+   show
+   formal
+   open
+   general
+   strict
+
+
+topic 022
+   unification
+   theorem
+   user
+   prover
+   design
+   interactive
+   development
+   may
+   coq
+   procedures
+   system
+   process
+   programming
+   input
+   tactics
+
+
+topic 023
+   web
+   javascript
+   applications
+   services
+   application
+   code
+   service
+   user
+   dynamic
+   attacks
+   development
+   system
+   taint
+   client
+   security
+
+
+topic 024
+   constraints
+   function
+   constraint
+   logic
+   functions
+   solver
+   programming
+   variables
+   symbolic
+   clp
+   solving
+   declarative
+   values
+   prolog
+   clause
+
+
+topic 025
+   programs
+   call
+   stack
+   calls
+   return
+   written
+   eliminate
+   results
+   deforestation
+   contain
+   execute
+   automatically
+   cut
+   show
+   certain
+
+
+topic 026
+   calculus
+   lambda
+   continuations
+   control
+   call
+   continuation
+   cps
+   terms
+   passing
+   name
+   value
+   operators
+   style
+   class
+   delimited
+
+
+topic 027
+   structures
+   data
+   structure
+   lists
+   trees
+   list
+   lenses
+   pointer
+   linked
+   view
+   new
+   operations
+   show
+   tree
+   recursive
+
+
+topic 028
+   semantics
+   operational
+   formal
+   semantic
+   denotational
+   abstract
+   definition
+   mathematical
+   definitions
+   implementations
+   correctness
+   also
+   precise
+   respect
+   meaning
+
+
+topic 029
+   effect
+   effects
+   side
+   computational
+   expressions
+   system
+   expression
+   call
+   technique
+   monads
+   monadic
+   soundness
+   simple
+   pure
+   show
+
+
+topic 030
+   project
+   development
+   software
+   agile
+   projects
+   process
+   architecture
+   team
+   large
+   business
+   design
+   management
+   system
+   integration
+   managers
+
+
+topic 031
+   dynamic
+   overhead
+   runtime
+   instrumentation
+   monitoring
+   checks
+   dynamically
+   performance
+   execution
+   information
+   average
+   analysis
+   low
+   cost
+   uses
+
+
+topic 032
+   operations
+   operation
+   value
+   arithmetic
+   expressions
+   functions
+   setting
+   evaluation
+   functional
+   data
+   real
+   operators
+   also
+   values
+   algorithms
+
+
+topic 033
+   tools
+   data
+   ad
+   hoc
+   visualization
+   source
+   editing
+   building
+   structure
+   tool
+   formats
+   programmers
+   process
+   edit
+   description
+
+
+topic 034
+   errors
+   bugs
+   error
+   programs
+   sharing
+   false
+   code
+   analysis
+   tool
+   bug
+   static
+   source
+   detection
+   finding
+   tools
+
+
+topic 035
+   objects
+   object
+   oriented
+   systems
+   escape
+   dynamic
+   business
+   tool
+   analysis
+   sharing
+   prototype
+   views
+   time
+   delegation
+   role
+
+
+topic 036
+   loop
+   array
+   loops
+   data
+   performance
+   compiler
+   arrays
+   iteration
+   iterations
+   codes
+   transformations
+   algorithm
+   optimizations
+   level
+   memory
+
+
+topic 037
+   proof
+   verification
+   proofs
+   reasoning
+   logic
+   coq
+   correctness
+   system
+   verified
+   formal
+   assistant
+   verifying
+   hoare
+   verify
+   assembly
+
+
+topic 038
+   composition
+   protocol
+   protocols
+   speculative
+   quantum
+   phase
+   cml
+   state
+   systems
+   linearizability
+   faults
+   fault
+   phases
+   events
+   classical
+
+
+topic 039
+   subtyping
+   complete
+   sound
+   types
+   calculus
+   structural
+   system
+   relation
+   show
+   coercions
+   bounded
+   coercion
+   axiomatization
+   completeness
+   proof
+
+
+topic 040
+   data
+   references
+   performance
+   gpu
+   memory
+   optimization
+   iterative
+   code
+   parallelism
+   vector
+   set
+   simd
+   processing
+   scientific
+   execution
+
+
+topic 041
+   modules
+   module
+   interface
+   interfaces
+   system
+   ml
+   user
+   separate
+   class
+   design
+   recursive
+   mixin
+   linking
+   abstraction
+   functors
+
+
+topic 042
+   types
+   recursive
+   type
+   data
+   recursion
+   dependent
+   algebraic
+   gadts
+   ocaml
+   constructors
+   also
+   show
+   datatypes
+   ml
+   definitions
+
+
+topic 043
+   used
+   set
+   commonly
+   uses
+   optimizer
+   among
+   optimizers
+   implemented
+   criteria
+   building
+   large
+   created
+   tool
+   show
+   makes
+
+
+topic 044
+   non
+   may
+   deterministic
+   trivial
+   determinism
+   data
+   new
+   must
+   set
+   prototype
+   results
+   true
+   part
+   show
+   powerdomain
+
+
+topic 045
+   information
+   policies
+   security
+   flow
+   policy
+   privacy
+   system
+   secure
+   control
+   sensitive
+   access
+   differential
+   noninterference
+   typed
+   property
+
+
+topic 046
+   specific
+   domain
+   modeling
+   framework
+   level
+   driven
+   concepts
+   code
+   models
+   uml
+   development
+   oriented
+   design
+   requirements
+   aspect
+
+
+topic 047
+   parallel
+   parallelism
+   sequential
+   parallelization
+   processors
+   programming
+   performance
+   execution
+   multicore
+   system
+   speedup
+   computation
+   core
+   deterministic
+   data
+
+
+topic 048
+   debugging
+   source
+   code
+   debugger
+   optimized
+   level
+   dsl
+   user
+   debug
+   testing
+   variables
+   debuggers
+   new
+   may
+   execution
+
+
+topic 049
+   application
+   applications
+   server
+   web
+   servers
+   bull
+   user
+   development
+   multi
+   tier
+   technology
+   users
+   source
+   system
+   problems
+
+
+topic 050
+   time
+   run
+   compile
+   methods
+   system
+   code
+   fast
+   running
+   designed
+   must
+   facility
+   real
+   facilities
+   lifetime
+   breakpoints
+
+
+topic 051
+   techniques
+   technique
+   new
+   data
+   applicable
+   uses
+   also
+   popular
+   concrete
+   show
+   require
+   certain
+   improving
+   aspects
+   applicability
+
+
+topic 052
+   translation
+   source
+   intermediate
+   preserving
+   target
+   transformations
+   compilation
+   conversion
+   process
+   terms
+   semantic
+   back
+   may
+   correctness
+   translated
+
+
+topic 053
+   representation
+   syntax
+   names
+   abstract
+   representations
+   new
+   name
+   binding
+   macro
+   macros
+   binders
+   programming
+   functional
+   definitions
+   system
+
+
+topic 054
+   method
+   methods
+   dispatch
+   multiple
+   predicate
+   code
+   dispatching
+   implementation
+   inheritance
+   oo
+   class
+   new
+   supporting
+   dynamic
+   cyclic
+
+
+topic 055
+   functional
+   imperative
+   purely
+   programming
+   functions
+   function
+   fusion
+   compositional
+   equational
+   pearl
+   reasoning
+   part
+   also
+   mathematical
+   style
+
+
+topic 056
+   flow
+   graph
+   data
+   control
+   analysis
+   graphs
+   information
+   dependence
+   structure
+   time
+   representation
+   global
+   algorithms
+   method
+   statements
+
+
+topic 057
+   safe
+   safety
+   code
+   dynamic
+   jit
+   platform
+   time
+   mechanisms
+   runtime
+   resource
+   performance
+   native
+   execution
+   user
+   level
+
+
+topic 058
+   patterns
+   pattern
+   matching
+   design
+   regular
+   evolution
+   problems
+   scp
+   analysis
+   string
+   data
+   system
+   process
+   expression
+   complex
+
+
+topic 059
+   program
+   approach
+   section
+   programs
+   approximate
+   correctness
+   data
+   assertions
+   set
+   method
+   analysis
+   predicate
+   correct
+   examples
+   programming
+
+
+topic 060
+   object
+   annotations
+   ownership
+   system
+   type
+   java
+   aliasing
+   code
+   encapsulation
+   objects
+   qualifiers
+   reference
+   programmers
+   annotated
+   also
+
+
+topic 061
+   library
+   libraries
+   parts
+   implementation
+   code
+   class
+   api
+   generics
+   implementations
+   style
+   interface
+   mechanism
+   new
+   structure
+   changes
+
+
+topic 062
+   linear
+   bounds
+   bound
+   invariants
+   quantitative
+   loops
+   resource
+   numerical
+   loop
+   functions
+   values
+   variables
+   invariant
+   control
+   also
+
+
+topic 063
+   classes
+   class
+   smalltalk
+   type
+   object
+   virtual
+   oriented
+   inheritance
+   mechanism
+   beta
+   var
+   may
+   variable
+   procedure
+   instance
+
+
+topic 064
+   prove
+   step
+   correctness
+   abstract
+   soundness
+   proving
+   primitives
+   level
+   correct
+   proof
+   sound
+   establish
+   develop
+   ml
+   low
+
+
+topic 065
+   size
+   code
+   rewrite
+   apl
+   compression
+   plan
+   time
+   addressing
+   arrays
+   evaluation
+   average
+   compiled
+   sequence
+   address
+   operators
+
+
+topic 066
+   transformation
+   transformations
+   partial
+   code
+   elimination
+   optimization
+   redundancy
+   motion
+   propagation
+   constant
+   functions
+   simple
+   global
+   results
+   representation
+
+
+topic 067
+   approach
+   runtime
+   proposed
+   lightweight
+   racket
+   code
+   main
+   popular
+   multi
+   untyped
+   fully
+   exploiting
+   design
+   general
+   extends
+
+
+topic 068
+   talk
+   acquisition
+   environmental
+   hass
+   book
+   new
+   world
+   panelists
+   workspace
+   community
+   coach
+   engineering
+   sun
+   developer
+   environment
+
+
+topic 069
+   specification
+   specifications
+   traces
+   tool
+   implementation
+   specifying
+   formal
+   specify
+   verification
+   tools
+   diagrams
+   play
+   diagram
+   specified
+   correct
+
+
+topic 070
+   input
+   inputs
+   output
+   optimizations
+   dynamic
+   optimization
+   performance
+   offline
+   automatically
+   online
+   analysis
+   show
+   distance
+   optimized
+   real
+
+
+topic 071
+   framework
+   frameworks
+   checking
+   set
+   properties
+   automatically
+   checks
+   box
+   general
+   space
+   allows
+   remaining
+   incorporate
+   express
+   checker
+
+
+topic 072
+   compilation
+   change
+   inlining
+   performance
+   analysis
+   changes
+   inline
+   must
+   file
+   cost
+   time
+   splitting
+   recompilation
+   expansion
+   compiled
+
+
+topic 073
+   algorithm
+   point
+   algorithms
+   points
+   fixed
+   floating
+   variables
+   join
+   number
+   also
+   new
+   advice
+   precision
+   node
+   best
+
+
+topic 074
+   two
+   validation
+   main
+   scheduling
+   pass
+   discusses
+   improvement
+   equivalent
+   parameterized
+   optimization
+   computation
+   optimizations
+   general
+   sometimes
+   choose
+
+
+topic 075
+   scheme
+   binding
+   lisp
+   environments
+   analysis
+   code
+   timing
+   scoping
+   new
+   variable
+   quasi
+   variables
+   control
+   plt
+   show
+
+
+topic 076
+   knowledge
+   developers
+   objective
+   search
+   artifacts
+   practices
+   code
+   innovation
+   decisions
+   user
+   project
+   users
+   evolution
+   might
+   developer
+
+
+topic 077
+   program
+   execution
+   technique
+   example
+   examples
+   text
+   identify
+   executions
+   takes
+   automatic
+   versions
+   improve
+   editing
+   construction
+   changes
+
+
+topic 078
+   analysis
+   analyses
+   context
+   sensitive
+   pointer
+   results
+   precision
+   points
+   interprocedural
+   flow
+   alias
+   precise
+   show
+   analyze
+   insensitive
+
+
+topic 079
+   test
+   dependence
+   dependences
+   testing
+   execution
+   parallelization
+   data
+   tests
+   cases
+   suite
+   input
+   compilers
+   dynamic
+   output
+   tested
+
+
+topic 080
+   design
+   students
+   programming
+   teaching
+   computer
+   science
+   course
+   student
+   learning
+   courses
+   api
+   process
+   concepts
+   curriculum
+   cs
+
+
+topic 081
+   inheritance
+   hierarchy
+   fields
+   field
+   object
+   multiple
+   record
+   layout
+   records
+   objects
+   space
+   class
+   hierarchies
+   also
+   extension
+
+
+topic 082
+   security
+   issues
+   tests
+   attempt
+   process
+   system
+   address
+   proposed
+   properties
+   critical
+   distributed
+   data
+   automated
+   policy
+   account
+
+
+topic 083
+   register
+   allocation
+   code
+   graph
+   registers
+   coloring
+   live
+   algorithm
+   allocator
+   scheduling
+   time
+   optimal
+   range
+   global
+   spill
+
+
+topic 084
+   software
+   product
+   aspect
+   aspects
+   concerns
+   development
+   oriented
+   components
+   systems
+   engineering
+   aop
+   separation
+   design
+   crosscutting
+   qos
+
+
+topic 085
+   refactoring
+   workshop
+   eclipse
+   oopsla
+   development
+   refactorings
+   examples
+   oriented
+   plug
+   ide
+   tool
+   design
+   ides
+   programming
+   workshops
+
+
+topic 086
+   attribute
+   grammar
+   grammars
+   tree
+   automata
+   context
+   free
+   parsing
+   attributes
+   evaluation
+   new
+   syntax
+   efficient
+   incremental
+   semantic
+
+
+topic 087
+   region
+   regions
+   memory
+   data
+   applications
+   assembly
+   access
+   management
+   io
+   level
+   system
+   irregular
+   show
+   objects
+   safety
+
+
+topic 088
+   abstract
+   interpretation
+   analysis
+   domain
+   operator
+   interpreters
+   domains
+   interpretations
+   lattice
+   analyses
+   general
+   properties
+   precision
+   quantified
+   contents
+
+
+topic 089
+   language
+   programming
+   features
+   design
+   programmers
+   designed
+   host
+   syntax
+   simple
+   natural
+   mechanisms
+   provided
+   expressiveness
+   power
+   written
+
+
+topic 090
+   type
+   types
+   system
+   inference
+   typed
+   polymorphic
+   polymorphism
+   ml
+   typing
+   checking
+   function
+   allows
+   principal
+   annotations
+   milner
+
+
+topic 091
+   types
+   data
+   sets
+   language
+   programming
+   functions
+   objects
+   may
+   domain
+   abstract
+   treatment
+   expressions
+   natural
+   structure
+   representations
+
+
+topic 092
+   abstraction
+   programs
+   checking
+   refinement
+   verification
+   abstractions
+   properties
+   data
+   predicate
+   heap
+   invariants
+   predicates
+   automatically
+   verify
+   state
+
+
+topic 093
+   system
+   systems
+   operating
+   design
+   development
+   software
+   process
+   layer
+   engineering
+   architecture
+   management
+   real
+   clos
+   choices
+   interface
+
+
+topic 094
+   functional
+   imperative
+   purely
+   programming
+   functions
+   function
+   fusion
+   compositional
+   equational
+   pearl
+   reasoning
+   part
+   also
+   mathematical
+   style
+
+
+topic 095
+   evaluation
+   incremental
+   analysis
+   lazy
+   demand
+   time
+   driven
+   functional
+   strictness
+   equations
+   complexity
+   call
+   strict
+   value
+   evaluated
+
+
+topic 096
+   objects
+   object
+   oriented
+   systems
+   escape
+   dynamic
+   business
+   tool
+   analysis
+   sharing
+   prototype
+   views
+   time
+   delegation
+   role
+
+
+topic 097
+   distributed
+   system
+   communication
+   variables
+   configuration
+   erlang
+   applications
+   distribution
+   local
+   message
+   network
+   multiparty
+   interaction
+   interactions
+   shared
+
+
+topic 098
+   procedure
+   termination
+   procedures
+   assertions
+   properties
+   induction
+   checking
+   calls
+   variance
+   recursive
+   call
+   inductive
+   analyses
+   summaries
+   liveness
+
+
+topic 099
+   reactive
+   programming
+   functional
+   frp
+   streams
+   agda
+   time
+   dependently
+   continuous
+   graphical
+   typed
+   proofs
+   stream
+   implementation
+   infinite
+
+
+topic 100
+   processes
+   process
+   asynchronous
+   synchronous
+   networks
+   events
+   communication
+   state
+   states
+   communicating
+   execution
+   system
+   time
+   space
+   merge
+
+
+topic 101
+   transactional
+   lock
+   memory
+   write
+   read
+   transactions
+   synchronization
+   data
+   locks
+   shared
+   performance
+   atomicity
+   implementation
+   strong
+   conflict
+
+
+topic 102
+   computation
+   useful
+   practical
+   applications
+   may
+   examples
+   quite
+   class
+   past
+   small
+   deal
+   range
+   number
+   lead
+   wide
+
+
+topic 103
+   storage
+   specialization
+   table
+   affine
+   mapping
+   data
+   management
+   allocation
+   mappings
+   vertex
+   schedule
+   automatic
+   tables
+   global
+   space
+
+
+topic 104
+   model
+   models
+   driven
+   state
+   abstract
+   mda
+   modeling
+   architecture
+   tool
+   allows
+   class
+   formal
+   platform
+   fully
+   execution
+
+
+topic 105
+   theory
+   relations
+   equivalence
+   relational
+   type
+   relation
+   types
+   parametricity
+   logical
+   equational
+   reasoning
+   terms
+   proof
+   abstract
+   bisimulation
+
+
+topic 106
+   problem
+   complexity
+   problems
+   algorithm
+   time
+   size
+   finite
+   show
+   complete
+   known
+   decidable
+   set
+   reachability
+   exponential
+   also
+
+
+topic 107
+   haskell
+   generic
+   monad
+   functional
+   monads
+   functions
+   programming
+   monadic
+   classes
+   effects
+   examples
+   fusion
+   features
+   show
+   sml
+
+
+topic 108
+   level
+   high
+   low
+   meta
+   programming
+   system
+   reflection
+   reflective
+   facilities
+   allow
+   services
+   metaclasses
+   new
+   levels
+   mechanism
+
+
+topic 109
+   synthesis
+   computations
+   approach
+   programming
+   specification
+   system
+   hardware
+   circuits
+   synthesize
+   implementations
+   heterogeneous
+   environment
+   sketch
+   also
+   circuit
+
+
+topic 110
+   modular
+   extensions
+   new
+   extensible
+   extension
+   sharing
+   enable
+   features
+   family
+   mechanisms
+   enables
+   open
+   implemented
+   mechanism
+   adding
+
+
+topic 111
+   static
+   dynamic
+   analysis
+   statically
+   contracts
+   checking
+   dynamically
+   typed
+   contract
+   sound
+   checks
+   safety
+   also
+   system
+   checked
+
+
+topic 112
+   structure
+   programming
+   language
+   paradigm
+   environment
+   agents
+   data
+   design
+   complex
+   new
+   prolog
+   paradigms
+   problems
+   frame
+   designed
+
+
+topic 113
+   classes
+   class
+   smalltalk
+   type
+   object
+   virtual
+   oriented
+   inheritance
+   mechanism
+   beta
+   var
+   may
+   variable
+   procedure
+   instance
+
+
+topic 114
+   logic
+   separation
+   temporal
+   programs
+   properties
+   linear
+   reasoning
+   logics
+   formulas
+   system
+   complete
+   proof
+   formula
+   branching
+   satisfiability
+
+
+topic 115
+   algorithms
+   self
+   data
+   adjusting
+   probabilistic
+   techniques
+   algorithmic
+   changes
+   programming
+   new
+   change
+   computation
+   distributions
+   probability
+   efficiently
+
+
+topic 116
+   reduction
+   optimal
+   strategy
+   calculus
+   terms
+   lambda
+   explicit
+   minimal
+   lgr
+   cost
+   number
+   trade
+   partial
+   computation
+   implementations
+
+
+topic 117
+   query
+   queries
+   xml
+   database
+   data
+   relational
+   system
+   databases
+   schema
+   updates
+   schemas
+   results
+   persistent
+   structure
+   may
+
+
+topic 118
+   software
+   development
+   systems
+   engineering
+   large
+   design
+   architecture
+   environment
+   component
+   enterprise
+   system
+   developers
+   requirements
+   scale
+   community
+
+
+topic 119
+   network
+   communication
+   energy
+   networks
+   mobile
+   power
+   partitioning
+   remote
+   performance
+   channels
+   hardware
+   devices
+   consumption
+   sensor
+   data
+
+
+topic 120
+   machine
+   virtual
+   code
+   machines
+   instruction
+   instructions
+   intermediate
+   set
+   architecture
+   target
+   generation
+   smalltalk
+   vm
+   description
+   bit
+
+
+topic 121
+   implementation
+   handling
+   design
+   exception
+   exceptions
+   control
+   mechanisms
+   mechanism
+   ml
+   implementing
+   performance
+   system
+   scope
+   implementations
+   much
+
+
+topic 122
+   java
+   component
+   class
+   bytecode
+   classes
+   code
+   object
+   interface
+   components
+   jvm
+   type
+   applications
+   application
+   objects
+   multiple
+
+
+topic 123
+   parser
+   parsing
+   lr
+   parsers
+   grammars
+   recovery
+   error
+   ll
+   productions
+   reductions
+   grammar
+   syntax
+   left
+   context
+   default
+
+
+topic 124
+   kernel
+   structural
+   prone
+   error
+   code
+   design
+   high
+   hardware
+   manual
+   coverage
+   manually
+   analysis
+   time
+   system
+   scheduler
+
+
