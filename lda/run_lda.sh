@@ -27,7 +27,7 @@ ABS=${PREFIX}_abstracts.dat
 
 for k in ${KS}; do
     lda est 1/50 ${k} settings.txt ${ABS} seeded ${PREFIX}_lda${k} &
-    echo ${PREFIX}_lda${k} >>.gitignore
+    echo ${PREFIX}_lda${k} >>../out/.gitignore
 done
 
 wait
@@ -44,6 +44,8 @@ for i in ${PREFIX}_lda*; do
     test -d ${i} && python by_year.py ${i}/final.gamma ${PREFIX}_docs.dat > ${i}_by_year.csv
 done
 
+echo "MOVING TO OUTPUT DIRECTORY"
+mv ${PREFIX}* ../out
 
 echo "DONE"
 echo All done. Started at ${START}, done at `date "+%Y-%m-%d %H:%M"`.
