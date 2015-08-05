@@ -1,0 +1,738 @@
+Topic 000
+---------
+Words (mean weight: -441.270056, min weight: -708.891668)
+  data (-3.668101)
+  memory (-3.904557)
+  performance (-3.907504)
+  program (-3.927726)
+  structure (-4.110851)
+  cache (-4.219180)
+  technique (-4.455006)
+  application (-4.734086)
+  reference (-4.737625)
+  locality (-4.754682)
+---------
+Papers
+Go with the flow: profiling copies to find runtime bloat - Guoqing Xu, Matthew Arnold, Nick Mitchell, Atanas Rountev, Gary Sevitsky (PLDI 2009)
+  165.026688
+Dynamic hot data stream prefetching for general-purpose programs - Trishul M. Chilimbi, Martin Hirzel (PLDI 2002)
+  161.026688
+A study of memory management for web-based applications on multicore processors - Hiroshi Inoue, Hideaki Komatsu, Toshio Nakatani (PLDI 2009)
+  143.026688
+Prefetch injection based on hardware monitoring and object metadata - Ali-Reza Adl-Tabatabai, Richard L. Hudson, Mauricio J. Serrano, Sreenivas Subramoney (PLDI 2004)
+  137.724279
+New control structures to aid gotolessness - D. M. Symes (POPL 1975)
+  132.920526
+Mining hot calling contexts in small space - Daniele Cono D'Elia, Camil Demetrescu, Irene Finocchi (PLDI 2011)
+  128.962564
+Efficient representations and abstractions for quantifying and exploiting data reference locality - Trishul M. Chilimbi (PLDI 2001)
+  126.079034
+Cache-conscious structure layout - Trishul M. Chilimbi, Mark D. Hill, James R. Larus (PLDI 1999)
+  125.026688
+Almost control-free (indeterministic) parallel computation on permit schemes - Karel Čulík (POPL 1978)
+  122.807151
+Analysis of pointer rotation - Norihisa Suzuki (POPL 1980)
+  120.076522
+
+
+Topic 001
+---------
+Words (mean weight: -425.687944, min weight: -704.621226)
+  algorithm (-3.293909)
+  program (-3.962401)
+  procedure (-4.073503)
+  problem (-4.260462)
+  proof (-4.345416)
+  automaton (-4.493676)
+  tree (-4.604830)
+  recursive (-4.622195)
+  property (-4.873142)
+  list (-4.912751)
+---------
+Papers
+Minimal and optimal computations of recursive programs - Gérard Berry, Jean-Jacques Lévy (POPL 1977)
+  244.552643
+Streaming transducers for algorithmic verification of single-pass list-processing programs - Rajeev Alur, Pavol Černý (POPL 2011)
+  171.026688
+Symbolic finite state transducers: algorithms and applications - Margus Veanes, Pieter Hooimeijer, Benjamin Livshits, David Molnar, Nikolaj Bjorner (POPL 2012)
+  124.066562
+Verifying liveness for asynchronous programs - Pierre Ganty, Rupak Majumdar, Andrey Rybalchenko (POPL 2009)
+  122.084382
+The evolution of list-copying algorithms and the need for structured program verification - Stanley Lee, Willem P. deRoever, Susan L. Gerhart (POPL 1979)
+  120.466427
+How to print floating-point numbers accurately - Guy L. Steele, Jr., Jon L. White (PLDI 1990)
+  117.605934
+The size-change principle for program termination - Chin Soon Lee, Neil D. Jones, Amir M. Ben-Amram (POPL 2001)
+  112.755338
+The power of parameterization in coinductive proof - Chung-Kil Hur, Georg Neis, Derek Dreyer, Viktor Vafeiadis (POPL 2013)
+  110.329285
+Verifying higher-order functional programs with pattern-matching algebraic data types - C.-H. Luke Ong, Steven James Ramsay (POPL 2011)
+  110.111087
+Printing floating-point numbers quickly and accurately with integers - Florian Loitsch (PLDI 2010)
+  108.598591
+
+
+Topic 002
+---------
+Words (mean weight: -455.570429, min weight: -695.144997)
+  garbage (-3.287628)
+  collection (-3.436872)
+  collector (-3.458585)
+  object (-3.956864)
+  memory (-4.016529)
+  heap (-4.018059)
+  region (-4.121378)
+  time (-4.384938)
+  space (-4.530342)
+  algorithm (-4.601353)
+---------
+Papers
+Generational stack collection and profile-driven pretenuring - Perry Cheng, Robert Harper, Peter Lee (PLDI 1998)
+  144.684237
+Free-Me: a static analysis for automatic individual object reclamation - Samuel Z. Guyer, Kathryn S. McKinley, Daniel Frampton (PLDI 2006)
+  144.312343
+Incremental algorithms for dispatching in dynamically typed languages - Yoav Zibin, Joseph (Yossi) Gil (POPL 2003)
+  128.443666
+A parallel, incremental and concurrent GC for servers - Yoav Ossia, Ori Ben-Yitzhak, Irit Goft, Elliot K. Kolodner, Victor Leikehman, Avi Owshanko (PLDI 2002)
+  128.026688
+A generational on-the-fly garbage collector for Java - Tamar Domani, Elliot K. Kolodner, Erez Petrank (PLDI 2000)
+  124.026688
+And then there were none: a stall-free real-time garbage collector for reconfigurable hardware - David F. Bacon, Perry Cheng, Sunil Shukla (PLDI 2012)
+  121.132174
+Immix: a mark-region garbage collector with space efficiency, fast collection, and mutator performance - Stephen M. Blackburn, Kathryn S. McKinley (PLDI 2008)
+  116.026688
+Garbage collection without paging - Matthew Hertz, Yi Feng, Emery D. Berger (PLDI 2005)
+  113.026688
+A parallel, real-time garbage collector - Perry Cheng, Guy E. Blelloch (PLDI 2001)
+  109.026688
+Ownership types for safe region-based memory management in real-time Java - Chandrasekhar Boyapati, Alexandru Salcianu, William Beebee, Jr., Martin Rinard (PLDI 2003)
+  106.851448
+
+
+Topic 003
+---------
+Words (mean weight: -417.483276, min weight: -707.579646)
+  compiler (-2.911256)
+  code (-3.402823)
+  program (-4.013919)
+  language (-4.051380)
+  compilation (-4.187183)
+  optimization (-4.511896)
+  proof (-4.520887)
+  machine (-4.639378)
+  semantics (-4.683131)
+  transformation (-4.701443)
+---------
+Papers
+Relocating machine instructions by currying - Norman Ramsey (PLDI 1996)
+  184.026688
+End-to-end verification of stack-space bounds for C programs - Quentin Carbonneaux, Jan Hoffmann, Tahina Ramananandro, Zhong Shao (PLDI 2014)
+  180.989513
+Surgical precision JIT compilers - Tiark Rompf, Arvind K. Sujeeth, Kevin J. Brown, HyoukJoong Lee, Hassan Chafi, Kunle Olukotun (PLDI 2014)
+  161.158407
+Reverse interpretation + mutation analysis = automatic retargeting - Christian S. Collberg (PLDI 1997)
+  128.026688
+The design and implementation of a certifying compiler - George C. Necula, Peter Lee (PLDI 1998)
+  115.949421
+Language-independent sandboxing of just-in-time compilation and self-modifying code - Jason Ansel, Petr Marchenko, Úlfar Erlingsson, Elijah Taylor, Brad Chen, Derek L. Schuff, David Sehr, Cliff L. Biffle, Bennet Yee (PLDI 2011)
+  115.139954
+Safe to the last instruction: automated verification of a type-safe operating system - Jean Yang, Chris Hawblitzel (PLDI 2010)
+  111.815822
+Inferable object-oriented typed assembly language - Ross Tate, Juan Chen, Chris Hawblitzel (PLDI 2010)
+  111.071654
+Automatically generating instruction selectors using declarative machine descriptions - João Dias, Norman Ramsey (POPL 2010)
+  109.026688
+Bringing extensibility to verified compilers - Zachary Tatlock, Sorin Lerner (PLDI 2010)
+  108.026688
+
+
+Topic 004
+---------
+Words (mean weight: -454.233049, min weight: -702.701283)
+  register (-3.221673)
+  allocation (-3.919002)
+  algorithm (-4.041847)
+  scheduling (-4.082386)
+  code (-4.125668)
+  graph (-4.227194)
+  instruction (-4.295064)
+  program (-4.556178)
+  variable (-4.606797)
+  range (-4.669379)
+---------
+Papers
+Copy coalescing by graph recoloring - Sebastian Hack, Gerhard Goos (PLDI 2008)
+  151.026688
+Differential register allocation - Xiaotong Zhuang, Santosh Pande (PLDI 2005)
+  148.601070
+Bitwidth aware global register allocation - Sriraman Tallam, Rajiv Gupta (POPL 2003)
+  132.873848
+Software pipelining showdown: optimal vs. heuristic methods in a production compiler - John Ruttenberg, G. R. Gao, A. Stoutchinin, W. Lichtenstein (PLDI 1996)
+  130.911073
+Accurate static branch prediction by value range propagation - Jason R. C. Patterson (PLDI 1995)
+  130.337895
+Register allocation for software pipelined multi-dimensional loops - Hongbo Rong, Alban Douillet, Guang R. Gao (PLDI 2005)
+  125.026688
+Register allocation via clique separators - R. Gupta, M. L. Soffa, T. Steele (PLDI 1989)
+  121.026688
+Improved spill code generation for software pipelined loops - Javier Zalamea, Josep Llosa, Eduard Ayguadé, Mateo Valero (PLDI 2000)
+  111.026688
+Fast copy coalescing and live-range identification - Zoran Budimlic, Keith D. Cooper, Timothy J. Harvey, Ken Kennedy, Timothy S. Oberg, Steven W. Reeves (PLDI 2002)
+  110.707029
+Improving balanced scheduling with compiler optimizations that increase instruction-level parallelism - Jack L. Lo, Susan J. Eggers (PLDI 1995)
+  105.905789
+
+
+Topic 005
+---------
+Words (mean weight: -409.884389, min weight: -713.888057)
+  program (-3.313574)
+  specification (-3.525089)
+  abstraction (-3.528326)
+  abstract (-3.747391)
+  verification (-4.026496)
+  analysis (-4.233586)
+  property (-4.291768)
+  model (-4.397021)
+  method (-4.459452)
+  framework (-4.553801)
+---------
+Papers
+An abstract interpretation framework for termination - Patrick Cousot, Radhia Cousot (POPL 2012)
+  158.831433
+Synthesis of biological models from mutation experiments - Ali Sinan Koksal, Yewen Pu, Saurabh Srivastava, Rastislav Bodik, Jasmin Fisher, Nir Piterman (POPL 2013)
+  145.263000
+Succinct Representation of Concurrent Trace Sets - Ashutosh Gupta, Thomas A. Henzinger, Arjun Radhakrishna, Roopsha Samanta, Thorsten Tarrach (POPL 2015)
+  137.669330
+Probabilistic, modular and scalable inference of typestate specifications - Nels E. Beckman, Aditya V. Nori (PLDI 2011)
+  136.026688
+Abstractions from proofs - Thomas A. Henzinger, Ranjit Jhala, Rupak Majumdar, Kenneth L. McMillan (POPL 2004)
+  117.026688
+Static specification inference using predicate mining - Murali Krishna Ramanathan, Ananth Grama, Suresh Jagannathan (PLDI 2007)
+  116.958226
+Synthesis of concurrent systems with many similar sequential processes (extended abstract) - P. C. Attie, E. A. Emerson (POPL 1989)
+  115.497272
+Deriving specialized program analyses for certifying component-client conformance - G. Ramalingam, Alex Warshavsky, John Field, Deepak Goyal, Mooly Sagiv (PLDI 2002)
+  114.026316
+Systematic design of program analysis frameworks - Patrick Cousot, Radhia Cousot (POPL 1979)
+  110.115306
+Deep Specifications and Certified Abstraction Layers - Ronghui Gu, Jérémie Koenig, Tahina Ramananandro, Zhong Shao, Xiongnan (Newman) Wu, Shu-Chun Weng, Haozhong Zhang, Yu Guo (POPL 2015)
+  108.364237
+
+
+Topic 006
+---------
+Words (mean weight: -432.377473, min weight: -704.515284)
+  language (-3.471523)
+  semantics (-3.709724)
+  programming (-4.161769)
+  model (-4.453444)
+  process (-4.508866)
+  program (-4.637847)
+  calculus (-4.672413)
+  effect (-4.711828)
+  functional (-4.754988)
+  system (-4.759584)
+---------
+Papers
+Bisimulation for quantum processes - Yuan Feng, Runyao Duan, Mingsheng Ying (POPL 2011)
+  140.080002
+Concurrent constraint programming - Vijay A. Saraswat, Martin Rinard (POPL 1990)
+  124.729962
+Monad transformers and modular interpreters - Sheng Liang, Paul Hudak, Mark Jones (POPL 1995)
+  102.362569
+A generic account of continuation-passing styles - John Hatcliff, Olivier Danvy (POPL 1994)
+  97.786953
+Closurize and concentrate - Julian Padget, John Fitch (POPL 1985)
+  96.026688
+Functional reactive programming from first principles - Zhanyong Wan, Paul Hudak (PLDI 2000)
+  92.026688
+Monads in action - Andrzej Filinski (POPL 2010)
+  88.991568
+Small domains spell fast strictness analysis - R. C. Sekar, Shaunak Pawagi, I. V. Ramarkrishnan (POPL 1990)
+  88.567413
+Sacrificing simplicity for convenience: Where do you draw the line? - J. H. Williams, E. L. Wimmers (POPL 1988)
+  87.026688
+First-class nonstandard interpretations by opening closures - Jeffrey Mark Siskind, Barak A. Pearlmutter (POPL 2007)
+  86.292986
+
+
+Topic 007
+---------
+Words (mean weight: -452.921274, min weight: -702.785819)
+  program (-3.733442)
+  parallel (-3.905506)
+  data (-3.918926)
+  compiler (-4.035220)
+  dependence (-4.050685)
+  parallelism (-4.199636)
+  loop (-4.217932)
+  optimization (-4.372862)
+  framework (-4.408486)
+  transformation (-4.550042)
+---------
+Papers
+Automatic compilation of MATLAB programs for synergistic execution on heterogeneous processors - Ashwin Prasad, Jayvant Anantpur, R. Govindarajan (PLDI 2011)
+  159.479258
+Iterative optimization in the polyhedral model: part ii, multidimensional time - Louis-Noël Pouchet, Cédric Bastoul, Albert Cohen, John Cavazos (PLDI 2008)
+  138.026688
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski, Ragavendar Ramamurthi, Mahesh Ravishankar, Naznin Fauzia, Louis-Noël Pouchet, Atanas Rountev, P. Sadayappan (PLDI 2012)
+  134.476455
+Effective parallelization of loops in the presence of I/O operations - Min Feng, Rajiv Gupta, Iulian Neamtiu (PLDI 2012)
+  132.026688
+Towards a holistic approach to auto-parallelization: integrating profile-driven parallelism detection and machine-learning based mapping - Georgios Tournavitis, Zheng Wang, Björn Franke, Michael F.P. O'Boyle (PLDI 2009)
+  125.026688
+Evaluating iterative optimization across 1000 datasets - Yang Chen, Yuanjie Huang, Lieven Eeckhout, Grigori Fursin, Liang Peng, Olivier Temam, Chengyong Wu (PLDI 2010)
+  124.026688
+Conversion of control dependence to data dependence - J. R. Allen, Ken Kennedy, Carrie Porterfield, Joe Warren (POPL 1983)
+  119.026688
+A cost-driven compilation framework for speculative parallelization of sequential programs - Zhao-Hui Du, Chu-Cheow Lim, Xiao-Feng Li, Chen Yang, Qingyu Zhao, Tin-Fook Ngai (PLDI 2004)
+  118.026688
+Linear analysis and optimization of stream programs - Andrew A. Lamb, William Thies, Saman Amarasinghe (PLDI 2003)
+  107.026688
+Storage assignment optimizations to generate compact and efficient code on embedded DSPs - Amit Rao, Santosh Pande (PLDI 1999)
+  106.974185
+
+
+Topic 008
+---------
+Words (mean weight: -414.932767, min weight: -698.704375)
+  system (-3.748170)
+  language (-3.807281)
+  programming (-3.819197)
+  network (-3.881890)
+  distributed (-4.008581)
+  communication (-4.084326)
+  program (-4.123626)
+  computer (-4.521187)
+  model (-4.579031)
+  parallel (-4.621998)
+---------
+Papers
+Programming languages for programmable networks - Jennifer Rexford (POPL 2012)
+  179.026688
+Compile-time dynamic voltage scaling settings: opportunities and limits - Fen Xie, Margaret Martonosi, Sharad Malik (PLDI 2003)
+  159.024511
+N-synchronous Kahn networks: a relaxed model of synchrony for real-time systems - Albert Cohen, Marc Duranton, Christine Eisenbeis, Claire Pagetti, Florence Plateau, Marc Pouzet (POPL 2006)
+  158.405443
+EXOCHI: architecture and programming environment for a heterogeneous multi-core multithreaded system - Perry H. Wang, Jamison D. Collins, Gautham N. Chinya, Hong Jiang, Xinmin Tian, Milind Girkar, Nick Y. Yang, Guei-Yuan Lueh, Hong Wang (PLDI 2007)
+  145.026688
+Reliable and efficient programming abstractions for wireless sensor networks - Nupur Kothari, Ramakrishna Gummadi, Todd Millstein, Ramesh Govindan (PLDI 2007)
+  138.654650
+Systems biology, models, and concurrency - Walter Fontana (POPL 2008)
+  130.026688
+Programming ad-hoc networks of mobile and resource-constrained devices - Yang Ni, Ulrich Kremer, Adrian Stere, Liviu Iftode (PLDI 2005)
+  128.277196
+A compiler and run-time system for network programming languages - Christopher Monsanto, Nate Foster, Rob Harrison, David Walker (POPL 2012)
+  122.789581
+The next mainstream programming language: a game developer's perspective - Tim Sweeney (POPL 2006)
+  118.026688
+Look up!: your future is in the cloud - James R. Larus (PLDI 2013)
+  114.026688
+
+
+Topic 009
+---------
+Words (mean weight: -428.050093, min weight: -711.025378)
+  language (-3.121791)
+  system (-3.320085)
+  type (-3.810557)
+  module (-4.009692)
+  programming (-4.022836)
+  design (-4.347300)
+  program (-4.659414)
+  security (-4.987873)
+  data (-4.993540)
+  mechanism (-5.047536)
+---------
+Papers
+From Boolean to quantitative notions of correctness - Thomas A. Henzinger (POPL 2010)
+  191.680004
+\"Type-completeness\" as a language principle - Alan Demers, James Donahue (POPL 1980)
+  139.026688
+Advanced programming language design in enterprise software: a lambda-calculus theorist wanders into a datacenter - Chet Murthy (POPL 2007)
+  138.026688
+A type system for borrowing permissions - Karl Naden, Robert Bocchino, Jonathan Aldrich, Kevin Bierhoff (POPL 2012)
+  135.105651
+Differential Privacy: Now it's Getting Personal - Hamid Ebadi, David Sands, Gerardo Schneider (POPL 2015)
+  133.925303
+A type-theoretic approach to higher-order modules with sharing - Robert Harper, Mark Lillibridge (POPL 1994)
+  133.026688
+State-dependent representation independence - Amal Ahmed, Derek Dreyer, Andreas Rossberg (POPL 2009)
+  130.526302
+Æminium: a permission based concurrent-by-default programming language approach - Sven Stork, Karl Naden, Joshua Sunshine, Manual Mohr, Alcides Fonseca, Paulo Marques, Jonathan Aldrich (PLDI 2014)
+  129.968498
+Rely-guarantee references for refinement types over aliased mutable data - Colin S. Gordon, Michael D. Ernst, Dan Grossman (PLDI 2013)
+  128.332534
+Languages as libraries - Sam Tobin-Hochstadt, Vincent St-Amour, Ryan Culpepper, Matthew Flatt, Matthias Felleisen (PLDI 2011)
+  120.459458
+
+
+Topic 010
+---------
+Words (mean weight: -435.689670, min weight: -699.610866)
+  object (-3.313308)
+  optimization (-3.582031)
+  language (-3.841454)
+  program (-4.149537)
+  class (-4.196954)
+  type (-4.341971)
+  field (-4.389949)
+  method (-4.497788)
+  compiler (-4.555458)
+  technique (-4.589064)
+---------
+Papers
+Lightweight annotations for controlling sharing in concurrent data structures - Zachary R. Anderson, David Gay, Mayur Naik (PLDI 2009)
+  149.178730
+A framework for interprocedural optimization in the presence of dynamic class loading - Vugranam C. Sreedhar, Michael Burke, Jong-Deok Choi (PLDI 2000)
+  137.026688
+Inferring types in Smalltalk - Norihisa Suzuki (POPL 1981)
+  135.436474
+Automatic inference of stationary fields: a generalization of java's final fields - Christopher Unkel, Monica S. Lam (POPL 2008)
+  126.026688
+Selective specialization for object-oriented languages - Jeffrey Dean, Craig Chambers, David Grove (PLDI 1995)
+  121.258862
+Flick: a flexible, optimizing IDL compiler - Eric Eide, Kevin Frei, Bryan Ford, Jay Lepreau, Gary Lindstrom (PLDI 1997)
+  116.235044
+Equality saturation: a new approach to optimization - Ross Tate, Michael Stepp, Zachary Tatlock, Sorin Lerner (POPL 2009)
+  112.026688
+Typing a multi-language intermediate code - Andrew D. Gordon, Don Syme (POPL 2001)
+  107.338367
+Interactive type analysis and extended message splitting; optimizing dynamically-typed object-oriented programs - Craig Chambers, David Ungar (PLDI 1990)
+  107.302929
+Some optimization techniques for an extensible language - Christopher Ryland (POPL 1975)
+  101.855730
+
+
+Topic 011
+---------
+Words (mean weight: -445.073367, min weight: -703.393995)
+  error (-3.384930)
+  application (-3.899097)
+  program (-3.975535)
+  system (-4.240303)
+  user (-4.570914)
+  tool (-4.704292)
+  analysis (-4.795459)
+  bug (-4.815071)
+  effect (-4.839391)
+  input (-4.846824)
+---------
+Papers
+A dynamic program analysis to find floating-point accuracy problems - Florian Benz, Andreas Hildebrandt, Sebastian Hack (PLDI 2012)
+  177.026688
+Demonic memory for process histories - P. R. Wilson, T. G. Moher (PLDI 1989)
+  172.026688
+Improved error reporting for software that uses black-box components - Jungwoo Ha, Christopher J. Rossbach, Jason V. Davis, Indrajit Roy, Hany E. Ramadan, Donald E. Porter, David L. Chen, Emmett Witchel (PLDI 2007)
+  153.026688
+Sound and precise analysis of web applications for injection vulnerabilities - Gary Wassermann, Zhendong Su (PLDI 2007)
+  139.164877
+Automatic runtime error repair and containment via recovery shepherding - Fan Long, Stelios Sidiroglou-Douskos, Martin Rinard (PLDI 2014)
+  136.026688
+TraceBack: first fault diagnosis by reconstruction of distributed control flow - Andrew Ayers, Richard Schooler, Chris Metcalf, Anant Agarwal, Junghwan Rhee, Emmett Witchel (PLDI 2005)
+  135.716219
+A maximum-flow approach to anomaly isolation in unification-based incremental type inference - Gregory F. Johnson, Janet A. Walz (POPL 1986)
+  135.205689
+The essence of command injection attacks in web applications - Zhendong Su, Gary Wassermann (POPL 2006)
+  127.271096
+Static analysis and compiler design for idempotent processing - Marc A. de Kruijf, Karthikeyan Sankaralingam, Somesh Jha (PLDI 2012)
+  121.026688
+The ExoVM system for automatic VM and application reduction - Ben L. Titzer, Joshua Auerbach, David F. Bacon, Jens Palsberg (PLDI 2007)
+  119.857317
+
+
+Topic 012
+---------
+Words (mean weight: -437.871480, min weight: -707.688960)
+  program (-2.645948)
+  loop (-4.303968)
+  array (-4.490029)
+  transformation (-4.532145)
+  synthesis (-4.623495)
+  bound (-4.624068)
+  example (-4.679760)
+  technique (-4.734877)
+  statement (-4.796418)
+  data (-4.827499)
+---------
+Papers
+Transformational programming: applications to algorithms and systems - Robert Paige (POPL 1983)
+  449.996561
+Theoretical and empirical studies on using program mutation to test the functional correctness of programs - Timothy A. Budd, Richard A. DeMillo, Richard J. Lipton, Frederick G. Sayward (POPL 1980)
+  303.903634
+Implementation of an array bound checker - Norihisa Suzuki, Kiyoshi Ishihata (POPL 1977)
+  245.934787
+Editing by example - Robert Nix (POPL 1984)
+  153.026688
+Thin slicing - Manu Sridharan, Stephen J. Fink, Rastislav Bodik (PLDI 2007)
+  143.467371
+From program verification to program synthesis - Saurabh Srivastava, Sumit Gulwani, Jeffrey S. Foster (POPL 2010)
+  130.227976
+Expressing and verifying probabilistic assertions - Adrian Sampson, Pavel Panchekha, Todd Mytkowicz, Kathryn S. McKinley, Dan Grossman, Luis Ceze (PLDI 2014)
+  127.143907
+Incremental program testing using program dependence graphs - Samuel Bates, Susan Horwitz (POPL 1993)
+  125.026688
+Slicing probabilistic programs - Chung-Kil Hur, Aditya V. Nori, Sriram K. Rajamani, Selva Samuel (PLDI 2014)
+  124.496842
+SPEED: precise and efficient static estimation of program computational complexity - Sumit Gulwani, Krishna K. Mehra, Trishul Chilimbi (POPL 2009)
+  123.625254
+
+
+Topic 013
+---------
+Words (mean weight: -393.689344, min weight: -715.751993)
+  analysis (-2.444502)
+  program (-3.434337)
+  flow (-3.488011)
+  data (-3.599086)
+  algorithm (-3.921352)
+  graph (-4.155001)
+  information (-4.481062)
+  problem (-4.506690)
+  structure (-4.514821)
+  path (-4.561481)
+---------
+Papers
+Monoids for rapid data flow analysis - Barry K. Rosen (POPL 1978)
+  472.026688
+Systematic design of program analysis frameworks - Patrick Cousot, Radhia Cousot (POPL 1979)
+  291.633968
+FlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps - Steven Arzt, Siegfried Rasthofer, Christian Fritz, Eric Bodden, Alexandre Bartel, Jacques Klein, Yves Le Traon, Damien Octeau, Patrick McDaniel (PLDI 2014)
+  148.026688
+Flow analysis and optimization of LISP-like structures - Neil D. Jones, Steven S. Muchnick (POPL 1979)
+  145.028595
+Faster Algorithms for Algebraic Path Properties in Recursive State Machines with Constant Treewidth - Krishnendu Chatterjee, Rasmus Ibsen-Jensen, Andreas Pavlogiannis, Prateesh Goyal (POPL 2015)
+  133.303810
+Qualified data flow problems - L. Howard Holley, Barry K. Rosen (POPL 1980)
+  130.026688
+Incremental data flow analysis via dominator and attribute update - M. D. Carroll, B. G. Ryder (POPL 1988)
+  123.972214
+Linear cost is sometimes quadratic - Barry K. Rosen (POPL 1981)
+  117.026688
+Is continuation-passing useful for data flow analysis? - Amr Sabry, Matthias Felleisen (PLDI 1994)
+  116.885823
+Summarizing graphs by regular expressions - Mark Wegman (POPL 1983)
+  115.513193
+
+
+Topic 014
+---------
+Words (mean weight: -445.123277, min weight: -706.704421)
+  memory (-3.701623)
+  concurrent (-4.078898)
+  model (-4.109489)
+  implementation (-4.182996)
+  program (-4.223758)
+  thread (-4.340961)
+  data (-4.450311)
+  language (-4.620774)
+  atomic (-4.683669)
+  concurrency (-4.698063)
+---------
+Papers
+Lock elision for read-only critical sections in Java - Takuya Nakaike, Maged M. Michael (PLDI 2010)
+  167.026688
+Feedback-directed barrier optimization in a strongly isolated STM - Nathan G. Bronson, Christos Kozyrakis, Kunle Olukotun (POPL 2009)
+  161.026688
+LeakChaser: helping programmers narrow down causes of memory leaks - Guoqing Xu, Michael D. Bond, Feng Qin, Atanas Rountev (PLDI 2011)
+  157.797048
+DRFX: a simple and efficient memory model for concurrent programming languages - Daniel Marino, Abhayendra Singh, Todd Millstein, Madanlal Musuvathi, Satish Narayanasamy (PLDI 2010)
+  134.026688
+Laws of order: expensive synchronization in concurrent algorithms cannot be eliminated - Hagit Attiya, Rachid Guerraoui, Danny Hendler, Petr Kuznetsov, Maged M. Michael, Martin Vechev (POPL 2011)
+  132.921410
+Fast RMWs for TSO: semantics and implementation - Bharghava Rajaram, Vijay Nagarajan, Susmit Sarkar, Marco Elver (PLDI 2013)
+  130.535019
+Language constructs for transactional memory - Tim Harris (POPL 2009)
+  127.026688
+Autolocker: synchronization inference for atomic sections - Bill McCloskey, Feng Zhou, David Gay, Eric Brewer (POPL 2006)
+  124.026688
+Programming by sketching for bit-streaming programs - Armando Solar-Lezama, Rodric Rabbah, Rastislav Bodík, Kemal Ebcioğlu (PLDI 2005)
+  119.026688
+On the verification problem for weak memory models - Mohamed Faouzi Atig, Ahmed Bouajjani, Sebastian Burckhardt, Madanlal Musuvathi (POPL 2010)
+  117.579933
+
+
+Topic 015
+---------
+Words (mean weight: -453.152229, min weight: -696.169527)
+  code (-2.873827)
+  algorithm (-4.149040)
+  expression (-4.285989)
+  machine (-4.516419)
+  generation (-4.522367)
+  language (-4.774535)
+  technique (-4.816935)
+  pattern (-4.878108)
+  program (-4.917352)
+  problem (-5.017631)
+---------
+Papers
+Compilation and delayed evaluation in APL - Leo J. Guibas, Douglas K. Wyatt (POPL 1978)
+  439.026688
+Optimal code generation for expression trees: an application BURS theory - E. Pelegrí-Llopart, S. L. Graham (POPL 1988)
+  159.036499
+String pattern matching in polynomial time - K. C. Liu, A. C. Fleck (POPL 1979)
+  155.522909
+Modular code generation from synchronous block diagrams: modularity vs. code size - Roberto Lublinerman, Christian Szegedy, Stavros Tripakis (POPL 2009)
+  153.026688
+tcc: a system for fast, flexible, and high-level dynamic code generation - Massimiliano Poletto, Dawson R. Engler, M. Frans Kaashoek (PLDI 1997)
+  128.164316
+Complete removal of redundant expressions - Rastislav Bodík, Rajiv Gupta, Mary Lou Soffa (PLDI 1998)
+  125.159553
+Formally optimal boxing - Fritz Henglein, Jesper Jørgensen (POPL 1994)
+  124.212723
+Automatic volume management for programmable microfluidics - Ahmed M. Amin, Mithuna Thottethodi, T. N. Vijaykumar, Steven Wereley, Stephen C. Jacobson (PLDI 2008)
+  116.345641
+Jungloid mining: helping to navigate the API jungle - David Mandelin, Lin Xu, Rastislav Bodík, Doug Kimelman (PLDI 2005)
+  113.596349
+Parameterized tiled loops for free - Lakshminarayanan Renganarayanan, DaeGon Kim, Sanjay Rajopadhye, Michelle Mills Strout (PLDI 2007)
+  110.827285
+
+
+Topic 016
+---------
+Words (mean weight: -380.003180, min weight: -709.171715)
+  type (-2.027996)
+  system (-3.887182)
+  language (-4.193563)
+  inference (-4.224155)
+  calculus (-4.246376)
+  polymorphic (-4.493675)
+  typing (-4.702404)
+  data (-4.724074)
+  function (-4.739925)
+  program (-4.755445)
+---------
+Papers
+Structural semantics for polymorphic data types (preliminary report) - Daniel Leivant (POPL 1983)
+  566.410387
+Polymorphic type inference - Daniel Leivant (POPL 1983)
+  377.275023
+Inferring types in Smalltalk - Norihisa Suzuki (POPL 1981)
+  198.598705
+Types as intervals - Robert Cartwright (POPL 1985)
+  172.026688
+Precise typing of abstract data type specifications - Richard B. Kieburtz (POPL 1983)
+  170.186748
+Why dependent types matter - James McKinna (POPL 2006)
+  151.050572
+Principal Type Schemes for Gradual Programs - Ronald Garcia, Matteo Cimini (POPL 2015)
+  134.026688
+Deciding type equivalence in a language with singleton kinds - Christopher A. Stone, Robert Harper (POPL 2000)
+  133.705429
+A relationally parametric model of dependent type theory - Robert Atkey, Neil Ghani, Patricia Johann (POPL 2014)
+  127.452015
+Foundations for structured programming with GADTs - Patricia Johann, Neil Ghani (POPL 2008)
+  125.026688
+
+
+Topic 017
+---------
+Words (mean weight: -435.195616, min weight: -704.623831)
+  program (-3.178878)
+  dynamic (-3.559459)
+  execution (-3.714828)
+  race (-3.812312)
+  analysis (-4.103537)
+  technique (-4.388940)
+  path (-4.402777)
+  bug (-4.514216)
+  detection (-4.771192)
+  static (-4.780619)
+---------
+Papers
+DoubleChecker: efficient sound and precise atomicity checking - Swarnendu Biswas, Jipeng Huang, Aritra Sengupta, Michael D. Bond (PLDI 2014)
+  156.201134
+Artemis: practical runtime monitoring of applications for execution anomalies - Long Fei, Samuel P. Midkiff (PLDI 2006)
+  145.026688
+Iterative context bounding for systematic testing of multithreaded programs - Madanlal Musuvathi, Shaz Qadeer (PLDI 2007)
+  142.026688
+Automatically classifying benign and harmful data races using replay analysis - Satish Narayanasamy, Zhenghao Wang, Jordan Tigani, Andrew Edwards, Brad Calder (PLDI 2007)
+  136.026688
+Sound predictive race detection in polynomial time - Yannis Smaragdakis, Jacob Evans, Caitlin Sadowski, Jaeheon Yi, Cormac Flanagan (POPL 2012)
+  129.026688
+PACER: proportional detection of data races - Michael D. Bond, Katherine E. Coons, Kathryn S. McKinley (PLDI 2010)
+  128.026688
+Directed incremental symbolic execution - Suzette Person, Guowei Yang, Neha Rungta, Sarfraz Khurshid (PLDI 2011)
+  127.026688
+Race directed random testing of concurrent programs - Koushik Sen (PLDI 2008)
+  127.026688
+Towards locating execution omission errors - Xiangyu Zhang, Sriraman Tallam, Neelam Gupta, Rajiv Gupta (PLDI 2007)
+  125.278522
+Efficient state merging in symbolic execution - Volodymyr Kuznetsov, Johannes Kinder, Stefan Bucur, George Candea (PLDI 2012)
+  121.026688
+
+
+Topic 018
+---------
+Words (mean weight: -410.772223, min weight: -711.195410)
+  logic (-2.766590)
+  program (-3.498114)
+  proof (-3.773708)
+  system (-4.183290)
+  separation (-4.231017)
+  reasoning (-4.255359)
+  language (-4.533461)
+  verification (-4.553815)
+  theory (-4.669571)
+  temporal (-4.684264)
+---------
+Papers
+\"Sometimes\" and \"not never\" revisited: on branching versus linear time (preliminary report) - E. Allen Emerson, Joseph Y. Halpern (POPL 1983)
+  417.026688
+\"Sometime\" is sometimes \"not never\": on the temporal logic of programs - Leslie Lamport (POPL 1980)
+  187.026688
+An integrated proof language for imperative programs - Karen Zee, Viktor Kuncak, Martin C. Rinard (PLDI 2009)
+  162.316001
+Skinny and fleshy failures of relative completeness - D. Leivant, T. Fernando (POPL 1987)
+  144.065036
+A fixpoint calculus for local and global program flows - Rajeev Alur, Swarat Chaudhuri, P. Madhusudan (POPL 2006)
+  136.629254
+A nonstandard standardization theorem - Beniamino Accattoli, Eduardo Bonelli, Delia Kesner, Carlos Lombardi (POPL 2014)
+  121.026688
+Full functional verification of linked data structures - Karen Zee, Viktor Kuncak, Martin Rinard (PLDI 2008)
+  117.576748
+Parametric completeness for separation theories - James Brotherston, Jules Villard (POPL 2014)
+  113.026688
+A dynamic logic of multiprocessing with incomplete information - John H. Reif, Gary L. Peterson (POPL 1980)
+  110.165431
+Cyclic proofs of program termination in separation logic - James Brotherston, Richard Bornat, Cristiano Calcagno (POPL 2008)
+  108.732979
+
+
+Topic 019
+---------
+Words (mean weight: -462.055778, min weight: -701.964734)
+  language (-3.365471)
+  grammar (-3.477351)
+  attribute (-3.953542)
+  parser (-4.175930)
+  programming (-4.298236)
+  parsing (-4.594269)
+  method (-4.753084)
+  technique (-4.836334)
+  lr (-4.841962)
+  section (-4.932360)
+---------
+Papers
+Elimination of single productions from LR parsers in conjunction with the use of default reductions - Eljas Soisalon-Soininen (POPL 1977)
+  347.026688
+Abstraction mechanisms in the BETA programming language - Bent Bruun Kristensen, Ole Lehrmann Madsen, Birger Møller-Pedersen, Kristen Nygaard (POPL 1983)
+  321.090700
+Strictness analysis aids time analysis - P. Wadler (POPL 1988)
+  267.665218
+Uncovering principles of novice programming - Jeffrey Bonar, Elliot Soloway (POPL 1983)
+  225.369059
+Automatic generation of near-optimal linear-time translators for non-circular attribute grammars - Rina Cohen, Eli Harry (POPL 1979)
+  183.026688
+Generalized left corner parsing - Alan J. Demers (POPL 1977)
+  176.026688
+Strict deterministic versus LR(0) parsing - Matthew M. Geller, Michael A. Harrison (POPL 1973)
+  153.026688
+Wild control operators - Chris Barker (POPL 2009)
+  152.239053
+Applications of a graph grammar for program control flow analysis - Ken Kennedy, Linda Zucconi (POPL 1977)
+  139.102121
+Better extensibility through modular syntax - Robert Grimm (PLDI 2006)
+  128.238045

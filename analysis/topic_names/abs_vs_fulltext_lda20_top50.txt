@@ -1,0 +1,444 @@
+Topic 000
+---------
+Found 28 documents in common out of the top 50.
+
+Efficient representations and abstractions for quantifying and exploiting data reference locality - Trishul M. Chilimbi (PLDI 2001) (#2/#6)
+Using managed runtime systems to tolerate holes in wearable memories - Tiejun Gao, Karin Strauss, Stephen M. Blackburn, Kathryn S. McKinley, Doug Burger, James Larus (PLDI 2013) (#9/#11)
+Efficient discovery of regular stride patterns in irregular programs and its use in compiler prefetching - Youfeng Wu (PLDI 2002) (#7/#14)
+Dynamic hot data stream prefetching for general-purpose programs - Trishul M. Chilimbi, Martin Hirzel (PLDI 2002) (#21/#1)
+Brainy: effective selection of data structures - Changhee Jung, Silvius Rus, Brian P. Railing, Nathan Clark, Santosh Pande (PLDI 2011) (#5/#21)
+Cache-conscious coallocation of hot data streams - Trishul M. Chilimbi, Ran Shaham (PLDI 2006) (#18/#16)
+Prefetch injection based on hardware monitoring and object metadata - Ali-Reza Adl-Tabatabai, Richard L. Hudson, Mauricio J. Serrano, Sreenivas Subramoney (PLDI 2004) (#33/#3)
+A study of memory management for web-based applications on multicore processors - Hiroshi Inoue, Hideaki Komatsu, Toshio Nakatani (PLDI 2009) (#37/#2)
+Cache-conscious structure layout - Trishul M. Chilimbi, Mark D. Hill, James R. Larus (PLDI 1999) (#32/#7)
+Predicting whole-program locality through reuse distance analysis - Chen Ding, Yutao Zhong (PLDI 2003) (#4/#37)
+Code placement for improving dynamic branch prediction accuracy - Daniel A. Jiménez (PLDI 2005) (#10/#39)
+Evaluating the accuracy of Java profilers - Todd Mytkowicz, Amer Diwan, Matthias Hauswirth, Peter F. Sweeney (PLDI 2010) (#11/#41)
+Automatic pool allocation: improving performance by controlling data structure layout in the heap - Chris Lattner, Vikram Adve (PLDI 2005) (#36/#17)
+Stride prefetching by dynamically inspecting objects - Tatsushi Inagaki, Tamiya Onodera, Hideaki Komatsu, Toshio Nakatani (PLDI 2003) (#27/#29)
+A hierarchical model of data locality - Chengliang Zhang, Chen Ding, Mitsunori Ogihara, Yutao Zhong, Youfeng Wu (POPL 2006) (#13/#43)
+Improving the cache locality of memory allocation - Dirk Grunwald, Benjamin Zorn, Robert Henderson (PLDI 1993) (#38/#19)
+Improving cache performance in dynamic applications through data and computation reorganization at run time - Chen Ding, Ken Kennedy (PLDI 1999) (#34/#24)
+Post-pass binary adaptation for software-based speculative precomputation - Steve S.W. Liao, Perry H. Wang, Hong Wang, Gerolf Hoflehner, Daniel Lavery, John P. Shen (PLDI 2002) (#23/#35)
+Software data spreading: leveraging distributed caches to improve single thread performance - Md Kamruzzaman, Steven Swanson, Dean M. Tullsen (PLDI 2010) (#16/#44)
+Data transformations for eliminating conflict misses - Gabriel Rivera, Chau-Wen Tseng (PLDI 1998) (#46/#15)
+Cache topology aware computation mapping for multicores - Mahmut Kandemir, Taylan Yemliha, SaiPrashanth Muralidhara, Shekhar Srikantaiah, Mary Jane Irwin, Yuanrui Zhnag (PLDI 2010) (#19/#42)
+Efficient procedure mapping using cache line coloring - Amir H. Hashemi, David R. Kaeli, Brad Calder (PLDI 1997) (#44/#18)
+Static load classification for improving the value predictability of data-cache misses - Martin Burtscher, Amer Diwan, Matthias Hauswirth (PLDI 2002) (#25/#38)
+Input-sensitive profiling - Emilio Coppa, Camil Demetrescu, Irene Finocchi (PLDI 2012) (#30/#33)
+The hardness of cache conscious data placement - Erez Petrank, Dror Rawitz (POPL 2002) (#45/#22)
+Offline compression for on-chip ram - Nathan Dean Cooprider, John David Regehr (PLDI 2007) (#49/#32)
+Reducing indirect function call overhead in C++ programs - Brad Calder, Dirk Grunwald (POPL 1994) (#48/#34)
+Profile-driven energy reduction in network-on-chips - Feihui Li, Guangyu Chen, Mahmut Kandemir, Ibrahim Kolcu (PLDI 2007) (#47/#46)
+
+
+Topic 001
+---------
+Found 12 documents in common out of the top 50.
+
+Streaming transducers for algorithmic verification of single-pass list-processing programs - Rajeev Alur, Pavol Černý (POPL 2011) (#8/#1)
+Recursive proofs for inductive tree data-structures - Parthasarathy Madhusudan, Xiaokang Qiu, Andrei Stefanescu (POPL 2012) (#0/#25)
+Natural proofs for structure, data, and separation - Xiaokang Qiu, Pranav Garg, Andrei Ştefănescu, Parthasarathy Madhusudan (PLDI 2013) (#1/#26)
+Combinators for bi-directional tree transformations: a linguistic approach to the view update problem - J. Nathan Foster, Michael B. Greenwald, Jonathan T. Moore, Benjamin C. Pierce, Alan Schmitt (POPL 2005) (#20/#22)
+Symbolic finite state transducers: algorithms and applications - Margus Veanes, Pieter Hooimeijer, Benjamin Livshits, David Molnar, Nikolaj Bjorner (POPL 2012) (#41/#2)
+Natural proofs for data structure manipulation in C using separation logic - Edgar Pek, Xiaokang Qiu, P. Madhusudan (PLDI 2014) (#4/#41)
+Fast: a transducer-based language for tree manipulation - Loris D'Antoni, Margus Veanes, Benjamin Livshits, David Molnar (PLDI 2014) (#24/#23)
+Decision procedures for algebraic data types with abstractions - Philippe Suter, Mirco Dotta, Viktor Kuncak (POPL 2010) (#10/#42)
+Multivariate amortized resource analysis - Jan Hoffmann, Klaus Aehlig, Martin Hofmann (POPL 2011) (#35/#19)
+Boomerang: resourceful lenses for string data - Aaron Bohannon, J. Nathan Foster, Benjamin C. Pierce, Alexandre Pilkiewicz, Alan Schmitt (POPL 2008) (#22/#38)
+Automatic inversion generates divide-and-conquer parallel programs - Kazutaka Morita, Akimasa Morihata, Kiminori Matsuzaki, Zhenjiang Hu, Masato Takeichi (PLDI 2007) (#39/#30)
+Constraints as control - Ali Sinan Köksal, Viktor Kuncak, Philippe Suter (POPL 2012) (#38/#33)
+
+
+Topic 002
+---------
+Found 32 documents in common out of the top 50.
+
+Garbage collection without paging - Matthew Hertz, Yi Feng, Emery D. Berger (PLDI 2005) (#9/#7)
+Immix: a mark-region garbage collector with space efficiency, fast collection, and mutator performance - Stephen M. Blackburn, Kathryn S. McKinley (PLDI 2008) (#10/#6)
+Beltway: getting around garbage collection gridlock - Stephen M Blackburn, Richard Jones, Kathryn S. McKinley, J Eliot B Moss (PLDI 2002) (#7/#12)
+Free-Me: a static analysis for automatic individual object reclamation - Samuel Z. Guyer, Kathryn S. McKinley, Daniel Frampton (PLDI 2006) (#19/#1)
+A parallel, real-time garbage collector - Perry Cheng, Guy E. Blelloch (PLDI 2001) (#13/#8)
+Schism: fragmentation-tolerant real-time garbage collection - Filip Pizlo, Lukasz Ziarek, Petr Maj, Antony L. Hosking, Ethan Blanton, Jan Vitek (PLDI 2010) (#1/#20)
+Ownership types for safe region-based memory management in real-time Java - Chandrasekhar Boyapati, Alexandru Salcianu, William Beebee, Jr., Martin Rinard (PLDI 2003) (#14/#9)
+A parallel, incremental and concurrent GC for servers - Yoav Ossia, Ori Ben-Yitzhak, Irit Goft, Elliot K. Kolodner, Victor Leikehman, Avi Owshanko (PLDI 2002) (#21/#3)
+On bounding time and space for multiprocessor garbage collection - Guy E. Blelloch, Perry Cheng (PLDI 1999) (#8/#22)
+And then there were none: a stall-free real-time garbage collector for reconfigurable hardware - David F. Bacon, Perry Cheng, Sunil Shukla (PLDI 2012) (#26/#5)
+Space overhead bounds for dynamic memory management with partial compaction - Anna Bendersky, Erez Petrank (POPL 2011) (#0/#32)
+The Compressor: concurrent, incremental, and parallel compaction - Haim Kermany, Erez Petrank (PLDI 2006) (#20/#13)
+Java without the coffee breaks: a nonintrusive multiprocessor garbage collector - David F. Bacon, Clement R. Attanasio, Han B. Lee, V. T. Rajan, Stephen Smith (PLDI 2001) (#18/#16)
+A study of concurrent real-time garbage collectors - Filip Pizlo, Erez Petrank, Bjarne Steensgaard (PLDI 2008) (#11/#23)
+Portable, unobtrusive garbage collection for multiprocessor systems - Damien Doligez, Georges Gonthier (POPL 1994) (#2/#35)
+Generational stack collection and profile-driven pretenuring - Perry Cheng, Robert Harper, Peter Lee (PLDI 1998) (#40/#0)
+Garbage collection using a dynamic threatening boundary - David A. Barrett, Benjamin G. Zorn (PLDI 1995) (#23/#18)
+The space cost of lazy reference counting - Hans-J. Boehm (POPL 2004) (#24/#19)
+Garbage collecting the world - Bernard Lang, Christian Queinnec, José Piquer (POPL 1992) (#17/#26)
+A general framework for certifying garbage collectors and their mutators - Andrew McCreight, Zhong Shao, Chunxiao Lin, Long Li (PLDI 2007) (#6/#38)
+Correctness-preserving derivation of concurrent garbage collection algorithms - Martin T. Vechev, Eran Yahav, David F. Bacon (PLDI 2006) (#4/#45)
+Bounding space usage of conservative garbage collectors - Hans-J. Boehm (POPL 2002) (#35/#15)
+Garbage collection and local variable type-precision and liveness in Java virtual machines - Ole Agesen, David Detlefs, J. Eliot Moss (PLDI 1998) (#37/#14)
+Reducing sweep time for a nearly empty heap - Yoo C. Chung, Soo-Mook Moon, Kemal Ebcioğlu, Dan Sahlin (POPL 2000) (#28/#28)
+Combining region inference and garbage collection - Niels Hallenberg, Martin Elsman, Mads Tofte (PLDI 2002) (#16/#42)
+Real-time concurrent collection on stock multiprocessors - A. W. Appel, J. R. Ellis, K. Li (PLDI 1988) (#22/#40)
+Exploiting prolific types for memory management and optimizations - Yefim Shuf, Manish Gupta, Rajesh Bordawekar, Jaswinder Pal Singh (POPL 2002) (#33/#30)
+Combining generational and conservative garbage collection: framework and implementations - Alan Demers, Mark Weiser, Barry Hayes, Hans Boehm, Daniel Bobrow, Scott Shenker (POPL 1990) (#36/#27)
+Memory management with explicit regions - David Gay, Alex Aiken (PLDI 1998) (#31/#36)
+Type-preserving garbage collectors - Daniel C. Wang, Andrew W. Appel (POPL 2001) (#29/#49)
+GC assertions: using the garbage collector to check heap properties - Edward E. Aftandilian, Samuel Z. Guyer (PLDI 2009) (#42/#47)
+A concurrent, generational garbage collector for a multithreaded implementation of ML - Damien Doligez, Xavier Leroy (POPL 1993) (#41/#48)
+
+
+Topic 003
+---------
+Found 18 documents in common out of the top 50.
+
+Automatically generating instruction selectors using declarative machine descriptions - João Dias, Norman Ramsey (POPL 2010) (#2/#8)
+Safe to the last instruction: automated verification of a type-safe operating system - Jean Yang, Chris Hawblitzel (PLDI 2010) (#5/#6)
+Reverse interpretation + mutation analysis = automatic retargeting - Christian S. Collberg (PLDI 1997) (#13/#3)
+Formalizing the LLVM intermediate representation for verified program transformations - Jianzhou Zhao, Santosh Nagarakatte, Milo M.K. Martin, Steve Zdancewic (POPL 2012) (#1/#18)
+End-to-end verification of stack-space bounds for C programs - Quentin Carbonneaux, Jan Hoffmann, Tahina Ramananandro, Zhong Shao (PLDI 2014) (#19/#1)
+CakeML: a verified implementation of ML - Ramana Kumar, Magnus O. Myreen, Michael Norrish, Scott Owens (POPL 2014) (#14/#13)
+Bringing extensibility to verified compilers - Zachary Tatlock, Sorin Lerner (PLDI 2010) (#23/#9)
+Surgical precision JIT compilers - Tiark Rompf, Arvind K. Sujeeth, Kevin J. Brown, HyoukJoong Lee, Hassan Chafi, Kunle Olukotun (PLDI 2014) (#32/#2)
+Resourceable, retargetable, modular instruction selection using a machine-independent, type-based tiling of low-level intermediate code - Norman Ramsey, João Dias (POPL 2011) (#8/#26)
+Language-independent sandboxing of just-in-time compilation and self-modifying code - Jason Ansel, Petr Marchenko, Úlfar Erlingsson, Elijah Taylor, Brad Chen, Derek L. Schuff, David Sehr, Cliff L. Biffle, Bennet Yee (PLDI 2011) (#31/#5)
+A trusted mechanised JavaScript specification - Martin Bodin, Arthur Chargueraud, Daniele Filaretti, Philippa Gardner, Sergio Maffeis, Daiva Naudziuniene, Alan Schmitt, Gareth Smith (POPL 2014) (#18/#20)
+Relocating machine instructions by currying - Norman Ramsey (PLDI 1996) (#40/#0)
+Formal verification of SSA-based optimizations for LLVM - Jianzhou Zhao, Santosh Nagarakatte, Milo M.K. Martin, Steve Zdancewic (PLDI 2013) (#16/#25)
+Compositional CompCert - Gordon Stewart, Lennart Beringer, Santiago Cuellar, Andrew W. Appel (POPL 2015) (#15/#29)
+Translation validation for a verified OS kernel - Thomas Arthur Leck Sewell, Magnus O. Myreen, Gerwin Klein (PLDI 2013) (#25/#36)
+A provably sound TAL for back-end optimization - Juan Chen, Dinghao Wu, Andrew W. Appel, Hai Fang (PLDI 2003) (#33/#32)
+Compiler validation via equivalence modulo inputs - Vu Le, Mehrdad Afshari, Zhendong Su (PLDI 2014) (#42/#24)
+A retargetable debugger - Norman Ramsey, David R. Hanson (PLDI 1992) (#24/#49)
+
+
+Topic 004
+---------
+Found 23 documents in common out of the top 50.
+
+Differential register allocation - Xiaotong Zhuang, Santosh Pande (PLDI 2005) (#7/#1)
+Copy coalescing by graph recoloring - Sebastian Hack, Gerhard Goos (PLDI 2008) (#10/#0)
+Register allocation for software pipelined multi-dimensional loops - Hongbo Rong, Alban Douillet, Guang R. Gao (PLDI 2005) (#13/#5)
+Software pipelining showdown: optimal vs. heuristic methods in a production compiler - John Ruttenberg, G. R. Gao, A. Stoutchinin, W. Lichtenstein (PLDI 1996) (#19/#3)
+A global progressive register allocator - David Ryan Koes, Seth Copen Goldstein (PLDI 2006) (#3/#22)
+Demystifying on-the-fly spill code - Alex Aletà, Josep M. Codina, Antonio Gonzàlez, David Kaeli (PLDI 2005) (#15/#14)
+Improved spill code generation for software pipelined loops - Javier Zalamea, Josep Llosa, Eduard Ayguadé, Mateo Valero (PLDI 2000) (#24/#7)
+Profile-based global live-range splitting - Takuya Nakaike, Tatsushi Inagaki, Hideaki Komatsu, Toshio Nakatani (PLDI 2006) (#9/#23)
+Register allocation via clique separators - R. Gupta, M. L. Soffa, T. Steele (PLDI 1989) (#31/#6)
+Optimal instruction scheduling using integer programming - Kent Wilken, Jack Liu, Mark Heffernan (PLDI 2000) (#30/#10)
+Preference-directed graph coloring - Akira Koseki, Hideaki Komatsu, Toshio Nakatani (PLDI 2002) (#5/#35)
+Optimal spilling for CISC machines with few registers - Andrew W. Appel, Lal George (PLDI 2001) (#11/#29)
+Region-based hierarchical operation partitioning for multicluster processors - Michael Chu, Kevin Fan, Scott Mahlke (PLDI 2003) (#26/#17)
+Call-cost directed register allocation - Guei-Yuan Lueh, Thomas Gross (PLDI 1997) (#4/#48)
+A generalized algorithm for graph-coloring register allocation - Michael D. Smith, Norman Ramsey, Glenn Holloway (PLDI 2004) (#12/#42)
+Evicted variables and the interaction of global register allocation and symbolic debugging - Ali-Reza Adl-Tabatabai, Thomas Gross (POPL 1993) (#29/#25)
+Register allocation by puzzle solving - Fernando Magno Quintão Pereira, Jens Palsberg (PLDI 2008) (#16/#38)
+Rematerialization - Preston Briggs, Keith D. Cooper, Linda Torczon (PLDI 1992) (#36/#20)
+Quality and speed in linear-scan register allocation - Omri Traub, Glenn Holloway, Michael D. Smith (PLDI 1998) (#32/#32)
+Register allocation over the program dependence graph - Cindy Norris, Lori L. Pollock (PLDI 1994) (#17/#47)
+Load/store range analysis for global register allocation - Priyadarshan Kolte, Mary Jean Harrold (PLDI 1993) (#47/#21)
+A new algorithm for scalar register promotion based on SSA form - A. V. S. Sastry, Roy D. C. Ju (PLDI 1998) (#43/#44)
+A general constraint-centric scheduling framework for spatial architectures - Tony Nowatzki, Michael Sartin-Tarm, Lorenzo De Carli, Karthikeyan Sankaralingam, Cristian Estan, Behnam Robatmili (PLDI 2013) (#48/#41)
+
+
+Topic 005
+---------
+Found 13 documents in common out of the top 50.
+
+Synthesis of biological models from mutation experiments - Ali Sinan Koksal, Yewen Pu, Saurabh Srivastava, Rastislav Bodik, Jasmin Fisher, Nir Piterman (POPL 2013) (#15/#1)
+Bridging boolean and quantitative synthesis using smoothed proof search - Swarat Chaudhuri, Martin Clochard, Armando Solar-Lezama (POPL 2014) (#6/#19)
+Predicate abstraction and refinement for verifying multi-threaded programs - Ashutosh Gupta, Corneliu Popeea, Andrey Rybalchenko (POPL 2011) (#12/#15)
+Succinct Representation of Concurrent Trace Sets - Ashutosh Gupta, Thomas A. Henzinger, Arjun Radhakrishna, Roopsha Samanta, Thorsten Tarrach (POPL 2015) (#32/#2)
+Quantitative abstraction refinement - Pavol Cerny, Thomas A. Henzinger, Arjun Radhakrishna (POPL 2013) (#0/#37)
+Sigma*: symbolic learning of input-output specifications - Matko Botinčan, Domagoj Babić (POPL 2013) (#25/#17)
+Verification modulo versions: towards usable verification - Francesco Logozzo, Shuvendu K. Lahiri, Manuel Fähndrich, Sam Blackshear (PLDI 2014) (#26/#22)
+Almost-correct specifications: a modular semantic framework for assigning confidence to warnings - Sam Blackshear, Shuvendu K. Lahiri (PLDI 2013) (#33/#33)
+Verification of parameterized concurrent programs by modular reasoning about data and control - Azadeh Farzan, Zachary Kincaid (POPL 2012) (#46/#21)
+Race checking by context inference - Thomas A. Henzinger, Ranjit Jhala, Rupak Majumdar (PLDI 2004) (#37/#31)
+Abstraction-guided synthesis of synchronization - Martin Vechev, Eran Yahav, Greta Yorsh (POPL 2010) (#28/#49)
+On interference abstractions - Nishant Sinha, Chao Wang (POPL 2011) (#49/#29)
+Synthesis of interface specifications for Java classes - Rajeev Alur, Pavol Černý, P. Madhusudan, Wonhong Nam (POPL 2005) (#42/#42)
+
+
+Topic 006
+---------
+Found 5 documents in common out of the top 50.
+
+A generic account of continuation-passing styles - John Hatcliff, Olivier Danvy (POPL 1994) (#1/#3)
+Isolating side effects in sequential languages - Jon G. Riecke, Ramesh Viswanathan (POPL 1995) (#11/#13)
+Explicit polymorphism and CPS conversion - Robert Harper, Mark Lillibridge (POPL 1993) (#7/#35)
+Separating stages in the continuation-passing style transformation - Julia L. Lawall, Olivier Danvy (POPL 1993) (#19/#36)
+Full abstraction for nominal Scott domains - Steffen Lösch, Andrew M. Pitts (POPL 2013) (#37/#45)
+
+
+Topic 007
+---------
+Found 18 documents in common out of the top 50.
+
+Logical inference techniques for loop parallelization - Cosmin E. Oancea, Lawrence Rauchwerger (PLDI 2012) (#3/#14)
+Automatic compilation of MATLAB programs for synergistic execution on heterogeneous processors - Ashwin Prasad, Jayvant Anantpur, R. Govindarajan (PLDI 2011) (#18/#0)
+When polyhedral transformations meet SIMD code generation - Martin Kong, Richard Veras, Kevin Stock, Franz Franchetti, Louis-Noël Pouchet, P. Sadayappan (PLDI 2013) (#2/#16)
+The LRPD test: speculative run-time parallelization of loops with privatization and reduction parallelization - Lawrence Rauchwerger, David Padua (PLDI 1995) (#6/#13)
+Iterative optimization in the polyhedral model: part ii, multidimensional time - Louis-Noël Pouchet, Cédric Bastoul, Albert Cohen, John Cavazos (PLDI 2008) (#21/#1)
+A practical automatic polyhedral parallelizer and locality optimizer - Uday Bondhugula, Albert Hartono, J. Ramanujam, P. Sadayappan (PLDI 2008) (#7/#18)
+Linear analysis and optimization of stream programs - Andrew A. Lamb, William Thies, Saman Amarasinghe (PLDI 2003) (#23/#8)
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski, Ragavendar Ramamurthi, Mahesh Ravishankar, Naznin Fauzia, Louis-Noël Pouchet, Atanas Rountev, P. Sadayappan (PLDI 2012) (#35/#2)
+Sub-polyhedral scheduling using (unit-)two-variable-per-inequality polyhedra - Ramakrishna Upadrasta, Albert Cohen (POPL 2013) (#5/#33)
+A compiler framework for extracting superword level parallelism - Jun Liu, Yuanrui Zhang, Ohyoung Jang, Wei Ding, Mahmut Kandemir (PLDI 2012) (#20/#19)
+Using integer sets for data-parallel program analysis and optimization - Vikram Adve, John Mellor-Crummey (PLDI 1998) (#1/#40)
+Compile-time composition of run-time data and iteration reorderings - Michelle Mills Strout, Larry Carter, Jeanne Ferrante (PLDI 2003) (#17/#31)
+Commutativity analysis: a new analysis framework for parallelizing compilers - Martin C. Rinard, Pedro C. Diniz (PLDI 1996) (#31/#22)
+Orchestrating the execution of stream programs on multicore platforms - Manjunath Kudlur, Scott Mahlke (PLDI 2008) (#26/#29)
+A unified framework for schedule and storage optimization - William Thies, Frédéric Vivien, Jeffrey Sheldon, Saman Amarasinghe (PLDI 2001) (#36/#23)
+A GPGPU compiler for memory optimization and parallelism management - Yi Yang, Ping Xiang, Jingfei Kong, Huiyang Zhou (PLDI 2010) (#39/#28)
+Kremlin: rethinking and rebooting gprof for the multicore age - Saturnino Garcia, Donghwan Jeon, Christopher M. Louie, Michael Bedford Taylor (PLDI 2011) (#47/#21)
+Polyhedra scanning revisited - Chun Chen (PLDI 2012) (#24/#49)
+
+
+Topic 008
+---------
+Found 5 documents in common out of the top 50.
+
+Para-functional programming: a paradigm for programming multiprocessor systems - Paul Hudak, Lauren Smith (POPL 1986) (#7/#40)
+A debate on language and tool support for design patterns - Craig Chambers, Bill Harrison, John Vlissides (POPL 2000) (#3/#47)
+The University of Washington illustrating compiler - Robert R. Henry, Kenneth M. Whaley, Bruce Forstall (PLDI 1990) (#31/#22)
+Making asynchronous parallelism safe for the world - Guy L. Steele, Jr. (POPL 1990) (#13/#44)
+Distributed data structures in Linda - Nicholas Carriero, David Gelernter, Jerrold Leichter (POPL 1986) (#39/#18)
+
+
+Topic 009
+---------
+Found 5 documents in common out of the top 50.
+
+Backpack: retrofitting Haskell with interfaces - Scott Kilpatrick, Derek Dreyer, Simon Peyton Jones, Simon Marlow (POPL 2014) (#0/#12)
+The design and implementation of typed scheme - Sam Tobin-Hochstadt, Matthias Felleisen (POPL 2008) (#13/#32)
+Blame for all - Amal Ahmed, Robert Bruce Findler, Jeremy G. Siek, Philip Wadler (POPL 2011) (#15/#39)
+What is a recursive module? - Karl Crary, Robert Harper, Sidd Puri (PLDI 1999) (#28/#35)
+Practical affine types - Jesse A. Tov, Riccardo Pucella (POPL 2011) (#25/#42)
+
+
+Topic 010
+---------
+Found 12 documents in common out of the top 50.
+
+A virtual class calculus - Erik Ernst, Klaus Ostermann, William R. Cook (POPL 2006) (#2/#14)
+Sharing classes between families - Xin Qi, Andrew C. Myers (PLDI 2009) (#1/#26)
+Typing a multi-language intermediate code - Andrew D. Gordon, Don Syme (POPL 2001) (#28/#7)
+Automatic inference of stationary fields: a generalization of java's final fields - Christopher Unkel, Monica S. Lam (POPL 2008) (#33/#3)
+Separation logic, abstraction and inheritance - Matthew J. Parkinson, Gavin M. Bierman (POPL 2008) (#37/#10)
+Formal verification of object layout for c++ multiple inheritance - Tahina Ramananandro, Gabriel Dos Reis, Xavier Leroy (POPL 2011) (#8/#40)
+Masked types for sound object initialization - Xin Qi, Andrew C. Myers (POPL 2009) (#6/#44)
+Role analysis - Viktor Kuncak, Patrick Lam, Martin Rinard (POPL 2002) (#13/#42)
+Customization: optimizing compiler technology for SELF, a dynamically-typed object-oriented programming language - C. Chambers, D. Ungar (PLDI 1989) (#29/#30)
+Safe type checking in a statically-typed object-oriented programming language - Kim B. Bruce (POPL 1993) (#35/#25)
+A theory of platform-dependent low-level software - Marius Nita, Dan Grossman, Craig Chambers (POPL 2008) (#43/#29)
+Getting F-bounded polymorphism into shape - Ben Greenman, Fabian Muehlboeck, Ross Tate (PLDI 2014) (#26/#48)
+
+
+Topic 011
+---------
+Found 17 documents in common out of the top 50.
+
+Automatic runtime error repair and containment via recovery shepherding - Fan Long, Stelios Sidiroglou-Douskos, Martin Rinard (PLDI 2014) (#0/#4)
+Engage: a deployment management system - Jeffrey Fischer, Rupak Majumdar, Shahram Esmaeilsabzali (PLDI 2012) (#9/#15)
+Sound input filter generation for integer overflow errors - Fan Long, Stelios Sidiroglou-Douskos, Deokhwan Kim, Martin Rinard (POPL 2014) (#4/#21)
+Improved error reporting for software that uses black-box components - Jungwoo Ha, Christopher J. Rossbach, Jason V. Davis, Indrajit Roy, Hany E. Ramadan, Donald E. Porter, David L. Chen, Emmett Witchel (PLDI 2007) (#26/#2)
+Practical dynamic software updating for C - Iulian Neamtiu, Michael Hicks, Gareth Stoyle, Manuel Oriol (PLDI 2006) (#18/#14)
+Doppio: breaking the browser language barrier - John Vilk, Emery D. Berger (PLDI 2014) (#6/#31)
+Sound and precise analysis of web applications for injection vulnerabilities - Gary Wassermann, Zhendong Su (PLDI 2007) (#35/#3)
+Towards fully automatic placement of security sanitizers and declassifiers - Benjamin Livshits, Stephen Chong (POPL 2013) (#21/#18)
+The essence of command injection attacks in web applications - Zhendong Su, Gary Wassermann (POPL 2006) (#37/#7)
+TraceBack: first fault diagnosis by reconstruction of distributed control flow - Andrew Ayers, Richard Schooler, Chris Metcalf, Anant Agarwal, Junghwan Rhee, Emmett Witchel (PLDI 2005) (#41/#5)
+JavaScript instrumentation for browser security - Dachuan Yu, Ajay Chander, Nayeem Islam, Igor Serikov (POPL 2007) (#11/#42)
+Exterminator: automatically correcting memory errors with high probability - Gene Novark, Emery D. Berger, Benjamin G. Zorn (PLDI 2007) (#32/#24)
+Error propagation analysis for file systems - Cindy Rubio-González, Haryadi S. Gunawi, Ben Liblit, Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau (PLDI 2009) (#23/#36)
+A security policy oracle: detecting security holes using multiple API implementations - Varun Srivastava, Michael D. Bond, Kathryn S. McKinley, Vitaly Shmatikov (PLDI 2011) (#24/#40)
+TAJ: effective taint analysis of web applications - Omer Tripp, Marco Pistoia, Stephen J. Fink, Manu Sridharan, Omri Weisman (PLDI 2009) (#48/#27)
+Merlin: specification inference for explicit information flow problems - Benjamin Livshits, Aditya V. Nori, Sriram K. Rajamani, Anindya Banerjee (PLDI 2009) (#38/#37)
+Race detection for web applications - Boris Petrov, Martin Vechev, Manu Sridharan, Julian Dolby (PLDI 2012) (#36/#41)
+
+
+Topic 012
+---------
+Found 8 documents in common out of the top 50.
+
+Transformational programming: applications to algorithms and systems - Robert Paige (POPL 1983) (#9/#0)
+Implementation of an array bound checker - Norihisa Suzuki, Kiyoshi Ishihata (POPL 1977) (#10/#2)
+Correctness-preserving program transformations - Susan L. Gerhart (POPL 1975) (#16/#15)
+From program verification to program synthesis - Saurabh Srivastava, Sumit Gulwani, Jeffrey S. Foster (POPL 2010) (#32/#5)
+Continuity analysis of programs - Swarat Chaudhuri, Sumit Gulwani, Roberto Lublinerman (POPL 2010) (#20/#24)
+The evolution of programs: a system for automatic program modification - Nachum Dershowitz, Zohar Manna (POPL 1977) (#6/#39)
+Expressional loops - Richard C. Waters (POPL 1984) (#21/#38)
+An algorithm for structuring programs (Extended Abstract) - Brenda S. Baker (POPL 1976) (#47/#12)
+
+
+Topic 013
+---------
+Found 14 documents in common out of the top 50.
+
+Interprocedural may-alias analysis for pointers: beyond k-limiting - Alain Deutsch (PLDI 1994) (#5/#12)
+Bootstrapping: a technique for scalable flow and context-sensitive pointer alias analysis - Vineet Kahlon (PLDI 2008) (#8/#14)
+Points-to analysis with efficient strong updates - Ondrej Lhoták, Kwok-Chiang Andrew Chung (POPL 2011) (#3/#21)
+Demand-driven computation of interprocedural data flow - Evelyn Duesterwald, Rajiv Gupta, Mary Lou Soffa (POPL 1995) (#7/#20)
+Pick your contexts well: understanding object-sensitivity - Yannis Smaragdakis, Martin Bravenboer, Ondrej Lhoták (POPL 2011) (#14/#16)
+Efficient flow-sensitive interprocedural computation of pointer-induced aliases and side effects - Jong-Deok Choi, Michael Burke, Paul Carini (POPL 1993) (#4/#32)
+Systematic design of program analysis frameworks - Patrick Cousot, Radhia Cousot (POPL 1979) (#39/#1)
+Demand-driven alias analysis for C - Xin Zheng, Radu Rugina (POPL 2008) (#16/#25)
+Cloning-based context-sensitive pointer alias analysis using binary decision diagrams - John Whaley, Monica S. Lam (PLDI 2004) (#32/#13)
+Qualified data flow problems - L. Howard Holley, Barry K. Rosen (POPL 1980) (#46/#5)
+Semi-sparse flow-sensitive pointer analysis - Ben Hardekopf, Calvin Lin (POPL 2009) (#6/#47)
+Resolving and exploiting the k-CFA paradox: illuminating functional vs. object-oriented program analysis - Matthew Might, Yannis Smaragdakis, David Van Horn (PLDI 2010) (#26/#30)
+Interprocedural data flow analysis in the presence of pointers, procedure variables, and label variables - William E. Weihl (POPL 1980) (#35/#34)
+Precise interprocedural dataflow analysis via graph reachability - Thomas Reps, Susan Horwitz, Mooly Sagiv (POPL 1995) (#33/#45)
+
+
+Topic 014
+---------
+Found 28 documents in common out of the top 50.
+
+Feedback-directed barrier optimization in a strongly isolated STM - Nathan G. Bronson, Christos Kozyrakis, Kunle Olukotun (POPL 2009) (#6/#1)
+Fast RMWs for TSO: semantics and implementation - Bharghava Rajaram, Vijay Nagarajan, Susmit Sarkar, Marco Elver (PLDI 2013) (#4/#5)
+The semantics of progress in lock-based transactional memory - Rachid Guerraoui, Michal Kapalka (POPL 2009) (#1/#10)
+DRFX: a simple and efficient memory model for concurrent programming languages - Daniel Marino, Abhayendra Singh, Todd Millstein, Madanlal Musuvathi, Satish Narayanasamy (PLDI 2010) (#14/#3)
+The Atomos transactional programming language - Brian D. Carlstrom, Austen McDonald, Hassan Chafi, JaeWoong Chung, Chi Cao Minh, Christos Kozyrakis, Kunle Olukotun (PLDI 2006) (#0/#18)
+Autolocker: synchronization inference for atomic sections - Bill McCloskey, Feng Zhou, David Gay, Eric Brewer (POPL 2006) (#12/#7)
+Laws of order: expensive synchronization in concurrent algorithms cannot be eliminated - Hagit Attiya, Rachid Guerraoui, Danny Hendler, Petr Kuznetsov, Maged M. Michael, Martin Vechev (POPL 2011) (#16/#4)
+Compiler and runtime support for efficient software transactional memory - Ali-Reza Adl-Tabatabai, Brian T. Lewis, Vijay Menon, Brian R. Murphy, Bratin Saha, Tatiana Shpeisman (PLDI 2006) (#7/#15)
+Safe nondeterminism in a deterministic-by-default parallel language - Robert L. Bocchino, Jr., Stephen Heumann, Nima Honarmand, Sarita V. Adve, Vikram S. Adve, Adam Welc, Tatiana Shpeisman (POPL 2011) (#2/#20)
+Enforcing isolation and ordering in STM - Tatiana Shpeisman, Vijay Menon, Ali-Reza Adl-Tabatabai, Steven Balensiefer, Dan Grossman, Richard L. Hudson, Katherine F. Moore, Bratin Saha (PLDI 2007) (#9/#13)
+Lock elision for read-only critical sections in Java - Takuya Nakaike, Maged M. Michael (PLDI 2010) (#23/#0)
+Synchronising C/C++ and POWER - Susmit Sarkar, Kayvan Memarian, Scott Owens, Mark Batty, Peter Sewell, Luc Maranget, Jade Alglave, Derek Williams (PLDI 2012) (#13/#12)
+Freeze after writing: quasi-deterministic parallel programming with LVars - Lindsey Kuper, Aaron Turon, Neelakantan R. Krishnaswami, Ryan R. Newton (POPL 2014) (#8/#21)
+Optimizing memory transactions - Tim Harris, Mark Plesko, Avraham Shinnar, David Tarditi (PLDI 2006) (#18/#14)
+Dynamically checking ownership policies in concurrent c/c++ programs - Jean-Phillipe Martin, Michael Hicks, Manuel Costa, Periklis Akritidis, Miguel Castro (POPL 2010) (#15/#23)
+Foundations of the C++ concurrency memory model - Hans-J. Boehm, Sarita V. Adve (PLDI 2008) (#10/#32)
+Stretching transactional memory - Aleksandar Dragojević, Rachid Guerraoui, Michal Kapalka (PLDI 2009) (#25/#17)
+Concurrent libraries with foresight - Guy Golan-Gueta, G. Ramalingam, Mooly Sagiv, Eran Yahav (PLDI 2013) (#37/#11)
+Clarifying and compiling C/C++ concurrency: from C++11 to POWER - Mark Batty, Kayvan Memarian, Scott Owens, Susmit Sarkar, Peter Sewell (POPL 2012) (#22/#28)
+Dynamic synthesis for relaxed memory models - Feng Liu, Nayden Nedev, Nedyalko Prisadnikov, Martin Vechev, Eran Yahav (PLDI 2012) (#40/#16)
+High-level small-step operational semantics for transactions - Katherine F. Moore, Dan Grossman (POPL 2008) (#34/#22)
+Coarse-grained transactions - Eric Koskinen, Matthew Parkinson, Maurice Herlihy (POPL 2010) (#28/#34)
+XMem: type-safe, transparent, shared memory for cross-runtime communication and coordination - Michal Wegiel, Chandra Krintz (PLDI 2008) (#48/#19)
+Composing parallel software efficiently with lithe - Heidi Pan, Benjamin Hindman, Krste Asanović (PLDI 2010) (#29/#38)
+Parallelizing sequential applications on commodity hardware using a low-cost software transactional memory - Mojtaba Mehrara, Jeff Hao, Po-Chun Hsu, Scott Mahlke (PLDI 2009) (#35/#33)
+Inferring locks for atomic sections - Sigmund Cherem, Trishul Chilimbi, Sumit Gulwani (PLDI 2008) (#32/#39)
+Mathematizing C++ concurrency - Mark Batty, Scott Owens, Susmit Sarkar, Peter Sewell, Tjark Weber (POPL 2011) (#46/#27)
+A Calculus for Relaxed Memory - Karl Crary, Michael J. Sullivan (POPL 2015) (#47/#40)
+
+
+Topic 015
+---------
+Found 3 documents in common out of the top 50.
+
+Automatic volume management for programmable microfluidics - Ahmed M. Amin, Mithuna Thottethodi, T. N. Vijaykumar, Steven Wereley, Stephen C. Jacobson (PLDI 2008) (#10/#7)
+Code motion of control structures in high-level languages - Ron Cytron, Andy Lowry, F. Kenneth Zadeck (POPL 1986) (#3/#21)
+Sparse code motion - Oliver Rüthing, Jens Knoop, Bernhard Steffen (POPL 2000) (#22/#17)
+
+
+Topic 016
+---------
+Found 2 documents in common out of the top 50.
+
+Multiparty asynchronous session types - Kohei Honda, Nobuko Yoshida, Marco Carbone (POPL 2008) (#2/#49)
+Modular session types for distributed object-oriented programming - Simon J. Gay, Vasco T. Vasconcelos, António Ravara, Nils Gesbert, Alexandre Z. Caldeira (POPL 2010) (#29/#47)
+
+
+Topic 017
+---------
+Found 25 documents in common out of the top 50.
+
+PACER: proportional detection of data races - Michael D. Bond, Katherine E. Coons, Kathryn S. McKinley (PLDI 2010) (#1/#5)
+Breadcrumbs: efficient context sensitivity for dynamic bug detection analyses - Michael D. Bond, Graham Z. Baker, Samuel Z. Guyer (PLDI 2010) (#3/#10)
+Automatically classifying benign and harmful data races using replay analysis - Satish Narayanasamy, Zhenghao Wang, Jordan Tigani, Andrew Edwards, Brad Calder (PLDI 2007) (#15/#3)
+Sound predictive race detection in polynomial time - Yannis Smaragdakis, Jacob Evans, Caitlin Sadowski, Jaeheon Yi, Cormac Flanagan (POPL 2012) (#17/#4)
+Towards locating execution omission errors - Xiangyu Zhang, Sriraman Tallam, Neelam Gupta, Rajiv Gupta (PLDI 2007) (#13/#8)
+Isolating and understanding concurrency errors using reconstructed execution fragments - Brandon Lucia, Benjamin P. Wood, Luis Ceze (PLDI 2011) (#10/#15)
+Directed incremental symbolic execution - Suzette Person, Guowei Yang, Neha Rungta, Sarfraz Khurshid (PLDI 2011) (#21/#6)
+Semantics-aware trace analysis - Kevin J. Hoffman, Patrick Eugster, Suresh Jagannathan (PLDI 2009) (#5/#32)
+Chimera: hybrid program analysis for determinism - Dongyoon Lee, Peter M. Chen, Jason Flinn, Satish Narayanasamy (PLDI 2012) (#19/#19)
+Race directed random testing of concurrent programs - Koushik Sen (PLDI 2008) (#32/#7)
+Maximal sound predictive race detection with control flow abstraction - Jeff Huang, Patrick O'Neil Meredith, Grigore Rosu (PLDI 2014) (#24/#18)
+Efficient algorithms for bidirectional debugging - Bob Boothe (PLDI 2000) (#30/#13)
+FastTrack: efficient and precise dynamic race detection - Cormac Flanagan, Stephen N. Freund (PLDI 2009) (#25/#20)
+Test-driven repair of data races in structured parallel programs - Rishi Surendran, Raghavan Raman, Swarat Chaudhuri, John Mellor-Crummey, Vivek Sarkar (PLDI 2014) (#38/#16)
+Efficient program execution indexing - Bin Xin, William N. Sumner, Xiangyu Zhang (PLDI 2008) (#23/#31)
+Race detection for Android applications - Pallavi Maiya, Aditya Kanade, Rupak Majumdar (PLDI 2014) (#39/#17)
+Pruning dynamic slices with confidence - Xiangyu Zhang, Neelam Gupta, Rajiv Gupta (PLDI 2006) (#8/#49)
+Toward generating reducible replay logs - Kyu Hyung Lee, Yunhui Zheng, Nick Sumner, Xiangyu Zhang (PLDI 2011) (#20/#39)
+Adversarial memory for detecting destructive races - Cormac Flanagan, Stephen N. Freund (PLDI 2010) (#49/#14)
+LiteRace: effective sampling for lightweight data-race detection - Daniel Marino, Madanlal Musuvathi, Satish Narayanasamy (PLDI 2009) (#34/#33)
+Race detection for event-driven mobile applications - Chun-Hung Hsiao, Jie Yu, Satish Narayanasamy, Ziyun Kong, Cristiano L. Pereira, Gilles A. Pokam, Peter M. Chen, Jason Flinn (PLDI 2014) (#35/#34)
+Scalable and precise dynamic datarace detection for structured parallelism - Raghavan Raman, Jisheng Zhao, Vivek Sarkar, Martin Vechev, Eran Yahav (PLDI 2012) (#43/#40)
+CLAP: recording local executions to reproduce concurrency failures - Jeff Huang, Charles Zhang, Julian Dolby (PLDI 2013) (#47/#36)
+Cost effective dynamic program slicing - Xiangyu Zhang, Rajiv Gupta (PLDI 2004) (#44/#43)
+A randomized dynamic program analysis technique for detecting real deadlocks - Pallavi Joshi, Chang-Seo Park, Koushik Sen, Mayur Naik (PLDI 2009) (#41/#48)
+
+
+Topic 018
+---------
+Found 12 documents in common out of the top 50.
+
+\"Sometimes\" and \"not never\" revisited: on branching versus linear time (preliminary report) - E. Allen Emerson, Joseph Y. Halpern (POPL 1983) (#15/#0)
+Parametric completeness for separation theories - James Brotherston, Jules Villard (POPL 2014) (#10/#7)
+Context logic as modal logic: completeness and parametric inexpressivity - Cristiano Calcagno, Philippa Gardner, Uri Zarfaty (POPL 2007) (#5/#15)
+Proof search for propositional abstract separation logics via labelled sequents - Zhé Hóu, Ranald Clouston, Rajeev Goré, Alwen Tiu (POPL 2014) (#12/#13)
+\"Sometime\" is sometimes \"not never\": on the temporal logic of programs - Leslie Lamport (POPL 1980) (#38/#1)
+A nonstandard standardization theorem - Beniamino Accattoli, Eduardo Bonelli, Delia Kesner, Carlos Lombardi (POPL 2014) (#35/#5)
+A theorem prover for Boolean BI - Jonghyun Park, Jeongbong Seo, Sungwoo Park (POPL 2013) (#18/#27)
+Temporal logic programming is complete and expressive - M. Baudinet (POPL 1989) (#0/#49)
+Cyclic proofs of program termination in separation logic - James Brotherston, Richard Bornat, Cristiano Calcagno (POPL 2008) (#40/#9)
+A proof system for separation logic with magic wand - Wonyeol Lee, Sungwoo Park (POPL 2014) (#28/#25)
+A relational modal logic for higher-order stateful ADTs - Derek Dreyer, Georg Neis, Andreas Rossberg, Lars Birkedal (POPL 2010) (#13/#44)
+Nondeterminism in logics of programs - David Harel, Vaughan R. Pratt (POPL 1978) (#46/#34)
+
+
+Topic 019
+---------
+Found 23 documents in common out of the top 50.
+
+Verifiable composition of deterministic grammars - August C. Schwerdfeger, Eric R. Van Wyk (PLDI 2009) (#1/#12)
+Better extensibility through modular syntax - Robert Grimm (PLDI 2006) (#5/#9)
+Incremental analysis of real programming languages - Tim A. Wagner, Susan L. Graham (PLDI 1997) (#7/#13)
+Parsing expression grammars: a recognition-based syntactic foundation - Bryan Ford (POPL 2004) (#9/#15)
+Automatic generation of near-optimal linear-time translators for non-circular attribute grammars - Rina Cohen, Eli Harry (POPL 1979) (#20/#4)
+LL(*): the foundation of the ANTLR parser generator - Terence Parr, Kathleen Fisher (PLDI 2011) (#4/#20)
+Composable attribute grammars: support for modularity in translator design and implementation - R. Farrow, T. J. Marlowe, D. M. Yellin (POPL 1992) (#14/#10)
+Elimination of single productions from LR parsers in conjunction with the use of default reductions - Eljas Soisalon-Soininen (POPL 1977) (#27/#0)
+Semantics and algorithms for data-dependent grammars - Trevor Jim, Yitzhak Mandelbaum, David Walker (POPL 2010) (#10/#19)
+Generalized left corner parsing - Alan J. Demers (POPL 1977) (#25/#5)
+Strict deterministic versus LR(0) parsing - Matthew M. Geller, Michael A. Harrison (POPL 1973) (#37/#6)
+Automatic generation of efficient evaluators for attribute grammars - Ken Kennedy, Scott K. Warren (POPL 1976) (#17/#28)
+Maya: multiple-dispatch syntax extension in Java - Jason Baker, Wilson C. Hsieh (PLDI 2002) (#23/#24)
+Principled parsing for indentation-sensitive languages: revisiting landin's offside rule - Michael D. Adams (POPL 2013) (#3/#45)
+Higher order attribute grammars - H. H. Vogt, S. D. Swierstra, M. F. Kuiper (PLDI 1989) (#15/#34)
+Grammatical abstraction and incremental syntax analysis in a language-based editor - R. A. Ballance, J. Butcher, S. L. Graham (PLDI 1988) (#11/#40)
+SuperC: parsing all of C by taming the preprocessor - Paul Gazzillo, Robert Grimm (PLDI 2012) (#13/#39)
+Programmable syntax macros - Daniel Weise, Roger Crew (PLDI 1993) (#34/#21)
+Composing tree attributions - John Boyland, Susan L. Graham (POPL 1994) (#16/#46)
+Pattern-based tree attribution - Charles Farnum (POPL 1992) (#19/#49)
+Remote attribute updating for language-based editors - Thomas W. Reps, Carla Marceau, Tim Teitelbaum (POPL 1986) (#38/#32)
+Recognizing substrings of LR(k) languages in linear time - Joseph Bates, Alon Lavie (POPL 1992) (#36/#37)
+Labelled precedence parsing - Mario Schkolnick (POPL 1973) (#35/#43)
+
+
+Counts
+28
+12
+32
+18
+23
+13
+5
+18
+5
+5
+12
+17
+8
+14
+28
+3
+2
+25
+12
+23

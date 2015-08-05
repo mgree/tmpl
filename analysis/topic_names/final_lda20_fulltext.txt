@@ -1,0 +1,20 @@
+Data-driven optimization
+Data-structure correctness
+Garbage collection
+Low-level systems
+Register allocation
+Abstract interpretation
+Languages and control
+Parallelization
+Design
+Types
+Object-orientation
+Security and bugfinding
+Program transformation
+Program analysis
+Concurrency
+Code generation
+Processes and message passing
+Dynamic analysis
+Proofs and models
+Parsing

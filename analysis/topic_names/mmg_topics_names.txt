@@ -1,0 +1,155 @@
+lda20 fulltext
+
+00: Data layout and optimization
+01: Verifying data structures
+02: Memory management and garbage collection
+03: Verified low-level systems
+04: Register allocation
+05: Symbolic representations of programs
+06: Control in the lambda calculus
+07: Loop optimizations
+08: Language design
+09: Type systems, type inference, and modularity
+10: Object orientation
+11: Security and information flow
+12: ???
+13: Static analysis
+14: Concurrency
+15: Code motion and flow graphs
+16: Process calculi and session types
+17: Dynamic/trace analyses
+18: Logic
+19: Parsing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lda50 fulltext
+
+00: Data layout/representation
+01: Verified data structures
+02: Program logics
+03: Verified low-level systems
+04: Code scheduling and generation
+05: Synthesis
+06: Networks and information flow
+07: Loop/array optimization
+08: Language design (this topic is super kooky but also fun looking)
+09: Modularity
+10: OOP
+11: Exceptions and errors
+12: Algorithms (?)
+13: Static analysis
+14: Locks and concurrency
+15: Low-level code and efficiency
+16: Process calculi and session types
+17: Races and concurrency
+18: Logics, especially separation logics
+19: Parsing
+20: Lambda calculus semantic, especially control
+21: Static analysis
+22: Low-level optimization
+23: Slicing, partial evaluation, and dependency
+24: Dynamic optimizations, runtimes, and JITs
+25: Pointer analysis
+26: Algebra
+27: Transducers, lenses, and other transformations
+28: Alias/shape analysis
+29: Concurrency and memory models
+30: Javascript and the Web
+31: Program updates, self-adjusting computation, and incremental computation
+32: Control operators
+33: Verified compilers
+34: Branch prediction/efficient compilation of control flow
+35: Probabilistic languages and all things probability
+36: Attribute grammars
+37: Garbage collection
+38: Type theory with dynamic checks
+39: Parallelism
+40: Data flow/dependence
+41: Polymorphism
+42: Abstract interpretation
+43: Program traces
+44: ML type theory
+45: More constraints... set-based analysis? ???
+46: More garbage collection
+47: Symbolic/set-theoretic things? From the words: proofs.
+48: Automata
+49: Register allocation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lda20 abstracts
+
+00: Dynamic optimizations and memory layout
+01: Verified programs
+02: Garbage collection
+03: Compilation
+04: Register allocation
+05: ???
+06: Semantics
+07: Loop optimization
+08: Domain-specific languages
+09: Language design
+10: Object orientation
+11: Bug finding?
+12: Slicing and dependence analysis
+13: Static analysis
+14: Memory models
+15: Algorithms (?)
+16: Types
+17: Dynamic analysis (and some other analyses too, I guess?)
+18: Program logics
+19: Parsing

@@ -1,0 +1,21 @@
+fulltext lda20
+000 performance optimization, especially data structures
+001 verification of programs that manipulate data structures
+002 garbage collection
+003 (low-level) code generation
+004 register allocation
+005 program analysis (algorithms)
+006 definition of languages, especially control structures
+007 dependence analysis and parallelization
+008 design?  ... super-tough one
+009 types for functions and modules
+010 types for objects
+011 safety, security and the web
+012 procedure verification
+013 program analysis
+014 shared memory concurrency
+015 data- and control-flow analysis
+016 (message-passing) concurrency
+017 dynamic program analysis
+018 proofs and models for programs
+019 parsing

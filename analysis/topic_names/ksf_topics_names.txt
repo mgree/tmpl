@@ -1,0 +1,151 @@
+fulltext_lda20_topics:
+000: (data-driven) program optimization
+001: reasoning about data structures
+002: garbage collection
+003: compilation
+004: low-level compiler optimizations
+005: program analysis
+006: formel models of computation
+007: loop compilation
+008: language design ??
+009: type theory
+010: object-oriented programming
+011: information flow
+012: program correctness
+013: pointer analysis
+014: concurrency
+015: graph-based program analysis techniques
+016: asynchronous computation
+017: race detection
+018: formal reasoning about programs
+019: parsing
+
+fulltext_lda20_topics:
+000: data-driven optimization
+001: data-structure correctness
+002: garbage collection
+003: compilation and its correctness
+004: low-level program optimization
+005: abstract interpretation
+006: models of computation
+007: parallel programming
+008: distributed programming
+009: type systems
+010: optimizing object-oriented programs
+011: bug finding
+012: array optimizations??
+013: program analysis (data flow)
+014: concurrency
+015: code generation 
+016: type systems
+017: race detection
+018: program verification
+019: parsing
+
+fulltext_lda50_topics:
+000: data-layout related program optimization
+001: reasoning about inductive data structures
+002: reasoning about heap structures
+003: low-level compiler optimizations 
+004: instruction scheduling
+005: program synthesis
+006: flows: information and network
+007: array compilation
+008: language design
+009: type systems for encapsulation
+010: object-oriented languages
+011: managing errors
+012: correctness-preserving program transformations 
+     (and printing floating point numbers correctly :-)
+013: program analysis
+014: STM
+015: graph-based algorithms
+016: distributed computing
+017: data race detection
+018: program logics
+019: parsing
+020: models of computing: operational semantics
+021: analysing procedure calls
+022: program optimization: SSA form
+023: staged compilation
+024: compiler optimization (dyanmic: JIT, profile based)
+025: pointer analysis
+026: algebraic data structures (grab bag)
+027: lenses
+028: alias analysis
+029: concurrency
+030: type systems (applied)
+031: dynamic software updates
+032: continuations
+033: program verification
+034: optimizating branches
+035: probabilistic programming
+036: attribute grammars
+037: garbage collection
+038: type inference
+039: parallel programming
+040: graph-based program optimization
+041: type theory
+042: program analysis via abstraction
+043: bug finding
+044: module systems
+045: program analysis based on constraints
+046: garbage collection
+047: theory of programming languages
+048: program analysis using automata
+049: register allocation
+
+ 
+abstracts_lda50_topics:
+000: data layout program optimization
+001: reasoning about inductive data structures
+002: program correctness
+003: compilation of high-level languages
+004: compilation to leverage parallism
+005: program analysis via abstraction
+006: power-aware compilation
+007: program optimization - grab bag
+008: network programming languages - grab bag
+009: type systems for encapsulation
+010: object-oriented langauge design
+011: handling errors
+012: compiling arrays?
+013: data analysis - grab bag 
+     (the papers are related but hard to pin down how)
+014: STM
+015: code generation
+016: process calculi
+017: race detection
+018: program logics
+019: parsing
+020: transformation of data structures ?
+021: algorithms related to pl
+022: contracts
+023: adaptive/incremental computation
+024: dynamic program optimization
+025: program optimization: focused on data
+026: privacy & probability
+027: semantics?
+028: pointer analysis
+029: concurrent programming
+030: programming models
+031: dynamic software updates
+032: compiling high level languages
+033: program verification
+034: branch prediction optimizations
+035: bug detection
+036: program synthesis
+037: garbage collection
+038: type inference
+039: parallelism
+040: graph-based program optimization
+041: proving properties of programs
+042: abstract interpretation
+043: program synthesis?
+044: type systems for high-level languages
+045: constraint based analysis of programs
+046: garbage collection
+047: automota-based analysis
+048: reasoning about programs
+049: register allocation
+
