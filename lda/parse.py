@@ -152,7 +152,7 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
     years,words = load_docs(doc_dir)
 
     d = words_to_dict(words)
-    print d.keys()
+    #print d.keys()
     if by_year:
         print "Running by year"
         bows = years_to_bow(years,d)
@@ -163,7 +163,7 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
-    d = args.get(1,"../scrape/popl_pldi/")
+    d = args.get(1,"../raw/full/popl_pldi/")
     doc_file = args.get(2,"docs.dat")
     dat_file = args.get(3,"abstracts.dat")
     vocab_file = args.get(4,"vocab.dat")

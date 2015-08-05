@@ -40,14 +40,14 @@ def read(f, enc="utf8"):
 
 if (__name__ == '__main__'):
     args = dict(enumerate(sys.argv))
-    prefix = args.get(1,"2015-01-05_23:21")
+    d = args.get(1,"2015-01-05_23:21")
     k = args.get(2,"200")
     num = int(args.get(3,10))
     
-    lda = prefix + "_lda" + k
+    lda = os.path.join(d, "lda" + k)
     beta = read(os.path.join(lda,"final.beta"))
     gamma = read(os.path.join(lda,"final.gamma"))
-    docs = read(prefix + "_docs.dat")
-    vocab = read(prefix + "_vocab.dat")
+    docs = read(os.path.join(d, "docs.dat"))
+    vocab = read(os.path.join(d, "vocab.dat"))
 
     run(docs,beta,gamma,vocab,num)

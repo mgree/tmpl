@@ -53,7 +53,7 @@ def tfidf(d):
     
     return (len(tc),tfidf.id2word,dfs)
 
-num_docs,d,dfs = tfidf("../scrape/main")
+num_docs,d,dfs = tfidf("../raw/full/popl_pldi")
 
 threshold = num_docs / 4.0
 
