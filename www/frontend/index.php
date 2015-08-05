@@ -26,7 +26,7 @@ $owa->trackPageView();
 </center>
 
 <p>Check out our <a href="http://snapl.org/2015/">SNAPL</a> paper,
-titled <a href="http://www.cs.princeton.edu/~mg19/papers/snapl2015.pdf">Tracking
+titled <a href="http://www.cs.pomona.edu/~michael/papers/snapl2015.pdf">Tracking
 the flow of ideas through the programming languages
 literature</a>. We've put up some of
 the <a href="figures.php">figures</a> from the paper in a larger
