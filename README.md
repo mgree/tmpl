@@ -20,6 +20,7 @@ The `www` directory is the website frontend and backend.
 # TODO
 
 Oh the things that we will do!
+Oh the things that we will see!
 
 ## Server migration
 
