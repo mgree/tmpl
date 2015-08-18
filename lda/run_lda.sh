@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PYTHONIOENCODING=utf8
+
 if test $# -ne 0;
 then
     KS="$*";
@@ -9,6 +11,8 @@ fi
 
 DIR=`date "+%Y-%m-%d_%H:%M"`
 START=`date "+%Y-%m-%d %H:%M"`
+
+# TODO error handling
 
 echo "SETTING UP"
 mkdir ${DIR}
