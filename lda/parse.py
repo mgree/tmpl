@@ -163,7 +163,7 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
-    d = args.get(1,"../raw/full/popl_pldi/")
+    d = args.get(1,"../raw/abs/top4/")
     doc_file = args.get(2,"docs.dat")
     dat_file = args.get(3,"abstracts.dat")
     vocab_file = args.get(4,"vocab.dat")
