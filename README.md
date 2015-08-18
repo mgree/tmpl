@@ -16,15 +16,3 @@ The `sessions` directory is the (not quite finished) analysis of
 session data for POPL.
 
 The `www` directory is the website frontend and backend.
-
-# TODO
-
-Oh the things that we will do!
-Oh the things that we will see!
-
-## Server migration
-
-We need to migrate the server away from Michael's hosting and to
-something more permanent at Princeton.
-
-## Sessions analysis
