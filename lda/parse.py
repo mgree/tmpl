@@ -1,5 +1,4 @@
 import json
-import gensim
 import sys, os, glob
 import codecs
 
