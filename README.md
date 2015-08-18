@@ -19,6 +19,8 @@ The `www` directory is the website frontend and backend.
 
 # TODO
 
+Oh the things that we will do!
+
 ## Server migration
 
 We need to migrate the server away from Michael's hosting and to
