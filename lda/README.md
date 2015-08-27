@@ -12,23 +12,24 @@ scripts, but perhaps not on platforms other than OS X.
 ## `run_lda.sh`
 
 This program ties together all of the programs described below to
-create a 'run' of analysis. All of the files for a run share a
-timestamp prefix of the form `2015-01-03_13:26`. I'll just write `PFX`
-below.
+create a 'run' of analysis. All of the files for a run are put in
+the `out` directory; each run is put in a folder named as a
+timestamp of the form `2015-01-03_13:26` . I'll just write `PFX`
+below to mean `../out/2015-01-03_13:26`
 
 The general plan for a run is:
   1. Use `parse.py` to parse the scraped data into
-     `PFX_abstracts.dat`, `PFX_docs.dat`, and `PFX_vocab.dat`.
+     `PFX/abstracts.dat`, `PFX/docs.dat`, and `PFX/vocab.dat`.
   2. Run LDA-C in parallel for a variety of numbers of topics (by
      default, K={50,75,...,200}). _This can take an hour or two
      on my 4-core i7._ LDA-C generates a directory named
-     `PFX_ldaK` for each K.
+     `PFX/ldaK` for each K.
   3. Use `topics.py` to process the output from LDA-C to find the
-     top words for each topic; these go into `PFX_ldaK_topics.txt`.
+     top words for each topic; these go into `PFX/ldaK_topics.txt`.
   4. Use `post.py` to build a CSV with the topic assignments for
-     each document in `PFX_ldaK.csv`.
+     each document in `PFX/ldaK.csv`.
   5. Use `by_year.py` to aggregate topics per conference per year,
-     generating `PFX_ldaK_by_year.csv`. These aggregate topic
+     generating `PFX/ldaK_by_year.csv`. These aggregate topic
      weights are normalized by the number of papers in the
      conference.
 
@@ -39,6 +40,8 @@ default, it runs as if it were invoked as:
 ./run_lda.sh 50 75 100 125 150 175 200
 ```
 
+If you're going to use a specific data source, you'll need to edit
+`parse.py`! This will change soon---it's on the TODO list.
 
 ## `parse.py`
 
