@@ -16,3 +16,9 @@ The `sessions` directory is the (not quite finished) analysis of
 session data for POPL.
 
 The `www` directory is the website frontend and backend.
+
+# Using our tool
+
+You'll need David Blei's [LDA-C](https://github.com/Blei-Lab/lda-c), compiled and with `lda` on your path. You'll also need the Python library [nltk](http://www.nltk.org/install.html), with the `stopwords` and `wordnet` modules installed.
+
+To do the R analysis, you'll need R with `ggplot2` installed.
