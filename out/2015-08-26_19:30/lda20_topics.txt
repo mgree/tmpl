@@ -1,0 +1,738 @@
+Topic 000
+---------
+Words (mean weight: -226.140934, min weight: -590.493886)
+  effect (-3.193178)
+  language (-3.670058)
+  type (-3.946388)
+  functional (-4.263800)
+  state (-4.268335)
+  monadic (-4.307985)
+  system (-4.378084)
+  reasoning (-4.612389)
+  program (-4.737052)
+  programming (-4.795854)
+---------
+Papers
+The impact of higher-order state and control effects on local relational reasoning - Derek Dreyer, Georg Neis, Lars Birkedal (ICFP 2010)
+  138.015387
+Modular monadic meta-theory - Benjamin Delaware, Steven Keuchel, Tom Schrijvers, Bruno C.d.S. Oliveira (ICFP 2013)
+  136.015387
+Verified decision procedures for MSO on words based on derivatives of regular expressions - Dmitriy Traytel, Tobias Nipkow (ICFP 2013)
+  111.015387
+Towards a comprehensive theory of monadic effects - Andrzej Filinski (ICFP 2011)
+  106.015387
+Modular rollback through control logging: a pair of twin functional pearls - Olin Shivers, Aaron J. Turon (ICFP 2011)
+  87.015387
+A step-indexed model of substructural state - Amal Ahmed, Matthew Fluet, Greg Morrisett (ICFP 2005)
+  83.015387
+Functional morphology - Markus Forsberg, Aarne Ranta (ICFP 2004)
+  82.015387
+A theory of gradual effect systems - Felipe Bañados Schwerter, Ronald Garcia, Éric Tanter (ICFP 2014)
+  82.015387
+On regions and linear types (extended abstract) - David Walker, Kevin Watkins (ICFP 2001)
+  78.086146
+Handlers in action - Ohad Kammar, Sam Lindley, Nicolas Oury (ICFP 2013)
+  78.015387
+
+
+Topic 001
+---------
+Words (mean weight: -223.621366, min weight: -746.267228)
+  calculus (-3.106281)
+  lambda (-3.375954)
+  type (-3.782038)
+  program (-3.889330)
+  system (-4.349022)
+  theorem (-4.511393)
+  function (-4.529307)
+  list (-4.803205)
+  reduction (-4.808675)
+  show (-4.879640)
+---------
+Papers
+Enriching the lambda calculus with contexts: toward a theory of incremental program construction - Shinn-Der Lee, Daniel P. Friedman (ICFP 1996)
+  140.015387
+Static typing for a faulty lambda calculus - David Walker, Lester Mackey, Jay Ligatti, George A. Reis, David I. August (ICFP 2006)
+  136.015387
+An error-tolerant type system for variational lambda calculus - Sheng Chen, Martin Erwig, Eric Walkingshaw (ICFP 2012)
+  123.015387
+Type fixpoints: iteration vs. recursion - Zdzisław Spławski, Paweł Urzyczyn (ICFP 1999)
+  116.015387
+Pure type systems with corecursion on streams: from finite to infinitary normalisation - Paula G. Severi, Fer-Jan J. de Vries (ICFP 2012)
+  98.015387
+A non-deterministic call-by-need lambda calculus - Arne Kutzner, Manfred Schmidt-Schauß (ICFP 1998)
+  95.015387
+The duality of computation - Pierre-Louis Curien, Hugo Herbelin (ICFP 2000)
+  83.015387
+Typer inference builds a short cut to deforestation - Olaf Chitil (ICFP 1999)
+  82.015387
+PolyAML: a polymorphic aspect-oriented functional programming language - Daniel S. Dantas, David Walker, Geoffrey Washburn, Stephanie Weirich (ICFP 2005)
+  81.921308
+Translating dependency into parametricity - Stephen Tse, Steve Zdancewic (ICFP 2004)
+  80.161230
+
+
+Topic 002
+---------
+Words (mean weight: -230.991701, min weight: -388.193361)
+  function (-3.569928)
+  representation (-3.823378)
+  language (-4.025170)
+  data (-4.061924)
+  type (-4.363777)
+  program (-4.516274)
+  functional (-4.654354)
+  code (-4.752851)
+  transformation (-4.822124)
+  value (-4.823611)
+---------
+Papers
+User-friendly functional programming for web mashups - Rob Ennals, David Gay (ICFP 2007)
+  107.015387
+Functioning without closure: type-safe customized function representations for standard ML - Allyn Dimock, Ian Westmacott, Robert Muller, Franklyn Turbak, J. B. Wells (ICFP 2001)
+  106.015387
+Building program optimizers with rewriting strategies - Eelco Visser, Zine-el-Abidine Benaissa, Andrew Tolmach (ICFP 1998)
+  98.493047
+Algebraic fusion of functions with an accumulating parameter and its improvement - Shin-ya Katsumata, Susumu Nishimura (ICFP 2006)
+  96.015387
+A probabilistic approach to the problem of automatic selection of data representations - Tyng-Ruey Chuang, Wen L. Hwang (ICFP 1996)
+  92.015387
+Optimality and inefficiency: what isn't a cost model of the lambda calculus? - Julia L. Lawall, Harry G. Mairson (ICFP 1996)
+  90.076812
+Dynamic rebinding for marshalling and update, with destruct-time ? - Gavin Bierman, Michael Hicks, Peter Sewell, Gareth Stoyle, Keith Wansbrough (ICFP 2003)
+  88.176402
+Faster laziness using dynamic pointer tagging - Simon Marlow, Alexey Rodriguez Yakushev, Simon Peyton Jones (ICFP 2007)
+  85.015387
+Functional pearl: every bit counts - Dimitrios Vytiniotis, Andrew J. Kennedy (ICFP 2010)
+  85.015387
+Tupling calculation eliminates multiple data traversals - Zhenjiang Hu, Hideya Iwasaki, Masato Takeichi, Akihiko Takano (ICFP 1997)
+  79.015387
+
+
+Topic 003
+---------
+Words (mean weight: -233.652122, min weight: -304.325904)
+  contract (-3.350108)
+  language (-3.782446)
+  semantics (-4.110718)
+  algorithm (-4.335490)
+  model (-4.428917)
+  system (-4.442699)
+  higherorder (-4.516192)
+  type (-4.546102)
+  dynamic (-4.696292)
+  calculus (-4.718748)
+---------
+Papers
+From Hilbert space to Dilbert space: context semantics as a language for games and flow analysis - Harry G. Mairson (ICFP 2003)
+  143.015387
+Contracts for higher-order functions - Robert Bruce Findler, Matthias Felleisen (ICFP 2002)
+  117.015387
+A traversal-based algorithm for higher-order model checking - Robin P. Neatherway, Steven J. Ramsay, Chih-Hao Luke Ong (ICFP 2012)
+  117.015387
+Automatic generation of staged geometric predicates - Aleksandar Nanevski, Guy Blelloch, Robert Harper (ICFP 2001)
+  110.015387
+Delimited dynamic binding - Oleg Kiselyov, Chung-chieh Shan, Amr Sabry (ICFP 2006)
+  108.015387
+Macros as multi-stage computations: type-safe, generative, binding macros in MacroML - Steven E. Ganz, Amr Sabry, Walid Taha (ICFP 2001)
+  107.015387
+Soft contract verification - Phúc C. Nguyen, Sam Tobin-Hochstadt, David Van Horn (ICFP 2014)
+  105.015387
+A sound (and complete) model of contracts - Matthias Blume, David McAllester (ICFP 2004)
+  88.015387
+Efficient nondestructive equality checking for trees and graphs - Michael D. Adams, R. Kent Dybvig (ICFP 2008)
+  88.015387
+A theory of aspects - David Walker, Steve Zdancewic, Jay Ligatti (ICFP 2003)
+  85.015387
+
+
+Topic 004
+---------
+Words (mean weight: -226.298051, min weight: -462.853459)
+  parallel (-3.517285)
+  implementation (-3.800505)
+  language (-3.966017)
+  functional (-4.309421)
+  performance (-4.311518)
+  program (-4.404638)
+  programming (-4.594625)
+  parallelism (-4.628331)
+  data (-4.741540)
+  application (-4.782806)
+---------
+Papers
+Lazy and speculative execution in computer systems - Butler W. Lampson (ICFP 2008)
+  252.015387
+biXid: a bidirectional transformation language for XML - Shinya Kawanaka, Haruo Hosoya (ICFP 2006)
+  122.535484
+A scheduling framework for general-purpose parallel languages - Matthew Fluet, Mike Rainey, John Reppy (ICFP 2008)
+  119.015387
+Parallel concurrent ML - John Reppy, Claudio V. Russo, Yingqi Xiao (ICFP 2009)
+  117.015387
+Lazy tree splitting - Lars Bergstrom, Mike Rainey, John Reppy, Adam Shaw, Matthew Fluet (ICFP 2010)
+  112.015387
+AtomCaml: first-class atomicity via rollback - Michael F. Ringenburg, Dan Grossman (ICFP 2005)
+  109.015387
+Organizing functional code for parallel execution or, foldl and foldr considered slightly harmful - Guy L. Steele, Jr. (ICFP 2009)
+  105.015387
+Dynamic optimization for functional reactive programming using generalized algebraic data types - Henrik Nilsson (ICFP 2005)
+  101.077949
+pHluid: the design of a parallel functional language implementation on workstations - Cormac Flanagan, Rishiyur S. Nikhil (ICFP 1996)
+  98.260345
+Functional parallel algorithms - Guy E. Blelloch (ICFP 2010)
+  96.015387
+
+
+Topic 005
+---------
+Words (mean weight: -230.892543, min weight: -738.819924)
+  continuation (-3.935612)
+  control (-4.394098)
+  query (-4.454964)
+  operator (-4.483411)
+  language (-4.528407)
+  program (-4.564734)
+  application (-4.732342)
+  system (-4.783112)
+  may (-4.936695)
+  delimited (-4.948880)
+---------
+Papers
+Computer science as a school subject - Simon Peyton Jones (ICFP 2013)
+  166.015387
+Identifying query incompatibilities with evolving XML schemas - Pierre Genevès, Nabil Layaïda, Vincent Quint (ICFP 2009)
+  119.015387
+The influence of browsers on evaluators or, continuations to program web servers - Christian Queinnec (ICFP 2000)
+  102.015387
+Adding delimited and composable control to a production programming environment - Matthew Flatt, Gang Yu, Robert Bruce Findler, Matthias Felleisen (ICFP 2007)
+  90.015387
+Proving the unique fixed-point principle correct: an adventure with category theory - Ralf Hinze, Daniel W.H. James (ICFP 2011)
+  89.015387
+A practical theory of language-integrated query - James Cheney, Sam Lindley, Philip Wadler (ICFP 2013)
+  66.015387
+Automatically RESTful web applications: marking modular serializable continuations - Jay A. McCarthy (ICFP 2009)
+  65.015387
+A universe of binding and computation - Daniel R. Licata, Robert Harper (ICFP 2009)
+  60.071959
+Calculating threesomes, with blame - Ronald Garcia (ICFP 2013)
+  54.302511
+Backtracking, interleaving, and terminating monad transformers: (functional pearl) - Oleg Kiselyov, Chung-chieh Shan, Daniel P. Friedman, Amr Sabry (ICFP 2005)
+  53.218548
+
+
+Topic 006
+---------
+Words (mean weight: -223.401571, min weight: -749.946974)
+  type (-2.193141)
+  system (-3.345939)
+  language (-3.848265)
+  inference (-4.297483)
+  theory (-4.440429)
+  typed (-4.566052)
+  proof (-4.574381)
+  translation (-4.584414)
+  intersection (-4.670695)
+  program (-4.681329)
+---------
+Papers
+From ML type inference to stratified type inference - François Pottier (ICFP 2005)
+  167.015387
+Relating typability and expressiveness in finite-rank intersection type systems (extended abstract) - Assaf J. Kfoury, Harry G. Mairson, Franklyn A. Turbak, J. B. Wells (ICFP 1999)
+  155.015387
+An equivalence-preserving CPS translation via multi-language semantics - Amal Ahmed, Matthias Blume (ICFP 2011)
+  130.015387
+On the bright side of type classes: instance arguments in Agda - Dominique Devriese, Frank Piessens (ICFP 2011)
+  128.869717
+Elaborating intersection and union types - Joshua Dunfield (ICFP 2012)
+  120.015387
+Types, potency, and idempotency: why nonlinearity and amnesia make a type system work - Peter Møller Neergaard, Harry G. Mairson (ICFP 2004)
+  111.015387
+Pattern matching without K - Jesper Cockx, Dominique Devriese, Frank Piessens (ICFP 2014)
+  111.015387
+Logical types for untyped languages - Sam Tobin-Hochstadt, Matthias Felleisen (ICFP 2010)
+  108.015387
+Type dispatch for named hierarchical types - Neal Glew (ICFP 1999)
+  107.015387
+Homotopical patch theory - Carlo Angiuli, Edward Morehouse, Daniel R. Licata, Robert Harper (ICFP 2014)
+  91.015387
+
+
+Topic 007
+---------
+Words (mean weight: -226.292312, min weight: -744.433583)
+  type (-2.420658)
+  language (-3.577741)
+  polymorphism (-3.913582)
+  polymorphic (-4.222088)
+  higherorder (-4.224165)
+  system (-4.275367)
+  function (-4.334411)
+  module (-4.635018)
+  analysis (-4.710499)
+  term (-4.714157)
+---------
+Papers
+Recursive type generativity - Derek Dreyer (ICFP 2005)
+  140.015387
+Type inference with rank 1 polymorphism for type-directed compilation of ML - Atsushi Ohori, Nobuaki Yoshida (ICFP 1999)
+  118.015387
+Non-parametric parametricity - Georg Neis, Derek Dreyer, Andreas Rossberg (ICFP 2009)
+  117.015387
+Boxes go bananas: encoding higher-order abstract syntax with parametric polymorphism - Geoffrey Washburn, Stephanie Weirich (ICFP 2003)
+  116.015387
+Encoding types in ML-like languages - Zhe Yang (ICFP 1998)
+  114.015387
+Intensional polymorphism in type-erasure semantics - Karl Crary, Stephanie Weirich, Greg Morrisett (ICFP 1998)
+  100.015387
+Representing Java classes in a typed intermediate language - Christopher League, Zhong Shao, Valery Trifonov (ICFP 1999)
+  97.015387
+Maximal sharing in the Lambda calculus with letrec - Clemens Grabmayer, Jan Rochel (ICFP 2014)
+  96.643192
+Functional programming in C++ - Brian McNamara, Yannis Smaragdakis (ICFP 2000)
+  95.015387
+Fully reflexive intensional type analysis - Valery Trifonov, Bratin Saha, Zhong Shao (ICFP 2000)
+  94.015387
+
+
+Topic 008
+---------
+Words (mean weight: -228.132596, min weight: -751.948666)
+  semantics (-3.316736)
+  machine (-3.598822)
+  abstract (-3.661685)
+  language (-4.036558)
+  implementation (-4.113464)
+  update (-4.226986)
+  operational (-4.302699)
+  program (-4.314696)
+  functional (-4.496264)
+  specification (-4.559802)
+---------
+Papers
+Defunctionalized interpreters for programming languages - Olivier Danvy (ICFP 2008)
+  119.015387
+The spineless tagless G-machine, naturally - Jon Mountjoy (ICFP 1998)
+  104.015387
+A type based sharing analysis for update avoidance and optimisation - Jörgen Gustavsson (ICFP 1998)
+  100.015387
+Krivine nets: a semantic foundation for distributed execution - Olle Fredriksson, Dan R. Ghica (ICFP 2014)
+  96.015387
+ReCaml: execution state as the cornerstone of reconfigurations - Jérémy Buisson, Fabien Dagnat (ICFP 2010)
+  94.015387
+Modelling deterministic concurrent I/O - Malcolm Dowse, Andrew Butterfield (ICFP 2006)
+  90.015387
+FLUX: functional updates for XML - James Cheney (ICFP 2008)
+  79.018816
+Deriving an efficient FPGA implementation of a low density parity check forward error corrector - Andy Gill, Andrew Farmer (ICFP 2011)
+  79.015387
+Verification of Erlang programs using abstract interpretation and model checking - Frank Huch (ICFP 1999)
+  79.015387
+Abstracting abstract machines - David Van Horn, Matthew Might (ICFP 2010)
+  77.350192
+
+
+Topic 009
+---------
+Words (mean weight: -223.236841, min weight: -747.837765)
+  program (-3.524487)
+  language (-3.659627)
+  code (-3.888954)
+  proof (-3.952377)
+  system (-4.080997)
+  coq (-4.366023)
+  verification (-4.379572)
+  concurrent (-4.383580)
+  programming (-4.387310)
+  tool (-4.872854)
+---------
+Papers
+Using formal methods to enable more secure vehicles: DARPA's HACMS program - Kathleen Fisher (ICFP 2014)
+  182.015387
+Secure distributed programming with value-dependent types - Nikhil Swamy, Juan Chen, Cédric Fournet, Pierre-Yves Strub, Karthikeyan Bhargavan, Jean Yang (ICFP 2011)
+  148.015387
+Effective interactive proofs for higher-order imperative programs - Adam Chlipala, Gregory Malecha, Greg Morrisett, Avraham Shinnar, Ryan Wisnesky (ICFP 2009)
+  142.015387
+A concurrent ML library in concurrent Haskell - Avik Chaudhuri (ICFP 2009)
+  128.015387
+Tales from the jungle - Peter Sewell (ICFP 2012)
+  123.015387
+Stabilizers: a modular checkpointing abstraction for concurrent functional programs - Lukasz Ziarek, Philip Schatz, Suresh Jagannathan (ICFP 2006)
+  121.015387
+The bedrock structured programming system: combining generative metaprogramming and hoare logic in an extensible program verifier - Adam Chlipala (ICFP 2013)
+  118.015387
+Modular and automated type-soundness verification for language extensions - Florian Lorenzen, Sebastian Erdweg (ICFP 2013)
+  110.566587
+Ott: effective tool support for the working semanticist - Peter Sewell, Francesco Zappa Nardelli, Scott Owens, Gilles Peskine, Thomas Ridge, Susmit Sarkar, Rok Strniša (ICFP 2007)
+  106.015387
+Modular verification of concurrent assembly code with dynamic thread creation and termination - Xinyu Feng, Zhong Shao (ICFP 2005)
+  104.015387
+
+
+Topic 010
+---------
+Words (mean weight: -227.816069, min weight: -671.511303)
+  analysis (-2.860155)
+  program (-3.424139)
+  graph (-3.508663)
+  flow (-4.191832)
+  higherorder (-4.419417)
+  optimization (-4.483658)
+  call (-4.484348)
+  language (-4.543371)
+  control (-4.701665)
+  time (-4.759369)
+---------
+Papers
+Practical and effective higher-order optimizations - Lars Bergstrom, Matthew Fluet, Matthew Le, John Reppy, Nora Sandler (ICFP 2014)
+  155.015387
+Partial memoization of concurrency and communication - Lukasz Ziarek, KC Sivaramakrishnan, Suresh Jagannathan (ICFP 2009)
+  123.015387
+Relating complexity and precision in control flow analysis - David Van Horn, Harry G. Mairson (ICFP 2007)
+  120.029668
+C-SHORe: a collapsible approach to higher-order verification - Christopher Broadbent, Arnaud Carayol, Matthew Hague, Olivier Serre (ICFP 2013)
+  112.015387
+Iterative-free program analysis - Mizuhito Ogawa, Zhenjiang Hu, Isao Sasano (ICFP 2003)
+  110.015387
+The effectiveness of flow analysis for inlining - J. Michael Ashley (ICFP 1997)
+  107.015387
+On global dynamics of optimal graph reduction - Julia L. Lawall, Harry G. Mairson (ICFP 1997)
+  102.042525
+Termination analysis and call graph construction for higher-order functional programs - Damien Sereni (ICFP 2007)
+  101.015387
+Down with Emacs Lisp: dynamic scope analysis - Matthias Neubauer, Michael Sperber (ICFP 2001)
+  100.015387
+Addressing covert termination and timing channels in concurrent information flow systems - Deian Stefan, Alejandro Russo, Pablo Buiras, Amit Levy, John C. Mitchell, David Maziéres (ICFP 2012)
+  93.015387
+
+
+Topic 011
+---------
+Words (mean weight: -228.547465, min weight: -700.852780)
+  data (-3.717348)
+  type (-3.852033)
+  function (-4.092078)
+  structure (-4.119331)
+  generic (-4.134515)
+  language (-4.168071)
+  pattern (-4.314214)
+  programming (-4.404913)
+  recursive (-4.416974)
+  datatypes (-4.481641)
+---------
+Papers
+Forest: a language and toolkit for programming with filestores - Kathleen Fisher, Nate Foster, David Walker, Kenny Q. Zhu (ICFP 2011)
+  169.015387
+Quotient lenses - J. Nathan Foster, Alexandre Pilkiewicz, Benjamin C. Pierce (ICFP 2008)
+  150.015387
+Attribute grammars fly first-class: how to do aspect oriented programming in Haskell - Marcos Viera, S. Doaitse Swierstra, Wouter Swierstra (ICFP 2009)
+  124.026589
+Bidirectionalization transformation based on automatic derivation of view complement functions - Kazutaka Matsuda, Zhenjiang Hu, Keisuke Nakano, Makoto Hamana, Masato Takeichi (ICFP 2007)
+  117.015387
+A hierarchy of mendler style recursion combinators: taming inductive datatypes with negative occurrences - Ki Yung Ahn, Tim Sheard (ICFP 2011)
+  113.015387
+Matching lenses: alignment and view update - Davi M.J. Barbosa, Julien Cretin, Nate Foster, Michael Greenberg, Benjamin C. Pierce (ICFP 2010)
+  109.015387
+Mixin' up the ML module system - Derek Dreyer, Andreas Rossberg (ICFP 2008)
+  95.015387
+Modular typechecking for hierarchically extensible datatypes and functions - Todd Millstein, Colin Bleckner, Craig Chambers (ICFP 2002)
+  90.015387
+Scrap your nameplate: (functional pearl) - James Cheney (ICFP 2005)
+  89.015387
+Transporting functions across ornaments - Pierre-Evariste Dagand, Conor McBride (ICFP 2012)
+  88.015387
+
+
+Topic 012
+---------
+Words (mean weight: -233.427877, min weight: -752.273355)
+  type (-3.063706)
+  monad (-3.352224)
+  program (-3.806517)
+  language (-3.918625)
+  programming (-4.098707)
+  system (-4.403332)
+  computation (-4.435810)
+  ml (-4.652747)
+  algorithm (-4.656330)
+  data (-4.664136)
+---------
+Papers
+Acute: high-level programming language design for distributed computation - Peter Sewell, James J. Leifer, Keith Wansbrough, Francesco Zappa Nardelli, Mair Allen-Williams, Pierre Habouzit, Viktor Vafeiadis (ICFP 2005)
+  149.015387
+Compiling self-adjusting programs with continuations - Ruy Ley-Wild, Matthew Fluet, Umut A. Acar (ICFP 2008)
+  131.015387
+Type inference, principal typings, and let-polymorphism for first-class mixin modules - Henning Makholm, J. B. Wells (ICFP 2005)
+  125.015387
+Implicit self-adjusting computation for purely functional programs - Yan Chen, Joshua Dunfield, Matthew A. Hammer, Umut A. Acar (ICFP 2011)
+  123.015387
+Making standard ML a practical database programming language - Atsushi Ohori, Katsuhiro Ueno (ICFP 2011)
+  108.015387
+Distance makes the types grow stronger: a calculus for differential privacy - Jason Reed, Benjamin C. Pierce (ICFP 2010)
+  106.015387
+Monadic augment and generalised short cut fusion - Neil Ghani, Patricia Johann, Tarmo Uustalu, Varmo Vene (ICFP 2005)
+  106.015387
+Lightweight monadic programming in ML - Nikhil Swamy, Nataliya Guts, Daan Leijen, Michael Hicks (ICFP 2011)
+  104.015387
+Recursive structures for standard ML - Claudio V. Russo (ICFP 2001)
+  101.015387
+Functional programming for dynamic and large data with self-adjusting computation - Yan Chen, Umut A. Acar, Kanat Tangwongsan (ICFP 2014)
+  85.005832
+
+
+Topic 013
+---------
+Words (mean weight: -230.199997, min weight: -749.105705)
+  system (-3.788989)
+  collection (-3.999382)
+  garbage (-4.029644)
+  language (-4.269390)
+  technique (-4.329781)
+  object (-4.499139)
+  stack (-4.519905)
+  access (-4.557619)
+  flow (-4.611566)
+  abstract (-4.657655)
+---------
+Papers
+An efficient non-moving garbage collector for functional languages - Katsuhiro Ueno, Atsushi Ohori, Toshiaki Otomo (ICFP 2011)
+  142.015387
+The measured cost of copying garbage collection mechanisms - Michael W. Hicks, Jonathan T. Moore, Scott M. Nettles (ICFP 1997)
+  136.015387
+Formal models of distributed memory management - Christian Ungureanu, Benjamin Goldberg (ICFP 1997)
+  133.015387
+iTasks: executable specifications of interactive work flow systems for the web - Rinus Plasmeijer, Peter Achten, Pieter Koopman (ICFP 2007)
+  131.534184
+SeLINQ: tracking information across application-database boundaries - Daniel Schoepe, Daniel Hedin, Andrei Sabelfeld (ICFP 2014)
+  124.015387
+Causal commutative arrows and their optimization - Hai Liu, Eric Cheng, Paul Hudak (ICFP 2009)
+  116.338633
+Introspective pushdown analysis of higher-order programs - Christopher Earl, Ilya Sergey, Matthew Might, David Van Horn (ICFP 2012)
+  99.015387
+Atomic heap transactions and fine-grain interrupts - Olin Shivers, James W. Clark, Roland McGrath (ICFP 1999)
+  95.015387
+Non-stop Haskell - A. M. Cheadle, A. J. Field, S. Marlow, S. L. Peyton Jones, R. L. While (ICFP 2000)
+  86.015387
+Efficient lookup-table protocol in secure multiparty computation - John Launchbury, Iavor S. Diatchki, Thomas DuBuisson, Andy Adams-Moran (ICFP 2012)
+  85.015387
+
+
+Topic 014
+---------
+Words (mean weight: -229.052940, min weight: -693.899553)
+  language (-3.507559)
+  programming (-3.521749)
+  functional (-3.827649)
+  system (-3.953772)
+  reactive (-4.514373)
+  implementation (-4.541934)
+  event (-4.544974)
+  program (-4.591355)
+  frp (-4.606507)
+  type (-4.615673)
+---------
+Papers
+Fifteen years of functional pearls - Richard S. Bird (ICFP 2006)
+  196.015387
+A fresh approach to representing syntax with static binders in functional programming - Andrew M. Pitts (ICFP 2001)
+  183.015387
+Polymorphism and page tables: systems programming from a functional programmer's perspective - Mark P. Jones (ICFP 2008)
+  147.403222
+Binders unbound - Stephanie Weirich, Brent A. Yorgey, Tim Sheard (ICFP 2011)
+  140.820947
+Settable and non-interfering signal functions for FRP: how a first-order switch is more than enough - Daniel Winograd-Cort, Paul Hudak (ICFP 2014)
+  135.015387
+Real-time FRP - Zhanyong Wan, Walid Taha, Paul Hudak (ICFP 2001)
+  124.015387
+Mechanizing the meta-theory of programming languages - Robert Harper (ICFP 2005)
+  111.738331
+Transactional events for ML - Laura Effinger-Dean, Matthew Kehrt, Dan Grossman (ICFP 2008)
+  111.494418
+Safe functional reactive programming through dependent types - Neil Sculthorpe, Henrik Nilsson (ICFP 2009)
+  111.187234
+Frenetic: a network programming language - Nate Foster, Rob Harrison, Michael J. Freedman, Christopher Monsanto, Jennifer Rexford, Alec Story, David Walker (ICFP 2011)
+  109.015387
+
+
+Topic 015
+---------
+Words (mean weight: -226.202860, min weight: -493.201572)
+  language (-3.480844)
+  evaluation (-3.702225)
+  model (-3.791870)
+  program (-3.862349)
+  lazy (-4.211014)
+  functional (-4.250285)
+  haskell (-4.339260)
+  programming (-4.453001)
+  technique (-4.810370)
+  result (-4.849696)
+---------
+Papers
+Functional formal methods - J Strother Moore (ICFP 2002)
+  169.015387
+Concurrent NetCore: from policies to pipelines - Cole Schlesinger, Michael Greenberg, David Walker (ICFP 2014)
+  162.015387
+McErlang: a model checker for a distributed functional programming language - Lars-Åke Fredlund, Hans Svensson (ICFP 2007)
+  117.015387
+Charting patterns on price history - Saswat Anand, Wei-Ngan Chin, Siau-Cheng Khoo (ICFP 2001)
+  105.015387
+A semantic model for graphical user interfaces - Neelakantan R. Krishnaswami, Nick Benton (ICFP 2011)
+  94.030527
+Functional modelling of musical harmony: an experience report - José Pedro Magalhães, W. Bas de Haas (ICFP 2011)
+  94.015387
+Tagless staged interpreters for typed languages - Emir PašaliΕ, Walid Taha, Tim Sheard (ICFP 2002)
+  85.700094
+Linearity and PCF: a semantic insight! - Marco Gaboardi, Luca Paolini, Mauro Piccolo (ICFP 2011)
+  84.015387
+Lem: reusable engineering of real-world semantics - Dominic P. Mulligan, Scott Owens, Kathryn E. Gray, Tom Ridge, Peter Sewell (ICFP 2014)
+  82.634629
+Lazy computation with exact real numbers - Abbas Edalat, Peter John Potts, Philipp Sünderhauf (ICFP 1998)
+  75.015387
+
+
+Topic 016
+---------
+Words (mean weight: -230.010564, min weight: -304.530032)
+  programming (-3.352342)
+  functional (-3.635912)
+  language (-3.761661)
+  web (-4.691594)
+  scheme (-4.692412)
+  code (-4.794802)
+  system (-4.810238)
+  parsing (-4.845745)
+  development (-4.949539)
+  program (-4.965213)
+---------
+Papers
+Productive coprogramming with guarded recursion - Robert Atkey, Conor McBride (ICFP 2013)
+  122.015387
+Parsing with derivatives: a functional pearl - Matthew Might, David Darais, Daniel Spiewak (ICFP 2011)
+  107.015387
+TeachScheme!: a checkpoint - Matthias Felleisen (ICFP 2010)
+  100.015387
+Packrat parsing:: simple, powerful, lazy, linear time, functional pearl - Bryan Ford (ICFP 2002)
+  97.763601
+JavaScript at ten years - Brendan Eich (ICFP 2005)
+  74.015387
+Experience report: ocsigen, a web programming framework - Vincent Balat, Jérôme Vouillon, Boris Yakobowski (ICFP 2009)
+  73.015387
+20 years of industrial functional programming - Ulf Wiger (ICFP 2004)
+  72.015387
+Scribble: closing the book on ad hoc documentation tools - Matthew Flatt, Eli Barzilay, Robert Bruce Findler (ICFP 2009)
+  72.015387
+Commutative monads, diagrams and knots - Dan P. Piponi (ICFP 2009)
+  70.174480
+Using camlp4 for presenting dynamic mathematics on the web: DynaMoW, an OCaml language extension for the run-time generation of mathematical contents and their presentation on the web - Frédéric Chyzak, Alexis Darrasse (ICFP 2011)
+  64.428274
+
+
+Topic 017
+---------
+Words (mean weight: -231.456935, min weight: -739.461599)
+  compiler (-3.478965)
+  haskell (-3.492318)
+  language (-3.756103)
+  program (-4.136753)
+  code (-4.364621)
+  library (-4.460127)
+  array (-4.473951)
+  programming (-4.584617)
+  implementation (-4.687248)
+  time (-4.741909)
+---------
+Papers
+Flask: staged functional programming for sensor networks - Geoffrey Mainland, Greg Morrisett, Matt Welsh (ICFP 2008)
+  118.015387
+A nanopass framework for commercial compiler development - Andrew W. Keep, R. Kent Dybvig (ICFP 2013)
+  114.015387
+Functional array fusion - Manuel M. T. Chakravarty, Gabriele Keller (ICFP 2001)
+  104.015387
+A certified framework for compiling and executing garbage-collected languages - Andrew McCreight, Tim Chevalier, Andrew Tolmach (ICFP 2010)
+  102.682320
+A nanopass infrastructure for compiler education - Dipanwita Sarkar, Oscar Waddell, R. Kent Dybvig (ICFP 2004)
+  96.015387
+Implementing bit-addressing with specialization - Scott Draves (ICFP 1997)
+  93.168013
+Understanding memory allocation of scheme programs - Manuel Serrano, Hans-J. Boehm (ICFP 2000)
+  87.015387
+Exploiting vector instructions with generalized stream fusio - Geoffrey Mainland, Roman Leshchinskiy, Simon Peyton Jones (ICFP 2013)
+  84.015387
+Experience report: Haskell in the 'real world': writing a commercial application in a lazy functional lanuage - Curt J. Sampson (ICFP 2009)
+  70.015387
+Interlanguage working without tears: blending SML with Java - Nick Benton, Andrew Kennedy (ICFP 1999)
+  69.906290
+
+
+Topic 018
+---------
+Words (mean weight: -231.817821, min weight: -719.913350)
+  type (-2.869213)
+  system (-3.794605)
+  equality (-3.928930)
+  language (-4.004045)
+  algorithm (-4.032218)
+  extension (-4.400451)
+  constraint (-4.536475)
+  function (-4.604283)
+  problem (-4.615637)
+  inference (-4.642383)
+---------
+Papers
+Generic discrimination: sorting and paritioning unshared data in linear time - Fritz Henglein (ICFP 2008)
+  126.015387
+System FC with explicit kind equality - Stephanie Weirich, Justin Hsu, Richard A. Eisenberg (ICFP 2013)
+  95.015387
+Complexity of kernel Fun subtype checking - Giorgio Ghelli (ICFP 1996)
+  94.015387
+Extensible pattern matching via a lightweight language extension - Don Syme, Gregory Neverov, James Margetson (ICFP 2007)
+  83.015387
+Write it recursively: a generic framework for optimal path queries - Akimasa Morihata, Kiminori Matsuzaki, Masato Takeichi (ICFP 2008)
+  80.652729
+On the complexity of equivalence of specifications of infinite objects - Jörg Endrullis, Dimitri Hendriks, Rena Bakhshi (ICFP 2012)
+  73.015387
+Depending on types - Stephanie Weirich (ICFP 2014)
+  69.015387
+Regular expression types for XML - Haruo Hosoya, Jérôme Vouillon, Benjamin C. Pierce (ICFP 2000)
+  65.015387
+Pattern minimization problems over recursive data types - Alexander Krauss (ICFP 2008)
+  59.015387
+Nameless, painless - Nicolas Pouillard (ICFP 2011)
+  57.304127
+
+
+Topic 019
+---------
+Words (mean weight: -236.079177, min weight: -717.702368)
+  logic (-3.424936)
+  language (-3.572017)
+  functional (-3.751154)
+  programming (-3.814567)
+  program (-4.039500)
+  system (-4.260634)
+  process (-4.655615)
+  proof (-4.733216)
+  linear (-4.825668)
+  hardware (-4.834733)
+---------
+Papers
+Mechanized meta-reasoning using a hybrid HOAS/de bruijn representation and reflection - Jason Hickey, Aleksey Nogin, Xin Yu, Alexei Kopylov (ICFP 2006)
+  135.015387
+Verified heap theorem prover by paramodulation - Gordon Stewart, Lennart Beringer, Andrew W. Appel (ICFP 2012)
+  133.015387
+Modular verification of preemptive OS kernels - Alexey Gotsman, Hongseok Yang (ICFP 2011)
+  109.790955
+Functional netlists - Sungwoo Park, Jinha Kim, Hyeonseung Im (ICFP 2008)
+  102.161314
+Software is discrete mathematics - Rex L. Page (ICFP 2003)
+  102.015387
+vCoeffects: a calculus of context-dependent computation - Tomas Petricek, Dominic Orchard, Alan Mycroft (ICFP 2014)
+  102.015387
+Security-typed programming within dependently typed programming - Jamie Morgenstern, Daniel R. Licata (ICFP 2010)
+  95.015387
+Lolliproc: to concurrency from classical linear logic via curry-howard and control - Karl Mazurak, Steve Zdancewic (ICFP 2010)
+  92.015387
+A functional I/O system or, fun for freshman kids - Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi (ICFP 2009)
+  92.015387
+Geometry of synthesis iv: compiling affine recursion into static hardware - Dan R. Ghica, Alex Smith, Satnam Singh (ICFP 2011)
+  88.015387
