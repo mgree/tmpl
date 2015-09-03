@@ -76,6 +76,10 @@ point in a topic's graph is the most likely word for <i>that
 topic</i>; word #1 is different for each topic. The y-axis is the
 log-likelihood of each word.</p>
 
+<a href="figs/ICFP_20topics.png">
+  <img src="figs/ICFP_20topics.png" />
+</a>
+<p>Topics over time for ICFP, k=20 topics learned over abstracts.</p>
 
 </body>
 </html>
