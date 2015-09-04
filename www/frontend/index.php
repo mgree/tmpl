@@ -19,7 +19,7 @@ $owa->trackPageView();
   <h1>TMPL: Topic Modeling in PL</h1>
   <h2>Tracking the flow of ideas through the programming languages literature</h2>
   <h3>
-    <a href="http://www.cs.princeton.edu/~mg19/">Michael Greenberg</a>,
+    <a href="http://www.cs.pomona.edu/~michael/">Michael Greenberg</a>,
     <a href="http://www.cs.tufts.edu/~kfisher/Kathleen_Fisher/Home.html">Kathleen Fisher</a>, and
     <a href="http://www.cs.princeton.edu/~dpw/">David Walker</a>
   </h3>
@@ -32,7 +32,7 @@ literature</a>. We've put up some of
 the <a href="figures.php">figures</a> from the paper in a larger
 format. We've also built a tool to help search for related work using
 the topic models we built. You can also look at our analysis
-of <a href="http://www.cs.princeton.edu/~mg19/popl15/">POPL
+of <a href="http://www.cs.pomona.edu/~michael/popl15/">POPL
 2015</a>.</p>
 
 <p>Upload a PDF and we'll give you the 10 most closely related papers
