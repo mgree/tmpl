@@ -29,10 +29,10 @@ $owa->trackPageView();
 titled <a href="http://www.cs.pomona.edu/~michael/papers/snapl2015.pdf">Tracking
 the flow of ideas through the programming languages
 literature</a>. We've put up some of
-the <a href="figures.php">figures</a> from the paper in a larger
-format. We've also built a tool to help search for related work using
-the topic models we built. You can also look at our analysis
-of <a href="http://www.cs.pomona.edu/~michael/popl15/">POPL
+the <a href="figures.php">figures</a> from the paper (and more recent
+work) in a larger format. We've also built a tool to help search for
+related work using the topic models we built. You can also look at our
+analysis of <a href="http://www.cs.pomona.edu/~michael/popl15/">POPL
 2015</a>.</p>
 
 <p>Upload a PDF and we'll give you the 10 most closely related papers

@@ -81,5 +81,13 @@ log-likelihood of each word.</p>
 </a>
 <p>Topics over time for ICFP, k=20 topics learned over abstracts.</p>
 
+<a href="figs/weight_pldi_popl.pdf">
+  <img src="figs/weight_pldi_popl.png" />
+</a>
+<p>Aggregate weight, by topic and conference. The x-axis are the
+fulltext k=20 topics; the y-axis is the total weight in that topic
+over all years, colored by conference. Note that topic weight
+is <i>not</i> evenly distributed across all topics.</p>
+
 </body>
 </html>
