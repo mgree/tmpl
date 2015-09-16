@@ -12,7 +12,7 @@ names(lda)[4:23] <- topic_names[1:20,]
 d <- melt(lda,seq(1,3))
 names(d)[4:5] <- c("Topic","Weight")
 
-# thanks to Noam Ross for the tip on using dplyr/this bit of code
+# thanks to Noam Ross for the tip onin using dplyr/this bit of code
 d2 = d %>% group_by(Topic, Conference) %>% summarize(Total = sum(Weight))
 
 p <- ggplot(d2, aes(x=Topic,y=Total,fill=Conference))
