@@ -1,18 +1,6 @@
 <html>
 <head>
 <title>TMPL: Topic Modeling in PL</title>
-<?php
-
-require_once('../../owa/owa_php.php');
-
-$owa = new owa_php();
-$owa->setSiteId('101db06411ab85d334726f4ec2344077');
-
-$owa->setPageTitle('index.php');
-$owa->setPageType(isset($_FILES['userpdf']) ? 'upload' : 'view');
-$owa->trackPageView();
-
-?>
 </head>
 <body>
 <center>
@@ -46,8 +34,8 @@ PLDI.</p>
 </form>
 
 <?php
-$upload_dir = "../uploads";
-$backend_dir = "../backend";
+$upload_dir = "/n/fs/tmpl/uploads";
+$backend_dir = "/n/fs/tmpl/backend";
 
 if ($_FILES['userpdf']['error'] == UPLOAD_ERR_OK &&
     is_uploaded_file($_FILES['userpdf']['tmp_name'])) {
@@ -57,10 +45,8 @@ if ($_FILES['userpdf']['error'] == UPLOAD_ERR_OK &&
    echo "<pre>";
    $pdf = tempnam($upload_dir, "doc-");
    if (move_uploaded_file($_FILES['userpdf']['tmp_name'],$pdf)) {
-      $owa->trackAction("upload","PDF",$pdf);
-
       chdir($backend_dir);
-      putenv('PATH=~/.local/bin:~/lda-c-dist:$PATH');
+      putenv('PATH=/n/fs/tmpl/.local/bin:/n/fs/tmpl/lda-c-dist:$PATH');
       putenv('PYTHONIOENCODING=utf8');
       
       system("/usr/bin/python infer.py $pdf 2>&1");

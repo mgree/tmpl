@@ -5,6 +5,8 @@ import nltk
 
 from utils import *
 
+lda_path = "/n/fs/tmpl/lda-c"
+
 def words_to_dict(words):
     return dict(zip(words, range(0, len(words))))
 
@@ -100,7 +102,7 @@ if __name__ == '__main__':
     out.close()
 
     log = base + ".log"
-    os.system("lda inf settings.txt %s %s %s >%s 2>&1" % (model,dat_file,base,log))
+    os.system(os.path.join(lda_path, "lda") + " inf settings.txt %s %s %s >%s 2>&1" % (model,dat_file,base,log))
     # XXX capture output, handle errors
     inf = read(base + "-gamma.dat")
     
