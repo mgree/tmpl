@@ -1,6 +1,6 @@
 .PHONY : deploy
 
 deploy : backend frontend
-	rsync -Cavr --exclude '*.pyc' --exclude '*~' . weaselhat:tmpl
+	rsync -ClgoDvr --exclude '*.pyc' --exclude '*~' --exclude paths.py --exclude uploads . princeton:/n/fs/tmpl
 
 
