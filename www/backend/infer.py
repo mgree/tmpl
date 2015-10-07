@@ -42,7 +42,7 @@ def make_bow(doc,d):
     return bow
 
 
-modes = ["abstracts","fulltext"]
+modes = ["fulltext","abstracts"]
 ks = ["20","50","100","200"]
 dist = ["kl","euclidean"]
 
