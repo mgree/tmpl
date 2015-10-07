@@ -3,12 +3,14 @@ import pickle
 
 import nltk
 
-from utils import *
+import paths
 
-lda_path = "/n/fs/tmpl/lda-c"
+from utils import *
 
 def words_to_dict(words):
     return dict(zip(words, range(0, len(words))))
+
+nltk.data.path.append(paths.nltk_data_path)
 
 use_wordnet = True
 if use_wordnet:
@@ -83,7 +85,7 @@ if __name__ == '__main__':
     pdf_file = args[0]
     (base,_) = os.path.splitext(pdf_file)
     
-    text = os.popen("pdftotext \"%s\" -" % pdf_file).read() # XXX safe filenames!
+    text = os.popen("/usr/bin/pdftotext \"%s\" -" % pdf_file).read() # XXX safe filenames!
 
     vocab = words_to_dict(open(words).read().split())
     
@@ -102,7 +104,7 @@ if __name__ == '__main__':
     out.close()
 
     log = base + ".log"
-    os.system(os.path.join(lda_path, "lda") + " inf settings.txt %s %s %s >%s 2>&1" % (model,dat_file,base,log))
+    os.system(paths.lda + " inf settings.txt %s %s %s >%s 2>&1" % (model,dat_file,base,log))
     # XXX capture output, handle errors
     inf = read(base + "-gamma.dat")
     
