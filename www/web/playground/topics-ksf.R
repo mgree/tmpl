@@ -16,8 +16,9 @@ library(shiny)
 #library(doMC)
 #registerDoMC(cores=22)
 
-basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/abs/top4/"
+basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/abs/all/"
 paper_files = list.files(basepath, recursive=TRUE, pattern="\\d+\\.txt")
+print (paper_files)
 
 # abs = alply(paper_files, 1, function(paper) {
 #   paper_xml = htmlTreeParse(file.path(ppath, paper), useInternalNodes = TRUE, trim=TRUE)
@@ -55,17 +56,22 @@ dim(dtm)
 # Drop documents with little or no text
 
 row_sums = rowSums(as.matrix(dtm))
-count = 0
+total = 0
 doc_length <- vector()
-for (i in 1:length(row_sums)) {
-  if (row_sums[i] == 0)
-    dtm <- dtm[, -count]
+sprintf("row sums: %d", length(row_sums))
+sprintf("dtm: %d", nrow(as.matrix(dtm)))
+start_sums = length(row_sums)
+for (i in 1:start_sums) {
+  if (row_sums[i] == 0) {
+    total = total + 1
+  }
   else {
     temp <- paste(corp[[i]]$content, collapse = ' ')
     doc_length <- c(doc_length, stri_count(temp, regex = '\\S+'))
-    count = count +1
   }
 }
+
+#sprintf("total: %d", total)
 dtm <- dtm[rowSums(as.matrix(dtm)) > 0, ]
 print ("doc_length: ")
 sprintf("%d", length(doc_length))
