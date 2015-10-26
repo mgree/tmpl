@@ -3,12 +3,15 @@ import string
 import os
 import sys
 import codecs
+import math
+import re
+
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.stem.porter import PorterStemmer
 
-path = '/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/abs/top4/ICFP 1996'
+path = '/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/full/popl'
 token_dict = []
 file_name = []
 stemmer = PorterStemmer()
@@ -24,83 +27,66 @@ def tokenize(text):
     stems = stem_tokens(tokens, stemmer)
     return stems
 
+pattern = re.compile("([0-9])+-fulltext.txt")
+
+textvect = []
 for subdir, dirs, files in os.walk(path):
     for file in files:
-        file_path = subdir + os.path.sep + file
-        file_name.append(file)
-        shakes = open(file_path, 'r')
-        text = shakes.read()
-        lowers = text.lower()
-        no_punctuation = lowers.translate(None, string.punctuation)
-        no_numbers = no_punctuation.translate(None, '0123456789')
-        token_dict.append(no_numbers)
+        if pattern.match(file):
+            file_path = subdir + os.path.sep + file
+            file_name.append(subdir[-4:] + file)
+            shakes = open(file_path, 'r')
+            text = shakes.read()
+            lowers = text.lower()
+            no_punc = lowers.translate (None, string.punctuation)
+            no_nums = no_punc.translate(None, '0123456789')
+            textvect.append(no_nums)
 
-        
-#this can take some time
-#make sure to either set decode_error as ignore or possibly provide support for other encoding
-tfidf = TfidfVectorizer(decode_error='ignore', tokenizer=tokenize, stop_words='english')
-
-vect = []
-file_path = subdir + os.path.sep + file_name[3]
-print file_path
-shakes = open(file_path, 'r')
-text = shakes.read()
-no_punc = text.translate (None, string.punctuation)
-no_nums = no_punc.translate(None, '0123456789')
-newvect = []
-newvect.append(no_nums)
-print "no nums "
-print no_nums
+print "finished reading\n"
 countVect = CountVectorizer(decode_error='ignore', tokenizer=tokenize, stop_words='english')
-res = countVect.fit_transform(newvect)
-print "vect\n"
-vect = countVect.get_feature_names()
-print vect
+countRes = countVect.fit_transform(textvect)
+print "finish transform\n"
+countArray = countRes.toarray()
+termNames = countVect.get_feature_names()
+print termNames
 
-array = res.toarray()
-print array
-#print countVect.vocabulary_
-#print res[0].tolist()
+numTerms = len(countArray[0])
+print numTerms
+numDocs = len(countArray)
+print numDocs
+numWords = 0;
+for i in range(numDocs):
+    for j in range(numTerms):
+        numWords += countArray[i][j]
+print numWords
 
-#tfs is the new document term matrix
-tfs = tfidf.fit_transform(token_dict)
-feature_names = tfidf.get_feature_names()
-dense = tfs.todense()
-whitelist = []
+termOccurs = []
+numOccurs = []
+for i in range(numTerms):
+    termOccurs.append(0)
+    numOccurs.append(0)
+print "occurs done\n"
 
-def doc(doc_index, count):
-    print file_name[doc_index] + "\n"
-    first_doc = dense[doc_index].tolist()[0]
-    phrase_scores = [pair for pair in zip(range(0, len(first_doc)), first_doc) if pair[1] > 0]
-    sorted_phrase_scores = sorted(phrase_scores, key=lambda t: t[1] * -1)
-    for phrase, score in [(feature_names[word_id], score) for (word_id, score) in sorted_phrase_scores][:20]:
-        whitelist.append(phrase)
+for j in range(numTerms):
+    for i in range(numDocs):
+        if (countArray[i][j] != 0):
+            termOccurs[j] = termOccurs[j] +1;
+            numOccurs[j] = numOccurs[j] + countArray[i][j]
+print "calculations\n"
 
-doc(3, 20)
+topTerms = [[0 for x in range(numTerms)] for x in range(numDocs)]
+for i in range(numDocs):
+    for j in range(numTerms):
+        topTerms[i][j] = numOccurs[j]/float(numWords)* math.log(numDocs/ termOccurs[j])
+print "top terms\n"
+# if not os.path.exists('/popl'):
+#     os.makedirs(dir)
 
-print "whitelist\n"
-print whitelist
-
-f = open ('resultingfile', 'w')
-
-for index, val in enumerate(vect, start = 0):
-    if vect[index] in whitelist:
-        for x in range (0, array[0][index].astype(int)):
-            f.write(vect[index].encode("UTF-8") + " ")
-            print vect[index]
-
-print "\n\nfiltered\n"
-def inWhitelist(element):
-    return element in whitelist
-
-c4 = filter(lambda x: x in whitelist, vect)
-print c4
-
-
-file_path = subdir + os.path.sep + file_name[3]
-shakes = open(file_path, 'r')
-text = shakes.read()
-no_punc = text.translate (None, string.punctuation)
-no_nums = no_punc.translate(None, '0123456789')
-no_nums = no_nums.split()
-#print no_nums
+for i in range(numDocs):
+    whitelist = [x for (y, x) in sorted(zip(topTerms[i], termNames), key=lambda pair: pair[0] *-1 )][:3000]
+    newfile = 'res' + file_name[i]
+    f = open(newfile, 'w')
+    for j in range(numTerms):
+        if termNames[j] in whitelist:
+            for x in range (0, countArray[i][j].astype(int)):
+                f.write(termNames[j].encode("UTF-8") + " ")
