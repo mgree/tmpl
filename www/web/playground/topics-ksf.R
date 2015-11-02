@@ -16,8 +16,8 @@ library(shiny)
 #library(doMC)
 #registerDoMC(cores=22)
 
-basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/abs/all/"
-paper_files = list.files(basepath, recursive=TRUE, pattern="\\d+\\.txt")
+basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/www/web/playground/popl"
+paper_files = list.files(basepath, recursive=TRUE)
 print (paper_files)
 
 # abs = alply(paper_files, 1, function(paper) {

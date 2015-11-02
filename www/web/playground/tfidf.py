@@ -58,6 +58,9 @@ for key in wordCount:
 
 whitelist = sorted(topTerms.items(), key=operator.itemgetter(1), reverse=True)[:6000]
 whitelist = [i[0] for i in whitelist]
+f = open ("whitelist", 'w')
+for whitelist_term in whitelist:
+    f.write (whitelist_term + " ")
 
 for subdir, dirs, files in os.walk(path):
     for file in files:
