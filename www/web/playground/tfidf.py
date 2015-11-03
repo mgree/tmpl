@@ -63,7 +63,7 @@ for whitelist_term in whitelist:
     f.write (whitelist_term + " ")
 
 print "done with the whitelist..."
-    
+
 for subdir, dirs, files in os.walk(path):
     for file in files:
         if pattern.match(file):
@@ -74,7 +74,7 @@ for subdir, dirs, files in os.walk(path):
             no_punc = lowers.translate (None, string.punctuation)
             no_nums = no_punc.translate(None, '0123456789')
             words = no_nums.split()
-            newWords = [x for x in words if x in whitelist]
+            newWords = [x for x in words if x in whitelist] # TODO this will be faster if you turn whitelist into a set before the loop
             newfile = 'res' + subdir[-4:] + '-' + file
             f = open(newfile, 'w')
             for newWord in newWords:
