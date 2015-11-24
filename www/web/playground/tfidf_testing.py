@@ -9,6 +9,7 @@ import operator
 
 
 from nltk.stem.porter import PorterStemmer
+from nltk.corpus import stopwords
 
 path = '/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/full/popl'
 token_dict = []
@@ -52,37 +53,42 @@ print numWords
 
 topTerms = {}
 for key in wordCount:
-    topTerms[key] = abs (wordCount[key]/float(numWords)*math.log(1.05*wordDocs[key]/float(numDocs)))
+    topTerms[key] = abs (wordCount[key]/float(numWords)*math.log(wordDocs[key]/float(numDocs)))
 
 print numWords
 print numDocs
-cutOff = numDocs*0.89
-print cutOff
 
-whitelist = sorted(topTerms.items(), key=operator.itemgetter(1), reverse=True)[:800]
+whitelist = sorted(topTerms.items(), key=operator.itemgetter(1), reverse=True)[:6000]
 whitelist = [i[0] for i in whitelist]
-f = open ("whitelist_mult", 'w')
-for whitelist_term in whitelist:
+f = open ("whitelist", 'w')
+whitelist = set(whitelist)
+print len(whitelist)
+blacklist = set(stopwords.words('english'))
+#blacklist = set (['the', 'of', 'and', 'in', 'is', 'to', 'we', 'that', 'for'])
+final_whitelist = whitelist.difference(blacklist)
+for whitelist_term in final_whitelist:
+    f.write(whitelist_term + "\n")
+print len(final_whitelist)
     #if (wordDocs[whitelist_term] < cutOff):
-        f.write( '{:<20} {:<20} {:<10} {:<10}\n'.format (whitelist_term, topTerms[whitelist_term], wordCount[whitelist_term], wordDocs[whitelist_term]))
+    #    f.write( '{:<20} {:<20} {:<10} {:<10}\n'.format (whitelist_term, topTerms[whitelist_term], wordCount[whitelist_term], wordDocs[whitelist_term]))
     #f.write (whitelist_term + " ")
 
 print "done with the whitelist..."
 
-# for subdir, dirs, files in os.walk(path):
-#     for file in files:
-#         if pattern.match(file):
-#             file_path = subdir + os.path.sep + file
-#             shakes = open(file_path)
-#             text = shakes.read()
-#             lowers = text.lower()
-#             no_punc = lowers.translate (None, string.punctuation)
-#             no_nums = no_punc.translate(None, '0123456789')
-#             words = no_nums.split()
-#             newWords = [x for x in words if x in whitelist] # TODO this will be faster if you turn whitelist into a set before the loop
-#             newfile = 'res' + subdir[-4:] + '-' + file
-#             f = open(newfile, 'w')
-#             for newWord in newWords:
-#                 f.write(newWord + " " )
+for subdir, dirs, files in os.walk(path):
+    for file in files:
+        if pattern.match(file):
+            file_path = subdir + os.path.sep + file
+            shakes = open(file_path)
+            text = shakes.read()
+            lowers = text.lower()
+            no_punc = lowers.translate (None, string.punctuation)
+            no_nums = no_punc.translate(None, '0123456789')
+            words = no_nums.split()
+            newWords = [x for x in words if x in final_whitelist]
+            newfile = 'res' + subdir[-4:] + '-' + file
+            f = open(newfile, 'w')
+            for newWord in newWords:
+                f.write(newWord + " " )
 # # if not os.path.exists('/popl'):
 # #     os.makedirs(dir)
