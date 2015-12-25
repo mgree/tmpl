@@ -10,7 +10,7 @@ import operator
 
 from nltk.stem.porter import PorterStemmer
 
-path = '/Users/mgree/tmpl/raw/abs/popl_to_2014'
+path = '/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/full/popl'
 token_dict = []
 file_name = []
 stemmer = PorterStemmer()
@@ -20,7 +20,7 @@ wordCount = {}
 numWords = 0
 numDocs = 0
 
-pattern = re.compile("([0-9])+.txt")
+pattern = re.compile("([0-9])+-fulltext.txt")
 
 for subdir, dirs, files in os.walk(path):
     for file in files:
@@ -48,26 +48,19 @@ for subdir, dirs, files in os.walk(path):
                     wordCount[key] = value
                     wordDocs[key] = 1
 
-#print wordDocs
-#print wordCount
+print wordDocs
+print wordCount
 print numWords
 
 topTerms = {}
 for key in wordCount:
-    topTerms[key] = wordCount[key]/float(numWords)*math.log(wordDocs[key]/float(numDocs))
+    topTerms[key] = wordCount[key]/float(numWords)*math.log(wordDocs[key]/numDocs)
 
-whitelist = sorted(topTerms.items(), key=operator.itemgetter(1))[:6000]
+whitelist = sorted(topTerms.items(), key=operator.itemgetter(1), reverse=True)[:6000]
 whitelist = [i[0] for i in whitelist]
 f = open ("whitelist", 'w')
 for whitelist_term in whitelist:
     f.write (whitelist_term + " ")
-whitelist = set(whitelist)
-print len(whitelist)
-blacklist = set (['the', 'of', 'and', 'in', 'is', 'to', 'we', 'that', 'for'])
-final_whitelist = whitelist - blacklist
-print len(final_whitelist)
-
-print "done with the whitelist..."
 
 for subdir, dirs, files in os.walk(path):
     for file in files:
@@ -79,7 +72,7 @@ for subdir, dirs, files in os.walk(path):
             no_punc = lowers.translate (None, string.punctuation)
             no_nums = no_punc.translate(None, '0123456789')
             words = no_nums.split()
-            newWords = [x for x in words if x in whitelist] # TODO this will be faster if you turn whitelist into a set before the loop
+            newWords = [x for x in words if x in whitelist]
             newfile = 'res' + subdir[-4:] + '-' + file
             f = open(newfile, 'w')
             for newWord in newWords:

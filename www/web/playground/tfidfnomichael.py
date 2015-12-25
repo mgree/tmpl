@@ -20,21 +20,34 @@ wordCount = {}
 numWords = 0
 numDocs = 0
 
-pattern = re.compile("([0-9])+.txt")
+if not os.path.exists('poplfull/stemming/'):
+    os.makedirs('poplfull/stemming/')
+
+stemmer = nltk.stem.wordnet.WordNetLemmatizer()
+stem = stemmer.lemmatize
+
+pattern = re.compile("([0-9])+-fulltext.txt")
+
+def translate_non_alphanumerics(to_translate, translate_to=u'_'):
+    not_letters_or_digits = u'!"#%\'()*+,-./:;<=>?@[\]^_`{|}~'
+    translate_table = dict((ord(char), translate_to) for char in not_letters_or_digits)
+    return to_translate.translate(translate_table)
 
 for subdir, dirs, files in os.walk(path):
     for file in files:
         if pattern.match(file):
             numDocs += 1
             file_path = subdir + os.path.sep + file
-            shakes = open(file_path, 'r')
+            shakes = codecs.open(file_path, 'r', 'utf-8', errors='ignore')
             text = shakes.read()
             lowers = text.lower()
-            no_punc = lowers.translate (None, string.punctuation)
-            no_nums = no_punc.translate(None, '0123456789')
-            words = no_nums.split()
+            no_punc_nums = translate_non_alphanumerics(lowers)
+            #no_punc = lowers.translate (None, string.punctuation)
+            #no_nums = no_punc.translate(None, '0123456789')
+            words = no_punc_nums.split()
+            words_stemmed = map(stem, words)
             tempDict = {}
-            for word in words:
+            for word in words_stemmed:
                 numWords += 1
                 if word in tempDict:
                     tempDict[word] += 1
@@ -54,18 +67,13 @@ print numWords
 
 topTerms = {}
 for key in wordCount:
-    topTerms[key] = wordCount[key]/float(numWords)*math.log(wordDocs[key]/float(numDocs))
+    topTerms[key] = wordCount[key]/float(numWords)*math.log(wordDocs[key]/numDocs)
 
 whitelist = sorted(topTerms.items(), key=operator.itemgetter(1))[:6000]
 whitelist = [i[0] for i in whitelist]
 f = open ("whitelist", 'w')
 for whitelist_term in whitelist:
-    f.write (whitelist_term + " ")
-whitelist = set(whitelist)
-print len(whitelist)
-blacklist = set (['the', 'of', 'and', 'in', 'is', 'to', 'we', 'that', 'for'])
-final_whitelist = whitelist - blacklist
-print len(final_whitelist)
+    f.write ((whitelist_term + " ").encode("UTF-8"))
 
 print "done with the whitelist..."
 
@@ -73,16 +81,17 @@ for subdir, dirs, files in os.walk(path):
     for file in files:
         if pattern.match(file):
             file_path = subdir + os.path.sep + file
-            shakes = open(file_path)
+            shakes = codecs.open(file_path, 'r', 'utf-8', errors='ignore')
             text = shakes.read()
             lowers = text.lower()
-            no_punc = lowers.translate (None, string.punctuation)
-            no_nums = no_punc.translate(None, '0123456789')
-            words = no_nums.split()
-            newWords = [x for x in words if x in whitelist] # TODO this will be faster if you turn whitelist into a set before the loop
-            newfile = 'res' + subdir[-4:] + '-' + file
+            no_punc_nums = translate_non_alphanumerics(lowers)
+            #no_punc = lowers.translate (None, string.punctuation)
+            #no_nums = no_punc.translate(None, '0123456789')
+            words = no_punc_nums.split()
+            newWords = [x for x in words if x in whitelist]
+            newfile = 'poplfull/stemming/' + 'res' + subdir[-4:] + '-' + file
             f = open(newfile, 'w')
             for newWord in newWords:
-                f.write(newWord + " " )
+                f.write((newWord + " " )).encode("UTF-8")
 # # if not os.path.exists('/popl'):
 # #     os.makedirs(dir)

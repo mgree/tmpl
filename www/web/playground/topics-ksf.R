@@ -11,14 +11,29 @@ library(plyr)
 library(XML)
 library(stringi)
 library(shiny)
+library (stringr)
 #install_github("noamross/noamtools")
 #library(multicore)
 #library(doMC)
 #registerDoMC(cores=22)
 
-basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/www/web/playground/popl"
-paper_files = list.files(basepath, recursive=TRUE)
+basepath = "/Users/evelynding/Documents/College/Junior/IW/tmpl/raw/abs/top4"
+paper_files = list.files(basepath, recursive=TRUE, pattern = "([0-9]).txt")
 print (paper_files)
+length(paper_files)
+subbed = sub("(^[^/]+[/])(.+$)", "\\1", paper_files)
+spec_substr <- function (var1, var2, var3) {
+  str_sub(var1, var2, var3)
+}
+substringed <- vector()
+#sub_length = length(subbed)
+sub_length = 162
+for (i in 0:162) {
+  pre_trim = str_sub(subbed[i], -5, -1)
+  trimmed = substr(pre_trim, 1, nchar(pre_trim)-1)
+  substringed[i] <- trimmed
+}
+print (substringed)
 
 # abs = alply(paper_files, 1, function(paper) {
 #   paper_xml = htmlTreeParse(file.path(ppath, paper), useInternalNodes = TRUE, trim=TRUE)
@@ -36,6 +51,7 @@ abs = alply(paper_files, 1, function(paper) {
   return(text)
 }, .progress = "time")
 abs = unlist(compact(abs))
+length(abs)
 
 #Preprocess the text and convert to document-term matrix
 dtm.control <- list(
@@ -43,7 +59,7 @@ dtm.control <- list(
   removePunctuation = TRUE,
   removeNumbers = TRUE,
   stopwords = stopwords("english"),
-  stemming = TRUE,
+  #stemming = TRUE,
   wordLengths = c(3, Inf),
   weighting = weightTf
 )
@@ -57,7 +73,9 @@ dim(dtm)
 
 row_sums = rowSums(as.matrix(dtm))
 total = 0
+#used_count = 0
 doc_length <- vector()
+#year_vect <- vector()
 sprintf("row sums: %d", length(row_sums))
 sprintf("dtm: %d", nrow(as.matrix(dtm)))
 start_sums = length(row_sums)
@@ -68,10 +86,13 @@ for (i in 1:start_sums) {
   else {
     temp <- paste(corp[[i]]$content, collapse = ' ')
     doc_length <- c(doc_length, stri_count(temp, regex = '\\S+'))
+    #year_vect <- c(year_vect, substringed[used_count])
+    #used_count = used_count + 1
   }
 }
 
 #sprintf("total: %d", total)
+print (used_count)
 dtm <- dtm[rowSums(as.matrix(dtm)) > 0, ]
 print ("doc_length: ")
 sprintf("%d", length(doc_length))
@@ -126,12 +147,16 @@ vocab <- opt@terms
 dat <- getProbs(token.id, doc.id, topic.id, vocab, K = max(topic.id), sort.topics = "byTerms")
 phi <- dat$phi.hat
 theta <- dat$theta.hat
+print (theta)  # value we are interested in
 # NOTE TO SELF: these things have to be numeric vectors or else runVis() will break...add a check in check.inputs
 token.frequency <- as.numeric(table(token.id))
 topic.id <- dat$topic.id
 topic.proportion <- as.numeric(table(topic.id)/length(topic.id))
 
+#nrow(theta)
+#length(substringed)
 
+#write.matrix(theta, file = paste("Documents", "testabstracts.csv", sep = "/"), sep = ",")
 # Run the visualization locally using LDAvis
 #z <- check.inputs(K=max(topic.id), W=max(token.id), phi, token.frequency, vocab, topic.proportion)
 #json <- with(z, createJSON(K=max(topic.id), phi, token.frequency, 
@@ -139,6 +164,9 @@ topic.proportion <- as.numeric(table(topic.id)/length(topic.id))
 
 
 json <- createJSON(phi, theta, doc_length, vocab, token.frequency)
+
+#theta<-cbind(theta, substringed)
+#write.table(theta, file = "testabstracts.csv", sep = ",")
 
 library(servr)
 #runShiny(phi, token.frequency, vocab, topic.proportion)
