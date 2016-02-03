@@ -12,8 +12,6 @@ fi
 DIR=`date "+%Y-%m-%d_%H:%M"`
 START=`date "+%Y-%m-%d %H:%M"`
 
-# TODO error handling
-
 echo "SETTING UP"
 mkdir ${DIR}
 
