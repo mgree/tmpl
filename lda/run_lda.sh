@@ -24,6 +24,11 @@ for dat in abstracts.dat vocab.dat docs.dat; do
     mv ${dat} ${DIR}
 done
 
+if [ ! -s ${DIR}/abstracts.dat ]; then
+    echo PARSING PRODUCED AN EMPTY FILE, ABORTING
+    exit 1
+fi
+
 # we don't want to lose this one!
 cp stopwords.dat ${DIR}
 
