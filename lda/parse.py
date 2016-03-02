@@ -47,6 +47,9 @@ def parse(f):
     if os.path.exists(pdf):
         # we've got fulltext
         text = open(pdf).read()
+    elif 'fulltext' in doc:
+        # manually included fulltext in the json
+        text = doc.get('fulltext',"")
     elif 'abs' in doc:
         # just an abstract
         text = title + " " + doc.get('abs',"")
@@ -162,7 +165,7 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
 
 if __name__ == '__main__':
     args = dict(enumerate(sys.argv))
-    d = args.get(1,"../raw/abs/icfp/")
+    d = args.get(1,"../raw/abs/all_popl")
     doc_file = args.get(2,"docs.dat")
     dat_file = args.get(3,"abstracts.dat")
     vocab_file = args.get(4,"vocab.dat")
