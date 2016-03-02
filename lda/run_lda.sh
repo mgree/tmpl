@@ -2,7 +2,16 @@
 
 export PYTHONIOENCODING=utf8
 
-if test $# -ne 0;
+if [ $# -lt 1 ] ;
+then
+    echo Usage: ${0##*/} input_dir [k1 ... kn]
+    exit 1
+else
+    src=$1
+    shift 1
+fi
+
+if [ $# -ne 0 ] ;
 then
     KS="$*";
 else
@@ -16,7 +25,7 @@ echo "SETTING UP"
 mkdir ${DIR}
 
 echo "PARSING"
-python parse.py
+python parse.py ${src}
 
 for dat in abstracts.dat vocab.dat docs.dat; do
     mv ${dat} ${DIR}
