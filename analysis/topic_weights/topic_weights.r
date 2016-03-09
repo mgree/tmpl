@@ -3,15 +3,15 @@ library(reshape2)
 
 #topic_names <- read.csv("../topic_names/final_lda20_fulltext.txt",header=FALSE,as.is=TRUE)
 #topic_names <- read.csv("..//topic_names/abs_lda20_all4.txt",header=FALSE,as.is=TRUE)
-topic_names <- read.csv("~/work/tmpl/analysis/topic_names/abs_ICFP_lda20_topics.txt",header=FALSE,as.is=TRUE)
+#topic_names <- read.csv("~/work/tmpl/analysis/topic_names/abs_ICFP_lda20_topics.txt",header=FALSE,as.is=TRUE)
 
 
 #src <- "2015-01-06_11:06_lda20.csv"
-src <- "2015-08-26_19:30/lda20.csv"
+src <- "2016-03-06_14:40/lda25.csv"
 
-setwd("~/work/tmpl/out/")
+setwd("~/tmpl/out/")
 lda <- data.frame(read.csv(src, header=TRUE,sep=",",quote="\""))
-names(lda)[4:23] <- topic_names[1:20,]
+#names(lda)[4:23] <- topic_names[1:20,]
 
 
 

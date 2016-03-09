@@ -1,0 +1,923 @@
+Topic 000
+---------
+Words (mean weight: -280.294803, min weight: -494.009304)
+  type (-4.174994)
+  term (-4.206295)
+  rule (-4.506173)
+  proof (-4.538130)
+  de (-4.602386)
+  language (-4.852077)
+  semantics (-4.994760)
+  let (-5.033665)
+  calculus (-5.076812)
+  variable (-5.158674)
+---------
+Papers
+Recursion principles for syntax with bindings and substitution - Andrei Popescu Elsa L. Gunter (ICFP 2011)
+  6838.578199
+Engineering formal metatheory - Brian Aydemir Arthur Chargu&#233;raud Benjamin C. Pierce Randy Pollack Stephanie Weirich (POPL 2008)
+  6218.387166
+A relationally parametric model of dependent type theory - Robert Atkey Neil Ghani Patricia Johann (POPL 2014)
+  5974.426450
+A nonstandard standardization theorem - Beniamino Accattoli Eduardo Bonelli Delia Kesner Carlos Lombardi (POPL 2014)
+  5826.616274
+An equivalence-preserving CPS translation via multi-language semantics - Amal Ahmed Matthias Blume (ICFP 2011)
+  5702.145562
+A relational modal logic for higher-order stateful ADTs - Derek Dreyer Georg Neis Andreas Rossberg Lars Birkedal (POPL 2010)
+  5685.611948
+A type system for certified binaries - Zhong Shao Bratin Saha Valery Trifonov Nikolaos Papaspyrou (POPL 2002)
+  5475.996067
+The marriage of bisimulations and Kripke logical relations - Chung-Kil Hur Derek Dreyer Georg Neis Viktor Vafeiadis (POPL 2012)
+  5170.586728
+A complete, co-inductive syntactic theory of sequential control and state - Kristian St&#248;vring Soren B. Lassen (POPL 2007)
+  5161.194259
+A unified approach to fully lazy sharing - Thibaut Balabonski (POPL 2012)
+  5139.611932
+
+
+Topic 001
+---------
+Words (mean weight: -272.381258, min weight: -483.505321)
+  system (-4.179187)
+  software (-4.508840)
+  design (-4.795263)
+  object (-4.803511)
+  model (-4.841000)
+  application (-4.945750)
+  language (-4.948880)
+  user (-5.074461)
+  development (-5.107699)
+  tool (-5.124280)
+---------
+Papers
+Making frameworks work - Marwan Abi-Antoun (OOPSLA 2007)
+  6034.067942
+No name - Robert Biddle Angela Martin James Noble (OOPSLA 2003)
+  5853.352074
+Agility in context - Rashina Hoda Philippe Kruchten James Noble Stuart Marshall (OOPSLA 2010)
+  5664.232947
+Designed as designer - Richard P. Gabriel (OOPSLA 2008)
+  5404.043235
+Flexible modeling tools for pre-requirements analysis - Harold Ossher Rachel Bellamy Ian Simmonds David Amid Ateret Anaby-Tavor Matthew Callery Michael Desmond Jacqueline de Vries Amit Fisher Sophia Krasikov (OOPSLA 2010)
+  5389.846951
+Agile anthropology and Alexander's architecture - Jenny Quillien Pam Rostal Dave West (OOPSLA 2009)
+  5192.643908
+Faith, hope, and love - Stefan Hanenberg (OOPSLA 2010)
+  5072.446227
+Software factories - Jack Greenfield Keith Short (OOPSLA 2003)
+  4869.990972
+Continuing professional development by practitioner integrated learning - Anna Borjesson Lars Pareto Ulrika Lundh Snis Miroslaw Staron (OOPSLA 2007)
+  4664.628559
+Rubber ducks, nightmares, and unsaturated predicates - Jenny Quillien Dave West (OOPSLA 2010)
+  4663.215400
+
+
+Topic 002
+---------
+Words (mean weight: -262.516851, min weight: -497.705819)
+  thread (-3.797048)
+  program (-4.814857)
+  execution (-4.856215)
+  lock (-4.896419)
+  read (-4.972698)
+  operation (-5.004467)
+  memory (-5.023892)
+  data (-5.145040)
+  event (-5.151412)
+  system (-5.220045)
+---------
+Papers
+OCTET - Michael D. Bond Milind Kulkarni Man Cao Minjia Zhang Meisam Fathi Salmi Swarnendu Biswas Aritra Sengupta Jipeng Huang (OOPSLA 2013)
+  8579.260061
+Composable, nestable, pessimistic atomic statements - Zachary Anderson David Gay (OOPSLA 2011)
+  6687.859981
+Design and implementation of transactional constructs for C/C++ - Yang Ni Adam Welc Ali-Reza Adl-Tabatabai Moshe Bach Sion Berkowits James Cownie Robert Geva Sergey Kozhukow Ravi Narayanaswamy Jeffrey Olivier Serguei Preis Bratin Saha Ady Tal Xinmin Tian (OOPSLA 2008)
+  6367.103731
+IFRit - Laura Effinger-Dean Brandon Lucia Luis Ceze Dan Grossman Hans-J. Boehm (OOPSLA 2012)
+  6348.872684
+Safe and timely updates to multi-threaded programs - Iulian Neamtiu Michael Hicks (PLDI 2009)
+  6152.484439
+CDSchecker - Brian Norris Brian Demsky (OOPSLA 2013)
+  6120.258776
+A serializability violation detector for shared-memory server programs - Min Xu Rastislav Bod&#237;k Mark D. Hill (PLDI 2005)
+  6116.143531
+Maple - Jie Yu Satish Narayanasamy Cristiano Pereira Gilles Pokam (OOPSLA 2012)
+  6048.505700
+Execution privatization for scheduler-oblivious concurrent programs - Jeff Huang Charles Zhang (OOPSLA 2012)
+  5861.499967
+Flexible access control for javascript - Gregor Richards Christian Hammer Francesco Zappa Nardelli Suresh Jagannathan Jan Vitek (OOPSLA 2013)
+  5775.483473
+
+
+Topic 003
+---------
+Words (mean weight: -252.071172, min weight: -489.046518)
+  program (-4.388268)
+  function (-4.498539)
+  set (-4.611066)
+  definition (-4.800352)
+  variable (-4.916057)
+  language (-4.947026)
+  value (-5.038958)
+  expression (-5.234392)
+  let (-5.274162)
+  analysis (-5.292542)
+---------
+Papers
+The semantic foundations of concurrent constraint programming - Vijay A. Saraswat Martin Rinard Prakash Panangaden (POPL 1991)
+  7154.467861
+Optimization and relaxation in constraint logic languages - Kannan Govindarajan Bharat Jayaraman Surya Mantha (POPL 1996)
+  5001.891292
+Systematic design of program analysis frameworks - Patrick Cousot Radhia Cousot (POPL 1979)
+  4993.333956
+Combinations of abstract domains for logic programming - Agostino Cortesi Baudouin Le Charlier Pascal Van Hentenryck (POPL 1994)
+  4822.484135
+On the complexity of set-based analysis - Nevin Heintze David McAllester (ICFP 1997)
+  4816.505014
+Parameterized partial evaluation - Charles Consel Siau Cheng Khoo (PLDI 1991)
+  4329.377219
+Strictness analysis using abstract reduction - Eric N&#246;cker (FPCA 1993)
+  4069.618716
+Abstract interpretation - Patrick Cousot Radhia Cousot (POPL 1977)
+  4019.677147
+Set-based analysis of ML programs - Nevin Heintze (LFP 1994)
+  3948.728876
+Expressiveness of the operation set of a data abstraction - Deepak Kapur Srivas Mandayam (POPL 1980)
+  3940.822188
+
+
+Topic 004
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 005
+---------
+Words (mean weight: -284.771834, min weight: -492.164704)
+  analysis (-4.039582)
+  program (-4.166271)
+  cation (-4.694323)
+  variable (-4.850006)
+  value (-4.897966)
+  heap (-4.915622)
+  function (-4.961739)
+  abstract (-5.058350)
+  set (-5.102083)
+  predicate (-5.150581)
+---------
+Papers
+An abstract interpretation framework for refactoring with application to extract methods with contracts - Patrick M. Cousot Radhia Cousot Francesco Logozzo Michael Barnett (OOPSLA 2012)
+  7249.086056
+Predicate abstraction of Java programs with collections - Pavel Par&#237;zek OndYej Lhot&#225;k (OOPSLA 2012)
+  7105.971617
+Null dereference verification via over-approximated weakest pre-conditions analysis - Ravichandhran Madhavan Raghavan Komondoor (OOPSLA 2011)
+  6888.862281
+Full functional verification of linked data structures - Karen Zee Viktor Kuncak Martin Rinard (PLDI 2008)
+  6525.373652
+Natural proofs for structure, data, and separation - Xiaokang Qiu Pranav Garg Andrei &#350;tef&#259;nescu Parthasarathy Madhusudan (PLDI 2013)
+  6491.930441
+Relational inductive shape analysis - Bor-Yuh Evan Chang Xavier Rival (POPL 2008)
+  6177.354494
+Fissile type analysis - Devin Coughlin Bor-Yuh Evan Chang (POPL 2014)
+  6124.786026
+Sound input filter generation for integer overflow errors - Fan Long Stelios Sidiroglou-Douskos Deokhwan Kim Martin Rinard (POPL 2014)
+  6036.197757
+Calling context abstraction with shapes - Xavier Rival Bor-Yuh Evan Chang (POPL 2011)
+  5969.988373
+An integrated proof language for imperative programs - Karen Zee Viktor Kuncak Martin C. Rinard (PLDI 2009)
+  5930.317732
+
+
+Topic 006
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 007
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 008
+---------
+Words (mean weight: -251.890289, min weight: -488.839273)
+  node (-3.566340)
+  graph (-3.937428)
+  algorithm (-4.273191)
+  edge (-4.319282)
+  path (-4.538011)
+  program (-4.695803)
+  set (-4.721846)
+  tree (-4.836576)
+  analysis (-4.898531)
+  figure (-5.016839)
+---------
+Papers
+The program structure tree - Richard Johnson David Pearson Keshav Pingali (PLDI 1994)
+  5848.035841
+A new algorithm for partial redundancy elimination based on SSA form - Fred Chow Sun Chan Robert Kennedy Shin-Ming Liu Raymond Lo Peng Tu (PLDI 1997)
+  5510.601393
+APT - Keshav Pingali Gianfranco Bilardi (PLDI 1995)
+  5324.593390
+Complete removal of redundant expressions - Rastislav Bod&#237;k Rajiv Gupta Mary Lou Soffa (PLDI 1998)
+  5234.684824
+A new framework for exhaustive and incremental data flow analysis using DJ graphs - Vugranam C. Sreedhar Guang R. Gao Yong-Fong Lee (PLDI 1996)
+  4886.035841
+Symbolic evaluation and the global value graph - John H. Reif Harry R. Lewis (POPL 1977)
+  4732.478517
+Precise interprocedural dataflow analysis via graph reachability - Thomas Reps Susan Horwitz Mooly Sagiv (POPL 1995)
+  4493.287274
+Value dependence graphs - Daniel Weise Roger F. Crew Michael Ernst Bjarne Steensgaard (POPL 1994)
+  4455.441828
+Fast algorithms for Dyck-CFL-reachability with applications to alias analysis - Qirun Zhang Michael R. Lyu Hao Yuan Zhendong Su (PLDI 2013)
+  4455.404074
+A linear time algorithm for placing &#966;-nodes - Vugranam C. Sreedhar Guang R. Gao (POPL 1995)
+  4423.035841
+
+
+Topic 009
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 010
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 011
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 012
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 013
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 014
+---------
+Words (mean weight: -282.918578, min weight: -491.986427)
+  loop (-4.256384)
+  data (-4.502079)
+  optimization (-4.778237)
+  code (-4.780311)
+  program (-4.838530)
+  compiler (-4.932907)
+  figure (-5.026776)
+  time (-5.046396)
+  array (-5.050128)
+  performance (-5.077658)
+---------
+Papers
+Kismet - Donghwan Jeon Saturnino Garcia Chris Louie Michael Bedford Taylor (OOPSLA 2011)
+  6578.655631
+Halide - Jonathan Ragan-Kelley Connelly Barnes Andrew Adams Sylvain Paris Fr&#233;do Durand Saman Amarasinghe (PLDI 2013)
+  5850.171056
+When polyhedral transformations meet SIMD code generation - Martin Kong Richard Veras Kevin Stock Franz Franchetti Louis-No&#235;l Pouchet P. Sadayappan (PLDI 2013)
+  5837.979172
+Compile-time dynamic voltage scaling settings - Fen Xie Margaret Martonosi Sharad Malik (PLDI 2003)
+  5802.519076
+Global optimizations for parallelism and locality on scalable parallel machines - Jennifer M. Anderson Monica S. Lam (PLDI 1993)
+  5761.176887
+Cache topology aware computation mapping for multicores - Mahmut Kandemir Taylan Yemliha SaiPrashanth Muralidhara Shekhar Srikantaiah Mary Jane Irwin Yuanrui Zhnag (PLDI 2010)
+  5744.686322
+Kremlin - Saturnino Garcia Donghwan Jeon Christopher M. Louie Michael Bedford Taylor (PLDI 2011)
+  5576.694713
+Predicting whole-program locality through reuse distance analysis - Chen Ding Yutao Zhong (PLDI 2003)
+  5525.187264
+Optimizing data permutations for SIMD devices - Gang Ren Peng Wu David Padua (PLDI 2006)
+  5386.604130
+Brainy - Changhee Jung Silvius Rus Brian P. Railing Nathan Clark Santosh Pande (PLDI 2011)
+  5355.751502
+
+
+Topic 015
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 016
+---------
+Words (mean weight: -261.023554, min weight: -492.746817)
+  class (-3.638928)
+  object (-4.015987)
+  method (-4.043222)
+  language (-4.352903)
+  code (-4.748584)
+  java (-4.924168)
+  name (-5.028261)
+  type (-5.040034)
+  new (-5.211134)
+  example (-5.226160)
+---------
+Papers
+Concrete syntax for objects - Martin Bravenboer Eelco Visser (OOPSLA 2004)
+  8609.174284
+Object-oriented encapsulation for dynamically typed languages - Nathanael Sch&#228;rli Andrew P. Black St&#233;phane Ducasse (OOPSLA 2004)
+  8054.991412
+The spoofax language workbench - Lennart C.L. Kats Eelco Visser (OOPSLA 2010)
+  6883.414976
+SugarJ - Sebastian Erdweg Tillmann Rendel Christian K&#228;stner Klaus Ostermann (OOPSLA 2011)
+  6529.880496
+Practical predicate dispatch - Todd Millstein (OOPSLA 2004)
+  6311.413594
+Providing rapid feedback in generated modular language environments - Lennart C.L. Kats Maartje de Jonge Emma Nilsson-Nyman Eelco Visser (OOPSLA 2009)
+  6023.428013
+Detecting API documentation errors - Hao Zhong Zhendong Su (OOPSLA 2013)
+  5744.264197
+Extending SQL-92 for OODB access - Jerry Kiernan Michael J. Carey (OOPSLA 1995)
+  5617.174477
+Homogeneous family sharing - Xin Qi Andrew C. Myers (OOPSLA 2010)
+  5507.990485
+First-class state change in plaid - Joshua Sunshine Karl Naden Sven Stork Jonathan Aldrich &#201;ric Tanter (OOPSLA 2011)
+  5489.081797
+
+
+Topic 017
+---------
+Words (mean weight: -274.046336, min weight: -493.453874)
+  state (-4.112980)
+  program (-4.243160)
+  set (-4.604318)
+  cation (-4.826119)
+  algorithm (-4.887640)
+  transition (-4.976719)
+  de (-5.037149)
+  test (-5.113436)
+  model (-5.163891)
+  speci (-5.173821)
+---------
+Papers
+On the analysis of interacting pushdown systems - Vineet Kahlon Aarti Gupta (POPL 2007)
+  6663.655022
+Injecting mechanical faults to localize developer faults for evolving software - Lingming Zhang Lu Zhang Sarfraz Khurshid (OOPSLA 2013)
+  6616.021867
+Advanced automata minimization - Richard Mayr Lorenzo Clemente (POPL 2013)
+  6119.543710
+A constraint-based approach to solving games on infinite graphs - Tewodros Beyene Swarat Chaudhuri Corneliu Popeea Andrey Rybalchenko (POPL 2014)
+  6109.035841
+Analyzing recursive programs using a fixed-point calculus - Salvatore La Torre Madhusudan Parthasarathy Gennaro Parlato (PLDI 2009)
+  5966.633776
+Synthesis of biological models from mutation experiments - Ali Sinan Koksal Yewen Pu Saurabh Srivastava Rastislav Bodik Jasmin Fisher Nir Piterman (POPL 2013)
+  5875.366399
+Proofs that count - Azadeh Farzan Zachary Kincaid Andreas Podelski (POPL 2014)
+  5791.176668
+A compiler and run-time system for network programming languages - Christopher Monsanto Nate Foster Rob Harrison David Walker (POPL 2012)
+  5643.809078
+Synthesis of loop-free programs - Sumit Gulwani Susmit Jha Ashish Tiwari Ramarathnam Venkatesan (PLDI 2011)
+  5549.190787
+Efficient state merging in symbolic execution - Volodymyr Kuznetsov Johannes Kinder Stefan Bucur George Candea (PLDI 2012)
+  5326.982662
+
+
+Topic 018
+---------
+Words (mean weight: -282.486077, min weight: -473.998685)
+  object (-3.549665)
+  memory (-4.366306)
+  time (-4.488105)
+  heap (-4.563307)
+  collection (-4.606342)
+  garbage (-4.607251)
+  collector (-4.639067)
+  size (-4.805756)
+  pointer (-4.834062)
+  allocation (-4.851061)
+---------
+Papers
+MC<sup>2</sup> - Narendran Sachindran J. Eliot B. Moss Emery D. Berger (OOPSLA 2004)
+  7836.035841
+A unified theory of garbage collection - David F. Bacon Perry Cheng V. T. Rajan (OOPSLA 2004)
+  6741.786685
+Using managed runtime systems to tolerate holes in wearable memories - Tiejun Gao Karin Strauss Stephen M. Blackburn Kathryn S. McKinley Doug Burger James Larus (PLDI 2013)
+  6154.664062
+Schism - Filip Pizlo Lukasz Ziarek Petr Maj Antony L. Hosking Ethan Blanton Jan Vitek (PLDI 2010)
+  6052.848861
+Resurrector - Guoqing Xu (OOPSLA 2013)
+  6005.392764
+Immix - Stephen M. Blackburn Kathryn S. McKinley (PLDI 2008)
+  5826.390136
+Beltway - Stephen M Blackburn Richard Jones Kathryn S. McKinley J Eliot B Moss (PLDI 2002)
+  5593.035841
+Garbage collection without paging - Matthew Hertz Yi Feng Emery D. Berger (PLDI 2005)
+  5572.131073
+The garbage collection advantage - Xianglong Huang Stephen M. Blackburn Kathryn S. McKinley J Eliot B. Moss Zhenlin Wang Perry Cheng (OOPSLA 2004)
+  5486.733547
+Taking off the gloves with reference counting Immix - Rifat Shahriyar Stephen Michael Blackburn Xi Yang Kathryn S. McKinley (OOPSLA 2013)
+  5480.104010
+
+
+Topic 019
+---------
+Words (mean weight: -232.833250, min weight: -498.223326)
+  type (-2.364193)
+  system (-4.557140)
+  int (-4.678662)
+  language (-4.850988)
+  function (-4.858883)
+  de (-4.863623)
+  rule (-4.874301)
+  variable (-4.929398)
+  value (-5.084354)
+  typing (-5.116415)
+---------
+Papers
+Mixin' up the ML module system - Derek Dreyer Andreas Rossberg (ICFP 2008)
+  7068.682362
+Type checking modular multiple dispatch with parametric polymorphism and multiple inheritance - Eric Allen Justin Hilburn Scott Kilpatrick Victor Luchangco Sukyoung Ryu David Chase Guy Steele (OOPSLA 2011)
+  6978.900849
+A type system for recursive modules - Derek Dreyer (ICFP 2007)
+  6930.696273
+A syntactic type system for recursive modules - Hyeonseung Im Keiko Nakata Jacques Garrigue Sungwoo Park (OOPSLA 2011)
+  6874.835367
+Taming wildcards in Java's type system - Ross Tate Alan Leung Sorin Lerner (PLDI 2011)
+  6804.099009
+Converting java programs to use generic libraries - Alan Donovan Adam Kie&#382;un Matthew S. Tschantz Michael D. Ernst (OOPSLA 2004)
+  6600.354867
+Stratified type inference for generalized algebraic data types - Fran&#231;ois Pottier Yann R&#233;gis-Gianas (POPL 2006)
+  6324.253910
+An expressive language of signatures - Norman Ramsey Kathleen Fisher Paul Govereau (ICFP 2005)
+  6308.246656
+Recursive modules for programming - Keiko Nakata Jacques Garrigue (ICFP 2006)
+  6021.588071
+Self type constructors - Chieri Saito Atsushi Igarashi (OOPSLA 2009)
+  5938.140638
+
+
+Topic 020
+---------
+Words (mean weight: -308.690241, min weight: -486.317374)
+  de (-4.342482)
+  program (-4.740654)
+  set (-4.857076)
+  function (-5.044748)
+  value (-5.233265)
+  let (-5.263842)
+  proof (-5.296498)
+  input (-5.329440)
+  example (-5.334943)
+  ne (-5.389072)
+---------
+Papers
+Trustworthy numerical computation in Scala - Eva Darulova Viktor Kuncak (OOPSLA 2011)
+  5634.238192
+A model-learner pattern for bayesian reasoning - Andrew D. Gordon Mihhail Aizatulin Johannes Borgstrom Guillaume Claret Thore Graepel Aditya V. Nori Sriram K. Rajamani Claudio Russo (POPL 2013)
+  5511.801114
+Cryptographically sound implementations for typed information-flow security - C&#233;dric Fournet Tamara Rezk (POPL 2008)
+  5435.009119
+On the computational soundness of cryptographically masked flows - Peeter Laud (POPL 2008)
+  5339.238574
+Hyperstream processing systems - Kohei Suenaga Hiroyoshi Sekine Ichiro Hasuo (POPL 2013)
+  5215.102770
+On the linear ranking problem for integer linear-constraint loops - Amir M. Ben-Amram Samir Genaim (POPL 2013)
+  5112.334239
+Edit lenses - Martin Hofmann Benjamin Pierce Daniel Wagner (POPL 2012)
+  5107.347599
+A type theory for probability density functions - Sooraj Bhat Ashish Agarwal Richard Vuduc Alexander Gray (POPL 2012)
+  5082.664967
+Abstract non-interference - Roberto Giacobazzi Isabella Mastroeni (POPL 2004)
+  5015.088337
+Bridging boolean and quantitative synthesis using smoothed proof search - Swarat Chaudhuri Martin Clochard Armando Solar-Lezama (POPL 2014)
+  4991.953074
+
+
+Topic 021
+---------
+Words (mean weight: -268.597322, min weight: -485.366078)
+  code (-3.732285)
+  instruction (-4.254907)
+  register (-4.293228)
+  compiler (-4.485355)
+  machine (-4.648008)
+  stack (-4.944404)
+  value (-4.977210)
+  program (-4.997331)
+  call (-5.039302)
+  function (-5.082801)
+---------
+Papers
+Reconfigurable, retargetable bignums - Jon L. White (LFP 1986)
+  5591.367837
+tcc - Massimiliano Poletto Dawson R. Engler M. Frans Kaashoek (PLDI 1997)
+  5335.080685
+The implementation of procedurally reflective languages - Jim des Rivi&#232;res Brian Cantwell Smith (LFP 1984)
+  5134.059626
+VCODE - Dawson R. Engler (PLDI 1996)
+  4965.172271
+Reverse interpretation + mutation analysis = automatic retargeting - Christian S. Collberg (PLDI 1997)
+  4569.083387
+Performance of Lisp systems - Richard P. Gabriel Larry M. Masinter (LFP 1982)
+  4529.569921
+C: a language for high-level, efficient, and machine-independent dynamic code generation - Dawson R. Engler Wilson C. Hsieh M. Frans Kaashoek (POPL 1996)
+  4481.031776
+Connection Machine Lisp - Guy L. Steele W. Daniel Hillis (LFP 1986)
+  4422.232295
+Staged allocation - Reuben Olinsky Christian Lindig Norman Ramsey (POPL 2006)
+  4381.882538
+A formal model and specification language for procedure calling conventions - Mark W. Bailey Jack W. Davidson (POPL 1995)
+  4364.021221
+
+
+Topic 022
+---------
+Words (mean weight: -294.557903, min weight: -444.646580)
+  figure (-4.591182)
+  page (-4.756513)
+  forexample (-4.858839)
+  ofthe (-5.492950)
+  canbe (-5.569754)
+  int (-5.818438)
+  acm (-6.002938)
+  context (-6.054033)
+  le (-6.077514)
+  tion (-6.080856)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  2730.461006
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  2662.783311
+Tool-supported refactoring for JavaScript - Asger Feldthaus Todd Millstein Anders M&#248;ller Max Sch&#228;fer Frank Tip (OOPSLA 2011)
+  2049.271189
+RoleCast - Sooel Son Kathryn S. McKinley Vitaly Shmatikov (OOPSLA 2011)
+  1963.931033
+Pick your contexts well - Yannis Smaragdakis Martin Bravenboer Ondrej Lhot&#225;k (POPL 2011)
+  1903.974475
+Detecting inefficiently-used containers to avoid bloat - Guoqing Xu Atanas Rountev (PLDI 2010)
+  1887.030647
+Finding reusable data structures - Guoqing Xu (OOPSLA 2012)
+  1874.655996
+A foundation for flow-based program matching - Julien Brunel Damien Doligez Ren&#233; Rydhof Hansen Julia L. Lawall Gilles Muller (POPL 2009)
+  1808.116969
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  1757.859252
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  1701.793705
+
+
+Topic 023
+---------
+Words (mean weight: -311.331939, min weight: -422.350309)
+  message (-3.583491)
+  process (-3.704359)
+  channel (-4.315244)
+  actor (-4.615510)
+  communication (-4.630649)
+  protocol (-4.845547)
+  network (-4.900783)
+  distributed (-4.912369)
+  send (-5.054056)
+  agent (-5.158145)
+---------
+Papers
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  366.163652
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  356.515917
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  304.237043
+Transactors - John Field Carlos A. Varela (POPL 2005)
+  292.608585
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  287.017167
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  267.581934
+Coordinating first-order multiparty interactions - Yuh-Jzer Joung Scott A. Smolka (POPL 1991)
+  255.706273
+Encapsulating objects with confined types - Christian Grothoff Jens Palsberg Jan Vitek (OOPSLA 2001)
+  255.635841
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  241.322521
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  228.475707
+
+
+Topic 024
+---------
+Words (mean weight: -277.356950, min weight: -487.563776)
+  function (-4.079667)
+  language (-4.734117)
+  list (-4.739813)
+  value (-4.795282)
+  expression (-4.969969)
+  program (-5.036500)
+  functional (-5.039766)
+  continuation (-5.086484)
+  monad (-5.123918)
+  type (-5.138300)
+---------
+Papers
+Building interpreters by composing monads - Guy L. Steele (POPL 1994)
+  5405.743102
+Programming monads operationally with Unimo - Chuan-kai Lin (ICFP 2006)
+  5351.151459
+Purely functional lazy non-deterministic programming - Sebastian Fischer Oleg Kiselyov Chung-chieh Shan (ICFP 2009)
+  5215.599069
+Handlers in action - Ohad Kammar Sam Lindley Nicolas Oury (ICFP 2013)
+  5178.825017
+Stream fusion - Duncan Coutts Roman Leshchinskiy Don Stewart (ICFP 2007)
+  4923.867281
+Programming and reasoning with algebraic effects and dependent types - Edwin Brady (ICFP 2013)
+  4779.596048
+Monadic augment and generalised short cut fusion - Neil Ghani Patricia Johann Tarmo Uustalu Varmo Vene (ICFP 2005)
+  4778.028636
+Backtracking, interleaving, and terminating monad transformers - Oleg Kiselyov Chung-chieh Shan Daniel P. Friedman Amr Sabry (ICFP 2005)
+  4682.507520
+Delimited dynamic binding - Oleg Kiselyov Chung-chieh Shan Amr Sabry (ICFP 2006)
+  4505.076949
+Profiling for laziness - Stephen Chang Matthias Felleisen (POPL 2014)
+  4485.639084
