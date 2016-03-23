@@ -6,8 +6,8 @@ library(reshape2)
 #topic_names <- read.csv("~/work/tmpl/analysis/topic_names/abs_ICFP_lda20_topics.txt",header=FALSE,as.is=TRUE)
 
 
-#src <- "2015-01-06_11:06_lda20.csv"
-src <- "2016-03-06_14:40/lda25.csv"
+#src <- "2015-01-06_11:06/lda20.csv"
+src <- "2016-03-21_00:53/lda25.csv"
 
 setwd("~/tmpl/out/")
 lda <- data.frame(read.csv(src, header=TRUE,sep=",",quote="\""))
