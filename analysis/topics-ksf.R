@@ -2,7 +2,7 @@
 library(devtools)
 #install_github("kshirley/LDAviz")
 #install_github("cpsievert/LDAvis")
-library(LDAtools)
+library(LDA)
 library(LDAvis)
 library(topicmodels)
 library(tm)
