@@ -1,0 +1,923 @@
+Topic 000
+---------
+Words (mean weight: -379.813317, min weight: -686.605348)
+  type (-2.844446)
+  de (-4.340946)
+  function (-4.402883)
+  rule (-4.947989)
+  language (-4.959793)
+  term (-5.012230)
+  system (-5.050166)
+  int (-5.083663)
+  variable (-5.092211)
+  list (-5.127769)
+---------
+Papers
+Stratified type inference for generalized algebraic data types - Fran&#231;ois Pottier Yann R&#233;gis-Gianas (POPL 2006)
+  6697.821851
+A type system for certified binaries - Zhong Shao Bratin Saha Valery Trifonov Nikolaos Papaspyrou (POPL 2002)
+  6457.873591
+Typed syntactic meta-programming - Dominique Devriese Frank Piessens (ICFP 2013)
+  6352.910157
+Self-certification - Pierre-Yves Strub Nikhil Swamy Cedric Fournet Juan Chen (POPL 2012)
+  6275.160217
+A hierarchy of mendler style recursion combinators - Ki Yung Ahn Tim Sheard (ICFP 2011)
+  6272.438486
+Closed type families with overlapping equations - Richard A. Eisenberg Dimitrios Vytiniotis Simon Peyton Jones Stephanie Weirich (POPL 2014)
+  6222.031963
+Simple, partial type-inference for System F based on type-containment - Didier R&#233;my (ICFP 2005)
+  6140.946515
+Static and dynamic semantics of NoSQL languages - V&#233;ronique Benzaken Giuseppe Castagna Kim Nguyen J&#233;r&#244;me Sim&#233;on (POPL 2013)
+  6042.745692
+A universe of binding and computation - Daniel R. Licata Robert Harper (ICFP 2009)
+  6036.551861
+Transporting functions across ornaments - Pierre-Evariste Dagand Conor McBride (ICFP 2012)
+  5984.960824
+
+
+Topic 001
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 002
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 003
+---------
+Words (mean weight: -428.296089, min weight: -664.898755)
+  code (-4.556867)
+  error (-4.574255)
+  test (-4.749613)
+  user (-4.813624)
+  bug (-4.993941)
+  tool (-5.100627)
+  example (-5.201626)
+  result (-5.270140)
+  data (-5.323511)
+  program (-5.347836)
+---------
+Papers
+Injecting mechanical faults to localize developer faults for evolving software - Lingming Zhang Lu Zhang Sarfraz Khurshid (OOPSLA 2013)
+  7721.856019
+A graph-based approach to API usage adaptation - Hoan Anh Nguyen Tung Thanh Nguyen Gary Wilson Anh Tuan Nguyen Miryung Kim Tien N. Nguyen (OOPSLA 2010)
+  6697.892117
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  6467.529220
+Detecting API documentation errors - Hao Zhong Zhendong Su (OOPSLA 2013)
+  6227.000969
+From dirt to shovels - Kathleen Fisher David Walker Kenny Q. Zhu Peter White (POPL 2008)
+  5519.912539
+Systematic editing - Na Meng Miryung Kim Kathryn S. McKinley (PLDI 2011)
+  5493.796851
+An empirical study of the influence of static type systems on the usability of undocumented software - Clemens Mayer Stefan Hanenberg Romain Robbes &#201;ric Tanter Andreas Stefik (OOPSLA 2012)
+  5457.365076
+Scalable and systematic detection of buggy inconsistencies in source code - Mark Gabel Junfeng Yang Yuan Yu Moises Goldszmidt Zhendong Su (OOPSLA 2010)
+  5412.288111
+Refactoring references for library migration - Puneet Kapur Brad Cossette Robert J. Walker (OOPSLA 2010)
+  4921.835542
+Reusing debugging knowledge via trace-based bug search - Zhongxian Gu Earl T. Barr Drew Schleck Zhendong Su (OOPSLA 2012)
+  4793.938320
+
+
+Topic 004
+---------
+Words (mean weight: -426.724418, min weight: -656.504489)
+  system (-3.932810)
+  object (-3.986790)
+  application (-4.439586)
+  model (-4.556935)
+  data (-4.709239)
+  component (-4.844701)
+  database (-4.847770)
+  query (-4.852019)
+  software (-4.895567)
+  service (-5.104373)
+---------
+Papers
+Making frameworks work - Marwan Abi-Antoun (OOPSLA 2007)
+  4935.601097
+Lessons learned from implementing the CORBA persistent object service - Jan Kleindienst Franti&#353;ek Pl&#225;&#353;il Petr T&#367;ma (OOPSLA 1996)
+  4460.702400
+Object lessons learned from a distributed system for remote building monitoring and operation - Frank Olken Hans-Arno Jacobsen Chuck McParland Mary Ann Piette Mary F. Anderson (OOPSLA 1998)
+  4310.796526
+The Kala basket - Sergui S. Simmel Ivan Godard (OOPSLA 1991)
+  4182.267599
+Agility in context - Rashina Hoda Philippe Kruchten James Noble Stuart Marshall (OOPSLA 2010)
+  4096.575539
+A tag-based approach for the design and composition of information processing applications - Eric Bouillet Mark Feblowitz Zhen Liu Anand Ranganathan Anton Riabov (OOPSLA 2008)
+  3983.245600
+Flexible modeling tools for pre-requirements analysis - Harold Ossher Rachel Bellamy Ian Simmonds David Amid Ateret Anaby-Tavor Matthew Callery Michael Desmond Jacqueline de Vries Amit Fisher Sophia Krasikov (OOPSLA 2010)
+  3905.509209
+Static extraction and conformance analysis of hierarchical runtime architectural structure using annotations - Marwan Abi-Antoun Jonathan Aldrich (OOPSLA 2009)
+  3687.600908
+A situated evaluation of the Object Management Group's (OMG) Object Management Architecture (OMA) - Evan Wallace Kurt C. Wallnau (OOPSLA 1996)
+  3321.142742
+Change cases - Earl F. Ecklund Lois M. L. Delcambre Michael J. Freiling (OOPSLA 1996)
+  3265.201096
+
+
+Topic 005
+---------
+Words (mean weight: -364.546030, min weight: -675.348244)
+  node (-3.846879)
+  graph (-4.092975)
+  edge (-4.483768)
+  algorithm (-4.575746)
+  program (-4.625129)
+  register (-4.706240)
+  figure (-4.855484)
+  path (-4.982167)
+  code (-4.988856)
+  analysis (-4.997403)
+---------
+Papers
+Complete removal of redundant expressions - Rastislav Bod&#237;k Rajiv Gupta Mary Lou Soffa (PLDI 1998)
+  5943.535922
+Register allocation for software pipelined loops - B. R. Rau M. Lee P. P. Tirumalai M. S. Schlansker (PLDI 1992)
+  5901.824881
+Automatically enhancing locality for tree traversals with traversal splicing - Youngjoon Jo Milind Kulkarni (OOPSLA 2012)
+  5453.595848
+The program structure tree - Richard Johnson David Pearson Keshav Pingali (PLDI 1994)
+  5356.986828
+A new algorithm for partial redundancy elimination based on SSA form - Fred Chow Sun Chan Robert Kennedy Shin-Ming Liu Raymond Lo Peng Tu (PLDI 1997)
+  5285.110468
+Register promotion by sparse partial redundancy elimination of loads and stores - Raymond Lo Fred Chow Robert Kennedy Shin-Ming Liu Peng Tu (PLDI 1998)
+  5113.857130
+Automatic volume management for programmable microfluidics - Ahmed M. Amin Mithuna Thottethodi T. N. Vijaykumar Steven Wereley Stephen C. Jacobson (PLDI 2008)
+  5070.415637
+Call-cost directed register allocation - Guei-Yuan Lueh Thomas Gross (PLDI 1997)
+  4844.736871
+Efficient procedure mapping using cache line coloring - Amir H. Hashemi David R. Kaeli Brad Calder (PLDI 1997)
+  4779.152410
+APT - Keshav Pingali Gianfranco Bilardi (PLDI 1995)
+  4765.049144
+
+
+Topic 006
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 007
+---------
+Words (mean weight: -388.302585, min weight: -665.694524)
+  code (-4.315193)
+  performance (-4.635025)
+  time (-4.779592)
+  data (-4.895866)
+  benchmark (-4.930859)
+  compiler (-4.960587)
+  application (-4.974518)
+  program (-5.009808)
+  optimization (-5.019513)
+  memory (-5.044443)
+---------
+Papers
+Vertical profiling - Matthias Hauswirth Peter F. Sweeney Amer Diwan Michael Hind (OOPSLA 2004)
+  7438.213009
+Hera-JVM - Ross McIlroy Joe Sventek (OOPSLA 2010)
+  7269.854534
+Analyzing the performance of code-copying virtual machines - Gregory B. Prokopski Clark Verbrugge (OOPSLA 2008)
+  6685.808813
+Method-level phase behavior in java workloads - Andy Georges Dries Buytaert Lieven Eeckhout Koen De Bosschere (OOPSLA 2004)
+  6136.039849
+Multiverse - Kaushik Ravichandran Santosh Pande (OOPSLA 2013)
+  5940.438848
+SPUR - Michael Bebenita Florian Brandner Manuel Fahndrich Francesco Logozzo Wolfram Schulte Nikolai Tillmann Herman Venter (OOPSLA 2010)
+  5903.941803
+JIT compilation policy for modern machines - Prasad A. Kulkarni (OOPSLA 2011)
+  5784.030692
+EXOCHI - Perry H. Wang Jamison D. Collins Gautham N. Chinya Hong Jiang Xinmin Tian Milind Girkar Nick Y. Yang Guei-Yuan Lueh Hong Wang (PLDI 2007)
+  5653.650293
+Language-independent sandboxing of just-in-time compilation and self-modifying code - Jason Ansel Petr Marchenko &#218;lfar Erlingsson Elijah Taylor Brad Chen Derek L. Schuff David Sehr Cliff L. Biffle Bennet Yee (PLDI 2011)
+  5500.120536
+Exploring multi-threaded Java application performance on multicore hardware - Jennfer B. Sartor Lieven Eeckhout (OOPSLA 2012)
+  5434.557050
+
+
+Topic 008
+---------
+Words (mean weight: -352.358898, min weight: -670.345125)
+  set (-4.183236)
+  program (-4.744753)
+  proof (-4.854068)
+  let (-4.931649)
+  state (-5.054899)
+  definition (-5.062422)
+  theorem (-5.127077)
+  tree (-5.136352)
+  rule (-5.177957)
+  relation (-5.273086)
+---------
+Papers
+Systematic design of program analysis frameworks - Patrick Cousot Radhia Cousot (POPL 1979)
+  4832.677647
+Optimization and relaxation in constraint logic languages - Kannan Govindarajan Bharat Jayaraman Surya Mantha (POPL 1996)
+  4552.392836
+Symbolic evaluation and the global value graph - John H. Reif Harry R. Lewis (POPL 1977)
+  4543.993879
+Context logic as modal logic - Cristiano Calcagno Philippa Gardner Uri Zarfaty (POPL 2007)
+  4045.273884
+A general scheme for the automatic inference of variable types - Marc A. Kaplan Jeffrey D. Ullman (POPL 1978)
+  3999.965125
+The tree width of auxiliary storage - P. Madhusudan Gennaro Parlato (POPL 2011)
+  3998.204593
+Nondeterminism in logics of programs - David Harel Vaughan R. Pratt (POPL 1978)
+  3825.080857
+Recursion in logics of programs - David Harel (POPL 1979)
+  3813.727772
+Extending SQL-92 for OODB access - Jerry Kiernan Michael J. Carey (OOPSLA 1995)
+  3800.196214
+On effective axiomatizations of Hoare logics - Edmund M. Clarke Steven M. German Joseph Y. Halpern (POPL 1982)
+  3780.471384
+
+
+Topic 009
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 010
+---------
+Words (mean weight: -394.245477, min weight: -671.346319)
+  program (-3.912181)
+  analysis (-4.457753)
+  set (-4.585458)
+  algorithm (-4.603207)
+  state (-4.699431)
+  path (-4.909260)
+  input (-4.959912)
+  constraint (-5.022866)
+  value (-5.055658)
+  de (-5.076224)
+---------
+Papers
+From program verification to program synthesis - Saurabh Srivastava Sumit Gulwani Jeffrey S. Foster (POPL 2010)
+  6823.190388
+Efficient state merging in symbolic execution - Volodymyr Kuznetsov Johannes Kinder Stefan Bucur George Candea (PLDI 2012)
+  6202.974398
+Randomized accuracy-aware program transformations for efficient approximate computations - Zeyuan Allen Zhu Sasa Misailovic Jonathan A. Kelner Martin Rinard (POPL 2012)
+  6106.881155
+Sound compilation of reals - Eva Darulova Viktor Kuncak (POPL 2014)
+  6082.684175
+Trustworthy numerical computation in Scala - Eva Darulova Viktor Kuncak (OOPSLA 2011)
+  5978.466532
+Symbolic optimization with SMT solvers - Yi Li Aws Albarghouthi Zachary Kincaid Arie Gurfinkel Marsha Chechik (POPL 2014)
+  5706.507020
+Static analysis for probabilistic programs - Sriram Sankaranarayanan Aleksandar Chakarov Sumit Gulwani (PLDI 2013)
+  5689.875875
+Higher-order test generation - Patrice Godefroid (PLDI 2011)
+  5656.315493
+Advanced automata minimization - Richard Mayr Lorenzo Clemente (POPL 2013)
+  5518.694649
+Verifying quantitative reliability for programs that execute on unreliable hardware - Michael Carbin Sasa Misailovic Martin C. Rinard (OOPSLA 2013)
+  5515.033576
+
+
+Topic 011
+---------
+Words (mean weight: -380.990905, min weight: -671.449197)
+  cation (-4.475790)
+  state (-4.631017)
+  program (-4.647682)
+  heap (-4.665352)
+  type (-4.681034)
+  rule (-4.690236)
+  de (-4.756114)
+  speci (-4.917367)
+  proof (-4.960231)
+  logic (-5.008939)
+---------
+Papers
+Natural proofs for structure, data, and separation - Xiaokang Qiu Pranav Garg Andrei &#350;tef&#259;nescu Parthasarathy Madhusudan (PLDI 2013)
+  6534.927859
+Recursive proofs for inductive tree data-structures - Parthasarathy Madhusudan Xiaokang Qiu Andrei Stefanescu (POPL 2012)
+  6498.646730
+Towards a program logic for JavaScript - Philippa Anne Gardner Sergio Maffeis Gareth David Smith (POPL 2012)
+  6053.047880
+A type system for borrowing permissions - Karl Naden Robert Bocchino Jonathan Aldrich Kevin Bierhoff (POPL 2012)
+  5962.885604
+Checking reachability using matching logic - Grigore Rosu Andrei Stefanescu (OOPSLA 2012)
+  5957.554127
+A kripke logical relation between ML and assembly - Chung-Kil Hur Derek Dreyer (POPL 2011)
+  5955.656880
+Full functional verification of linked data structures - Karen Zee Viktor Kuncak Martin Rinard (PLDI 2008)
+  5803.506723
+Freedom before commitment - Alexander J. Summers Peter Mueller (OOPSLA 2011)
+  5782.929754
+An integrated proof language for imperative programs - Karen Zee Viktor Kuncak Martin C. Rinard (PLDI 2009)
+  5614.938784
+Unifying refinement and hoare-style reasoning in a logic for higher-order concurrency - Aaron Turon Derek Dreyer Lars Birkedal (ICFP 2013)
+  5580.082639
+
+
+Topic 012
+---------
+Words (mean weight: -445.053129, min weight: -667.787917)
+  thread (-3.721255)
+  lock (-4.520455)
+  program (-4.594392)
+  execution (-4.724871)
+  read (-4.830187)
+  memory (-4.847013)
+  race (-4.913337)
+  operation (-4.918183)
+  data (-5.111631)
+  transaction (-5.158878)
+---------
+Papers
+OCTET - Michael D. Bond Milind Kulkarni Man Cao Minjia Zhang Meisam Fathi Salmi Swarnendu Biswas Aritra Sengupta Jipeng Huang (OOPSLA 2013)
+  7898.753285
+CDSchecker - Brian Norris Brian Demsky (OOPSLA 2013)
+  7103.730763
+Composable, nestable, pessimistic atomic statements - Zachary Anderson David Gay (OOPSLA 2011)
+  6709.629953
+The semantics of progress in lock-based transactional memory - Rachid Guerraoui Michal Kapalka (POPL 2009)
+  6177.099892
+A serializability violation detector for shared-memory server programs - Min Xu Rastislav Bod&#237;k Mark D. Hill (PLDI 2005)
+  6170.595379
+Clarifying and compiling C/C++ concurrency - Mark Batty Kayvan Memarian Scott Owens Susmit Sarkar Peter Sewell (POPL 2012)
+  6122.011825
+Sound predictive race detection in polynomial time - Yannis Smaragdakis Jacob Evans Caitlin Sadowski Jaeheon Yi Cormac Flanagan (POPL 2012)
+  6118.932725
+Execution privatization for scheduler-oblivious concurrent programs - Jeff Huang Charles Zhang (OOPSLA 2012)
+  6074.782535
+Maple - Jie Yu Satish Narayanasamy Cristiano Pereira Gilles Pokam (OOPSLA 2012)
+  5825.956850
+NDSeq - Jacob Burnim Tayfun Elmas George Necula Koushik Sen (PLDI 2011)
+  5812.191952
+
+
+Topic 013
+---------
+Words (mean weight: -369.097066, min weight: -672.158206)
+  type (-3.078984)
+  class (-3.129871)
+  object (-3.614187)
+  method (-3.651535)
+  language (-4.737853)
+  java (-4.989746)
+  instance (-5.090495)
+  new (-5.099966)
+  example (-5.225033)
+  system (-5.271884)
+---------
+Papers
+Converting java programs to use generic libraries - Alan Donovan Adam Kie&#382;un Matthew S. Tschantz Michael D. Ernst (OOPSLA 2004)
+  6622.345277
+Compatible genericity with run-time types for the Java programming language - Robert Cartwright Guy L. Steele (OOPSLA 1998)
+  6615.036989
+Scalable extensibility via nested inheritance - Nathaniel Nystrom Stephen Chong Andrew C. Myers (OOPSLA 2004)
+  6479.953848
+Object-oriented encapsulation for dynamically typed languages - Nathanael Sch&#228;rli Andrew P. Black St&#233;phane Ducasse (OOPSLA 2004)
+  6337.456775
+Object-oriented units of measurement - Eric Allen David Chase Victor Luchangco Jan-Willem Maessen Guy L. Steele (OOPSLA 2004)
+  6269.321768
+Homogeneous family sharing - Xin Qi Andrew C. Myers (OOPSLA 2010)
+  5803.805731
+Contraint-based polymorphism in Cecil - Vassily Litvinov (OOPSLA 1998)
+  5739.507891
+Making the future safe for the past - Gilad Bracha Martin Odersky David Stoutamire Philip Wadler (OOPSLA 1998)
+  5371.642876
+Instant pickles - Heather Miller Philipp Haller Eugene Burmako Martin Odersky (OOPSLA 2013)
+  5172.172195
+Sharing classes between families - Xin Qi Andrew C. Myers (PLDI 2009)
+  5164.918041
+
+
+Topic 014
+---------
+Words (mean weight: -440.671686, min weight: -662.904105)
+  event (-4.594980)
+  process (-4.806422)
+  value (-4.825578)
+  state (-5.001970)
+  channel (-5.006092)
+  function (-5.101470)
+  language (-5.119318)
+  thread (-5.133543)
+  message (-5.154678)
+  stream (-5.178121)
+---------
+Papers
+Molecule - S&#233;bastien Bocq Koen Daenen (OOPSLA 2012)
+  6691.838063
+AC - Tim Harris Martin Abadi Rebecca Isaacs Ross McIlroy (OOPSLA 2011)
+  5695.511550
+Flapjax - Leo A. Meyerovich Arjun Guha Jacob Baskin Gregory H. Cooper Michael Greenberg Aleks Bromfield Shriram Krishnamurthi (OOPSLA 2009)
+  5414.120680
+Composable asynchronous events - Lukasz Ziarek KC Sivaramakrishnan Suresh Jagannathan (PLDI 2011)
+  5404.762208
+Structured exception handling - John B. Goodenough (POPL 1975)
+  5331.259627
+Kill-safe synchronization abstractions - Matthew Flatt Robert Bruce Findler (PLDI 2004)
+  5138.017275
+Transactional events - Kevin Donnelly Matthew Fluet (ICFP 2006)
+  4930.576869
+Scalable join patterns - Aaron J. Turon Claudio V. Russo (OOPSLA 2011)
+  4891.526165
+Asynchronous functional reactive programming for GUIs - Evan Czaplicki Stephen Chong (PLDI 2013)
+  4785.844508
+Freeze after writing - Lindsey Kuper Aaron Turon Neelakantan R. Krishnaswami Ryan R. Newton (POPL 2014)
+  4735.938274
+
+
+Topic 015
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 016
+---------
+Words (mean weight: -417.211409, min weight: -672.982136)
+  term (-4.216266)
+  semantics (-4.765061)
+  let (-4.828928)
+  reduction (-4.909058)
+  rule (-4.922663)
+  language (-4.931024)
+  de (-4.960752)
+  calculus (-4.996422)
+  monad (-5.030180)
+  continuation (-5.132900)
+---------
+Papers
+A nonstandard standardization theorem - Beniamino Accattoli Eduardo Bonelli Delia Kesner Carlos Lombardi (POPL 2014)
+  5901.684850
+A unified approach to fully lazy sharing - Thibaut Balabonski (POPL 2012)
+  5199.717958
+A complete, co-inductive syntactic theory of sequential control and state - Kristian St&#248;vring Soren B. Lassen (POPL 2007)
+  5056.772763
+Lazy evaluation and delimited control - Ronald Garcia Andrew Lumsdaine Amr Sabry (POPL 2009)
+  4867.999565
+Linearity and PCF - Marco Gaboardi Luca Paolini Mauro Piccolo (ICFP 2011)
+  4867.378240
+An approach to call-by-name delimited continuations - Hugo Herbelin Silvia Ghilezan (POPL 2008)
+  4837.681659
+Weak optimality, and the meaning of sharing - Thibaut Balabonski (ICFP 2013)
+  4804.005318
+A type-theoretic foundation of continuations and prompts - Zena M. Ariola Hugo Herbelin Amr Sabry (ICFP 2004)
+  4764.394685
+Parametric effect monads and semantics of effect systems - Shin-ya Katsumata (POPL 2014)
+  4700.524071
+On coinductive equivalences for higher-order probabilistic functional programs - Ugo Dal Lago Davide Sangiorgi Michele Alberti (POPL 2014)
+  4653.973171
+
+
+Topic 017
+---------
+Words (mean weight: -421.443944, min weight: -658.938481)
+  process (-4.513321)
+  system (-4.642622)
+  message (-4.672997)
+  lisp (-4.813384)
+  processor (-4.880835)
+  parallel (-4.881646)
+  communication (-5.062933)
+  data (-5.136283)
+  language (-5.238427)
+  actor (-5.239306)
+---------
+Papers
+The implementation of procedurally reflective languages - Jim des Rivi&#232;res Brian Cantwell Smith (LFP 1984)
+  5465.032700
+Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
+  4507.464657
+Integrating task parallelism with actors - Shams M. Imam Vivek Sarkar (OOPSLA 2012)
+  4431.470241
+Fully concurrent garbage collection of actors on many-core machines - Sylvan Clebsch Sophia Drossopoulou (OOPSLA 2013)
+  4197.859946
+Guardians and actions - Barbara Liskov Robert Scheifler (POPL 1982)
+  4061.794355
+Machine-verified network controllers - Arjun Guha Mark Reitblatt Nate Foster (PLDI 2013)
+  4040.641219
+An overview of COMMON LISP - Guy L. Steele (LFP 1982)
+  3851.087580
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  3771.404816
+Synchronization in actor systems - Russell Atkinson Carl Hewitt (POPL 1977)
+  3752.623388
+A compiler and run-time system for network programming languages - Christopher Monsanto Nate Foster Rob Harrison David Walker (POPL 2012)
+  3686.957958
+
+
+Topic 018
+---------
+Words (mean weight: -447.823453, min weight: -593.325265)
+  figure (-4.780073)
+  page (-5.086484)
+  int (-5.702467)
+  forexample (-5.723295)
+  copy (-6.181062)
+  acm (-6.275553)
+  ee (-6.325789)
+  ie (-6.384660)
+  t (-6.398947)
+  june (-6.406245)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  422.999763
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  402.933988
+Stratified operational semantics for safety and correctness of the region calculus - Cristiano Calcagno (POPL 2001)
+  352.734862
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  295.169794
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  284.240125
+A certifying compiler for Java - Christopher Colby Peter Lee George C. Necula Fred Blau Mark Plesko Kenneth Cline (PLDI 2000)
+  277.772996
+Information flow inference for free - Fran&#231;ois Pottier Sylvain Conchon (ICFP 2000)
+  273.636984
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  260.529730
+A dependently typed assembly language - Hongwei Xi Robert Harper (ICFP 2001)
+  258.516687
+Make it practical - Isao Sasano Zhenjiang Hu Masato Takeichi Mizuhito Ogawa (ICFP 2000)
+  254.377764
+
+
+Topic 019
+---------
+Words (mean weight: -362.881985, min weight: -679.622912)
+  type (-3.629100)
+  function (-4.143407)
+  value (-4.576771)
+  program (-4.656549)
+  expression (-4.659454)
+  variable (-4.660617)
+  language (-4.741856)
+  list (-5.158101)
+  system (-5.213385)
+  argument (-5.214357)
+---------
+Papers
+Flexible representation analysis - Zhong Shao (ICFP 1997)
+  5278.366910
+Type-based analysis of uncaught exceptions - Fran&#231;ois Pessaux Xavier Leroy (POPL 1999)
+  5144.341227
+Practical use of a polymorphic applicative language - Butler W. Lampson Eric E. Schmidt (POPL 1983)
+  5046.603507
+Typed cross-module compilation - Zhong Shao (ICFP 1998)
+  4954.126251
+A practical soft type system for Scheme - Andrew K. Wright Robert Cartwright (LFP 1994)
+  4901.898295
+Manifest types, modules, and separate compilation - Xavier Leroy (POPL 1994)
+  4806.810920
+Smartest recompilation - Zhong Shao Andrew W. Appel (POPL 1993)
+  4686.030671
+Typed closure conversion - Yasuhiko Minamide Greg Morrisett Robert Harper (POPL 1996)
+  4625.618730
+Safe polymorphic type inference for a dynamically typed language - Fritz Henglein Jakob Rehof (FPCA 1995)
+  4526.021680
+Compiling polymorphism using intensional type analysis - Robert Harper Greg Morrisett (POPL 1995)
+  4321.626581
+
+
+Topic 020
+---------
+Words (mean weight: -397.712985, min weight: -651.051420)
+  language (-3.908998)
+  programming (-4.368779)
+  software (-4.443840)
+  design (-4.516093)
+  pattern (-4.533611)
+  system (-4.830328)
+  model (-4.956569)
+  program (-4.975615)
+  tool (-5.129678)
+  development (-5.147211)
+---------
+Papers
+No name - Robert Biddle Angela Martin James Noble (OOPSLA 2003)
+  4862.023144
+Continuing professional development by practitioner integrated learning - Anna Borjesson Lars Pareto Ulrika Lundh Snis Miroslaw Staron (OOPSLA 2007)
+  4376.758575
+Faith, hope, and love - Stefan Hanenberg (OOPSLA 2010)
+  4068.302332
+Cedalion - David H. Lorenz Boaz Rosenan (OOPSLA 2011)
+  3543.238913
+&#960; - Roman Kn&#246;ll Mira Mezini (OOPSLA 2009)
+  3483.970210
+Better science through art - Richard P. Gabriel Kevin J. Sullivan (OOPSLA 2010)
+  3372.227739
+Agile anthropology and Alexander's architecture - Jenny Quillien Pam Rostal Dave West (OOPSLA 2009)
+  3261.715373
+Beyond AOP - Cristina Videira Lopes Paul Dourish David H. Lorenz Karl Lieberherr (OOPSLA 2003)
+  3062.544794
+Designed as designer - Richard P. Gabriel (OOPSLA 2008)
+  2822.373774
+How to preserve the benefits of design patterns - Ellen Agerbo Aino Cornils (OOPSLA 1998)
+  2751.809754
+
+
+Topic 021
+---------
+Words (mean weight: -477.591983, min weight: -640.196406)
+  security (-4.150482)
+  policy (-4.173121)
+  information (-4.759744)
+  program (-4.973581)
+  ow (-4.985346)
+  system (-5.014222)
+  label (-5.177988)
+  value (-5.209732)
+  de (-5.218932)
+  data (-5.332109)
+---------
+Papers
+Cryptographically sound implementations for typed information-flow security - C&#233;dric Fournet Tamara Rezk (POPL 2008)
+  5696.691578
+Paralocks - Niklas Broberg David Sands (POPL 2010)
+  5076.094185
+Quantitative information flow as network flow capacity - Stephen McCamant Michael D. Ernst (PLDI 2008)
+  4614.145918
+Language-based control and mitigation of timing channels - Danfeng Zhang Aslan Askarov Andrew C. Myers (PLDI 2012)
+  4531.834400
+Towards a practical secure concurrent language - Stefan Muller Stephen Chong (OOPSLA 2012)
+  4494.495524
+Multiple facets for dynamic information flow - Thomas H. Austin Cormac Flanagan (POPL 2012)
+  4284.644668
+On the computational soundness of cryptographically masked flows - Peeter Laud (POPL 2008)
+  4236.675688
+Laminar - Indrajit Roy Donald E. Porter Michael D. Bond Kathryn S. McKinley Emmett Witchel (PLDI 2009)
+  4195.370954
+Formal certification of code-based cryptographic proofs - Gilles Barthe Benjamin Gr&#233;goire Santiago Zanella B&#233;guelin (POPL 2009)
+  3844.911506
+Downgrading policies and relaxed noninterference - Peng Li Steve Zdancewic (POPL 2005)
+  3731.032134
+
+
+Topic 022
+---------
+Words (mean weight: -385.882584, min weight: -667.666153)
+  object (-3.727276)
+  memory (-4.417873)
+  heap (-4.477609)
+  pointer (-4.523556)
+  time (-4.556163)
+  garbage (-4.569946)
+  collector (-4.585598)
+  collection (-4.618545)
+  size (-4.821406)
+  allocation (-4.845496)
+---------
+Papers
+MC<sup>2</sup> - Narendran Sachindran J. Eliot B. Moss Emery D. Berger (OOPSLA 2004)
+  7818.078200
+A unified theory of garbage collection - David F. Bacon Perry Cheng V. T. Rajan (OOPSLA 2004)
+  7210.758768
+Beltway - Stephen M Blackburn Richard Jones Kathryn S. McKinley J Eliot B Moss (PLDI 2002)
+  5585.580318
+Cache performance of fast-allocating programs - Marcelo J. R. Gon&#231;alves Andrew W. Appel (FPCA 1995)
+  5484.944653
+An efficient non-moving garbage collector for functional languages - Katsuhiro Ueno Atsushi Ohori Toshiaki Otomo (ICFP 2011)
+  5480.750573
+Schism - Filip Pizlo Lukasz Ziarek Petr Maj Antony L. Hosking Ethan Blanton Jan Vitek (PLDI 2010)
+  5461.750952
+A real-time garbage collector with low overhead and consistent utilization - David F. Bacon Perry Cheng V. T. Rajan (POPL 2003)
+  5410.847010
+Immix - Stephen M. Blackburn Kathryn S. McKinley (PLDI 2008)
+  5323.315811
+Taking off the gloves with reference counting Immix - Rifat Shahriyar Stephen Michael Blackburn Xi Yang Kathryn S. McKinley (OOPSLA 2013)
+  5303.148069
+Garbage collection without paging - Matthew Hertz Yi Feng Emery D. Berger (PLDI 2005)
+  5254.493780
+
+
+Topic 023
+---------
+Words (mean weight: -428.316286, min weight: -644.495463)
+  language (-3.914569)
+  code (-4.265090)
+  module (-4.266450)
+  de (-4.408929)
+  java (-4.660045)
+  syntax (-4.983356)
+  name (-4.991584)
+  program (-5.013810)
+  implementation (-5.112349)
+  method (-5.117957)
+---------
+Papers
+Concrete syntax for objects - Martin Bravenboer Eelco Visser (OOPSLA 2004)
+  6813.209686
+Measuring the dynamic behaviour of AspectJ programs - Bruno Dufour Christopher Goard Laurie Hendren Oege de Moor Ganesh Sittampalam Clark Verbrugge (OOPSLA 2004)
+  6293.575630
+A variability-aware module system - Christian K&#228;stner Klaus Ostermann Sebastian Erdweg (OOPSLA 2012)
+  5988.891870
+Verifiable composition of deterministic grammars - August C. Schwerdfeger Eric R. Van Wyk (PLDI 2009)
+  5347.641761
+SugarJ - Sebastian Erdweg Tillmann Rendel Christian K&#228;stner Klaus Ostermann (OOPSLA 2011)
+  5287.273640
+Mixing source and bytecode - Lennart C.L. Kats Martin Bravenboer Eelco Visser (OOPSLA 2008)
+  5245.156505
+Supporting dynamic, third-party code customizations in JavaScript using aspects - Benjamin S. Lerner Herman Venter Dan Grossman (OOPSLA 2010)
+  5053.636571
+Optimising aspectJ - Pavel Avgustinov Aske Simon Christensen Laurie Hendren Sascha Kuzins Jennifer Lhot&#225;k Ond&#345;ej Lhot&#225;k Oege de Moor Damien Sereni Ganesh Sittampalam Julian Tibble (PLDI 2005)
+  5039.759544
+Semantics of static pointcuts in aspectJ - Pavel Avgustinov Elnar Hajiyev Neil Ongkingco Oege de Moor Damien Sereni Julian Tibble Mathieu Verbaere (POPL 2007)
+  5026.896889
+Pinocchio - Toon Verwaest Camillo Bruni David Gurtner Adrian Lienhard Oscar Niestrasz (OOPSLA 2010)
+  4995.217585
+
+
+Topic 024
+---------
+Words (mean weight: -371.159275, min weight: -672.713102)
+  loop (-4.129102)
+  analysis (-4.379468)
+  code (-4.494148)
+  array (-4.500897)
+  program (-4.714160)
+  variable (-4.733300)
+  compiler (-4.896052)
+  value (-4.915535)
+  function (-5.020992)
+  instruction (-5.106892)
+---------
+Papers
+Logical inference techniques for loop parallelization - Cosmin E. Oancea Lawrence Rauchwerger (PLDI 2012)
+  5781.903766
+When polyhedral transformations meet SIMD code generation - Martin Kong Richard Veras Kevin Stock Franz Franchetti Louis-No&#235;l Pouchet P. Sadayappan (PLDI 2013)
+  5629.991420
+Automatically generating instruction selectors using declarative machine descriptions - Jo&#227;o Dias Norman Ramsey (POPL 2010)
+  5523.172674
+Practical dependence testing - Gina Goff Ken Kennedy Chau-Wen Tseng (PLDI 1991)
+  5489.536944
+Taming MATLAB - Anton Willy Dubrau Laurie Jane Hendren (OOPSLA 2012)
+  5368.706503
+Optimizing data permutations for SIMD devices - Gang Ren Peng Wu David Padua (PLDI 2006)
+  5318.295680
+Work efficient higher-order vectorisation - Ben Lippmeier Manuel M.T. Chakravarty Gabriele Keller Roman Leshchinskiy Simon Peyton Jones (ICFP 2012)
+  5175.960258
+Automatic SIMD vectorization for Haskell - Leaf Petersen Dominic Orchard Neal Glew (ICFP 2013)
+  5155.323049
+Resourceable, retargetable, modular instruction selection using a machine-independent, type-based tiling of low-level intermediate code - Norman Ramsey Jo&#227;o Dias (POPL 2011)
+  5071.019856
+Sub-polyhedral scheduling using (unit-)two-variable-per-inequality polyhedra - Ramakrishna Upadrasta Albert Cohen (POPL 2013)
+  5037.481697
