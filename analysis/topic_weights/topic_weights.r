@@ -7,7 +7,7 @@ library(reshape2)
 
 
 #src <- "2015-01-06_11:06/lda20.csv"
-src <- "2016-03-21_00:53/lda25.csv"
+src <- "2016-01-27_16:44/lda10.csv"
 
 setwd("~/tmpl/out/")
 lda <- data.frame(read.csv(src, header=TRUE,sep=",",quote="\""))
