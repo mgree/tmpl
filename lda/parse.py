@@ -1,4 +1,5 @@
 import json
+import argparse
 import sys, os, glob
 import codecs
 
@@ -33,7 +34,7 @@ def no_crlf(s):
 
 def parse(f):
     doc = json.load(open(f))
-    
+
     # if ('abs' not in doc): print file + " is missing an abstract"
     # if ('title' not in doc): print file + " is missing a title"
 
@@ -66,7 +67,7 @@ def load_docs(d):
     for root in glob.glob(os.path.join(d,"*")):
 
         year = os.path.basename(root)
-
+    
         years[year] = []
         
         for f in glob.glob(os.path.join(root,"*.txt")):
@@ -76,7 +77,7 @@ def load_docs(d):
             title,doc = parse(f)
             doc = map(stem,doc)
             words.update(doc)
-                    
+                   
             years[year].append((title,doc))
 
     return (years,words)
@@ -149,6 +150,7 @@ def as_vocab(words, vocab_of="vocab.dat"):
 
 by_year = False
 def run(doc_dir,doc_file,dat_file,vocab_file):
+
     global by_year
     
     years,words = load_docs(doc_dir)
@@ -163,12 +165,30 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
     as_dat(bows, abs_of=dat_file, doc_of=doc_file)
     as_vocab(words, vocab_of=vocab_file)
 
-if __name__ == '__main__':
-    args = dict(enumerate(sys.argv))
-    d = args.get(1,"../raw/abs/all_popl")
-    doc_file = args.get(2,"docs.dat")
-    dat_file = args.get(3,"abstracts.dat")
-    vocab_file = args.get(4,"vocab.dat")
-    by_year = args.get(5,"") == "--by-year"
-    
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(
+        description = "parse files in directory")
+    parser.add_argument(
+        'directory', help = "directory to be parsed")
+    args = parser.parse_args()
+
+    d = args.directory
+    print "Will work on the following directory: {}".format(args.directory)
+
+    doc_file = "docs.dat" # user input?
+    dat_file = "abstracts.dat"
+    vocab_file = "vocab.dat"
+    by_year = "" == "--by-year"
+ 
     run(d,doc_file,dat_file,vocab_file)
+
+#if __name__ == '__main__':
+#    args = dict(enumerate(sys.argv))
+#    d = args.get(1) #like dl.py
+#    doc_file = args.get(2,"docs.dat") # user input?
+#    dat_file = args.get(3,"abstracts.dat")
+#    vocab_file = args.get(4,"vocab.dat")
+#    by_year = args.get(5,"") == "--by-year"
+ 
+#    run(d,doc_file,dat_file,vocab_file)
