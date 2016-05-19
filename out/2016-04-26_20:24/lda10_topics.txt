@@ -1,0 +1,368 @@
+Topic 000
+---------
+Words (mean weight: -137.166437, min weight: -303.148265)
+  term (-4.549830)
+  language (-4.688424)
+  function (-4.738463)
+  type (-4.753089)
+  variable (-4.800722)
+  let (-4.804820)
+  value (-4.900579)
+  program (-4.959345)
+  expression (-4.982774)
+  rule (-5.030984)
+---------
+Papers
+Type-directed partial evaluation - Olivier Danvy (POPL 1996)
+  5885.453269
+Compiling with continuations, continued - Andrew Kennedy (ICFP 2007)
+  5624.294465
+Delimited dynamic binding - Oleg Kiselyov Chung-chieh Shan Amr Sabry (ICFP 2006)
+  5522.329736
+A type based sharing analysis for update avoidance and optimisation - J&#246;rgen Gustavsson (ICFP 1998)
+  5409.311410
+A type-theoretic foundation of continuations and prompts - Zena M. Ariola Hugo Herbelin Amr Sabry (ICFP 2004)
+  5251.432730
+Lazy evaluation and delimited control - Ronald Garcia Andrew Lumsdaine Amr Sabry (POPL 2009)
+  4970.962691
+A generic account of continuation-passing styles - John Hatcliff Olivier Danvy (POPL 1994)
+  4956.059171
+An approach to call-by-name delimited continuations - Hugo Herbelin Silvia Ghilezan (POPL 2008)
+  4900.339513
+Static analysis of multi-staged programs via unstaging translation - Wontae Choi Baris Aktemur Kwangkeun Yi Makoto Tatsuta (POPL 2011)
+  4894.401816
+Syntactic accidents in program analysis - Daniel Damian Olivier Danvy (ICFP 2000)
+  4853.059171
+
+
+Topic 001
+---------
+Words (mean weight: -160.138661, min weight: -296.106468)
+  type (-3.524562)
+  module (-4.507211)
+  system (-4.753627)
+  language (-4.866911)
+  process (-5.139082)
+  name (-5.182738)
+  rule (-5.200346)
+  value (-5.222947)
+  de (-5.233609)
+  example (-5.412412)
+---------
+Papers
+Backpack - Scott Kilpatrick Derek Dreyer Simon Peyton Jones Simon Marlow (POPL 2014)
+  6685.795913
+Mixin' up the ML module system - Derek Dreyer Andreas Rossberg (ICFP 2008)
+  6609.247782
+Channel dependent types for higher-order mobile processes - Nobuko Yoshida (POPL 2004)
+  6521.057812
+Acute - Peter Sewell James J. Leifer Keith Wansbrough Francesco Zappa Nardelli Mair Allen-Williams Pierre Habouzit Viktor Vafeiadis (ICFP 2005)
+  6435.740927
+Practical use of a polymorphic applicative language - Butler W. Lampson Eric E. Schmidt (POPL 1983)
+  6348.290089
+Dynamic multirole session types - Pierre-Malo Deni&#233;lou Nobuko Yoshida (POPL 2011)
+  6230.745458
+A type system for higher-order modules - Derek Dreyer Karl Crary Robert Harper (POPL 2003)
+  6145.004828
+From structures and functors to modules and units - Scott Owens Matthew Flatt (ICFP 2006)
+  6046.370974
+An expressive language of signatures - Norman Ramsey Kathleen Fisher Paul Govereau (ICFP 2005)
+  5978.225704
+A type system for recursive modules - Derek Dreyer (ICFP 2007)
+  5943.434105
+
+
+Topic 002
+---------
+Words (mean weight: -140.023597, min weight: -304.598661)
+  thread (-4.795808)
+  program (-4.866930)
+  code (-4.926544)
+  memory (-5.016015)
+  object (-5.091288)
+  state (-5.228140)
+  data (-5.249400)
+  implementation (-5.332494)
+  execution (-5.466755)
+  value (-5.471778)
+---------
+Papers
+Dynamically checking ownership policies in concurrent c/c++ programs - Jean-Phillipe Martin Michael Hicks Manuel Costa Periklis Akritidis Miguel Castro (POPL 2010)
+  6891.492304
+Feedback-directed barrier optimization in a strongly isolated STM - Nathan G. Bronson Christos Kozyrakis Kunle Olukotun (POPL 2009)
+  6775.342218
+AtomCaml - Michael F. Ringenburg Dan Grossman (ICFP 2005)
+  6512.895348
+Safe nondeterminism in a deterministic-by-default parallel language - Robert L. Bocchino Stephen Heumann Nima Honarmand Sarita V. Adve Vikram S. Adve Adam Welc Tatiana Shpeisman (POPL 2011)
+  6414.150025
+A verified information-flow architecture - Arthur Azevedo de Amorim Nathan Collins Andr&#233; DeHon Delphine Demange C&#259;t&#259;lin Hri&#355;cu David Pichardie Benjamin C. Pierce Randy Pollack Andrew Tolmach (POPL 2014)
+  6172.791103
+Runtime support for multicore Haskell - Simon Marlow Simon Peyton Jones Satnam Singh (ICFP 2009)
+  6168.511568
+Testing noninterference, quickly - Catalin Hritcu John Hughes Benjamin C. Pierce Antal Spector-Zabusky Dimitrios Vytiniotis Arthur Azevedo de Amorim Leonidas Lampropoulos (ICFP 2013)
+  6082.412992
+Library abstraction for C/C++ concurrency - Mark Batty Mike Dodds Alexey Gotsman (POPL 2013)
+  6065.476486
+Sound predictive race detection in polynomial time - Yannis Smaragdakis Jacob Evans Caitlin Sadowski Jaeheon Yi Cormac Flanagan (POPL 2012)
+  6001.854112
+The Java memory model - Jeremy Manson William Pugh Sarita V. Adve (POPL 2005)
+  5862.286124
+
+
+Topic 003
+---------
+Words (mean weight: -151.041268, min weight: -303.821510)
+  type (-4.166152)
+  function (-4.370396)
+  de (-4.424952)
+  monad (-5.101869)
+  list (-5.215110)
+  value (-5.257622)
+  language (-5.270171)
+  example (-5.329053)
+  data (-5.348275)
+  term (-5.350974)
+---------
+Papers
+A model-learner pattern for bayesian reasoning - Andrew D. Gordon Mihhail Aizatulin Johannes Borgstrom Guillaume Claret Thore Graepel Aditya V. Nori Sriram K. Rajamani Claudio Russo (POPL 2013)
+  6567.472073
+A relationally parametric model of dependent type theory - Robert Atkey Neil Ghani Patricia Johann (POPL 2014)
+  6165.838689
+Combinators for bi-directional tree transformations - J. Nathan Foster Michael B. Greenwald Jonathan T. Moore Benjamin C. Pierce Alan Schmitt (POPL 2005)
+  6142.582622
+Abstraction and invariance for algebraically indexed types - Robert Atkey Patricia Johann Andrew Kennedy (POPL 2013)
+  6080.080861
+Inductive reasoning about effectful data types - Andrzej Filinski Kristian St&#248;vring (ICFP 2007)
+  6015.059172
+Edit lenses - Martin Hofmann Benjamin Pierce Daniel Wagner (POPL 2012)
+  6006.040870
+Transporting functions across ornaments - Pierre-Evariste Dagand Conor McBride (ICFP 2012)
+  5976.411495
+Quotient lenses - J. Nathan Foster Alexandre Pilkiewicz Benjamin C. Pierce (ICFP 2008)
+  5851.468197
+A hierarchy of mendler style recursion combinators - Ki Yung Ahn Tim Sheard (ICFP 2011)
+  5819.510891
+Symmetric lenses - Martin Hofmann Benjamin Pierce Daniel Wagner (POPL 2011)
+  5805.059171
+
+
+Topic 004
+---------
+Words (mean weight: -157.906620, min weight: -269.835879)
+  language (-4.583378)
+  grammar (-4.880807)
+  attribute (-4.966561)
+  programming (-5.279637)
+  string (-5.284782)
+  parser (-5.285272)
+  function (-5.308971)
+  data (-5.465740)
+  system (-5.529274)
+  input (-5.580182)
+---------
+Papers
+Report on the tenth ICFP programming contest - Eelco Dolstra Jurriaan Hage Bastiaan Heeren Stefan Holdermans Johan Jeuring Andres L&#246;h Clara L&#246;h Arie Middelkoop Alexey Rodriguez John van Schie (ICFP 2008)
+  1433.832075
+A user-centred approach to functions in Excel - Simon Peyton Jones Alan Blackwell Margaret Burnett (ICFP 2003)
+  1304.417587
+Editing by example - Robert Nix (POPL 1984)
+  1287.156661
+Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
+  1283.162422
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  1237.896042
+Composable attribute grammars - R. Farrow T. J. Marlowe D. M. Yellin (POPL 1992)
+  1229.185218
+Unified dialogue management in the carousel system - Erik Sandewall (POPL 1982)
+  1182.329676
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  1169.838427
+Formal specification as a design tool - John Guttag J. J. Horning (POPL 1980)
+  1134.952770
+Packrat parsing: - Bryan Ford (ICFP 2002)
+  1109.777233
+
+
+Topic 005
+---------
+Words (mean weight: -114.979566, min weight: -304.287276)
+  type (-2.899340)
+  de (-4.612765)
+  function (-4.708600)
+  rule (-4.817070)
+  language (-4.867290)
+  variable (-4.867528)
+  system (-4.924873)
+  value (-5.045034)
+  int (-5.183394)
+  class (-5.211981)
+---------
+Papers
+Self-certification - Pierre-Yves Strub Nikhil Swamy Cedric Fournet Juan Chen (POPL 2012)
+  7248.785529
+Enhancing modular OO verification with separation logic - Wei-Ngan Chin Cristina David Huu Hai Nguyen Shengchao Qin (POPL 2008)
+  6854.113881
+Stratified type inference for generalized algebraic data types - Fran&#231;ois Pottier Yann R&#233;gis-Gianas (POPL 2006)
+  6722.059171
+CDuce - V&#233;ronique Benzaken Giuseppe Castagna Alain Frisch (ICFP 2003)
+  6615.740670
+How to make ad hoc proof automation less ad hoc - Georges Gonthier Beta Ziliani Aleksandar Nanevski Derek Dreyer (ICFP 2011)
+  6568.490258
+A virtual class calculus - Erik Ernst Klaus Ostermann William R. Cook (POPL 2006)
+  6429.573110
+Closed type families with overlapping equations - Richard A. Eisenberg Dimitrios Vytiniotis Simon Peyton Jones Stephanie Weirich (POPL 2014)
+  6286.059171
+Mtac - Beta Ziliani Derek Dreyer Neelakantan R. Krishnaswami Aleksandar Nanevski Viktor Vafeiadis (ICFP 2013)
+  6217.528419
+On the bright side of type classes - Dominique Devriese Frank Piessens (ICFP 2011)
+  6211.130948
+Static and dynamic semantics of NoSQL languages - V&#233;ronique Benzaken Giuseppe Castagna Kim Nguyen J&#233;r&#244;me Sim&#233;on (POPL 2013)
+  6193.335382
+
+
+Topic 006
+---------
+Words (mean weight: -157.906620, min weight: -269.835879)
+  language (-4.583378)
+  grammar (-4.880807)
+  attribute (-4.966561)
+  programming (-5.279637)
+  string (-5.284782)
+  parser (-5.285272)
+  function (-5.308971)
+  data (-5.465740)
+  system (-5.529274)
+  input (-5.580182)
+---------
+Papers
+Report on the tenth ICFP programming contest - Eelco Dolstra Jurriaan Hage Bastiaan Heeren Stefan Holdermans Johan Jeuring Andres L&#246;h Clara L&#246;h Arie Middelkoop Alexey Rodriguez John van Schie (ICFP 2008)
+  1433.832075
+A user-centred approach to functions in Excel - Simon Peyton Jones Alan Blackwell Margaret Burnett (ICFP 2003)
+  1304.417587
+Editing by example - Robert Nix (POPL 1984)
+  1287.156661
+Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
+  1283.162422
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  1237.896042
+Composable attribute grammars - R. Farrow T. J. Marlowe D. M. Yellin (POPL 1992)
+  1229.185218
+Unified dialogue management in the carousel system - Erik Sandewall (POPL 1982)
+  1182.329676
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  1169.838427
+Formal specification as a design tool - John Guttag J. J. Horning (POPL 1980)
+  1134.952770
+Packrat parsing: - Bryan Ford (ICFP 2002)
+  1109.777233
+
+
+Topic 007
+---------
+Words (mean weight: -134.055999, min weight: -302.365377)
+  set (-4.377500)
+  program (-4.518192)
+  state (-4.545896)
+  proof (-4.578306)
+  logic (-4.784834)
+  rule (-5.072748)
+  formula (-5.078318)
+  let (-5.094199)
+  model (-5.234389)
+  de (-5.245098)
+---------
+Papers
+The semantic foundations of concurrent constraint programming - Vijay A. Saraswat Martin Rinard Prakash Panangaden (POPL 1991)
+  6745.247998
+On the analysis of interacting pushdown systems - Vineet Kahlon Aarti Gupta (POPL 2007)
+  6568.046586
+Recursive proofs for inductive tree data-structures - Parthasarathy Madhusudan Xiaokang Qiu Andrei Stefanescu (POPL 2012)
+  6179.241098
+The ramifications of sharing in data structures - Aquinas Hobor Jules Villard (POPL 2013)
+  5820.657819
+Decidable logics combining heap structures and data - P. Madhusudan Gennaro Parlato Xiaokang Qiu (POPL 2011)
+  5702.340983
+A constraint-based approach to solving games on infinite graphs - Tewodros Beyene Swarat Chaudhuri Corneliu Popeea Andrey Rybalchenko (POPL 2014)
+  5591.189774
+Advanced automata minimization - Richard Mayr Lorenzo Clemente (POPL 2013)
+  5525.744780
+Context logic as modal logic - Cristiano Calcagno Philippa Gardner Uri Zarfaty (POPL 2007)
+  5475.801905
+Complete instantiation-based interpolation - Nishant Totla Thomas Wies (POPL 2013)
+  5191.209099
+Verifying eventual consistency of optimistic replication systems - Ahmed Bouajjani Constantin Enea Jad Hamza (POPL 2014)
+  5169.140801
+
+
+Topic 008
+---------
+Words (mean weight: -157.906620, min weight: -269.835879)
+  language (-4.583378)
+  grammar (-4.880807)
+  attribute (-4.966561)
+  programming (-5.279637)
+  string (-5.284782)
+  parser (-5.285272)
+  function (-5.308971)
+  data (-5.465740)
+  system (-5.529274)
+  input (-5.580182)
+---------
+Papers
+Report on the tenth ICFP programming contest - Eelco Dolstra Jurriaan Hage Bastiaan Heeren Stefan Holdermans Johan Jeuring Andres L&#246;h Clara L&#246;h Arie Middelkoop Alexey Rodriguez John van Schie (ICFP 2008)
+  1433.832075
+A user-centred approach to functions in Excel - Simon Peyton Jones Alan Blackwell Margaret Burnett (ICFP 2003)
+  1304.417587
+Editing by example - Robert Nix (POPL 1984)
+  1287.156661
+Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
+  1283.162422
+Slideshow - Robert Bruce Findler Matthew Flatt (ICFP 2004)
+  1237.896042
+Composable attribute grammars - R. Farrow T. J. Marlowe D. M. Yellin (POPL 1992)
+  1229.185218
+Unified dialogue management in the carousel system - Erik Sandewall (POPL 1982)
+  1182.329676
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  1169.838427
+Formal specification as a design tool - John Guttag J. J. Horning (POPL 1980)
+  1134.952770
+Packrat parsing: - Bryan Ford (ICFP 2002)
+  1109.777233
+
+
+Topic 009
+---------
+Words (mean weight: -137.578240, min weight: -305.144539)
+  program (-4.227083)
+  analysis (-4.484894)
+  node (-4.486377)
+  algorithm (-4.647293)
+  set (-4.720644)
+  graph (-4.786837)
+  variable (-4.933396)
+  value (-4.946193)
+  loop (-5.015912)
+  edge (-5.101672)
+---------
+Papers
+Sound input filter generation for integer overflow errors - Fan Long Stelios Sidiroglou-Douskos Deokhwan Kim Martin Rinard (POPL 2014)
+  7018.599336
+Randomized accuracy-aware program transformations for efficient approximate computations - Zeyuan Allen Zhu Sasa Misailovic Jonathan A. Kelner Martin Rinard (POPL 2012)
+  6850.741544
+Sub-polyhedral scheduling using (unit-)two-variable-per-inequality polyhedra - Ramakrishna Upadrasta Albert Cohen (POPL 2013)
+  6551.059171
+From program verification to program synthesis - Saurabh Srivastava Sumit Gulwani Jeffrey S. Foster (POPL 2010)
+  6339.497401
+A parametric segmentation functor for fully automatic and scalable array content analysis - Patrick Cousot Radhia Cousot Francesco Logozzo (POPL 2011)
+  6297.270426
+Points-to analysis with efficient strong updates - Ondrej Lhot&#225;k Kwok-Chiang Andrew Chung (POPL 2011)
+  6205.452366
+Sound compilation of reals - Eva Darulova Viktor Kuncak (POPL 2014)
+  6183.040544
+SPEED - Sumit Gulwani Krishna K. Mehra Trishul Chilimbi (POPL 2009)
+  6045.588012
+Relevant context inference - Ramkrishna Chatterjee Barbara G. Ryder William A. Landi (POPL 1999)
+  5848.643818
+Equality saturation - Ross Tate Michael Stepp Zachary Tatlock Sorin Lerner (POPL 2009)
+  5798.754351

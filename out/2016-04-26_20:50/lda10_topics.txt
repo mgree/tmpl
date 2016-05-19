@@ -1,0 +1,368 @@
+Topic 000
+---------
+Words (mean weight: -173.645592, min weight: -358.094809)
+  analysis (-4.106088)
+  program (-4.281329)
+  set (-4.802237)
+  variable (-5.041543)
+  state (-5.043115)
+  constraint (-5.086900)
+  function (-5.114720)
+  path (-5.222647)
+  call (-5.288829)
+  example (-5.296256)
+---------
+Papers
+Refinement-based context-sensitive points-to analysis for Java - Manu Sridharan Rastislav Bod&#237;k (PLDI 2006)
+  7606.139351
+Thresher - Sam Blackshear Bor-Yuh Evan Chang Manu Sridharan (PLDI 2013)
+  6717.240623
+Detecting inefficiently-used containers to avoid bloat - Guoqing Xu Atanas Rountev (PLDI 2010)
+  6702.326705
+On inter-procedural analysis of programs with lists and data - Ahmed Bouajjani Cezara Dr&#259;goi Constantin Enea Mihaela Sighireanu (PLDI 2011)
+  6430.170453
+Verifiable composition of deterministic grammars - August C. Schwerdfeger Eric R. Van Wyk (PLDI 2009)
+  6399.467161
+Snugglebug - Satish Chandra Stephen J. Fink Manu Sridharan (PLDI 2009)
+  6165.306910
+Cloning-based context-sensitive pointer alias analysis using binary decision diagrams - John Whaley Monica S. Lam (PLDI 2004)
+  6039.337072
+Systematic editing - Na Meng Miryung Kim Kathryn S. McKinley (PLDI 2011)
+  6023.429480
+Efficient state merging in symbolic execution - Volodymyr Kuznetsov Johannes Kinder Stefan Bucur George Candea (PLDI 2012)
+  6018.559124
+Directed incremental symbolic execution - Suzette Person Guowei Yang Neha Rungta Sarfraz Khurshid (PLDI 2011)
+  6015.970181
+
+
+Topic 001
+---------
+Words (mean weight: -182.289462, min weight: -358.342697)
+  type (-3.244263)
+  function (-4.545376)
+  language (-4.574463)
+  system (-4.934410)
+  code (-4.964894)
+  program (-5.070511)
+  class (-5.104943)
+  value (-5.128498)
+  int (-5.201407)
+  rule (-5.334196)
+---------
+Papers
+Taming wildcards in Java's type system - Ross Tate Alan Leung Sorin Lerner (PLDI 2011)
+  7385.042608
+Type-preserving compilation of end-to-end verification of security enforcement - Juan Chen Ravi Chugh Nikhil Swamy (PLDI 2010)
+  7273.945451
+Ur - Adam Chlipala (PLDI 2010)
+  6496.042608
+Sharing classes between families - Xin Qi Andrew C. Myers (PLDI 2009)
+  6200.622790
+Inferable object-oriented typed assembly language - Ross Tate Juan Chen Chris Hawblitzel (PLDI 2010)
+  6128.272155
+Algorithm specialization in generic programming - Jaakko J&#228;rvi Douglas Gregor Jeremiah Willcock Andrew Lumsdaine Jeremy Siek (PLDI 2006)
+  5978.711716
+Mint - Edwin Westbrook Mathias Ricken Jun Inoue Yilong Yao Tamer Abdelatif Walid Taha (PLDI 2010)
+  5939.406207
+Maya - Jason Baker Wilson C. Hsieh (PLDI 2002)
+  5874.042608
+Verifying higher-order programs with the dijkstra monad - Nikhil Swamy Joel Weinberger Cole Schlesinger Juan Chen Benjamin Livshits (PLDI 2013)
+  5700.007593
+Taming the wildcards - John Altidor Shan Shan Huang Yannis Smaragdakis (PLDI 2011)
+  5699.042608
+
+
+Topic 002
+---------
+Words (mean weight: -177.822897, min weight: -356.641337)
+  program (-4.460215)
+  variable (-4.587428)
+  analysis (-4.671315)
+  code (-4.728009)
+  value (-4.736180)
+  loop (-4.893160)
+  region (-4.909501)
+  function (-5.108381)
+  figure (-5.213175)
+  set (-5.231295)
+---------
+Papers
+A new algorithm for partial redundancy elimination based on SSA form - Fred Chow Sun Chan Robert Kennedy Shin-Ming Liu Raymond Lo Peng Tu (PLDI 1997)
+  5709.042608
+Complete removal of redundant expressions - Rastislav Bod&#237;k Rajiv Gupta Mary Lou Soffa (PLDI 1998)
+  5502.901703
+Interprocedural may-alias analysis for pointers - Alain Deutsch (PLDI 1994)
+  5452.434995
+Practical dependence testing - Gina Goff Ken Kennedy Chau-Wen Tseng (PLDI 1991)
+  5291.765293
+ABCD - Rastislav Bod&#237;k Rajiv Gupta Vivek Sarkar (PLDI 2000)
+  4918.634470
+Register promotion by sparse partial redundancy elimination of loads and stores - Raymond Lo Fred Chow Robert Kennedy Shin-Ming Liu Peng Tu (PLDI 1998)
+  4564.114754
+Logical inference techniques for loop parallelization - Cosmin E. Oancea Lawrence Rauchwerger (PLDI 2012)
+  4532.943761
+Fast, effective dynamic compilation - Joel Auslander Matthai Philipose Craig Chambers Susan J. Eggers Brian N. Bershad (PLDI 1996)
+  4278.586341
+Formal verification of SSA-based optimizations for LLVM - Jianzhou Zhao Santosh Nagarakatte Milo M.K. Martin Steve Zdancewic (PLDI 2013)
+  4259.301652
+Source-level debugging of scalar optimized code - Ali-Reza Adl-Tabatabai Thomas Gross (PLDI 1996)
+  4150.999297
+
+
+Topic 003
+---------
+Words (mean weight: -200.214819, min weight: -350.235119)
+  program (-4.619357)
+  data (-4.701202)
+  branch (-4.848385)
+  time (-5.045000)
+  code (-5.117439)
+  instruction (-5.161603)
+  number (-5.173377)
+  pro (-5.197829)
+  performance (-5.251939)
+  figure (-5.302122)
+---------
+Papers
+Brainy - Changhee Jung Silvius Rus Brian P. Railing Nathan Clark Santosh Pande (PLDI 2011)
+  6393.347441
+Compile-time dynamic voltage scaling settings - Fen Xie Margaret Martonosi Sharad Malik (PLDI 2003)
+  6290.132217
+Improved error reporting for software that uses black-box components - Jungwoo Ha Christopher J. Rossbach Jason V. Davis Indrajit Roy Hany E. Ramadan Donald E. Porter David L. Chen Emmett Witchel (PLDI 2007)
+  5632.661069
+Quantitative information flow as network flow capacity - Stephen McCamant Michael D. Ernst (PLDI 2008)
+  5425.769796
+Bug isolation via remote program sampling - Ben Liblit Alex Aiken Alice X. Zheng Michael I. Jordan (PLDI 2003)
+  5394.638024
+Taming compiler fuzzers - Yang Chen Alex Groce Chaoqiang Zhang Weng-Keen Wong Xiaoli Fern Eric Eide John Regehr (PLDI 2013)
+  5393.674586
+Meta optimization - Mark Stephenson Saman Amarasinghe Martin Martin Una-May O'Reilly (PLDI 2003)
+  4935.174636
+Input-sensitive profiling - Emilio Coppa Camil Demetrescu Irene Finocchi (PLDI 2012)
+  4917.057632
+Evaluating the accuracy of Java profilers - Todd Mytkowicz Amer Diwan Matthias Hauswirth Peter F. Sweeney (PLDI 2010)
+  4899.184498
+Printing floating-point numbers quickly and accurately with integers - Florian Loitsch (PLDI 2010)
+  4862.380275
+
+
+Topic 004
+---------
+Words (mean weight: -158.240364, min weight: -358.183106)
+  thread (-4.150157)
+  program (-4.509903)
+  lock (-4.857450)
+  execution (-4.978366)
+  state (-5.021908)
+  operation (-5.051202)
+  race (-5.141642)
+  cation (-5.155809)
+  memory (-5.156449)
+  set (-5.160888)
+---------
+Papers
+Exploiting the commutativity lattice - Milind Kulkarni Donald Nguyen Dimitrios Prountzos Xin Sui Keshav Pingali (PLDI 2011)
+  7692.011470
+NDSeq - Jacob Burnim Tayfun Elmas George Necula Koushik Sen (PLDI 2011)
+  6445.234310
+CONCURRIT - Tayfun Elmas Jacob Burnim George Necula Koushik Sen (PLDI 2013)
+  6419.042608
+Verification of semantic commutativity conditions and inverse operations on linked data structures - Deokhwan Kim Martin C. Rinard (PLDI 2011)
+  6219.635067
+Model checking transactional memories - Rachid Guerraoui Thomas A. Henzinger Barbara Jobstmann Vasu Singh (PLDI 2008)
+  6121.042608
+A serializability violation detector for shared-memory server programs - Min Xu Rastislav Bod&#237;k Mark D. Hill (PLDI 2005)
+  6048.756000
+Deriving linearizable fine-grained concurrent objects - Martin Vechev Eran Yahav (PLDI 2008)
+  5865.216433
+Modular verification of linearizability with non-fixed linearization points - Hongjin Liang Xinyu Feng (PLDI 2013)
+  5843.042608
+Partial-coherence abstractions for relaxed memory models - Michael Kuperstein Martin Vechev Eran Yahav (PLDI 2011)
+  5722.647681
+Speculative linearizability - Rachid Guerraoui Viktor Kuncak Giuliano Losa (PLDI 2012)
+  5710.292240
+
+
+Topic 005
+---------
+Words (mean weight: -218.852839, min weight: -312.647591)
+  figure (-4.600068)
+  page (-5.195274)
+  event (-5.313244)
+  asynchronous (-5.486959)
+  acm (-5.770839)
+  channel (-5.780072)
+  table (-5.792131)
+  language (-5.802558)
+  forexample (-5.843080)
+  programming (-5.876203)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  1799.915306
+Composable asynchronous events - Lukasz Ziarek KC Sivaramakrishnan Suresh Jagannathan (PLDI 2011)
+  1635.107537
+Machine-verified network controllers - Arjun Guha Mark Reitblatt Nate Foster (PLDI 2013)
+  1609.707692
+Kill-safe synchronization abstractions - Matthew Flatt Robert Bruce Findler (PLDI 2004)
+  1587.756651
+CML - John H. Reppy (PLDI 1991)
+  1056.971779
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  1017.633990
+Continuations and transducer composition - Olin Shivers Matthew Might (PLDI 2006)
+  976.042608
+Better extensibility through modular syntax - Robert Grimm (PLDI 2006)
+  928.968356
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  890.542608
+Handling control - Dorai Sitaram (PLDI 1993)
+  848.373921
+
+
+Topic 006
+---------
+Words (mean weight: -182.321000, min weight: -354.665440)
+  node (-4.032372)
+  register (-4.326672)
+  graph (-4.344098)
+  algorithm (-4.413628)
+  program (-4.603145)
+  edge (-4.623151)
+  data (-4.842929)
+  figure (-4.934778)
+  loop (-5.009337)
+  time (-5.041137)
+---------
+Papers
+APT - Keshav Pingali Gianfranco Bilardi (PLDI 1995)
+  5353.415299
+A generalized algorithm for graph-coloring register allocation - Michael D. Smith Norman Ramsey Glenn Holloway (PLDI 2004)
+  5307.543839
+Cost effective dynamic program slicing - Xiangyu Zhang Rajiv Gupta (PLDI 2004)
+  5141.884713
+The program structure tree - Richard Johnson David Pearson Keshav Pingali (PLDI 1994)
+  5090.700150
+Exact analysis of the cache behavior of nested loops - Siddhartha Chatterjee Erin Parker Philip J. Hanlon Alvin R. Lebeck (PLDI 2001)
+  5029.333229
+Call-cost directed register allocation - Guei-Yuan Lueh Thomas Gross (PLDI 1997)
+  4850.042608
+Efficient procedure mapping using cache line coloring - Amir H. Hashemi David R. Kaeli Brad Calder (PLDI 1997)
+  4845.544049
+Copy coalescing by graph recoloring - Sebastian Hack Gerhard Goos (PLDI 2008)
+  4617.247591
+Preference-directed graph coloring - Akira Koseki Hideaki Komatsu Toshio Nakatani (PLDI 2002)
+  4599.911298
+Efficient representations and abstractions for quantifying and exploiting data reference locality - Trishul M. Chilimbi (PLDI 2001)
+  4493.246548
+
+
+Topic 007
+---------
+Words (mean weight: -218.852839, min weight: -312.647591)
+  figure (-4.600068)
+  page (-5.195274)
+  event (-5.313244)
+  asynchronous (-5.486959)
+  acm (-5.770839)
+  channel (-5.780072)
+  table (-5.792131)
+  language (-5.802558)
+  forexample (-5.843080)
+  programming (-5.876203)
+---------
+Papers
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  1799.915306
+Composable asynchronous events - Lukasz Ziarek KC Sivaramakrishnan Suresh Jagannathan (PLDI 2011)
+  1635.107537
+Machine-verified network controllers - Arjun Guha Mark Reitblatt Nate Foster (PLDI 2013)
+  1609.707692
+Kill-safe synchronization abstractions - Matthew Flatt Robert Bruce Findler (PLDI 2004)
+  1587.756651
+CML - John H. Reppy (PLDI 1991)
+  1056.971779
+Dynamic trace-based analysis of vectorization potential of applications - Justin Holewinski Ragavendar Ramamurthi Mahesh Ravishankar Naznin Fauzia Louis-No&#235;l Pouchet Atanas Rountev P. Sadayappan (PLDI 2012)
+  1017.633990
+Continuations and transducer composition - Olin Shivers Matthew Might (PLDI 2006)
+  976.042608
+Better extensibility through modular syntax - Robert Grimm (PLDI 2006)
+  928.968356
+A single intermediate language that supports multiple implementations of exceptions - Norman Ramsey Simon Peyton Jones (PLDI 2000)
+  890.542608
+Handling control - Dorai Sitaram (PLDI 1993)
+  848.373921
+
+
+Topic 008
+---------
+Words (mean weight: -174.555576, min weight: -349.186482)
+  object (-4.039507)
+  code (-4.204710)
+  memory (-4.643548)
+  time (-4.774620)
+  instruction (-4.853958)
+  system (-4.952145)
+  program (-4.968817)
+  pointer (-5.058300)
+  collector (-5.105717)
+  collection (-5.170532)
+---------
+Papers
+Schism - Filip Pizlo Lukasz Ziarek Petr Maj Antony L. Hosking Ethan Blanton Jan Vitek (PLDI 2010)
+  6158.784097
+Practicing JUDO - Micha&#322; Cierniak Guei-Yuan Lueh James M. Stichnoth (PLDI 2000)
+  5998.379176
+Immix - Stephen M. Blackburn Kathryn S. McKinley (PLDI 2008)
+  5884.590408
+Language-independent sandboxing of just-in-time compilation and self-modifying code - Jason Ansel Petr Marchenko &#218;lfar Erlingsson Elijah Taylor Brad Chen Derek L. Schuff David Sehr Cliff L. Biffle Bennet Yee (PLDI 2011)
+  5752.436865
+Valgrind - Nicholas Nethercote Julian Seward (PLDI 2007)
+  5739.184590
+XMem - Michal Wegiel Chandra Krintz (PLDI 2008)
+  5647.517916
+Garbage collection without paging - Matthew Hertz Yi Feng Emery D. Berger (PLDI 2005)
+  5594.042608
+Beltway - Stephen M Blackburn Richard Jones Kathryn S. McKinley J Eliot B Moss (PLDI 2002)
+  5593.042608
+Dynamic software updates - Suriya Subramanian Michael Hicks Kathryn S. McKinley (PLDI 2009)
+  5351.916025
+Safe to the last instruction - Jean Yang Chris Hawblitzel (PLDI 2010)
+  4934.858679
+
+
+Topic 009
+---------
+Words (mean weight: -189.474734, min weight: -353.300165)
+  loop (-4.235541)
+  data (-4.715231)
+  parallel (-4.818415)
+  code (-4.849453)
+  compiler (-4.863174)
+  memory (-4.952360)
+  thread (-5.068932)
+  processor (-5.089778)
+  figure (-5.113505)
+  operation (-5.174495)
+---------
+Papers
+When polyhedral transformations meet SIMD code generation - Martin Kong Richard Veras Kevin Stock Franz Franchetti Louis-No&#235;l Pouchet P. Sadayappan (PLDI 2013)
+  5902.674461
+Cache topology aware computation mapping for multicores - Mahmut Kandemir Taylan Yemliha SaiPrashanth Muralidhara Shekhar Srikantaiah Mary Jane Irwin Yuanrui Zhnag (PLDI 2010)
+  5787.042608
+Adaptive input-aware compilation for graphics engines - Mehrzad Samadi Amir Hormati Mojtaba Mehrara Janghaeng Lee Scott Mahlke (PLDI 2012)
+  5661.426696
+A compiler framework for extracting superword level parallelism - Jun Liu Yuanrui Zhang Ohyoung Jang Wei Ding Mahmut Kandemir (PLDI 2012)
+  5649.735804
+Halide - Jonathan Ragan-Kelley Connelly Barnes Andrew Adams Sylvain Paris Fr&#233;do Durand Saman Amarasinghe (PLDI 2013)
+  5408.811146
+Register allocation for software pipelined multi-dimensional loops - Hongbo Rong Alban Douillet Guang R. Gao (PLDI 2005)
+  5391.929922
+Register allocation for software pipelined loops - B. R. Rau M. Lee P. P. Tirumalai M. S. Schlansker (PLDI 1992)
+  5357.282982
+Optimizing data permutations for SIMD devices - Gang Ren Peng Wu David Padua (PLDI 2006)
+  5336.701652
+Parallelism orchestration using DoPE - Arun Raman Hanjun Kim Taewook Oh Jae W. Lee David I. August (PLDI 2011)
+  5305.799779
+A GPGPU compiler for memory optimization and parallelism management - Yi Yang Ping Xiang Jingfei Kong Huiyang Zhou (PLDI 2010)
+  5208.368932

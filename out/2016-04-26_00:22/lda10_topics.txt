@@ -1,0 +1,368 @@
+Topic 000
+---------
+Words (mean weight: -200.073261, min weight: -431.857838)
+  type (-4.442478)
+  function (-4.501016)
+  language (-4.515211)
+  code (-4.563552)
+  value (-4.798753)
+  program (-5.009923)
+  expression (-5.225023)
+  call (-5.262130)
+  de (-5.283505)
+  example (-5.332159)
+---------
+Papers
+Concrete syntax for objects - Martin Bravenboer Eelco Visser (OOPSLA 2004)
+  8712.123661
+Providing rapid feedback in generated modular language environments - Lennart C.L. Kats Maartje de Jonge Emma Nilsson-Nyman Eelco Visser (OOPSLA 2009)
+  7217.826955
+Miniboxing - Vlad Ureche Cristian Talau Martin Odersky (OOPSLA 2013)
+  6945.349340
+Backstage Java - Zachary Palmer Scott F. Smith (OOPSLA 2011)
+  6484.627081
+Practical predicate dispatch - Todd Millstein (OOPSLA 2004)
+  6417.496858
+SugarJ - Sebastian Erdweg Tillmann Rendel Christian K&#228;stner Klaus Ostermann (OOPSLA 2011)
+  6417.070580
+Forest - Kathleen Fisher Nate Foster David Walker Kenny Q. Zhu (ICFP 2011)
+  6356.804250
+Taming MATLAB - Anton Willy Dubrau Laurie Jane Hendren (OOPSLA 2012)
+  6185.057012
+Profile-guided static typing for dynamic scripting languages - Michael Furr Jong-hoon (David) An Jeffrey S. Foster (OOPSLA 2009)
+  6173.780537
+Variability-aware parsing in the presence of lexical macros and conditional compilation - Christian K&#228;stner Paolo G. Giarrusso Tillmann Rendel Sebastian Erdweg Klaus Ostermann Thorsten Berger (OOPSLA 2011)
+  6153.826104
+
+
+Topic 001
+---------
+Words (mean weight: -203.613013, min weight: -421.326607)
+  class (-4.098615)
+  object (-4.270807)
+  system (-4.374722)
+  method (-4.674010)
+  language (-4.837001)
+  software (-4.951088)
+  model (-4.995075)
+  design (-5.100508)
+  application (-5.129032)
+  process (-5.156964)
+---------
+Papers
+No name - Robert Biddle Angela Martin James Noble (OOPSLA 2003)
+  6196.063688
+Making frameworks work - Marwan Abi-Antoun (OOPSLA 2007)
+  6193.662945
+Flexible modeling tools for pre-requirements analysis - Harold Ossher Rachel Bellamy Ian Simmonds David Amid Ateret Anaby-Tavor Matthew Callery Michael Desmond Jacqueline de Vries Amit Fisher Sophia Krasikov (OOPSLA 2010)
+  5965.186520
+Agility in context - Rashina Hoda Philippe Kruchten James Noble Stuart Marshall (OOPSLA 2010)
+  5827.287194
+Resolving feature convolution in middleware systems - Charles Zhang Hans-Arno Jacobsen (OOPSLA 2004)
+  5786.398501
+Adaptive plug-and-play components for evolutionary software development - Mira Mezini Karl Lieberherr (OOPSLA 1998)
+  5499.742438
+Agile anthropology and Alexander's architecture - Jenny Quillien Pam Rostal Dave West (OOPSLA 2009)
+  5271.421245
+Faith, hope, and love - Stefan Hanenberg (OOPSLA 2010)
+  5151.238026
+Software factories - Jack Greenfield Keith Short (OOPSLA 2003)
+  5061.853609
+Targeted and depth-first exploration for systematic testing of android apps - Tanzirul Azim Iulian Neamtiu (OOPSLA 2013)
+  4944.734164
+
+
+Topic 002
+---------
+Words (mean weight: -238.680294, min weight: -372.452285)
+  grammar (-4.944101)
+  actor (-4.992906)
+  figure (-5.416800)
+  production (-5.640037)
+  page (-5.869471)
+  let (-5.921888)
+  attribute (-5.926561)
+  set (-6.031557)
+  message (-6.105668)
+  symbol (-6.112836)
+---------
+Papers
+Extending SQL-92 for OODB access - Jerry Kiernan Michael J. Carey (OOPSLA 1995)
+  1414.939867
+A model-learner pattern for bayesian reasoning - Andrew D. Gordon Mihhail Aizatulin Johannes Borgstrom Guillaume Claret Thore Graepel Aditya V. Nori Sriram K. Rajamani Claudio Russo (POPL 2013)
+  997.660901
+Tabular - Andrew D. Gordon Thore Graepel Nicolas Rolland Claudio Russo Johannes Borgstrom John Guiver (POPL 2014)
+  960.266590
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  958.724665
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  958.153118
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  942.331554
+On the use of LISP in implementing denotational semantics - Peter Lee Uwe Pleban (LFP 1986)
+  929.558641
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  898.322591
+A general scheme for the automatic inference of variable types - Marc A. Kaplan Jeffrey D. Ullman (POPL 1978)
+  896.974795
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  866.750630
+
+
+Topic 003
+---------
+Words (mean weight: -175.402568, min weight: -437.555482)
+  type (-3.685028)
+  function (-4.482287)
+  language (-4.864059)
+  variable (-4.964888)
+  program (-5.040570)
+  value (-5.049085)
+  term (-5.137519)
+  let (-5.198563)
+  expression (-5.215883)
+  rule (-5.216330)
+---------
+Papers
+A type based sharing analysis for update avoidance and optimisation - J&#246;rgen Gustavsson (ICFP 1998)
+  5912.172122
+Manifest types, modules, and separate compilation - Xavier Leroy (POPL 1994)
+  5469.052038
+Soft typing - Robert Cartwright Mike Fagan (PLDI 1991)
+  5418.212347
+Formally optimal boxing - Fritz Henglein Jesper J&#248;rgensen (POPL 1994)
+  5241.719216
+Representing layered monads - Andrzej Filinski (POPL 1999)
+  5229.917749
+Flexible representation analysis - Zhong Shao (ICFP 1997)
+  5226.333323
+Compiling polymorphism using intensional type analysis - Robert Harper Greg Morrisett (POPL 1995)
+  5101.447690
+Extensional polymorphism - Catherine Dubois Fran&#231;ois Rouaix Pierre Weis (POPL 1995)
+  5014.794894
+A practical soft type system for Scheme - Andrew K. Wright Robert Cartwright (LFP 1994)
+  4980.064623
+Mixin modules - Dominic Duggan Constantinos Sourelis (ICFP 1996)
+  4957.990519
+
+
+Topic 004
+---------
+Words (mean weight: -189.628409, min weight: -437.581104)
+  type (-3.425748)
+  de (-4.331460)
+  rule (-4.731989)
+  proof (-4.914111)
+  system (-5.095309)
+  term (-5.111913)
+  language (-5.153298)
+  function (-5.183806)
+  cation (-5.199259)
+  variable (-5.223416)
+---------
+Papers
+Recursion principles for syntax with bindings and substitution - Andrei Popescu Elsa L. Gunter (ICFP 2011)
+  7133.727951
+A type system for certified binaries - Zhong Shao Bratin Saha Valery Trifonov Nikolaos Papaspyrou (POPL 2002)
+  6819.543609
+Self-certification - Pierre-Yves Strub Nikhil Swamy Cedric Fournet Juan Chen (POPL 2012)
+  6752.790239
+Characteristic formulae for the verification of imperative programs - Arthur Chargu&#233;raud (ICFP 2011)
+  6730.827614
+Checking reachability using matching logic - Grigore Rosu Andrei Stefanescu (OOPSLA 2012)
+  6706.469473
+Non-parametric parametricity - Georg Neis Derek Dreyer Andreas Rossberg (ICFP 2009)
+  6620.052038
+A relational modal logic for higher-order stateful ADTs - Derek Dreyer Georg Neis Andreas Rossberg Lars Birkedal (POPL 2010)
+  6589.052038
+State-dependent representation independence - Amal Ahmed Derek Dreyer Andreas Rossberg (POPL 2009)
+  6559.408316
+Engineering formal metatheory - Brian Aydemir Arthur Chargu&#233;raud Benjamin C. Pierce Randy Pollack Stephanie Weirich (POPL 2008)
+  6497.918947
+The marriage of bisimulations and Kripke logical relations - Chung-Kil Hur Derek Dreyer Georg Neis Viktor Vafeiadis (POPL 2012)
+  6468.798059
+
+
+Topic 005
+---------
+Words (mean weight: -238.680294, min weight: -372.452285)
+  grammar (-4.944101)
+  actor (-4.992906)
+  figure (-5.416800)
+  production (-5.640037)
+  page (-5.869471)
+  let (-5.921888)
+  attribute (-5.926561)
+  set (-6.031557)
+  message (-6.105668)
+  symbol (-6.112836)
+---------
+Papers
+Extending SQL-92 for OODB access - Jerry Kiernan Michael J. Carey (OOPSLA 1995)
+  1414.939867
+A model-learner pattern for bayesian reasoning - Andrew D. Gordon Mihhail Aizatulin Johannes Borgstrom Guillaume Claret Thore Graepel Aditya V. Nori Sriram K. Rajamani Claudio Russo (POPL 2013)
+  997.660901
+Tabular - Andrew D. Gordon Thore Graepel Nicolas Rolland Claudio Russo Johannes Borgstrom John Guiver (POPL 2014)
+  960.266590
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  958.724665
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  958.153118
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  942.331554
+On the use of LISP in implementing denotational semantics - Peter Lee Uwe Pleban (LFP 1986)
+  929.558641
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  898.322591
+A general scheme for the automatic inference of variable types - Marc A. Kaplan Jeffrey D. Ullman (POPL 1978)
+  896.974795
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  866.750630
+
+
+Topic 006
+---------
+Words (mean weight: -238.680294, min weight: -372.452285)
+  grammar (-4.944101)
+  actor (-4.992906)
+  figure (-5.416800)
+  production (-5.640037)
+  page (-5.869471)
+  let (-5.921888)
+  attribute (-5.926561)
+  set (-6.031557)
+  message (-6.105668)
+  symbol (-6.112836)
+---------
+Papers
+Extending SQL-92 for OODB access - Jerry Kiernan Michael J. Carey (OOPSLA 1995)
+  1414.939867
+A model-learner pattern for bayesian reasoning - Andrew D. Gordon Mihhail Aizatulin Johannes Borgstrom Guillaume Claret Thore Graepel Aditya V. Nori Sriram K. Rajamani Claudio Russo (POPL 2013)
+  997.660901
+Tabular - Andrew D. Gordon Thore Graepel Nicolas Rolland Claudio Russo Johannes Borgstrom John Guiver (POPL 2014)
+  960.266590
+A forward move algorithm for LR error recovery - Thomas J. Pennello Frank DeRemer (POPL 1978)
+  958.724665
+A theory of aspects as latent topics - Pierre F. Baldi Cristina V. Lopes Erik J. Linstead Sushil K. Bajracharya (OOPSLA 2008)
+  958.153118
+Multiple dispatch in practice - Radu Muschevici Alex Potanin Ewan Tempero James Noble (OOPSLA 2008)
+  942.331554
+On the use of LISP in implementing denotational semantics - Peter Lee Uwe Pleban (LFP 1986)
+  929.558641
+Certifying low-level programs with hardware interrupts and preemptive threads - Xinyu Feng Zhong Shao Yuan Dong Yu Guo (PLDI 2008)
+  898.322591
+A general scheme for the automatic inference of variable types - Marc A. Kaplan Jeffrey D. Ullman (POPL 1978)
+  896.974795
+ALICE a multi-processor reduction machine for the parallel evaluation CF applicative languages - John Darlington Mike Reeve (FPCA 1981)
+  866.750630
+
+
+Topic 007
+---------
+Words (mean weight: -191.388545, min weight: -437.423648)
+  program (-4.083431)
+  analysis (-4.344381)
+  set (-4.521751)
+  node (-4.727352)
+  algorithm (-4.762805)
+  state (-4.842573)
+  path (-5.025986)
+  variable (-5.058395)
+  graph (-5.081463)
+  value (-5.283408)
+---------
+Papers
+From program verification to program synthesis - Saurabh Srivastava Sumit Gulwani Jeffrey S. Foster (POPL 2010)
+  7045.888666
+Quantitative abstraction refinement - Pavol Cerny Thomas A. Henzinger Arjun Radhakrishna (POPL 2013)
+  6884.438234
+On the analysis of interacting pushdown systems - Vineet Kahlon Aarti Gupta (POPL 2007)
+  6700.326983
+Null dereference verification via over-approximated weakest pre-conditions analysis - Ravichandhran Madhavan Raghavan Komondoor (OOPSLA 2011)
+  6430.043373
+Injecting mechanical faults to localize developer faults for evolving software - Lingming Zhang Lu Zhang Sarfraz Khurshid (OOPSLA 2013)
+  6347.839203
+Verifying quantitative reliability for programs that execute on unreliable hardware - Michael Carbin Sasa Misailovic Martin C. Rinard (OOPSLA 2013)
+  6241.471737
+Counterexample-guided focus - Andreas Podelski Thomas Wies (POPL 2010)
+  6207.590048
+Elixir - Dimitrios Prountzos Roman Manevich Keshav Pingali (OOPSLA 2012)
+  6100.103620
+Efficient state merging in symbolic execution - Volodymyr Kuznetsov Johannes Kinder Stefan Bucur George Candea (PLDI 2012)
+  6099.451231
+Predicate abstraction of Java programs with collections - Pavel Par&#237;zek OndYej Lhot&#225;k (OOPSLA 2012)
+  6057.946099
+
+
+Topic 008
+---------
+Words (mean weight: -195.862893, min weight: -437.292776)
+  object (-4.240405)
+  thread (-4.313769)
+  memory (-4.755501)
+  program (-4.992065)
+  data (-5.245136)
+  execution (-5.252203)
+  system (-5.259486)
+  method (-5.292079)
+  time (-5.299997)
+  heap (-5.385605)
+---------
+Papers
+OCTET - Michael D. Bond Milind Kulkarni Man Cao Minjia Zhang Meisam Fathi Salmi Swarnendu Biswas Aritra Sengupta Jipeng Huang (OOPSLA 2013)
+  8205.098836
+MC<sup>2</sup> - Narendran Sachindran J. Eliot B. Moss Emery D. Berger (OOPSLA 2004)
+  7729.083128
+Efficient context sensitivity for dynamic analyses via calling context uptrees and customized memory management - Jipeng Huang Michael D. Bond (OOPSLA 2013)
+  7285.225054
+Resurrector - Guoqing Xu (OOPSLA 2013)
+  7269.994852
+Hera-JVM - Ross McIlroy Joe Sventek (OOPSLA 2010)
+  7013.485945
+Using managed runtime systems to tolerate holes in wearable memories - Tiejun Gao Karin Strauss Stephen M. Blackburn Kathryn S. McKinley Doug Burger James Larus (PLDI 2013)
+  6855.060553
+QVM - Matthew Arnold Martin Vechev Eran Yahav (OOPSLA 2008)
+  6777.673964
+Cross-language, type-safe, and transparent object sharing for co-located managed runtimes - Michal Wegiel Chandra Krintz (OOPSLA 2010)
+  6763.090149
+Design and implementation of transactional constructs for C/C++ - Yang Ni Adam Welc Ali-Reza Adl-Tabatabai Moshe Bach Sion Berkowits James Cownie Robert Geva Sergey Kozhukow Ravi Narayanaswamy Jeffrey Olivier Serguei Preis Bratin Saha Ady Tal Xinmin Tian (OOPSLA 2008)
+  6585.046203
+XMem - Michal Wegiel Chandra Krintz (PLDI 2008)
+  6491.862543
+
+
+Topic 009
+---------
+Words (mean weight: -207.960390, min weight: -432.143377)
+  code (-4.442427)
+  loop (-4.685684)
+  program (-4.809011)
+  instruction (-4.821263)
+  compiler (-4.874342)
+  data (-4.880814)
+  register (-4.960767)
+  optimization (-5.003893)
+  time (-5.044777)
+  figure (-5.123844)
+---------
+Papers
+Automatically enhancing locality for tree traversals with traversal splicing - Youngjoon Jo Milind Kulkarni (OOPSLA 2012)
+  6623.679525
+Global optimizations for parallelism and locality on scalable parallel machines - Jennifer M. Anderson Monica S. Lam (PLDI 1993)
+  6445.052038
+Register allocation for software pipelined loops - B. R. Rau M. Lee P. P. Tirumalai M. S. Schlansker (PLDI 1992)
+  6048.052038
+When polyhedral transformations meet SIMD code generation - Martin Kong Richard Veras Kevin Stock Franz Franchetti Louis-No&#235;l Pouchet P. Sadayappan (PLDI 2013)
+  5736.885211
+A compiler technique for improving whole-program locality - Mahmut Taylan Kandemir (POPL 2001)
+  5666.052038
+Compile-time dynamic voltage scaling settings - Fen Xie Margaret Martonosi Sharad Malik (PLDI 2003)
+  5661.783755
+Optimizing data permutations for SIMD devices - Gang Ren Peng Wu David Padua (PLDI 2006)
+  5648.670044
+An efficient profile-analysis framework for data-layout optimizations - Shai Rubin Rastislav Bod&#237;k Trishul Chilimbi (POPL 2002)
+  5486.206159
+The LRPD test - Lawrence Rauchwerger David Padua (PLDI 1995)
+  5464.695645
+Kismet - Donghwan Jeon Saturnino Garcia Chris Louie Michael Bedford Taylor (OOPSLA 2011)
+  5449.385556
