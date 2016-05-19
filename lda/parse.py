@@ -176,19 +176,9 @@ if __name__ == "__main__":
     d = args.directory
     print "Will work on the following directory: {}".format(args.directory)
 
-    doc_file = "docs.dat" # user input?
+    doc_file = "docs.dat"
     dat_file = "abstracts.dat"
     vocab_file = "vocab.dat"
-    by_year = "" == "--by-year"
+    by_year = False
  
     run(d,doc_file,dat_file,vocab_file)
-
-#if __name__ == '__main__':
-#    args = dict(enumerate(sys.argv))
-#    d = args.get(1) #like dl.py
-#    doc_file = args.get(2,"docs.dat") # user input?
-#    dat_file = args.get(3,"abstracts.dat")
-#    vocab_file = args.get(4,"vocab.dat")
-#    by_year = args.get(5,"") == "--by-year"
- 
-#    run(d,doc_file,dat_file,vocab_file)
