@@ -14,7 +14,7 @@ scripts, but perhaps not on platforms other than OS X.
 This program ties together all of the programs described below to
 create a 'run' of analysis. All of the files for a run are put in
 the `out` directory; each run is put in a folder named as a
-timestamp of the form `2015-01-03_13:26` . I'll just write `PFX`
+timestamp of the form `2015-01-03_13:26`. I'll just write `PFX`
 below to mean `../out/2015-01-03_13:26`
 
 The general plan for a run is:
@@ -33,11 +33,15 @@ The general plan for a run is:
      weights are normalized by the number of papers in the
      conference.
 
-`run_lda.sh` takes the list of numbers of topics as its arguments. By
-default, it runs as if it were invoked as:
+`run_lda.sh` takes two arguments: the corpus to work on, and the topic
+numbers for each run.  By default, it runs the following topic counts:
 
 ```
-./run_lda.sh 50 75 100 125 150 175 200
+./run_lda.sh corpus
+```
+Runs as if you wrote:
+```
+./run_lda.sh corpus 50 75 100 125 150 175 200
 ```
 
 If you're going to use a specific data source, you'll need to edit
