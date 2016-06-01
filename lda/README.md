@@ -1,10 +1,9 @@
 # Programs
 
 The main program to run is `run_lda.sh`. You'll need to have installed
-[LDA-C](http://www.cs.princeton.edu/~blei/lda-c/index.html),
-[gensim](https://radimrehurek.com/gensim/), and
+[LDA-C](http://www.cs.princeton.edu/~blei/lda-c/index.html) and
 [nltk](http://www.nltk.org/). You'll need to have installed, via
-`nltk.download()` in Python, the stopword list and wordnet database.
+`nltk.download()` in Python, the stopword list, Punkt tokenizer, and wordnet database.
 
 You may need to set `PYTHONIOENCODING=utf8` when running some of these
 scripts, but perhaps not on platforms other than OS X.
@@ -43,9 +42,6 @@ Runs as if you wrote:
 ```
 ./run_lda.sh corpus 50 75 100 125 150 175 200
 ```
-
-If you're going to use a specific data source, you'll need to edit
-`parse.py`! This will change soon---it's on the TODO list.
 
 ## `parse.py`
 
