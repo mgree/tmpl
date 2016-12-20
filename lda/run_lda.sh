@@ -27,7 +27,7 @@ mkdir ${DIR}
 echo "PARSING"
 python parse.py ${src}
 
-for dat in abstracts.dat vocab.dat docs.dat; do
+for dat in abstracts.dat vocab.dat count.dat docs.dat lengths.dat; do
     mv ${dat} ${DIR}
 done
 

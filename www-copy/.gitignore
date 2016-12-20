@@ -1,0 +1,6 @@
+*.pyc
+*.log
+*.dat
+*.pdf
+fulltext
+abstracts

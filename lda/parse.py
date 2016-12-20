@@ -60,25 +60,32 @@ def parse(f):
 
     return (meta.replace('"','\\"'), tokenize(text))
 
+totalwordcount = 0
 def load_docs(d):
+
+    global totalwordcount
+
     years = {}
-    words = set()
+    words = dict()
 
     for root in glob.glob(os.path.join(d,"*")):
 
         year = os.path.basename(root)
     
         years[year] = []
-        
         for f in glob.glob(os.path.join(root,"*.txt")):
             if "fulltext" in os.path.basename(f):
                 continue
             
             title,doc = parse(f)
             doc = map(stem,doc)
-            words.update(doc)
-                   
-            years[year].append((title,doc))
+            doclength = 0
+            for word in doc:
+                words[word] = words.get(word, 0) + 1
+                totalwordcount += 1
+                doclength += 1
+                      
+            years[year].append((title,doc,doclength))
 
     return (years,words)
 
@@ -100,8 +107,8 @@ def docs_to_bow(years,d):
     for year in years:
         bows[year] = []
 
-        for (title,doc) in years[year]:
-            bows[year].append((title,make_bow(doc,d)))
+        for (title,doc,doclength) in years[year]:
+            bows[year].append((title,make_bow(doc,d),doclength))
 
     return bows
 
@@ -117,14 +124,18 @@ def years_to_bow(years,d):
 
     return bows
 
-def as_dat(bows, abs_of="abstracts.dat", doc_of="docs.dat"):
+def as_dat(bows, abs_of="abstracts.dat", doc_of="docs.dat", length_of="lengths.dat"):
     out = open(abs_of,"w")
+
+    lengthdoc = open(length_of,"w")
 
     doclist = codecs.open(doc_of,"w","utf8")
 
     for year in bows:
-        for (title,bow) in bows[year]:
+        for (title,bow,doclength) in bows[year]:
             doclist.write(title + u'\n')
+
+            lengthdoc.write(str(doclength) + u'\n')
 
             out.write(str(len(bow)))
             out.write(' ')
@@ -136,20 +147,24 @@ def as_dat(bows, abs_of="abstracts.dat", doc_of="docs.dat"):
 
             out.write('\n')
 
+    lengthdoc.close()
     doclist.close()
     out.close()
 
-def as_vocab(words, vocab_of="vocab.dat"):
+def as_vocab(words, vocab_of="vocab.dat", count_of="count.dat"):
     out = codecs.open(vocab_of,"w","utf8")
+
+    countdoc = open(count_of,"w")
 
     for word in words:
         out.write(word + u'\n')
+        countdoc.write(str(float(words[word])/totalwordcount) + u'\n')
 
+    countdoc.close()
     out.close()
 
-
 by_year = False
-def run(doc_dir,doc_file,dat_file,vocab_file):
+def run(doc_dir,doc_file,length_file,dat_file,vocab_file,count_file):
 
     global by_year
     
@@ -162,8 +177,8 @@ def run(doc_dir,doc_file,dat_file,vocab_file):
         bows = years_to_bow(years,d)
     else:
         bows = docs_to_bow(years,d)
-    as_dat(bows, abs_of=dat_file, doc_of=doc_file)
-    as_vocab(words, vocab_of=vocab_file)
+    as_dat(bows, abs_of=dat_file, doc_of=doc_file, length_of=length_file)
+    as_vocab(words, vocab_of=vocab_file, count_of=count_file)
 
 if __name__ == "__main__":
 
@@ -177,8 +192,10 @@ if __name__ == "__main__":
     print "Will work on the following directory: {}".format(args.directory)
 
     doc_file = "docs.dat"
+    length_file = "lengths.dat"
     dat_file = "abstracts.dat"
     vocab_file = "vocab.dat"
+    count_file = "count.dat"
     by_year = False
  
-    run(d,doc_file,dat_file,vocab_file)
+    run(d,doc_file,length_file,dat_file,vocab_file,count_file)

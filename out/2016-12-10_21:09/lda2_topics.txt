@@ -1,0 +1,72 @@
+Topic 000
+---------
+Words (mean weight: -44.046352, min weight: -158.056400)
+  type (-3.551392)
+  language (-4.868860)
+  rule (-4.971764)
+  function (-5.013342)
+  system (-5.054086)
+  term (-5.078940)
+  de (-5.121156)
+  set (-5.301825)
+  value (-5.316000)
+  variable (-5.345794)
+---------
+Papers
+A type system for certified binaries - Zhong Shao Bratin Saha Valery Trifonov Nikolaos Papaspyrou (POPL 2002)
+  7353.594756
+Backpack - Scott Kilpatrick Derek Dreyer Simon Peyton Jones Simon Marlow (POPL 2014)
+  7180.242732
+Self-certification - Pierre-Yves Strub Nikhil Swamy Cedric Fournet Juan Chen (POPL 2012)
+  7156.894889
+Polymorphic functions with set-theoretic types - Giuseppe Castagna Kim Nguyen Zhiwu Xu Hyeonseung Im Sergue&#239; Lenglet Luca Padovani (POPL 2014)
+  6899.180338
+Engineering formal metatheory - Brian Aydemir Arthur Chargu&#233;raud Benjamin C. Pierce Randy Pollack Stephanie Weirich (POPL 2008)
+  6868.180040
+Static and dynamic semantics of NoSQL languages - V&#233;ronique Benzaken Giuseppe Castagna Kim Nguyen J&#233;r&#244;me Sim&#233;on (POPL 2013)
+  6717.775627
+Stratified type inference for generalized algebraic data types - Fran&#231;ois Pottier Yann R&#233;gis-Gianas (POPL 2006)
+  6663.925417
+Practical use of a polymorphic applicative language - Butler W. Lampson Eric E. Schmidt (POPL 1983)
+  6654.577816
+The semantic foundations of concurrent constraint programming - Vijay A. Saraswat Martin Rinard Prakash Panangaden (POPL 1991)
+  6544.332153
+Abstraction and invariance for algebraically indexed types - Robert Atkey Patricia Johann Andrew Kennedy (POPL 2013)
+  6499.491011
+
+
+Topic 001
+---------
+Words (mean weight: -26.255203, min weight: -155.996817)
+  program (-4.424064)
+  set (-4.980579)
+  value (-5.208765)
+  state (-5.232647)
+  analysis (-5.252334)
+  variable (-5.302002)
+  node (-5.350998)
+  function (-5.375185)
+  de (-5.419610)
+  algorithm (-5.431508)
+---------
+Papers
+A verified information-flow architecture - Arthur Azevedo de Amorim Nathan Collins Andr&#233; DeHon Delphine Demange C&#259;t&#259;lin Hri&#355;cu David Pichardie Benjamin C. Pierce Randy Pollack Andrew Tolmach (POPL 2014)
+  8324.085505
+Sound input filter generation for integer overflow errors - Fan Long Stelios Sidiroglou-Douskos Deokhwan Kim Martin Rinard (POPL 2014)
+  7923.180141
+The ramifications of sharing in data structures - Aquinas Hobor Jules Villard (POPL 2013)
+  7899.179593
+From program verification to program synthesis - Saurabh Srivastava Sumit Gulwani Jeffrey S. Foster (POPL 2010)
+  7562.180234
+Safe nondeterminism in a deterministic-by-default parallel language - Robert L. Bocchino Stephen Heumann Nima Honarmand Sarita V. Adve Vikram S. Adve Adam Welc Tatiana Shpeisman (POPL 2011)
+  7373.179567
+Library abstraction for C/C++ concurrency - Mark Batty Mike Dodds Alexey Gotsman (POPL 2013)
+  7351.180330
+A technique for the effective and automatic reuse of classical compiler optimizations on multithreaded code - Pramod G. Joisha Robert S. Schreiber Prithviraj Banerjee Hans J. Boehm Dhruva R. Chakrabarti (POPL 2011)
+  7263.180417
+Replicated data types - Sebastian Burckhardt Alexey Gotsman Hongseok Yang Marek Zawirski (POPL 2014)
+  7245.553189
+Optimizing data structures in high-level programs - Tiark Rompf Arvind K. Sujeeth Nada Amin Kevin J. Brown Vojin Jovanovic HyoukJoong Lee Manohar Jonnalagedda Kunle Olukotun Martin Odersky (POPL 2013)
+  7234.396559
+Automatically generating instruction selectors using declarative machine descriptions - Jo&#227;o Dias Norman Ramsey (POPL 2010)
+  7217.689888

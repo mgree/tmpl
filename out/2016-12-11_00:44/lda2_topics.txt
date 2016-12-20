@@ -1,0 +1,72 @@
+Topic 000
+---------
+Words (mean weight: -26.856837, min weight: -114.147219)
+  type (-3.810196)
+  program (-4.866341)
+  language (-4.933017)
+  function (-4.983893)
+  value (-4.990404)
+  variable (-5.211919)
+  system (-5.315803)
+  object (-5.357317)
+  expression (-5.476877)
+  code (-5.487751)
+---------
+Papers
+Optimizing data structures in high-level programs - Tiark Rompf Arvind K. Sujeeth Nada Amin Kevin J. Brown Vojin Jovanovic HyoukJoong Lee Manohar Jonnalagedda Kunle Olukotun Martin Odersky (POPL 2013)
+  7230.213166
+Structured exception handling - John B. Goodenough (POPL 1975)
+  7050.210778
+Backpack - Scott Kilpatrick Derek Dreyer Simon Peyton Jones Simon Marlow (POPL 2014)
+  6882.650051
+Gradual typing embedded securely in JavaScript - Nikhil Swamy Cedric Fournet Aseem Rastogi Karthikeyan Bhargavan Juan Chen Pierre-Yves Strub Gavin Bierman (POPL 2014)
+  6765.259587
+Practical use of a polymorphic applicative language - Butler W. Lampson Eric E. Schmidt (POPL 1983)
+  6696.211543
+Relevant context inference - Ramkrishna Chatterjee Barbara G. Ryder William A. Landi (POPL 1999)
+  6356.204742
+Towards automatic construction of staged compilers - Matthai Philipose Craig Chambers Susan J. Eggers (POPL 2002)
+  6336.209738
+Protecting representation with effect encapsulation - Yi Lu John Potter (POPL 2006)
+  6334.439975
+An efficient profile-analysis framework for data-layout optimizations - Shai Rubin Rastislav Bod&#237;k Trishul Chilimbi (POPL 2002)
+  6331.421096
+Reflection and semantics in LISP - Brian Cantwell Smith (POPL 1984)
+  6325.206112
+
+
+Topic 001
+---------
+Words (mean weight: -26.804593, min weight: -113.340512)
+  program (-4.711887)
+  de (-4.825479)
+  set (-4.840325)
+  state (-5.157078)
+  type (-5.190050)
+  proof (-5.269872)
+  rule (-5.403687)
+  variable (-5.425571)
+  function (-5.439612)
+  let (-5.483296)
+---------
+Papers
+The ramifications of sharing in data structures - Aquinas Hobor Jules Villard (POPL 2013)
+  7851.768484
+From program verification to program synthesis - Saurabh Srivastava Sumit Gulwani Jeffrey S. Foster (POPL 2010)
+  7562.209877
+The semantic foundations of concurrent constraint programming - Vijay A. Saraswat Martin Rinard Prakash Panangaden (POPL 1991)
+  7556.435294
+Replicated data types - Sebastian Burckhardt Alexey Gotsman Hongseok Yang Marek Zawirski (POPL 2014)
+  7543.397995
+Logical relations for fine-grained concurrency - Aaron J. Turon Jacob Thamsborg Amal Ahmed Lars Birkedal Derek Dreyer (POPL 2013)
+  7391.208397
+Library abstraction for C/C++ concurrency - Mark Batty Mike Dodds Alexey Gotsman (POPL 2013)
+  7351.209117
+On the analysis of interacting pushdown systems - Vineet Kahlon Aarti Gupta (POPL 2007)
+  7148.212582
+Relational inductive shape analysis - Bor-Yuh Evan Chang Xavier Rival (POPL 2008)
+  7148.208329
+Quantitative abstraction refinement - Pavol Cerny Thomas A. Henzinger Arjun Radhakrishna (POPL 2013)
+  7119.209935
+Subjective auxiliary state for coarse-grained concurrency - Ruy Ley-Wild Aleksandar Nanevski (POPL 2013)
+  7012.206781

@@ -1,0 +1,72 @@
+Topic 000
+---------
+Words (mean weight: -28.595762, min weight: -462.853415)
+  type (-4.040352)
+  program (-4.859450)
+  de (-4.996986)
+  function (-5.128998)
+  set (-5.215090)
+  language (-5.234742)
+  value (-5.249348)
+  rule (-5.265292)
+  variable (-5.275433)
+  system (-5.291604)
+---------
+Papers
+Fissile type analysis - Devin Coughlin Bor-Yuh Evan Chang (POPL 2014)
+  7971.223939
+Gradual typing embedded securely in JavaScript - Nikhil Swamy Cedric Fournet Aseem Rastogi Karthikeyan Bhargavan Juan Chen Pierre-Yves Strub Gavin Bierman (POPL 2014)
+  7836.229167
+Fully abstract compilation to JavaScript - Cedric Fournet Nikhil Swamy Juan Chen Pierre-Evariste Dagand Pierre-Yves Strub Benjamin Livshits (POPL 2013)
+  7715.229089
+Replicated data types - Sebastian Burckhardt Alexey Gotsman Hongseok Yang Marek Zawirski (POPL 2014)
+  7657.225637
+A kripke logical relation between ML and assembly - Chung-Kil Hur Derek Dreyer (POPL 2011)
+  7618.359612
+Self-certification - Pierre-Yves Strub Nikhil Swamy Cedric Fournet Juan Chen (POPL 2012)
+  7540.230495
+A trusted mechanised JavaSript specification - Martin Bodin Arthur Chargueraud Daniele Filaretti Philippa Gardner Sergio Maffeis Daiva Naudziuniene Alan Schmitt Gareth Smith (POPL 2014)
+  7494.951503
+A type system for certified binaries - Zhong Shao Bratin Saha Valery Trifonov Nikolaos Papaspyrou (POPL 2002)
+  7395.229651
+Logical relations for fine-grained concurrency - Aaron J. Turon Jacob Thamsborg Amal Ahmed Lars Birkedal Derek Dreyer (POPL 2013)
+  7391.226415
+Probabilistic relational verification for cryptographic implementations - Gilles Barthe C&#233;dric Fournet Benjamin Gr&#233;goire Pierre-Yves Strub Nikhil Swamy Santiago Zanella-B&#233;guelin (POPL 2014)
+  7358.224201
+
+
+Topic 001
+---------
+Words (mean weight: -126.883460, min weight: -394.169751)
+  program (-4.572348)
+  node (-4.711937)
+  set (-4.835542)
+  algorithm (-5.036498)
+  graph (-5.196213)
+  value (-5.267507)
+  language (-5.309296)
+  time (-5.312779)
+  definition (-5.345626)
+  may (-5.404722)
+---------
+Papers
+Structured exception handling - John B. Goodenough (POPL 1975)
+  5513.663579
+Symbolic evaluation and the global value graph - John H. Reif Harry R. Lewis (POPL 1977)
+  5279.270405
+Automatic generation of efficient evaluators for attribute grammars - Ken Kennedy Scott K. Warren (POPL 1976)
+  4842.099582
+Monoids for rapid data flow analysis - Barry K. Rosen (POPL 1978)
+  4746.933956
+Automatically generating instruction selectors using declarative machine descriptions - Jo&#227;o Dias Norman Ramsey (POPL 2010)
+  4735.431387
+A formal model and specification language for procedure calling conventions - Mark W. Bailey Jack W. Davidson (POPL 1995)
+  4716.953360
+Automatic generation of near-optimal linear-time translators for non-circular attribute grammars - Rina Cohen Eli Harry (POPL 1979)
+  4614.621054
+Garbage collecting the world - Bernard Lang Christian Queinnec Jos&#233; Piquer (POPL 1992)
+  4538.603340
+Editing by example - Robert Nix (POPL 1984)
+  4500.245516
+The evolution of list-copying algorithms and the need for structured program verification - Stanley Lee Willem P. deRoever Susan L. Gerhart (POPL 1979)
+  4447.769095
