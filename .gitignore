@@ -1,6 +1,7 @@
 *~
 *.hi
 *.o
+*.swp
 sessions
 .DS_STOREscrape
 sessions.py
