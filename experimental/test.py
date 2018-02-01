@@ -1,5 +1,6 @@
 import logging
 
+from copy import copy
 from pprint import pprint
 from gensim import corpora
 from nltk.corpus import stopwords
@@ -62,7 +63,7 @@ def preprocess(documents):
     logging.info(stemmed)
 
     logging.info('Lemmatizing...')
-    lemmatized = lemmatizeTokenList(tokenized)
+    lemmatized = lemmatizeTokenLists(tokenized)
     logging.info(lemmatized)
 
     return stemmed
@@ -79,7 +80,10 @@ def tokenizeDocuments(documents):
     Returns:
         List of tokenized documents.
     """
-    return [tokenizeDocument(document) for document in documents]
+    tokenizedDocuments = []
+    for document in documents:
+        tokenizedDocuments.append(tokenizeDocument(document))
+    return tokenizedDocuments
 
 
 def tokenizeDocument(document):
@@ -109,10 +113,20 @@ def applyRules(documents, rules):
     Returns:
         Documents with rules applied.
     """
-    result = None
-    for (old, new) in rules:
-        result = [document.replace(old, new) for document in documents]
-    return result
+    cleanedDocuments = []
+    for document in documents:
+
+        cleaned = copy(document)
+
+        # Cycle through rules and apply them to each document one by one.
+        for (old, new) in rules:
+            cleaned = cleaned.replace(old, new)
+
+        # Add fully cleaned document (with all rules applied) to list.
+        cleanedDocuments.append(cleaned)
+
+    return cleanedDocuments
+
 
 # 1.c. Stemming / Lemmatizing: collapse words with similar semantics 
 # but different syntactic forms.
@@ -130,10 +144,8 @@ def stemTokenLists(tokenLists):
     Returns:
         A list of stemmed token lists.
     """
-    result = None
-    for tokenList in tokenLists:
-        result.append(stemTokenLists)
     return [stemTokenList(tokenList) for tokenList in tokenLists]
+
 
 def stemTokenList(tokenList):
     """Stems a single token list. Trims off ends of words in
@@ -150,6 +162,7 @@ def stemTokenList(tokenList):
     stemmer = PorterStemmer()
     return [stemmer.stem(token) for token in tokenList]
 
+
 # 1.c. (Option 2: Lemmatization)
 # Uses vocubulary and morphological analysis with the aim of
 # only removing inflectional endings (eg. 'chopping' vs. 'chopped')
@@ -165,6 +178,7 @@ def lemmatizeTokenLists(tokenLists):
     """
     return [lemmatizeTokenList(tokenList) for tokenList in tokenLists]
 
+
 def lemmatizeTokenList(tokenList):
     """Lemmatizes a single token list.
 
@@ -176,6 +190,7 @@ def lemmatizeTokenList(tokenList):
     """
     lemmatizer = WordNetLemmatizer()
     return [lemmatizer.lemmatize(token) for token in tokenList]
+
 
 def main():
     preprocessed = preprocess(documents)
