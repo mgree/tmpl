@@ -4,6 +4,7 @@ from pprint import pprint
 from gensim import corpora
 from nltk.corpus import stopwords
 
+
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', 
                     level=logging.INFO)
 
@@ -25,24 +26,45 @@ documents = [
 stoplist = set(stopwords.words('english'))
 
 """ 1. Pre-process corpus. """
+
 # 1.a. Tokenization: convert document to individual elements.
-
-
-
-
 # 1.b. Stopword removal: remove trivial, meaningless words.
+def tokenizeDocuments(documents):
+    """Tokenizes documents.
+
+    Args:
+        document: list of plain string documents to tokenize.
+
+    Returns:
+        List of tokenized documents.
+    """
+    return [tokenizeDocument(document) for document in documents]
+
+def tokenizeDocument(document):
+    """Converts document to lowercase, removes stopwords, and tokenizes.
+
+    Args:
+        document: plain string document to be tokenized.
+
+    Returns:
+        Tokenized version of document.
+    """
+    tokenized = []
+    for word in document.lower().split():
+        if word not in stoplist:
+            tokenized.append(word)
+    return tokenized
 
 # 1.c. Stemming / Lemmatizing: collapse words with equivalent semantics.
 
 
 
-
-# Convert each document to a list of lowercase words without stopwords.
-preProcessed = [
-    [word for word in document.lower().split() if word not in stoplist] 
-    for document in documents
-]
+def main():
+    tokenized = tokenizeDocuments(documents)
+    logging.info(tokenized)
 
 if __name__ == '__main__':
     print("Stop words:")
     pprint(stoplist)
+    main()
+
