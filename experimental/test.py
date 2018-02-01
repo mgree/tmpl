@@ -35,6 +35,12 @@ stoplist = set(stopwords.words('english'))
 
 """ 1. Pre-process corpus. """
 
+def preprocess(documents):
+    cleaned = applyRules(documents, RULES)
+    tokenized = tokenizeDocuments(cleaned)
+    return tokenized
+
+
 # 1.a. Tokenization: convert document to individual elements.
 # 1.b. Stopword removal: remove trivial, meaningless words.
 def tokenizeDocuments(documents):
@@ -86,8 +92,8 @@ def applyRules(documents, rules):
 
 
 def main():
-    tokenized = tokenizeDocuments(documents)
-    logging.info(tokenized)
+    preprocessed = preprocess(documents)
+    logging.info(preprocessed)
 
 if __name__ == '__main__':
     print("Stop words:")
