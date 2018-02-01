@@ -8,6 +8,13 @@ from nltk.corpus import stopwords
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', 
                     level=logging.INFO)
 
+RULES = [
+    ('---', ' '),
+    ('--', ' '),
+    ('-', ''),
+]
+
+
 documents = [
     "Human machine interface for lab abc computer applications",
     "A survey of user opinion of computer system response time",
@@ -19,6 +26,7 @@ documents = [
     "Graph minors IV Widths of trees and well quasi ordering",
     "Graph minors A survey",
 ]
+
 
 # Stop words are common english words that can be deemed extraneous to certain
 # natural language processing techniques and therefore can be filtered
@@ -40,6 +48,7 @@ def tokenizeDocuments(documents):
     """
     return [tokenizeDocument(document) for document in documents]
 
+
 def tokenizeDocument(document):
     """Converts document to lowercase, removes stopwords, and tokenizes.
 
@@ -54,6 +63,23 @@ def tokenizeDocument(document):
         if word not in stoplist:
             tokenized.append(word)
     return tokenized
+
+
+def applyRules(documents, rules):
+    """Used to apply hard-coded rules to documents.
+    Eg. Replacing hyphens with spaces, replacing em dashes, etc.
+    
+    Args:
+        documents: list of plain string documents to apply rules to.
+        rules: list of tuples mapping old pattern to desired pattern.
+
+    Returns:
+        Documents with rules applied.
+    """
+    result = None
+    for (old, new) in rules:
+        result = [document.replace(old, new) for document in documents]
+    return result
 
 # 1.c. Stemming / Lemmatizing: collapse words with equivalent semantics.
 
