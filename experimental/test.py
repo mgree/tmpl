@@ -55,7 +55,7 @@ def preprocess(documents):
     cleaned = applyRules(documents, RULES)
     logging.info(cleaned)
 
-    logging.info('Tokenizing...')
+    logging.info('Tokenizing and removing stopwords...')
     tokenized = tokenizeDocuments(cleaned)
     logging.info(tokenized)
 
@@ -81,10 +81,7 @@ def tokenizeDocuments(documents):
     Returns:
         List of tokenized documents.
     """
-    tokenizedDocuments = []
-    for document in documents:
-        tokenizedDocuments.append(tokenizeDocument(document))
-    return tokenizedDocuments
+    return [tokenizeDocument(document) for document in documents]
 
 
 def tokenizeDocument(document):
@@ -194,7 +191,6 @@ def lemmatizeTokenList(tokenList):
 
 
 """ Step 2: Convert preprocessed corpus into a document-term matrix. """
-
 def generateDictionary(tokenized):
     # Gensim provides us this Dictionary function which
     # assigns unique integer id's to each distinct token and
@@ -236,17 +232,17 @@ def tokenizedToDTMatrix(tokenized, dictionary):
 
 
 """ Step 3: Generate LDA topic model from corpus' document-term matrix. """
-def lda():
+def lda(documents, num_topics, passes):
     tokenized = preprocess(documents)
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
     logging.info('Running lda model with 2 topics and 20 passes...')
-    ldamodel = LdaModel(DTMatrix, num_topics=2, id2word=dictionary, passes=20)
+    ldamodel = LdaModel(DTMatrix, num_topics=num_topics, id2word=dictionary, passes=passes)
     logging.info(ldamodel.print_topics(num_topics=2, num_words=3))
 
     return lda
 
 if __name__ == '__main__':
-    lda()
+    lda(documents, num_topics=2, passes=20)
 
