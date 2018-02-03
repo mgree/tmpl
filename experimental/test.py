@@ -192,6 +192,17 @@ def lemmatizeTokenList(tokenList):
 
 """ Step 2: Convert preprocessed corpus into a document-term matrix. """
 def generateDictionary(tokenized):
+    """Geneates a dictionary mapping unique terms to id's from a tokenized
+    corpus.
+
+    Args:
+        tokenized: tokenzied corpus (list of token lists) to generate a
+            dictionary from.
+
+    Returns:
+        A dictionary mapping unique terms to id's.
+    """
+
     # Gensim provides us this Dictionary function which
     # assigns unique integer id's to each distinct token and
     # caches other statistics about the corpus.
@@ -224,7 +235,9 @@ def tokenizedToDTMatrix(tokenized, dictionary):
     # build a bag of words. The bag of words is comprised of
     # document vectors (one per document in our corpus) whose elements are
     # tuples mapping dictionary term id's to the term's frequency.
-    logging.info("Using dictionary and tokenized to corpus to create bag of words...")
+    logging.info(
+        "Using dictionary and tokenized corpus to create bag of words..."
+    )
     bagOfWords = [dictionary.doc2bow(tokenList) for tokenList in tokenized]
     logging.info(bagOfWords)
 
@@ -238,7 +251,10 @@ def lda(documents, num_topics, passes):
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
     logging.info('Running lda model with 2 topics and 20 passes...')
-    ldamodel = LdaModel(DTMatrix, num_topics=num_topics, id2word=dictionary, passes=passes)
+    ldamodel = LdaModel(DTMatrix, 
+                        num_topics=num_topics, 
+                        id2word=dictionary, 
+                        passes=passes)
     logging.info(ldamodel.print_topics(num_topics=2, num_words=3))
 
     return lda
