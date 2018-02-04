@@ -6,4 +6,6 @@ the model construction pipeline) and easy-to-use functionality.
 - Investigate gensim.corpora.bleicorpus.BleiCorpus
 - Investigate gensim.models.ldamulticore (parallelized Latent Dirichlet Allocation)
 - Investigate TextRank Summarizer Algorithm
+- Investigate different ways to verify / parse XML (eg. untangle, xmltodict, built-in xml module)
+- Investigate how to clean figures / numbers in full-text papers.
 

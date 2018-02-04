@@ -6,3 +6,8 @@ Should I use stemming or lemmatization? Have we experimented with the performanc
 
 Note: It might be useful to do the latter to cached intermediate results just for development purposes so that if we're testing a specific part of the pipeline, we don't have to preprocess the entire corpus each time.
 
+How do I determine which of the xml files contain abstracts vs. full-texts? How many entries are in each .xml file?
+
+Does the .dtd file work for both abstracts and full-texts?
+
+

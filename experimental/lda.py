@@ -261,4 +261,3 @@ def lda(documents, num_topics, passes):
 
 if __name__ == '__main__':
     lda(documents, num_topics=2, passes=20)
-
