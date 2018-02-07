@@ -57,15 +57,15 @@ def preprocess(documents):
     tokenized = tokenizeDocuments(cleaned)
     logging.info(tokenized)
 
-    logging.info('Stemming...')
-    stemmed = stemTokenLists(tokenized)
-    logging.info(stemmed)
+    # logging.info('Stemming...')
+    # stemmed = stemTokenLists(tokenized)
+    # logging.info(stemmed)
 
     logging.info('Lemmatizing...')
     lemmatized = lemmatizeTokenLists(tokenized)
     logging.info(lemmatized)
 
-    return stemmed
+    return lemmatized
 
 
 # 1.a. Tokenization: convert document to individual elements.
@@ -260,7 +260,7 @@ def lda(documents, num_topics, passes):
                         num_topics=num_topics,
                         id2word=dictionary, 
                         passes=passes)
-    logging.info(ldamodel.print_topics(num_topics=2, num_words=3))
+    logging.info(ldamodel.print_topics(num_topics=num_topics, num_words=10))
 
     return lda
 
@@ -269,7 +269,7 @@ def main():
     path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     reader = JsonFileReader()
     documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
-    lda(documents, num_topics=2, passes=20)
+    lda(documents, num_topics=20, passes=20)
 
 
 if __name__ == '__main__':

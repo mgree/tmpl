@@ -16,3 +16,9 @@ the model construction pipeline) and easy-to-use functionality.
 corpus in tmpl-data.
 - Figure out how to map and where to store metadata on files before processing
 raw abstracts or fulltexts with LDA.
+- Figure out to introduce intermediate caching (eg. store mapped bag of words
+on disk for later test runs); this will help speed up the development process.
+- Get the XML parser working for the ACM data.
+- Research what 'perplexity', 'per-word bound', 'rho', 'topic diff' mean in the context of NLP and Topic Modeling.
+- Fix logging formatter.
+
