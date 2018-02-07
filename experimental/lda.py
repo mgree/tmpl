@@ -10,6 +10,8 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 
+from reader import JsonFileReader
+
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', 
                     level=logging.INFO)
@@ -21,17 +23,17 @@ RULES = [
 ]
 
 
-documents = [
-    "Human machine interface for lab abc computer applications",
-    "A survey of user opinion of computer system response time",
-    "The EPS user interface management system",
-    "System and human system engineering testing of EPS",
-    "Relation of user perceived response time to error measurement",
-    "The generation of random binary unordered trees",
-    "The intersection graph of paths in trees",
-    "Graph minors IV Widths of trees and well quasi ordering",
-    "Graph minors A survey",
-]
+# documents = [
+#     "Human machine interface for lab abc computer applications",
+#     "A survey of user opinion of computer system response time",
+#     "The EPS user interface management system",
+#     "System and human system engineering testing of EPS",
+#     "Relation of user perceived response time to error measurement",
+#     "The generation of random binary unordered trees",
+#     "The intersection graph of paths in trees",
+#     "Graph minors IV Widths of trees and well quasi ordering",
+#     "Graph minors A survey",
+# ]
 
 
 """ Step 1: Pre-process corpus. """
@@ -250,7 +252,10 @@ def lda(documents, num_topics, passes):
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
-    logging.info('Running lda model with 2 topics and 20 passes...')
+    logging.info(
+        'Running lda model with {num_topics} topics and {passes} passes...'
+        .format(num_topics=num_topics, passes=passes)
+    )
     ldamodel = LdaModel(DTMatrix,
                         num_topics=num_topics,
                         id2word=dictionary, 
@@ -259,5 +264,13 @@ def lda(documents, num_topics, passes):
 
     return lda
 
-if __name__ == '__main__':
+
+def main():
+    path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    reader = JsonFileReader()
+    documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
     lda(documents, num_topics=2, passes=20)
+
+
+if __name__ == '__main__':
+    main()
