@@ -39,4 +39,8 @@ class JsonFileReader(object):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
                 found.append(JsonFileReader.loadFile(childPath))
+            elif recursive: # only recursive if recursive flag is set to True.
+                found += JsonFileReader.loadAllFiles(childPath, recursive)
         return found
+
+    
