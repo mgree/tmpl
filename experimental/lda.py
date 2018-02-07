@@ -5,6 +5,7 @@ from pprint import pprint
 
 from gensim.corpora import Dictionary
 from gensim.models.ldamodel import LdaModel
+
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -32,11 +33,6 @@ documents = [
     "Graph minors A survey",
 ]
 
-
-# Stop words are common english words that can be deemed extraneous to certain
-# natural language processing techniques and therefore can be filtered
-# out of the training corpus.
-stoplist = set(stopwords.words('english'))
 
 """ Step 1: Pre-process corpus. """
 def preprocess(documents):
@@ -93,6 +89,10 @@ def tokenizeDocument(document):
     Returns:
         Tokenized version of document.
     """
+    # Stop words are common english words that can be deemed extraneous to 
+    # certain natural language processing techniques and therefore can be 
+    # filtered out of the training corpus.
+    stoplist = set(stopwords.words('english'))
     tokenized = []
     for word in document.lower().split():
         if word not in stoplist:
@@ -251,8 +251,8 @@ def lda(documents, num_topics, passes):
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
     logging.info('Running lda model with 2 topics and 20 passes...')
-    ldamodel = LdaModel(DTMatrix, 
-                        num_topics=num_topics, 
+    ldamodel = LdaModel(DTMatrix,
+                        num_topics=num_topics,
                         id2word=dictionary, 
                         passes=passes)
     logging.info(ldamodel.print_topics(num_topics=2, num_words=3))

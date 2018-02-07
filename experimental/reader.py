@@ -1,9 +1,42 @@
 import json
-import xmltodict
+import os
 
-# FILENAME = "/Users/smacpher/clones/tmpl_venv/acm_corpus/proceedings/PROC-SLIP03-2003-639929.xml"
-FILENAME = "/Users/smacpher/clones/tmpl_venv/acm_corpus/proceedings/test.xml"
-if __name__ == "__main__":
-    result = xmltodict.parse(FILENAME)
-    print(json.dumps(result, indent=4))
-    
+
+class JsonFileReader(object):
+    """A utility class for reading json objects from files.
+    """
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def loadFile(filepath):
+        """Loads the json object from a single file.
+
+        Args:
+            path: full path of the file to load.
+
+        Returns:
+            A json object representing the contents of the file.
+        """
+        with open(filepath, 'r') as f:
+            return json.load(f)
+
+    @staticmethod
+    def loadAllFiles(dirPath, recursive=False):
+        """Loads all of the files from a directory. 
+
+        Args:
+            dirPath: full path of the directory to load files from.
+            recursive: If True, will recurse down file tree. 
+                Otherwise, only loads files from next level down.
+        
+        Returns:
+            A list of json objects representing the contents of the files.
+        """
+        found = []
+        for child in os.listdir(dirPath):
+            childPath = os.path.join(dirPath, child)
+            if not os.path.isdir(childPath):
+                found.append(JsonFileReader.loadFile(childPath))
+        return found
