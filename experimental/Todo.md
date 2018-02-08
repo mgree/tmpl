@@ -21,4 +21,4 @@ on disk for later test runs); this will help speed up the development process.
 - Get the XML parser working for the ACM data.
 - Research what 'perplexity', 'per-word bound', 'rho', 'topic diff' mean in the context of NLP and Topic Modeling.
 - Fix logging formatter.
-
+- Create a corpus object for abstracts and a corpus object for full-texts: https://radimrehurek.com/gensim/tut1.html
