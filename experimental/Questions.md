@@ -17,3 +17,6 @@ I remember reading something in the PL Topic Modeling paper that said that the
 titles were appended to the abstracts in the abstract corpus. Do we want to do
 that this time around, too? What are the benefits of doing that? Should titles be
 "weighted" differently than the contents of the abstract?
+
+While we are training the model, every time we convert a document to a BOW vector, we
+need to make sure we keep track of it's metadata right? What is the best way to do this?

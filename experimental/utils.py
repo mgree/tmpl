@@ -7,7 +7,7 @@ formatter = logging.Formatter(
 )
 
 
-def getBaseLogger(name, level=logging.INFO):
+def getStdoutLogger(name, level=logging.INFO):
     """Returns a simple logger that logs to stdout.
 
     Args:
@@ -19,6 +19,11 @@ def getBaseLogger(name, level=logging.INFO):
     """
     logger = logging.getLogger(name)
     logger.setLevel(level)
+
+    streamHandler = logging.StreamHandler()
+    streamHandler.setLevel(level)
+    streamHandler.setFormatter(formatter)
+    logger.addHandler(streamHandler)
     return logger
 
 
@@ -35,8 +40,9 @@ def getFileLogger(name, logfileName=None, level=logging.INFO):
     """
     if logfileName is None:
         logfileName = '.{name}-log'.format(name=name)
-    logger= getBaseLogger(name, level)
+    logger = logging.getLogger(name)
     fileHandler = logging.FileHandler(logfileName)
+    fileHandler.setFormatter(formatter)
     logger.addHandler(fileHandler)
     return logger
 

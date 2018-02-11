@@ -269,7 +269,7 @@ def main():
     path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     reader = JsonFileReader()
     documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
-    lda(documents, num_topics=20, passes=20)
+    # lda(documents, num_topics=20, passes=20)
 
 
 if __name__ == '__main__':
