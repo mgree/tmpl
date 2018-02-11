@@ -57,7 +57,11 @@ class JsonFileReader(object):
         for child in os.listdir(dirPath):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
-                objs.append((JsonFileReader.loadFile(childPath), os.path.basename(os.path.dirname(childPath))))
+                objs.append(
+                    (JsonFileReader.loadFile(childPath), # Document json obj.
+                    os.path.basename(os.path.dirname(childPath))) # Conference.
+                )
+
             # Only recursive if recursive flag is set to True.
             elif recursive:
                 objs += JsonFileReader.loadAllFiles(childPath, recursive)
@@ -65,12 +69,22 @@ class JsonFileReader(object):
 
     @staticmethod
     def loadAllAbstracts(dirPath, recursive=False):
+        """Loads all abstracts and their respective metadata from a directory.
+
+        Args:
+            dirPath: full path of directory to load abstracts from.
+            recursive: if True, will recurse down subdirectories to load 
+                abstracts.
+
+        Returns:
+            A zipped list of abstracts and their respective metadata.
+        """
         objs = JsonFileReader.loadAllFiles(dirPath, recursive)
         abstracts = []
         metas = []
         for obj in objs:
-            (doc, conf) = obj
-            print(conf)
+            (doc, conference) = obj
+
             # This will return 'None' if 'abs' field is not present.
             abstract = doc.get('abs')
 
@@ -83,25 +97,32 @@ class JsonFileReader(object):
                 abstracts.append(None)
 
             # Fetch metadata.
-            curMeta = dict()
-            curMeta['conf'] = conf
-            for field in ['title', 'authors']:
-                value = doc.get(field)
-                if value is not None:
-                    curMeta[field] = value
-                else:
-                    curMeta[field] = None
-
-            metas.append(curMeta)
+            metas.append(JsonFileReader.buildMeta(doc, conference))
 
         return zip(abstracts, metas)
 
+    @staticmethod
+    def buildMeta(doc, conference, fields=['title', 'authors']):
+        meta = dict()
+
+        # Add conference.
+        if conference is not None:
+            meta['conf'] = conference
+
+        # Add rest of field.
+        for field in fields:
+            value = doc.get(field)
+            if value is not None:
+                meta[field] = value
+            else:
+                meta[field] = None
+        return meta
 
 if __name__ == '__main__':
     path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     reader = JsonFileReader()
     documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
-    print(documents[0])
+    print(documents[-1])
 
 
 
