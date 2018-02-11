@@ -5,9 +5,6 @@ import os
 from utils import getFileLogger
 
 
-
-
-
 # class AbstractCorpus(object):
 #     """A streaming corpus of abstracts.
 #     """
@@ -102,6 +99,40 @@ class JsonFileReader(object):
         return zip(abstracts, metas)
 
     @staticmethod
+    def loadAllFull(dirPath, recursive=False):
+        """Loads all full-texts and their respective metadata from a directory.
+
+        Args:
+            dirPath: full path of directory to load full-texts from.
+            recursive: if True, will recurse down subdirectories to load 
+                abstracts.
+
+        Returns:
+            A zipped list of full-texts and their respective metadata.
+        """
+        objs = JsonFileReader.loadAllFiles(dirPath, recursive)
+        abstracts = []
+        metas = []
+        for obj in objs:
+            (doc, conference) = obj
+
+            # This will return 'None' if 'abs' field is not present.
+            abstract = doc.get('full-text')
+
+            if abstract is not None:
+                abstracts.append(abstract)
+            else:
+                JsonFileReader.logger.info(
+                    '{doc} does not have a "full-text" field.'.format(doc=doc)
+                )
+                abstracts.append(None)
+
+            # Fetch metadata.
+            metas.append(JsonFileReader.buildMeta(doc, conference))
+
+        return zip(abstracts, metas)
+
+    @staticmethod
     def buildMeta(doc, conference, fields=['title', 'authors']):
         meta = dict()
 
@@ -117,6 +148,7 @@ class JsonFileReader(object):
             else:
                 meta[field] = None
         return meta
+
 
 if __name__ == '__main__':
     path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
