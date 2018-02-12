@@ -20,3 +20,7 @@ that this time around, too? What are the benefits of doing that? Should titles b
 
 While we are training the model, every time we convert a document to a BOW vector, we
 need to make sure we keep track of it's metadata right? What is the best way to do this?
+
+How many topics / passes should I be running for the different corpora? Should I just play around with it?
+
+Are words allowed to appear in more than one topic?

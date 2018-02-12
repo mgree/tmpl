@@ -96,10 +96,18 @@ class JsonFileReader(object):
             # Fetch metadata.
             metas.append(JsonFileReader.buildMeta(doc, conference))
 
-        return zip(abstracts, metas)
+        # Clean abstracts that are None
+        assert(len(abstracts) == len(metas))
+        cleanedAbs = []
+        cleanedMetas = []
+        for i in range(len(abstracts)):
+            if abstracts[i] is not None:
+                cleanedAbs.append(abstracts[i])
+                cleanedMetas.append(metas[i])
+        return (cleanedAbs, cleanedMetas)
 
     @staticmethod
-    def loadAllFull(dirPath, recursive=False):
+    def loadAllFullTexts(dirPath, recursive=False):
         """Loads all full-texts and their respective metadata from a directory.
 
         Args:
@@ -111,26 +119,26 @@ class JsonFileReader(object):
             A zipped list of full-texts and their respective metadata.
         """
         objs = JsonFileReader.loadAllFiles(dirPath, recursive)
-        abstracts = []
+        fullTexts = []
         metas = []
         for obj in objs:
             (doc, conference) = obj
 
             # This will return 'None' if 'abs' field is not present.
-            abstract = doc.get('full-text')
+            fullText = doc.get('abs')
 
-            if abstract is not None:
-                abstracts.append(abstract)
+            if fullText is not None:
+                fullTexts.append(fullText)
             else:
                 JsonFileReader.logger.info(
                     '{doc} does not have a "full-text" field.'.format(doc=doc)
                 )
-                abstracts.append(None)
+                fullTexts.append(None)
 
             # Fetch metadata.
             metas.append(JsonFileReader.buildMeta(doc, conference))
 
-        return zip(abstracts, metas)
+        return (fullTexts, metas)
 
     @staticmethod
     def buildMeta(doc, conference, fields=['title', 'authors']):
@@ -152,8 +160,9 @@ class JsonFileReader(object):
 
 if __name__ == '__main__':
     path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
     reader = JsonFileReader()
-    documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
+    documents = reader.loadAllFullTexts(pathToFulltexts, recursive=True)
     print(documents[-1])
 
 

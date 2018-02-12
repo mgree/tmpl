@@ -57,13 +57,13 @@ def preprocess(documents):
     tokenized = tokenizeDocuments(cleaned)
     logging.info(tokenized)
 
-    # logging.info('Stemming...')
-    # stemmed = stemTokenLists(tokenized)
-    # logging.info(stemmed)
+    logging.info('Stemming...')
+    stemmed = stemTokenLists(tokenized)
+    logging.info(stemmed)
 
-    logging.info('Lemmatizing...')
-    lemmatized = lemmatizeTokenLists(tokenized)
-    logging.info(lemmatized)
+#    logging.info('Lemmatizing...')
+#    lemmatized = lemmatizeTokenLists(tokenized)
+#    logging.info(lemmatized)
 
     return lemmatized
 
@@ -217,7 +217,6 @@ def generateDictionary(tokenized):
     return dictionary
 
 
-# TODO: refactor to separate dictionary and bagOfWords logic.
 def tokenizedToDTMatrix(tokenized, dictionary):
     """Converts tokenized corpus to a document-term matrix.
     A document-term matrix is a matrix whose rows represent documents and
@@ -262,15 +261,18 @@ def lda(documents, num_topics, passes):
                         passes=passes)
     logging.info(ldamodel.print_topics(num_topics=num_topics, num_words=10))
 
-    return lda
+    return ldamodel
 
 
 def main():
-    path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    modelFileName = 'lda-abs-model-20t-200p-stem'
+    pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    # pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/popl_pldi'
     reader = JsonFileReader()
-    documents = reader.loadAllAbstracts(path_to_abstracts, recursive=True)
-    # lda(documents, num_topics=20, passes=20)
-
+    (documents, meta) = reader.loadAllAbstracts(pathToAbs, recursive=True)
+    # (documents, meta) = reader.loadAllFullTexts(pathToFullTexts, recursive=True)
+    model = lda(documents, num_topics=20, passes=200)
+    model.save(modelFileName)
 
 if __name__ == '__main__':
     main()

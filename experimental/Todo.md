@@ -23,3 +23,4 @@ on disk for later test runs); this will help speed up the development process.
 - Fix logging formatter.
 - Create a corpus object for abstracts and a corpus object for full-texts: https://radimrehurek.com/gensim/tut1.html
 - Might be a good idea to combine loadAllAbs and loadAllFull into one method with an arg to choose which rawtext field to choose for main document body of corpus.
+- Figure out best way to load full text files.
