@@ -1,6 +1,7 @@
 import logging
 
 from copy import copy
+from datetime import datetime
 from pprint import pprint
 
 from gensim.corpora import Dictionary
@@ -14,7 +15,7 @@ from reader import JsonFileReader
 
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', 
-                    level=logging.INFO)
+                    level=logging.DEBUG)
 
 RULES = [
     ('---', ' '),
@@ -23,22 +24,11 @@ RULES = [
 ]
 
 
-# documents = [
-#     "Human machine interface for lab abc computer applications",
-#     "A survey of user opinion of computer system response time",
-#     "The EPS user interface management system",
-#     "System and human system engineering testing of EPS",
-#     "Relation of user perceived response time to error measurement",
-#     "The generation of random binary unordered trees",
-#     "The intersection graph of paths in trees",
-#     "Graph minors IV Widths of trees and well quasi ordering",
-#     "Graph minors A survey",
-# ]
-
-
 """ Step 1: Pre-process corpus. """
-def preprocess(documents):
+def preprocess(documents, lemmatize=True):
     """Cleans, tokenizes, and stems a list of plain string documents.
+    By default, will lemmatize corpus using the WordNetLemmatizer. 
+    If lemmatize is set to False, will stem the corpus using the PorterStemmer. 
     
     Args:
         documents: list of plain string documents to be preprocessed.
@@ -57,15 +47,18 @@ def preprocess(documents):
     tokenized = tokenizeDocuments(cleaned)
     logging.info(tokenized)
 
-    logging.info('Stemming...')
-    stemmed = stemTokenLists(tokenized)
-    logging.info(stemmed)
+    if lemmatize:
+        logging.info('Lemmatizing...')
+        preprocessed = lemmatizeTokenLists(tokenized)
+        logging.info(preprocessed)
 
-#    logging.info('Lemmatizing...')
-#    lemmatized = lemmatizeTokenLists(tokenized)
-#    logging.info(lemmatized)
+    # Stem instead.
+    else:
+        logging.info('Stemming...')
+        preprocessed = stemTokenLists(tokenized)
+        logging.info(preprocessed)
 
-    return lemmatized
+    return preprocessed
 
 
 # 1.a. Tokenization: convert document to individual elements.
@@ -265,14 +258,18 @@ def lda(documents, num_topics, passes):
 
 
 def main():
-    modelFileName = 'lda-abs-model-20t-200p-stem'
+    NUM_TOPICS = 20
+    PASSES = 200
+
+    modelArchiveDir = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
+    modelFileName = 'lda-{num_topics}-{passes}-{timestamp}'.format(num_topics=NUM_TOPICS, passes=PASSES, timestamp=datetime.now().isoformat())
+
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
-    # pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/popl_pldi'
     reader = JsonFileReader()
     (documents, meta) = reader.loadAllAbstracts(pathToAbs, recursive=True)
-    # (documents, meta) = reader.loadAllFullTexts(pathToFullTexts, recursive=True)
-    model = lda(documents, num_topics=20, passes=200)
-    model.save(modelFileName)
+    model = lda(documents, num_topics=NUM_TOPICS, passes=PASSES)
+
+    model.save(os.path.join(modelArchiveDir, modelFileName))
 
 if __name__ == '__main__':
     main()

@@ -11,6 +11,8 @@ from utils import getFileLogger
 #     def __iter__(self):
 
 
+# class XMLReader(object):
+
 class JsonFileReader(object):
     """A utility class for reading json objects from files.
     """

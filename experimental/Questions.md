@@ -23,4 +23,7 @@ need to make sure we keep track of it's metadata right? What is the best way to 
 
 How many topics / passes should I be running for the different corpora? Should I just play around with it?
 
-Are words allowed to appear in more than one topic?
+Are words allowed to appear in more than one topic? Or isn't there a parameter that tells LDA
+the degree to which words should appear in topics?
+
+It looks like my current pipeline isn't dropping punctuation. How should I got about doing this?
