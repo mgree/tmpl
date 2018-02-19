@@ -1,3 +1,4 @@
+import functools
 import logging
 
 
@@ -45,4 +46,13 @@ def getFileLogger(name, logfileName=None, level=logging.INFO):
     fileHandler.setFormatter(formatter)
     logger.addHandler(fileHandler)
     return logger
+
+
+def diskCache(fn):
+    """Decorator that caches the result of the last run of the function, fn,
+    on disk.
+    """
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        if (args, kwargs)
 
