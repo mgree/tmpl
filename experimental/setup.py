@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
     required = f.read().splitlines()
 
 setup(
-    name='tmpl-smacpher',
+    name='tmplsmacpher',
     version='0.0.1',
     author='Sean MacPherson',
     install_requires=required,
