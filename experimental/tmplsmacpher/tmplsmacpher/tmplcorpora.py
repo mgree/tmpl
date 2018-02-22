@@ -10,14 +10,16 @@ from utils import DiskCache
 class BaseCorpus(object):
     """Represents a bare-bones corpus object.
     """
-    def __init__(self, corpusDir, forceRerun=False):
+    def __init__(self, corpusDir, filename, forceRerun=False):
         self.corpusDir
         self.forceRerun = forceRerun
+        self.filename = filename
 
     @staticmethod
-    @DiskCache()
+    @DiskCache(forceRerun=self.forceRerun)
     def preprocessAll(documents, lemmatize=True):
-        """Applies replacement rules (cleans), tokenizes, and stems 
+        """Preprocesses a list of plain string documents.
+        Applies replacement rules (cleans), tokenizes, and stems 
         a list of plain string documents.
 
         By default, will lemmatize corpus using the WordNetLemmatizer. 
@@ -54,9 +56,6 @@ class BaseCorpus(object):
 
         return preprocessed
 
-    def preprocessOne(document, lemmatize=True):
-        """Cleans
-        """
 
 class AbstractCorpus(BaseCorpus):
     """A gensim-compatible streaming corpus of abstracts.
