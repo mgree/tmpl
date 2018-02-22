@@ -1,0 +1,6 @@
+setup.py
+tmplsmacpher.egg-info/PKG-INFO
+tmplsmacpher.egg-info/SOURCES.txt
+tmplsmacpher.egg-info/dependency_links.txt
+tmplsmacpher.egg-info/requires.txt
+tmplsmacpher.egg-info/top_level.txt
