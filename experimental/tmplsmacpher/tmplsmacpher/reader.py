@@ -2,13 +2,7 @@ import json
 import logging
 import os
 
-from utils import getFileLogger
-
-
-# class AbstractCorpus(object):
-#     """A streaming corpus of abstracts.
-#     """
-#     def __iter__(self):
+from utils import getFileLogger  
 
 
 # class XMLReader(object):
