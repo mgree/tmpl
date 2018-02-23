@@ -278,6 +278,7 @@ def main():
         passes=PASSES, 
         timestamp=datetime.now().isoformat()
     )
+    (documents, meta) = read()
     model = lda(documents, num_topics=NUM_TOPICS, passes=PASSES)
     model.save(os.path.join(modelArchiveDir, modelFileName))
     return model

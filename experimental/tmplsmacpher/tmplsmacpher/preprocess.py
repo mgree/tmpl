@@ -1,9 +1,26 @@
 """Helper functions for preprocessing corpora.
 """
+import logging
+
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
+
 from utils import DiskCache
 
 
-@DiskCache(forceRerun=True)
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', 
+                    level=logging.DEBUG)
+
+
+RULES = [
+    ('---', ' '),
+    ('--', ' '),
+    ('-', ''),
+]
+
+
+@DiskCache(forceRerun=False)
 def preprocessAll(documents, lemmatize=True):
     """Preprocesses a list of plain string documents.
     Applies replacement rules (cleans), tokenizes, and stems 
@@ -23,7 +40,7 @@ def preprocessAll(documents, lemmatize=True):
     logging.info(documents)
 
     logging.info('Cleaning...')
-    cleaned = applyRules(documents, RULES)
+    cleaned = applyRulesToDocuments(documents, RULES)
     logging.info(cleaned)
 
     logging.info('Tokenizing and removing stopwords...')
@@ -90,7 +107,7 @@ def applyRulesToDocuments(documents, rules):
     Returns:
         Documents with old patterns replaced with desired new patterns.
     """
-    return [_applyRulesToDocument(document) for document in documents]
+    return [_applyRulesToDocument(document, rules) for document in documents]
 
 
 def _applyRulesToDocument(document, rules):

@@ -52,6 +52,18 @@ def getFileLogger(name, logfileName=None, level=logging.INFO):
     return logger
 
 
+def makeDir(path):
+    """Checks if directory exists. If it doesn't, creates it.
+    """
+    # Check that directory doesn't already exist 
+    try:
+        os.makedirs(path)
+    # Could be a permissions, or disk capacity error.
+    except OSError as e:
+        if e.errno != errno.EEXIST:
+            raise
+
+
 class DiskCache(object):
     """Decorator that caches the result of the last run of the function, fn,
     on disk.
@@ -68,7 +80,7 @@ class DiskCache(object):
 
     def __call__(self, fn, *args, **kwargs):
         # Make cache directory if doesn't already exist.
-        DiskCache._checkCacheDir(self.cacheDir)
+        makeDir(self.cacheDir)
         cacheFilename = DiskCache._buildCacheFilename(fn)
         cacheFilepath = os.path.join(self.cacheDir, cacheFilename)
 
@@ -89,18 +101,6 @@ class DiskCache(object):
             return result
 
         return wrapper
-
-    @staticmethod
-    def _checkCacheDir(path):
-        """Ensures that cache directory exists. If it doesn't, creates it.
-        """
-        # Check that directory doesn't already exist 
-        try:
-            os.makedirs(path)
-        # Could be a permissions, or disk capacity error.
-        except OSError as e:
-            if e.errno != errno.EEXIST:
-                raise
 
     @staticmethod
     def _buildCacheFilename(fn):
