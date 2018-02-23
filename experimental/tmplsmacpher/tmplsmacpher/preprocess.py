@@ -3,7 +3,47 @@
 from utils import DiskCache
 
 
-@DiskCache(forceRerun=False)
+@DiskCache(forceRerun=True)
+def preprocessAll(documents, lemmatize=True):
+    """Preprocesses a list of plain string documents.
+    Applies replacement rules (cleans), tokenizes, and stems 
+    a list of plain string documents.
+
+    By default, will lemmatize corpus using the WordNetLemmatizer. 
+    If lemmatize is set to False, will stem the corpus using 
+    the PorterStemmer. 
+
+    Args:
+        documents: list of plain string documents to be preprocessed.
+
+    Returns:
+        A list of cleaned and stemmed/lemmatized token lists. 
+    """
+    logging.info('Raw documents...')
+    logging.info(documents)
+
+    logging.info('Cleaning...')
+    cleaned = applyRules(documents, RULES)
+    logging.info(cleaned)
+
+    logging.info('Tokenizing and removing stopwords...')
+    tokenized = tokenizeDocuments(cleaned)
+    logging.info(tokenized)
+
+    if lemmatize:
+        logging.info('Lemmatizing...')
+        preprocessed = lemmatizeTokenLists(tokenized)
+        logging.info(preprocessed)
+
+    # Stem instead.
+    else:
+        logging.info('Stemming...')
+        preprocessed = stemTokenLists(tokenized)
+        logging.info(preprocessed)
+
+    return preprocessed
+
+
 def tokenizeDocuments(documents):
     """Tokenizes a list of documents and removes stopwords.
     Tokenization: convert document to individual elements.
@@ -39,7 +79,6 @@ def _tokenizeDocument(document):
     return tokenized
 
 
-@DiskCache(forceRerun=False)
 def applyRulesToDocuments(documents, rules):
     """Used to apply rules to documents.
     Eg. Replacing hyphens with spaces, replacing em dashes, etc.
@@ -69,7 +108,6 @@ def _applyRulesToDocument(document, rules):
     return document
 
 
-@DiskCache(forceRerun=False)
 def stemTokenLists(tokenLists):
     """Stems a list of token lists.
     Chops off the ends of the words using a rough heuristic process that
@@ -101,7 +139,6 @@ def _stemTokenList(tokenList):
     return [stemmer.stem(token) for token in tokenList]
 
 
-@DiskCache(forceRerun=False)
 def lemmatizeTokenLists(tokenLists):
     """Lemmatizes a list of token lists.
     Uses vocubulary and morphological analysis with the aim of

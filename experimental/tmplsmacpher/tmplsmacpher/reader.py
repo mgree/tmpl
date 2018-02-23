@@ -61,7 +61,7 @@ class JsonFileReader(object):
         return objs
 
     @staticmethod
-    def loadAllAbstracts(dirPath, recursive=False):
+    def loadAllAbstracts(dirPath, recursive=True):
         """Loads all abstracts and their respective metadata from a directory.
 
         Args:
@@ -103,7 +103,7 @@ class JsonFileReader(object):
         return (cleanedAbs, cleanedMetas)
 
     @staticmethod
-    def loadAllFullTexts(dirPath, recursive=False):
+    def loadAllFullTexts(dirPath, recursive=True):
         """Loads all full-texts and their respective metadata from a directory.
 
         Args:
