@@ -237,7 +237,7 @@ def tokenizedToDTMatrix(tokenized, dictionary):
     # tuples mapping dictionary term id's to the term's frequency.
     logging.info(
         "Using dictionary and tokenized corpus to create bag of words..."
-    )
+        )
     bagOfWords = [dictionary.doc2bow(tokenList) for tokenList in tokenized]
     logging.info(bagOfWords)
 
@@ -253,7 +253,7 @@ def lda(documents, num_topics, passes):
     logging.info(
         'Running lda model with {num_topics} topics and {passes} passes...'
         .format(num_topics=num_topics, passes=passes)
-    )
+        )
     ldamodel = LdaModel(DTMatrix,
                         num_topics=num_topics,
                         id2word=dictionary, 
@@ -277,7 +277,7 @@ def main():
         num_topics=NUM_TOPICS, 
         passes=PASSES, 
         timestamp=datetime.now().isoformat()
-    )
+        )
     (documents, meta) = read()
     model = lda(documents, num_topics=NUM_TOPICS, passes=PASSES)
     model.save(os.path.join(modelArchiveDir, modelFileName))

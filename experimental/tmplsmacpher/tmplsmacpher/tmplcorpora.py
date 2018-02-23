@@ -20,7 +20,7 @@ class BaseCorpus(object):
 
     __metaclass__ = ABCMeta
 
-    CORPUS_DIR = os.path.join(os.path.dirname(__file__), '.saved_corpora')
+    CORPUS_DIR = os.path.join(os.path.dirname(__file__), 'saved_corpora')
 
     def __init__(self):
         # Instantiate reader for subclasses to use.
@@ -40,8 +40,8 @@ class AbstractCorpus(BaseCorpus):
     """A gensim-compatible corpus of abstracts
     """
 
-    CORPUS_FILENAME = 'abstract_corpus.mm'
-    ID2WORD_FILENAME = 'abstract_id2word.dict'
+    CORPUS_FILENAME = 'abstracts_corpus.mm'
+    ID2WORD_FILENAME = 'abstracts_id2word.dict'
     PATH_TO_ABS = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
 
     def __init__(self, *args, **kwargs):
@@ -57,7 +57,9 @@ class AbstractCorpus(BaseCorpus):
 
         # Create and save dictionary (id -> word mappings).
         id2word = Dictionary(tokenizedDocs)
-        id2word.save(AbstractCorpus.ID2WORD_FILENAME)
+        id2word.save(
+            os.path.join(BaseCorpus.CORPUS_DIR, AbstractCorpus.ID2WORD_FILENAME)
+        )
 
         # Convert corpus to matrix market format, serialize, and save.
         mmCorpus = [id2word.doc2bow(doc) for doc in tokenizedDocs]
@@ -67,8 +69,15 @@ class AbstractCorpus(BaseCorpus):
         )
         return
 
-    def loadMMCorpus(self):
-        pass
+    def loadId2Word(self):
+        return Dictionary.load(
+            os.path.join(BaseCorpus.CORPUS_DIR, AbstractCorpus.ID2WORD_FILENAME)
+        )
+
+    def loadMmCorpus(self):
+        return MmCorpus(
+            os.path.join(BaseCorpus.CORPUS_DIR, AbstractCorpus.CORPUS_FILENAME)
+        )
 
 
 class FulltextCorpus(BaseCorpus):
