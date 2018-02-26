@@ -1,4 +1,6 @@
+import codecs
 import logging
+import os
 
 from copy import copy
 from datetime import datetime
@@ -7,7 +9,7 @@ from pprint import pprint
 from gensim.corpora import Dictionary
 from gensim.models.ldamodel import LdaModel
 
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from nltk.stem.wordnet import WordNetLemmatizer
 
@@ -24,9 +26,11 @@ RULES = [
     ('-', ''),
 ]
 
+stopwords = set(map(lambda s: s.strip(),
+                codecs.open("stopwords.dat","r","utf8").readlines()))
 
 """ Step 1: Pre-process corpus. """
-@DiskCache(forceRerun=False)
+@DiskCache(forceRerun=True)
 def preprocess(documents, lemmatize=True):
     """Cleans, tokenizes, and stems a list of plain string documents.
     By default, will lemmatize corpus using the WordNetLemmatizer. 
@@ -65,7 +69,6 @@ def preprocess(documents, lemmatize=True):
 
 # 1.a. Tokenization: convert document to individual elements.
 # 1.b. Stopword removal: remove trivial, meaningless words.
-@DiskCache(forceRerun=False)
 def tokenizeDocuments(documents):
     """Tokenizes a list of documents.
 
@@ -90,14 +93,14 @@ def _tokenizeDocument(document):
     # Stop words are common english words that can be deemed extraneous to 
     # certain natural language processing techniques and therefore can be 
     # filtered out of the training corpus.
-    stoplist = set(stopwords.words('english'))
+    # stoplist = set(stopwords.words('english'))
     tokenized = []
     for word in document.lower().split():
-        if word not in stoplist:
+        if word not in stopwords:
             tokenized.append(word)
     return tokenized
 
-@DiskCache(forceRerun=False)
+
 def applyRules(documents, rules):
     """Used to apply hard-coded rules to documents.
     Eg. Replacing hyphens with spaces, replacing em dashes, etc.
@@ -131,7 +134,6 @@ def applyRules(documents, rules):
 # Chops off the ends of the words using a rough heuristic process that
 # takes into account the length of the word, number of syllables, etc. to 
 # chop off the end of a word in the hopes are arriving at its atomic stem.
-@DiskCache(forceRerun=False)
 def stemTokenLists(tokenLists):
     """Stems a list of token lists.
 
@@ -164,7 +166,6 @@ def _stemTokenList(tokenList):
 # Uses vocubulary and morphological analysis with the aim of
 # only removing inflectional endings (eg. 'chopping' vs. 'chopped')
 # and returning the dictionary base of a word -- known as the word's 'lemma.'
-@DiskCache(forceRerun=False)
 def lemmatizeTokenLists(tokenLists):
     """Lemmatizes a list of token lists.
 
@@ -191,7 +192,6 @@ def _lemmatizeTokenList(tokenList):
 
 
 """ Step 2: Convert preprocessed corpus into a document-term matrix. """
-@DiskCache(forceRerun=False)
 def generateDictionary(tokenized):
     """Geneates a dictionary mapping unique terms to id's from a tokenized
     corpus.
@@ -215,7 +215,7 @@ def generateDictionary(tokenized):
 
     return dictionary
 
-@DiskCache(forceRerun=False)
+
 def tokenizedToDTMatrix(tokenized, dictionary):
     """Converts tokenized corpus to a document-term matrix.
     A document-term matrix is a matrix whose rows represent documents and
@@ -245,19 +245,24 @@ def tokenizedToDTMatrix(tokenized, dictionary):
 
 
 """ Step 3: Generate LDA topic model from corpus' document-term matrix. """
-def lda(documents, num_topics, passes):
+def lda(documents, num_topics, iterations, alpha):
     tokenized = preprocess(documents)
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
     logging.info(
-        'Running lda model with {num_topics} topics and {passes} passes...'
-        .format(num_topics=num_topics, passes=passes)
+        'Running lda model with {num_topics} topics and {iterations} iterations...'
+        .format(
+            num_topics=num_topics, 
+            iterations=iterations)
         )
     ldamodel = LdaModel(DTMatrix,
                         num_topics=num_topics,
                         id2word=dictionary, 
-                        passes=passes)
+                        iterations=iterations,
+                        alpha='auto',
+                        passes=100,
+                        chunksize=3744)
     logging.info(ldamodel.print_topics(num_topics=num_topics, num_words=10))
 
     return ldamodel
@@ -271,15 +276,46 @@ def read():
 
 def main():
     NUM_TOPICS = 20
-    PASSES = 50
+    ITERATIONS = 50
     modelArchiveDir = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
-    modelFileName = 'lda-{num_topics}-{passes}-{timestamp}'.format(
-        num_topics=NUM_TOPICS, 
-        passes=PASSES, 
+    modelFileName = 'lda-{num_topics}-{iterations}-{timestamp}'.format(
+        num_topics=NUM_TOPICS,
+        iterations=ITERATIONS,
         timestamp=datetime.now().isoformat()
         )
     (documents, meta) = read()
-    model = lda(documents, num_topics=NUM_TOPICS, passes=PASSES)
+
+    """Run LDA
+
+    Parameters:
+        
+        Alpha and beta:
+
+        Symmetric distribution:
+
+            alpha: hyperparameter that affects sparsity of document-topic
+                distribution (eg. higher alpha = documents are made up of more topics,
+                lower alpha = documents contain fewer topics.)
+            beta: hyperparameter that affects topic-word distribution.
+                (high beta = topics are made up of most of the words in the corpus,
+                low beta = consist of few words)
+        Assymetric distribution:
+            alpha: higher alpha results in more specific topic distribution per documnet.
+            beta: higher beta results in more specific word distribution per topic.
+
+            In general, higher alpha values mean documents contain more similar topic contents.
+            (assymetric alpha is more useful than assymetric beta according to Wallach.)
+
+        *I think gensim's LDA 'eta' param is 'beta'.
+
+        Gensim specific params:
+            passes: number of training passes through the corpus.
+
+    Parameters to test:
+        Changing dtype to np.float64, tweak gamma_threshold (same as EM convergence),
+        and iterations (same as em max iter)
+    """
+    model = lda(documents, num_topics=NUM_TOPICS, iterations=ITERATIONS, alpha='auto')
     model.save(os.path.join(modelArchiveDir, modelFileName))
     return model
 
