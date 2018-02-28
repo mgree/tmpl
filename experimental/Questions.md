@@ -27,3 +27,6 @@ Are words allowed to appear in more than one topic? Or isn't there a parameter t
 the degree to which words should appear in topics?
 
 It looks like my current pipeline isn't dropping punctuation. How should I got about doing this?
+
+2/26/2018
+Is the var max iter = 50 param the number of iterations through the entire corpus the model does?

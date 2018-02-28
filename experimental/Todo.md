@@ -23,3 +23,9 @@ raw abstracts or fulltexts with LDA.
 - Might be a good idea to combine loadAllAbs and loadAllFull into one method with an arg to choose which rawtext field to choose for main document body of corpus.
 - Figure out best way to load full text files.
 - Investigate sklearn's LDA model.
+
+2/26/2018
+- Print out top 10 documents for each topic.
+- Try out fulltexts corpora.
+- Lower beta (make words appear in fewer topics)
+- Try out BleiCorpus

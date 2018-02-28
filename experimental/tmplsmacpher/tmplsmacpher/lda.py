@@ -26,8 +26,12 @@ RULES = [
     ('-', ''),
 ]
 
-stopwords = set(map(lambda s: s.strip(),
+def loadStopwords():
+    stopwords = set(map(lambda s: s.strip(),
                 codecs.open("stopwords.dat","r","utf8").readlines()))
+    return stopwords
+
+stopwords = loadStopwords()
 
 """ Step 1: Pre-process corpus. """
 @DiskCache(forceRerun=True)
@@ -245,26 +249,19 @@ def tokenizedToDTMatrix(tokenized, dictionary):
 
 
 """ Step 3: Generate LDA topic model from corpus' document-term matrix. """
-def lda(documents, num_topics, iterations, alpha):
+def lda(documents, num_topics, passes, iterations, chunksize, alpha, gamma_threshold):
     tokenized = preprocess(documents)
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
-
-    logging.info(
-        'Running lda model with {num_topics} topics and {iterations} iterations...'
-        .format(
-            num_topics=num_topics, 
-            iterations=iterations)
-        )
     ldamodel = LdaModel(DTMatrix,
                         num_topics=num_topics,
                         id2word=dictionary, 
                         iterations=iterations,
-                        alpha='auto',
-                        passes=100,
-                        chunksize=3744)
-    logging.info(ldamodel.print_topics(num_topics=num_topics, num_words=10))
-
+                        alpha=alpha,
+                        passes=passes,
+                        chunksize=chunksize,
+                        gamma_threshold=gamma_threshold)
+    logging.info(ldamodel.print_topics(num_topics=num_topics, num_words=20))
     return ldamodel
 
 def read():
@@ -274,51 +271,72 @@ def read():
     return (documents, meta)
 
 
-def main():
-    NUM_TOPICS = 20
-    ITERATIONS = 50
-    modelArchiveDir = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
-    modelFileName = 'lda-{num_topics}-{iterations}-{timestamp}'.format(
-        num_topics=NUM_TOPICS,
-        iterations=ITERATIONS,
-        timestamp=datetime.now().isoformat()
-        )
-    (documents, meta) = read()
-
-    """Run LDA
-
-    Parameters:
-        
-        Alpha and beta:
-
-        Symmetric distribution:
-
-            alpha: hyperparameter that affects sparsity of document-topic
-                distribution (eg. higher alpha = documents are made up of more topics,
-                lower alpha = documents contain fewer topics.)
-            beta: hyperparameter that affects topic-word distribution.
-                (high beta = topics are made up of most of the words in the corpus,
-                low beta = consist of few words)
-        Assymetric distribution:
-            alpha: higher alpha results in more specific topic distribution per documnet.
-            beta: higher beta results in more specific word distribution per topic.
-
-            In general, higher alpha values mean documents contain more similar topic contents.
-            (assymetric alpha is more useful than assymetric beta according to Wallach.)
-
-        *I think gensim's LDA 'eta' param is 'beta'.
-
-        Gensim specific params:
-            passes: number of training passes through the corpus.
-
-    Parameters to test:
-        Changing dtype to np.float64, tweak gamma_threshold (same as EM convergence),
-        and iterations (same as em max iter)
+def printTopics(corpus, modelFilepath):
+    """Prints the top n papers for each topic of a given model.
     """
-    model = lda(documents, num_topics=NUM_TOPICS, iterations=ITERATIONS, alpha='auto')
-    model.save(os.path.join(modelArchiveDir, modelFileName))
-    return model
+    (documents, meta) = corpus
+    model = LdaModel.load(modelFilepath)
+    tops = sorted(documents, reverse=True, key=lambda doc: abs(dict(doc).get(0, 0.0)))
+    print(tops)
+
+
+"""Run LDA
+
+Parameters:
+    
+    Alpha and beta:
+
+    Symmetric distribution:
+
+        alpha: hyperparameter that affects sparsity of document-topic
+            distribution (eg. higher alpha = documents are made up of more topics,
+            lower alpha = documents contain fewer topics.)
+        beta: hyperparameter that affects topic-word distribution.
+            (high beta = topics are made up of most of the words in the corpus,
+            low beta = consist of few words)
+    Assymetric distribution:
+        alpha: higher alpha results in more specific topic distribution per document.
+        beta: higher beta results in more specific word distribution per topic.
+
+        In general, higher alpha values mean documents contain more similar topic contents.
+        (assymetric alpha is more useful than assymetric beta according to Wallach.)
+
+    *I think gensim's LDA 'eta' param is 'beta'.
+
+    Gensim specific params:
+        passes: number of training passes through the corpus.
+
+Parameters to test:
+    Changing dtype to np.float64, tweak gamma_threshold (same as EM convergence),
+    and iterations (same as em max iter)
+
+*** Added program, programs, used, language to stopwords.dat. -> didn't really help.
+"""
 
 
 if __name__ == '__main__':
-    main()
+    # Gensim LDA parameters.
+    NUM_TOPICS = 50
+    PASSES = 100
+    ITERATIONS = 1000
+    CHUNKSIZE = 3744 # Number of documents in the abstract corpus.
+    ALPHA = 'auto'
+    GAMMA_THRESHOLD = 0.0001
+
+    # Saved model path info.
+    MODEL_ARCHIVE_DIR = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
+    MODEL_DIR = 'model-{num_topics}t-{passes}p-{iterations}i-{alpha}a-{gamma_threshold}g'.format(
+        num_topics=NUM_TOPICS,
+        passes=PASSES,
+        iterations=ITERATIONS,
+        alpha=ALPHA,
+        gamma_threshold=GAMMA_THRESHOLD,
+    )
+    MODEL_FILENAME = 'model'
+    # MODEL_FILEPATH = os.path.join(MODEL_ARCHIVE_DIR, MODEL_DIR, MODEL_FILENAME)
+    MODEL_FILEPATH = os.path.join(MODEL_ARCHIVE_DIR, MODEL_FILENAME)
+
+    (documents, meta) = read()
+    # model = lda(documents, num_topics=NUM_TOPICS, iterations=ITERATIONS, alpha='auto')
+    # model.save(os.path.join(modelArchiveDir, modelFileName))
+    printTopics((documents, meta), MODEL_FILEPATH)
