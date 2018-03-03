@@ -303,7 +303,7 @@ def topPapersToFile(topPapers, filepath):
             f.write("Topic #{topicNum}".format(topicNum=topicNum))
             f.write('\n')
             f.writelines(
-                map(lambda x: x.encode('ascii', 'replace'), topPapers[topicNum])
+                map(lambda x: x.encode('ascii', 'replace') + '\n', topPapers[topicNum])
             )
             f.write('\n\n')
     return
@@ -380,7 +380,6 @@ if __name__ == '__main__':
         topTitles = [meta['title'] for (meta, topicVector) in tops]
         allTopTitles.append(topTitles)
 
-    print(allTopTitles[0])
     topPapersToFile(allTopTitles, TOP_PAPERS_FILEPATH)
 
 

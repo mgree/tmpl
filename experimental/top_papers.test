@@ -1,150 +1,650 @@
 Topic #0
-SHERIFF: precise detection and automatic mitigation of false sharingLaws of order: expensive synchronization in concurrent algorithms cannot be eliminatedA generational on-the-fly garbage collector for JavaScalable lock-free dynamic memory allocationPerformance analysis of idle programsPractical experience with an application extractor for JavaMC2: high-performance garbage collection for memory-constrained environmentsInjecting mechanical faults to localize developer faults for evolving softwareChameleon: adaptive selection of collectionsSpace efficient conservative garbage collection
+SHERIFF: precise detection and automatic mitigation of false sharing
+Laws of order: expensive synchronization in concurrent algorithms cannot be eliminated
+A generational on-the-fly garbage collector for Java
+Scalable lock-free dynamic memory allocation
+Performance analysis of idle programs
+Practical experience with an application extractor for Java
+MC2: high-performance garbage collection for memory-constrained environments
+Injecting mechanical faults to localize developer faults for evolving software
+Chameleon: adaptive selection of collections
+Space efficient conservative garbage collection
+
 
 Topic #1
-A Scalable, Correct Time-Stamped StackValgrind: a framework for heavyweight dynamic binary instrumentationAutomatically generating object models from natural language analysisUnifying structured recursion schemesExpertiza: students helping to write an OOD textAspect mining for large systemsAspect mining for large systemsA definition of convergence in the area of information and telecommunication technologiesReuse repositories and reuse: the realitiesGOOAL: a Graphic Object Oriented Analysis Laboratory
+A Scalable, Correct Time-Stamped Stack
+Valgrind: a framework for heavyweight dynamic binary instrumentation
+Automatically generating object models from natural language analysis
+Unifying structured recursion schemes
+Expertiza: students helping to write an OOD text
+Aspect mining for large systems
+Aspect mining for large systems
+A definition of convergence in the area of information and telecommunication technologies
+Reuse repositories and reuse: the realities
+GOOAL: a Graphic Object Oriented Analysis Laboratory
+
 
 Topic #2
-Lazy and speculative execution in computer systemsTo achieve our highest goals, we must be willing to abandon themOXenstored: an efficient hierarchical and transactional database using functional programming with reference cell comparisonsTowards the Essence of HygieneMuch ado about two (pearl): a pearl on parallel prefix computationSurveyMan: programming and automatically debugging surveysCONCURRIT: a domain specific language for reproducing concurrency bugsBetter science through artAtlas: leveraging locks for non-volatile memory consistencyOn creating a handbook of software architecture
+Lazy and speculative execution in computer systems
+To achieve our highest goals, we must be willing to abandon them
+OXenstored: an efficient hierarchical and transactional database using functional programming with reference cell comparisons
+Towards the Essence of Hygiene
+Much ado about two (pearl): a pearl on parallel prefix computation
+SurveyMan: programming and automatically debugging surveys
+CONCURRIT: a domain specific language for reproducing concurrency bugs
+Better science through art
+Atlas: leveraging locks for non-volatile memory consistency
+On creating a handbook of software architecture
+
 
 Topic #3
-Structural semantics for polymorphic data types (preliminary report)Polymorphic type inferenceBinders unboundHow to make ad hoc proof automation less ad hocData types, parameters and type checkingTagless staged interpreters for typed languagesThe essence of MLProgramming with binders and indexed data-typesGenerative unbinding of namesProgramming up to Congruence
+Structural semantics for polymorphic data types (preliminary report)
+Polymorphic type inference
+Binders unbound
+How to make ad hoc proof automation less ad hoc
+Data types, parameters and type checking
+Tagless staged interpreters for typed languages
+The essence of ML
+Programming with binders and indexed data-types
+Generative unbinding of names
+Programming up to Congruence
+
 
 Topic #4
-Bitwidth aware global register allocationCost effective dynamic program slicingExploiting hardware performance counters with flow and context sensitive profilingVectorization for SIMD architectures with alignment constraintsValue dependence graphs: representation without taxationImproving cache performance in dynamic applications through data and computation reorganization at run timeA probabilistic approach to the problem of automatic selection of data representationsArray regrouping and structure splitting using whole-program reference affinityThe power of assignment motionBack to the future (panel session): Is worse (still) better?
+Bitwidth aware global register allocation
+Cost effective dynamic program slicing
+Exploiting hardware performance counters with flow and context sensitive profiling
+Vectorization for SIMD architectures with alignment constraints
+Value dependence graphs: representation without taxation
+Improving cache performance in dynamic applications through data and computation reorganization at run time
+A probabilistic approach to the problem of automatic selection of data representations
+Array regrouping and structure splitting using whole-program reference affinity
+The power of assignment motion
+Back to the future (panel session): Is worse (still) better?
+
 
 Topic #5
-Synchronising C/C++ and POWERClarifying and compiling C/C++ concurrency: from C++11 to POWERFlint: fixing linearizability violationsDesigned animismYALE: yet another lambda evaluator based on interaction netsWeak optimality, and the meaning of sharingBuilding a backtracking facility in smalltalk without kernel supportAdvice on structuring compilers and proving them correctPrinting floating-point numbers quickly and accurately with integersFairness and hyperfairness in multi-party interactions
+Synchronising C/C++ and POWER
+Clarifying and compiling C/C++ concurrency: from C++11 to POWER
+Flint: fixing linearizability violations
+Designed animism
+YALE: yet another lambda evaluator based on interaction nets
+Weak optimality, and the meaning of sharing
+Building a backtracking facility in smalltalk without kernel support
+Advice on structuring compilers and proving them correct
+Printing floating-point numbers quickly and accurately with integers
+Fairness and hyperfairness in multi-party interactions
+
 
 Topic #6
-Abstraction mechanisms in the BETA programming languageLanguage constructs for transactional memoryThe HipHop compiler for PHPAC: composable asynchronous IO for native languagesSemantics of static pointcuts in aspectJOn the complexity of equivalence of specifications of infinite objectsA probabilistic language based upon sampling functionsExperience report: a do-it-yourself high-assurance compilerFunctional pearl: la tour d'Hano?What packets may come: automata for network monitoring
+Abstraction mechanisms in the BETA programming language
+Language constructs for transactional memory
+The HipHop compiler for PHP
+AC: composable asynchronous IO for native languages
+Semantics of static pointcuts in aspectJ
+On the complexity of equivalence of specifications of infinite objects
+A probabilistic language based upon sampling functions
+Experience report: a do-it-yourself high-assurance compiler
+Functional pearl: la tour d'Hano?
+What packets may come: automata for network monitoring
+
 
 Topic #7
-Computer science as a school subjectBattery transition systemsDefining code-injection attacksEducators' symposiumDecisions for "type" in APLTowards a graphical notation to express the C++ template instantiation process (poster session)Agility unlimited?What it means for a concurrent program to satisfy a specification: why no one has specified priorityVerification modulo versions: towards usable verificationIs the interesting part of process logic uninteresting?: a translation from PL to PDL
+Computer science as a school subject
+Battery transition systems
+Defining code-injection attacks
+Educators' symposium
+Decisions for "type" in APL
+Towards a graphical notation to express the C++ template instantiation process (poster session)
+Agility unlimited?
+What it means for a concurrent program to satisfy a specification: why no one has specified priority
+Verification modulo versions: towards usable verification
+Is the interesting part of process logic uninteresting?: a translation from PL to PDL
+
 
 Topic #8
-Separating stages in the continuation-passing style transformationOnce upon a time, like never before: the challenge of telling the next storyDecoupled design: building applications on the NetBeans platformDecoupled design: building applications on the NetBeans platformActivating refactorings fasterIssues on building T++: a tool for web application development with C++Issues on building T++, a tool for web application development with C++Refactoring support for the C++ development toolingExplicit substitutionsCan infopipes facilitate reuse in a traffic application?
+Separating stages in the continuation-passing style transformation
+Once upon a time, like never before: the challenge of telling the next story
+Decoupled design: building applications on the NetBeans platform
+Decoupled design: building applications on the NetBeans platform
+Activating refactorings faster
+Issues on building T++: a tool for web application development with C++
+Issues on building T++, a tool for web application development with C++
+Refactoring support for the C++ development tooling
+Explicit substitutions
+Can infopipes facilitate reuse in a traffic application?
+
 
 Topic #9
-CreativityOptimality and inefficiency: what isn't a cost model of the lambda calculus?Requirements use case tool (RUT)Agile environments...: for the rest of usAgile environments...: for the rest of us"Killer examples" for design patterns: a poster reporting results of the workshopCollaboration and telecollaboration in designUsing refactorings to automatically update component-based applicationsUsing refactorings to automatically update component-based applicationsExploiting code search engines to improve programmer productivity
+Creativity
+Optimality and inefficiency: what isn't a cost model of the lambda calculus?
+Requirements use case tool (RUT)
+Agile environments...: for the rest of us
+Agile environments...: for the rest of us
+"Killer examples" for design patterns: a poster reporting results of the workshop
+Collaboration and telecollaboration in design
+Using refactorings to automatically update component-based applications
+Using refactorings to automatically update component-based applications
+Exploiting code search engines to improve programmer productivity
+
 
 Topic #10
-Delinearization: an efficient way to break multiloop dependence equationsThe ramifications of sharing in data structuresImplicative formulae in the proofs of computations' analogyUser-friendly functional programming for web mashupsA general constraint-centric scheduling framework for spatial architecturesSynchronous Kahn networksNondeterminism in logics of programsExpressional loopsA formal model and specification language for procedure calling conventionsBisimulation congruences in safe ambients
+Delinearization: an efficient way to break multiloop dependence equations
+The ramifications of sharing in data structures
+Implicative formulae in the proofs of computations' analogy
+User-friendly functional programming for web mashups
+A general constraint-centric scheduling framework for spatial architectures
+Synchronous Kahn networks
+Nondeterminism in logics of programs
+Expressional loops
+A formal model and specification language for procedure calling conventions
+Bisimulation congruences in safe ambients
+
 
 Topic #11
-String pattern matching in polynomial timeThe generic graph component libraryThe role of lazy evaluation in amortized data structuresAn object addressing mechanism for statically typed languages with multiple inheritanceWriting truly efficient smalltalkFunctional programming through deep time: modeling the first complex ecosystems on earthA member lookup algorithm for C++Rethinking supercompilationReasoning about recursively defined data structuresEdit lenses
+String pattern matching in polynomial time
+The generic graph component library
+The role of lazy evaluation in amortized data structures
+An object addressing mechanism for statically typed languages with multiple inheritance
+Writing truly efficient smalltalk
+Functional programming through deep time: modeling the first complex ecosystems on earth
+A member lookup algorithm for C++
+Rethinking supercompilation
+Reasoning about recursively defined data structures
+Edit lenses
+
 
 Topic #12
-New control structures to aid gotolessnessAutoMan: a platform for integrating human-based and digital computationA language for automatically enforcing privacy policiesA simple abstraction for complex concurrent indexesCorrectness of trap-based breakpoint implementationsImplementation of an interpreter for abstract equationsPreparing undergraduate students for Java certificationAn exemplar based SmalltalkCoeffects: a calculus of context-dependent computationA monotonic superclass linearization for Dylan
+New control structures to aid gotolessness
+AutoMan: a platform for integrating human-based and digital computation
+A language for automatically enforcing privacy policies
+A simple abstraction for complex concurrent indexes
+Correctness of trap-based breakpoint implementations
+Implementation of an interpreter for abstract equations
+Preparing undergraduate students for Java certification
+An exemplar based Smalltalk
+Coeffects: a calculus of context-dependent computation
+A monotonic superclass linearization for Dylan
+
 
 Topic #13
-Bidirectionalization transformation based on automatic derivation of view complement functionsAn operational semantics for parallel lazy evaluationThe design of a task parallel libraryLibrary abstraction for C/C++ concurrencyConjugate Hylomorphisms -- Or: The Mother of All Structured Recursion SchemesImplicit phasing for R6RS librariesA natural semantics for lazy evaluationBoomerang: resourceful lenses for string dataDatalog as a pointcut language in aspect-oriented programmingFrom dirt to shovels: fully automatic tool generation from ad hoc data
+Bidirectionalization transformation based on automatic derivation of view complement functions
+An operational semantics for parallel lazy evaluation
+The design of a task parallel library
+Library abstraction for C/C++ concurrency
+Conjugate Hylomorphisms -- Or: The Mother of All Structured Recursion Schemes
+Implicit phasing for R6RS libraries
+A natural semantics for lazy evaluation
+Boomerang: resourceful lenses for string data
+Datalog as a pointcut language in aspect-oriented programming
+From dirt to shovels: fully automatic tool generation from ad hoc data
+
 
 Topic #14
-"Sometimes" and "not never" revisited: on branching versus linear time (preliminary report)From Boolean to quantitative notions of correctnessWhy programming is a good medium for expressing poorly understood and sloppily formulated ideasProgram schemas with concurrency: execution time and hangupsA module mechanism for constraints in SmalltalkElimination of single productions from LR parsers in conjunction with the use of default reductionsTaming compiler fuzzersUsing events to debug Java programs backwards in timeActor induction and meta-evaluationCoding by Everyone, Every Day
+"Sometimes" and "not never" revisited: on branching versus linear time (preliminary report)
+From Boolean to quantitative notions of correctness
+Why programming is a good medium for expressing poorly understood and sloppily formulated ideas
+Program schemas with concurrency: execution time and hangups
+A module mechanism for constraints in Smalltalk
+Elimination of single productions from LR parsers in conjunction with the use of default reductions
+Taming compiler fuzzers
+Using events to debug Java programs backwards in time
+Actor induction and meta-evaluation
+Coding by Everyone, Every Day
+
 
 Topic #15
-Differential Privacy: Now it's Getting PersonalOwnership and immutability in generic JavaComposable asynchronous eventsUnderstanding and detecting real-world performance bugsCatenable double-ended queuesExperience report: erlang in acoustic ray tracingXtreme programming and agile coachingParallel concurrent MLPractical program verification: automatic program proving for real-time embedded softwareA fishbowl with piranhas: coalescence, convergence or divergence?
+Differential Privacy: Now it's Getting Personal
+Ownership and immutability in generic Java
+Composable asynchronous events
+Understanding and detecting real-world performance bugs
+Catenable double-ended queues
+Experience report: erlang in acoustic ray tracing
+Xtreme programming and agile coaching
+Parallel concurrent ML
+Practical program verification: automatic program proving for real-time embedded software
+A fishbowl with piranhas: coalescence, convergence or divergence?
+
 
 Topic #16
-Pruning dynamic slices with confidenceSound predictive race detection in polynomial timeMultiverse: efficiently supporting distributed high-level speculationEfficient algorithms for bidirectional debuggingKremlin: rethinking and rebooting gprof for the multicore ageWhat exactly is inexact computation good for?Two for the price of one: a model for parallel and incremental computationAccurate application progress analysis for large-scale parallel debuggingWhite box sampling in uncertain data processing enabled by program analysisSteering symbolic execution to less traveled paths
+Pruning dynamic slices with confidence
+Sound predictive race detection in polynomial time
+Multiverse: efficiently supporting distributed high-level speculation
+Efficient algorithms for bidirectional debugging
+Kremlin: rethinking and rebooting gprof for the multicore age
+What exactly is inexact computation good for?
+Two for the price of one: a model for parallel and incremental computation
+Accurate application progress analysis for large-scale parallel debugging
+White box sampling in uncertain data processing enabled by program analysis
+Steering symbolic execution to less traveled paths
+
 
 Topic #17
-Optimal code generation for expression trees: an application BURS theoryExploring the acceptability envelopeFirst-class nonstandard interpretations by opening closuresMultiple dispatch in practiceBehavioral software contractsIncremental return on incremental investment: Engenio's transition to software product line practiceStop losing sleep over incomplete data type specificationsMeta: a universal meta-language for augmenting and unifying language families, featuring meta(oopl) for object-oriented programming languagesReflection in an object-oriented concurrent languageSMAT: an input adaptive auto-tuner for sparse matrix-vector multiplication
+Optimal code generation for expression trees: an application BURS theory
+Exploring the acceptability envelope
+First-class nonstandard interpretations by opening closures
+Multiple dispatch in practice
+Behavioral software contracts
+Incremental return on incremental investment: Engenio's transition to software product line practice
+Stop losing sleep over incomplete data type specifications
+Meta: a universal meta-language for augmenting and unifying language families, featuring meta(oopl) for object-oriented programming languages
+Reflection in an object-oriented concurrent language
+SMAT: an input adaptive auto-tuner for sparse matrix-vector multiplication
+
 
 Topic #18
-The OO software development process (abstract)Concurrent NetCore: from policies to pipelinesEffective preparation for design review: using UML arrow checklist leveraged on the Gurus' knowledgeCall-by-value is dual to call-by-nameProgramming language semantics and closed applicative languagesWikipedia in the free culture revolutionDomain driven web development with WebJinnJDA: a step towards large-scale reuse on the webPin: building customized program analysis tools with dynamic instrumentationFlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps
+The OO software development process (abstract)
+Concurrent NetCore: from policies to pipelines
+Effective preparation for design review: using UML arrow checklist leveraged on the Gurus' knowledge
+Call-by-value is dual to call-by-name
+Programming language semantics and closed applicative languages
+Wikipedia in the free culture revolution
+Domain driven web development with WebJinn
+JDA: a step towards large-scale reuse on the web
+Pin: building customized program analysis tools with dynamic instrumentation
+FlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps
+
 
 Topic #19
-Expressive modular fine-grained concurrency specificationDivision by invariant integers using multiplicationStack inspection: theory and variantsDelegated isolationModular verification of linearizability with non-fixed linearization pointsThe practice of specifying requirements using executable acceptance tests in computer science coursesLazy multivariate higher-order forward-mode ADA talk by Patti MaesOptimal-time incremental semantic analysis for syntax-directed editorsFast conservative garbage collection
+Expressive modular fine-grained concurrency specification
+Division by invariant integers using multiplication
+Stack inspection: theory and variants
+Delegated isolation
+Modular verification of linearizability with non-fixed linearization points
+The practice of specifying requirements using executable acceptance tests in computer science courses
+Lazy multivariate higher-order forward-mode AD
+A talk by Patti Maes
+Optimal-time incremental semantic analysis for syntax-directed editors
+Fast conservative garbage collection
+
 
 Topic #20
-Targeted and depth-first exploration for systematic testing of android appsOn-the-fly detection of instability problems in floating-point program executionDefunctionalized interpreters for programming languagesHOP: achieving efficient anonymity in MANETs by combining HIP, OLSR, and pseudonymsFully abstract compositional semantics for logic programsMeeting the challenge of software engineering education for working professionals in the 21st centuryTask granularity analysis in logic programsOptimizing abstract abstract machinesProgram manipulation via interactive transformationsProgram manipulation via interactive transformations
+Targeted and depth-first exploration for systematic testing of android apps
+On-the-fly detection of instability problems in floating-point program execution
+Defunctionalized interpreters for programming languages
+HOP: achieving efficient anonymity in MANETs by combining HIP, OLSR, and pseudonyms
+Fully abstract compositional semantics for logic programs
+Meeting the challenge of software engineering education for working professionals in the 21st century
+Task granularity analysis in logic programs
+Optimizing abstract abstract machines
+Program manipulation via interactive transformations
+Program manipulation via interactive transformations
+
 
 Topic #21
-Organizing functional code for parallel execution or, foldl and foldr considered slightly harmfulOn the relations computable by a class of concurrent automata20 years of industrial functional programmingA mini-plop at OOPSLA '07X3D web software visualization in action!Proper tail recursion and space efficiencyProfessorJ: a gradual introduction to Java through language levelsLCSD: library-centric software designFull abstraction for nominal Scott domainsHotDraw (abstract): a structured drawing editor framework for Smalltalk
+Organizing functional code for parallel execution or, foldl and foldr considered slightly harmful
+On the relations computable by a class of concurrent automata
+20 years of industrial functional programming
+A mini-plop at OOPSLA '07
+X3D web software visualization in action!
+Proper tail recursion and space efficiency
+ProfessorJ: a gradual introduction to Java through language levels
+LCSD: library-centric software design
+Full abstraction for nominal Scott domains
+HotDraw (abstract): a structured drawing editor framework for Smalltalk
+
 
 Topic #22
-Regular expression containment: coinductive axiomatization and computational interpretationJava type inference is broken: can we fix it?Do developers benefit from generic types?: an empirical comparison of generic and raw types in javaBeautiful differentiationEvents in Haskell, and how to implement themScrap your boilerplate with class: extensible generic functionsComputer experiments with the REVE term rewriting system generatorA type declaration and inference system for smalltalkGeneralized fair terminationTemporal higher-order contracts
+Regular expression containment: coinductive axiomatization and computational interpretation
+Java type inference is broken: can we fix it?
+Do developers benefit from generic types?: an empirical comparison of generic and raw types in java
+Beautiful differentiation
+Events in Haskell, and how to implement them
+Scrap your boilerplate with class: extensible generic functions
+Computer experiments with the REVE term rewriting system generator
+A type declaration and inference system for smalltalk
+Generalized fair termination
+Temporal higher-order contracts
+
 
 Topic #23
-Unbounded speed variability in distributed communication systems2010 Athena lectureVector addition system reachability problem: a short self-contained proofEfficient lookup-table protocol in secure multiparty computationOn automatic class insertion with overloadingParallelism orchestration using DoPE: the degree of parallelism executiveFrom Communicating Machines to Graphical ChoreographiesProving that non-blocking algorithms don't blockThe global storage needs of a subcomputationSequential verification of serializability
+Unbounded speed variability in distributed communication systems
+2010 Athena lecture
+Vector addition system reachability problem: a short self-contained proof
+Efficient lookup-table protocol in secure multiparty computation
+On automatic class insertion with overloading
+Parallelism orchestration using DoPE: the degree of parallelism executive
+From Communicating Machines to Graphical Choreographies
+Proving that non-blocking algorithms don't block
+The global storage needs of a subcomputation
+Sequential verification of serializability
+
 
 Topic #24
-Uncovering principles of novice programmingThe crisis in systems code maintenance: sourceforge, we have a problemCompiling C for vectorization, parallelization, and inline expansionStructured operational semantics as a specification languageSugarJ: library-based syntactic language extensibilitySacrificing simplicity for convenience: Where do you draw the line?Fast: a transducer-based language for tree manipulationCarrier arrays: an idiom-preserving extension to APLGenerators and the replicator control structure in the parallel environment of ALLOYThe under-appreciated unfold
+Uncovering principles of novice programming
+The crisis in systems code maintenance: sourceforge, we have a problem
+Compiling C for vectorization, parallelization, and inline expansion
+Structured operational semantics as a specification language
+SugarJ: library-based syntactic language extensibility
+Sacrificing simplicity for convenience: Where do you draw the line?
+Fast: a transducer-based language for tree manipulation
+Carrier arrays: an idiom-preserving extension to APL
+Generators and the replicator control structure in the parallel environment of ALLOY
+The under-appreciated unfold
+
 
 Topic #25
-Object-oriented communication server for banking applications (abstract)Demeter Tools/C++ (abstract)Understanding POWER multiprocessorsA hierarchy of mendler style recursion combinators: taming inductive datatypes with negative occurrencesMetamodel based model transformation languageCreating an informative workspaceThings they would not teach me of in college: what Microsoft developers learn laterTackling the discovery costs of evolving software systemsRepresenting control in the presence of one-shot continuationsMetamodel based model transformation language to facilitate domain specific model driven architecture
+Object-oriented communication server for banking applications (abstract)
+Demeter Tools/C++ (abstract)
+Understanding POWER multiprocessors
+A hierarchy of mendler style recursion combinators: taming inductive datatypes with negative occurrences
+Metamodel based model transformation language
+Creating an informative workspace
+Things they would not teach me of in college: what Microsoft developers learn later
+Tackling the discovery costs of evolving software systems
+Representing control in the presence of one-shot continuations
+Metamodel based model transformation language to facilitate domain specific model driven architecture
+
 
 Topic #26
-The Lambda Lambda-Bar calculus: a dual calculus for unconstrained strategiesNomadic pict: correct communication infrastructure for mobile computationFunctional parallel algorithmsMetaclass compatibilityA language for specifying recursive traversals of object structuresCompilation of data-driven programs for synchronous executionRemote access to clinical dataCHOCOLATE: Calculi of Higher Order COmmunication and LAmbda TErms (preliminary report)Diderot: a parallel DSL for image analysis and visualizationCausal commutative arrows and their optimization
+The Lambda Lambda-Bar calculus: a dual calculus for unconstrained strategies
+Nomadic pict: correct communication infrastructure for mobile computation
+Functional parallel algorithms
+Metaclass compatibility
+A language for specifying recursive traversals of object structures
+Compilation of data-driven programs for synchronous execution
+Remote access to clinical data
+CHOCOLATE: Calculi of Higher Order COmmunication and LAmbda TErms (preliminary report)
+Diderot: a parallel DSL for image analysis and visualization
+Causal commutative arrows and their optimization
+
 
 Topic #27
-Demand-driven pointer analysisParallel inclusion-based points-to analysisImproving data-flow analysis with path profilesFlow-directed inliningHybrid top-down and bottom-up interprocedural analysisAn extended form of must alias analysis for dynamic allocationEfficient algorithms for isomorphisms of simple typesPersistent pointer informationSimple and efficient BURS table generationBootstrapping one-sided flexible arrays
+Demand-driven pointer analysis
+Parallel inclusion-based points-to analysis
+Improving data-flow analysis with path profiles
+Flow-directed inlining
+Hybrid top-down and bottom-up interprocedural analysis
+An extended form of must alias analysis for dynamic allocation
+Efficient algorithms for isomorphisms of simple types
+Persistent pointer information
+Simple and efficient BURS table generation
+Bootstrapping one-sided flexible arrays
+
 
 Topic #28
-Generalized just-in-time trace compilation using a parallel task farm in a dynamic binary translatorSpreadsheet table transformations from examplesVCODE: a retargetable, extensible, very fast dynamic code generation systemAdapton: composable, demand-driven incremental computationTracing piece by piece: affordable debugging for lazy functional languagesEfficient incremental run-time specialization for freeA fast Fourier transform compilerUnderstanding programmer languageRecursive adaptive computations using perobject visitorsMrCrypt: static analysis for secure cloud computations
+Generalized just-in-time trace compilation using a parallel task farm in a dynamic binary translator
+Spreadsheet table transformations from examples
+VCODE: a retargetable, extensible, very fast dynamic code generation system
+Adapton: composable, demand-driven incremental computation
+Tracing piece by piece: affordable debugging for lazy functional languages
+Efficient incremental run-time specialization for free
+A fast Fourier transform compiler
+Understanding programmer language
+Recursive adaptive computations using perobject visitors
+MrCrypt: static analysis for secure cloud computations
+
 
 Topic #29
-The influence of browsers on evaluators or, continuations to program web serversHow to design a good API and why it mattersBuilding compilers for DirectX 9.0 compatible graphics processorsSecond life: the world's biggest programming environmentCatch me if you can: performance bug detection in the wildThreesomes, with and without blamePREFAIL: a programmable tool for multiple-failure injectionSemantic analysis of virtual classes and nested classesPerl 6: reconciling the irreconcilableA dynamic program analysis to find floating-point accuracy problems
+The influence of browsers on evaluators or, continuations to program web servers
+How to design a good API and why it matters
+Building compilers for DirectX 9.0 compatible graphics processors
+Second life: the world's biggest programming environment
+Catch me if you can: performance bug detection in the wild
+Threesomes, with and without blame
+PREFAIL: a programmable tool for multiple-failure injection
+Semantic analysis of virtual classes and nested classes
+Perl 6: reconciling the irreconcilable
+A dynamic program analysis to find floating-point accuracy problems
+
 
 Topic #30
-Composable, nestable, pessimistic atomic statementsOption contractsModular verification of preemptive OS kernelsFreedom before commitment: a lightweight type system for object initialisationDeterministic parallelism via liquid effectsVerification of safety properties for concurrent assembly codeSemantic type qualifiersTranslation validation for a verified OS kernelLanguage support for regionsThe SLAM project: debugging system software via static analysis
+Composable, nestable, pessimistic atomic statements
+Option contracts
+Modular verification of preemptive OS kernels
+Freedom before commitment: a lightweight type system for object initialisation
+Deterministic parallelism via liquid effects
+Verification of safety properties for concurrent assembly code
+Semantic type qualifiers
+Translation validation for a verified OS kernel
+Language support for regions
+The SLAM project: debugging system software via static analysis
+
 
 Topic #31
-Typestate-based semantic code search over partial programsC-SHORe: a collapsible approach to higher-order verificationRegression test selection for Java softwareMining modal scenarios from execution tracesLifting abstract interpreters to quantified logical domainsScalable statistical bug isolationCombining syntactic and semantic bidirectionalizationRuntime support for multicore HaskellSuperC: parsing all of C by taming the preprocessorIncremental algorithms for dispatching in dynamically typed languages
+Typestate-based semantic code search over partial programs
+C-SHORe: a collapsible approach to higher-order verification
+Regression test selection for Java software
+Mining modal scenarios from execution traces
+Lifting abstract interpreters to quantified logical domains
+Scalable statistical bug isolation
+Combining syntactic and semantic bidirectionalization
+Runtime support for multicore Haskell
+SuperC: parsing all of C by taming the preprocessor
+Incremental algorithms for dispatching in dynamically typed languages
+
 
 Topic #32
-Verifying liveness for asynchronous programsImperative self-adjusting computationAlgebraic fusion of functions with an accumulating parameter and its improvementInteractive visual functional programmingThe logic of a relational data manipulation languageBigraphs and transitionsIdentifying the semantic and textual differences between two versions of a programEfficient divide-and-conquer parsing of practical context-free languagesAnalyzing Program AnalysesObject-oriented success stories: "learning from our failures"
+Verifying liveness for asynchronous programs
+Imperative self-adjusting computation
+Algebraic fusion of functions with an accumulating parameter and its improvement
+Interactive visual functional programming
+The logic of a relational data manipulation language
+Bigraphs and transitions
+Identifying the semantic and textual differences between two versions of a program
+Efficient divide-and-conquer parsing of practical context-free languages
+Analyzing Program Analyses
+Object-oriented success stories: "learning from our failures"
+
 
 Topic #33
-Cause clue clauses: error localization using maximum satisfiabilityAgile management - an oxymoron?: who needs managers anyway?Dynamic synthesis for relaxed memory modelsAbstractions from proofsComplexity of pattern-based verification for multithreaded programsDebugging concurrent processes: a case studySmart play-outSynthesis of loop-free programsEquality of streams is a ?0 over 2-complete problemAn executable formal semantics of C with applications
+Cause clue clauses: error localization using maximum satisfiability
+Agile management - an oxymoron?: who needs managers anyway?
+Dynamic synthesis for relaxed memory models
+Abstractions from proofs
+Complexity of pattern-based verification for multithreaded programs
+Debugging concurrent processes: a case study
+Smart play-out
+Synthesis of loop-free programs
+Equality of streams is a ?0 over 2-complete problem
+An executable formal semantics of C with applications
+
 
 Topic #34
-Almost control-free (indeterministic) parallel computation on permit schemesFast RMWs for TSO: semantics and implementationAutolocker: synchronization inference for atomic sectionsSymmetric lensesThe sequential prisonImproving performance by branch reorderingA study of memory management for web-based applications on multicore processorsAutomated atomicity-violation fixingFaster laziness using dynamic pointer taggingPhosphor: illuminating dynamic data flow in commodity jvms
+Almost control-free (indeterministic) parallel computation on permit schemes
+Fast RMWs for TSO: semantics and implementation
+Autolocker: synchronization inference for atomic sections
+Symmetric lenses
+The sequential prison
+Improving performance by branch reordering
+A study of memory management for web-based applications on multicore processors
+Automated atomicity-violation fixing
+Faster laziness using dynamic pointer tagging
+Phosphor: illuminating dynamic data flow in commodity jvms
+
 
 Topic #35
-Parallel programming with object assembliesThe role of objects in a services-obsessed worldAdaptive object-models (poster session)Eval begone!: semi-automated removal of eval from javascript programsObject-oriented geometry and graphics (abstract)Laminar: practical fine-grained decentralized information flow controlQuotient lensesObject identityA performance comparison of object and relational databases using the Sun BenchmarkN-synchronous Kahn networks: a relaxed model of synchrony for real-time systems
+Parallel programming with object assemblies
+The role of objects in a services-obsessed world
+Adaptive object-models (poster session)
+Eval begone!: semi-automated removal of eval from javascript programs
+Object-oriented geometry and graphics (abstract)
+Laminar: practical fine-grained decentralized information flow control
+Quotient lenses
+Object identity
+A performance comparison of object and relational databases using the Sun Benchmark
+N-synchronous Kahn networks: a relaxed model of synchrony for real-time systems
+
 
 Topic #36
-Slicing probabilistic programsEven simple programs are hard to analyzeIntroducing computer science with Project HoshimiCompiling path expressions into VLSI circuitsA straightforward denotational semantics for non-determinate data flow programsAnalysis of simple programs over different sets of primitivesFull abstraction of a real-time denotational semantics for an OCCAM-like languageeROSE: guiding programmers in eclipseCoarse-grained transactionsSafe compiler-driven transaction checkpointing and recovery
+Slicing probabilistic programs
+Even simple programs are hard to analyze
+Introducing computer science with Project Hoshimi
+Compiling path expressions into VLSI circuits
+A straightforward denotational semantics for non-determinate data flow programs
+Analysis of simple programs over different sets of primitives
+Full abstraction of a real-time denotational semantics for an OCCAM-like language
+eROSE: guiding programmers in eclipse
+Coarse-grained transactions
+Safe compiler-driven transaction checkpointing and recovery
+
 
 Topic #37
-Maximal sharing in the Lambda calculus with letrecPractical predicate dispatchOn laziness and optimality in lambda interpreters: tools for specification and analysisAutomated feedback generation for introductory programming assignmentsInformation effectsDeriving an efficient FPGA implementation of a low density parity check forward error correctorControlling interference in ambientsThe tree width of auxiliary storageLogic and inheritanceA variability-aware module system
+Maximal sharing in the Lambda calculus with letrec
+Practical predicate dispatch
+On laziness and optimality in lambda interpreters: tools for specification and analysis
+Automated feedback generation for introductory programming assignments
+Information effects
+Deriving an efficient FPGA implementation of a low density parity check forward error corrector
+Controlling interference in ambients
+The tree width of auxiliary storage
+Logic and inheritance
+A variability-aware module system
+
 
 Topic #38
-Wild control operatorsPartial order programming (extended abstract)The elephant in the room: who will take care of the code?Arithmetic with measurements on dynamically-typed object-oriented languagesA model-learner pattern for bayesian reasoningFunctional geometry and the Trait? de Lutherie: functional pearlFull Abstraction for Signal Flow GraphsGenerative model transformer: an open source MDA tool initiativeSecure trade lane: a sensor network solution for more predictable and more secure container shipmentsAmbient-oriented programming
+Wild control operators
+Partial order programming (extended abstract)
+The elephant in the room: who will take care of the code?
+Arithmetic with measurements on dynamically-typed object-oriented languages
+A model-learner pattern for bayesian reasoning
+Functional geometry and the Trait? de Lutherie: functional pearl
+Full Abstraction for Signal Flow Graphs
+Generative model transformer: an open source MDA tool initiative
+Secure trade lane: a sensor network solution for more predictable and more secure container shipments
+Ambient-oriented programming
+
 
 Topic #39
-Rubber ducks, nightmares, and unsaturated predicates: proto-scientific schemata are good for agileThe design and implementation of HoMEUnderstanding energy behaviors of thread management constructsSchema updates for object-oriented database systems (abstract)TuningFork: a platform for visualization and analysis of complex real-time systemsIncremental exploratory visualization of relationships in large codebases for program comprehensionLimitations of partial compaction: towards practical boundsIncremental exploratory visualization of relationships in large codebases for program comprehensionMul-T: a high-performance parallel LispAutomatic volume management for programmable microfluidics
+Rubber ducks, nightmares, and unsaturated predicates: proto-scientific schemata are good for agile
+The design and implementation of HoME
+Understanding energy behaviors of thread management constructs
+Schema updates for object-oriented database systems (abstract)
+TuningFork: a platform for visualization and analysis of complex real-time systems
+Incremental exploratory visualization of relationships in large codebases for program comprehension
+Limitations of partial compaction: towards practical bounds
+Incremental exploratory visualization of relationships in large codebases for program comprehension
+Mul-T: a high-performance parallel Lisp
+Automatic volume management for programmable microfluidics
+
 
 Topic #40
-Optimizing programs with intended semanticsEstimating software based on use case pointsWhat's so eXtreme about doing things right?A practical theory of language-integrated queryFostering software robustness in an increasingly hostile worldReuse learning objects through LOM and XMLAutomatic runtime error repair and containment via recovery shepherdingDemonic memory for process historiesThe composition refactoring triangle (CRT) practical toolkit: from spaghetti to lasagnaJava performance evaluation through rigorous replay compilation
+Optimizing programs with intended semantics
+Estimating software based on use case points
+What's so eXtreme about doing things right?
+A practical theory of language-integrated query
+Fostering software robustness in an increasingly hostile world
+Reuse learning objects through LOM and XML
+Automatic runtime error repair and containment via recovery shepherding
+Demonic memory for process histories
+The composition refactoring triangle (CRT) practical toolkit: from spaghetti to lasagna
+Java performance evaluation through rigorous replay compilation
+
 
 Topic #41
-Conservation of information: applications in functional, reversible, and quantum computingPractical typed lazy contractsMulti-return function callComponent based development of UDBCSimple unification-based type inference for GADTsSpecification and synthesis of communicating processes using an extended temporal logic: (preliminary version)Correctness of an STM Haskell implementationLet-floating: moving bindings to give faster programsOptimality and inefficiency: what isn't a cost model of the lambda calculus?Inductive, coinductive, and pointed types
+Conservation of information: applications in functional, reversible, and quantum computing
+Practical typed lazy contracts
+Multi-return function call
+Component based development of UDBC
+Simple unification-based type inference for GADTs
+Specification and synthesis of communicating processes using an extended temporal logic: (preliminary version)
+Correctness of an STM Haskell implementation
+Let-floating: moving bindings to give faster programs
+Optimality and inefficiency: what isn't a cost model of the lambda calculus?
+Inductive, coinductive, and pointed types
+
 
 Topic #42
-Systematic editing: generating program transformations from an exampleF4F: taint analysis of framework-based web applicationsConcurrent programming with revisions and isolation typesCommunication optimizations for parallel C programsThe competence/performance dichotomy in programming preliminary reportSpace-time trade-off optimization for a class of electronic structure calculationsSpecification Inference Using Context-Free Language ReachabilityIris: Monoids and Invariants as an Orthogonal Basis for Concurrent ReasoningOn the verification problem for weak memory modelsProbabilistic, modular and scalable inference of typestate specifications
+Systematic editing: generating program transformations from an example
+F4F: taint analysis of framework-based web applications
+Concurrent programming with revisions and isolation types
+Communication optimizations for parallel C programs
+The competence/performance dichotomy in programming preliminary report
+Space-time trade-off optimization for a class of electronic structure calculations
+Specification Inference Using Context-Free Language Reachability
+Iris: Monoids and Invariants as an Orthogonal Basis for Concurrent Reasoning
+On the verification problem for weak memory models
+Probabilistic, modular and scalable inference of typestate specifications
+
 
 Topic #43
-Abstract interpretation: a unified lattice model for static analysis of programs by construction or approximation of fixpointsPractical syntactic error recovery in compilersLazy computation with exact real numbersVirtual values for language extensionA staging calculus and its application to the verification of translators (preliminary report)Printing floating-point numbers quickly and accuratelyTowards a framework for collaborative and coordinated product configurationTowards a framework for collaborative and coordinated product configurationThe agile panelA lazy evaluator
+Abstract interpretation: a unified lattice model for static analysis of programs by construction or approximation of fixpoints
+Practical syntactic error recovery in compilers
+Lazy computation with exact real numbers
+Virtual values for language extension
+A staging calculus and its application to the verification of translators (preliminary report)
+Printing floating-point numbers quickly and accurately
+Towards a framework for collaborative and coordinated product configuration
+Towards a framework for collaborative and coordinated product configuration
+The agile panel
+A lazy evaluator
+
 
 Topic #44
-Aspect-oriented frameworks (poster session): the design of adaptable operating systemsTeaching ?object think? with multi-sensory engagement (abstract)Democratizing the cloudA concurrent object-oriented knowledge representation language  Orient84/K: its features and implementationSmartEMF: guidance in modeling toolsRole model based framework design and integrationObject-oriented design: a responsibility-driven approachXAspects: an extensible system for domain-specific aspect languagesTime Conscious Objects?Art, science, and fear
+Aspect-oriented frameworks (poster session): the design of adaptable operating systems
+Teaching ?object think? with multi-sensory engagement (abstract)
+Democratizing the cloud
+A concurrent object-oriented knowledge representation language  Orient84/K: its features and implementation
+SmartEMF: guidance in modeling tools
+Role model based framework design and integration
+Object-oriented design: a responsibility-driven approach
+XAspects: an extensible system for domain-specific aspect languages
+Time Conscious Objects?
+Art, science, and fear
+
 
 Topic #45
-Elephant 2000: a programming language based on speech actsIncremental program testing using program dependence graphsGUM: a portable parallel implementation of HaskellRecycling continuationsA proposal for taming uncertainty in the collaborative conceptual model development processTransformational programming: applications to algorithms and systemsAutonomous optimisation of application serversAn input-centric paradigm for program dynamic optimizationsSynthesizing reactive systems from LSC requirements using the play-engineA case study of domain analysis (abstract): health care
+Elephant 2000: a programming language based on speech acts
+Incremental program testing using program dependence graphs
+GUM: a portable parallel implementation of Haskell
+Recycling continuations
+A proposal for taming uncertainty in the collaborative conceptual model development process
+Transformational programming: applications to algorithms and systems
+Autonomous optimisation of application servers
+An input-centric paradigm for program dynamic optimizations
+Synthesizing reactive systems from LSC requirements using the play-engine
+A case study of domain analysis (abstract): health care
+
 
 Topic #46
-Oracle scheduling: controlling granularity in implicitly parallel languagesDynamic rebinding for marshalling and update, with destruct-time ?A short cut to parallelization theoremsLayer sharing: an improved structure-sharing frameworkBenefits and barriers of user evaluation in software engineering researchGreen: a customizable UML class diagram plug-in for eclipseLinear types for computational effectsGreen: a customizable UML class diagram plug-in for eclipseA simple technique for handling multiple polymorphismEncapsulators: a new software paradigm in Smalltalk-80
+Oracle scheduling: controlling granularity in implicitly parallel languages
+Dynamic rebinding for marshalling and update, with destruct-time ?
+A short cut to parallelization theorems
+Layer sharing: an improved structure-sharing framework
+Benefits and barriers of user evaluation in software engineering research
+Green: a customizable UML class diagram plug-in for eclipse
+Linear types for computational effects
+Green: a customizable UML class diagram plug-in for eclipse
+A simple technique for handling multiple polymorphism
+Encapsulators: a new software paradigm in Smalltalk-80
+
 
 Topic #47
-Fifteen years of functional pearlsVerification and design aspects of "true concurrency"McErlang: a model checker for a distributed functional programming languageMatching lenses: alignment and view update50 in 50On the advantages of free choice: a symmetric and fully distributed solution to the dining philosophers problemA fully abstract trace model for dataflow networksThe essence of ReynoldsDistributed data structures in LindaCelebrating 40 years of language evolution: simula 67 to the present and beyond
+Fifteen years of functional pearls
+Verification and design aspects of "true concurrency"
+McErlang: a model checker for a distributed functional programming language
+Matching lenses: alignment and view update
+50 in 50
+On the advantages of free choice: a symmetric and fully distributed solution to the dining philosophers problem
+A fully abstract trace model for dataflow networks
+The essence of Reynolds
+Distributed data structures in Linda
+Celebrating 40 years of language evolution: simula 67 to the present and beyond
+
 
 Topic #48
-A simplifier based on efficient decision algorithmsBisimulation for quantum processesSuccinct Representation of Concurrent Trace SetsReusing debugging knowledge via trace-based bug searchTaming the parallel effect zoo: extensible deterministic parallelism with LVishThe spineless tagless G-machine, naturallyA temporal fixpoint calculusSocial processes and proofs of theorems and programs, revisitedAn abstract machine for CLP(R)An indeterminate constructor for applicative programming
+A simplifier based on efficient decision algorithms
+Bisimulation for quantum processes
+Succinct Representation of Concurrent Trace Sets
+Reusing debugging knowledge via trace-based bug search
+Taming the parallel effect zoo: extensible deterministic parallelism with LVish
+The spineless tagless G-machine, naturally
+A temporal fixpoint calculus
+Social processes and proofs of theorems and programs, revisited
+An abstract machine for CLP(R)
+An indeterminate constructor for applicative programming
+
 
 Topic #49
-Strict deterministic versus LR(0) parsingDetecting API documentation errorsThe design and verification of Java's memory modelGrammatical abstraction and incremental syntax analysis in a language-based editoroops: discovering LL(1) through objectsAgile anthropology and Alexander's architecture: an essay in three voicesOn the covering of left recursive grammarsThe parks PDA: a handheld device for theme park guests in squeakIncremental distribution of timestamp packets: a new approach to distributed garbage collectionEfficient nondestructive equality checking for trees and graphs
+Strict deterministic versus LR(0) parsing
+Detecting API documentation errors
+The design and verification of Java's memory model
+Grammatical abstraction and incremental syntax analysis in a language-based editor
+oops: discovering LL(1) through objects
+Agile anthropology and Alexander's architecture: an essay in three voices
+On the covering of left recursive grammars
+The parks PDA: a handheld device for theme park guests in squeak
+Incremental distribution of timestamp packets: a new approach to distributed garbage collection
+Efficient nondestructive equality checking for trees and graphs
+
 
