@@ -271,13 +271,42 @@ def read():
     return (documents, meta)
 
 
-def printTopics(corpus, modelFilepath):
-    """Prints the top n papers for each topic of a given model.
+def topPapers(corpus, modelFilepath, numTopics, n):
+    """Prints the top n papers for each topic number in numTopics of a given model.
     """
     (documents, meta) = corpus
     model = LdaModel.load(modelFilepath)
-    tops = sorted(documents, reverse=True, key=lambda doc: abs(dict(doc).get(0, 0.0)))
-    print(tops)
+
+    # Default probability value for fetching topic probabilities for each document
+    # (to account for cases when a topic isn't present in the document's topic vector)
+    defaultValue = 0
+
+    # Zip documents' meta data and topic vectors to keep them together 
+    # when we sort.
+    metaAndVectorTuples = zip(meta, model[documents])
+    allTops = []
+    for topicNum in range(numTopics):
+        curTops = sorted( # Top papers for current topic.
+            metaAndVectorTuples, 
+            reverse=True, 
+            key=lambda x: abs(dict(x[1]).get(topicNum, defaultValue)) # Get probability from second value in tuple (topic vector) and sort.
+        )
+        allTops.append(curTops[:n])
+    return allTops
+
+
+def topPapersToFile(topPapers, filepath):
+    """Writes contents of list, a, line-by-line to filepath.
+    """
+    with open(filepath, 'w') as f:
+        for topicNum in range(len(topPapers)):
+            f.write("Topic #{topicNum}".format(topicNum=topicNum))
+            f.write('\n')
+            f.writelines(
+                map(lambda x: x.encode('ascii', 'replace'), topPapers[topicNum])
+            )
+            f.write('\n\n')
+    return
 
 
 """Run LDA
@@ -325,18 +354,33 @@ if __name__ == '__main__':
 
     # Saved model path info.
     MODEL_ARCHIVE_DIR = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
-    MODEL_DIR = 'model-{num_topics}t-{passes}p-{iterations}i-{alpha}a-{gamma_threshold}g'.format(
-        num_topics=NUM_TOPICS,
+    MODEL_DIR = 'model-{numTopics}t-{passes}p-{iterations}i-{alpha}a-{gammaThreshold}g'.format(
+        numTopics=NUM_TOPICS,
         passes=PASSES,
         iterations=ITERATIONS,
         alpha=ALPHA,
-        gamma_threshold=GAMMA_THRESHOLD,
+        gammaThreshold=GAMMA_THRESHOLD,
     )
     MODEL_FILENAME = 'model'
     # MODEL_FILEPATH = os.path.join(MODEL_ARCHIVE_DIR, MODEL_DIR, MODEL_FILENAME)
     MODEL_FILEPATH = os.path.join(MODEL_ARCHIVE_DIR, MODEL_FILENAME)
+    TOP_PAPERS_FILEPATH = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/top_papers.test'
 
     (documents, meta) = read()
+    tokenized = preprocess(documents)
+    dictionary = generateDictionary(tokenized)
+    DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
+
     # model = lda(documents, num_topics=NUM_TOPICS, iterations=ITERATIONS, alpha='auto')
     # model.save(os.path.join(modelArchiveDir, modelFileName))
-    printTopics((documents, meta), MODEL_FILEPATH)
+    allTops = topPapers((DTMatrix, meta), MODEL_FILEPATH, 50, 10)
+
+    allTopTitles = []
+    for tops in allTops:
+        topTitles = [meta['title'] for (meta, topicVector) in tops]
+        allTopTitles.append(topTitles)
+
+    print(allTopTitles[0])
+    topPapersToFile(allTopTitles, TOP_PAPERS_FILEPATH)
+
+
