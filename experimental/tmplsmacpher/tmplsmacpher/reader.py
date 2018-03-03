@@ -93,14 +93,14 @@ class JsonFileReader(object):
             metas.append(JsonFileReader.buildMeta(doc, conference))
 
         # Clean abstracts that are None
-        assert(len(abstracts) == len(metas))
-        cleanedAbs = []
-        cleanedMetas = []
-        for i in range(len(abstracts)):
-            if abstracts[i] is not None:
-                cleanedAbs.append(abstracts[i])
-                cleanedMetas.append(metas[i])
-        return (cleanedAbs, cleanedMetas)
+        # assert(len(abstracts) == len(metas))
+        # cleanedAbs = []
+        # cleanedMetas = []
+        # for i in range(len(abstracts)):
+        #     if abstracts[i] is not None:
+        #         cleanedAbs.append(abstracts[i])
+        #         cleanedMetas.append(metas[i])
+        return (abstracts, metas)
 
     @staticmethod
     def loadAllFullTexts(dirPath, recursive=True):
