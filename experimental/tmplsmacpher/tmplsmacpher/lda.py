@@ -248,22 +248,6 @@ def tokenizedToDTMatrix(tokenized, dictionary):
     return bagOfWords
 
 
-""" Step 3: Generate LDA topic model from corpus' document-term matrix. """
-def lda(documents, num_topics, passes, iterations, chunksize, alpha, gamma_threshold):
-    tokenized = preprocess(documents)
-    dictionary = generateDictionary(tokenized)
-    DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
-    ldamodel = LdaModel(DTMatrix,
-                        num_topics=num_topics,
-                        id2word=dictionary, 
-                        iterations=iterations,
-                        alpha=alpha,
-                        passes=passes,
-                        chunksize=chunksize,
-                        gamma_threshold=gamma_threshold)
-    return ldamodel
-
-
 def loadCorpus():
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     reader = JsonFileReader()
@@ -271,7 +255,7 @@ def loadCorpus():
     return (documents, meta)
 
 
-def aggregateTopDocuments(corpus, modelFilepath, numTopics, n):
+def aggregateTopPapers(model, corpus, n):
     """Aggregates the top n documents (where a document is represented by
     its metadata and its topic vector) per topic.
 
@@ -279,7 +263,6 @@ def aggregateTopDocuments(corpus, modelFilepath, numTopics, n):
         corpus:
     """
     (documents, meta) = corpus
-    model = LdaModel.load(modelFilepath)
 
     # Default probability value for fetching topic probabilities for each document
     # (to account for cases when a topic isn't present in the document's topic vector)
@@ -289,7 +272,7 @@ def aggregateTopDocuments(corpus, modelFilepath, numTopics, n):
     # when we sort.
     metaAndVectorTuples = zip(meta, model[documents])
     allTops = []
-    for topicNum in range(numTopics):
+    for topicNum in range(model.num_topics):
         # Top papers for topic #<topic_num>
         curTops = sorted(
             metaAndVectorTuples, 
@@ -302,11 +285,11 @@ def aggregateTopDocuments(corpus, modelFilepath, numTopics, n):
     return allTops
 
 
-def topicInfoToFile(model, corpus, topPapers, filepath):
+def topicInfoToFile(model, corpus, filepath, numPapers=10, numWords=10):
     """Writes contents of list, a, line-by-line to filepath.
     """
 
-    allTops = aggregateTopDocuments(corpus, MODEL_FILEPATH, 20, 10)
+    topPapers = aggregateTopPapers(model, corpus, numPapers)
 
     # # Only keep 'title' field from metadata.
     # allTopTitles = []
@@ -315,14 +298,14 @@ def topicInfoToFile(model, corpus, topPapers, filepath):
     #     allTopTitles.append(topTitles)
 
     with open(filepath, 'w') as f:
-        for topicNum in range(len(topPapers)):
+        for topicNum in range(model.num_topics):
             f.write('Topic #{topicNum}'.format(topicNum=topicNum))
             f.write('\n')
             f.write('-- top papers --')
             f.writelines(
-                map(lambda x: x.encode('ascii', 'replace') + '\n', 
+                # map(lambda x: x.encode('ascii', 'replace') + '\n',
                     topPapers[topicNum]
-                )
+                # )
             )
             f.write('-- top words -- ')
             f.writelines(model.get_topic_terms(topicNum, topn=10)) # Get top 10 words.
@@ -367,9 +350,9 @@ Parameters to test:
 if __name__ == '__main__':
     # Gensim LDA parameters.
     NUM_TOPICS = 20
-    PASSES = 100
-    ITERATIONS = 1000
-    CHUNKSIZE = 3744 # Number of documents in the abstract corpus.
+    PASSES = 1
+    ITERATIONS = 100
+    CHUNKSIZE = None # Can set this to explicitly set chunksize
     ALPHA = 'auto'
     GAMMA_THRESHOLD = 0.0001
 
@@ -394,21 +377,26 @@ if __name__ == '__main__':
     makeDir(MODEL_DIR)
 
     # Load and preprocess corpus.
-    (documents, meta) = loadCorpus()
+    corpus = loadCorpus()
+    (documents, meta) = corpus
     tokenized = preprocess(documents)
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
 
     # Train the lda model.
-    model = lda(documents, 
-                num_topics=NUM_TOPICS, 
-                passes=PASSES, 
-                iterations=ITERATIONS, 
-                chunksize=CHUNKSIZE, 
-                alpha=ALPHA, 
-                gamma_threshold=GAMMA_THRESHOLD)
+    model = LdaModel(DTMatrix,
+                     num_topics=NUM_TOPICS,
+                     id2word=dictionary, 
+                     iterations=ITERATIONS,
+                     alpha=ALPHA,
+                     passes=PASSES,
+                     chunksize=CHUNKSIZE or len(documents),
+                     gamma_threshold=GAMMA_THRESHOLD)
 
     # Save the lda model.
     model.save(os.path.join(MODEL_DIR, MODEL_FILENAME))
+
+    # Generate topics info file from model and corpus.
+    topicInfoToFile(model, (DTMatrix, meta), TOP_PAPERS_FILEPATH)
 
 

@@ -2,6 +2,8 @@ import json
 import logging
 import os
 
+from datetime import datetime
+
 from utils import getFileLogger  
 
 
@@ -12,8 +14,10 @@ class JsonFileReader(object):
     """
 
     LOGGER_NAME = 'JsonFileReader'
-    LOGFILE_NAME = '.JsonFileReaderLog'
-    # logger = getFileLogger(LOGGER_NAME, LOGFILE_NAME)
+    LOGFILE_NAME = '.JsonFileReaderLog_{timestamp}'.format(
+        timestamp=datetime.now().isoformat()
+    )
+
     logger = logging.getLogger(LOGGER_NAME)
     fh = logging.FileHandler(LOGFILE_NAME)
     logger.addHandler(fh)
@@ -77,17 +81,15 @@ class JsonFileReader(object):
         metas = []
         for obj in objs:
             (doc, conference) = obj
-
-            # This will return 'None' if 'abs' field is not present.
             abstract = doc.get('abs')
 
-            if abstract is not None:
-                abstracts.append(abstract)
-            else:
+            if abstract is None: # Document didn't have an 'abs' field.
                 JsonFileReader.logger.info(
-                    '{doc} does not have an "abs" field.'.format(doc=doc)
+                    '{conference}: {doc} does not have an "abs" field.'
+                    .format(conference=conference, doc=doc)
                 )
-                abstracts.append(None)
+                abstract = ''
+            abstracts.append(abstract)
 
             # Fetch metadata.
             metas.append(JsonFileReader.buildMeta(doc, conference))
@@ -120,7 +122,7 @@ class JsonFileReader(object):
         for obj in objs:
             (doc, conference) = obj
 
-            # This will return 'None' if 'abs' field is not present.
+            # This will return 'None' if 'full-text' field is not present.
             fullText = doc.get('abs')
 
             if fullText is not None:
@@ -141,16 +143,12 @@ class JsonFileReader(object):
         meta = dict()
 
         # Add conference.
-        if conference is not None:
-            meta['conf'] = conference
+        meta['conf'] = conference
 
         # Add rest of field.
         for field in fields:
             value = doc.get(field)
-            if value is not None:
-                meta[field] = value
-            else:
-                meta[field] = None
+            meta[field] = value
         return meta
 
 
