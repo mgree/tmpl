@@ -29,3 +29,9 @@ raw abstracts or fulltexts with LDA.
 - Try out fulltexts corpora.
 - Lower beta (make words appear in fewer topics). Trying out 'auto' eta.
 - Try out BleiCorpus.
+
+3/05/2018
+- TFIDF for LDA
+- Run full-text
+- Parse the DL
+- 

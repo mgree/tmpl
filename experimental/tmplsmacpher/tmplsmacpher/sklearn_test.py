@@ -81,10 +81,10 @@ lda_H = lda_model.components_
 no_top_words = 10
 no_top_documents = 10
 
-print "Displaying topics for nmf..."
+print "*** Displaying topics for nmf *** "
 display_topics(nmf_H, nmf_W, tfidf_feature_names, (documents, metas), no_top_words, no_top_documents)
 
-print "Displaying topics for lda..."
+print "*** Displaying topics for lda ***"
 display_topics(lda_H, lda_W, tf_feature_names, (documents, metas), no_top_words, no_top_documents)
 
 # no_top_words = 10
