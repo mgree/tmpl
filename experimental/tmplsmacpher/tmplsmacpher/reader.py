@@ -18,9 +18,18 @@ class JsonFileReader(object):
         timestamp=datetime.now().isoformat()
     )
 
+    DUPLOGGER_NAME = 'JsonFileReaderDup'
+    DUPFILE_NAME = '.JsonFileReaderDupLog_{timestamp}'.format(
+        timestamp=datetime.now().isoformat()
+    )
+
     logger = logging.getLogger(LOGGER_NAME)
     fh = logging.FileHandler(LOGFILE_NAME)
     logger.addHandler(fh)
+
+    duplogger = logging.getLogger(DUPLOGGER_NAME)
+    dupFh = logging.FileHandler(DUPFILE_NAME)
+    duplogger.addHandler(dupFh)
 
     def __init__(self):
         pass
@@ -56,7 +65,9 @@ class JsonFileReader(object):
             if not os.path.isdir(childPath):
                 objs.append(
                     (JsonFileReader.loadFile(childPath), # Document json obj.
-                    os.path.basename(os.path.dirname(childPath))) # Conference.
+                    os.path.basename(os.path.dirname(childPath)), # Conference.
+                    childPath, # Filepath.
+                    )
                 )
 
             # Only recursive if recursive flag is set to True.
@@ -79,8 +90,9 @@ class JsonFileReader(object):
         objs = JsonFileReader.loadAllFiles(dirPath, recursive)
         abstracts = []
         metas = []
+        seen = dict()
         for obj in objs:
-            (doc, conference) = obj
+            (doc, conference, filepath) = obj
             abstract = doc.get('abs')
 
             if abstract is None: # Document didn't have an 'abs' field.
@@ -92,7 +104,20 @@ class JsonFileReader(object):
             abstracts.append(abstract)
 
             # Fetch metadata.
-            metas.append(JsonFileReader.buildMeta(doc, conference))
+            meta = JsonFileReader.buildMeta(doc, conference)
+            title = meta['title']
+            if title in seen: # Already have seen this title before.
+                JsonFileReader.duplogger.info(
+                    "'{title}' from {conference} at {dup_filepath} already seen at {seen_filepath}".format(
+                    title=title, 
+                    conference=conference, 
+                    dup_filepath=filepath, 
+                    seen_filepath=seen[title],
+                    )
+                )
+            else: # Haven't seen this title before, but add it to seen with its filepath to keep track of it.
+                seen[title] = filepath
+            metas.append(meta)
 
         # Clean abstracts that are None
         # assert(len(abstracts) == len(metas))

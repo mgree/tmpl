@@ -25,7 +25,7 @@ raw abstracts or fulltexts with LDA.
 - Investigate sklearn's LDA model.
 
 2/26/2018
-- Print out top 10 documents for each topic.
+- Print out top 10 documents for each topic. Done
 - Try out fulltexts corpora.
-- Lower beta (make words appear in fewer topics)
-- Try out BleiCorpus
+- Lower beta (make words appear in fewer topics). Trying out 'auto' eta.
+- Try out BleiCorpus.

@@ -353,16 +353,18 @@ if __name__ == '__main__':
     PASSES = 1
     ITERATIONS = 100
     CHUNKSIZE = None # Can set this to explicitly set chunksize
-    ALPHA = 'auto'
+    ALPHA = 'auto' # Learn document-topic distribution from corpus.
+    ETA = 'auto' # Learn topic-word distribution from corpus.
     GAMMA_THRESHOLD = 0.0001
 
     # Saved model path info.
     MODELS_PATHNAME = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
-    MODEL_DIRNAME = 'model-{numTopics}t-{passes}p-{iterations}i-{alpha}a-{gammaThreshold}g'.format(
+    MODEL_DIRNAME = 'model-{numTopics}t-{passes}p-{iterations}i-{alpha}a-{eta}e-{gammaThreshold}g'.format(
         numTopics=NUM_TOPICS,
         passes=PASSES,
         iterations=ITERATIONS,
         alpha=ALPHA,
+        eta=ETA,
         gammaThreshold=GAMMA_THRESHOLD,
     )
     MODEL_DIR = os.path.join(MODELS_PATHNAME, MODEL_DIRNAME)
@@ -373,12 +375,10 @@ if __name__ == '__main__':
     MODEL_FILEPATH = os.path.join(MODEL_DIR, MODEL_FILENAME)
     TOP_PAPERS_FILEPATH = os.path.join(MODEL_DIR, TOP_PAPERS_FILENAME)
 
-    # Make dir to save model to.
-    makeDir(MODEL_DIR)
-
     # Load and preprocess corpus.
     corpus = loadCorpus()
     (documents, meta) = corpus
+
     tokenized = preprocess(documents)
     dictionary = generateDictionary(tokenized)
     DTMatrix = tokenizedToDTMatrix(tokenized, dictionary)
@@ -389,10 +389,14 @@ if __name__ == '__main__':
                      id2word=dictionary, 
                      iterations=ITERATIONS,
                      alpha=ALPHA,
+                     eta=ETA,
                      passes=PASSES,
                      chunksize=CHUNKSIZE or len(documents),
                      gamma_threshold=GAMMA_THRESHOLD)
 
+
+    # Make dir to save model to.
+    makeDir(MODEL_DIR)
     # Save the lda model.
     model.save(os.path.join(MODEL_DIR, MODEL_FILENAME))
 
