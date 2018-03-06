@@ -4,10 +4,12 @@ import os
 
 from datetime import datetime
 
-from utils import getFileLogger
+from utils import getLoggingFormatter
 from utils import makeDir
-
 from utils import LOG_DIR
+
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 class JsonFileReader(object):
@@ -16,28 +18,30 @@ class JsonFileReader(object):
     # Make log directory if it doesn't exist.
     makeDir(LOG_DIR)
 
-    MISSING_FIELDS_LOGFILE_NAME = 'JsonFileReader_missingFields'
-    DUP_DOCS_LOGFILE_NAME = 'JsonFileReader_dupDocuments'
-
-    missingFieldsLogger = getFileLogger(
-        os.path.join(LOG_DIR, MISSING_FIELDS_LOGFILE_NAME)
+    MISSING_FIELDS_LOGGER_NAME = 'JsonFileReader_missingFields'
+    MISSING_FIELDS_LOGFILE_NAME = ('JsonFileReader_missingFields_{datetime}'
+        .format(
+            datetime=datetime.now().isoformat()
+        )
     )
 
-    dupDocsLogger = getFileLogger(
-        os.path.join(LOG_DIR, DUP_DOCS_LOGFILE_NAME)
+    DUP_DOCS_LOGGER_NAME = 'JsonFileReader_dupDocuments'
+    DUP_DOCS_LOGFILE_NAME = ('JsonFileReader_dupDocuments_{datetime}'
+        .format(
+            datetime=datetime.now().isoformat()
+        )
     )
 
-    # logger = getFileLogger()
-    # logger = logging.getLogger(LOGGER_NAME)
-    # fh = logging.FileHandler(LOGFILE_NAME)
-    # logger.addHandler(fh)
+    missingFieldsLogger = logging.getLogger(MISSING_FIELDS_LOGGER_NAME)
+    fh0 = logging.FileHandler(os.path.join(LOG_DIR, MISSING_FIELDS_LOGFILE_NAME))
+    fh0.setFormatter(getLoggingFormatter())
+    missingFieldsLogger.addHandler(fh0)
 
-    # duplogger = logging.getLogger(DUPLOGGER_NAME)
-    # dupFh = logging.FileHandler(DUPFILE_NAME)
-    # duplogger.addHandler(dupFh)
+    dupDocsLogger = logging.getLogger(DUP_DOCS_LOGGER_NAME)
+    fh1 = logging.FileHandler(os.path.join(LOG_DIR, DUP_DOCS_LOGFILE_NAME))
+    fh1.setFormatter(getLoggingFormatter())
+    dupDocsLogger.addHandler(fh1)
 
-    def __init__(self):
-        pass
 
     @staticmethod
     def loadFile(filepath):

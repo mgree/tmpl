@@ -6,58 +6,14 @@ import os
 
 from datetime import datetime
 
-# Set universal format for log messages across entire package.
-formatter = logging.Formatter(
-    '%(asctime)s : %(name)s - %(levelname)s : %(message)s'
-)
-
 
 LOG_DIR = 'logs'
 
 
-def getStdoutLogger(name, level=logging.INFO):
-    """Returns a simple logger that logs to stdout.
-
-    Args:
-        name: string name of the logger.
-        level: log level.
-
-    Returns:
-        A simple logger.
-    """
-    logger = logging.getLogger(name)
-    logger.setLevel(level)
-
-    streamHandler = logging.StreamHandler()
-    streamHandler.setLevel(level)
-    streamHandler.setFormatter(formatter)
-    logger.addHandler(streamHandler)
-    return logger
-
-
-def getFileLogger(path, level=logging.INFO):
-    """Returns a logger with a file handler.
-
-    Args:
-        path: path to logfile.
-        level: log level.
-    
-    Note: logger name is set to basename of path.
-
-    Returns:
-        A logger thatlogs to a file.
-    """
-    # Instantiate logger.
-    logger = logging.getLogger(os.path.basename(path))
-
-    # Instantiate and configure file handler.
-    fileHandler = logging.FileHandler(path)
-    fileHandler.setLevel(level)
-    fileHandler.setFormatter(formatter)
-    logger.addHandler(fileHandler)
-
-    return logger
-
+def getLoggingFormatter():
+    return logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
 
 def makeDir(path):
     """Checks if directory exists. If it doesn't, creates it.
