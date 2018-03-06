@@ -12,6 +12,9 @@ formatter = logging.Formatter(
 )
 
 
+LOG_DIR = 'logs'
+
+
 def getStdoutLogger(name, level=logging.INFO):
     """Returns a simple logger that logs to stdout.
 
@@ -32,23 +35,27 @@ def getStdoutLogger(name, level=logging.INFO):
     return logger
 
 
-def getFileLogger(name, logfileName=None, level=logging.INFO):
+def getFileLogger(path, level=logging.INFO):
     """Returns a logger with a file handler.
 
     Args:
-        name: string name of the logger.
-        logfileName: name of the logfile. Defaults the .<name>-log (param name).
+        path: path to logfile.
         level: log level.
+    
+    Note: logger name is set to basename of path.
 
     Returns:
         A logger thatlogs to a file.
     """
-    if logfileName is None:
-        logfileName = '.{name}-log'.format(name=name)
-    logger = logging.getLogger(name)
-    fileHandler = logging.FileHandler(logfileName)
+    # Instantiate logger.
+    logger = logging.getLogger(os.path.basename(path))
+
+    # Instantiate and configure file handler.
+    fileHandler = logging.FileHandler(path)
+    fileHandler.setLevel(level)
     fileHandler.setFormatter(formatter)
     logger.addHandler(fileHandler)
+
     return logger
 
 
@@ -69,7 +76,7 @@ class DiskCache(object):
     on disk.
     """
 
-    DEFAULT_CACHE_DIR = os.path.join(os.path.dirname(__file__), '.cache')
+    DEFAULT_CACHE_DIR = os.path.join(os.path.dirname(__file__), 'cache')
     DEFAULT_FORCE_RERUN = False
 
     def __init__(self,

@@ -4,32 +4,37 @@ import os
 
 from datetime import datetime
 
-from utils import getFileLogger  
+from utils import getFileLogger
+from utils import makeDir
 
+from utils import LOG_DIR
 
-# class XMLReader(object):
 
 class JsonFileReader(object):
     """A utility class for reading json objects from files.
     """
+    # Make log directory if it doesn't exist.
+    makeDir(LOG_DIR)
 
-    LOGGER_NAME = 'JsonFileReader'
-    LOGFILE_NAME = '.JsonFileReaderLog_{timestamp}'.format(
-        timestamp=datetime.now().isoformat()
+    MISSING_FIELDS_LOGFILE_NAME = 'JsonFileReader_missingFields'
+    DUP_DOCS_LOGFILE_NAME = 'JsonFileReader_dupDocuments'
+
+    missingFieldsLogger = getFileLogger(
+        os.path.join(LOG_DIR, MISSING_FIELDS_LOGFILE_NAME)
     )
 
-    DUPLOGGER_NAME = 'JsonFileReaderDup'
-    DUPFILE_NAME = '.JsonFileReaderDupLog_{timestamp}'.format(
-        timestamp=datetime.now().isoformat()
+    dupDocsLogger = getFileLogger(
+        os.path.join(LOG_DIR, DUP_DOCS_LOGFILE_NAME)
     )
 
-    logger = logging.getLogger(LOGGER_NAME)
-    fh = logging.FileHandler(LOGFILE_NAME)
-    logger.addHandler(fh)
+    # logger = getFileLogger()
+    # logger = logging.getLogger(LOGGER_NAME)
+    # fh = logging.FileHandler(LOGFILE_NAME)
+    # logger.addHandler(fh)
 
-    duplogger = logging.getLogger(DUPLOGGER_NAME)
-    dupFh = logging.FileHandler(DUPFILE_NAME)
-    duplogger.addHandler(dupFh)
+    # duplogger = logging.getLogger(DUPLOGGER_NAME)
+    # dupFh = logging.FileHandler(DUPFILE_NAME)
+    # duplogger.addHandler(dupFh)
 
     def __init__(self):
         pass
@@ -96,7 +101,7 @@ class JsonFileReader(object):
             abstract = doc.get('abs')
 
             if abstract is None: # Document didn't have an 'abs' field.
-                JsonFileReader.logger.info(
+                JsonFileReader.missingFieldsLogger.info(
                     '{conference}: {doc} does not have an "abs" field.'
                     .format(conference=conference, doc=doc)
                 )
@@ -107,7 +112,7 @@ class JsonFileReader(object):
             meta = JsonFileReader.buildMeta(doc, conference)
             title = meta['title']
             if title in seen: # Already have seen this title before.
-                JsonFileReader.duplogger.info(
+                JsonFileReader.dupDocsLogger.info(
                     "'{title}' from {conference} at {dup_filepath} already seen at {seen_filepath}".format(
                     title=title, 
                     conference=conference, 
@@ -119,14 +124,6 @@ class JsonFileReader(object):
                 seen[title] = filepath
             metas.append(meta)
 
-        # Clean abstracts that are None
-        # assert(len(abstracts) == len(metas))
-        # cleanedAbs = []
-        # cleanedMetas = []
-        # for i in range(len(abstracts)):
-        #     if abstracts[i] is not None:
-        #         cleanedAbs.append(abstracts[i])
-        #         cleanedMetas.append(metas[i])
         return (abstracts, metas)
 
     @staticmethod
@@ -153,7 +150,7 @@ class JsonFileReader(object):
             if fullText is not None:
                 fullTexts.append(fullText)
             else:
-                JsonFileReader.logger.info(
+                JsonFileReader.missingFieldsLogger.info(
                     '{doc} does not have a "full-text" field.'.format(doc=doc)
                 )
                 fullTexts.append(None)
@@ -178,11 +175,8 @@ class JsonFileReader(object):
 
 
 if __name__ == '__main__':
-    path_to_abstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    pathToAbstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
-    reader = JsonFileReader()
-    documents = reader.loadAllFullTexts(pathToFulltexts, recursive=True)
+    documents = JsonFileReader.loadAllAbstracts(pathToAbstracts, recursive=True)
     print(documents[-1])
-
-
 

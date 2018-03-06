@@ -1,6 +1,8 @@
 *.pyc
+*.egg
 build
 dist
-*.egg
-.cache
+cache
+logs
+saved_corpora
 

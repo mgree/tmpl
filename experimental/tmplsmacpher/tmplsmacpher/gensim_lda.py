@@ -358,7 +358,7 @@ if __name__ == '__main__':
     GAMMA_THRESHOLD = 0.0001
 
     # Saved model path info.
-    MODELS_PATHNAME = '/Users/smacpher/clones/tmpl_venv/tmpl/experimental/models'
+    MODELS_PATHNAME = '.'
     MODEL_DIRNAME = 'model-{numTopics}t-{passes}p-{iterations}i-{alpha}a-{eta}e-{gammaThreshold}g'.format(
         numTopics=NUM_TOPICS,
         passes=PASSES,
