@@ -7,6 +7,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from reader import JsonFileReader
 
 
+# TODO: If user chooses tfidf and LDA, use tfidf to filter words first, then use LDA.
+
 class TopicModel(object):
 
     TFIDF_VECTORIZER = 'tfidf'
@@ -27,13 +29,13 @@ class TopicModel(object):
         self.noTopics = noTopics
         self.noFeatures = noFeatures
 
-        (self._documents, self._corpus) = self.corpus
+        (self._documents, self._metas) = self.corpus
+        self._trained = False
         self._vectorizer = None
         self._model = None
         self._feature_names = None
         self._W = None
         self._H = None
-
 
     @property
     def vectorizer(self):
@@ -82,13 +84,13 @@ class TopicModel(object):
 
         # fit_transform learns a vocabulary for the corpus and 
         # returns the transformed term-document matrix.
-        vectorized = self._vectorizer.fit_transform(documents)
+        vectorized = self.vectorizer.fit_transform(documents)
 
         # Save dictionary mapping ids to words.
-        self._feature_names = self._vectorizer.get_feature_names()
+        self._feature_names = self.vectorizer.get_feature_names()
 
         # Set model to newly trained model.
-        self.model = self.model.fit(vectorized)
+        model = self.model.fit(vectorized)
 
         # Save the topic-to-documents matrix. Essentially, we are
         # using the model we just trained to convert our document-term matrix
@@ -100,24 +102,45 @@ class TopicModel(object):
         # learns using the corpus.
         self._H = self.model.components_
 
+        self._trained = True
         return
 
     def toString(self, noWords=10, noPapers=10):
-        output = ''
-        for topic_id, topic in enumerate(self._H):
-            output += '---------- Topic {topic_id} ----------'.format(
-                topic_id=topic_id
-                )
-            output += '\n'
-            output += '*** Top words ***'
-            output += " ".join(
-                [
-                self._feature_names[i] for i in topic.argsort()[:-noWords -1:-1]
-                ])
-            output += '\n'
-            output += '*** Top papers ***'
-            topDocIndices = np.argsort( W[:,topic_idx] )[::-1][0:no_top_documents]
-            output += " ".join([self._metas[i]['title'] for i in topDocIndices])
-            output += '\n'
+        if not self._trained:
+            output = ('<TopicModel: '
+                      'Untrained {modelType} model with {noTopics} topics and '
+                      '{noFeatures} features '
+                      'using a {vectorizerType} vectorizer>').format(
+                            modelType=self.modelType,
+                            noTopics=self.noTopics,
+                            noFeatures=self.noFeatures,
+                            vectorizerType=self.vectorizerType,
+                        )
+        else:
+            output = ''
+            for topic_id, topic in enumerate(self._H):
+                output += '---------- Topic {topic_id} ----------'.format(
+                    topic_id=topic_id
+                    )
+                output += '\n'
+                output += '*** Top words ***'
+                output +='\n'
+                output += '\n'.join(
+                    [
+                    self._feature_names[i] for i in topic.argsort()[:-noWords -1:-1]
+                    ])
+                output += '\n\n'
+                output += '*** Top papers ***'
+                output +='\n'
+                topDocIndices = np.argsort(self._W[:,topic_id] )[::-1][0:noPapers]
+                output += '\n'.join([self._metas[i]['title'] for i in topDocIndices])
+                output += '\n\n'
         return output
 
+
+if __name__ == '__main__':
+    pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
+    model = TopicModel(corpus, noTopics=20, noFeatures=1000)
+    model.train()
+    print model.toString()

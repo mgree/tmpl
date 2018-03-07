@@ -8,10 +8,6 @@ from utils import getLoggingFormatter
 from utils import makeDir
 from utils import LOG_DIR
 
-
-logging.basicConfig(level=logging.DEBUG)
-
-
 class JsonFileReader(object):
     """A utility class for reading json objects from files.
     """
@@ -36,11 +32,13 @@ class JsonFileReader(object):
     fh0 = logging.FileHandler(os.path.join(LOG_DIR, MISSING_FIELDS_LOGFILE_NAME))
     fh0.setFormatter(getLoggingFormatter())
     missingFieldsLogger.addHandler(fh0)
+    missingFieldsLogger.setLevel(logging.DEBUG)
 
     dupDocsLogger = logging.getLogger(DUP_DOCS_LOGGER_NAME)
     fh1 = logging.FileHandler(os.path.join(LOG_DIR, DUP_DOCS_LOGFILE_NAME))
     fh1.setFormatter(getLoggingFormatter())
     dupDocsLogger.addHandler(fh1)
+    dupDocsLogger.setLevel(logging.DEBUG)
 
 
     @staticmethod
