@@ -12,7 +12,7 @@ from reader import JsonFileReader
 class TopicModel(object):
 
     TFIDF_VECTORIZER = 'tfidf'
-    TF_VECTORIZER = 'count'
+    COUNT_VECTORIZER = 'count'
 
     NMF = 'nmf'
     LDA = 'lda'
@@ -45,7 +45,7 @@ class TopicModel(object):
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
                                                    stop_words='english')
-            elif self.vectorizerType == self.TF_VECTORIZER:
+            elif self.vectorizerType == self.COUNT_VECTORIZER:
                 self._vectorizer = CountVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
@@ -105,6 +105,8 @@ class TopicModel(object):
         self._trained = True
         return
 
+    # TODO: LDA model toString spits out the same papers for all topics.
+    # Only works when using the count vectorizer.
     def toString(self, noWords=10, noPapers=10):
         if not self._trained:
             output = ('<TopicModel: '
@@ -125,10 +127,8 @@ class TopicModel(object):
                 output += '\n'
                 output += '*** Top words ***'
                 output +='\n'
-                output += '\n'.join(
-                    [
-                    self._feature_names[i] for i in topic.argsort()[:-noWords -1:-1]
-                    ])
+                topWordsIndices = topic.argsort()[:-noWords -1:-1]
+                output += '\n'.join([self._feature_names[i] for i in topWordsIndices])
                 output += '\n\n'
                 output += '*** Top papers ***'
                 output +='\n'
@@ -141,6 +141,6 @@ class TopicModel(object):
 if __name__ == '__main__':
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
-    model = TopicModel(corpus, noTopics=20, noFeatures=1000)
+    model = TopicModel(corpus, modelType=TopicModel.LDA, vectorizerType=TopicModel.COUNT_VECTORIZER, noTopics=20, noFeatures=1000)
     model.train()
     print model.toString()
