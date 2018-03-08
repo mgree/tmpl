@@ -11,11 +11,16 @@ from reader import JsonFileReader
 
 class TopicModel(object):
 
+    # Valid vectorizer types.
     TFIDF_VECTORIZER = 'tfidf'
     COUNT_VECTORIZER = 'count'
 
+    VALID_VECTORIZER_TYPES = {TFIDF_VECTORIZER, COUNT_VECTORIZER}
+
+    # Valid model types.
     NMF = 'nmf'
     LDA = 'lda'
+    VALID_MODEL_TYPES = {NMF, LDA}
 
     def __init__(self, 
                  corpus, 
@@ -23,12 +28,27 @@ class TopicModel(object):
                  modelType=NMF,
                  noTopics=20,
                  noFeatures=1000):
+
+        # Check arguments.
+        if vectorizerType not in self.VALID_VECTORIZER_TYPES:
+            raise ValueError('Invalid vectorizer type. Valid vectorizers are {valid_vectorizers}.'.format(
+                valid_vectorizers=self.VALID_VECTORIZER_TYPES
+                )
+            )
+
+        if modelType not in self.VALID_MODEL_TYPES:
+            raise ValueError('Invalid model type. Valid models are {valid_models}.'.format(
+                valid_models=self.VALID_MODEL_TYPES
+                )
+            )
+
         self.corpus = corpus
         self.vectorizerType = vectorizerType
         self.modelType = modelType
         self.noTopics = noTopics
         self.noFeatures = noFeatures
 
+        # Set some 'private' instance variables for internal use.
         (self._documents, self._metas) = self.corpus
         self._trained = False
         self._vectorizer = None
@@ -141,6 +161,7 @@ class TopicModel(object):
 if __name__ == '__main__':
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
-    model = TopicModel(corpus, modelType=TopicModel.LDA, vectorizerType=TopicModel.COUNT_VECTORIZER, noTopics=20, noFeatures=1000)
+    model = TopicModel(corpus, modelType='hello', vectorizerType=TopicModel.COUNT_VECTORIZER, noTopics=20, noFeatures=1000)
     model.train()
     print model.toString()
+
