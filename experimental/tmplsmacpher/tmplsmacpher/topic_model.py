@@ -22,12 +22,16 @@ class TopicModel(object):
     LDA = 'lda'
     VALID_MODEL_TYPES = {NMF, LDA}
 
+    # Scikit-learn verbosity level (higher values = more verbose logging).
+    SCIKIT_LEARN_VERBOSITY = 5
+
     def __init__(self, 
                  corpus, 
                  vectorizerType=TFIDF_VECTORIZER,
                  modelType=NMF,
                  noTopics=20,
-                 noFeatures=1000):
+                 noFeatures=1000,
+                 maxIter=10):
 
         # Check arguments.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
@@ -47,6 +51,7 @@ class TopicModel(object):
         self.modelType = modelType
         self.noTopics = noTopics
         self.noFeatures = noFeatures
+        self.maxIter = maxIter # Only for LDA.
 
         # Set some 'private' instance variables for internal use.
         (self._documents, self._metas) = self.corpus
@@ -64,12 +69,14 @@ class TopicModel(object):
                 self._vectorizer = TfidfVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
-                                                   stop_words='english')
+                                                   stop_words='english',
+                                                   ngram_range=(1, 2)) # Collect both individual words and bigrams (two words).
             elif self.vectorizerType == self.COUNT_VECTORIZER:
                 self._vectorizer = CountVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
-                                                   stop_words='english')
+                                                   stop_words='english',
+                                                   ngram_range=(1, 2)) # Collect both individual words and bigrams (two words).
             else: # Not a legal vectorizer type.
                 raise ValueError("Invalid vectorizer type.")
         return self._vectorizer
@@ -83,14 +90,14 @@ class TopicModel(object):
                                   alpha=.1,
                                   l1_ratio=.5,
                                   init='nndsvd',
-                                  verbose=5)
+                                  verbose=self.SCIKIT_LEARN_VERBOSITY)
             elif self.modelType == self.LDA:
                 self._model = LatentDirichletAllocation(n_components=self.noTopics, 
-                                                        max_iter=5, 
+                                                        max_iter=self.maxIter, 
                                                         learning_method='online', 
                                                         learning_offset=50.,
                                                         random_state=0,
-                                                        verbose=5)
+                                                        verbose=self.SCIKIT_LEARN_VERBOSITY)
             else: # Not a legal model type.
                 raise ValueError("Invalid model type.")
         return self._model
@@ -106,10 +113,12 @@ class TopicModel(object):
         # returns the transformed term-document matrix.
         vectorized = self.vectorizer.fit_transform(documents)
 
+        print vectorized
+
         # Save dictionary mapping ids to words.
         self._feature_names = self.vectorizer.get_feature_names()
 
-        # Set model to newly trained model.
+        # Train and set model to newly trained model.
         model = self.model.fit(vectorized)
 
         # Save the topic-to-documents matrix. Essentially, we are
@@ -161,7 +170,7 @@ class TopicModel(object):
 if __name__ == '__main__':
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
-    model = TopicModel(corpus, modelType='hello', vectorizerType=TopicModel.COUNT_VECTORIZER, noTopics=20, noFeatures=1000)
+    model = TopicModel(corpus, modelType=TopicModel.NMF, vectorizerType=TopicModel.TFIDF_VECTORIZER, noTopics=20, noFeatures=1000)
     model.train()
     print model.toString()
 
