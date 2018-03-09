@@ -70,13 +70,15 @@ class TopicModel(object):
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
                                                    stop_words='english',
-                                                   ngram_range=(1, 2)) # Collect both individual words and bigrams (two words).
+                                                   ngram_range=(1, 2), # Collect both individual words and bigrams (two words).
+                                                   decode_error='ignore') # Ignore encoding errors.
             elif self.vectorizerType == self.COUNT_VECTORIZER:
                 self._vectorizer = CountVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
                                                    min_df=2, # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
                                                    stop_words='english',
-                                                   ngram_range=(1, 2)) # Collect both individual words and bigrams (two words).
+                                                   ngram_range=(1, 2), # Collect both individual words and bigrams (two words).
+                                                   decode_error='ignore') # Ignore encoding errors.
             else: # Not a legal vectorizer type.
                 raise ValueError("Invalid vectorizer type.")
         return self._vectorizer
@@ -169,7 +171,9 @@ class TopicModel(object):
 
 if __name__ == '__main__':
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
     corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
+    corpus = JsonFileReader.loadAllFullTexts(pathToFullTexts, recursive=True)
     model = TopicModel(corpus, modelType=TopicModel.NMF, vectorizerType=TopicModel.TFIDF_VECTORIZER, noTopics=20, noFeatures=1000)
     model.train()
     print model.toString()

@@ -158,7 +158,7 @@ class JsonFileReader(object):
         return (abstracts, metas)
 
     @staticmethod
-    def loadAllFullTexts(dirPath, recursive=False):
+    def loadAllFullTexts(dirPath, recursive=False, fullTexts=None, metas=None):
         """Loads all of the fulltext files in a list of (full-texts, metas)
 
         Args:
@@ -169,6 +169,10 @@ class JsonFileReader(object):
         Returns:
             A list of json objects representing the contents of the files.
         """
+        if fullTexts is None:
+            fullTexts = []
+        if metas is None:
+            metas = []
         for child in os.listdir(dirPath):
             childPath = os.path.join(dirPath, child)
 
@@ -177,33 +181,32 @@ class JsonFileReader(object):
 
                 # Only care about fulltext files; we'll find their
                 # corresponding meta files ourselves.
-                if not 'fulltext' in child:
-                    continue
+                if 'fulltext' in child:
+                    # Get conference for current paper.
+                    conference = os.path.basename(os.path.dirname(childPath))
 
-                # Get conference for current paper.
-                conference = os.path.basename(os.path.dirname(childPath))
+                    # Fetch meta for current paper.
+                    metaFilepath = os.path.join(dirPath, child.replace('-fulltext', ''))
 
-                # Fetch meta for current paper.
-                metaFilepath = os.path.join(dirPath, child.replace('-fulltext', ''))
+                    # If we are missing a meta file to go along with the full-text
+                    # file, 1) log it, and 2) skip to the next iteration so we
+                    # avoid off-by-one errors by adding a fulltext without its
+                    # respective meta.
+                    if not os.path.exists(metaFilepath):
+                        missingFileLogger.info('Missing {file}'.format(metaFilepath))
+                        continue
 
-                # If we are missing a meta file to go along with the full-text
-                # file, 1) log it, and 2) skip to the next iteration so we
-                # avoid off-by-one errors by adding a fulltext without its
-                # respective meta.
-                if not os.path.exists(metaFilepath):
-                    missingFileLogger.info('Missing {file}'.format(metaFilepath))
-                    continue
+                    metaJsonObj = JsonFileReader.loadJsonFile(metaFilepath)
 
-                metaJsonObj = JsonFileReader.loadJsonFile(metaFilepath)
+                    fullText = JsonFileReader.loadFile(childPath)
+                    meta = JsonFileReader.buildMeta(metaJsonObj, conference)
 
-                fullText = JsonFileReader.loadFile(childPath)
-                meta = JsonFileReader.buildMeta(metaJsonObj, conference)
-
-                print fullText
-                yield (fullText, meta)
+                    fullTexts.append(fullText)
+                    metas.append(meta)
 
             elif recursive:
-                JsonFileReader.loadAllFullTexts(childPath, recursive)
+                JsonFileReader.loadAllFullTexts(childPath, recursive, fullTexts, metas)
+        return (fullTexts, metas)
 
     @staticmethod
     def buildMeta(doc, conference, fields=['title', 'authors']):
@@ -223,5 +226,5 @@ if __name__ == '__main__':
     pathToAbstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
     documents = JsonFileReader.loadAllFullTexts(pathToFulltexts, recursive=True)
-    # print(nexdocuments))
+    print(documents)
 
