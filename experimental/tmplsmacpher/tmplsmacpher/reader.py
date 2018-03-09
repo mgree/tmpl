@@ -15,19 +15,17 @@ class JsonFileReader(object):
     # Make log directory if it doesn't exist.
     makeDir(LOG_DIR)
 
-    # Instaniate a couple of file loggers to keep track of different things.
+    # Instantiate a couple of file loggers to keep track of different things.
     # For logging json objects with missing fields.
     MISSING_FIELDS_LOGGER_NAME = 'JsonFileReader_missingFields'
-    MISSING_FIELDS_LOGFILE_NAME = ('JsonFileReader_missingFields_{datetime}'
-        .format(
+    MISSING_FIELDS_LOGFILE_NAME = ('JsonFileReader_missingFields_{datetime}'.format(
             datetime=datetime.now().isoformat()
         )
     )
 
     # For logging when we find duplicate json objects.
     DUP_DOCS_LOGGER_NAME = 'JsonFileReader_dupDocuments'
-    DUP_DOCS_LOGFILE_NAME = ('JsonFileReader_dupDocuments_{datetime}'
-        .format(
+    DUP_DOCS_LOGFILE_NAME = ('JsonFileReader_dupDocuments_{datetime}'.format(
             datetime=datetime.now().isoformat()
         )
     )
@@ -35,8 +33,7 @@ class JsonFileReader(object):
     # For logging missing files (eg. 1-fulltext.txt doesn't have 1.txt meta
     # file to go along with it).
     MISSING_FILE_LOGGER_NAME = 'JsonFileReader_missingFiles'
-    MISSING_FILE_LOGFILE_NAME = ('JsonFileReader_missingFiles_{datetime}'
-        .format(
+    MISSING_FILE_LOGFILE_NAME = ('JsonFileReader_missingFiles_{datetime}'.format(
             datetime=datetime.now().isoformat()
         )
     )
@@ -66,7 +63,7 @@ class JsonFileReader(object):
         """Loads the json object from a single file.
 
         Args:
-            path: full path of the file to load.
+            filepath: full path of the file to load.
 
         Returns:
             A string representing the contents of the file.
@@ -79,7 +76,7 @@ class JsonFileReader(object):
         """Loads the json object from a single file.
 
         Args:
-            path: full path of the file to load.
+            filepath: full path of the file to load.
 
         Returns:
             A json object representing the contents of the file.
@@ -104,9 +101,9 @@ class JsonFileReader(object):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
                 objs.append(
-                    (JsonFileReader.loadJsonFile(childPath), # Document json obj
-                    os.path.basename(os.path.dirname(childPath)), # Conference.
-                    childPath, # Filepath.
+                    (JsonFileReader.loadJsonFile(childPath),  # Document json obj.
+                    os.path.basename(os.path.dirname(childPath)),  # Conference.
+                    childPath,  # Filepath.
                     )
                 )
             elif recursive:
@@ -119,8 +116,6 @@ class JsonFileReader(object):
 
         Args:
             dirPath: full path of directory to load abstracts from.
-            recursive: if True, will recurse down subdirectories to load 
-                abstracts.
 
         Returns:
             A zipped list of abstracts and their respective metadata.
@@ -133,7 +128,7 @@ class JsonFileReader(object):
             (doc, conference, filepath) = obj
             abstract = doc.get('abs')
 
-            if abstract is None: # Document didn't have an 'abs' field.
+            if abstract is None:  # Document didn't have an 'abs' field.
                 JsonFileReader.missingFieldsLogger.info(
                     '{conference}: {doc} does not have an "abs" field.'
                     .format(conference=conference, doc=doc)
@@ -143,13 +138,13 @@ class JsonFileReader(object):
             # Fetch metadata.
             meta = JsonFileReader.buildMeta(doc, conference)
             title = meta['title']
-            if title in seen: # Already have seen this title before.
+            if title in seen:  # Already have seen this title before.
                 JsonFileReader.dupDocsLogger.info(
-                    "'{title}' from {conference} at {dup_filepath} already seen at {seen_filepath}".format(
-                    title=title, 
-                    conference=conference, 
-                    dup_filepath=filepath, 
-                    seen_filepath=seen[title],
+                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
+                        title=title,
+                        conference=conference,
+                        dupFilepath=filepath,
+                        seenFilepath=seen[title],
                     )
                 )
             # Haven't seen this title before, but add it to seen 
@@ -160,7 +155,7 @@ class JsonFileReader(object):
             abstracts.append(abstract)
             metas.append(meta)
 
-        return (abstracts, metas)
+        return abstracts, metas
 
     @staticmethod
     def loadAllFullTexts(dirPath):
@@ -181,11 +176,7 @@ class JsonFileReader(object):
                                                 seen=None)
 
     @staticmethod
-    def _loadAllFullTexts(dirPath, 
-                          recursive=True, 
-                          fullTexts=None, 
-                          metas=None, 
-                          seen=None):
+    def _loadAllFullTexts(dirPath, recursive=True, fullTexts=None, metas=None, seen=None):
         """Recursive helper method for loadAllFullTexts.
         Loads all of the fulltext files and returns list of 
         (fullTexts, metas).
@@ -232,7 +223,7 @@ class JsonFileReader(object):
                     # iteration so we avoid off-by-one errors by adding a 
                     # fulltext without its respective meta.
                     if not os.path.exists(metaFilepath):
-                        missingFileLogger.info(
+                        JsonFileReader.missingFileLogger.info(
                             'Missing {file}'.format(metaFilepath)
                         )
                         continue
@@ -245,17 +236,17 @@ class JsonFileReader(object):
                     title = meta['title']
                     if title in seen: # Already have seen this title before.
                         JsonFileReader.dupDocsLogger.info(
-                            "'{title}' from {conference} at {dup_filepath} already seen at {seen_filepath}".format(
-                            title=title, 
-                            conference=conference, 
-                            dup_filepath=filepath, 
-                            seen_filepath=seen[title],
+                            "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
+                                title=title,
+                                conference=conference,
+                                dupFilepath=childPath,
+                                seenFilepath=seen[title],
                             )
                         )
                     # Haven't seen this title before, but add it to seen 
                     # with its filepath to keep track of it.
                     else:
-                        seen[title] = filepath
+                        seen[title] = childPath
 
                     fullTexts.append(fullText)
                     metas.append(meta)
@@ -265,10 +256,10 @@ class JsonFileReader(object):
                                                  recursive, 
                                                  fullTexts, 
                                                  metas)
-        return (fullTexts, metas)
+        return fullTexts, metas
 
     @staticmethod
-    def buildMeta(doc, conference, fields=['title', 'authors']):
+    def buildMeta(doc, conference, fields={'title', 'authors'}):
         """Builds a dictionary representing the meta data from a json doc.
 
         Args:
@@ -280,7 +271,7 @@ class JsonFileReader(object):
                 to our meta dictionary.
 
         Returns:
-            A dictionary reprsenting the meta data from doc.
+            A dictionary representing the meta data from doc.
         """
         meta = dict()
 
@@ -299,4 +290,3 @@ if __name__ == '__main__':
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
     documents = JsonFileReader.loadAllFullTexts(pathToFulltexts)
     print(documents)
-

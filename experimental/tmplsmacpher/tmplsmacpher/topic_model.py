@@ -25,12 +25,7 @@ class TopicModel(object):
     # Scikit-learn verbosity level (higher values = more verbose logging).
     SCIKIT_LEARN_VERBOSITY = 5
 
-    def __init__(self, 
-                 corpus, 
-                 vectorizerType=TFIDF_VECTORIZER,
-                 modelType=NMF,
-                 noTopics=20,
-                 noFeatures=1000,
+    def __init__(self, corpus, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
                  maxIter=10):
 
         # Check arguments.
@@ -51,7 +46,7 @@ class TopicModel(object):
         self.modelType = modelType
         self.noTopics = noTopics
         self.noFeatures = noFeatures
-        self.maxIter = maxIter # Only for LDA.
+        self.maxIter = maxIter  # Only for LDA.
 
         # Set some 'private' instance variables for internal use.
         (self._documents, self._metas) = self.corpus
@@ -62,23 +57,25 @@ class TopicModel(object):
         self._W = None
         self._H = None
 
+        self.trainedModel = None
+
     @property
     def vectorizer(self):
         if self._vectorizer is None:
             if self.vectorizerType == self.TFIDF_VECTORIZER:
-                self._vectorizer = TfidfVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
-                                                   min_df=2, # Removes words only appearing in 1 document.
+                self._vectorizer = TfidfVectorizer(max_df=0.95,  # Removes words appearing in > 95% of documents.
+                                                   min_df=2,  # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
                                                    stop_words='english',
-                                                   ngram_range=(1, 2), # Collect both individual words and bigrams (two words).
-                                                   decode_error='ignore') # Ignore encoding errors.
+                                                   ngram_range=(1, 2),  # Collect single words and bi-grams (two words).
+                                                   decode_error='ignore')  # Ignore encoding errors.
             elif self.vectorizerType == self.COUNT_VECTORIZER:
-                self._vectorizer = CountVectorizer(max_df=0.95, # Removes words appearing in more than 95% of documents.
-                                                   min_df=2, # Removes words only appearing in 1 document.
+                self._vectorizer = CountVectorizer(max_df=0.95,  # Removes words appearing in > 95% of documents.
+                                                   min_df=2,  # Removes words only appearing in 1 document.
                                                    max_features=self.noFeatures, 
                                                    stop_words='english',
-                                                   ngram_range=(1, 2), # Collect both individual words and bigrams (two words).
-                                                   decode_error='ignore') # Ignore encoding errors.
+                                                   ngram_range=(1, 2),  # Collect single words and bi-grams (two words).
+                                                   decode_error='ignore')  # Ignore encoding errors.
             else: # Not a legal vectorizer type.
                 raise ValueError("Invalid vectorizer type.")
         return self._vectorizer
@@ -100,7 +97,7 @@ class TopicModel(object):
                                                         learning_offset=50.,
                                                         random_state=0,
                                                         verbose=self.SCIKIT_LEARN_VERBOSITY)
-            else: # Not a legal model type.
+            else:  # Not a legal model type.
                 raise ValueError("Invalid model type.")
         return self._model
 
@@ -121,7 +118,7 @@ class TopicModel(object):
         self._feature_names = self.vectorizer.get_feature_names()
 
         # Train and set model to newly trained model.
-        model = self.model.fit(vectorized)
+        self.trainedModel = self.model.fit(vectorized)
 
         # Save the topic-to-documents matrix. Essentially, we are
         # using the model we just trained to convert our document-term matrix
@@ -157,15 +154,15 @@ class TopicModel(object):
                     )
                 output += '\n'
                 output += '*** Top words ***'
-                output +='\n'
-                topWordsIx = topic.argsort()[:-noWords -1:-1]
+                output += '\n'
+                topWordsIx = topic.argsort()[:-noWords - 1:-1]
                 output += '\n'.join(
                     [self._feature_names[i] for i in topWordsIx]
                 )
                 output += '\n\n'
                 output += '*** Top papers ***'
-                output +='\n'
-                topDocIx = np.argsort(self._W[:,topic_id])[::-1][0:noPapers]
+                output += '\n'
+                topDocIx = np.argsort(self._W[:, topic_id])[::-1][0:noPapers]
                 output += '\n'.join(
                     [self._metas[i]['title'] for i in topDocIx]
                 )
@@ -178,7 +175,11 @@ if __name__ == '__main__':
     pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
     corpus = JsonFileReader.loadAllAbstracts(pathToAbs)
     corpus = JsonFileReader.loadAllFullTexts(pathToFullTexts)
-    model = TopicModel(corpus, modelType=TopicModel.NMF, vectorizerType=TopicModel.TFIDF_VECTORIZER, noTopics=20, noFeatures=1000)
+    model = TopicModel(corpus,
+                       modelType=TopicModel.NMF,
+                       vectorizerType=TopicModel.TFIDF_VECTORIZER,
+                       noTopics=20,
+                       noFeatures=1000)
     model.train()
     print model.toString()
 
