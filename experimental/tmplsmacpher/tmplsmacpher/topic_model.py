@@ -158,13 +158,17 @@ class TopicModel(object):
                 output += '\n'
                 output += '*** Top words ***'
                 output +='\n'
-                topWordsIndices = topic.argsort()[:-noWords -1:-1]
-                output += '\n'.join([self._feature_names[i] for i in topWordsIndices])
+                topWordsIx = topic.argsort()[:-noWords -1:-1]
+                output += '\n'.join(
+                    [self._feature_names[i] for i in topWordsIx]
+                )
                 output += '\n\n'
                 output += '*** Top papers ***'
                 output +='\n'
-                topDocIndices = np.argsort(self._W[:,topic_id] )[::-1][0:noPapers]
-                output += '\n'.join([self._metas[i]['title'] for i in topDocIndices])
+                topDocIx = np.argsort(self._W[:,topic_id])[::-1][0:noPapers]
+                output += '\n'.join(
+                    [self._metas[i]['title'] for i in topDocIx]
+                )
                 output += '\n\n'
         return output
 
@@ -172,8 +176,8 @@ class TopicModel(object):
 if __name__ == '__main__':
     pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
-    corpus = JsonFileReader.loadAllAbstracts(pathToAbs, recursive=True)
-    corpus = JsonFileReader.loadAllFullTexts(pathToFullTexts, recursive=True)
+    corpus = JsonFileReader.loadAllAbstracts(pathToAbs)
+    corpus = JsonFileReader.loadAllFullTexts(pathToFullTexts)
     model = TopicModel(corpus, modelType=TopicModel.NMF, vectorizerType=TopicModel.TFIDF_VECTORIZER, noTopics=20, noFeatures=1000)
     model.train()
     print model.toString()

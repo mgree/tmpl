@@ -88,7 +88,7 @@ class JsonFileReader(object):
             return json.load(f)
 
     @staticmethod
-    def loadAllJsonFiles(dirPath, recursive=False):
+    def loadAllJsonFiles(dirPath, recursive=True):
         """Loads all of the files from a directory. 
 
         Args:
@@ -114,7 +114,7 @@ class JsonFileReader(object):
         return objs
 
     @staticmethod
-    def loadAllAbstracts(dirPath, recursive=True):
+    def loadAllAbstracts(dirPath):
         """Loads all abstracts and their respective metadata from a directory.
 
         Args:
@@ -125,7 +125,7 @@ class JsonFileReader(object):
         Returns:
             A zipped list of abstracts and their respective metadata.
         """
-        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive)
+        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
         abstracts = []
         metas = []
         seen = dict()
@@ -163,16 +163,44 @@ class JsonFileReader(object):
         return (abstracts, metas)
 
     @staticmethod
-    def loadAllFullTexts(dirPath, recursive=False, fullTexts=None, metas=None, seen=None):
-        """Loads all of the fulltext files in a list of (full-texts, metas)
+    def loadAllFullTexts(dirPath):
+        """Loads all of the fulltext files and returns list of 
+        (fullTexts, metas).
 
         Args:
             dirPath: full path of the directory to load files from.
-            recursive: If True, will recurse down file tree. 
+
+        Returns:
+            A tuple of (fullTexts, metas) where 
+            metas[i] corresponds to fullTexts of [i].
+        """
+        return JsonFileReader._loadAllFullTexts(dirPath, 
+                                                recursive=True, 
+                                                fullTexts=None, 
+                                                metas=None, 
+                                                seen=None)
+
+    @staticmethod
+    def _loadAllFullTexts(dirPath, 
+                          recursive=True, 
+                          fullTexts=None, 
+                          metas=None, 
+                          seen=None):
+        """Recursive helper method for loadAllFullTexts.
+        Loads all of the fulltext files and returns list of 
+        (fullTexts, metas).
+
+        Args:
+            dirPath: full path of the directory to load files from.
+            recursive: If True, will recurse down file tree.
                 Otherwise, only loads files from next level down.
+
+            Note: fullTexts, metas, and seen are aggregators to be used
+                internally; do not change their default values.
         
         Returns:
-            A list of json objects representing the contents of the files.
+            A tuple of (fullTexts, metas) where 
+            metas[i] corresponds to fullTexts of [i].
         """
         # Initialize fullTexts and metas on first call.
         if fullTexts is None:
@@ -233,20 +261,33 @@ class JsonFileReader(object):
                     metas.append(meta)
 
             elif recursive:
-                JsonFileReader.loadAllFullTexts(childPath, 
-                                                recursive, 
-                                                fullTexts, 
-                                                metas)
+                JsonFileReader._loadAllFullTexts(childPath, 
+                                                 recursive, 
+                                                 fullTexts, 
+                                                 metas)
         return (fullTexts, metas)
 
     @staticmethod
     def buildMeta(doc, conference, fields=['title', 'authors']):
+        """Builds a dictionary representing the meta data from a json doc.
+
+        Args:
+            doc: json object to build meta from.
+            conference: conference data to add to meta dictionary (with the
+                current setup, this is parsed from the directory that the 
+                doc lives in).
+            fields: fields in the json doc that we want to extract and add
+                to our meta dictionary.
+
+        Returns:
+            A dictionary reprsenting the meta data from doc.
+        """
         meta = dict()
 
         # Add conference.
         meta['conf'] = conference
 
-        # Add rest of field.
+        # Add the rest of the fields.
         for field in fields:
             value = doc.get(field)
             meta[field] = value
@@ -256,6 +297,6 @@ class JsonFileReader(object):
 if __name__ == '__main__':
     pathToAbstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
-    documents = JsonFileReader.loadAllFullTexts(pathToFulltexts, recursive=True)
+    documents = JsonFileReader.loadAllFullTexts(pathToFulltexts)
     print(documents)
 
