@@ -16,8 +16,8 @@
       <file leaf-file-name="topic_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/topic_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="290" column="90" lean-forward="true" selection-start-line="290" selection-start-column="90" selection-end-line="290" selection-end-column="90" />
+            <state relative-caret-position="177">
+              <caret line="269" column="52" lean-forward="false" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -193,15 +193,15 @@
         <state relative-caret-position="409">
           <caret line="361" column="68" lean-forward="true" selection-start-line="361" selection-start-column="68" selection-end-line="361" selection-end-column="68" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topic_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="290" column="90" lean-forward="true" selection-start-line="290" selection-start-column="90" selection-end-line="290" selection-end-column="90" />
+        <state relative-caret-position="177">
+          <caret line="269" column="52" lean-forward="false" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

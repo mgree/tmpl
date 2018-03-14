@@ -267,7 +267,7 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    makeDir(model.dirName)
+    makeDir(os.path.join(MODELS_DIR, model.dirName))
 
     logging.info(
         (
