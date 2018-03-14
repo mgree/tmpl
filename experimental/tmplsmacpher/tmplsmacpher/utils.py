@@ -15,6 +15,7 @@ def getLoggingFormatter():
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
+
 def makeDir(path):
     """Checks if directory exists. If it doesn't, creates it.
     """
@@ -25,6 +26,12 @@ def makeDir(path):
     except OSError as e:
         if e.errno != errno.EEXIST:
             raise
+
+
+def stringToFile(path, string):
+    """Writes a string to a text file at the given path."""
+    with open(path, 'w') as f:
+        f.write(string.encode('utf8'))
 
 
 class DiskCache(object):

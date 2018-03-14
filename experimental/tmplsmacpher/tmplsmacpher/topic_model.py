@@ -1,10 +1,15 @@
+import logging
 import numpy as np
+import time
 
+from argparse import ArgumentParser
 from sklearn.decomposition import NMF, LatentDirichletAllocation
+from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from reader import JsonFileReader
+from utils import stringToFile
 
 
 # TODO: If user chooses tfidf and LDA, use tfidf to filter words first, then use LDA.
@@ -57,7 +62,8 @@ class TopicModel(object):
         self._W = None
         self._H = None
 
-        self.trainedModel = None
+        self.trainedModel = None  # Trained model is stored here.
+        self.trainingTime = None  # Store the time it took to train model here.
 
     @property
     def vectorizer(self):
@@ -101,7 +107,7 @@ class TopicModel(object):
                 raise ValueError("Invalid model type.")
         return self._model
 
-    def train(self):
+    def train(self, persist=True):
         """Trains the desired model. Saves trained model in the
         'model' instance variable.
         """
@@ -117,8 +123,11 @@ class TopicModel(object):
         # Save dictionary mapping ids to words.
         self._feature_names = self.vectorizer.get_feature_names()
 
-        # Train and set model to newly trained model.
+        # Train and set model to newly trained model. Also save the training time for metric purposes.
+        start = time.clock()
         self.trainedModel = self.model.fit(vectorized)
+        end = time.clock()
+        self.trainingTime = end - start
 
         # Save the topic-to-documents matrix. Essentially, we are
         # using the model we just trained to convert our document-term matrix
@@ -133,7 +142,7 @@ class TopicModel(object):
         self._trained = True
         return
 
-    # TODO: LDA model toString spits out the same papers for all topics.
+    # TODO: LDA model toString spits out the same papers for all topics for tfidf.
     # Only works when using the count vectorizer.
     def toString(self, noWords=10, noPapers=10):
         if not self._trained:
@@ -148,6 +157,18 @@ class TopicModel(object):
                         )
         else:
             output = ''
+            header = ('Trained {modelType} model '
+                      'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, \n'
+                      'and {maxIter} max iterations (lda only). \nTraining time: {trainingTime}s').format(
+                          modelType=self.modelType,
+                          vectorizerType=self.vectorizerType,
+                          noTopics=self.noTopics,
+                          noFeatures=self.noFeatures,
+                          maxIter=self.maxIter if self.modelType == 'lda' else 'default',
+                          trainingTime=self.trainingTime,
+                      )
+            output += header
+            output += '\n'
             for topic_id, topic in enumerate(self._H):
                 output += '---------- Topic {topic_id} ----------'.format(
                     topic_id=topic_id
@@ -171,15 +192,71 @@ class TopicModel(object):
 
 
 if __name__ == '__main__':
-    pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
-    pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
-    corpus = JsonFileReader.loadAllAbstracts(pathToAbs)
-    corpus = JsonFileReader.loadAllFullTexts(pathToFullTexts)
+    logging.basicConfig(level=logging.INFO)
+    parser = ArgumentParser(description='Used to run LDA or NMF topic models over a corpus.',
+                            epilog='Happy topic modeling!')
+    parser.add_argument('corpus', type=str,
+                        help='The path to the directory containing the corpus.')
+    parser.add_argument('output_file', type=str,
+                        help='The path to the output file containing the trained model summary.')
+    parser.add_argument('-t', '--type', dest='type',
+                        choices={'lda', 'nmf'}, default='nmf', type=str,
+                        help='The type of model to train (lda or nmf). Defaults to nmf.')
+    parser.add_argument('-n', '--num_topics', dest='num_topics',
+                        default=20, type=int,
+                        help='The number of topics you want the model to find.')
+    parser.add_argument('-f', '--num_features', dest='num_features',
+                        default=1000, type=int,
+                        help='The number of features (unique word tokens) you want the model to use.')
+    parser.add_argument('-v', '--v', dest='vectorizer_type',
+                        choices={'count', 'tfidf'}, default='count', type=str,
+                        help='''The type of word vectorizer to use (count or tfidf). \
+                        As of now, LDA only supports using the count vectorizer.''')
+    parser.add_argument('-i', '--max_iter', dest='max_iter',
+                        default=10, type=int,
+                        help='For lda models only: the maximum number of training iterations to run.')
+
+    args = parser.parse_args()
+
+    pathToCorpus = args.corpus
+    outputFile = args.output_file
+    modelType = args.type
+    vectorizerType = args.vectorizer_type
+    noTopics = args.num_topics
+    noFeatures = args.num_features
+    maxIter = args.max_iter
+
+    # pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    # pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
+
+    if 'abs' in pathToCorpus:
+        corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
+    elif 'fulltext' in pathToCorpus:
+        corpus = JsonFileReader.loadAllFullTexts(pathToCorpus)
+    else:
+        raise ValueError('Invalid corpus path.')
+
     model = TopicModel(corpus,
-                       modelType=TopicModel.NMF,
-                       vectorizerType=TopicModel.TFIDF_VECTORIZER,
-                       noTopics=20,
-                       noFeatures=1000)
+                       modelType=modelType,
+                       vectorizerType=vectorizerType,
+                       noTopics=noTopics,
+                       noFeatures=noFeatures,
+                       maxIter=maxIter)
+    logging.info(
+        (
+            'Training {modelType} model over {pathToCorpus} corpus ' 
+            'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
+            'and {maxIter} max iterations (lda only).'
+        ).format(
+            modelType=modelType,
+            pathToCorpus=pathToCorpus,
+            vectorizerType=vectorizerType,
+            noTopics=noTopics,
+            noFeatures=noFeatures,
+            maxIter=maxIter if modelType == 'lda' else 'default'
+        )
+    )
     model.train()
-    print model.toString()
+    logging.info('Done training. Took {trainingTime}s'.format(trainingTime=model.trainingTime))
+    stringToFile(outputFile, model.toString())
 

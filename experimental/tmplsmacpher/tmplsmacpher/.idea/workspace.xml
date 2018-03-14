@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bd4aa208-66a5-4bad-b474-6ee315c3223c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/tmpl.iml" afterPath="$PROJECT_DIR$/../../../.idea/tmpl.iml" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-100p" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-100p.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-100p.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-100p.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p-stem" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p-stem.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p-stem.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p-stem.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model-20t-200p.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/archive/lda-abs-model.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-25T23:55:31.406449" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-25T23:55:31.406449.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-25T23:55:31.406449.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-25T23:55:31.406449.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-26T00:02:17.155489" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-26T00:02:17.155489.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-26T00:02:17.155489.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-10000-2018-02-26T00:02:17.155489.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:02:22.938818" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:02:22.938818.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:02:22.938818.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:02:22.938818.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:03:13.316775" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:03:13.316775.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:03:13.316775.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-200-2018-02-25T23:03:13.316775.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:14:54.203346" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:14:54.203346.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:14:54.203346.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:14:54.203346.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:53:30.944943" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:53:30.944943.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:53:30.944943.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-50-2018-02-25T23:53:30.944943.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-800-2018-02-25T23:54:38.286654" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-800-2018-02-25T23:54:38.286654.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-800-2018-02-25T23:54:38.286654.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/lda-20-800-2018-02-25T23:54:38.286654.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-1000i-autoa-0.0001g/lda" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-1000i-autoa-0.0001g/lda.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-1000i-autoa-0.0001g/lda.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-1000i-autoa-0.0001g/lda.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-1000i-autoa-0.0001g/toppapers" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-100i-autoa-0.0001g/lda" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-100i-autoa-0.0001g/lda.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-100i-autoa-0.0001g/lda.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-100i-autoa-0.0001g/lda.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model-20t-1p-100i-autoa-0.0001g/toppapers" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model.expElogbeta.npy" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model.id2word" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../models/model.state" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../tmpl_screenshots/Screen Shot 2018-02-11 at 10.51.58 PM.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../tmpl_screenshots/model_20t_100p_lemmatize.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../tmpl_screenshots/model_20t_200p_lemmatize.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../tmpl_screenshots/model_20t_200p_stem.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/sklearn_test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/topic_model.py" afterPath="$PROJECT_DIR$/topic_model.py" />
+      <change beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
+      <change beforePath="$PROJECT_DIR$/../../top_papers.test" afterPath="" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="topic_model.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topic_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="262" column="0" lean-forward="true" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/topic_model.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="640" />
+    <option name="height" value="731" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tmplsmacpher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tmplsmacpher" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd4aa208-66a5-4bad-b474-6ee315c3223c" name="Default" comment="" />
+      <created>1520983324351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1520983324351</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="731" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/model.test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.3/python_stubs/-1273045272/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="73" column="4" lean-forward="false" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="262" column="0" lean-forward="true" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
