@@ -1,5 +1,6 @@
 import logging
 import numpy as np
+import os
 import time
 
 from argparse import ArgumentParser
@@ -9,8 +10,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from reader import JsonFileReader
+from utils import makeDir
 from utils import stringToFile
-
 
 # TODO: If user chooses tfidf and LDA, use tfidf to filter words first, then use LDA.
 
@@ -19,7 +20,6 @@ class TopicModel(object):
     # Valid vectorizer types.
     TFIDF_VECTORIZER = 'tfidf'
     COUNT_VECTORIZER = 'count'
-
     VALID_VECTORIZER_TYPES = {TFIDF_VECTORIZER, COUNT_VECTORIZER}
 
     # Valid model types.
@@ -55,6 +55,7 @@ class TopicModel(object):
 
         # Set some 'private' instance variables for internal use.
         (self._documents, self._metas) = self.corpus
+        self._dirName = None
         self._trained = False
         self._vectorizer = None
         self._model = None
@@ -107,7 +108,20 @@ class TopicModel(object):
                 raise ValueError("Invalid model type.")
         return self._model
 
-    def train(self, persist=True):
+    @property
+    def dirName(self):
+        """Builds a directory name representing the model."""
+        if self._dirName is None:
+            self._dirName = ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
+                modelType=self.modelType,
+                vectorizerType=self.vectorizerType,
+                noTopics=self.noTopics,
+                noFeatures=self.noFeatures,
+                maxIter=self.maxIter if self.modelType == 'lda' else 'default',
+            ))
+        return self._dirName
+
+    def train(self):
         """Trains the desired model. Saves trained model in the
         'model' instance variable.
         """
@@ -142,17 +156,25 @@ class TopicModel(object):
         self._trained = True
         return
 
+    def persist(self, path):
+        """Saves a trained model to the output path.
+        """
+        if not self._trained:
+            raise ValueError('Cannot persist an untrained model. Call model.train() first.')
+        joblib.dump(self.trainedModel, path)
+
     # TODO: LDA model toString spits out the same papers for all topics for tfidf.
     # Only works when using the count vectorizer.
     def toString(self, noWords=10, noPapers=10):
         if not self._trained:
             output = ('<TopicModel: '
-                      'Untrained {modelType} model with {noTopics} topics and '
-                      '{noFeatures} features '
+                      'Untrained {modelType} model with {noTopics} topics, '
+                      '{noFeatures} features, and {maxIter} maximum iterations '
                       'using a {vectorizerType} vectorizer>').format(
                             modelType=self.modelType,
                             noTopics=self.noTopics,
                             noFeatures=self.noFeatures,
+                            maxIter=self.maxIter if self.modelType == 'lda' else 'default',
                             vectorizerType=self.vectorizerType,
                         )
         else:
@@ -197,8 +219,6 @@ if __name__ == '__main__':
                             epilog='Happy topic modeling!')
     parser.add_argument('corpus', type=str,
                         help='The path to the directory containing the corpus.')
-    parser.add_argument('output_file', type=str,
-                        help='The path to the output file containing the trained model summary.')
     parser.add_argument('-t', '--type', dest='type',
                         choices={'lda', 'nmf'}, default='nmf', type=str,
                         help='The type of model to train (lda or nmf). Defaults to nmf.')
@@ -219,15 +239,18 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     pathToCorpus = args.corpus
-    outputFile = args.output_file
     modelType = args.type
     vectorizerType = args.vectorizer_type
     noTopics = args.num_topics
     noFeatures = args.num_features
     maxIter = args.max_iter
 
-    # pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
-    # pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
+    pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
+    pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
+
+    # Make the models dir if needed.
+    MODELS_DIR = 'models'
+    makeDir(MODELS_DIR)
 
     if 'abs' in pathToCorpus:
         corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
@@ -242,6 +265,10 @@ if __name__ == '__main__':
                        noTopics=noTopics,
                        noFeatures=noFeatures,
                        maxIter=maxIter)
+
+    # Make current model's dir to persist it to.
+    makeDir(model.dirName)
+
     logging.info(
         (
             'Training {modelType} model over {pathToCorpus} corpus ' 
@@ -256,7 +283,10 @@ if __name__ == '__main__':
             maxIter=maxIter if modelType == 'lda' else 'default'
         )
     )
+
     model.train()
     logging.info('Done training. Took {trainingTime}s'.format(trainingTime=model.trainingTime))
-    stringToFile(outputFile, model.toString())
+    logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=model.dirName))
+    model.persist(os.path.join(MODELS_DIR, model.dirName, 'model'))
+    stringToFile(os.path.join(MODELS_DIR, model.dirName, 'summary.txt'), model.toString())
 
