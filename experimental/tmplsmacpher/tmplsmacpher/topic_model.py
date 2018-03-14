@@ -4,16 +4,19 @@ import os
 import time
 
 from argparse import ArgumentParser
+from datetime import datetime
 from sklearn.decomposition import NMF, LatentDirichletAllocation
 from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from settings import MODELS_DIR
 from reader import JsonFileReader
 from utils import makeDir
 from utils import stringToFile
 
 # TODO: If user chooses tfidf and LDA, use tfidf to filter words first, then use LDA.
+
 
 class TopicModel(object):
 
@@ -253,7 +256,7 @@ if __name__ == '__main__':
                         help='''The type of word vectorizer to use (count or tfidf). \
                         As of now, LDA only supports using the count vectorizer.''')
     parser.add_argument('-i', '--max_iter', dest='max_iter',
-                        default=10, type=int,
+                        default=None, type=int,
                         help='The maximum number of training iterations to run.')
 
     args = parser.parse_args()
@@ -265,13 +268,6 @@ if __name__ == '__main__':
     noFeatures = args.num_features
     maxIter = args.max_iter
 
-    pathToAbs = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
-    pathToFullTexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
-
-    # Make the models dir if needed.
-    MODELS_DIR = 'models'
-    makeDir(MODELS_DIR)
-
     if 'abs' in pathToCorpus:
         corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
     elif 'fulltext' in pathToCorpus:
@@ -279,6 +275,7 @@ if __name__ == '__main__':
     else:
         raise ValueError('Invalid corpus path.')
 
+    # Instantiate TopicModel object with desired parameters.
     model = TopicModel(corpus,
                        modelType=modelType,
                        vectorizerType=vectorizerType,
@@ -287,7 +284,11 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    makeDir(os.path.join(MODELS_DIR, model.dirName))
+    modelDir = os.path.join(MODELS_DIR, model.dirName + datetime.now().isoformat())
+    modelFilePath = os.path.join(modelDir, 'model.pkl')
+    summaryFilePath = os.path.join(modelDir, 'summary.txt')
+    makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
+    makeDir(modelDir)  # Make the current model's dir.
 
     logging.info(
         (
@@ -300,12 +301,13 @@ if __name__ == '__main__':
             vectorizerType=vectorizerType,
             noTopics=noTopics,
             noFeatures=noFeatures,
-            maxIter=maxIter if modelType == 'lda' else 'default'
+            maxIter=maxIter or 'default',
         )
     )
 
+    # Train the model; training time is saved in model.trainingTime attribute.
     model.train()
     logging.info('Done training. Took {trainingTime}s'.format(trainingTime=model.trainingTime))
     logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=model.dirName))
-    model.persist(os.path.join(MODELS_DIR, model.dirName, 'model'))
-    stringToFile(os.path.join(MODELS_DIR, model.dirName, 'summary.txt'), model.toString())
+    model.persist(modelFilePath)
+    stringToFile(model.toString(), summaryFilePath)

@@ -28,7 +28,7 @@ def makeDir(path):
             raise
 
 
-def stringToFile(path, string):
+def stringToFile(string, path):
     """Writes a string to a text file at the given path."""
     with open(path, 'w') as f:
         f.write(string.encode('utf8'))
