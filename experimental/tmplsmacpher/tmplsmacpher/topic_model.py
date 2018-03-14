@@ -52,9 +52,9 @@ class TopicModel(object):
         # Set default maxIter (it differs depending on the model).
         if maxIter is None:
             if modelType == self.NMF:
-                self.maxIter = 200
+                maxIter = 200
             elif modelType == self.LDA:
-                self.maxIter = 10
+                maxIter = 10
 
         self.corpus = corpus
         self.vectorizerType = vectorizerType
@@ -284,7 +284,7 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, model.dirName + datetime.now().isoformat())
+    modelDir = os.path.join(MODELS_DIR, model.dirName + '_' + datetime.now().isoformat())
     modelFilePath = os.path.join(modelDir, 'model.pkl')
     summaryFilePath = os.path.join(modelDir, 'summary.txt')
     makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
