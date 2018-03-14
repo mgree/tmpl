@@ -1,43 +1,43 @@
 Trained nmf model with count vectorizer, 20 topics, 1000 features, 
 and default max iterations (lda only). 
-Training time: 1.430763s
+Training time: 0.151963s
 ---------- Topic 0 ----------
 *** Top words ***
-based
 approach
-applications
+based
 using
 new
+present
 paper
 techniques
-web
-present
 technique
+use
+used
 
 *** Top papers ***
-A study of memory management for web-based applications on multicore processors
+Elimination of single productions from LR parsers in conjunction with the use of default reductions
 Compiler-directed channel allocation for saving power in on-chip networks
+A study of memory management for web-based applications on multicore processors
 Corpus-based static branch prediction
-Grammar-based whitebox fuzzing
 Efficient context sensitivity for dynamic analyses via calling context uptrees and customized memory management
-Points-to analysis using BDDs
-A maximum-flow approach to anomaly isolation in unification-based incremental type inference
-Set-based pre-processing for points-to analysis
-An exemplar based Smalltalk
-Semantic-based systems development
+Verdantium towards a Java-enabled compound document model (poster session)
+Concurrent libraries with foresight
+Formal certification of code-based cryptographic proofs
+Program analysis as constraint solving
+Type-based data structure verification
 
 ---------- Topic 1 ----------
 *** Top words ***
 type
 inference
 type inference
+types
 ml
 typed
-types
 polymorphic
 type systems
-systems
 polymorphism
+checking
 
 *** Top papers ***
 Polymorphic type inference
@@ -46,23 +46,23 @@ From ML type inference to stratified type inference
 Refactoring tool challenges in a strongly typed language (poster session)
 Type inference with rank 1 polymorphism for type-directed compilation of ML
 Encoding types in ML-like languages
+Inferring types in Smalltalk
 PolyAML: a polymorphic aspect-oriented functional programming language
 Relating typability and expressiveness in finite-rank intersection type systems (extended abstract)
 Principal Type Schemes for Gradual Programs
-Types, potency, and idempotency: why nonlinearity and amnesia make a type system work
 
 ---------- Topic 2 ----------
 *** Top words ***
 language
-semantics
 programming language
-languages
-paper
+design
 features
-implementation
-level
-constructs
+languages
 domain
+constructs
+paper
+implementation
+specific
 
 *** Top papers ***
 Abstraction mechanisms in the BETA programming language
@@ -72,9 +72,9 @@ Adding domain-specific and general purpose language features to Java with the Ja
 Compiling polymorphism using intensional type analysis
 Experiences creating a portable cedar
 Verifiable composition of deterministic grammars
-FLUX: functional updates for XML
 Strictness analysis aids time analysis
-An exploration of program as language
+Skinny and fleshy failures of relative completeness
+Programming language constructs for which it is impossible to obtain good hoare-like axiom systems
 
 ---------- Topic 3 ----------
 *** Top words ***
@@ -85,9 +85,9 @@ structure
 data structure
 operations
 parallel
-new
-using
+data flow
 races
+data types
 
 *** Top papers ***
 Streaming transducers for algorithmic verification of single-pass list-processing programs
@@ -97,33 +97,33 @@ Data-Parallel String-Manipulating Programs
 From dirt to shovels: fully automatic tool generation from ad hoc data
 kb-anonymity: a model for anonymized behaviour-preserving test and debugging data
 "Honey, i shrunk the types": how behavioral types loose relevance on the edges on OO applications and why a core data fabric is useful for adaptability
+Array-data flow analysis and its use in array privatization
 A context-free markup language for semi-structured text
 Brainy: effective selection of data structures
-Array-data flow analysis and its use in array privatization
 
 ---------- Topic 4 ----------
 *** Top words ***
 code
-compiler
 dynamic
-machine
 source
+machine
 generation
-compilation
+software
+api
 code generation
-optimization
-compilers
+use
+source code
 
 *** Top papers ***
 tcc: a system for fast, flexible, and high-level dynamic code generation
-VCODE: a retargetable, extensible, very fast dynamic code generation system
-Complete removal of redundant expressions
-Certified self-modifying code
 How to design a good API and why it matters
-Compilation and delayed evaluation in APL
+VCODE: a retargetable, extensible, very fast dynamic code generation system
+Certified self-modifying code
+Complete removal of redundant expressions
 Safer unsafe code for .NET
-Enhanced code compression for embedded RISC processors
 Dynamic software updating
+Compilation and delayed evaluation in APL
+Enhanced code compression for embedded RISC processors
 Run-time code generation and modal-ML
 
 ---------- Topic 5 ----------
@@ -134,10 +134,10 @@ context
 static
 results
 framework
-dynamic
-precision
 approximate
 sensitive
+precision
+program analysis
 
 *** Top papers ***
 Systematic design of program analysis frameworks
@@ -145,24 +145,24 @@ Strictness analysis aids time analysis
 Parallelizing top-down interprocedural analyses
 Determinacy in static analysis for jQuery
 Pick your contexts well: understanding object-sensitivity
-Dynamic optimistic interprocedural analysis: a framework and an application
 Array-data flow analysis and its use in array privatization
 Load-reuse analysis: design and evaluation
-Type-based alias analysis
+Dynamic optimistic interprocedural analysis: a framework and an application
 Points-to analysis with efficient strong updates
+Type-based alias analysis
 
 ---------- Topic 6 ----------
 *** Top words ***
 program
 execution
 transformations
-test
 program analysis
+test
 input
-given
 correctness
 approximate
-set
+given
+assertions
 
 *** Top papers ***
 Transformational programming: applications to algorithms and systems
@@ -172,34 +172,34 @@ An input-centric paradigm for program dynamic optimizations
 Incremental program testing using program dependence graphs
 CoJava: a unified language for simulation and optimization
 A dynamic program analysis to find floating-point accuracy problems
+Correctness-preserving program transformations
 Compositional dynamic test generation
 Directed incremental symbolic execution
-Correctness-preserving program transformations
 
 ---------- Topic 7 ----------
 *** Top words ***
 logic
+systems
 proof
-verification
 reasoning
 properties
-semantics
 separation
-proofs
-concurrent
+verification
 correctness
+linear
+temporal
 
 *** Top papers ***
 "Sometimes" and "not never" revisited: on branching versus linear time (preliminary report)
-"Sometime" is sometimes "not never": on the temporal logic of programs
-A fixpoint calculus for local and global program flows
-Context logic as modal logic: completeness and parametric inexpressivity
-Parametric completeness for separation theories
+From Boolean to quantitative notions of correctness
+Aspect-oriented frameworks (poster session): the design of adaptable operating systems
 An integrated proof language for imperative programs
-Natural proofs for structure, data, and separation
-Decidable logics combining heap structures and data
-Syntactic control of interference for separation logic
-Context logic and tree update
+"Sometime" is sometimes "not never": on the temporal logic of programs
+Context logic as modal logic: completeness and parametric inexpressivity
+A fixpoint calculus for local and global program flows
+Parametric completeness for separation theories
+Semantic-based systems development
+Certified assembly programming with embedded code pointers
 
 ---------- Topic 8 ----------
 *** Top words ***
@@ -212,7 +212,7 @@ compile time
 section
 complexity
 computation
-real
+temporal
 
 *** Top papers ***
 "Sometimes" and "not never" revisited: on branching versus linear time (preliminary report)
@@ -228,49 +228,49 @@ Optimizing ML with run-time code generation
 
 ---------- Topic 9 ----------
 *** Top words ***
+memory
+performance
+applications
+garbage
 java
-class
-component
-virtual
-classes
-method
-application
-virtual machine
-machine
-interface
+parallel
+objects
+heap
+execution
+collection
 
 *** Top papers ***
-Verdantium towards a Java-enabled compound document model (poster session)
 A study of Java's non-Java memory
-Refactoring tool challenges in a strongly typed language (poster session)
-Implementing jalapeño in Java
-The ExoVM system for automatic VM and application reduction
-Compatible genericity with run-time types for the Java programming language
-A type system for object initialization in the Java bytecode language
-Java type inference is broken: can we fix it?
-Featherweight Java: a minimal core calculus for Java and GJ
+Cache and I/O efficent functional algorithms
+A study of memory management for web-based applications on multicore processors
+Using managed runtime systems to tolerate holes in wearable memories
+Free-Me: a static analysis for automatic individual object reclamation
+Allocation wall: a limiting factor of Java applications on emerging multi-core platforms
+pHluid: the design of a parallel functional language implementation on workstations
+Garbage collection without paging
 Analysis and reduction of memory inefficiencies in Java strings
+NUMA-aware memory manager with dominant-thread-based copying GC
 
 ---------- Topic 10 ----------
 *** Top words ***
 programs
 parallel
-use
-approach
-static
 checking
-work
+sequential
 multithreaded
-present
-technique
+pointer
+properties
+procedure
+safety
+abstract
 
 *** Top papers ***
 Summarizing procedures in concurrent programs
 The third homomorphism theorem on trees: downward & upward lead to divide-and-conquer
 Analysis of pointer rotation
 Data-Parallel String-Manipulating Programs
-Type-directed automatic incrementalization
 Proving acceptability properties of relaxed nondeterministic approximate programs
+Type-directed automatic incrementalization
 Elephant 2000: a programming language based on speech acts
 Transformational programming: applications to algorithms and systems
 Verifying liveness for asynchronous programs
@@ -281,25 +281,25 @@ Globally precise-restartable execution of parallel programs
 algorithm
 algorithms
 problem
-present
 graph
-method
-paper
-using
-number
 register
+present
+variables
+efficient
+paper
+number
 
 *** Top papers ***
 Unification-based pointer analysis with directional assignments
 Inferring types in Smalltalk
 Program verification as probabilistic inference
-Summarizing graphs by regular expressions
 Polymorphic type inference
-An efficient parallel heap compaction algorithm
-How to read floating point numbers accurately
+Summarizing graphs by regular expressions
 Bitwidth aware global register allocation
+An efficient parallel heap compaction algorithm
 The evolution of list-copying algorithms and the need for structured program verification
-How to print floating-point numbers accurately
+How to read floating point numbers accurately
+Lazy array data-flow dependence analysis
 
 ---------- Topic 12 ----------
 *** Top words ***
@@ -307,62 +307,62 @@ object
 oriented
 object oriented
 objects
-oriented programming
-class
 design
+class
 classes
-tutorial
-oriented languages
+software
+oriented programming
+languages
 
 *** Top papers ***
 The design of an object-oriented operating system (abstract): a case study of choices
 Object-oriented user interfaces (abstract)
 Optimization of distributed, object-oriented systems (poster session)
 Efficient implementation of object-oriented programming languages (abstract)
+Testing object-oriented software (abstract)
+Hardware support for object-oriented systems (abstract)
 Object-oriented concurrent programming (abstract)
 Resolving and exploiting the k-CFA paradox: illuminating functional vs. object-oriented program analysis
-Hardware support for object-oriented systems (abstract)
 Object-oriented project management (abstract)
-Testing object-oriented software (abstract)
-Pick your contexts well: understanding object-sensitivity
+CommonLoops: merging Lisp and object-oriented programming
 
 ---------- Topic 13 ----------
 *** Top words ***
-model
-models
 semantics
-checking
-model checking
-memory
+languages
+level
+calculus
 abstract
-state
-abstraction
-concurrent
+operational
+implementation
+high
+high level
+lambda
 
 *** Top papers ***
-A traversal-based algorithm for higher-order model checking
-DRFX: a simple and efficient memory model for concurrent programming languages
-A model-learner pattern for bayesian reasoning
-The architecture of a UML virtual machine
-Efficient modular glass box software model checking
-Translation: myth or reality? (panel)
-Lazy abstraction
-Automatic predicate abstraction of C programs
-Types as models: model checking message-passing programs
-Integrating task parallelism with actors
+Defunctionalized interpreters for programming languages
+Structural semantics for polymorphic data types (preliminary report)
+Secure implementations of typed channel abstractions
+Self-adjusting stack machines
+From Hilbert space to Dilbert space: context semantics as a language for games and flow analysis
+Transactional events for ML
+Monadic abstract interpreters
+Transformational programming: applications to algorithms and systems
+Precise typing of abstract data type specifications
+An operational semantics for parallel lazy evaluation
 
 ---------- Topic 14 ----------
 *** Top words ***
 programming
 languages
 programming languages
-functional
 programming language
-level
+functional
 functional programming
 parallel
-used
-support
+new
+use
+oriented programming
 
 *** Top papers ***
 Uncovering principles of novice programming
@@ -372,71 +372,71 @@ Databases and Programming: Two Subjects Divided by a Common Language?
 Making variables abstract: an equational theory for Russell
 Abstraction mechanisms in the BETA programming language
 Pegasus: first steps toward a naturalistic programming language
-Functional formal methods
 A user-centred approach to functions in Excel
 Towards adaptive programming: integrating reinforcement learning into a programming language
+Fifteen years of functional pearls
 
 ---------- Topic 15 ----------
 *** Top words ***
+model
 software
-systems
-design
+models
 development
-use
-components
-process
-engineering
-operating
-aspects
+checking
+based
+systems
+model checking
+domain
+driven
 
 *** Top papers ***
-Aspect-oriented frameworks (poster session): the design of adaptable operating systems
+Efficient modular glass box software model checking
+A traversal-based algorithm for higher-order model checking
+The architecture of a UML virtual machine
+Automatic predicate abstraction of C programs
+A model-learner pattern for bayesian reasoning
 Semantic-based systems development
-Towards a two-dimensional separation of concerns (poster session)
-From Boolean to quantitative notions of correctness
+Translation: myth or reality? (panel)
+Verdantium towards a Java-enabled compound document model (poster session)
+DRFX: a simple and efficient memory model for concurrent programming languages
 Using model-driven engineering to complement software product line engineering in developing software defined radio components and applications
-Scale changes everything
-Advanced programming language design in enterprise software: a lambda-calculus theorist wanders into a datacenter
-Integration of different system engineering methods using an object-oriented model
-An aspect-oriented infrastructure for a typed, stack-based, intermediate assembly language
-The OO software development process (abstract)
 
 ---------- Topic 16 ----------
 *** Top words ***
 types
 objects
 data types
-type
-semantics
 use
-defined
 modeling
-abstract
+defined
 theory
+procedure
+dependent
+arguments
 
 *** Top papers ***
 Structural semantics for polymorphic data types (preliminary report)
 Types as intervals
-Precise typing of abstract data type specifications
 Inferring types in Smalltalk
+Precise typing of abstract data type specifications
 Constrained kinds
 Dependent types from counterexamples
 Generalized conjunctive types
 Frame rules from answer types for code pointers
-Recursive type generativity
 Analysis of pointer rotation
+Liquid types
 
 ---------- Topic 17 ----------
 *** Top words ***
 flow
 control
 information
-data flow
+dynamic
 control flow
+data flow
 graph
 flow analysis
 information flow
-graphs
 security
 
 *** Top papers ***
@@ -445,36 +445,36 @@ Applications of a graph grammar for program control flow analysis
 Array-data flow analysis and its use in array privatization
 Qualified data flow problems
 SeLINQ: tracking information across application-database boundaries
-Incremental data flow analysis via dominator and attribute update
 Merlin: specification inference for explicit information flow problems
+Incremental data flow analysis via dominator and attribute update
 Demand-driven computation of interprocedural data flow
-Flow-directed inlining
 Staged information flow for javascript
+Flow-directed inlining
 
 ---------- Topic 18 ----------
 *** Top words ***
-performance
-memory
 compiler
-garbage
-high
-parallel
+java
+performance
+optimizations
+compilation
+optimization
+compilers
 level
-hardware
-paper
-execution
+machine
+jit
 
 *** Top papers ***
-Free-Me: a static analysis for automatic individual object reclamation
-Using managed runtime systems to tolerate holes in wearable memories
-Taking off the gloves with reference counting Immix
-Statistical debugging for real-world performance problems
-Compiler and runtime support for efficient software transactional memory
-Cache and I/O efficent functional algorithms
-Adaptive multi-level compilation in a trace-based Java JIT compiler
-DRFX: a simple and efficient memory model for concurrent programming languages
-A study of memory management for web-based applications on multicore processors
+Surgical precision JIT compilers
+On the benefits and pitfalls of extending a statically typed language JIT compiler for dynamic scripting languages
+Reverse interpretation + mutation analysis = automatic retargeting
 A case for an SC-preserving compiler
+A nanopass framework for commercial compiler development
+Fast, effective code generation in a just-in-time Java compiler
+Meta optimization: improving compiler heuristics with machine learning
+The design and implementation of a certifying compiler
+Inferable object-oriented typed assembly language
+JIT compilation policy for modern machines
 
 ---------- Topic 19 ----------
 *** Top words ***
@@ -483,21 +483,21 @@ higher
 higher order
 functions
 functional
-calculus
-semantics
 function
 method
-new
+equational
+contracts
+calculus
 
 *** Top papers ***
 Higher-order equational logic programming
-Practical and effective higher-order optimizations
 Termination analysis and call graph construction for higher-order functional programs
-Channel dependent types for higher-order mobile processes
-Higher-order functors with transparent signatures
+Practical and effective higher-order optimizations
 Focusing and higher-order abstract syntax
-Beautiful differentiation
+Channel dependent types for higher-order mobile processes
 Higher order attribute grammars
-Contracts for higher-order functions
 Verifying higher-order functional programs with pattern-matching algebraic data types
+Beautiful differentiation
+Higher-order functors with transparent signatures
+Polyvariant flow analysis with higher-ranked polymorphic types and higher-order effect operators
 

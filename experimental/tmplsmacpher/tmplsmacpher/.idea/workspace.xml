@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4aa208-66a5-4bad-b474-6ee315c3223c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/models/nmf_countv_20n_1000f_defaulti/model" afterPath="$PROJECT_DIR$/models/nmf_countv_20n_1000f_defaulti/model" />
+      <change beforePath="$PROJECT_DIR$/models/nmf_countv_20n_1000f_defaulti/summary.txt" afterPath="$PROJECT_DIR$/models/nmf_countv_20n_1000f_defaulti/summary.txt" />
       <change beforePath="$PROJECT_DIR$/topic_model.py" afterPath="$PROJECT_DIR$/topic_model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +18,8 @@
       <file leaf-file-name="topic_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/topic_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="269" column="52" lean-forward="false" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
+            <state relative-caret-position="522">
+              <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -200,8 +202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/topic_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="269" column="52" lean-forward="false" selection-start-line="269" selection-start-column="52" selection-end-line="269" selection-end-column="52" />
+        <state relative-caret-position="522">
+          <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>

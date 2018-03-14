@@ -31,7 +31,7 @@ class TopicModel(object):
     SCIKIT_LEARN_VERBOSITY = 5
 
     def __init__(self, corpus, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=10):
+                 maxIter=None):
 
         # Check arguments.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
@@ -46,12 +46,19 @@ class TopicModel(object):
                 )
             )
 
+        # Set default maxIter (it differs depending on the model).
+        if maxIter is None:
+            if modelType == self.NMF:
+                self.maxIter = 200
+            elif modelType == self.LDA:
+                self.maxIter = 10
+
         self.corpus = corpus
         self.vectorizerType = vectorizerType
         self.modelType = modelType
         self.noTopics = noTopics
         self.noFeatures = noFeatures
-        self.maxIter = maxIter  # Only for LDA.
+        self.maxIter = maxIter
 
         # Set some 'private' instance variables for internal use.
         (self._documents, self._metas) = self.corpus
@@ -91,7 +98,8 @@ class TopicModel(object):
     def model(self):
         if self._model is None:
             if self.modelType == self.NMF:
-                self._model = NMF(n_components=self.noTopics, 
+                self._model = NMF(n_components=self.noTopics,
+                                  max_iter=self.maxIter,
                                   random_state=1,
                                   alpha=.1,
                                   l1_ratio=.5,
@@ -157,11 +165,23 @@ class TopicModel(object):
         return
 
     def persist(self, path):
-        """Saves a trained model to the output path.
+        """Saves the trained TopicModel object to the output path.
         """
         if not self._trained:
             raise ValueError('Cannot persist an untrained model. Call model.train() first.')
-        joblib.dump(self.trainedModel, path)
+        joblib.dump(self, path)
+
+    @staticmethod
+    def loadModel(path):
+        """Loads a model and instantiates a TopicModel object.
+
+        Args:
+            path: path to persisted model to be loaded.
+
+        Returns: the desired TopicModel object; the trained sklearn model is stored
+            in the trainedModel attribute.
+        """
+        return joblib.load(path)
 
     # TODO: LDA model toString spits out the same papers for all topics for tfidf.
     # Only works when using the count vectorizer.
@@ -234,7 +254,7 @@ if __name__ == '__main__':
                         As of now, LDA only supports using the count vectorizer.''')
     parser.add_argument('-i', '--max_iter', dest='max_iter',
                         default=10, type=int,
-                        help='For lda models only: the maximum number of training iterations to run.')
+                        help='The maximum number of training iterations to run.')
 
     args = parser.parse_args()
 
@@ -289,4 +309,3 @@ if __name__ == '__main__':
     logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=model.dirName))
     model.persist(os.path.join(MODELS_DIR, model.dirName, 'model'))
     stringToFile(os.path.join(MODELS_DIR, model.dirName, 'summary.txt'), model.toString())
-

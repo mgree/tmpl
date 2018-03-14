@@ -1,5 +1,6 @@
 *.pyc
 *.egg
+.idea
 build
 dist
 cache
