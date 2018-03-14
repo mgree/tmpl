@@ -10,8 +10,8 @@ from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from settings import MODELS_DIR
 from reader import JsonFileReader
+from settings import MODELS_DIR
 from utils import makeDir
 from utils import stringToFile
 
@@ -82,19 +82,19 @@ class TopicModel(object):
         if self._vectorizer is None:
             if self.vectorizerType == self.TFIDF_VECTORIZER:
                 self._vectorizer = TfidfVectorizer(max_df=0.95,  # Removes words appearing in > 95% of documents.
-                                                   min_df=2,  # Removes words only appearing in 1 document.
-                                                   max_features=self.noFeatures, 
+                                                   # min_df=2,  # Removes words only appearing in 1 document.
+                                                   max_features=self.noFeatures,
                                                    stop_words='english',
                                                    ngram_range=(1, 2),  # Collect single words and bi-grams (two words).
-                                                   decode_error='ignore')  # Ignore encoding errors.
+                                                   decode_error='ignore')  # Ignore weird chars in corpus.
             elif self.vectorizerType == self.COUNT_VECTORIZER:
                 self._vectorizer = CountVectorizer(max_df=0.95,  # Removes words appearing in > 95% of documents.
-                                                   min_df=2,  # Removes words only appearing in 1 document.
-                                                   max_features=self.noFeatures, 
+                                                   # min_df=2,  # Removes words only appearing in 1 document.
+                                                   max_features=self.noFeatures,
                                                    stop_words='english',
                                                    ngram_range=(1, 2),  # Collect single words and bi-grams (two words).
-                                                   decode_error='ignore')  # Ignore encoding errors.
-            else: # Not a legal vectorizer type.
+                                                   decode_error='ignore')  # Ignore weird chars in corpus.
+            else:
                 raise ValueError("Invalid vectorizer type.")
         return self._vectorizer
 
@@ -171,6 +171,44 @@ class TopicModel(object):
 
         self._trained = True
         return
+
+    def topWords(self, n):
+        """Finds and returns the top n words per topic for the trained model.
+
+        Args:
+            n: Number of top words to find for each topic.
+
+        Returns:
+            A list of lists of the top n words for each topic (where the topic number
+            corresponds to the index of the outer list).
+        """
+        if not self._trained:
+            raise ValueError('Cannot fetch top words for untrained model. Call model.train() first.')
+
+        result = []
+        for topic in self._H:
+            topWordsIx = topic.argsort()[:-n - 1:-1]
+            result.append([self._feature_names[i] for i in topWordsIx])
+        return result
+
+    def topPapers(self, n):
+        """Finds and returns the top n papers per topic for the trained model.
+
+        Args:
+            n: Number of top papers to find for each topic.
+
+        Returns:
+            A list of lists of the top n papers' titles for each topic (where the topic number
+            corresponds to the index of the outer list).
+        """
+        if not self._trained:
+            raise ValueError('Cannot fetch top words for untrained model. Call model.train() first.')
+
+        result = []
+        for topic_id, _ in enumerate(self._H):
+            topDocIx = np.argsort(self._W[:, topic_id])[::-1][0:n]
+            result.append([self._metas[i]['title'] for i in topDocIx])
+        return result
 
     def persist(self, path):
         """Saves the trained TopicModel object to the output path.
