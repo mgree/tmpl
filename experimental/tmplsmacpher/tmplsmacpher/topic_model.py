@@ -74,6 +74,7 @@ class TopicModel(object):
         self._H = None
 
         self.trainedModel = None  # Trained model is stored here.
+        self.vectorizingTime = None  # Store the time it took to vectorize corpus here.
         self.trainingTime = None  # Store the time it took to train model here.
 
     @property
@@ -128,7 +129,7 @@ class TopicModel(object):
                 vectorizerType=self.vectorizerType,
                 noTopics=self.noTopics,
                 noFeatures=self.noFeatures,
-                maxIter=self.maxIter if self.modelType == 'lda' else 'default',
+                maxIter=self.maxIter,
             ))
         return self._dirName
 
@@ -141,9 +142,13 @@ class TopicModel(object):
 
         # fit_transform learns a vocabulary for the corpus and 
         # returns the transformed term-document matrix.
+        # Sklearn doesn't have verbose logging for its vectorizers so let user know whats going on.
+        logging.info('Vectorizing corpus...')
+        start = time.clock()
         vectorized = self.vectorizer.fit_transform(documents)
+        end = time.clock()
 
-        print vectorized
+        self.vectorizingTime = end - start
 
         # Save dictionary mapping ids to words.
         self._feature_names = self.vectorizer.get_feature_names()
@@ -197,19 +202,22 @@ class TopicModel(object):
                             modelType=self.modelType,
                             noTopics=self.noTopics,
                             noFeatures=self.noFeatures,
-                            maxIter=self.maxIter if self.modelType == 'lda' else 'default',
+                            maxIter=self.maxIter,
                             vectorizerType=self.vectorizerType,
                         )
         else:
             output = ''
             header = ('Trained {modelType} model '
-                      'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, \n'
-                      'and {maxIter} max iterations (lda only). \nTraining time: {trainingTime}s').format(
+                      'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
+                      'and {maxIter} maximum iterations. '
+                      'Vectorizing time: {vectorizingTime}s. '
+                      'Training time: {trainingTime}s.').format(
                           modelType=self.modelType,
                           vectorizerType=self.vectorizerType,
                           noTopics=self.noTopics,
                           noFeatures=self.noFeatures,
-                          maxIter=self.maxIter if self.modelType == 'lda' else 'default',
+                          maxIter=self.maxIter,
+                          vectorizingTime=self.vectorizingTime,
                           trainingTime=self.trainingTime,
                       )
             output += header
@@ -242,36 +250,38 @@ if __name__ == '__main__':
                             epilog='Happy topic modeling!')
     parser.add_argument('corpus', type=str,
                         help='The path to the directory containing the corpus.')
-    parser.add_argument('-t', '--type', dest='type',
+    parser.add_argument('--model', '-m', dest='model',
                         choices={'lda', 'nmf'}, default='nmf', type=str,
                         help='The type of model to train (lda or nmf). Defaults to nmf.')
-    parser.add_argument('-n', '--num_topics', dest='num_topics',
+    parser.add_argument('--num_topics', '-n', dest='num_topics',
                         default=20, type=int,
                         help='The number of topics you want the model to find.')
-    parser.add_argument('-f', '--num_features', dest='num_features',
+    parser.add_argument('--num_features', '-f', dest='num_features',
                         default=1000, type=int,
                         help='The number of features (unique word tokens) you want the model to use.')
-    parser.add_argument('-v', '--v', dest='vectorizer_type',
+    parser.add_argument('--vectorizer', '-v', dest='vectorizer',
                         choices={'count', 'tfidf'}, default='count', type=str,
                         help='''The type of word vectorizer to use (count or tfidf). \
                         As of now, LDA only supports using the count vectorizer.''')
-    parser.add_argument('-i', '--max_iter', dest='max_iter',
+    parser.add_argument('--max_iter', '-i', dest='max_iter',
                         default=None, type=int,
                         help='The maximum number of training iterations to run.')
 
     args = parser.parse_args()
 
     pathToCorpus = args.corpus
-    modelType = args.type
-    vectorizerType = args.vectorizer_type
+    modelType = args.model
+    vectorizerType = args.vectorizer
     noTopics = args.num_topics
     noFeatures = args.num_features
     maxIter = args.max_iter
 
     if 'abs' in pathToCorpus:
         corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
+        corpusName = 'abs'
     elif 'fulltext' in pathToCorpus:
         corpus = JsonFileReader.loadAllFullTexts(pathToCorpus)
+        corpusName = 'fulltext'
     else:
         raise ValueError('Invalid corpus path.')
 
@@ -284,7 +294,7 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, model.dirName + '_' + datetime.now().isoformat())
+    modelDir = os.path.join(MODELS_DIR, corpusName + '_' + model.dirName + '_' + datetime.now().isoformat())
     modelFilePath = os.path.join(modelDir, 'model.pkl')
     summaryFilePath = os.path.join(modelDir, 'summary.txt')
     makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
@@ -307,7 +317,11 @@ if __name__ == '__main__':
 
     # Train the model; training time is saved in model.trainingTime attribute.
     model.train()
-    logging.info('Done training. Took {trainingTime}s'.format(trainingTime=model.trainingTime))
-    logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=model.dirName))
+    logging.info('Done training. Vectorizing time: {vectorizingTime}s. Training time: {trainingTime}s'.format(
+        vectorizingTime=model.vectorizingTime,
+        trainingTime=model.trainingTime,
+        )
+    )
+    logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=modelDir))
     model.persist(modelFilePath)
     stringToFile(model.toString(), summaryFilePath)

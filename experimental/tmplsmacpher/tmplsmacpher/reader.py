@@ -102,9 +102,8 @@ class JsonFileReader(object):
             if not os.path.isdir(childPath):
                 objs.append(
                     (JsonFileReader.loadJsonFile(childPath),  # Document json obj.
-                    os.path.basename(os.path.dirname(childPath)),  # Conference.
-                    childPath,  # Filepath.
-                    )
+                     os.path.basename(os.path.dirname(childPath)),  # Conference.
+                     childPath)  # File path.
                 )
             elif recursive:
                 objs += JsonFileReader.loadAllJsonFiles(childPath, recursive)
@@ -129,7 +128,7 @@ class JsonFileReader(object):
             abstract = doc.get('abs')
 
             if abstract is None:  # Document didn't have an 'abs' field.
-                JsonFileReader.missingFieldsLogger.info(
+                JsonFileReader.missingFieldsLogger.debug(
                     '{conference}: {doc} does not have an "abs" field.'
                     .format(conference=conference, doc=doc)
                 )
@@ -138,8 +137,14 @@ class JsonFileReader(object):
             # Fetch metadata.
             meta = JsonFileReader.buildMeta(doc, conference)
             title = meta['title']
-            if title in seen:  # Already have seen this title before.
-                JsonFileReader.dupDocsLogger.info(
+
+            # Output title so user can see progress.
+            logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
+                                                                     conference=conference.encode('utf-8')))
+
+            # Already have seen this title before.
+            if title in seen:
+                JsonFileReader.dupDocsLogger.debug(
                     "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
                         title=title,
                         conference=conference,
@@ -199,7 +204,7 @@ class JsonFileReader(object):
         if metas is None:
             metas = []
         if seen is None:
-            seen = set()
+            seen = dict()
 
         for child in os.listdir(dirPath):
             childPath = os.path.join(dirPath, child)
@@ -223,8 +228,8 @@ class JsonFileReader(object):
                     # iteration so we avoid off-by-one errors by adding a 
                     # fulltext without its respective meta.
                     if not os.path.exists(metaFilepath):
-                        JsonFileReader.missingFileLogger.info(
-                            'Missing {file}'.format(metaFilepath)
+                        JsonFileReader.missingFileLogger.debug(
+                            'Missing {file}'.format(file=metaFilepath)
                         )
                         continue
 
@@ -234,8 +239,14 @@ class JsonFileReader(object):
                     meta = JsonFileReader.buildMeta(metaJsonObj, conference)
 
                     title = meta['title']
-                    if title in seen: # Already have seen this title before.
-                        JsonFileReader.dupDocsLogger.info(
+
+                    # Output title so user can see progress.
+                    logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
+                                                                             conference=conference.encode('utf-8')))
+
+                    # Already have seen this title before.
+                    if title in seen:
+                        JsonFileReader.dupDocsLogger.debug(
                             "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
                                 title=title,
                                 conference=conference,
