@@ -163,9 +163,76 @@ class JsonFileReader(object):
         return abstracts, metas
 
     @staticmethod
-    def loadAllFullTexts(dirPath):
+    def loadAllFulltexts(dirPath):
+        """Loads all fulltexts and their respective metadata from a directory.
+
+        Args:
+            dirPath: full path of directory to load abstracts from.
+
+        Returns:
+            A tuple of fulltexts and their respective metadata.
+        """
+        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
+        fulltexts = []
+        metas = []
+        seen = dict()
+        for obj in objs:
+            (doc, conference, filepath) = obj
+
+            # Fetch abstract
+            abstract = doc.get('abs')
+            if abstract is None:  # Document didn't have an 'abs' field.
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {doc} does not have an "abs" field.'
+                    .format(conference=conference, doc=doc)
+                )
+                abstract = ''
+
+            # Fetch fulltext
+            fulltext = doc.get('fulltext')
+            if fulltext is None:
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {doc} does not have an "fulltext" field.'
+                    .format(conference=conference, doc=doc)
+                )
+                fulltext = ''
+
+            # Fetch metadata.
+            meta = JsonFileReader.buildMeta(doc, conference)
+            title = meta['title']
+
+            # Output title so user can see progress.
+            logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
+                                                                     conference=conference.encode('utf-8')))
+
+            # Already have seen this title before.
+            if title in seen:
+                JsonFileReader.dupDocsLogger.debug(
+                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
+                        title=title,
+                        conference=conference,
+                        dupFilepath=filepath,
+                        seenFilepath=seen[title],
+                    )
+                )
+            # Haven't seen this title before, but add it to seen
+            # with its filepath to keep track of it.
+            else:
+                seen[title] = filepath
+
+            fulltexts.append(fulltext)
+            metas.append(meta)
+
+        return fulltexts, metas
+
+    @staticmethod
+    def loadAllFullTextsLegacy(dirPath):
         """Loads all of the fulltext files and returns list of 
         (fullTexts, metas).
+
+        Note: this is used with the legacy tmpl-data format of storing the corpus
+            in which the fulltexts and metadata of each paper is stored in the form
+            0.txt 0-fulltext.txt.
 
         Args:
             dirPath: full path of the directory to load files from.
@@ -174,14 +241,14 @@ class JsonFileReader(object):
             A tuple of (fullTexts, metas) where 
             metas[i] corresponds to fullTexts of [i].
         """
-        return JsonFileReader._loadAllFullTexts(dirPath, 
+        return JsonFileReader._loadAllFullTextsLegacy(dirPath,
                                                 recursive=True, 
                                                 fullTexts=None, 
                                                 metas=None, 
                                                 seen=None)
 
     @staticmethod
-    def _loadAllFullTexts(dirPath, recursive=True, fullTexts=None, metas=None, seen=None):
+    def _loadAllFullTextsLegacy(dirPath, recursive=True, fullTexts=None, metas=None, seen=None):
         """Recursive helper method for loadAllFullTexts.
         Loads all of the fulltext files and returns list of 
         (fullTexts, metas).
