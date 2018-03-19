@@ -12,6 +12,7 @@ from utils import LOG_DIR
 class JsonFileReader(object):
     """A utility class for reading json objects from files.
     """
+    logging.basicConfig(level=logging.INFO)
     # Make log directory if it doesn't exist.
     makeDir(LOG_DIR)
 
@@ -127,16 +128,16 @@ class JsonFileReader(object):
             (doc, conference, filepath) = obj
             abstract = doc.get('abs')
 
-            if abstract is None:  # Document didn't have an 'abs' field.
-                JsonFileReader.missingFieldsLogger.debug(
-                    '{conference}: {doc} does not have an "abs" field.'
-                    .format(conference=conference, doc=doc)
-                )
-                abstract = ''
-
             # Fetch metadata.
             meta = JsonFileReader.buildMeta(doc, conference)
             title = meta['title']
+
+            if abstract is None:  # Document didn't have an 'abs' field.
+                JsonFileReader.missingFieldsLogger.debug(
+                    "{conference}: '{title}' does not have an 'abs' field."
+                    .format(conference=conference, title=title)
+                )
+                abstract = ''
 
             # Output title so user can see progress.
             logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
@@ -145,7 +146,7 @@ class JsonFileReader(object):
             # Already have seen this title before.
             if title in seen:
                 JsonFileReader.dupDocsLogger.debug(
-                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
+                    "{conference}: '{title}' at {dupFilepath} already seen at {seenFilepath}".format(
                         title=title,
                         conference=conference,
                         dupFilepath=filepath,
@@ -163,7 +164,7 @@ class JsonFileReader(object):
         return abstracts, metas
 
     @staticmethod
-    def loadAllFulltexts(dirPath):
+    def loadAllFullTexts(dirPath):
         """Loads all fulltexts and their respective metadata from a directory.
 
         Args:
@@ -180,26 +181,28 @@ class JsonFileReader(object):
             (doc, conference, filepath) = obj
 
             # Fetch abstract
-            abstract = doc.get('abs')
-            if abstract is None:  # Document didn't have an 'abs' field.
-                JsonFileReader.missingFieldsLogger.debug(
-                    '{conference}: {doc} does not have an "abs" field.'
-                    .format(conference=conference, doc=doc)
-                )
-                abstract = ''
+            abstract = doc.get('abstract')
 
             # Fetch fulltext
             fulltext = doc.get('fulltext')
-            if fulltext is None:
-                JsonFileReader.missingFieldsLogger.debug(
-                    '{conference}: {doc} does not have an "fulltext" field.'
-                    .format(conference=conference, doc=doc)
-                )
-                fulltext = ''
 
             # Fetch metadata.
-            meta = JsonFileReader.buildMeta(doc, conference)
+            meta = JsonFileReader.buildMeta(doc, conference, fields={'title', 'authors', 'abstract'})
             title = meta['title']
+
+            if abstract is None:  # Document didn't have an 'abs' field.
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {title} does not have an "abs" field.'
+                    .format(conference=conference, title=title)
+                )
+                abstract = ''
+
+            if fulltext is None:
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {title} does not have an "fulltext" field.'
+                    .format(conference=conference, title=title)
+                )
+                fulltext = ''
 
             # Output title so user can see progress.
             logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
@@ -330,10 +333,10 @@ class JsonFileReader(object):
                     metas.append(meta)
 
             elif recursive:
-                JsonFileReader._loadAllFullTexts(childPath, 
-                                                 recursive, 
-                                                 fullTexts, 
-                                                 metas)
+                JsonFileReader._loadAllFullTextsLegacy(childPath,
+                                                       recursive,
+                                                       fullTexts,
+                                                       metas)
         return fullTexts, metas
 
     @staticmethod

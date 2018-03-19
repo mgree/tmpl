@@ -30,8 +30,8 @@ class TopicModel(object):
     LDA = 'lda'
     VALID_MODEL_TYPES = {NMF, LDA}
 
-    # Scikit-learn verbosity level (higher values = more verbose logging).
-    SCIKIT_LEARN_VERBOSITY = 5
+    # Scikit-learn verbosity level (0 - 10: higher values = more verbose logging).
+    SCIKIT_LEARN_VERBOSITY = 10
 
     def __init__(self, corpus, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
                  maxIter=None):
@@ -70,6 +70,7 @@ class TopicModel(object):
         self._vectorizer = None
         self._model = None
         self._feature_names = None
+        self._DTMatrix = None
         self._W = None
         self._H = None
 
@@ -148,6 +149,9 @@ class TopicModel(object):
         vectorized = self.vectorizer.fit_transform(documents)
         end = time.clock()
 
+        # Save document-term matrix for later use.
+        self._DTMatrix = vectorized
+
         self.vectorizingTime = end - start
 
         # Save dictionary mapping ids to words.
@@ -210,11 +214,11 @@ class TopicModel(object):
             result.append([self._metas[i]['title'] for i in topDocIx])
         return result
 
-    def persist(self, path):
+    def saveModel(self, path):
         """Saves the trained TopicModel object to the output path.
         """
         if not self._trained:
-            raise ValueError('Cannot persist an untrained model. Call model.train() first.')
+            raise ValueError('Cannot save an untrained model. Call model.train() first.')
         joblib.dump(self, path)
 
     @staticmethod
@@ -314,12 +318,16 @@ if __name__ == '__main__':
     noFeatures = args.num_features
     maxIter = args.max_iter
 
+    # TODO: change this to make it less dependent on the structure of the data.
     if 'abs' in pathToCorpus:
         corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
         corpusName = 'abs'
     elif 'fulltext' in pathToCorpus:
-        corpus = JsonFileReader.loadAllFullTexts(pathToCorpus)
+        corpus = JsonFileReader.loadAllFullTextsLegacy(pathToCorpus)
         corpusName = 'fulltext'
+    elif 'acm-data' in pathToCorpus:
+        corpus = JsonFileReader.loadAllFullTexts(pathToCorpus)
+        corpusName = 'acmdata-fulltext'
     else:
         raise ValueError('Invalid corpus path.')
 
@@ -342,7 +350,7 @@ if __name__ == '__main__':
         (
             'Training {modelType} model over {pathToCorpus} corpus ' 
             'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
-            'and {maxIter} max iterations (lda only).'
+            'and {maxIter} max iterations.'
         ).format(
             modelType=modelType,
             pathToCorpus=pathToCorpus,
@@ -361,5 +369,5 @@ if __name__ == '__main__':
         )
     )
     logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=modelDir))
-    model.persist(modelFilePath)
+    model.saveModel(modelFilePath)
     stringToFile(model.toString(), summaryFilePath)

@@ -33,5 +33,5 @@ raw abstracts or fulltexts with LDA.
 3/05/2018
 - TFIDF for LDA
 - Run full-text
-- Parse the DL
-- 
+- Parse the DL: some conferences missing: ICFP 2008 (every conference has one or two fewer than tmpl-data)
+

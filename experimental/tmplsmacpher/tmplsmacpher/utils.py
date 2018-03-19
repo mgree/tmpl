@@ -56,9 +56,7 @@ class DiskCache(object):
 
         @functools.wraps(fn)
         def wrapper(*args, **kwargs):
-            if (self.forceRerun or 
-                not os.path.exists(cacheFilepath) or
-                os.stat(cacheFilepath).st_size == 0):
+            if self.forceRerun or not os.path.exists(cacheFilepath) or os.stat(cacheFilepath).st_size == 0:
 
                 result = fn(*args, **kwargs)
                 logging.warning(result)
