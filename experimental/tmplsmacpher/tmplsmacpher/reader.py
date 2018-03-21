@@ -160,7 +160,14 @@ class JsonFileReader(object):
 
             abstracts.append(abstract)
             metas.append(meta)
-
+        
+        if len(abstracts) != len(metas):
+            raise ValueError(
+                'Found unequal numbers of abstracts and metas: {numAbs} abstracts, {numMetas} metas'.format(
+                    numAbs=len(abstracts),
+                    numMetas=len(metas),
+                )
+            )
         return abstracts, metas
 
     @staticmethod
@@ -226,6 +233,13 @@ class JsonFileReader(object):
             fulltexts.append(fulltext)
             metas.append(meta)
 
+        if len(fulltexts) != len(metas):
+            raise ValueError(
+                'Found unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
+                    numFulltexts=len(fulltexts),
+                    numMetas=len(metas),
+                )
+            )
         return fulltexts, metas
 
     @staticmethod

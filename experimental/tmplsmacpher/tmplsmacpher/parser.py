@@ -16,7 +16,7 @@ class Parser(object):
     streamHandler = logging.StreamHandler()
     streamHandler.setFormatter(getLoggingFormatter())
     logger.addHandler(streamHandler)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
 
     @staticmethod
     def getConferenceAndYear(filename):
@@ -101,14 +101,19 @@ class Parser(object):
             # Find title.
             title = node.findtext('title')
 
+            # Find subtitle. (some papers split up title into <title>:<subtitle>
+            subtitle = node.findtext('subtitle')
+            
             # Remove quotes (").
             title = title.translate(None, '\"')
+            title += ': ' + subtitle if subtitle is not None else ''
 
             # Find authors.
             authors = []
             author_node = node.find('authors')
             if author_node is not None:
                 for au in author_node.findall('au'):
+                    # Parse out full name. (note: only last_name is a required field)
                     name = ' '.join(filter(lambda s: s != '', [au.findtext('first_name'),
                                                                au.findtext('middle_name'),
                                                                au.findtext('last_name')]))
@@ -142,7 +147,7 @@ class Parser(object):
 
 
 if __name__ == '__main__':
-    DL_DIR = '/Users/smacpher/clones/tmpl_venv/acm-corpus/proceedings'
-    OUT_DIR = '/Users/smacpher/clones/tmpl_venv/acm-corpus/parsed'
+    DL_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/proceedings'
+    OUT_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     parser = Parser()
     parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=False)

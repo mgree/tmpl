@@ -249,12 +249,13 @@ class TopicModel(object):
                         )
         else:
             output = ''
-            header = ('Trained {modelType} model '
+            header = ('Trained {modelType} model over {noDocuments} documents'
                       'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
                       'and {maxIter} maximum iterations. '
                       'Vectorizing time: {vectorizingTime}s. '
                       'Training time: {trainingTime}s.').format(
                           modelType=self.modelType,
+                          noDocuments=len(self.corpus[0]),
                           vectorizerType=self.vectorizerType,
                           noTopics=self.noTopics,
                           noFeatures=self.noFeatures,
@@ -348,12 +349,13 @@ if __name__ == '__main__':
 
     logging.info(
         (
-            'Training {modelType} model over {pathToCorpus} corpus ' 
+            'Training {modelType} model over {pathToCorpus} corpus with {noDocuments}' 
             'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
             'and {maxIter} max iterations.'
         ).format(
             modelType=modelType,
             pathToCorpus=pathToCorpus,
+            noDocuments=len(corpus),
             vectorizerType=vectorizerType,
             noTopics=noTopics,
             noFeatures=noFeatures,
