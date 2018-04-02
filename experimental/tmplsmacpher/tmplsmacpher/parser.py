@@ -113,11 +113,18 @@ class Parser(object):
             author_node = node.find('authors')
             if author_node is not None:
                 for au in author_node.findall('au'):
+                    author = dict()
                     # Parse out full name. (note: only last_name is a required field)
-                    name = ' '.join(filter(lambda s: s != '', [au.findtext('first_name'),
-                                                               au.findtext('middle_name'),
-                                                               au.findtext('last_name')]))
-                    authors.append(name)
+                    author['name'] = ' '.join(filter(lambda s: s != '', [au.findtext('first_name'),
+                                                                         au.findtext('middle_name'),
+                                                                         au.findtext('last_name')]))
+                    # Parse out other important metadata that help distinguish authors.
+                    author['person_id'] = au.findtext('person_id')
+                    author['author_profile_id'] = au.findtext('author_profile_id')
+                    author['orcid_id'] = au.findtext('orcid_id')
+                    author['affiliation'] = au.findtext('affiliation')
+                    author['email_address'] = au.findtext('email_address')
+                    authors.append(author)
 
             # Find abstract.
             abstract = ''
@@ -142,6 +149,9 @@ class Parser(object):
                    'fulltext': fulltext}
 
     class AllEntities:
+        def __init__(self):
+            pass
+
         def __getitem__(self, key):
             return key
 

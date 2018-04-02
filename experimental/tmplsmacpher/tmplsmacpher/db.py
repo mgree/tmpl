@@ -18,19 +18,37 @@ class TmplDB(object):
         if self._connection is None:
             try:
                 self._connection = sqlite3.connect(self.file)
-            except Error as e:
+            except Exception as e:
                 self._connection = None
                 logging.error(e)
+        return self._connection
 
-    def createTable(self, tableName, fields):
-        query = (
-            'CREATE TABLE IF NOT EXISTS {tableName}',
-            '({fields})',
-        ).format(tableName=tableName, fields=fields)
+    @property
+    def cursor(self):
+        if self._cursor is None:
+            try:
+                self._cursor = self.connection.cursor()
+            except Exception as e:
+                self._cursor = None
+                logging.error(e)
+        return self._cursor
 
-        try:
-            c = self.connection.cursor()
+    def execute(self, query):
+        c = self.cursor
+        if c is not None:
             c.execute(query)
-        except Error as e:
-            logging.error(e)
+        raise Exception('Cursor is None.')
 
+
+if __name__ == '__main__':
+    query = (
+        'CREATE TABLE IF NOT EXISTS projects ('
+        'id integer PRIMARY KEY,'
+        'name text NOT NULL,'
+        'begin_date text,'
+        'end_date text'
+        ');'
+    )
+    db = TmplDB('test.db')
+    cursor = db.cursor
+    cursor.execute(query)
