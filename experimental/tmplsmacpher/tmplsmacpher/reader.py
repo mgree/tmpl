@@ -381,7 +381,6 @@ class JsonFileReader(object):
 
 
 if __name__ == '__main__':
-    pathToAbstracts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/abs/top4/'
-    pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/tmpl-data/full/fulltext'
+    pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     documents = JsonFileReader.loadAllFullTexts(pathToFulltexts)
     print(documents)
