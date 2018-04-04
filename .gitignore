@@ -3,7 +3,8 @@
 *.o
 *.swp
 sessions
-.DS_STOREscrape
+.DS_STORE
+scrape
 sessions.py
 scrape
 swarat
@@ -13,3 +14,4 @@ raw
 .DS_Store
 lda-c
 .idea
+.ipynb_checkpoints
