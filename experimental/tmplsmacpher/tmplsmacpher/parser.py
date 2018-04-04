@@ -95,18 +95,15 @@ class Parser(object):
         conference, year = Parser.getConferenceAndYear(os.path.basename(filepath))
 
         for node in root.iter('article_rec'):
-            # Find unique ID.
-            uniqueID = node.findtext('article_id')
+            # Two unique identifiers for papers; DOI is global, however, not all papers have it.
+            articleId = node.findtext('article_id')
+            doiNumber = node.findtext('doi_number')
 
-            # Find title.
+            # Build title string. (some papers split up title into <title>:<subtitle>
             title = node.findtext('title')
-
-            # Find subtitle. (some papers split up title into <title>:<subtitle>
             subtitle = node.findtext('subtitle')
-            
-            # Remove quotes (").
-            title = title.translate(None, '\"')
             title += ': ' + subtitle if subtitle is not None else ''
+            title = title.translate(None, '\"') # Remove quotes (") from title.
 
             # Find authors.
             authors = []
@@ -142,7 +139,8 @@ class Parser(object):
 
             yield {'conference': conference,
                    'year': year,
-                   'uniqueID': uniqueID,
+                   'article_id': articleId,
+                   'doi_number': doiNumber,
                    'title': title,
                    'authors': authors,
                    'abstract': abstract,
