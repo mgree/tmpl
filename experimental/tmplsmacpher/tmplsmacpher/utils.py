@@ -6,8 +6,7 @@ import os
 
 from datetime import datetime
 
-
-LOG_DIR = 'logs'
+from settings import LOG_DIR
 
 
 def getLoggingFormatter():
