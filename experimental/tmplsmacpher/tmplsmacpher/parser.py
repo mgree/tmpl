@@ -5,6 +5,7 @@ import os
 
 from xml.etree import ElementTree
 
+from db import TmplDB
 from utils import getLoggingFormatter
 from utils import makeDir
 
@@ -16,25 +17,19 @@ class Parser(object):
     streamHandler = logging.StreamHandler()
     streamHandler.setFormatter(getLoggingFormatter())
     logger.addHandler(streamHandler)
-    logger.setLevel(logging.INFO)
-
-    @staticmethod
-    def getConferenceAndYear(filename):
-        """Fetches the conference and year from a filename of the form
-        'PROC-POPL00-2000-325694.xml'
-        """
-        try:
-            filenameTokens = filename.split('-')
-            conference = filenameTokens[1][:-2]
-            year = filenameTokens[2]
-            return conference, year
-        except Exception as e:
-            print filename
-            raise e
+    logger.setLevel(logging.ERROR)
 
     @staticmethod
     def parseDir(dirPath, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, noOp=False):
-        """Parses all conferences in a given directory."""
+        """Parses all conferences in a given directory. Writes papers and metadata from each conference
+        to a respective directory per conference.
+
+        Args:
+            dirPath: path to raw DL (digital library) xml files to parse.
+            destDir: destination dir to parse to. Defaults to current directory.
+            conferences: conferences to parse.
+            noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
+        """
         makeDir(destDir)
 
         # Keep track of the number of papers found per conference and year for metric purposes.
@@ -58,7 +53,7 @@ class Parser(object):
             Parser.logger.info('Parsing {conference_year}'.format(conference_year=curOutputDir))
 
             numPapersPerConference[(conference, year)] = 0
-            for i, paper in enumerate(Parser.parseXML(os.path.join(dirPath, filename))):
+            for i, paper in enumerate(Parser.parseXML(curOutputDir, os.path.join(dirPath, filename))):
                 filename = '{i}.txt'.format(i=i)
                 if not noOp:
                     with codecs.open(os.path.join(curOutputDir, filename), 'w', 'utf8') as f:
@@ -81,19 +76,31 @@ class Parser(object):
         )
 
     @staticmethod
-    def parseXML(filepath):
-        """Parses one XML file containing the proceedings for a given conference and year."""
+    def parseXML(procDir, filepath):
+        """Parses one XML file containing the proceedings for a given conference and year.
+
+        Args:
+            procDir: proceeding dir representing one conference and year to write conference metadata to.
+            filepath: filepath of proceeding to parse; represents one conference and year.
+
+        Returns:
+            A generator that writes the current proceeding's metadata to procDir and yields papers from that conference.
+        """
         xmlParser = ElementTree.XMLParser()
         xmlParser.parser.UseForeignDTD(True)
         xmlParser.entity = Parser.AllEntities()
 
-        ET = ElementTree.ElementTree()
+        elementTree = ElementTree.ElementTree()
 
-        ET.parse(filepath, parser=xmlParser)
-        root = ET.getroot()
+        elementTree.parse(filepath, parser=xmlParser)
+        root = elementTree.getroot()
+
+        # Fetch metadata for conference and write to file.
+        series = root.find('series_rec').find('series_name')
+        proceeding = root.find('proceeding_rec')
+        Parser.writeConferenceMetadata(procDir, series, proceeding)
 
         conference, year = Parser.getConferenceAndYear(os.path.basename(filepath))
-
         for node in root.iter('article_rec'):
             # Two unique identifiers for papers; DOI is global, however, not all papers have it.
             articleId = node.findtext('article_id')
@@ -139,12 +146,58 @@ class Parser(object):
 
             yield {'conference': conference,
                    'year': year,
-                   'article_id': articleId,
+                   'article_id': articleId,  # unique key to identify this paper.
+                   'series_id': series.findtext('series_id'),  # key to identify which proceeding this paper was in.
                    'doi_number': doiNumber,
                    'title': title,
                    'authors': authors,
                    'abstract': abstract,
                    'fulltext': fulltext}
+
+    @staticmethod
+    def getConferenceAndYear(filename):
+        """Fetches the conference and year from a filename of the form
+        'PROC-POPL00-2000-325694.xml'
+
+        Args:
+            filename: filename to extract conference and year from.
+
+        Returns:
+            Conference, year
+        """
+        try:
+            filenameTokens = filename.split('-')
+            conference = filenameTokens[1][:-2]
+            year = filenameTokens[2]
+            return conference, year
+        except Exception as e:
+            print filename
+            raise e
+
+    @staticmethod
+    def writeConferenceMetadata(outputDir, series, proceeding):
+        """ Writes metadata for one conference for one year.
+
+        Args:
+            outputDir: output directory representing conference and year to write metadata to.
+            series: series ElementTree node to extract series metadata from.
+            proceeding: proceeding ElementTree node to extract proceeding metadata from.
+        """
+        filename = 'metadata.txt'
+        metadata = {
+            'series_id': series.findtext('series_id'),
+            'series_title': series.findtext('series_title'),
+            'series_vol': series.findtext('series_vol'),
+            'proc_id': proceeding.findtext('proc_id'),
+            'proc_title': proceeding.findtext('proc_title'),
+            'acronym': proceeding.findtext('acronym'),
+            'isbn13': proceeding.findtext('isbn13'),
+            'year': proceeding.findtext('copyright_year'),  # may have to revert back to using year parsed from filename.
+        }
+
+        with codecs.open(os.path.join(outputDir, filename), 'w', 'utf8') as f:
+            f.write(json.dumps(metadata))
+        return
 
     class AllEntities:
         def __init__(self):
@@ -158,4 +211,4 @@ if __name__ == '__main__':
     DL_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/proceedings'
     OUT_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     parser = Parser()
-    parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=False)
+    parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=True)

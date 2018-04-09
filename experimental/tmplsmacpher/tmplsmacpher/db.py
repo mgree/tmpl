@@ -7,11 +7,18 @@ connection = sqlite3.connect('test.db')
 class TmplDB(object):
     """A class to interact with the tmpl sqlite3 database."""
 
+    INIT_FILE = 'schemas/init.sql'
+
     def __init__(self, file):
         self.file = file
 
         self._connection = None
         self._cursor = None
+
+    def init_db(self):
+        with open(TmplDB.INIT_FILE, 'r') as f:
+            self.cursor.executescript(f.read())
+            self.connection.commit()
 
     @property
     def connection(self):
@@ -33,22 +40,7 @@ class TmplDB(object):
                 logging.error(e)
         return self._cursor
 
-    def execute(self, query):
-        c = self.cursor
-        if c is not None:
-            c.execute(query)
-        raise Exception('Cursor is None.')
-
 
 if __name__ == '__main__':
-    query = (
-        'CREATE TABLE IF NOT EXISTS projects ('
-        'id integer PRIMARY KEY,'
-        'name text NOT NULL,'
-        'begin_date text,'
-        'end_date text'
-        ');'
-    )
-    db = TmplDB('test.db')
-    cursor = db.cursor
-    cursor.execute(query)
+    db = TmplDB('tmpl_db.db')
+    db.init_db()
