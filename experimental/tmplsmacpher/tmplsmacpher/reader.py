@@ -80,12 +80,12 @@ class JsonFileReader(object):
         seen = dict()
 
         insertConferenceQuery = '''\
-            INSERT OR IGNORE INTO main.conference(proc_id, series_id, acronym, isbn13, year, proc_title, series_title, series_vol)
+            INSERT INTO conference(proc_id, series_id, acronym, isbn13, year, proc_title, series_title, series_vol)
             VALUES(?, ?, ?, ?, ?, ?, ?, ?);
         '''
 
         insertPaperQuery = '''\
-            INSERT OR IGNORE INTO main.paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
+            INSERT INTO paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
             VALUES(?, ?, ?, ?, ?, ?, ?);
         '''
 
@@ -95,14 +95,14 @@ class JsonFileReader(object):
             # Check for 'metadata.txt' file and insert it into database.
             if 'series_id' in doc and self.db is not None:
                 conferenceMetadata = (
-                    doc['proc_id'],
-                    doc['series_id'],
-                    doc['acronym'],
-                    doc['isbn13'],
-                    doc['year'],
-                    doc['proc_title'],
-                    doc['series_title'],
-                    doc['series_vol'],
+                    doc.get('proc_id'),
+                    doc.get('series_id'),
+                    doc.get('acronym'),
+                    doc.get('isbn13'),
+                    doc.get('year'),
+                    doc.get('proc_title'),
+                    doc.get('series_title'),
+                    doc.get('series_vol'),
                 )
                 self.db.cursor.execute(insertConferenceQuery, conferenceMetadata)
                 logging.info('DB: Wrote {conference} to {db}'.format(conference=doc['series_title'], db=self.db))
@@ -175,7 +175,7 @@ class JsonFileReader(object):
                 )
             )
 
-        self.db.cursor.commit()
+        self.db.connection.commit()
         return fulltexts, metas
 
     @staticmethod

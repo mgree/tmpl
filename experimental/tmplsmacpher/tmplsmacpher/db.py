@@ -1,8 +1,6 @@
 import logging
 import sqlite3
 
-connection = sqlite3.connect('test.db')
-
 
 class TmplDB(object):
     """A class to interact with the tmpl sqlite3 database."""
