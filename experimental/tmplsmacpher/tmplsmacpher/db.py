@@ -15,6 +15,8 @@ class TmplDB(object):
         self._connection = None
         self._cursor = None
 
+        self.init_db()
+
     def init_db(self):
         with open(TmplDB.INIT_FILE, 'r') as f:
             self.cursor.executescript(f.read())
@@ -41,6 +43,7 @@ class TmplDB(object):
         return self._cursor
 
 
+
+
 if __name__ == '__main__':
     db = TmplDB('tmpl_db.db')
-    db.init_db()

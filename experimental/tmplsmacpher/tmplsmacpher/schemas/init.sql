@@ -1,5 +1,5 @@
 -- Create the 'person' table. --
-CREATE TABLE main.person(
+CREATE TABLE IF NOT EXISTS person (
   person_id         INTEGER NOT NULL,
   author_profile_id INTEGER,
   orcid_id          INTEGER,
@@ -7,58 +7,63 @@ CREATE TABLE main.person(
   email_address     TEXT,
   name              TEXT,
 
-  PRIMARY KEY(person_id)
+  PRIMARY KEY (person_id)
+  -- FOREIGN KEY (person_id) REFERENCES main.author (person_id)
 );
 
 -- Create the 'author' table. --
-CREATE TABLE main.author(
+CREATE TABLE IF NOT EXISTS author (
   person_id  INTEGER NOT NULL,
   article_id INTEGER NOT NULL,
 
-  PRIMARY KEY(person_id, article_id)
+  PRIMARY KEY (person_id, article_id)
+  -- FOREIGN KEY (article_id) REFERENCES main.paper (article_id)
 );
 
 -- Create the 'paper' table. --
-CREATE TABLE main.paper(
+CREATE TABLE IF NOT EXISTS paper (
   article_id               INTEGER NOT NULL,
   title                    BLOB,
   abstract                 BLOB,
-  series_id                TEXT NOT NULL,
+  proc_id                  INTEGER NOT NULL,
   article_publication_date TEXT,
   url                      TEXT,
   doi_number               TEXT,
 
-  PRIMARY KEY(series_id)
+  PRIMARY KEY (article_id)
+  -- FOREIGN KEY (series_id) REFERENCES main.conference (series_id),
+  -- FOREIGN KEY (article_id) REFERENCES main.score (article_id)
 );
 
 -- Create the 'conference' table. --
-CREATE TABLE main.conference(
-  series_id       TEXT NOT NULL,
-  proc_id         INTEGER,
+CREATE TABLE IF NOT EXISTS conference (
+  proc_id         INTEGER NOT NULL,
+  series_id       TEXT,
   acronym         TEXT,
   isbn13          TEXT,
   year            TEXT,
-  name            TEXT,
+  proc_title      TEXT,
   series_title    TEXT,
   series_vol      TEXT,
 
-  PRIMARY KEY(series_id)
+  PRIMARY KEY (proc_id)
 );
 
 -- Create the 'score' table. --
-CREATE TABLE main.score(
+CREATE TABLE IF NOT EXISTS score (
   article_id INTEGER NOT NULL,
   topic_id   INTEGER,
   model_id   INTEGER NOT NULL,
   score      REAL,
 
-  PRIMARY KEY(article_id, topic_id, model_id)
+  PRIMARY KEY (article_id, topic_id, model_id)
+  -- FOREIGN KEY (model_id) REFERENCES main.model (model_id)
 );
 
 -- Create the 'model' table. --
-CREATE TABLE main.model(
+CREATE TABLE IF NOT EXISTS model (
   model_id INTEGER NOT NULL,
   path     TEXT,
 
-  PRIMARY KEY(model_id)
+  PRIMARY KEY (model_id)
 );

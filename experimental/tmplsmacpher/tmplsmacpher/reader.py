@@ -4,6 +4,7 @@ import os
 
 from datetime import datetime
 
+from db import TmplDB
 from utils import getLoggingFormatter
 from utils import makeDir
 from utils import LOG_DIR
@@ -59,6 +60,124 @@ class JsonFileReader(object):
     missingFileLogger.addHandler(fh2)
     missingFileLogger.setLevel(logging.DEBUG)
 
+    def __init__(self, db=None):
+        self.db = db
+
+    def loadAllFullTexts(self, dirPath):
+        """Loads all fulltexts and their respective metadata from a directory. If writeToDB is set to True,
+        will also write papers and conference metadata to sqlite3 db for this run.
+
+        Args:
+            dirPath: full path of directory to load abstracts from.
+            writeToDB: whether to write loaded data to db.
+
+        Returns:
+            A tuple of fulltexts and their respective metadata.
+        """
+        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
+        fulltexts = []
+        metas = []
+        seen = dict()
+
+        insertConferenceQuery = '''\
+            INSERT OR IGNORE INTO main.conference(proc_id, series_id, acronym, isbn13, year, proc_title, series_title, series_vol)
+            VALUES(?, ?, ?, ?, ?, ?, ?, ?);
+        '''
+
+        insertPaperQuery = '''\
+            INSERT OR IGNORE INTO main.paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
+            VALUES(?, ?, ?, ?, ?, ?, ?);
+        '''
+
+        for obj in objs:
+            (doc, conference, filepath) = obj
+
+            # Check for 'metadata.txt' file and insert it into database.
+            if 'series_id' in doc and self.db is not None:
+                conferenceMetadata = (
+                    doc['proc_id'],
+                    doc['series_id'],
+                    doc['acronym'],
+                    doc['isbn13'],
+                    doc['year'],
+                    doc['proc_title'],
+                    doc['series_title'],
+                    doc['series_vol'],
+                )
+                self.db.cursor.execute(insertConferenceQuery, conferenceMetadata)
+                logging.info('DB: Wrote {conference} to {db}'.format(conference=doc['series_title'], db=self.db))
+                continue
+
+            abstract = doc.get('abstract')
+            fulltext = doc.get('fulltext')
+
+            # Remove fulltext and use doc as metadata for current paper.
+            doc.pop('fulltext', None)
+            meta = doc
+            title = meta['title']
+
+            if abstract is None:  # Document didn't have an 'abs' field.
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {title} does not have an "abs" field.'
+                    .format(conference=conference, title=title)
+                )
+                abstract = ''
+
+            if fulltext is None:
+                JsonFileReader.missingFieldsLogger.debug(
+                    '{conference}: {title} does not have an "fulltext" field.'
+                    .format(conference=conference, title=title)
+                )
+                fulltext = ''
+
+            # Output title so user can see progress.
+            logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
+                                                                     conference=conference.encode('utf-8')))
+
+            # Already have seen this title before.
+            if title in seen:
+                JsonFileReader.dupDocsLogger.debug(
+                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
+                        title=title,
+                        conference=conference,
+                        dupFilepath=filepath,
+                        seenFilepath=seen[title],
+                    )
+                )
+            # Haven't seen this title before, but add it to seen
+            # with its filepath to keep track of it.
+            else:
+                seen[title] = filepath
+
+            fulltexts.append(fulltext)
+            metas.append(meta)
+
+            # Finally, insert paper into db.
+            if self.db is not None:
+                paperData = (
+                    doc.get('article_id'),
+                    doc.get('title'),
+                    doc.get('abstract'),
+                    doc.get('proc_id'),
+                    doc.get('article_publication_date'),
+                    doc.get('url'),
+                    doc.get('doi_number'),
+                )
+                self.db.cursor.execute(insertPaperQuery, paperData)
+                logging.info('DB: Wrote {paper} to {db}'.format(paper=doc['title'], db=self.db))
+
+        # Make sure that we processed the same number of fulltexts and metadatas.
+        if len(fulltexts) != len(metas):
+            raise ValueError(
+                'Found unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
+                    numFulltexts=len(fulltexts),
+                    numMetas=len(metas),
+                )
+            )
+
+        self.db.cursor.commit()
+        return fulltexts, metas
+
     @staticmethod
     def loadFile(filepath):
         """Loads the json object from a single file.
@@ -97,7 +216,7 @@ class JsonFileReader(object):
         Returns:
             A list of json objects representing the contents of the files.
         """
-        objs = [] # List of json objects found in the specified directory.
+        objs = []  # List of json objects found in the specified directory.
         for child in os.listdir(dirPath):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
@@ -169,78 +288,6 @@ class JsonFileReader(object):
                 )
             )
         return abstracts, metas
-
-    @staticmethod
-    def loadAllFullTexts(dirPath):
-        """Loads all fulltexts and their respective metadata from a directory.
-
-        Args:
-            dirPath: full path of directory to load abstracts from.
-
-        Returns:
-            A tuple of fulltexts and their respective metadata.
-        """
-        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
-        fulltexts = []
-        metas = []
-        seen = dict()
-        for obj in objs:
-            (doc, conference, filepath) = obj
-
-            # Fetch abstract
-            abstract = doc.get('abstract')
-
-            # Fetch fulltext
-            fulltext = doc.get('fulltext')
-
-            # Fetch metadata.
-            meta = JsonFileReader.buildMeta(doc, conference, fields={'title', 'authors', 'abstract'})
-            title = meta['title']
-
-            if abstract is None:  # Document didn't have an 'abs' field.
-                JsonFileReader.missingFieldsLogger.debug(
-                    '{conference}: {title} does not have an "abs" field.'
-                    .format(conference=conference, title=title)
-                )
-                abstract = ''
-
-            if fulltext is None:
-                JsonFileReader.missingFieldsLogger.debug(
-                    '{conference}: {title} does not have an "fulltext" field.'
-                    .format(conference=conference, title=title)
-                )
-                fulltext = ''
-
-            # Output title so user can see progress.
-            logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
-                                                                     conference=conference.encode('utf-8')))
-
-            # Already have seen this title before.
-            if title in seen:
-                JsonFileReader.dupDocsLogger.debug(
-                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
-                        title=title,
-                        conference=conference,
-                        dupFilepath=filepath,
-                        seenFilepath=seen[title],
-                    )
-                )
-            # Haven't seen this title before, but add it to seen
-            # with its filepath to keep track of it.
-            else:
-                seen[title] = filepath
-
-            fulltexts.append(fulltext)
-            metas.append(meta)
-
-        if len(fulltexts) != len(metas):
-            raise ValueError(
-                'Found unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
-                    numFulltexts=len(fulltexts),
-                    numMetas=len(metas),
-                )
-            )
-        return fulltexts, metas
 
     @staticmethod
     def loadAllFullTextsLegacy(dirPath):
@@ -382,5 +429,6 @@ class JsonFileReader(object):
 
 if __name__ == '__main__':
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
-    documents = JsonFileReader.loadAllFullTexts(pathToFulltexts)
-    print(documents)
+    db = TmplDB('testReader.db')
+    reader = JsonFileReader(db)
+    documents = reader.loadAllFullTexts(pathToFulltexts)

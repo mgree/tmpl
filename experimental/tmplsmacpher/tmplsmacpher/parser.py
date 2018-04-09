@@ -5,7 +5,6 @@ import os
 
 from xml.etree import ElementTree
 
-from db import TmplDB
 from utils import getLoggingFormatter
 from utils import makeDir
 
@@ -17,7 +16,7 @@ class Parser(object):
     streamHandler = logging.StreamHandler()
     streamHandler.setFormatter(getLoggingFormatter())
     logger.addHandler(streamHandler)
-    logger.setLevel(logging.ERROR)
+    logger.setLevel(logging.INFO)
 
     @staticmethod
     def parseDir(dirPath, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, noOp=False):
@@ -105,6 +104,8 @@ class Parser(object):
             # Two unique identifiers for papers; DOI is global, however, not all papers have it.
             articleId = node.findtext('article_id')
             doiNumber = node.findtext('doi_number')
+            url = node.findtext('url')
+            articlePublicationDate = node.findtext('article_publication_date')
 
             # Build title string. (some papers split up title into <title>:<subtitle>
             title = node.findtext('title')
@@ -147,7 +148,9 @@ class Parser(object):
             yield {'conference': conference,
                    'year': year,
                    'article_id': articleId,  # unique key to identify this paper.
-                   'series_id': series.findtext('series_id'),  # key to identify which proceeding this paper was in.
+                   'proc_id': proceeding.findtext('proc_id'),  # key to identify which proceeding this paper was in.
+                   'url': url,
+                   'article_publication_date': articlePublicationDate,
                    'doi_number': doiNumber,
                    'title': title,
                    'authors': authors,
@@ -192,7 +195,7 @@ class Parser(object):
             'proc_title': proceeding.findtext('proc_title'),
             'acronym': proceeding.findtext('acronym'),
             'isbn13': proceeding.findtext('isbn13'),
-            'year': proceeding.findtext('copyright_year'),  # may have to revert back to using year parsed from filename.
+            'year': proceeding.findtext('copyright_year'),  # may have to revert back to using year parsed from filename
         }
 
         with codecs.open(os.path.join(outputDir, filename), 'w', 'utf8') as f:
