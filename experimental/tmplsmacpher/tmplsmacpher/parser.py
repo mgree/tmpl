@@ -97,7 +97,7 @@ class Parser(object):
         # Fetch metadata for conference and write to file.
         series = root.find('series_rec').find('series_name')
         proceeding = root.find('proceeding_rec')
-        Parser.writeConferenceMetadata(procDir, series, proceeding)
+        procId = Parser.writeConferenceMetadata(procDir, series, proceeding)
 
         conference, year = Parser.getConferenceAndYear(os.path.basename(filepath))
         for node in root.iter('article_rec'):
@@ -145,10 +145,12 @@ class Parser(object):
                 if body is not None:
                     fulltext = body.text
 
+            if procId is None:
+                logging.ERROR("PROC_ID is None for {title} in {conference}-{year}".format(title=title, conference=conference, year=year))
             yield {'conference': conference,
                    'year': year,
                    'article_id': articleId,  # unique key to identify this paper.
-                   'proc_id': proceeding.findtext('proc_id'),  # key to identify which proceeding this paper was in.
+                   'proc_id': procId,  # key to identify which proceeding this paper was in.
                    'url': url,
                    'article_publication_date': articlePublicationDate,
                    'doi_number': doiNumber,
@@ -187,11 +189,12 @@ class Parser(object):
             proceeding: proceeding ElementTree node to extract proceeding metadata from.
         """
         filename = 'metadata.txt'
+        procId = proceeding.findtext('proc_id')
         metadata = {
             'series_id': series.findtext('series_id'),
             'series_title': series.findtext('series_title'),
             'series_vol': series.findtext('series_vol'),
-            'proc_id': proceeding.findtext('proc_id'),
+            'proc_id': procId,
             'proc_title': proceeding.findtext('proc_title'),
             'acronym': proceeding.findtext('acronym'),
             'isbn13': proceeding.findtext('isbn13'),
@@ -200,7 +203,7 @@ class Parser(object):
 
         with codecs.open(os.path.join(outputDir, filename), 'w', 'utf8') as f:
             f.write(json.dumps(metadata))
-        return
+        return procId
 
     class AllEntities:
         def __init__(self):
@@ -214,4 +217,4 @@ if __name__ == '__main__':
     DL_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/proceedings'
     OUT_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     parser = Parser()
-    parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=True)
+    parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=False)

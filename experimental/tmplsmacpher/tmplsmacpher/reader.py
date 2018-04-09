@@ -85,7 +85,7 @@ class JsonFileReader(object):
         '''
 
         insertPaperQuery = '''\
-            INSERT INTO paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
+            INSERT OR REPLACE INTO paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
             VALUES(?, ?, ?, ?, ?, ?, ?);
         '''
 

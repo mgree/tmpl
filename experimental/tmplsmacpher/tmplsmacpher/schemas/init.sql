@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS paper (
   article_id               INTEGER NOT NULL,
   title                    BLOB,
   abstract                 BLOB,
-  proc_id                  INTEGER,
+  proc_id                  INTEGER NOT NULL,
   article_publication_date TEXT,
   url                      TEXT,
   doi_number               TEXT,
