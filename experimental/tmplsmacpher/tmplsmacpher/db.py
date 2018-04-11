@@ -7,7 +7,7 @@ class TmplDB(object):
 
     A couple of things to note when using this class or sqlite3 in general:
         1) sqlite3 dynamically casts fields. If you pass in, let's say, a string for the field
-            'year' which is defined as a sqlite3 INTEGER, it will still add the field!
+            'year' which is defined as a sqlite3 INTEGER, it will still add the field without error!
     """
     logging.basicConfig(level=logging.INFO)
 
