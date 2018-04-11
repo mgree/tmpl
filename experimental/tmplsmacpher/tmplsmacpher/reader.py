@@ -79,33 +79,24 @@ class JsonFileReader(object):
         metas = []
         seen = dict()
 
-        insertConferenceQuery = '''\
-            INSERT INTO conference(proc_id, series_id, acronym, isbn13, year, proc_title, series_title, series_vol)
-            VALUES(?, ?, ?, ?, ?, ?, ?, ?);
-        '''
-
-        insertPaperQuery = '''\
-            INSERT OR REPLACE INTO paper(article_id, title, abstract, proc_id, article_publication_date, url, doi_number)
-            VALUES(?, ?, ?, ?, ?, ?, ?);
-        '''
-
         for obj in objs:
             (doc, conference, filepath) = obj
 
             # Check for 'metadata.txt' file and insert it into database.
             if 'series_id' in doc and self.db is not None:
-                conferenceMetadata = (
-                    doc.get('proc_id'),
-                    doc.get('series_id'),
-                    doc.get('acronym'),
-                    doc.get('isbn13'),
-                    doc.get('year'),
-                    doc.get('proc_title'),
-                    doc.get('series_title'),
-                    doc.get('series_vol'),
-                )
-                self.db.cursor.execute(insertConferenceQuery, conferenceMetadata)
-                logging.info('DB: Wrote {conference} to {db}'.format(conference=doc['series_title'], db=self.db))
+                # Ensure you're fetching the same fields in init.sql.
+                conferenceData = {
+                    'proc_id': doc.get('proc_id'),
+                    'series_id': doc.get('series_id'),
+                    'acronym': doc.get('acronym'),
+                    'isbn13': doc.get('isbn13'),
+                    'year': doc.get('year'),
+                    'proc_title': doc.get('proc_title'),
+                    'series_title': doc.get('series_title'),
+                    'series_vol': doc.get('series_vol'),
+                }
+                self.db.insert(tableName='conference', **conferenceData)
+                logging.info('DB: Wrote {conference} to {db}'.format(conference=conferenceData['series_title'], db=self.db))
                 continue
 
             abstract = doc.get('abstract')
@@ -154,17 +145,17 @@ class JsonFileReader(object):
 
             # Finally, insert paper into db.
             if self.db is not None:
-                paperData = (
-                    doc.get('article_id'),
-                    doc.get('title'),
-                    doc.get('abstract'),
-                    doc.get('proc_id'),
-                    doc.get('article_publication_date'),
-                    doc.get('url'),
-                    doc.get('doi_number'),
-                )
-                self.db.cursor.execute(insertPaperQuery, paperData)
-                logging.info('DB: Wrote {paper} to {db}'.format(paper=doc['title'], db=self.db))
+                paperData = {
+                    'article_id': doc.get('article_id'),
+                    'title': doc.get('title'),
+                    'abstract': doc.get('abstract'),
+                    'proc_id': doc.get('proc_id'),
+                    'article_publication_date': doc.get('article_publication_date'),
+                    'url': doc.get('url'),
+                    'doi_number': doc.get('doi_number'),
+                }
+                self.db.insert('paper', **paperData)
+                logging.info('DB: Wrote {paper} to {db}'.format(paper=paperData['title'], db=self.db))
 
         # Make sure that we processed the same number of fulltexts and metadatas.
         if len(fulltexts) != len(metas):
@@ -306,10 +297,10 @@ class JsonFileReader(object):
             metas[i] corresponds to fullTexts of [i].
         """
         return JsonFileReader._loadAllFullTextsLegacy(dirPath,
-                                                recursive=True, 
-                                                fullTexts=None, 
-                                                metas=None, 
-                                                seen=None)
+                                                      recursive=True, 
+                                                      fullTexts=None, 
+                                                      metas=None, 
+                                                      seen=None)
 
     @staticmethod
     def _loadAllFullTextsLegacy(dirPath, recursive=True, fullTexts=None, metas=None, seen=None):

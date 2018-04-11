@@ -72,8 +72,9 @@ class TmplDB(object):
         All columns from table must be passed in as kwargs.
         """
         columns = self.getColumns(tableName)
-        query = ('INSERT INTO conference {columns} '
+        query = ('INSERT INTO {tableName} {columns} '
                  'VALUES ({valuePlaceholders});').format(
+                    tableName=TmplDB.verifyName(tableName),
                     columns=columns,
                     valuePlaceholders=','.join(['?'] * len(columns))
                 )
@@ -121,13 +122,13 @@ class TmplDB(object):
         Returns:
             A tuple of the column names in the order they appear in the schema (same order as in INIT_FILE).
         """
-        query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.clean(tableName))
+        query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.verifyName(tableName))
         self.cursor.execute(query)
         return tuple(map(lambda x: x[0], self.cursor.description))  # Fetch the name only.
 
     @staticmethod
-    def clean(name):
-        """Cleans name to secure against sql injection attacks. Always use
+    def verifyName(name):
+        """Verifies name (of table or column) to secure against sql injection attacks. Always use
         this function when substituting table names or columns since they cannot be parameterized
         with ?. Ensures that tableName or columns consist only of alphanumeric chars or chars from
         the validSymbols set.

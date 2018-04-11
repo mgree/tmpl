@@ -1,5 +1,5 @@
 -- Create the 'person' table. --
-CREATE TABLE IF NOT EXISTS person (
+CREATE TABLE person (
   person_id         INTEGER NOT NULL,
   author_profile_id INTEGER,
   orcid_id          INTEGER,
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS person (
 );
 
 -- Create the 'author' table. --
-CREATE TABLE IF NOT EXISTS author (
+CREATE TABLE author (
   person_id  INTEGER NOT NULL,
   article_id INTEGER NOT NULL,
 
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS author (
 );
 
 -- Create the 'paper' table. --
-CREATE TABLE IF NOT EXISTS paper (
+CREATE TABLE paper (
   article_id               INTEGER NOT NULL,
   title                    BLOB,
   abstract                 BLOB,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS paper (
 );
 
 -- Create the 'conference' table. --
-CREATE TABLE IF NOT EXISTS conference (
+CREATE TABLE conference (
   proc_id         INTEGER NOT NULL,
   series_id       TEXT,
   acronym         TEXT,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS conference (
 );
 
 -- Create the 'score' table. --
-CREATE TABLE IF NOT EXISTS score (
+CREATE TABLE score (
   article_id INTEGER NOT NULL,
   topic_id   INTEGER,
   model_id   INTEGER NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS score (
 );
 
 -- Create the 'model' table. --
-CREATE TABLE IF NOT EXISTS model (
+CREATE TABLE model (
   model_id INTEGER NOT NULL,
   path     TEXT,
 
