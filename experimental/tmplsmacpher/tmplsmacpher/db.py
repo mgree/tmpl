@@ -3,9 +3,17 @@ import sqlite3
 
 
 class TmplDB(object):
-    """A class to interact with the tmpl sqlite3 database."""
+    """A class to interact with the tmpl sqlite3 database.
+
+    A couple of things to note when using this class or sqlite3 in general:
+        1) sqlite3 dynamically casts fields. If you pass in, let's say, a string for the field
+            'year' which is defined as a sqlite3 INTEGER, it will still add the field!
+    """
+    logging.basicConfig(level=logging.INFO)
 
     INIT_FILE = 'schemas/init.sql'
+
+    logger = logging.getLogger('TmplDB')
 
     def __init__(self, file):
         self.file = file
@@ -57,13 +65,51 @@ class TmplDB(object):
             self.cursor.executescript(f.read())
             self.connection.commit()
 
-    def insertConference(self, **kwargs):
-        """Inserts a conference entity into the TmplDB object. Uses .fullschema command
-        to first generate the proper INSERT query and the passed in
-        kwargs as fields. Must pass in the fields in the order they appear in the schema to
-        ensure they get added to their appropriate columns correctly.
+    def insert(self, tableName, **kwargs):
+        """Inserts a row into the table <tableName>. Fetches the columns from the desired
+        table dynamically to first generate the proper INSERT query and then passes in
+        kwargs as fields to query.
+        All columns from table must be passed in as kwargs.
         """
-        pass
+        columns = self.getColumns(tableName)
+        query = ('INSERT INTO conference {columns} '
+                 'VALUES ({valuePlaceholders});').format(
+                    columns=columns,
+                    valuePlaceholders=','.join(['?'] * len(columns))
+                )
+        TmplDB.logger.info('Insert: Query template = {query}'.format(query=query))
+
+        # First check that the number of kwargs (fields) that the user passed in matches
+        # the number of columns in the table.
+        if len(kwargs) != len(columns):
+            raise TmplDB.IllegalColumnException(
+                'Passed in fields: {fields} do not match with columns: {columns} from table: {tableName}'.format(
+                    fields=kwargs.keys(),
+                    columns=columns,
+                    tableName=tableName,
+                )
+            )
+
+        # Next, order the passed in kwargs according to the order defined by the getColumns method
+        # to ensure that fields are being added to the correct columns.
+        values = []
+        for key in columns:
+            if key not in kwargs:
+                raise TmplDB.IllegalColumnException(
+                    'Column: {key} not present in kwargs. Must pass in fields for all columns: {columns}'.format(
+                        key=key,
+                        columns=columns,
+                    )
+                )
+            else:
+                values.append(kwargs[key])
+
+        values = tuple(values)
+        TmplDB.logger.info('Insert: Inserting {values}'.format(values=values))
+
+        self.cursor.execute(query, values)
+        self.connection.commit()  # Exception will be raised at commit() if insert failed else insert succeeded.
+        TmplDB.logger.info('Insert: Insertion successfully committed.')
 
     def getColumns(self, tableName):
         """
@@ -75,34 +121,49 @@ class TmplDB(object):
         Returns:
             A tuple of the column names in the order they appear in the schema (same order as in INIT_FILE).
         """
-        query = 'SELECT * FROM {tablName};'.format(TmplDB.clean(tableName))
-        descriptions = self.cursor.execute(query, tableName)
-        return descriptions.keys()
+        query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.clean(tableName))
+        self.cursor.execute(query)
+        return tuple(map(lambda x: x[0], self.cursor.description))  # Fetch the name only.
 
     @staticmethod
-    def clean(tableName):
-        """Cleans tableName to secure against sql injection attacks. Always use
-        this function when substituting table names since they cannot be parameterized
-        with ?. Ensures that tableName consists only of alphanumeric chars or chars from
+    def clean(name):
+        """Cleans name to secure against sql injection attacks. Always use
+        this function when substituting table names or columns since they cannot be parameterized
+        with ?. Ensures that tableName or columns consist only of alphanumeric chars or chars from
         the validSymbols set.
         """
         validSymbols = {'_', '-'}
         cleaned = ''
-        for char in tableName:
+        for char in name:
             if char.isalnum() or char in validSymbols:
                 cleaned += char
             else:
-                raise TmplDB.IllegalTableNameException(
-                    'Invalid tableName: {tableName}. '
-                    'tableName must consist of alphanumeric characters or {validSymbols}').format(
-                        tableName=tableName, validSymbols=validSymbols
+                raise TmplDB.IllegalNameException(
+                    'Invalid name: {name}. '
+                    'name must consist of alphanumeric characters or {validSymbols}').format(
+                        name=name,
+                        validSymbols=validSymbols,
                     )
+        return cleaned
 
-    class IllegalTableNameException(Exception):
-        """Exception denoting the use of an IllegalTableNameException."""
+    class IllegalNameException(Exception):
+        """Exception denoting the use of an illegal name."""
+        pass
+
+    class IllegalColumnException(Exception):
+        """Exception denoting the use of an illegal column."""
         pass
 
 
 if __name__ == '__main__':
     db = TmplDB('tmpl_db.db')
-    print(db.getColumns('conferences'))
+    kwargs = {'proc_id': 51,
+              'series_id': 'series_id_test',
+              'acronym': 'tst',
+              'isbn13': 'isbn13_test',
+              'year': 2018,
+              'proc_title': 'proc_title_test',
+              'series_title': 'series_title_test',
+              'series_vol': 'series_vol_test'}
+    db.insert('conference', **kwargs)
+
