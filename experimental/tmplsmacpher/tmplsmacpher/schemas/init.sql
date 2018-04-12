@@ -1,6 +1,6 @@
 -- Create the 'person' table. --
 CREATE TABLE person (
-  person_id         INTEGER NOT NULL,
+  person_id         TEXT NOT NULL,
   author_profile_id INTEGER,
   orcid_id          INTEGER,
   affiliation       TEXT,
@@ -13,7 +13,7 @@ CREATE TABLE person (
 
 -- Create the 'author' table. --
 CREATE TABLE author (
-  person_id  INTEGER NOT NULL,
+  person_id  TEXT NOT NULL,
   article_id INTEGER NOT NULL,
 
   PRIMARY KEY (person_id, article_id)

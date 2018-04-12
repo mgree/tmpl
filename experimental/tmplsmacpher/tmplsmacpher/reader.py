@@ -77,6 +77,9 @@ class JsonFileReader(object):
         objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
         fulltexts = []
         metas = []
+
+        # keep track of the people that we've seen so that we don't try to add them twice in the 'person' table.
+        personIDSeen = set()
         seen = dict()
 
         for obj in objs:
@@ -86,7 +89,7 @@ class JsonFileReader(object):
             if 'series_id' in doc and self.db is not None:
                 # Ensure you're fetching the same fields in init.sql.
                 conferenceData = {
-                    'proc_id': doc.get('proc_id'),
+                    'proc_id': int(doc.get('proc_id')),
                     'series_id': doc.get('series_id'),
                     'acronym': doc.get('acronym'),
                     'isbn13': doc.get('isbn13'),
@@ -96,7 +99,8 @@ class JsonFileReader(object):
                     'series_vol': doc.get('series_vol'),
                 }
                 self.db.insert(tableName='conference', **conferenceData)
-                logging.info('DB: Wrote {conference} to {db}'.format(conference=conferenceData['series_title'], db=self.db))
+                logging.info('DB: Wrote {conference} to {db}'.format(conference=conferenceData['series_title'],
+                                                                     db=self.db))
                 continue
 
             abstract = doc.get('abstract')
@@ -107,7 +111,21 @@ class JsonFileReader(object):
             meta = doc
             title = meta['title']
 
-            if abstract is None:  # Document didn't have an 'abs' field.
+            # Add person and author to database.
+            for author in doc.get('authors'):
+                # Need to cast certain fields to match sqlite datatypes.
+                author['author_profile_id'] = int(author['author_profile_id']) if author['author_profile_id'] != '' and\
+                    author['author_profile_id'] is not None else ''
+                author['orcid_id'] = int(author['orcid_id']) if author['orcid_id'] != '' and \
+                    author['orcid_id'] is not None else ''
+
+                self.db.insert(tableName='author', **{'person_id': author['person_id'],
+                                                      'article_id': int(doc.get('article_id'))})
+                if author['person_id'] not in personIDSeen:
+                    personIDSeen.add(author['person_id'])
+                    self.db.insert(tableName='person', **author)
+
+            if abstract is None:
                 JsonFileReader.missingFieldsLogger.debug(
                     '{conference}: {title} does not have an "abs" field.'
                     .format(conference=conference, title=title)
@@ -135,9 +153,9 @@ class JsonFileReader(object):
                         seenFilepath=seen[title],
                     )
                 )
-            # Haven't seen this title before, but add it to seen
-            # with its filepath to keep track of it.
             else:
+                # Haven't seen this title before, but add it to seen
+                # with its filepath to keep track of it.
                 seen[title] = filepath
 
             fulltexts.append(fulltext)
@@ -146,10 +164,10 @@ class JsonFileReader(object):
             # Finally, insert paper into db.
             if self.db is not None:
                 paperData = {
-                    'article_id': doc.get('article_id'),
+                    'article_id': int(doc.get('article_id')),
                     'title': doc.get('title'),
                     'abstract': doc.get('abstract'),
-                    'proc_id': doc.get('proc_id'),
+                    'proc_id': int(doc.get('proc_id')),
                     'article_publication_date': doc.get('article_publication_date'),
                     'url': doc.get('url'),
                     'doi_number': doc.get('doi_number'),
