@@ -112,15 +112,20 @@ class JsonFileReader(object):
             title = meta['title']
 
             # Add person and author to database.
-            for author in doc.get('authors'):
+            for author in meta['authors']:
                 # Need to cast certain fields to match sqlite datatypes.
                 author['author_profile_id'] = int(author['author_profile_id']) if author['author_profile_id'] != '' and\
                     author['author_profile_id'] is not None else ''
                 author['orcid_id'] = int(author['orcid_id']) if author['orcid_id'] != '' and \
                     author['orcid_id'] is not None else ''
 
+                # There are sometimes author entries for some reason. Ignore them.
+                if author['person_id'] is None:
+                    continue
+
                 self.db.insert(tableName='author', **{'person_id': author['person_id'],
-                                                      'article_id': int(doc.get('article_id'))})
+                                      'article_id': int(meta['article_id'])})
+
                 if author['person_id'] not in personIDSeen:
                     personIDSeen.add(author['person_id'])
                     self.db.insert(tableName='person', **author)

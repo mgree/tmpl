@@ -35,3 +35,12 @@ raw abstracts or fulltexts with LDA.
 - Run full-text
 - Parse the DL: some conferences missing: ICFP 2008 (every conference has one or two fewer than tmpl-data)
 
+4/12/2018
+- There are people with the same name but different person_id's. Maybe 'person_id' isn't a great unique identifying.
+    eg. Michael Greenberg|P2338189
+        Michael Greenberg|P1728711
+        Michael Greenberg|P1911117
+
+    Michael Greenberg|1863572|Matching lenses: alignment and view update
+    Michael Greenberg|1640091|Flapjax: a programming language for Ajax applications
+    Michael Greenberg|1706341|Contracts made manifest
