@@ -4,10 +4,9 @@ import os
 
 from datetime import datetime
 
-from db import TmplDB
+from settings import LOG_DIR
 from utils import getLoggingFormatter
 from utils import makeDir
-from utils import LOG_DIR
 
 
 class JsonFileReader(object):
@@ -442,6 +441,7 @@ class JsonFileReader(object):
 
 
 if __name__ == '__main__':
+    from db import TmplDB
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     db = TmplDB('testReader.db')
     reader = JsonFileReader(db)

@@ -7,8 +7,8 @@ CREATE TABLE person (
   email_address     TEXT,
   name              TEXT,
 
-  PRIMARY KEY (person_id)
-  -- FOREIGN KEY (person_id) REFERENCES main.author (person_id)
+  PRIMARY KEY (person_id),
+  FOREIGN KEY (person_id) REFERENCES author (person_id)
 );
 
 -- Create the 'author' table. --
@@ -16,8 +16,8 @@ CREATE TABLE author (
   person_id  TEXT NOT NULL,
   article_id INTEGER NOT NULL,
 
-  PRIMARY KEY (person_id, article_id)
-  -- FOREIGN KEY (article_id) REFERENCES main.paper (article_id)
+  PRIMARY KEY (person_id, article_id),
+  FOREIGN KEY (article_id) REFERENCES paper (article_id)
 );
 
 -- Create the 'paper' table. --
@@ -30,9 +30,9 @@ CREATE TABLE paper (
   url                      TEXT,
   doi_number               TEXT,
 
-  PRIMARY KEY (article_id)
-  -- FOREIGN KEY (series_id) REFERENCES main.conference (series_id),
-  -- FOREIGN KEY (article_id) REFERENCES main.score (article_id)
+  PRIMARY KEY (article_id),
+  FOREIGN KEY (proc_id) REFERENCES conference (proc_id),
+  FOREIGN KEY (article_id) REFERENCES score (article_id)
 );
 
 -- Create the 'conference' table. --
@@ -56,14 +56,20 @@ CREATE TABLE score (
   model_id   INTEGER NOT NULL,
   score      REAL,
 
-  PRIMARY KEY (article_id, topic_id, model_id)
-  -- FOREIGN KEY (model_id) REFERENCES main.model (model_id)
+  PRIMARY KEY (article_id, topic_id, model_id),
+  FOREIGN KEY (model_id) REFERENCES model (model_id)
 );
 
 -- Create the 'model' table. --
 CREATE TABLE model (
-  model_id INTEGER NOT NULL,
-  path     TEXT,
+  model_id     TEXT NOT NULL,
+  path         TEXT,
+  run_date     TEXT,
+  num_topics   INTEGER,
+  num_features INTEGER,
+  max_iter     INTEGER,
+  vectorizer   TEXT,
+  model_type   TEXT,
 
   PRIMARY KEY (model_id)
 );

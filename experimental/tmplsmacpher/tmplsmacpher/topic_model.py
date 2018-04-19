@@ -10,12 +10,14 @@ from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from db import TmplDB
 from reader import JsonFileReader
 from settings import MODELS_DIR
 from utils import makeDir
 from utils import stringToFile
 
-# TODO: If user chooses tfidf and LDA, use tfidf to filter words first, then use LDA.
+# TODO: If user chooses tfidf and LDA, use tfidf to filter words first,
+# TODO: then use LDA. As of now, LDA does not support the output format of tfidf.
 
 
 class TopicModel(object):
@@ -56,6 +58,8 @@ class TopicModel(object):
             elif modelType == self.LDA:
                 maxIter = 10
 
+        # Initialize database for this run.
+        # self.db = TmplDB('')
         self.corpus = corpus
         self.vectorizerType = vectorizerType
         self.modelType = modelType
@@ -122,10 +126,11 @@ class TopicModel(object):
         return self._model
 
     @property
-    def dirName(self):
-        """Builds a directory name representing the model."""
+    def uniqueName(self):
+        """Builds a unique name representing the model."""
         if self._dirName is None:
-            self._dirName = ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
+            self._dirName = ('{corpusName}_{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
+                corpusName=self.corpus,
                 modelType=self.modelType,
                 vectorizerType=self.vectorizerType,
                 noTopics=self.noTopics,
@@ -319,18 +324,23 @@ if __name__ == '__main__':
     noFeatures = args.num_features
     maxIter = args.max_iter
 
-    # TODO: change this to make it less dependent on the structure of the data.
-    if 'abs' in pathToCorpus:
-        corpus = JsonFileReader.loadAllAbstracts(pathToCorpus)
-        corpusName = 'abs'
-    elif 'fulltext' in pathToCorpus:
-        corpus = JsonFileReader.loadAllFullTextsLegacy(pathToCorpus)
-        corpusName = 'fulltext'
-    elif 'acm-data' in pathToCorpus:
-        corpus = JsonFileReader.loadAllFullTexts(pathToCorpus)
-        corpusName = 'acmdata-fulltext'
-    else:
-        raise ValueError('Invalid corpus path.')
+    # Instantiate TmplDB to store relevant information about this model.
+    dbName = (
+        'TmplDB_' +
+        '{corpusName}_{modelType}_{vectorizerType}v_{noTopics}n'.format(
+            corpusName=os.path.basename(pathToCorpus),
+            modelType=modelType,
+            vectorizerType=vectorizerType,
+            noTopics=noTopics
+        ) +
+        datetime.now().isoformat() +
+        '.sqlite3'
+    )
+    db = TmplDB(dbName)
+
+    # Instantiate reader to read corpus.
+    reader = JsonFileReader(db)
+    corpus = reader.loadAllFullTexts(pathToCorpus)
 
     # Instantiate TopicModel object with desired parameters.
     model = TopicModel(corpus,
@@ -341,7 +351,7 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, corpusName + '_' + model.dirName + '_' + datetime.now().isoformat())
+    modelDir = os.path.join(MODELS_DIR, model.uniqueName + '_' + datetime.now().isoformat())
     modelFilePath = os.path.join(modelDir, 'model.pkl')
     summaryFilePath = os.path.join(modelDir, 'summary.txt')
     makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.

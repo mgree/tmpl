@@ -4,10 +4,6 @@ import functools
 import logging
 import os
 
-from datetime import datetime
-
-from settings import LOG_DIR
-
 
 def getLoggingFormatter():
     return logging.Formatter(
