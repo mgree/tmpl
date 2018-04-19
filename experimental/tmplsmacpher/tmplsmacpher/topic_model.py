@@ -129,8 +129,7 @@ class TopicModel(object):
     def uniqueName(self):
         """Builds a unique name representing the model."""
         if self._dirName is None:
-            self._dirName = ('{corpusName}_{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
-                corpusName=self.corpus,
+            self._dirName = ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
                 modelType=self.modelType,
                 vectorizerType=self.vectorizerType,
                 noTopics=self.noTopics,
@@ -314,6 +313,9 @@ if __name__ == '__main__':
     parser.add_argument('--max_iter', '-i', dest='max_iter',
                         default=None, type=int,
                         help='The maximum number of training iterations to run.')
+    parser.add_argument('--name', '-u', dest='name',
+                        default=None, type=str,
+                        help='Optional name to keep track of your model with.')
 
     args = parser.parse_args()
 
@@ -323,12 +325,13 @@ if __name__ == '__main__':
     noTopics = args.num_topics
     noFeatures = args.num_features
     maxIter = args.max_iter
+    name = args.name + '_' or ''
 
     # Instantiate TmplDB to store relevant information about this model.
     dbName = (
         'TmplDB_' +
         '{corpusName}_{modelType}_{vectorizerType}v_{noTopics}n'.format(
-            corpusName=os.path.basename(pathToCorpus),
+            corpusName=name,
             modelType=modelType,
             vectorizerType=vectorizerType,
             noTopics=noTopics
@@ -351,7 +354,7 @@ if __name__ == '__main__':
                        maxIter=maxIter)
 
     # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, model.uniqueName + '_' + datetime.now().isoformat())
+    modelDir = os.path.join(MODELS_DIR, name + model.uniqueName + '_' + datetime.now().isoformat())
     modelFilePath = os.path.join(modelDir, 'model.pkl')
     summaryFilePath = os.path.join(modelDir, 'summary.txt')
     makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
