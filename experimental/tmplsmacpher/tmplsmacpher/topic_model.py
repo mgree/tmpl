@@ -21,6 +21,8 @@ from utils import stringToFile
 
 
 class TopicModel(object):
+    # Default constructor arguments
+    DEFAULT_OUTPUT_DIR = '.'
 
     # Valid vectorizer types.
     TFIDF_VECTORIZER = 'tfidf'
@@ -35,16 +37,20 @@ class TopicModel(object):
     # Scikit-learn verbosity level (0 - 10: higher values = more verbose logging).
     SCIKIT_LEARN_VERBOSITY = 10
 
-    def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=None, name=None):
+    # Filenames to save models to
+    MODEL_FILENAME = 'model.pkl'
+    SUMMARY_FILENAME = 'summary.txt'
+    DATABASE_FILENAME = 'db.sqlite3'
 
-        # Check arguments.
+    def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
+                 maxIter=None, name=None, save=False):
+
+        # Check that user passed in valid vectorizer and model types.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
             raise ValueError('Invalid vectorizer type. Valid vectorizers are {valid_vectorizers}.'.format(
                 valid_vectorizers=self.VALID_VECTORIZER_TYPES
                 )
             )
-
         if modelType not in self.VALID_MODEL_TYPES:
             raise ValueError('Invalid model type. Valid models are {valid_models}.'.format(
                 valid_models=self.VALID_MODEL_TYPES
@@ -58,6 +64,7 @@ class TopicModel(object):
             elif modelType == self.LDA:
                 maxIter = 10
 
+        # Initialize instance variables.
         self.reader = reader
         self.vectorizerType = vectorizerType
         self.modelType = modelType
@@ -65,12 +72,18 @@ class TopicModel(object):
         self.noFeatures = noFeatures
         self.maxIter = maxIter
         self.name = name or self.uniqueName()  # Set unique name if uniqueName is None
+        self.save = save
+        self.outputDir = os.path.join(MODELS_DIR, self.name)  # Output dir to save model to if save is set to True.
+
+        # Make necessary directories if they don't already exist.
+        makeDir(MODELS_DIR)
+        makeDir(self.outputDir)
 
         # Instantiate database and pass along to reader, too.
-        self.db = TmplDB(self.name)
+        self.db = TmplDB(os.path.join(self.outputDir, self.name))
         self.reader.setDB(self.db)
 
-        # Set some 'private' instance variables for internal use.
+        # Set some 'private' instance variables for internal use / later use.
         self._documents, self._metas = None, None
         self._trained = False
         self._vectorizer = None
@@ -80,6 +93,7 @@ class TopicModel(object):
         self._W = None
         self._H = None
 
+        # Initialize some other variables that will be set after training the model.
         self.trainedModel = None  # Trained model is stored here.
         self.vectorizingTime = None  # Store the time it took to vectorize corpus here.
         self.trainingTime = None  # Store the time it took to train model here.
@@ -131,7 +145,7 @@ class TopicModel(object):
     def documents(self):
         if self._documents is None:
             (self._documents, self._metas) = reader.readAll()
-        return self._metas
+        return self._documents
 
     @property
     def metas(self):
@@ -190,6 +204,12 @@ class TopicModel(object):
         self._H = self.model.components_
 
         self._trained = True
+
+        # Save to disk both the pickled TopicModel instance and its summary.
+        if self.save:
+            self.saveModel(os.path.join(self.outputDir, self.MODEL_FILENAME))
+            stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
+
         return
 
     def topWords(self, n):
@@ -231,7 +251,8 @@ class TopicModel(object):
         return result
 
     def saveModel(self, path):
-        """Saves the trained TopicModel object to the output path.
+        """Saves the trained TopicModel object to the output path. Called automatically in the train() method
+        if instance variable 'save' is set to True. Can also call manually with desired path.
         """
         if not self._trained:
             raise ValueError('Cannot save an untrained model. Call model.train() first.')
@@ -251,7 +272,7 @@ class TopicModel(object):
 
     # TODO: LDA model toString spits out the same papers for all topics for tfidf.
     # Only works when using the count vectorizer.
-    def toString(self, noWords=10, noPapers=10):
+    def summary(self, noWords=10, noPapers=10):
         if not self._trained:
             output = ('<TopicModel: '
                       'Untrained {modelType} model with {noTopics} topics, '
@@ -328,7 +349,6 @@ if __name__ == '__main__':
     parser.add_argument('--name', '-u', dest='name',
                         default=None, type=str,
                         help='Optional name to keep track of your model with.')
-
     args = parser.parse_args()
 
     pathToCorpus = args.corpus
@@ -349,14 +369,8 @@ if __name__ == '__main__':
                        noTopics=noTopics,
                        noFeatures=noFeatures,
                        maxIter=maxIter,
-                       name=name)
-
-    # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, model.name + '_' + datetime.now().isoformat())
-    modelFilePath = os.path.join(modelDir, 'model.pkl')
-    summaryFilePath = os.path.join(modelDir, 'summary.txt')
-    makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
-    makeDir(modelDir)  # Make the current model's dir.
+                       name=name,
+                       save=True)
 
     logging.info(
         (
@@ -376,11 +390,10 @@ if __name__ == '__main__':
 
     # Train the model; training time is saved in model.trainingTime attribute.
     model.train()
+
     logging.info('Done training. Vectorizing time: {vectorizingTime}s. Training time: {trainingTime}s'.format(
         vectorizingTime=model.vectorizingTime,
         trainingTime=model.trainingTime,
         )
     )
-    logging.info('Saving trained model and summary to {outputDir}'.format(outputDir=modelDir))
-    model.saveModel(modelFilePath)
-    stringToFile(model.toString(), summaryFilePath)
+    logging.info('Saving trained model, summary, and database to {outputDir}'.format(outputDir=model.outputDir))
