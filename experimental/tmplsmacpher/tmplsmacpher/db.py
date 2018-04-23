@@ -23,6 +23,9 @@ class TmplDB(object):
 
         self.init_db(TmplDB.INIT_FILE)
 
+        # Dictionary cache to save table schemas to.
+        self.schemas = dict()
+
     @property
     def connection(self):
         """Represents the sqlite2 connection.
@@ -71,7 +74,10 @@ class TmplDB(object):
         kwargs as fields to query.
         All columns from table must be passed in as kwargs.
         """
-        columns = self.getColumns(tableName)
+        if tableName not in self.schemas:
+            self.schemas[tableName] = self.getColumns(tableName)
+        columns = self.schemas[tableName]
+
         query = ('INSERT INTO {tableName} {columns} '
                  'VALUES ({valuePlaceholders});').format(
                     tableName=TmplDB.verifyName(tableName),

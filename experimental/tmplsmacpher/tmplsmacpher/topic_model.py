@@ -210,6 +210,7 @@ class TopicModel(object):
         if self.save:
             self.saveModel(os.path.join(self.outputDir, self.MODEL_FILENAME))
             stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
+            self.insertPapers()
 
         return
 
@@ -258,6 +259,16 @@ class TopicModel(object):
         if not self._trained:
             raise ValueError('Cannot save an untrained model. Call model.train() first.')
         joblib.dump(self, path)
+
+    def insertPapers(self):
+        """Inserts paper topic vectors into TmplDB instance."""
+        for i, paper in enumerate(self._W):
+            meta = self.metas[i]
+            for topic_id, score in enumerate(paper):
+                self.db.insert('score', **{'article_id': meta['article_id'],
+                                           'topic_id': topic_id,
+                                           'model_id': self.name,
+                                           'score': score})
 
     @staticmethod
     def loadModel(path):

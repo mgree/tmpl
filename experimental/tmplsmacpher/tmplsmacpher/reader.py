@@ -451,5 +451,5 @@ if __name__ == '__main__':
     from db import TmplDB
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     db = TmplDB('testReader.db')
-    reader = JsonFileReader(db)
-    documents = reader.readAll(pathToFulltexts)
+    reader = JsonFileReader(pathToFulltexts, db)
+    documents = reader.readAll()
