@@ -35,8 +35,8 @@ class TopicModel(object):
     # Scikit-learn verbosity level (0 - 10: higher values = more verbose logging).
     SCIKIT_LEARN_VERBOSITY = 10
 
-    def __init__(self, corpus, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=None):
+    def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
+                 maxIter=None, name=None):
 
         # Check arguments.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
@@ -58,18 +58,20 @@ class TopicModel(object):
             elif modelType == self.LDA:
                 maxIter = 10
 
-        # Initialize database for this run.
-        # self.db = TmplDB('')
-        self.corpus = corpus
+        self.reader = reader
         self.vectorizerType = vectorizerType
         self.modelType = modelType
         self.noTopics = noTopics
         self.noFeatures = noFeatures
         self.maxIter = maxIter
+        self.name = name or self.uniqueName()  # Set unique name if uniqueName is None
+
+        # Instantiate database and pass along to reader, too.
+        self.db = TmplDB(self.name)
+        self.reader.setDB(self.db)
 
         # Set some 'private' instance variables for internal use.
-        (self._documents, self._metas) = self.corpus
-        self._dirName = None
+        self._documents, self._metas = None, None
         self._trained = False
         self._vectorizer = None
         self._model = None
@@ -126,24 +128,34 @@ class TopicModel(object):
         return self._model
 
     @property
+    def documents(self):
+        if self._documents is None:
+            (self._documents, self._metas) = reader.readAll()
+        return self._metas
+
+    @property
+    def metas(self):
+        if self._metas is None:
+            (self._documents, self._metas) = reader.readAll()
+        return self._metas
+
     def uniqueName(self):
-        """Builds a unique name representing the model."""
-        if self._dirName is None:
-            self._dirName = ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i'.format(
-                modelType=self.modelType,
-                vectorizerType=self.vectorizerType,
-                noTopics=self.noTopics,
-                noFeatures=self.noFeatures,
-                maxIter=self.maxIter,
-            ))
-        return self._dirName
+        """Creates a unique name representing the model if uniqueName is None."""
+        return ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i_{timestamp}'.format(
+            modelType=self.modelType,
+            vectorizerType=self.vectorizerType,
+            noTopics=self.noTopics,
+            noFeatures=self.noFeatures,
+            maxIter=self.maxIter,
+            timestamp=datetime.now().isoformat(),
+        ))
 
     def train(self):
         """Trains the desired model. Saves trained model in the
         'model' instance variable.
         """
         # Unpack corpus.
-        (documents, metas) = (self._documents, self._metas)
+        (documents, metas) = (self.documents, self.metas)
 
         # fit_transform learns a vocabulary for the corpus and 
         # returns the transformed term-document matrix.
@@ -325,36 +337,22 @@ if __name__ == '__main__':
     noTopics = args.num_topics
     noFeatures = args.num_features
     maxIter = args.max_iter
-    name = args.name + '_' or ''
+    name = args.name
 
-    # Instantiate TmplDB to store relevant information about this model.
-    dbName = (
-        'TmplDB_' +
-        '{corpusName}_{modelType}_{vectorizerType}v_{noTopics}n'.format(
-            corpusName=name,
-            modelType=modelType,
-            vectorizerType=vectorizerType,
-            noTopics=noTopics
-        ) +
-        datetime.now().isoformat() +
-        '.sqlite3'
-    )
-    db = TmplDB(dbName)
-
-    # Instantiate reader to read corpus.
-    reader = JsonFileReader(db)
-    corpus = reader.loadAllFullTexts(pathToCorpus)
+    # Instantiate reader to pass to TopicModel to read the corpus.
+    reader = JsonFileReader(pathToCorpus)
 
     # Instantiate TopicModel object with desired parameters.
-    model = TopicModel(corpus,
+    model = TopicModel(reader,
                        modelType=modelType,
                        vectorizerType=vectorizerType,
                        noTopics=noTopics,
                        noFeatures=noFeatures,
-                       maxIter=maxIter)
+                       maxIter=maxIter,
+                       name=name)
 
     # Make current model's dir to persist it to.
-    modelDir = os.path.join(MODELS_DIR, name + model.uniqueName + '_' + datetime.now().isoformat())
+    modelDir = os.path.join(MODELS_DIR, model.name + '_' + datetime.now().isoformat())
     modelFilePath = os.path.join(modelDir, 'model.pkl')
     summaryFilePath = os.path.join(modelDir, 'summary.txt')
     makeDir(MODELS_DIR)  # Make the shared archive models dir if needed.
@@ -368,7 +366,7 @@ if __name__ == '__main__':
         ).format(
             modelType=modelType,
             pathToCorpus=pathToCorpus,
-            noDocuments=len(corpus),
+            noDocuments=len(model.documents),
             vectorizerType=vectorizerType,
             noTopics=noTopics,
             noFeatures=noFeatures,

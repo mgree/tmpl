@@ -59,10 +59,17 @@ class JsonFileReader(object):
     missingFileLogger.addHandler(fh2)
     missingFileLogger.setLevel(logging.DEBUG)
 
-    def __init__(self, db=None):
+    def __init__(self, dirPath, db=None):
+        self.dirPath = dirPath
         self.db = db
 
-    def loadAllFullTexts(self, dirPath):
+    def setDB(self, db):
+        if self.db is None:
+            self.db = db
+        else:
+            raise AttributeError("DB already set.")
+
+    def readAll(self):
         """Loads all fulltexts and their respective metadata from a directory. If writeToDB is set to True,
         will also write papers and conference metadata to sqlite3 db for this run.
 
@@ -73,7 +80,7 @@ class JsonFileReader(object):
         Returns:
             A tuple of fulltexts and their respective metadata.
         """
-        objs = JsonFileReader.loadAllJsonFiles(dirPath, recursive=True)
+        objs = JsonFileReader.loadAllJsonFiles(self.dirPath, recursive=True)
         fulltexts = []
         metas = []
 
@@ -445,4 +452,4 @@ if __name__ == '__main__':
     pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
     db = TmplDB('testReader.db')
     reader = JsonFileReader(db)
-    documents = reader.loadAllFullTexts(pathToFulltexts)
+    documents = reader.readAll(pathToFulltexts)

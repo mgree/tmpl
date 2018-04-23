@@ -1,7 +1,7 @@
 """Global variables to be used throughout the package."""
 
 # Directory to store TmplDB's in. Each TmplDB persists the data and results from one complete topic_model.py run.
-DBS_DIR = 'dbs'
+DBS_DIR = 'databases'
 
 # Directory to store logs in.
 LOG_DIR = 'logs'
