@@ -43,16 +43,16 @@ class TopicModel(object):
     DATABASE_FILENAME = 'db.sqlite3'
 
     def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=None, name=None, save=False):
+                 maxIter=None, name=None, save=False, verbosity=False):
 
-        # Check that user passed in valid vectorizer and model types.
+        # Check that user passed in valid vectorizer types, model types, and verbosity values.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
-            raise ValueError('Invalid vectorizer type. Valid vectorizers are {valid_vectorizers}.'.format(
+            raise ValueError('Invalid "vectorizerType". Valid vectorizers are {valid_vectorizers}.'.format(
                 valid_vectorizers=self.VALID_VECTORIZER_TYPES
                 )
             )
         if modelType not in self.VALID_MODEL_TYPES:
-            raise ValueError('Invalid model type. Valid models are {valid_models}.'.format(
+            raise ValueError('Invalid "modelType". Valid models are {valid_models}.'.format(
                 valid_models=self.VALID_MODEL_TYPES
                 )
             )
@@ -73,6 +73,7 @@ class TopicModel(object):
         self.maxIter = maxIter
         self.name = name or self.uniqueName()  # Set unique name if uniqueName is None
         self.save = save
+        self.verbosity = verbosity
         self.outputDir = os.path.join(MODELS_DIR, self.name)  # Output dir to save model to if save is set to True.
 
         # Make necessary directories if they don't already exist.
@@ -80,7 +81,7 @@ class TopicModel(object):
         makeDir(self.outputDir)
 
         # Instantiate database and pass along to reader, too.
-        self.db = TmplDB(os.path.join(self.outputDir, self.name))
+        self.db = TmplDB(os.path.join(self.outputDir, self.DATABASE_FILENAME))
         self.reader.setDB(self.db)
 
         # Set some 'private' instance variables for internal use / later use.
@@ -292,7 +293,7 @@ class TopicModel(object):
                       'Vectorizing time: {vectorizingTime}s. '
                       'Training time: {trainingTime}s.').format(
                           modelType=self.modelType,
-                          noDocuments=len(self.corpus[0]),
+                          noDocuments=len(self.documents),
                           vectorizerType=self.vectorizerType,
                           noTopics=self.noTopics,
                           noFeatures=self.noFeatures,
