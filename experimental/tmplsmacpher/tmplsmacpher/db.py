@@ -15,16 +15,18 @@ class TmplDB(object):
 
     logger = logging.getLogger('TmplDB')
 
-    def __init__(self, file):
+    def __init__(self, file, verbose=False):
         self.file = file
+        self.verbose = verbose
 
         self._connection = None
         self._cursor = None
 
-        self.init_db(TmplDB.INIT_FILE)
-
-        # Dictionary cache to save table schemas to.
+        # Cache table schemas so that we only need to query for them once.
         self.schemas = dict()
+
+        # Create database file and necessary tables.
+        self.init_db(TmplDB.INIT_FILE)
 
     @property
     def connection(self):
@@ -68,11 +70,13 @@ class TmplDB(object):
             self.cursor.executescript(f.read())
             self.connection.commit()
 
-    def insert(self, tableName, **kwargs):
-        """Inserts a row into the table <tableName>. Fetches the columns from the desired
-        table dynamically to first generate the proper INSERT query and then passes in
-        kwargs as fields to query.
-        All columns from table must be passed in as kwargs.
+    def insert(self, tableName, obj):
+        """Inserts item into desired table.
+
+        Args:
+            tableName: name of table to insert item into.
+            obj: obj to be inserted into table; 
+                of the form (column1, column2, ...)
         """
         if tableName not in self.schemas:
             self.schemas[tableName] = self.getColumns(tableName)
@@ -84,53 +88,63 @@ class TmplDB(object):
                     columns=columns,
                     valuePlaceholders=','.join(['?'] * len(columns))
                 )
-        TmplDB.logger.info('Insert: Query template = {query}'.format(query=query))
+        self.log('insert: Query template = {query}'.format(query=query))
+        self.log('insert: Inserting {object}'.format(object=obj))
 
-        # First check that the number of kwargs (fields) that the user passed in matches
-        # the number of columns in the table.
-        if len(kwargs) != len(columns):
-            raise TmplDB.IllegalColumnException(
-                'Passed in fields: {fields} do not match with columns: {columns} from table: {tableName}'.format(
-                    fields=kwargs.keys(),
+        self.cursor.execute(query, obj)
+        # Exception will be raised at commit() if insert failed else insert succeeded.
+        self.connection.commit()
+        self.log('insert: Insertion successfully committed.')
+
+    def batchInsert(self, tableName, objects):
+        """Performs a batch insert of objects into desired table.
+
+        Args:
+            tableName: table to insert objects into.
+            objects: list of tuples representing objects to insert;
+                of the form [(column1, column2, ...),
+                             (column1, column2, ...),
+                             ...
+                            ]
+        """
+        if tableName not in self.schemas:
+            self.schemas[tableName] = self.getColumns(tableName)
+        columns = self.schemas[tableName]
+
+        query = ('INSERT INTO {tableName} {columns} '
+                 'VALUES ({valuePlaceholders});').format(
+                    tableName=TmplDB.verifyName(tableName),
                     columns=columns,
-                    tableName=tableName,
+                    valuePlaceholders=','.join(['?'] * len(columns))
                 )
-            )
+        self.log('batchInsert: Query template = {query}'.format(query=query))
+        self.log('batchInsert: Inserting {objects}'.format(objects=objects))
 
-        # Next, order the passed in kwargs according to the order defined by the getColumns method
-        # to ensure that fields are being added to the correct columns.
-        values = []
-        for key in columns:
-            if key not in kwargs:
-                raise TmplDB.IllegalColumnException(
-                    'Column: {key} not present in kwargs. Must pass in fields for all columns: {columns}'.format(
-                        key=key,
-                        columns=columns,
-                    )
-                )
-            else:
-                values.append(kwargs[key])
-
-        values = tuple(values)
-        TmplDB.logger.info('Insert: Inserting {values}'.format(values=values))
-
-        self.cursor.execute(query, values)
-        self.connection.commit()  # Exception will be raised at commit() if insert failed else insert succeeded.
-        TmplDB.logger.info('Insert: Insertion successfully committed.')
+        self.cursor.executemany(query, objects)
+        self.cursor.commit()
+        self.log('batchInsert: Insertions successfully committed.')
 
     def getColumns(self, tableName):
         """
         Fetchs the column names for a given table.
-
         Args:
             tableName: table whose fields to fetch.
-
         Returns:
-            A tuple of the column names in the order they appear in the schema (same order as in INIT_FILE).
+            A tuple of the column names in the order 
+                they appear in the schema (same order as in INIT_FILE).
         """
         query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.verifyName(tableName))
         self.cursor.execute(query)
-        return tuple(map(lambda x: x[0], self.cursor.description))  # Fetch the name only.
+        return tuple(map(lambda x: x[0], self.cursor.description))
+
+    def log(self, msg):
+        """Logs message according to verbosity instance variable.
+
+        Args:
+            msg: msg to log.
+        """
+        if self.verbose:
+            logger.info(msg)
 
     @staticmethod
     def verifyName(name):
@@ -138,6 +152,14 @@ class TmplDB(object):
         this function when substituting table names or columns since they cannot be parameterized
         with ?. Ensures that tableName or columns consist only of alphanumeric chars or chars from
         the validSymbols set.
+
+        Args:
+            name: sql entity name (table or column) to be verified:
+        
+        Raises:
+            TmplDB.IllegalNameException if invalid character is found in name.
+        Returns:
+            Original name if name is valid.
         """
         validSymbols = {'_', '-'}
         cleaned = ''
@@ -155,10 +177,6 @@ class TmplDB(object):
 
     class IllegalNameException(Exception):
         """Exception denoting the use of an illegal name."""
-        pass
-
-    class IllegalColumnException(Exception):
-        """Exception denoting the use of an illegal column."""
         pass
 
 

@@ -71,14 +71,16 @@ class TopicModel(object):
         self.noTopics = noTopics
         self.noFeatures = noFeatures
         self.maxIter = maxIter
-        self.name = name or self.uniqueName()  # Set unique name if uniqueName is None
+        # Generate unique name if user doesn't pass in name
+        self.name = name or self.uniqueName()
         self.save = save
         self.verbosity = verbosity
-        self.outputDir = os.path.join(MODELS_DIR, self.name)  # Output dir to save model to if save is set to True.
+        # Output dir to save model to if save is set to True.
+        self.outputDir = os.path.join(MODELS_DIR, self.name)
 
         # Make necessary directories if they don't already exist.
-        makeDir(MODELS_DIR)
-        makeDir(self.outputDir)
+        makeDir(MODELS_DIR) if self.save else None
+        makeDir(self.outputDir) if self.save else None
 
         # Instantiate database and pass along to reader, too.
         self.db = TmplDB(os.path.join(self.outputDir, self.DATABASE_FILENAME))
@@ -264,11 +266,10 @@ class TopicModel(object):
         """Inserts paper topic vectors into TmplDB instance."""
         for i, paper in enumerate(self._W):
             meta = self.metas[i]
+            papers = []
             for topic_id, score in enumerate(paper):
-                self.db.insert('score', **{'article_id': meta['article_id'],
-                                           'topic_id': topic_id,
-                                           'model_id': self.name,
-                                           'score': score})
+                papers.append((meta['article_id'], topic_id, self.name, score))
+            self.db.batchInsert('score', papers)
 
     @staticmethod
     def loadModel(path):

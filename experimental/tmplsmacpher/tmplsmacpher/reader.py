@@ -16,6 +16,9 @@ class JsonFileReader(object):
     # Make log directory if it doesn't exist.
     makeDir(LOG_DIR)
 
+    # Instantiate general logger for this class.
+    logger = logging.getLogger('JsonFileReader')
+
     # Instantiate a couple of file loggers to keep track of different things.
     # For logging json objects with missing fields.
     MISSING_FIELDS_LOGGER_NAME = 'JsonFileReader_missingFields'
@@ -59,15 +62,25 @@ class JsonFileReader(object):
     missingFileLogger.addHandler(fh2)
     missingFileLogger.setLevel(logging.DEBUG)
 
-    def __init__(self, dirPath, db=None):
+    def __init__(self, dirPath, db=None, verbose=False):
         self.dirPath = dirPath
         self.db = db
+        self.verbose = verbose
 
     def setDB(self, db):
         if self.db is None:
             self.db = db
         else:
             raise AttributeError("DB already set.")
+
+    def log(self, msg):
+        """Logs message according to verbosity instance variable.
+
+        Args:
+            msg: msg to log.
+        """
+        if self.verbose:
+            logger.info(msg)
 
     def readAll(self):
         """Loads all fulltexts and their respective metadata from a directory. If writeToDB is set to True,
@@ -93,20 +106,22 @@ class JsonFileReader(object):
 
             # Check for 'metadata.txt' file and insert it into database.
             if 'series_id' in doc and self.db is not None:
-                # Ensure you're fetching the same fields in init.sql.
-                conferenceData = {
-                    'proc_id': int(doc.get('proc_id')),
-                    'series_id': doc.get('series_id'),
-                    'acronym': doc.get('acronym'),
-                    'isbn13': doc.get('isbn13'),
-                    'year': doc.get('year'),
-                    'proc_title': doc.get('proc_title'),
-                    'series_title': doc.get('series_title'),
-                    'series_vol': doc.get('series_vol'),
-                }
-                self.db.insert(tableName='conference', **conferenceData)
-                logging.info('DB: Wrote {conference} to {db}'.format(conference=conferenceData['series_title'],
-                                                                     db=self.db))
+                # Note: comments indicate column name in db table.
+                conferenceData = (
+                    int(doc.get('proc_id')), # proc_id
+                    doc.get('series_id'), # series_id
+                    doc.get('acronym'), # acronym
+                    doc.get('isbn13'), # isbn13
+                    doc.get('year'), # year
+                    doc.get('proc_title'), # proc_title
+                    doc.get('series_title'), # series_title
+                    doc.get('series_vol'), # series_vol
+                )
+                self.db.insert('conference', conferenceData)
+                self.log('DB: Wrote {conference} to {db}'.format(
+                    conference=doc.get('series_title'),
+                    db=self.db)
+                )
                 continue
 
             abstract = doc.get('abstract')
@@ -125,16 +140,27 @@ class JsonFileReader(object):
                 author['orcid_id'] = int(author['orcid_id']) if author['orcid_id'] != '' and \
                     author['orcid_id'] is not None else ''
 
-                # There are sometimes author entries for some reason. Ignore them.
                 if author['person_id'] is None:
                     continue
 
-                self.db.insert(tableName='author', **{'person_id': author['person_id'],
-                                      'article_id': int(meta['article_id'])})
+                authorData = (
+                    author['person_id'], # person_id
+                    int(meta['article_id']), # article_id
+                )
+                self.db.insert('author', authorData)
 
+                # Insert person object if this person was not already inserted.
                 if author['person_id'] not in personIDSeen:
                     personIDSeen.add(author['person_id'])
-                    self.db.insert(tableName='person', **author)
+                    personData = (
+                        author['person_id'], # person_id,
+                        author['author_profile_id'], # author_profile_id
+                        author['orcid_id'], # orcid_id
+                        author['affiliation'], # affiliation
+                        author['email_address'], # email_address
+                        author['name'], # name
+                    )
+                    self.db.insert('person', personData)
 
             if abstract is None:
                 JsonFileReader.missingFieldsLogger.debug(
@@ -151,8 +177,11 @@ class JsonFileReader(object):
                 fulltext = ''
 
             # Output title so user can see progress.
-            logging.info('Found \'{title}\' in {conference}.'.format(title=title.encode('utf-8'),
-                                                                     conference=conference.encode('utf-8')))
+            self.log('Found \'{title}\' in {conference}.'.format(
+                title=title.encode('utf-8'),
+                conference=conference.encode('utf-8'),
+                )
+            )
 
             # Already have seen this title before.
             if title in seen:
@@ -174,17 +203,21 @@ class JsonFileReader(object):
 
             # Finally, insert paper into db.
             if self.db is not None:
-                paperData = {
-                    'article_id': int(doc.get('article_id')),
-                    'title': doc.get('title'),
-                    'abstract': doc.get('abstract'),
-                    'proc_id': int(doc.get('proc_id')),
-                    'article_publication_date': doc.get('article_publication_date'),
-                    'url': doc.get('url'),
-                    'doi_number': doc.get('doi_number'),
-                }
-                self.db.insert('paper', **paperData)
-                logging.info('DB: Wrote {paper} to {db}'.format(paper=paperData['title'], db=self.db))
+                paperData = (
+                    int(doc.get('article_id')), # article_id
+                    doc.get('title'), # title
+                    doc.get('abstract'), # abstract
+                    int(doc.get('proc_id')), # proc_id
+                    doc.get('article_publication_date'), # article_publication_date
+                    doc.get('url'), # url
+                    doc.get('doi_number'), # doi_number
+                )
+                self.db.insert('paper', paperData)
+                self.log('readAll: Wrote {paper} to {db}'.format(
+                    paper=doc.get('title'), 
+                    db=self.db,
+                    )
+                )
 
         # Make sure that we processed the same number of fulltexts and metadatas.
         if len(fulltexts) != len(metas):
