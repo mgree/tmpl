@@ -159,5 +159,5 @@ if __name__ == '__main__':
               'proc_title_test',
               'series_title_test',
               'series_vol_test')
-    db.insert('conference', row)
+    db.insertConference(row)
 
