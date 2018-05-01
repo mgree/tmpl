@@ -12,75 +12,21 @@ from utils import makeDir
 class JsonFileReader(object):
     """A utility class for reading json objects from files.
     """
-    logging.basicConfig(level=logging.INFO)
-    # Make log directory if it doesn't exist.
-    makeDir(LOG_DIR)
 
-    # Instantiate general logger for this class.
-    logger = logging.getLogger('JsonFileReader')
-
-    # Instantiate a couple of file loggers to keep track of different things.
-    # For logging json objects with missing fields.
-    MISSING_FIELDS_LOGGER_NAME = 'JsonFileReader_missingFields'
-    MISSING_FIELDS_LOGFILE_NAME = ('JsonFileReader_missingFields_{datetime}'.format(
-            datetime=datetime.now().isoformat()
-        )
-    )
-
-    # For logging when we find duplicate json objects.
-    DUP_DOCS_LOGGER_NAME = 'JsonFileReader_dupDocuments'
-    DUP_DOCS_LOGFILE_NAME = ('JsonFileReader_dupDocuments_{datetime}'.format(
-            datetime=datetime.now().isoformat()
-        )
-    )
-
-    # For logging missing files (eg. 1-fulltext.txt doesn't have 1.txt meta
-    # file to go along with it).
-    MISSING_FILE_LOGGER_NAME = 'JsonFileReader_missingFiles'
-    MISSING_FILE_LOGFILE_NAME = ('JsonFileReader_missingFiles_{datetime}'.format(
-            datetime=datetime.now().isoformat()
-        )
-    )
-
-    missingFieldsLogger = logging.getLogger(MISSING_FIELDS_LOGGER_NAME)
-    fh0 = logging.FileHandler(
-        os.path.join(LOG_DIR, MISSING_FIELDS_LOGFILE_NAME)
-    )
-    fh0.setFormatter(getLoggingFormatter())
-    missingFieldsLogger.addHandler(fh0)
-    missingFieldsLogger.setLevel(logging.DEBUG)
-
-    dupDocsLogger = logging.getLogger(DUP_DOCS_LOGGER_NAME)
-    fh1 = logging.FileHandler(os.path.join(LOG_DIR, DUP_DOCS_LOGFILE_NAME))
-    fh1.setFormatter(getLoggingFormatter())
-    dupDocsLogger.addHandler(fh1)
-    dupDocsLogger.setLevel(logging.DEBUG)
-
-    missingFileLogger = logging.getLogger(MISSING_FILE_LOGGER_NAME)
-    fh2 = logging.FileHandler(os.path.join(LOG_DIR, MISSING_FILE_LOGGER_NAME))
-    fh2.setFormatter(getLoggingFormatter())
-    missingFileLogger.addHandler(fh2)
-    missingFileLogger.setLevel(logging.DEBUG)
-
-    def __init__(self, dirPath, db=None, verbose=False):
+    def __init__(self, dirPath, db=None, parentLogger=None):
         self.dirPath = dirPath
         self.db = db
-        self.verbose = verbose
+
+        if parentLogger:
+            self.logger = parentLogger.getChild('JsonFileReader')
+        else:
+             self.logger = logging.getLogger('JsonFileReader')
 
     def setDB(self, db):
         if self.db is None:
             self.db = db
         else:
             raise AttributeError("DB already set.")
-
-    def log(self, msg):
-        """Logs message according to verbosity instance variable.
-
-        Args:
-            msg: msg to log.
-        """
-        if self.verbose:
-            logger.info(msg)
 
     def readAll(self):
         """Loads all fulltexts and their respective metadata from a directory. If writeToDB is set to True,
@@ -118,7 +64,7 @@ class JsonFileReader(object):
                     doc.get('series_vol'), # series_vol
                 )
                 self.db.insert('conference', conferenceData)
-                self.log('DB: Wrote {conference} to {db}'.format(
+                self.logger.debug('DB: Wrote {conference} to {db}'.format(
                     conference=doc.get('series_title'),
                     db=self.db)
                 )
@@ -163,21 +109,21 @@ class JsonFileReader(object):
                     self.db.insert('person', personData)
 
             if abstract is None:
-                JsonFileReader.missingFieldsLogger.debug(
+                self.logger.debug(
                     '{conference}: {title} does not have an "abs" field.'
                     .format(conference=conference, title=title)
                 )
                 abstract = ''
 
             if fulltext is None:
-                JsonFileReader.missingFieldsLogger.debug(
+                self.logger.debug(
                     '{conference}: {title} does not have an "fulltext" field.'
                     .format(conference=conference, title=title)
                 )
                 fulltext = ''
 
             # Output title so user can see progress.
-            self.log('Found \'{title}\' in {conference}.'.format(
+            self.logger.debug('Found \'{title}\' in {conference}.'.format(
                 title=title.encode('utf-8'),
                 conference=conference.encode('utf-8'),
                 )
@@ -185,7 +131,7 @@ class JsonFileReader(object):
 
             # Already have seen this title before.
             if title in seen:
-                JsonFileReader.dupDocsLogger.debug(
+                self.logger.debug(
                     "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
                         title=title,
                         conference=conference,
@@ -213,7 +159,7 @@ class JsonFileReader(object):
                     doc.get('doi_number'), # doi_number
                 )
                 self.db.insert('paper', paperData)
-                self.log('readAll: Wrote {paper} to {db}'.format(
+                self.logger.debug('readAll: Wrote {paper} to {db}'.format(
                     paper=doc.get('title'), 
                     db=self.db,
                     )
