@@ -1,9 +1,13 @@
-# tmpl experimental stuff.
+# Tmpl Experimental directory
 
 ## tmplsmacpher
-A python package built off of gensim (a topic modeling suite available on PyPi)
-used for building topic models off of ACM corpora.
+A python package used for running, saving, and manipulating topic models
+over the ACM Digital Library corpus.
 
-## notebooks
-A collection of jupyter notebooks helpful in visualization and debugging
-during topic model training.
+Built using Scikit-learn's topic modeling implementations.
+
+See tmplsmacpher/README.md for the specifics of the package.
+
+## Author
+Created by Sean MacPherson (github: smacpher) Fall 2018 under the guidance
+of Professor Greenberg, Pomona College.

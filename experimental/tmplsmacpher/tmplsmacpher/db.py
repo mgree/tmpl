@@ -121,7 +121,7 @@ class TmplDB(object):
         self.log('batchInsert: Inserting {objects}'.format(objects=objects))
 
         self.cursor.executemany(query, objects)
-        self.cursor.commit()
+        self.connection.commit()
         self.log('batchInsert: Insertions successfully committed.')
 
     def getColumns(self, tableName):

@@ -387,7 +387,7 @@ if __name__ == '__main__':
 
     logging.info(
         (
-            'Training {modelType} model over {pathToCorpus} corpus with {noDocuments}' 
+            'Training {modelType} model over {pathToCorpus} corpus with {noDocuments} documents ' 
             'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
             'and {maxIter} max iterations.'
         ).format(
