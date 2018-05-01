@@ -1,9 +1,7 @@
+build
+dist
+logs
+models
 *.pyc
 *.egg
 .idea
-build
-dist
-cache
-logs
-saved_corpora
-models
