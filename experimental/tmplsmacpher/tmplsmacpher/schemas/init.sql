@@ -63,7 +63,7 @@ CREATE TABLE score (
 -- Create the 'model' table. --
 CREATE TABLE model (
   model_id     TEXT NOT NULL,
-  path         TEXT,
+  model_path   TEXT,
   run_date     TEXT,
   num_topics   INTEGER,
   num_features INTEGER,

@@ -29,8 +29,8 @@ class JsonFileReader(object):
             raise AttributeError("DB already set.")
 
     def readAll(self):
-        """Loads all fulltexts and their respective metadata from a directory. If writeToDB is set to True,
-        will also write papers and conference metadata to sqlite3 db for this run.
+        """Loads all fulltexts and their respective metadata from a directory.
+        Also writes papers and conference metadata to sqlite3 db.
 
         Args:
             dirPath: full path of directory to load abstracts from.
@@ -43,8 +43,6 @@ class JsonFileReader(object):
         fulltexts = []
         metas = []
 
-        # keep track of the people that we've seen so that we don't try to add them twice in the 'person' table.
-        personIDSeen = set()
         seen = dict()
 
         for obj in objs:
@@ -63,11 +61,7 @@ class JsonFileReader(object):
                     doc.get('series_title'), # series_title
                     doc.get('series_vol'), # series_vol
                 )
-                self.db.insert('conference', conferenceData)
-                self.logger.debug('DB: Wrote {conference} to {db}'.format(
-                    conference=doc.get('series_title'),
-                    db=self.db)
-                )
+                self.db.insertConferences(conferenceData)
                 continue
 
             abstract = doc.get('abstract')
@@ -81,10 +75,17 @@ class JsonFileReader(object):
             # Add person and author to database.
             for author in meta['authors']:
                 # Need to cast certain fields to match sqlite datatypes.
-                author['author_profile_id'] = int(author['author_profile_id']) if author['author_profile_id'] != '' and\
-                    author['author_profile_id'] is not None else ''
-                author['orcid_id'] = int(author['orcid_id']) if author['orcid_id'] != '' and \
-                    author['orcid_id'] is not None else ''
+                if (author['author_profile_id'] != '' and 
+                        author['author_profile_id'] is not None):
+                    author['author_profile_id'] = int(
+                        author['author_profile_id']
+                    )
+                else:
+                    author['author_profile_id'] = -1
+
+                if (author['orcid_id'] != '' and
+                        author['orcid_id'] is not None):
+                    author['orcid_id'] = int(author['orcid_id'])
 
                 if author['person_id'] is None:
                     continue
@@ -93,11 +94,11 @@ class JsonFileReader(object):
                     author['person_id'], # person_id
                     int(meta['article_id']), # article_id
                 )
-                self.db.insert('author', authorData)
 
-                # Insert person object if this person was not already inserted.
-                if author['person_id'] not in personIDSeen:
-                    personIDSeen.add(author['person_id'])
+                if self.db is not None:
+                    self.db.insertAuthors(authorData)
+
+                if author['person_id'] and self.db is not None:
                     personData = (
                         author['person_id'], # person_id,
                         author['author_profile_id'], # author_profile_id
@@ -106,7 +107,7 @@ class JsonFileReader(object):
                         author['email_address'], # email_address
                         author['name'], # name
                     )
-                    self.db.insert('person', personData)
+                    self.db.insertPersons(personData)
 
             if abstract is None:
                 self.logger.debug(
@@ -158,12 +159,7 @@ class JsonFileReader(object):
                     doc.get('url'), # url
                     doc.get('doi_number'), # doi_number
                 )
-                self.db.insert('paper', paperData)
-                self.logger.debug('readAll: Wrote {paper} to {db}'.format(
-                    paper=doc.get('title'), 
-                    db=self.db,
-                    )
-                )
+                self.db.insertPapers(paperData)
 
         # Make sure that we processed the same number of fulltexts and metadatas.
         if len(fulltexts) != len(metas):
@@ -174,21 +170,7 @@ class JsonFileReader(object):
                 )
             )
 
-        self.db.connection.commit()
         return fulltexts, metas
-
-    @staticmethod
-    def loadFile(filepath):
-        """Loads the json object from a single file.
-
-        Args:
-            filepath: full path of the file to load.
-
-        Returns:
-            A string representing the contents of the file.
-        """
-        with open(filepath, 'r') as f:
-            return f.read()
 
     @staticmethod
     def loadJsonFile(filepath):
@@ -227,33 +209,6 @@ class JsonFileReader(object):
             elif recursive:
                 objs += JsonFileReader.loadAllJsonFiles(childPath, recursive)
         return objs
-
-
-    @staticmethod
-    def buildMeta(doc, conference, fields={'title', 'authors'}):
-        """Builds a dictionary representing the meta data from a json doc.
-
-        Args:
-            doc: json object to build meta from.
-            conference: conference data to add to meta dictionary (with the
-                current setup, this is parsed from the directory that the 
-                doc lives in).
-            fields: fields in the json doc that we want to extract and add
-                to our meta dictionary.
-
-        Returns:
-            A dictionary representing the meta data from doc.
-        """
-        meta = dict()
-
-        # Add conference.
-        meta['conf'] = conference
-
-        # Add the rest of the fields.
-        for field in fields:
-            value = doc.get(field)
-            meta[field] = value
-        return meta
 
 
 if __name__ == '__main__':

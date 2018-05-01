@@ -23,7 +23,7 @@ class TmplDB(object):
         self.schemas = dict()
 
         # Create database file and necessary tables.
-        self.init_db(TMPLDB_INIT_SCHEMA)
+        self._init_db(TMPLDB_INIT_SCHEMA)
 
         if parentLogger:
             self.logger = parentLogger.getChild('TmplDB')
@@ -57,118 +57,96 @@ class TmplDB(object):
             self._cursor = self.connection.cursor()
         return self._cursor
 
-    def init_db(self, initFile):
-        """Initializes database with sql script specified in TmplDB.INIT_FILE. 
+    def insertAuthors(self, *args):
+        """Inserts a variable number of authors 
+        into the 'author' table of this TmplDB instance.
+
+        Args:
+            *args: any number of authors to insert
+        """
+        query = (
+            'INSERT INTO author (person_id, article_id) '
+            'VALUES (?, ?);'
+        )
+        self._insert(query, args)
+
+    def insertPersons(self, *args):
+        """Inserts a variable number of persons 
+        into the 'person' table of this TmplDB instance.
+
+        Args:
+            *args: any number of persons to insert
+        """
+        query = (
+            'INSERT OR IGNORE INTO person (person_id, author_profile_id, ' 
+            'orcid_id, affiliation, email_address, name) '
+            'VALUES (?, ?, ?, ?, ?, ?);'
+        )
+        self._insert(query, args)
+
+    def insertPapers(self, *args):
+        """Inserts a variable number of papers 
+        into the 'paper' table of this TmplDB instance.
+
+        Args:
+            *args: any number of papers to insert
+        """
+        query = (
+            'INSERT INTO paper (article_id, title, abstract, proc_id, '
+            ' article_publication_date, url, doi_number) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?);'
+        )
+        self._insert(query, args)
+
+    def insertConferences(self, *args):
+        query = (
+            'INSERT INTO conference (proc_id, series_id, ' 
+            'acronym, isbn13, year, proc_title, series_title, series_vol) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?);'
+        )
+        self._insert(query, args)
+
+    def insertScores(self, *args):
+        query = (
+            'INSERT INTO score (article_id, topic_id, ' 
+            'model_id, score) '
+            'VALUES (?, ?, ?, ?);'
+        )
+        self._insert(query, args)
+
+    def insertModel(self, *args):
+        query = (
+            'INSERT INTO model (model_id, model_path, run_date, num_topics, '
+            'num_features, max_iter, vectorizer, model_type) '
+            'VALUES (?, ?, ?, ?, ?, ?, ?, ?);'
+        )
+        self._insert(query, args)
+
+    def _insert(self, query, objects):
+        """Internal insert method that checks the number of objects
+        being inserted and either inserts a single object or batch inserts
+        a list of objects.
+
+        Args:
+            query: insert query to use
+            objects: list of objects to insert
+        """
+        if len(objects) == 1:
+            self.cursor.execute(query, objects[0])
+        else:
+            self.cursor.executemany(query, objects)
+        self.connection.commit()
+
+    def _init_db(self, initFile):
+        """Initializes database with sql script specified in 'initFile'
         Sets up all tables needed for one Tmpl topic modelling run.
+
+        Args:
+            initFile: filename of sql script to run.
         """
         with open(initFile, 'r') as f:
             self.cursor.executescript(f.read())
             self.connection.commit()
-
-    def insert(self, tableName, obj):
-        """Inserts item into desired table.
-
-        Args:
-            tableName: name of table to insert item into.
-            obj: obj to be inserted into table; 
-                of the form (column1, column2, ...)
-        """
-        if tableName not in self.schemas:
-            self.schemas[tableName] = self.getColumns(tableName)
-        columns = self.schemas[tableName]
-
-        query = ('INSERT INTO {tableName} {columns} '
-                 'VALUES ({valuePlaceholders});').format(
-                    tableName=TmplDB.verifyName(tableName),
-                    columns=columns,
-                    valuePlaceholders=','.join(['?'] * len(columns))
-                )
-        self.logger.debug(
-            'insert: Query template = {query}'.format(query=query)
-        )
-        self.logger.debug(
-            'insert: Inserting {object}'.format(object=obj)
-        )
-
-        self.cursor.execute(query, obj)
-        # Exception will be raised at commit() if insert failed.
-        self.connection.commit()
-        self.logger.debug('insert: Insertion successfully committed.')
-
-    def batchInsert(self, tableName, objects):
-        """Performs a batch insert of objects into desired table.
-
-        Args:
-            tableName: table to insert objects into.
-            objects: list of tuples representing objects to insert;
-                of the form [(column1, column2, ...),
-                             (column1, column2, ...),
-                             ...
-                            ]
-        """
-        if tableName not in self.schemas:
-            self.schemas[tableName] = self.getColumns(tableName)
-        columns = self.schemas[tableName]
-
-        query = ('INSERT INTO {tableName} {columns} '
-                 'VALUES ({valuePlaceholders});').format(
-                    tableName=TmplDB.verifyName(tableName),
-                    columns=columns,
-                    valuePlaceholders=','.join(['?'] * len(columns))
-                )
-        self.log('batchInsert: Query template = {query}'.format(query=query))
-        self.log('batchInsert: Inserting {objects}'.format(objects=objects))
-
-        self.cursor.executemany(query, objects)
-        # Exception will be raised at commit() if insert failed.
-        self.connection.commit()
-        self.log('batchInsert: Insertions successfully committed.')
-
-    def getColumns(self, tableName):
-        """
-        Fetchs the column names for a given table.
-        Args:
-            tableName: table whose fields to fetch.
-        Returns:
-            A tuple of the column names in the order 
-                they appear in the schema (same order as in INIT_FILE).
-        """
-        query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.verifyName(tableName))
-        self.cursor.execute(query)
-        return tuple(map(lambda x: x[0], self.cursor.description))
-
-    @staticmethod
-    def verifyName(name):
-        """Verifies name (of table or column) to secure against sql injection attacks. Always use
-        this function when substituting table names or columns since they cannot be parameterized
-        with ?. Ensures that tableName or columns consist only of alphanumeric chars or chars from
-        the validSymbols set.
-
-        Args:
-            name: sql entity name (table or column) to be verified:
-        
-        Raises:
-            TmplDB.IllegalNameException if invalid character is found in name.
-        Returns:
-            Original name if name is valid.
-        """
-        validSymbols = {'_', '-'}
-        cleaned = ''
-        for char in name:
-            if char.isalnum() or char in validSymbols:
-                cleaned += char
-            else:
-                raise TmplDB.IllegalNameException(
-                    'Invalid name: {name}. '
-                    'name must consist of alphanumeric characters or {validSymbols}').format(
-                        name=name,
-                        validSymbols=validSymbols,
-                    )
-        return cleaned
-
-    class IllegalNameException(Exception):
-        """Exception denoting the use of an illegal name."""
-        pass
 
 
 if __name__ == '__main__':
