@@ -18,8 +18,18 @@ class Parser(object):
     logger.addHandler(streamHandler)
     logger.setLevel(logging.INFO)
 
-    @staticmethod
-    def parseDir(dirPath, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, noOp=False):
+    def __init(self, corpusPath, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, toDisk=False, destDir='.', parentLogger=None):
+        self.corpusPath = corpusPath
+        self.conferences = conferences
+        self.toDisk = toDisk
+        self.destDir = destDir
+
+        if parentLogger:
+            self.logger = parentLogger.getChild('TmplDB')
+        else:
+             self.logger = logging.getLogger('TmplDB')
+
+    def parse(self):
         """Parses all conferences in a given directory. Writes papers and metadata from each conference
         to a respective directory per conference.
 
@@ -29,7 +39,8 @@ class Parser(object):
             conferences: conferences to parse.
             noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
         """
-        makeDir(destDir)
+        if toDisk:
+            makeDir(destDir)
 
         # Keep track of the number of papers found per conference and year for metric purposes.
         numPapersPerConference = dict()
@@ -39,14 +50,14 @@ class Parser(object):
 
             conference, year = Parser.getConferenceAndYear(filename)
 
-            # Not a conference that we care about so skip.
+            # Not a conference that we care about so skip it.
             if conference not in conferences:
                 continue
 
             # Make a directory for the parsed results to go.
             curOutputDir = os.path.join(destDir, conference + ' ' + year)
 
-            if not noOp:
+            if toDisk:
                 makeDir(curOutputDir)
 
             Parser.logger.info('Parsing {conference_year}'.format(conference_year=curOutputDir))
@@ -54,10 +65,11 @@ class Parser(object):
             numPapersPerConference[(conference, year)] = 0
             for i, paper in enumerate(Parser.parseXML(curOutputDir, os.path.join(dirPath, filename))):
                 filename = '{i}.txt'.format(i=i)
-                if not noOp:
+                if toDisk:
                     with codecs.open(os.path.join(curOutputDir, filename), 'w', 'utf8') as f:
                         f.write(json.dumps(paper))
-                Parser.logger.info('Parsed {title}'.format(title=paper['title']))
+                else:
+                    yield # TODO: FINISH
                 numPapersPerConference[((conference, year))] += 1
 
             Parser.logger.info('Done parsing {conference} {year}. Found {numPapers} papers.'.format(
