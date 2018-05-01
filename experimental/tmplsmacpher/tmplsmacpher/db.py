@@ -1,23 +1,20 @@
 import logging
 import sqlite3
 
+from settings import TMPLDB_INIT_SCHEMA
 
 class TmplDB(object):
     """A class to interact with the tmpl sqlite3 database.
 
     A couple of things to note when using this class or sqlite3 in general:
-        1) sqlite3 dynamically casts fields. If you pass in, let's say, a string for the field
-            'year' which is defined as a sqlite3 INTEGER, it will still add the field without error!
+        1) sqlite3 dynamically casts fields. 
+            If you pass in, let's say, a string for the field
+            'year' which is defined as a sqlite3 INTEGER, 
+            it will still add the field without error!
     """
-    logging.basicConfig(level=logging.INFO)
 
-    INIT_FILE = 'schemas/init.sql'
-
-    logger = logging.getLogger('TmplDB')
-
-    def __init__(self, file, verbose=False):
+    def __init__(self, file, parentLogger=None):
         self.file = file
-        self.verbose = verbose
 
         self._connection = None
         self._cursor = None
@@ -26,7 +23,12 @@ class TmplDB(object):
         self.schemas = dict()
 
         # Create database file and necessary tables.
-        self.init_db(TmplDB.INIT_FILE)
+        self.init_db(TMPLDB_INIT_SCHEMA)
+
+        if parentLogger:
+            self.logger = parentLogger.getChild('TmplDB')
+        else:
+             self.logger = logging.getLogger('TmplDB')
 
     @property
     def connection(self):
@@ -36,16 +38,13 @@ class TmplDB(object):
             Sqlite3 connection object.
         """
         if self._connection is None:
-            try:
-                self._connection = sqlite3.connect(self.file)
-            except Exception as e:
-                self._connection = None
-                logging.error(e)
+            self._connection = sqlite3.connect(self.file)
         return self._connection
 
     @property
     def cursor(self):
-        """Represents the sqlite3 cursor object. Use to interact with database through sql queries.
+        """Represents the sqlite3 cursor object. 
+        Use to interact with database through sql queries.
 
         Use:
             db = TmplDB('dbfile.db')
@@ -55,16 +54,12 @@ class TmplDB(object):
             Sqlite3 cursor object.
         """
         if self._cursor is None:
-            try:
-                self._cursor = self.connection.cursor()
-            except Exception as e:
-                self._cursor = None
-                logging.error(e)
+            self._cursor = self.connection.cursor()
         return self._cursor
 
     def init_db(self, initFile):
-        """Initializes database with sql script specified in TmplDB.INIT_FILE. Sets up
-        all tables needed for one Tmpl topic modelling run.
+        """Initializes database with sql script specified in TmplDB.INIT_FILE. 
+        Sets up all tables needed for one Tmpl topic modelling run.
         """
         with open(initFile, 'r') as f:
             self.cursor.executescript(f.read())
@@ -88,13 +83,17 @@ class TmplDB(object):
                     columns=columns,
                     valuePlaceholders=','.join(['?'] * len(columns))
                 )
-        self.log('insert: Query template = {query}'.format(query=query))
-        self.log('insert: Inserting {object}'.format(object=obj))
+        self.logger.debug(
+            'insert: Query template = {query}'.format(query=query)
+        )
+        self.logger.debug(
+            'insert: Inserting {object}'.format(object=obj)
+        )
 
         self.cursor.execute(query, obj)
-        # Exception will be raised at commit() if insert failed else insert succeeded.
+        # Exception will be raised at commit() if insert failed.
         self.connection.commit()
-        self.log('insert: Insertion successfully committed.')
+        self.logger.debug('insert: Insertion successfully committed.')
 
     def batchInsert(self, tableName, objects):
         """Performs a batch insert of objects into desired table.
@@ -121,6 +120,7 @@ class TmplDB(object):
         self.log('batchInsert: Inserting {objects}'.format(objects=objects))
 
         self.cursor.executemany(query, objects)
+        # Exception will be raised at commit() if insert failed.
         self.connection.commit()
         self.log('batchInsert: Insertions successfully committed.')
 
@@ -136,15 +136,6 @@ class TmplDB(object):
         query = 'SELECT * FROM {tableName};'.format(tableName=TmplDB.verifyName(tableName))
         self.cursor.execute(query)
         return tuple(map(lambda x: x[0], self.cursor.description))
-
-    def log(self, msg):
-        """Logs message according to verbosity instance variable.
-
-        Args:
-            msg: msg to log.
-        """
-        if self.verbose:
-            logger.info(msg)
 
     @staticmethod
     def verifyName(name):
@@ -182,13 +173,13 @@ class TmplDB(object):
 
 if __name__ == '__main__':
     db = TmplDB('tmpl_db.db')
-    kwargs = {'proc_id': 51,
-              'series_id': 'series_id_test',
-              'acronym': 'tst',
-              'isbn13': 'isbn13_test',
-              'year': 2018,
-              'proc_title': 'proc_title_test',
-              'series_title': 'series_title_test',
-              'series_vol': 'series_vol_test'}
-    db.insert('conference', **kwargs)
+    row = (51,
+              'series_id_test',
+              'tst',
+              'isbn13_test',
+              2018,
+              'proc_title_test',
+              'series_title_test',
+              'series_vol_test')
+    db.insert('conference', row)
 
