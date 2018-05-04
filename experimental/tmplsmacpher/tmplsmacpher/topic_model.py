@@ -43,9 +43,12 @@ class TopicModel(object):
     DATABASE_FILENAME = 'db.sqlite3'
 
     def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=None, name=None, save=False, verbosity=False):
+                 maxIter=None, name=None, save=False):
 
-        # Check that user passed in valid vectorizer types, model types, and verbosity values.
+        # Initialize logger
+        self.logger = logging.getLogger('TopicModel')
+
+        # Check that user passed in valid vectorizer types, model types values.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
             raise ValueError('Invalid "vectorizerType". Valid vectorizers are {valid_vectorizers}.'.format(
                 valid_vectorizers=self.VALID_VECTORIZER_TYPES
@@ -74,7 +77,7 @@ class TopicModel(object):
         # Generate unique name if user doesn't pass in name
         self.name = name or self.uniqueName()
         self.save = save
-        self.verbosity = verbosity
+
         # Output dir to save model to if save is set to True.
         self.outputDir = os.path.join(MODELS_DIR, self.name)
 
@@ -171,13 +174,28 @@ class TopicModel(object):
         """Trains the desired model. Saves trained model in the
         'model' instance variable.
         """
+        self.logger.info(
+            (
+                'Training {modelType} model with {noDocuments} documents ' 
+                'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
+                'and {maxIter} max iterations.'
+            ).format(
+                modelType=self.modelType,
+                noDocuments=len(self.documents),
+                vectorizerType=self.vectorizerType,
+                noTopics=self.noTopics,
+                noFeatures=self.noFeatures,
+                maxIter=self.maxIter,
+            )
+        )
+
         # Unpack corpus.
         (documents, metas) = (self.documents, self.metas)
 
         # fit_transform learns a vocabulary for the corpus and 
         # returns the transformed term-document matrix.
         # Sklearn doesn't have verbose logging for its vectorizers so let user know whats going on.
-        logging.info('Vectorizing corpus...')
+        self.logger.info('Vectorizing corpus...')
         start = time.clock()
         vectorized = self.vectorizer.fit_transform(documents)
         end = time.clock()
@@ -269,7 +287,7 @@ class TopicModel(object):
             papers = []
             for topic_id, score in enumerate(paper):
                 papers.append((meta['article_id'], topic_id, self.name, score))
-            self.db.batchInsert('score', papers)
+            self.db.insertScores(*papers)
 
     @staticmethod
     def loadModel(path):
@@ -372,6 +390,9 @@ if __name__ == '__main__':
     maxIter = args.max_iter
     name = args.name
 
+    # Set logging level.
+    logging.basicConfig(level=logging.INFO)
+
     # Instantiate reader to pass to TopicModel to read the corpus.
     reader = JsonFileReader(pathToCorpus)
 
@@ -385,21 +406,6 @@ if __name__ == '__main__':
                        name=name,
                        save=True)
 
-    logging.info(
-        (
-            'Training {modelType} model over {pathToCorpus} corpus with {noDocuments} documents ' 
-            'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
-            'and {maxIter} max iterations.'
-        ).format(
-            modelType=modelType,
-            pathToCorpus=pathToCorpus,
-            noDocuments=len(model.documents),
-            vectorizerType=vectorizerType,
-            noTopics=noTopics,
-            noFeatures=noFeatures,
-            maxIter=maxIter or 'default',
-        )
-    )
 
     # Train the model; training time is saved in model.trainingTime attribute.
     model.train()

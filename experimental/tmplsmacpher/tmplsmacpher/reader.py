@@ -48,7 +48,8 @@ class JsonFileReader(object):
         for obj in objs:
             (doc, conference, filepath) = obj
 
-            # Check for 'metadata.txt' file and insert it into database.
+            # Check for 'metadata.txt' file that contains conference metadata
+            # and insert it into database.
             if 'series_id' in doc and self.db is not None:
                 # Note: comments indicate column name in db table.
                 conferenceData = (

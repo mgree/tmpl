@@ -134,6 +134,7 @@ class TmplDB(object):
         if len(objects) == 1:
             self.cursor.execute(query, objects[0])
         else:
+            print("hello")
             self.cursor.executemany(query, objects)
         self.connection.commit()
 
