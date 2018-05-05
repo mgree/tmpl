@@ -5,15 +5,16 @@ import time
 
 from argparse import ArgumentParser
 from datetime import datetime
-from sklearn.decomposition import NMF, LatentDirichletAllocation
-from sklearn.externals import joblib
+from sklearn.decomposition import LatentDirichletAllocation, NMF
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from db import TmplDB
 from reader import JsonFileReader
 from settings import MODELS_DIR
+from utils import loadObject
 from utils import makeDir
+from utils import saveObject
 from utils import stringToFile
 
 # TODO: If user chooses tfidf and LDA, use tfidf to filter words first,
@@ -43,9 +44,10 @@ class TopicModel(object):
     DATABASE_FILENAME = 'db.sqlite3'
 
     def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, noTopics=20, noFeatures=1000,
-                 maxIter=None, name=None, save=False):
+                 maxIter=None, name=None):
 
         # Initialize logger
+        logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger('TopicModel')
 
         # Check that user passed in valid vectorizer types, model types values.
@@ -76,14 +78,14 @@ class TopicModel(object):
         self.maxIter = maxIter
         # Generate unique name if user doesn't pass in name
         self.name = name or self.uniqueName()
-        self.save = save
 
         # Output dir to save model to if save is set to True.
         self.outputDir = os.path.join(MODELS_DIR, self.name)
 
         # Make necessary directories if they don't already exist.
-        makeDir(MODELS_DIR) if self.save else None
-        makeDir(self.outputDir) if self.save else None
+        makeDir(MODELS_DIR)
+        makeDir(self.outputDir)
+        self.logger.info('Created directory at {outputDir} to save model output files to.'.format(outputDir=self.outputDir))
 
         # Instantiate database and pass along to reader, too.
         self.db = TmplDB(os.path.join(self.outputDir, self.DATABASE_FILENAME))
@@ -174,21 +176,6 @@ class TopicModel(object):
         """Trains the desired model. Saves trained model in the
         'model' instance variable.
         """
-        self.logger.info(
-            (
-                'Training {modelType} model with {noDocuments} documents ' 
-                'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
-                'and {maxIter} max iterations.'
-            ).format(
-                modelType=self.modelType,
-                noDocuments=len(self.documents),
-                vectorizerType=self.vectorizerType,
-                noTopics=self.noTopics,
-                noFeatures=self.noFeatures,
-                maxIter=self.maxIter,
-            )
-        )
-
         # Unpack corpus.
         (documents, metas) = (self.documents, self.metas)
 
@@ -208,6 +195,20 @@ class TopicModel(object):
         # Save dictionary mapping ids to words.
         self._feature_names = self.vectorizer.get_feature_names()
 
+        self.logger.info(
+            (
+                'Training {modelType} model with {noDocuments} documents ' 
+                'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
+                'and {maxIter} max iterations.'
+            ).format(
+                modelType=self.modelType,
+                noDocuments=len(self.documents),
+                vectorizerType=self.vectorizerType,
+                noTopics=self.noTopics,
+                noFeatures=self.noFeatures,
+                maxIter=self.maxIter,
+            )
+        )
         # Train and set model to newly trained model. Also save the training time for metric purposes.
         start = time.clock()
         self.trainedModel = self.model.fit(vectorized)
@@ -226,12 +227,14 @@ class TopicModel(object):
 
         self._trained = True
 
-        # Save to disk both the pickled TopicModel instance and its summary.
-        if self.save:
-            self.saveModel(os.path.join(self.outputDir, self.MODEL_FILENAME))
-            stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
-            self.insertPapers()
+        logging.info('Done training. Vectorizing time: {vectorizingTime}s. Training time: {trainingTime}s'.format(
+            vectorizingTime=model.vectorizingTime,
+            trainingTime=model.trainingTime,
+            )
+        )
 
+        # Insert paper topic scores into db.
+        self.insertPaperScores()
         return
 
     def topWords(self, n):
@@ -272,16 +275,21 @@ class TopicModel(object):
             result.append([self._metas[i]['title'] for i in topDocIx])
         return result
 
-    def saveModel(self, path):
+    def save(self):
         """Saves the trained TopicModel object to the output path. Called automatically in the train() method
         if instance variable 'save' is set to True. Can also call manually with desired path.
         """
-        if not self._trained:
-            raise ValueError('Cannot save an untrained model. Call model.train() first.')
-        joblib.dump(self, path)
+        self.logger.warning('You are saving an untrained model. Call model.train() first.')
 
-    def insertPapers(self):
+        self.logger.info('Saving pickled trained model and summary.')
+        saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
+        stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
+        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(outputDir=model.outputDir))
+
+    def insertPaperScores(self):
         """Inserts paper topic vectors into TmplDB instance."""
+        if self._W is None:
+            raise ValueError('Cannot call insertPapers with untrained model. Call model.train() first.')
         for i, paper in enumerate(self._W):
             meta = self.metas[i]
             papers = []
@@ -290,8 +298,8 @@ class TopicModel(object):
             self.db.insertScores(*papers)
 
     @staticmethod
-    def loadModel(path):
-        """Loads a model and instantiates a TopicModel object.
+    def load(path):
+        """Loads a TopicModel object from disk and returns it.
 
         Args:
             path: path to persisted model to be loaded.
@@ -299,7 +307,7 @@ class TopicModel(object):
         Returns: the desired TopicModel object; the trained sklearn model is stored
             in the trainedModel attribute.
         """
-        return joblib.load(path)
+        return loadObject(path)
 
     # TODO: LDA model toString spits out the same papers for all topics for tfidf.
     # Only works when using the count vectorizer.
@@ -390,9 +398,6 @@ if __name__ == '__main__':
     maxIter = args.max_iter
     name = args.name
 
-    # Set logging level.
-    logging.basicConfig(level=logging.INFO)
-
     # Instantiate reader to pass to TopicModel to read the corpus.
     reader = JsonFileReader(pathToCorpus)
 
@@ -403,16 +408,9 @@ if __name__ == '__main__':
                        noTopics=noTopics,
                        noFeatures=noFeatures,
                        maxIter=maxIter,
-                       name=name,
-                       save=True)
+                       name=name)
 
 
     # Train the model; training time is saved in model.trainingTime attribute.
     model.train()
-
-    logging.info('Done training. Vectorizing time: {vectorizingTime}s. Training time: {trainingTime}s'.format(
-        vectorizingTime=model.vectorizingTime,
-        trainingTime=model.trainingTime,
-        )
-    )
-    logging.info('Saving trained model, summary, and database to {outputDir}'.format(outputDir=model.outputDir))
+    model.save()

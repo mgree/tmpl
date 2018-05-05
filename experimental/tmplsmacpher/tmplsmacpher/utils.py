@@ -1,5 +1,6 @@
 import logging
 import os
+import pickle
 
 
 def getLoggingFormatter():
@@ -33,4 +34,25 @@ def stringToFile(string, path):
     """
     with open(path, 'w') as f:
         f.write(string.encode('utf8'))
+
+
+def saveObject(obj, path):
+    """Saves object to disk.
+
+    Args
+        obj: obj to pickle and save to disk.
+        path: path to save obj to.
+    """
+    with open(path, 'wb') as f:  # Overwrites any existing file.
+        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+
+def loadObject(path):
+    """Loads object from disk.
+
+    Args:
+        path: path of obj to load.
+    """
+    with open(path, 'rb') as f:
+        pickle.load(f)
 
