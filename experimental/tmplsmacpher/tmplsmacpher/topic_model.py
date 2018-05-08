@@ -279,10 +279,12 @@ class TopicModel(object):
         """Saves the trained TopicModel object to the output path. Called automatically in the train() method
         if instance variable 'save' is set to True. Can also call manually with desired path.
         """
-        self.logger.warning('You are saving an untrained model. Call model.train() first.')
+        if not self._trained:
+            self.logger.warning('You are saving an untrained model. Call model.train() to train first.')
 
         self.logger.info('Saving pickled trained model and summary.')
-        saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
+        self.db.connection.close()
+        # saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
         stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
         self.logger.info('Successfully saved trained model and summary {outputDir}'.format(outputDir=model.outputDir))
 
@@ -325,20 +327,21 @@ class TopicModel(object):
                         )
         else:
             output = ''
-            header = ('Trained {modelType} model over {noDocuments} documents'
-                      'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
-                      'and {maxIter} maximum iterations. '
-                      'Vectorizing time: {vectorizingTime}s. '
-                      'Training time: {trainingTime}s.').format(
-                          modelType=self.modelType,
-                          noDocuments=len(self.documents),
-                          vectorizerType=self.vectorizerType,
-                          noTopics=self.noTopics,
-                          noFeatures=self.noFeatures,
-                          maxIter=self.maxIter,
-                          vectorizingTime=self.vectorizingTime,
-                          trainingTime=self.trainingTime,
-                      )
+            header = (
+                'Trained {modelType} model over {noDocuments} documents '
+                'with {vectorizerType} vectorizer, {noTopics} topics, {noFeatures} features, '
+                'and {maxIter} maximum iterations. '
+                'Vectorizing time: {vectorizingTime}s. '
+                'Training time: {trainingTime}s.').format(
+                    modelType=self.modelType,
+                    noDocuments=len(self.documents),
+                    vectorizerType=self.vectorizerType,
+                    noTopics=self.noTopics,
+                    noFeatures=self.noFeatures,
+                    maxIter=self.maxIter,
+                    vectorizingTime=self.vectorizingTime,
+                    trainingTime=self.trainingTime,
+                )
             output += header
             output += '\n'
             for topic_id, topic in enumerate(self._H):

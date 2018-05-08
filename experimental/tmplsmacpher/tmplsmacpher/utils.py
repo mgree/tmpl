@@ -54,5 +54,5 @@ def loadObject(path):
         path: path of obj to load.
     """
     with open(path, 'rb') as f:
-        pickle.load(f)
+        return pickle.load(f)
 

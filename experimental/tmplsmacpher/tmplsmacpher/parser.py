@@ -3,6 +3,7 @@ import json
 import logging
 import os
 
+from argparse import ArgumentParser
 from xml.etree import ElementTree
 
 from utils import getLoggingFormatter
@@ -10,31 +11,32 @@ from utils import makeDir
 
 
 class Parser(object):
-    """Use to parse the DL."""
+    """Use to parse the DL.
+    TODO: Add docstring
+    """
 
-    logger = logging.getLogger('Parser')
-    streamHandler = logging.StreamHandler()
-    streamHandler.setFormatter(getLoggingFormatter())
-    logger.addHandler(streamHandler)
-    logger.setLevel(logging.INFO)
-
-    def __init(self, corpusPath, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, toDisk=False, destDir='.', parentLogger=None):
-        self.corpusPath = corpusPath
+    def __init__(self, dlDir, toDisk=False, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
+        self.dlDir = dlDir
         self.conferences = conferences
         self.toDisk = toDisk
         self.destDir = destDir
 
         if parentLogger:
-            self.logger = parentLogger.getChild('TmplDB')
+            self.logger = parentLogger.getChild('Parser')
         else:
-             self.logger = logging.getLogger('TmplDB')
+            logging.basicConfig(level=logging.INFO)
+            logger = logging.getLogger('Parser')
+            streamHandler = logging.StreamHandler()
+            streamHandler.setFormatter(getLoggingFormatter())
+            logger.addHandler(streamHandler)
+            self.logger = logger
 
     def parse(self):
         """Parses all conferences in a given directory. Writes papers and metadata from each conference
         to a respective directory per conference.
 
         Args:
-            dirPath: path to raw DL (digital library) xml files to parse.
+            dlDir: path to raw DL (digital library) xml files to parse.
             destDir: destination dir to parse to. Defaults to current directory.
             conferences: conferences to parse.
             noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
@@ -44,7 +46,7 @@ class Parser(object):
 
         # Keep track of the number of papers found per conference and year for metric purposes.
         numPapersPerConference = dict()
-        for filename in os.listdir(dirPath):
+        for filename in os.listdir(self.dlDir):
             if not filename.endswith('.xml'):
                 continue
 
@@ -63,7 +65,7 @@ class Parser(object):
             Parser.logger.info('Parsing {conference_year}'.format(conference_year=curOutputDir))
 
             numPapersPerConference[(conference, year)] = 0
-            for i, paper in enumerate(Parser.parseXML(curOutputDir, os.path.join(dirPath, filename))):
+            for i, paper in enumerate(Parser.parseXML(curOutputDir, os.path.join(self.dlDir, filename))):
                 filename = '{i}.txt'.format(i=i)
                 if toDisk:
                     with codecs.open(os.path.join(curOutputDir, filename), 'w', 'utf8') as f:
@@ -188,7 +190,6 @@ class Parser(object):
             year = filenameTokens[2]
             return conference, year
         except Exception as e:
-            print filename
             raise e
 
     @staticmethod
@@ -226,7 +227,32 @@ class Parser(object):
 
 
 if __name__ == '__main__':
-    DL_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/proceedings'
-    OUT_DIR = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
-    parser = Parser()
-    parser.parseDir(DL_DIR, destDir=OUT_DIR, noOp=False)
+    """
+    You can also use this parser class to manually parse the XML DL files
+    into a desired directory. When developing Tmpl, this is probably preferred.
+    That way, you'll only have to parse the DL once, and can use the Reader
+    class to read the parsed version in.
+    """
+    parser = ArgumentParser(
+        description=(
+            'Used to parse the XML files of the ACM\'s DL.',
+            'Output directory is organized into subdirectories by conference-year.'
+        ),
+        epilog='Happy parsing!',
+    )
+
+    parser.add_argument('dl_dir', type=str,
+                        help='The path to the ACM\'s proceedings directory containing the XML DL files.')
+    parser.add_argument('output_dir', type=str,
+                        help='The path of the directory to save the parsed DL files to.')
+    parser.add_arguments('-c', '--conferences',
+                         dest='conferences',
+                         nargs='*',
+                         help='List of conferences that you want to parse (eg. -c POPL OOPSLA).')
+
+    args = parser.parse_args()
+    dl_dir = args.dl_dir
+    output_dir = args.output_dir
+    conferences = args.conferences
+    parser = Parser(dl_dir, toDisk=True, destDir=output_dir, conferences=set(conferences))
+    parser.parseDir()

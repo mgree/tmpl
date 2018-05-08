@@ -44,3 +44,9 @@ raw abstracts or fulltexts with LDA.
     Michael Greenberg|1863572|Matching lenses: alignment and view update
     Michael Greenberg|1640091|Flapjax: a programming language for Ajax applications
     Michael Greenberg|1706341|Contracts made manifest
+
+TODO:
+- fix dependencies (pyLDAdavis)
+- make author_profile_id primary key in person table.
+- brew install sqlite3 --with-functions
+

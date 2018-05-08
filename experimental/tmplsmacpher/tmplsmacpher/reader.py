@@ -20,7 +20,11 @@ class JsonFileReader(object):
         if parentLogger:
             self.logger = parentLogger.getChild('JsonFileReader')
         else:
-             self.logger = logging.getLogger('JsonFileReader')
+            logger = logging.getLogger('JsonFileReader')
+            streamHandler = logging.StreamHandler()
+            streamHandler.setFormatter(getLoggingFormatter())
+            logger.addHandler(streamHandler)
+            self.logger = logger
 
     def setDB(self, db):
         if self.db is None:
