@@ -31,11 +31,9 @@ class Parser(object):
         parentLogger: logger to use in the Parser instance. If None, a new Parser object will
             be instantiated for the Parser instance.  
     """
-    def __init__(self, dlDir, toDisk=False, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
+    def __init__(self, dlDir, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
         self.dlDir = dlDir
         self.conferences = conferences
-        self.toDisk = toDisk
-        self.destDir = destDir
 
         if parentLogger:
             self.logger = parentLogger.getChild('Parser')
@@ -45,8 +43,7 @@ class Parser(object):
             self.logger = logger
 
     def parse(self):
-        """Parses all conferences in a given directory. Writes papers and metadata from each conference
-        to a respective directory per conference.
+        """Parses desired conferences and returns a generator that yields papers and their respective conference metadata.
 
         Args:
             dlDir: path to raw DL (digital library) xml files to parse.
@@ -54,43 +51,35 @@ class Parser(object):
             conferences: conferences to parse.
             noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
         """
-        if self.toDisk:
-            makeDir(self.destDir)
-
-        # Keep track of the number of papers found per conference and year for metric purposes.
-        numPapersPerConference = dict()
         for filename in os.listdir(self.dlDir):
             if not filename.endswith('.xml'):
                 continue
 
+            # Parse conference and year from filename so that if it's not 
+            # a conference we care about, we don't have to waste time by reading its XML file. 
             conference, year = Parser.getConferenceAndYear(filename)
 
             # Not a conference that we care about so skip it.
             if conference not in self.conferences:
                 continue
 
-            # Make a directory for the parsed results to go.
-            conferenceYear = conference + ' ' + year
-            curOutputDir = os.path.join(self.destDir, conferenceYear)
-
-            if self.toDisk:
-                makeDir(curOutputDir)
-
-            self.logger.debug('Parsing {conferenceYear} from {filename}'.format(
-                conferenceYear=conferenceYear,
+            self.logger.debug('Reading {conference} {year} from {filename}'.format(
+                conference=conference,
+                year=year,
                 filename=filename,
                 )
             )
 
+            # Keep track of the number of papers found per conference and year for metric purposes.
+            numPapersPerConference = dict()
             numPapersPerConference[(conference, year)] = 0
-            for i, paper in enumerate(Parser.parseXML(curOutputDir, os.path.join(self.dlDir, filename))):
-                fname = '{i}.txt'.format(i=i)
-                if self.toDisk:
-                    with codecs.open(os.path.join(curOutputDir, fname), 'w', 'utf8') as f:
-                        f.write(json.dumps(paper))
-                else:
-                    yield paper
-                numPapersPerConference[((conference, year))] += 1
+            curConference = None
+            for i, obj in enumerate(Parser.parseXML(self.dlDir, os.path.join(self.dlDir, filename))):
+                if 'series_id' in obj: # Found the conference object.
+                    curConference = obj
+                else: # Found a paper. Pair it with its respective conference's metadata and yield.
+                    yield (curConference, obj)
+                    numPapersPerConference[((conference, year))] += 1
 
             self.logger.debug('Done parsing {conference} {year}. Found {numPapers} papers.'.format(
                 conference=conference,
@@ -99,13 +88,60 @@ class Parser(object):
                 )
             )
 
-        self.logger.debug('Done parsing {conferences}. \n{metrics}. \nFound {total} total papers.'.format(
+        self.logger.debug('Finished parsing the following conferences: {conferences}. \n{metrics}. \nFound {total} total papers.'.format(
             conferences=self.conferences,
             metrics='\n'.join([str(conf + ' ' + year) + ': ' + str(n) + ' papers'
                                for (conf, year), n in numPapersPerConference.iteritems()]),
             total=sum(numPapersPerConference.itervalues()),
             )
         )
+
+    def parseToDisk(self, destDir):
+        """Parses all conferences in the given directory. Writes papers and metadata from each conference
+        to a respective directory per conference. Sample output directory structure:
+
+        parsed/
+            OOPSLA '87/
+                0.json
+                1.json
+                2.json
+                ... etc.
+                99.json
+                metadata.json
+            ... etc.
+            POPL '73/
+                0.json
+                1.json
+                ... etc.
+                32.json
+                metadata.json
+            ... etc.
+
+        Where 'parsed/' is the destDir, 'i.json' files are papers, and 
+        'metadata.json' files are conference metadata.
+
+        Args:
+            destDir: path to the destination directory to parse to. Creates it if needed.
+        """
+        makeDir(destDir)
+        curConference = None
+        curOutDir = None
+        paperNum = 0
+        for (conference, paper) in self.parse():
+            # First conference or found a new conference. Write new conference to disk.
+            if curConference is None or conference['proc_id'] != curConference['proc_id']:
+                curConference = conference
+                paperNum = 0
+                curOutDir = os.path.join(destDir, curConference['acronym'])
+                makeDir(curOutDir)
+                with codecs.open(os.path.join(curOutDir, 'metadata.json'), 'w', 'utf8') as f:
+                    f.write(json.dumps(curConference))
+
+            # Write paper. Increment paperNum counter to ensure unique filename for next paper.
+            with codecs.open(os.path.join(curOutDir, '{i}.json'.format(i=paperNum)), 'w', 'utf8') as f:
+                f.write(json.dumps(paper))
+            paperNum += 1
+
 
     @staticmethod
     def parseXML(procDir, filepath):
@@ -127,10 +163,23 @@ class Parser(object):
         elementTree.parse(filepath, parser=xmlParser)
         root = elementTree.getroot()
 
-        # Fetch metadata for conference and write to file.
+        # Fetch metadata for conference and yield.
         series = root.find('series_rec').find('series_name')
         proceeding = root.find('proceeding_rec')
-        procId = Parser.writeConferenceMetadata(procDir, series, proceeding)
+        procId = proceeding.findtext('proc_id')
+
+        conferenceData = {
+            'series_id': series.findtext('series_id'),
+            'series_title': series.findtext('series_title'),
+            'series_vol': series.findtext('series_vol'),
+            'proc_id': procId,
+            'proc_title': proceeding.findtext('proc_title'),
+            'acronym': proceeding.findtext('acronym'),
+            'isbn13': proceeding.findtext('isbn13'),
+            'year': proceeding.findtext('copyright_year'),  # may have to revert back to using year parsed from filename
+        }
+
+        yield conferenceData
 
         conference, year = Parser.getConferenceAndYear(os.path.basename(filepath))
         for node in root.iter('article_rec'):
@@ -183,7 +232,7 @@ class Parser(object):
             yield {'conference': conference,
                    'year': year,
                    'article_id': articleId,  # unique key to identify this paper.
-                   'proc_id': procId,  # key to identify which proceeding this paper was in.
+                   'proc_id': procId,  # key to identify which conference this paper was in.
                    'url': url,
                    'article_publication_date': articlePublicationDate,
                    'doi_number': doiNumber,
@@ -211,32 +260,6 @@ class Parser(object):
         except Exception as e:
             raise e
 
-    @staticmethod
-    def writeConferenceMetadata(outputDir, series, proceeding):
-        """ Writes metadata for one conference for one year.
-
-        Args:
-            outputDir: output directory representing conference and year to write metadata to.
-            series: series ElementTree node to extract series metadata from.
-            proceeding: proceeding ElementTree node to extract proceeding metadata from.
-        """
-        filename = 'metadata.txt'
-        procId = proceeding.findtext('proc_id')
-        metadata = {
-            'series_id': series.findtext('series_id'),
-            'series_title': series.findtext('series_title'),
-            'series_vol': series.findtext('series_vol'),
-            'proc_id': procId,
-            'proc_title': proceeding.findtext('proc_title'),
-            'acronym': proceeding.findtext('acronym'),
-            'isbn13': proceeding.findtext('isbn13'),
-            'year': proceeding.findtext('copyright_year'),  # may have to revert back to using year parsed from filename
-        }
-
-        with codecs.open(os.path.join(outputDir, filename), 'w', 'utf8') as f:
-            f.write(json.dumps(metadata))
-        return procId
-
     class AllEntities:
         def __init__(self):
             pass
@@ -259,8 +282,8 @@ if __name__ == '__main__':
 
     parser.add_argument('dl_dir', type=str,
                         help='The path to the ACM proceedings directory containing the XML DL files.')
-    parser.add_argument('output_dir', type=str,
-                        help='The path of the directory to save the parsed DL files to.')
+    parser.add_argument('-o','--output_dir', type=str, default='./parsed', required=False,
+                        help='The path of the directory to save the parsed DL files to. Defaults to "./parsed".')
     parser.add_argument('-c', '--conferences',
                         dest='conferences',
                         nargs='*',
@@ -272,8 +295,8 @@ if __name__ == '__main__':
     CONFERENCES = args.conferences
 
     if CONFERENCES is None:
-        parser = Parser(dlDir=DL_DIR, toDisk=True, destDir=DEST_DIR)
+        parser = Parser(dlDir=DL_DIR)
     else:
-        parser = Parser(dlDirDL_DIR, toDisk=True, destDir=DEST_DIR, conferences=set(CONFERENCES))
+        parser = Parser(dlDir=DL_DIR, conferences=set(CONFERENCES))
 
-    parser.parse()
+    parser.parseToDisk(DEST_DIR)
