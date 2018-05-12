@@ -29,9 +29,6 @@ class TmplDB(object):
             self.logger = parentLogger.getChild('TmplDB')
         else:
             logger = logging.getLogger('TmplDB')
-            streamHandler = logging.StreamHandler()
-            streamHandler.setFormatter(getLoggingFormatter())
-            logger.addHandler(streamHandler)
             self.logger = logger
 
 

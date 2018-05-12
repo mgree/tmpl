@@ -11,10 +11,26 @@ from utils import makeDir
 
 
 class Parser(object):
-    """Use to parse the DL.
-    TODO: Add docstring
-    """
+    """Use to parse the DL."""
 
+    """Constructor for Parser object.
+    
+    Usage:
+        There are two different ways to use a Parser object:
+        1) use it to read in the ACM DL XML files and yield the extracted paper and 
+        conference objects dynamically in memory.
+        2) use it to parse the ACM DL XML files and write them to disk, organizing
+        them into a given directory with subdirectories corresponding to the extracted papers
+        and metadata from a conference in a specific year.
+
+    Args:
+        dlDir: path to the directory containing the ACM XML proceedings.
+        toDisk: whether to write to disk or return a generator. Set to True to write to disk.
+        destDir: if toDisk is set to true, destination directory to write parsed DL to.
+        conferences: iterable of conferences to parse. Defaults to the big 4 PL conferences.
+        parentLogger: logger to use in the Parser instance. If None, a new Parser object will
+            be instantiated for the Parser instance.  
+    """
     def __init__(self, dlDir, toDisk=False, destDir='.', conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
         self.dlDir = dlDir
         self.conferences = conferences
@@ -260,7 +276,4 @@ if __name__ == '__main__':
     else:
         parser = Parser(dlDirDL_DIR, toDisk=True, destDir=DEST_DIR, conferences=set(CONFERENCES))
 
-    papers = parser.parse()
-
-    for paper in papers:
-        print(paper)
+    parser.parse()

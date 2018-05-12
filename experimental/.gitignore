@@ -3,5 +3,5 @@ dist
 logs
 models
 *.pyc
-*.egg
+*.egg-info
 .idea
