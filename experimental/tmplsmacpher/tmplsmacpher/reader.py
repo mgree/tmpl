@@ -3,6 +3,7 @@ import logging
 import os
 
 from datetime import datetime
+from tqdm import tqdm
 
 from settings import LOG_DIR
 from utils import getLoggingFormatter
@@ -23,10 +24,10 @@ class Reader(object):
         self.db = db
 
         if parentLogger:
-            self.logger = parentLogger.getChild('JsonFileReader')
+            self.logger = parentLogger.getChild('Reader')
         else:
-            logging.basicConfig(level=logging.DEBUG)
-            logger = logging.getLogger('JsonFileReader')
+            logging.basicConfig(level=logging.INFO)
+            logger = logging.getLogger('Reader')
             self.logger = logger
 
     def setDB(self, db):
@@ -78,7 +79,7 @@ class Reader(object):
 
         seen = dict()
 
-        for obj in objs:
+        for obj in tqdm(objs):
             (doc, conference, filepath) = obj
 
             # Check for 'metadata.txt' file that contains conference metadata

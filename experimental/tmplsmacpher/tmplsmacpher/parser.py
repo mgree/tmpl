@@ -52,6 +52,7 @@ class Parser(object):
             conferences: conferences to parse.
             noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
         """
+        self.logger.info('Parsing DL XML files at {dlDir}.'.format(dlDir=self.dlDir))
         for filename in tqdm(os.listdir(self.dlDir)):
             if not filename.endswith('.xml'):
                 continue
@@ -71,31 +72,13 @@ class Parser(object):
                 )
             )
 
-            # Keep track of the number of papers found per conference and year for metric purposes.
-            numPapersPerConference = dict()
-            numPapersPerConference[(conference, year)] = 0
             curConference = None
-            for i, obj in enumerate(Parser.parseXML(self.dlDir, os.path.join(self.dlDir, filename))):
+
+            for obj in Parser.parseXML(self.dlDir, os.path.join(self.dlDir, filename)):
                 if 'series_id' in obj: # Found the conference object.
                     curConference = obj
                 else: # Found a paper. Pair it with its respective conference's metadata and yield.
                     yield (curConference, obj)
-                    numPapersPerConference[((conference, year))] += 1
-
-            self.logger.debug('Done parsing {conference} {year}. Found {numPapers} papers.'.format(
-                conference=conference,
-                year=year,
-                numPapers=numPapersPerConference[(conference, year)],
-                )
-            )
-
-        self.logger.debug('Finished parsing the following conferences: {conferences}. \n{metrics}. \nFound {total} total papers.'.format(
-            conferences=self.conferences,
-            metrics='\n'.join([str(conf + ' ' + year) + ': ' + str(n) + ' papers'
-                               for (conf, year), n in numPapersPerConference.iteritems()]),
-            total=sum(numPapersPerConference.itervalues()),
-            )
-        )
 
     def parseToDisk(self, destDir):
         """Parses all conferences in the given directory. Writes papers and metadata from each conference
@@ -125,15 +108,27 @@ class Parser(object):
             destDir: path to the destination directory to parse to. Creates it if needed.
         """
         makeDir(destDir)
+
+        # Keep track of the number of papers found per conference and year for metric purposes.
+        numPapersPerConference = dict()
+
         curConference = None
         curOutDir = None
         paperNum = 0
         for (conference, paper) in self.parse():
             # First conference or found a new conference. Write new conference to disk.
-            if curConference is None or conference['proc_id'] != curConference['proc_id']:
+            if curConference is None or conference.get('proc_id') != curConference.get('proc_id'):
+                # Update previous conference's paper count and log metrics.
+                if curConference is not None:
+                    numPapersPerConference[curConference.get('acronym')] = paperNum
+
+                # Update curConference to reflect new conference.
                 curConference = conference
+                numPapersPerConference[curConference.get('acronym')] = 0
                 paperNum = 0
-                curOutDir = os.path.join(destDir, curConference['acronym'])
+                curOutDir = os.path.join(destDir, curConference.get('acronym'))
+
+                # Write conference metadata.
                 makeDir(curOutDir)
                 with codecs.open(os.path.join(curOutDir, 'metadata.json'), 'w', 'utf8') as f:
                     f.write(json.dumps(curConference))
@@ -143,6 +138,14 @@ class Parser(object):
                 f.write(json.dumps(paper))
             paperNum += 1
 
+        self.logger.debug('Finished parsing. \n{metrics}.'.format(
+            metrics='\n'.join([acronym + ': ' + str(n) + ' papers' for acronym, n in numPapersPerConference.iteritems()])
+            )
+        )
+        self.logger.info('Found {numPapers} papers.'.format(
+            numPapers=sum(numPapersPerConference.itervalues())
+            )
+        )
 
     @staticmethod
     def parseXML(procDir, filepath):
