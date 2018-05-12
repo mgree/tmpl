@@ -4,6 +4,7 @@ import logging
 import os
 
 from argparse import ArgumentParser
+from tqdm import tqdm
 from xml.etree import ElementTree
 
 from utils import getLoggingFormatter
@@ -51,7 +52,7 @@ class Parser(object):
             conferences: conferences to parse.
             noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
         """
-        for filename in os.listdir(self.dlDir):
+        for filename in tqdm(os.listdir(self.dlDir)):
             if not filename.endswith('.xml'):
                 continue
 

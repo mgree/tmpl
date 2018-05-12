@@ -9,21 +9,24 @@ from utils import getLoggingFormatter
 from utils import makeDir
 
 
-class JsonFileReader(object):
-    """A utility class for reading json objects from files.
+class Reader(object):
+    """A class to read in the parsed DL files. Updates the given TmplDB.
     """
 
-    def __init__(self, dirPath, db=None, parentLogger=None):
-        self.dirPath = dirPath
+    def __init__(self, parser=None, directory=None, db=None, parentLogger=None):
+        if ((parser is None and directory is None) or 
+            (parser is not None and directory is not None)):
+            raise AttributeError('Please specify a parser OR directory.')
+
+        self.parser = parser
+        self.directory = directory
         self.db = db
 
         if parentLogger:
             self.logger = parentLogger.getChild('JsonFileReader')
         else:
+            logging.basicConfig(level=logging.DEBUG)
             logger = logging.getLogger('JsonFileReader')
-            streamHandler = logging.StreamHandler()
-            streamHandler.setFormatter(getLoggingFormatter())
-            logger.addHandler(streamHandler)
             self.logger = logger
 
     def setDB(self, db):
@@ -32,8 +35,31 @@ class JsonFileReader(object):
         else:
             raise AttributeError("DB already set.")
 
-    def readAll(self):
-        """Loads all fulltexts and their respective metadata from a directory.
+    # def readFromParser(self):
+    #     """Reads all paper json objects from a passed in parser."""
+    #     if self.directory is None:
+    #         raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
+
+    #     curConference = None
+    #     for (conference, paper) in self.parser.parse():
+    #         # First conference or found a new conference. Update TmplDB with conference data.
+    #         if curConference is None or conference['proc_id'] != curConference['proc_id']:
+    #             curConference = conference
+    #             conferenceData = (
+    #                 int(conference.get('proc_id')),
+    #                 conference.get('series_id'),
+    #                 conference.get('acronym'),
+    #                 conference.get('isbn13'),
+    #                 conference.get('year'),
+    #                 conference.get('proc_title'),
+    #                 conference.get('series_title'),
+    #                 conference.get('series_vol'),
+    #             )
+    #             self.db.insertConferences(conferenceData)
+
+
+    def readFromDisk(self):
+        """Reads all paper json objects from disk.
         Also writes papers and conference metadata to sqlite3 db.
 
         Args:
@@ -43,7 +69,10 @@ class JsonFileReader(object):
         Returns:
             A tuple of fulltexts and their respective metadata.
         """
-        objs = JsonFileReader.loadAllJsonFiles(self.dirPath, recursive=True)
+        if self.directory is None:
+            raise AttributeError('Directory is None. Perhaps you meant to call readFromParser?')
+
+        objs = Reader.loadAllJsonFiles(self.directory)
         fulltexts = []
         metas = []
 
@@ -69,16 +98,11 @@ class JsonFileReader(object):
                 self.db.insertConferences(conferenceData)
                 continue
 
-            abstract = doc.get('abstract')
-            fulltext = doc.get('fulltext')
-
-            # Remove fulltext and use doc as metadata for current paper.
-            doc.pop('fulltext', None)
             meta = doc
-            title = meta['title']
+            meta.pop('fulltext', None)
 
             # Add person and author to database.
-            for author in meta['authors']:
+            for author in doc.get('authors'):
                 # Need to cast certain fields to match sqlite datatypes.
                 if (author['author_profile_id'] != '' and 
                         author['author_profile_id'] is not None):
@@ -114,62 +138,33 @@ class JsonFileReader(object):
                     )
                     self.db.insertPersons(personData)
 
-            if abstract is None:
-                self.logger.debug(
-                    '{conference}: {title} does not have an "abs" field.'
-                    .format(conference=conference, title=title)
-                )
-                abstract = ''
-
-            if fulltext is None:
-                self.logger.debug(
-                    '{conference}: {title} does not have an "fulltext" field.'
-                    .format(conference=conference, title=title)
-                )
-                fulltext = ''
-
             # Output title so user can see progress.
-            self.logger.debug('Found \'{title}\' in {conference}.'.format(
-                title=title.encode('utf-8'),
+            self.logger.debug('Reading \'{title}\' in {conference}.'.format(
+                title=meta.get('title').encode('utf-8'),
                 conference=conference.encode('utf-8'),
                 )
             )
 
-            # Already have seen this title before.
-            if title in seen:
-                self.logger.debug(
-                    "'{title}' from {conference} at {dupFilepath} already seen at {seenFilepath}".format(
-                        title=title,
-                        conference=conference,
-                        dupFilepath=filepath,
-                        seenFilepath=seen[title],
-                    )
-                )
-            else:
-                # Haven't seen this title before, but add it to seen
-                # with its filepath to keep track of it.
-                seen[title] = filepath
-
-            fulltexts.append(fulltext)
+            fulltexts.append(doc.get('fulltext'))
             metas.append(meta)
 
             # Finally, insert paper into db.
             if self.db is not None:
                 paperData = (
-                    int(doc.get('article_id')), # article_id
-                    doc.get('title'), # title
-                    doc.get('abstract'), # abstract
-                    int(doc.get('proc_id')), # proc_id
-                    doc.get('article_publication_date'), # article_publication_date
-                    doc.get('url'), # url
-                    doc.get('doi_number'), # doi_number
+                    int(meta.get('article_id')), # article_id
+                    meta.get('title'), # title
+                    meta.get('abstract'), # abstract
+                    int(meta.get('proc_id')), # proc_id
+                    meta.get('article_publication_date'), # article_publication_date
+                    meta.get('url'), # url
+                    meta.get('doi_number'), # doi_number
                 )
                 self.db.insertPapers(paperData)
 
         # Make sure that we processed the same number of fulltexts and metadatas.
         if len(fulltexts) != len(metas):
             raise ValueError(
-                'Found unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
+                'Read in an unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
                     numFulltexts=len(fulltexts),
                     numMetas=len(metas),
                 )
@@ -191,7 +186,7 @@ class JsonFileReader(object):
             return json.load(f)
 
     @staticmethod
-    def loadAllJsonFiles(dirPath, recursive=True):
+    def loadAllJsonFiles(dirPath):
         """Loads all of the files from a directory. 
 
         Args:
@@ -207,18 +202,18 @@ class JsonFileReader(object):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
                 objs.append(
-                    (JsonFileReader.loadJsonFile(childPath),  # Document json obj.
+                    (Reader.loadJsonFile(childPath),  # Document json obj.
                      os.path.basename(os.path.dirname(childPath)),  # Conference.
                      childPath)  # File path.
                 )
-            elif recursive:
-                objs += JsonFileReader.loadAllJsonFiles(childPath, recursive)
+            else:
+                objs += Reader.loadAllJsonFiles(childPath)
         return objs
 
 
 if __name__ == '__main__':
     from db import TmplDB
-    pathToFulltexts = '/Users/smacpher/clones/tmpl_venv/acm-data/parsed'
+    path = './parsed'
     db = TmplDB('testReader.db')
-    reader = JsonFileReader(pathToFulltexts, db)
-    documents = reader.readAll()
+    reader = Reader(directory=path, db=db)
+    documents = reader.readFromDisk()
