@@ -36,28 +36,104 @@ class Reader(object):
         else:
             raise AttributeError("DB already set.")
 
-    # def readFromParser(self):
-    #     """Reads all paper json objects from a passed in parser."""
-    #     if self.directory is None:
-    #         raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
+    def readFromParser(self):
+        """Reads all paper json objects from a passed in parser."""
+        if self.directory is None:
+            raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
 
-    #     curConference = None
-    #     for (conference, paper) in self.parser.parse():
-    #         # First conference or found a new conference. Update TmplDB with conference data.
-    #         if curConference is None or conference['proc_id'] != curConference['proc_id']:
-    #             curConference = conference
-    #             conferenceData = (
-    #                 int(conference.get('proc_id')),
-    #                 conference.get('series_id'),
-    #                 conference.get('acronym'),
-    #                 conference.get('isbn13'),
-    #                 conference.get('year'),
-    #                 conference.get('proc_title'),
-    #                 conference.get('series_title'),
-    #                 conference.get('series_vol'),
-    #             )
-    #             self.db.insertConferences(conferenceData)
+        fulltexts = []
+        metas = []
+        curConference = None
 
+        for (conference, paper) in self.parser.parse():
+            # First conference or found a new conference. Update TmplDB with conference data.
+            if curConference is None or conference['proc_id'] != curConference['proc_id']:
+                curConference = conference
+                conferenceData = (
+                    int(conference.get('proc_id')),
+                    conference.get('series_id'),
+                    conference.get('acronym'),
+                    conference.get('isbn13'),
+                    conference.get('year'),
+                    conference.get('proc_title'),
+                    conference.get('series_title'),
+                    conference.get('series_vol'),
+                )
+                self.db.insertConferences(conferenceData)
+
+            meta = paper
+            meta.pop('fulltext', None)
+
+            # Add person and author to database.
+            for author in paper.get('authors'):
+                # Need to cast certain fields to match sqlite datatypes.
+                if (author['author_profile_id'] != '' and 
+                        author['author_profile_id'] is not None):
+                    author['author_profile_id'] = int(
+                        author['author_profile_id']
+                    )
+                else:
+                    author['author_profile_id'] = -1
+
+                if (author['orcid_id'] != '' and
+                        author['orcid_id'] is not None):
+                    author['orcid_id'] = int(author['orcid_id'])
+
+                if author['person_id'] is None:
+                    continue
+
+                authorData = (
+                    author['person_id'], # person_id
+                    int(meta['article_id']), # article_id
+                )
+
+                if self.db is not None:
+                    self.db.insertAuthors(authorData)
+
+                if author['person_id'] and self.db is not None:
+                    personData = (
+                        author['person_id'], # person_id,
+                        author['author_profile_id'], # author_profile_id
+                        author['orcid_id'], # orcid_id
+                        author['affiliation'], # affiliation
+                        author['email_address'], # email_address
+                        author['name'], # name
+                    )
+                    self.db.insertPersons(personData)
+
+            # Output title so user can see progress.
+            self.logger.debug('Reading \'{title}\' in {conference}.'.format(
+                title=meta.get('title').encode('utf-8'),
+                conference=conference.encode('utf-8'),
+                )
+            )
+
+            fulltexts.append(paper.get('fulltext'))
+            metas.append(meta)
+
+            # Finally, insert paper into db.
+            if self.db is not None:
+                paperData = (
+                    int(meta.get('article_id')), # article_id
+                    meta.get('title'), # title
+                    meta.get('abstract'), # abstract
+                    int(meta.get('proc_id')), # proc_id
+                    meta.get('article_publication_date'), # article_publication_date
+                    meta.get('url'), # url
+                    meta.get('doi_number'), # doi_number
+                )
+                self.db.insertPapers(paperData)
+
+        # Make sure that we processed the same number of fulltexts and metadatas.
+        if len(fulltexts) != len(metas):
+            raise ValueError(
+                'Read in an unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
+                    numFulltexts=len(fulltexts),
+                    numMetas=len(metas),
+                )
+            )
+
+        return fulltexts, metas
 
     def readFromDisk(self):
         """Reads all paper json objects from disk.
@@ -73,13 +149,10 @@ class Reader(object):
         if self.directory is None:
             raise AttributeError('Directory is None. Perhaps you meant to call readFromParser?')
 
-        objs = Reader.loadAllJsonFiles(self.directory)
         fulltexts = []
         metas = []
 
-        seen = dict()
-
-        for obj in tqdm(objs):
+        for obj in tqdm(Reader.loadAllJsonFiles(self.directory)):
             (doc, conference, filepath) = obj
 
             # Check for 'metadata.txt' file that contains conference metadata
@@ -217,4 +290,4 @@ if __name__ == '__main__':
     path = './parsed'
     db = TmplDB('testReader.db')
     reader = Reader(directory=path, db=db)
-    documents = reader.readFromDisk()
+    documents = reader.readFromParser()
