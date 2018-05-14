@@ -3,14 +3,12 @@ import numpy as np
 import os
 import time
 
-from argparse import ArgumentParser
 from datetime import datetime
 from sklearn.decomposition import LatentDirichletAllocation, NMF
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from db import TmplDB
-from reader import JsonFileReader
 from settings import MODELS_DIR
 from utils import loadObject
 from utils import makeDir
@@ -152,13 +150,13 @@ class TopicModel(object):
     @property
     def documents(self):
         if self._documents is None:
-            (self._documents, self._metas) = reader.readAll()
+            (self._documents, self._metas) = zip(*list(self.reader.read()))
         return self._documents
 
     @property
     def metas(self):
         if self._metas is None:
-            (self._documents, self._metas) = reader.readAll()
+            (self._documents, self._metas) = zip*(list(self.reader.read()))
         return self._metas
 
     def uniqueName(self):
@@ -228,8 +226,8 @@ class TopicModel(object):
         self._trained = True
 
         logging.info('Done training. Vectorizing time: {vectorizingTime}s. Training time: {trainingTime}s'.format(
-            vectorizingTime=model.vectorizingTime,
-            trainingTime=model.trainingTime,
+            vectorizingTime=self.vectorizingTime,
+            trainingTime=self.trainingTime,
             )
         )
 
@@ -286,7 +284,10 @@ class TopicModel(object):
         self.db.connection.close()
         # saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
         stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
-        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(outputDir=model.outputDir))
+        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
+            outputDir=self.outputDir
+            )
+        )
 
     def insertPaperScores(self):
         """Inserts paper topic vectors into TmplDB instance."""
@@ -364,56 +365,3 @@ class TopicModel(object):
                 )
                 output += '\n\n'
         return output
-
-
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
-    parser = ArgumentParser(description='Used to run LDA or NMF topic models over a corpus.',
-                            epilog='Happy topic modeling!')
-    parser.add_argument('corpus', type=str,
-                        help='The path to the directory containing the corpus.')
-    parser.add_argument('--model', '-m', dest='model',
-                        choices={'lda', 'nmf'}, default='nmf', type=str,
-                        help='The type of model to train (lda or nmf). Defaults to nmf.')
-    parser.add_argument('--num_topics', '-n', dest='num_topics',
-                        default=20, type=int,
-                        help='The number of topics you want the model to find.')
-    parser.add_argument('--num_features', '-f', dest='num_features',
-                        default=1000, type=int,
-                        help='The number of features (unique word tokens) you want the model to use.')
-    parser.add_argument('--vectorizer', '-v', dest='vectorizer',
-                        choices={'count', 'tfidf'}, default='count', type=str,
-                        help='''The type of word vectorizer to use (count or tfidf). \
-                        As of now, LDA only supports using the count vectorizer.''')
-    parser.add_argument('--max_iter', '-i', dest='max_iter',
-                        default=None, type=int,
-                        help='The maximum number of training iterations to run.')
-    parser.add_argument('--name', '-u', dest='name',
-                        default=None, type=str,
-                        help='Optional name to keep track of your model with.')
-    args = parser.parse_args()
-
-    pathToCorpus = args.corpus
-    modelType = args.model
-    vectorizerType = args.vectorizer
-    noTopics = args.num_topics
-    noFeatures = args.num_features
-    maxIter = args.max_iter
-    name = args.name
-
-    # Instantiate reader to pass to TopicModel to read the corpus.
-    reader = JsonFileReader(pathToCorpus)
-
-    # Instantiate TopicModel object with desired parameters.
-    model = TopicModel(reader,
-                       modelType=modelType,
-                       vectorizerType=vectorizerType,
-                       noTopics=noTopics,
-                       noFeatures=noFeatures,
-                       maxIter=maxIter,
-                       name=name)
-
-
-    # Train the model; training time is saved in model.trainingTime attribute.
-    model.train()
-    model.save()

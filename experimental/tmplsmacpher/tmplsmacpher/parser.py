@@ -21,7 +21,7 @@ class Parser(object):
         To instantiate a Parser, you need to pass in the directory containing
         the XML files to parse:
         
-            parser = Parser(dlDir='/Users/smacpher/clones/tmpl_venv/proceedings')
+            parser = Parser(directory='/Users/smacpher/clones/tmpl_venv/proceedings')
 
         Using a Parser:
 
@@ -39,7 +39,7 @@ class Parser(object):
                 parser.parseToDisk()
 
     Args:
-        dlDir: path to the directory containing the ACM XML proceedings.
+        directory: path to the directory containing the ACM XML proceedings.
         toDisk: whether to write to disk or return a generator. Set to True to write to disk.
         destDir: if toDisk is set to true, destination directory to write parsed DL to.
         conferences: iterable of conferences to parse. Defaults to the big 4 PL conferences.
@@ -47,8 +47,8 @@ class Parser(object):
             be instantiated for the Parser instance.
     """
 
-    def __init__(self, dlDir, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
-        self.dlDir = dlDir
+    def __init__(self, directory, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
+        self.directory = directory
         self.conferences = conferences
 
         if parentLogger:
@@ -62,20 +62,20 @@ class Parser(object):
         """Parses desired conferences and returns a generator that yields papers and 
         their respective conference metadata in the form (conference json obj, paper json obj).
         """
-        self.logger.info('Parsing DL XML files at {dlDir}.'.format(dlDir=self.dlDir))
-        for filename in tqdm(os.listdir(self.dlDir)):
+        self.logger.info('Parsing DL XML files from \'{directory}.\''.format(directory=self.directory))
+        for filename in tqdm(os.listdir(self.directory)):
             if not filename.endswith('.xml'):
                 continue
 
             # Parse conference and year from filename so that if it's not 
             # a conference we care about, we don't have to waste time by reading its XML file. 
-            conference, year = Parser.getConferenceAndYear(filename)
+            conference, year = Parser._getConferenceAndYear(filename)
 
             # Not a conference that we care about so skip it.
             if conference not in self.conferences:
                 continue
 
-            self.logger.debug('Reading {conference} {year} from {filename}'.format(
+            self.logger.debug('Reading {conference} {year} from \'{filename}\''.format(
                 conference=conference,
                 year=year,
                 filename=filename,
@@ -84,7 +84,7 @@ class Parser(object):
 
             curConference = None
 
-            for obj in Parser._parseXML(self.dlDir, os.path.join(self.dlDir, filename)):
+            for obj in Parser._parseXML(self.directory, os.path.join(self.directory, filename)):
                 if 'series_id' in obj: # Found the conference object.
                     curConference = obj
                 else: # Found a paper. Pair it with its respective conference's metadata and yield.
@@ -125,7 +125,7 @@ class Parser(object):
         curConference = None
         curOutDir = None
         paperNum = 0
-        for (conference, paper) in self.parse():
+        for (conference, paper) in tqdm(self.parse()):
             # First conference or found a new conference. Write new conference to disk.
             if curConference is None or conference.get('proc_id') != curConference.get('proc_id'):
                 # Update previous conference's paper count and log metrics.
@@ -148,8 +148,11 @@ class Parser(object):
                 f.write(json.dumps(paper))
             paperNum += 1
 
-        self.logger.debug('Finished parsing and writing papers to disk at {destDir}. \n{metrics}.'.format(
-            destDir=destDir,
+        self.logger.info('Finished parsing and writing papers to disk at \'{destDir}\''.format(
+            destDir=destDir
+            )
+        )
+        self.logger.debug('{metrics}.'.format(
             metrics='\n'.join([acronym + ': ' + str(n) + ' papers' for acronym, n in numPapersPerConference.iteritems()])
             )
         )
@@ -310,8 +313,9 @@ if __name__ == '__main__':
     CONFERENCES = args.conferences
 
     if CONFERENCES is None:
-        parser = Parser(dlDir=DL_DIR)
+        parser = Parser(directory=DL_DIR)
     else:
-        parser = Parser(dlDir=DL_DIR, conferences=set(CONFERENCES))
+        parser = Parser(directory=DL_DIR, conferences=set(CONFERENCES))
 
     parser.parseToDisk(DEST_DIR)
+

@@ -40,10 +40,12 @@ class Reader(object):
     def read(self):
         if self.parser is not None:
             self.logger.info('Reading from parser.')
-            return self._readFromParser()
+            for obj in self._readFromParser():
+                yield obj
         elif self.directory is not None:
             self.logger.info('Reading from disk.')
-            return self._readFromDisk()
+            for obj in self._readFromDisk():
+                yield obj
         else:
             raise AttributeError('Please specify a parser OR directory.')
 
@@ -53,9 +55,10 @@ class Reader(object):
             raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
 
         curConference = None
+        confSeen = set()
         for (conference, paper) in self.parser.parse():
             # First conference or found a new conference. Update TmplDB with conference data.
-            if curConference is None or conference['proc_id'] != curConference['proc_id']:
+            if curConference is None or conference.get('proc_id') not in confSeen:
                 curConference = conference
                 conferenceData = (
                     int(conference.get('proc_id')),
@@ -68,6 +71,7 @@ class Reader(object):
                     conference.get('series_vol'),
                 )
                 self.db.insertConferences(conferenceData)
+                confSeen.add(conference.get('proc_id'))
 
             # Add person and author to database.
             for author in paper.get('authors'):
@@ -146,28 +150,28 @@ class Reader(object):
         if self.directory is None:
             raise AttributeError('Directory is None. Perhaps you meant to call readFromParser?')
 
-        for obj in tqdm(Reader.loadAllJsonFiles(self.directory)):
-            (paper, conference, filepath) = obj
+        for tup in tqdm(Reader.loadAllJsonFiles(self.directory)):
+            (obj, conference, filepath) = tup
 
             # Check for 'metadata.txt' file that contains conference metadata
             # and insert it into database.
-            if 'series_id' in paper and self.db is not None:
+            if 'series_id' in obj and self.db is not None:
                 # Note: comments indicate column name in db table.
                 conferenceData = (
-                    int(paper.get('proc_id')), # proc_id
-                    paper.get('series_id'), # series_id
-                    paper.get('acronym'), # acronym
-                    paper.get('isbn13'), # isbn13
-                    paper.get('year'), # year
-                    paper.get('proc_title'), # proc_title
-                    paper.get('series_title'), # series_title
-                    paper.get('series_vol'), # series_vol
+                    int(obj.get('proc_id')), # proc_id
+                    obj.get('series_id'), # series_id
+                    obj.get('acronym'), # acronym
+                    obj.get('isbn13'), # isbn13
+                    obj.get('year'), # year
+                    obj.get('proc_title'), # proc_title
+                    obj.get('series_title'), # series_title
+                    obj.get('series_vol'), # series_vol
                 )
                 self.db.insertConferences(conferenceData)
                 continue
 
             # Add person and author to database.
-            for author in paper.get('authors'):
+            for author in obj.get('authors'):
                 # Need to cast certain fields to match sqlite datatypes.
                 if (author['author_profile_id'] != '' and 
                         author['author_profile_id'] is not None):
@@ -186,7 +190,7 @@ class Reader(object):
 
                 authorData = (
                     author['person_id'], # person_id
-                    int(paper.get('article_id')), # article_id
+                    int(obj.get('article_id')), # article_id
                 )
 
                 if self.db is not None:
@@ -205,13 +209,13 @@ class Reader(object):
 
             # Output title so user can see progress.
             self.logger.debug('Reading \'{title}\' in {conference}.'.format(
-                title=paper.get('title').encode('utf-8'),
+                title=obj.get('title').encode('utf-8'),
                 conference=conference.encode('utf-8'),
                 )
             )
 
-            fulltext = paper.get('fulltext')
-            meta = deepcopy(paper)
+            fulltext = obj.get('fulltext')
+            meta = deepcopy(obj)
             meta.pop('fulltext', None)
 
             # Finally, insert paper into db.
@@ -272,7 +276,7 @@ if __name__ == '__main__':
 
     path = './parsed'
     db = TmplDB('testReader.db')
-    parser = Parser(dlDir='/Users/smacpher/clones/tmpl_venv/acm-data/proceedings')
-    # reader = Reader(parser=parser, db=db)
-    reader = Reader(directory='/Users/smacpher/clones/tmpl_venv/acm-data/parsed')
+    parser = Parser(directory='/Users/smacpher/clones/tmpl_venv/acm-data/proceedings')
+    reader = Reader(parser=parser, db=db)
+    # reader = Reader(directory='/Users/smacpher/clones/tmpl_venv/acm-data/parsed', db=db)
     documents = reader.read()
