@@ -12,17 +12,31 @@ from utils import makeDir
 
 
 class Parser(object):
-    """Use to parse the DL."""
+    """Use to parse the DL.
 
-    """Constructor for Parser object.
-    
     Usage:
+
+        Instantiating a Parser:
+
+        To instantiate a Parser, you need to pass in the directory containing
+        the XML files to parse:
+        
+            parser = Parser(dlDir='/Users/smacpher/clones/tmpl_venv/proceedings')
+
+        Using a Parser:
+
         There are two different ways to use a Parser object:
-        1) use it to read in the ACM DL XML files and yield the extracted paper and 
-        conference objects dynamically in memory.
-        2) use it to parse the ACM DL XML files and write them to disk, organizing
-        them into a given directory with subdirectories corresponding to the extracted papers
-        and metadata from a conference in a specific year.
+            1) call parse(). Returns a generator that yield the extracted papers and 
+            conference objects dynamically in memory in the form (conference json obj, paper json obj).
+
+                docGenerator = parser.parse()
+
+            2) call parseToDisk(). Parses and writes the papers and conference metadata to disk, 
+            organizing them into a main directory (path given as a param to the method)
+            with subdirectories corresponding to the extracted papers and metadata from a 
+            conference in a specific year.
+
+                parser.parseToDisk()
 
     Args:
         dlDir: path to the directory containing the ACM XML proceedings.
@@ -30,8 +44,9 @@ class Parser(object):
         destDir: if toDisk is set to true, destination directory to write parsed DL to.
         conferences: iterable of conferences to parse. Defaults to the big 4 PL conferences.
         parentLogger: logger to use in the Parser instance. If None, a new Parser object will
-            be instantiated for the Parser instance.  
+            be instantiated for the Parser instance.
     """
+
     def __init__(self, dlDir, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
         self.dlDir = dlDir
         self.conferences = conferences
@@ -44,13 +59,8 @@ class Parser(object):
             self.logger = logger
 
     def parse(self):
-        """Parses desired conferences and returns a generator that yields papers and their respective conference metadata.
-
-        Args:
-            dlDir: path to raw DL (digital library) xml files to parse.
-            destDir: destination dir to parse to. Defaults to current directory.
-            conferences: conferences to parse.
-            noOp: whether to run a dry run or not. If noOp is set to True, will not actually write results.
+        """Parses desired conferences and returns a generator that yields papers and 
+        their respective conference metadata in the form (conference json obj, paper json obj).
         """
         self.logger.info('Parsing DL XML files at {dlDir}.'.format(dlDir=self.dlDir))
         for filename in tqdm(os.listdir(self.dlDir)):
@@ -74,7 +84,7 @@ class Parser(object):
 
             curConference = None
 
-            for obj in Parser.parseXML(self.dlDir, os.path.join(self.dlDir, filename)):
+            for obj in Parser._parseXML(self.dlDir, os.path.join(self.dlDir, filename)):
                 if 'series_id' in obj: # Found the conference object.
                     curConference = obj
                 else: # Found a paper. Pair it with its respective conference's metadata and yield.
@@ -138,7 +148,8 @@ class Parser(object):
                 f.write(json.dumps(paper))
             paperNum += 1
 
-        self.logger.debug('Finished parsing. \n{metrics}.'.format(
+        self.logger.debug('Finished parsing and writing papers to disk at {destDir}. \n{metrics}.'.format(
+            destDir=destDir,
             metrics='\n'.join([acronym + ': ' + str(n) + ' papers' for acronym, n in numPapersPerConference.iteritems()])
             )
         )
@@ -148,7 +159,7 @@ class Parser(object):
         )
 
     @staticmethod
-    def parseXML(procDir, filepath):
+    def _parseXML(procDir, filepath):
         """Parses one XML file containing the proceedings for a given conference and year.
 
         Args:
@@ -160,7 +171,7 @@ class Parser(object):
         """
         xmlParser = ElementTree.XMLParser()
         xmlParser.parser.UseForeignDTD(True)
-        xmlParser.entity = Parser.AllEntities()
+        xmlParser.entity = Parser._AllEntities()
 
         elementTree = ElementTree.ElementTree()
 
@@ -185,7 +196,7 @@ class Parser(object):
 
         yield conferenceData
 
-        conference, year = Parser.getConferenceAndYear(os.path.basename(filepath))
+        conference, year = Parser._getConferenceAndYear(os.path.basename(filepath))
         for node in root.iter('article_rec'):
             # Two unique identifiers for papers; DOI is global, however, not all papers have it.
             articleId = node.findtext('article_id')
@@ -246,7 +257,7 @@ class Parser(object):
                    'fulltext': fulltext}
 
     @staticmethod
-    def getConferenceAndYear(filename):
+    def _getConferenceAndYear(filename):
         """Fetches the conference and year from a filename of the form
         'PROC-POPL00-2000-325694.xml'
 
@@ -264,7 +275,7 @@ class Parser(object):
         except Exception as e:
             raise e
 
-    class AllEntities:
+    class _AllEntities:
         def __init__(self):
             pass
 
