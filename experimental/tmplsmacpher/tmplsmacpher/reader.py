@@ -2,6 +2,7 @@ import json
 import logging
 import os
 
+from copy import deepcopy
 from datetime import datetime
 from tqdm import tqdm
 
@@ -38,7 +39,7 @@ class Reader(object):
 
     def readFromParser(self):
         """Reads all paper json objects from a passed in parser."""
-        if self.directory is None:
+        if self.parser is None:
             raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
 
         fulltexts = []
@@ -61,9 +62,6 @@ class Reader(object):
                 )
                 self.db.insertConferences(conferenceData)
 
-            meta = paper
-            meta.pop('fulltext', None)
-
             # Add person and author to database.
             for author in paper.get('authors'):
                 # Need to cast certain fields to match sqlite datatypes.
@@ -84,7 +82,7 @@ class Reader(object):
 
                 authorData = (
                     author['person_id'], # person_id
-                    int(meta['article_id']), # article_id
+                    int(paper.get('article_id')), # article_id
                 )
 
                 if self.db is not None:
@@ -103,12 +101,14 @@ class Reader(object):
 
             # Output title so user can see progress.
             self.logger.debug('Reading \'{title}\' in {conference}.'.format(
-                title=meta.get('title').encode('utf-8'),
-                conference=conference.encode('utf-8'),
+                title=paper.get('title').encode('utf-8'),
+                conference=conference.get('acronym').encode('utf-8'),
                 )
             )
 
             fulltexts.append(paper.get('fulltext'))
+            meta = deepcopy(paper)
+            meta.pop('fulltext', None)
             metas.append(meta)
 
             # Finally, insert paper into db.
@@ -153,30 +153,27 @@ class Reader(object):
         metas = []
 
         for obj in tqdm(Reader.loadAllJsonFiles(self.directory)):
-            (doc, conference, filepath) = obj
+            (paper, conference, filepath) = obj
 
             # Check for 'metadata.txt' file that contains conference metadata
             # and insert it into database.
-            if 'series_id' in doc and self.db is not None:
+            if 'series_id' in paper and self.db is not None:
                 # Note: comments indicate column name in db table.
                 conferenceData = (
-                    int(doc.get('proc_id')), # proc_id
-                    doc.get('series_id'), # series_id
-                    doc.get('acronym'), # acronym
-                    doc.get('isbn13'), # isbn13
-                    doc.get('year'), # year
-                    doc.get('proc_title'), # proc_title
-                    doc.get('series_title'), # series_title
-                    doc.get('series_vol'), # series_vol
+                    int(paper.get('proc_id')), # proc_id
+                    paper.get('series_id'), # series_id
+                    paper.get('acronym'), # acronym
+                    paper.get('isbn13'), # isbn13
+                    paper.get('year'), # year
+                    paper.get('proc_title'), # proc_title
+                    paper.get('series_title'), # series_title
+                    paper.get('series_vol'), # series_vol
                 )
                 self.db.insertConferences(conferenceData)
                 continue
 
-            meta = doc
-            meta.pop('fulltext', None)
-
             # Add person and author to database.
-            for author in doc.get('authors'):
+            for author in paper.get('authors'):
                 # Need to cast certain fields to match sqlite datatypes.
                 if (author['author_profile_id'] != '' and 
                         author['author_profile_id'] is not None):
@@ -195,7 +192,7 @@ class Reader(object):
 
                 authorData = (
                     author['person_id'], # person_id
-                    int(meta['article_id']), # article_id
+                    int(paper.get('article_id')), # article_id
                 )
 
                 if self.db is not None:
@@ -219,7 +216,9 @@ class Reader(object):
                 )
             )
 
-            fulltexts.append(doc.get('fulltext'))
+            fulltexts.append(paper.get('fulltext'))
+            meta = deepcopy(paper)
+            meta.pop('fulltext', None)
             metas.append(meta)
 
             # Finally, insert paper into db.
@@ -287,7 +286,10 @@ class Reader(object):
 
 if __name__ == '__main__':
     from db import TmplDB
+    from parser import Parser
+
     path = './parsed'
     db = TmplDB('testReader.db')
-    reader = Reader(directory=path, db=db)
+    parser = Parser(dlDir='/Users/smacpher/clones/tmpl_venv/acm-data/proceedings')
+    reader = Reader(parser=parser, db=db)
     documents = reader.readFromParser()
