@@ -37,15 +37,22 @@ class Reader(object):
         else:
             raise AttributeError("DB already set.")
 
-    def readFromParser(self):
+    def read(self):
+        if self.parser is not None:
+            self.logger.info('Reading from parser.')
+            return self._readFromParser()
+        elif self.directory is not None:
+            self.logger.info('Reading from disk.')
+            return self._readFromDisk()
+        else:
+            raise AttributeError('Please specify a parser OR directory.')
+
+    def _readFromParser(self):
         """Reads all paper json objects from a passed in parser."""
         if self.parser is None:
             raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
 
-        fulltexts = []
-        metas = []
         curConference = None
-
         for (conference, paper) in self.parser.parse():
             # First conference or found a new conference. Update TmplDB with conference data.
             if curConference is None or conference['proc_id'] != curConference['proc_id']:
@@ -106,10 +113,9 @@ class Reader(object):
                 )
             )
 
-            fulltexts.append(paper.get('fulltext'))
+            fulltext = paper.get('fulltext')
             meta = deepcopy(paper)
             meta.pop('fulltext', None)
-            metas.append(meta)
 
             # Finally, insert paper into db.
             if self.db is not None:
@@ -124,18 +130,9 @@ class Reader(object):
                 )
                 self.db.insertPapers(paperData)
 
-        # Make sure that we processed the same number of fulltexts and metadatas.
-        if len(fulltexts) != len(metas):
-            raise ValueError(
-                'Read in an unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
-                    numFulltexts=len(fulltexts),
-                    numMetas=len(metas),
-                )
-            )
+            yield (fulltext, meta)
 
-        return fulltexts, metas
-
-    def readFromDisk(self):
+    def _readFromDisk(self):
         """Reads all paper json objects from disk.
         Also writes papers and conference metadata to sqlite3 db.
 
@@ -148,9 +145,6 @@ class Reader(object):
         """
         if self.directory is None:
             raise AttributeError('Directory is None. Perhaps you meant to call readFromParser?')
-
-        fulltexts = []
-        metas = []
 
         for obj in tqdm(Reader.loadAllJsonFiles(self.directory)):
             (paper, conference, filepath) = obj
@@ -211,15 +205,14 @@ class Reader(object):
 
             # Output title so user can see progress.
             self.logger.debug('Reading \'{title}\' in {conference}.'.format(
-                title=meta.get('title').encode('utf-8'),
+                title=paper.get('title').encode('utf-8'),
                 conference=conference.encode('utf-8'),
                 )
             )
 
-            fulltexts.append(paper.get('fulltext'))
+            fulltext = paper.get('fulltext')
             meta = deepcopy(paper)
             meta.pop('fulltext', None)
-            metas.append(meta)
 
             # Finally, insert paper into db.
             if self.db is not None:
@@ -234,16 +227,7 @@ class Reader(object):
                 )
                 self.db.insertPapers(paperData)
 
-        # Make sure that we processed the same number of fulltexts and metadatas.
-        if len(fulltexts) != len(metas):
-            raise ValueError(
-                'Read in an unequal numbers of fulltexts and metas: {numFulltexts} fulltexts, {numMetas} metas'.format(
-                    numFulltexts=len(fulltexts),
-                    numMetas=len(metas),
-                )
-            )
-
-        return fulltexts, metas
+            yield (fulltext, meta)
 
     @staticmethod
     def loadJsonFile(filepath):
@@ -260,28 +244,26 @@ class Reader(object):
 
     @staticmethod
     def loadAllJsonFiles(dirPath):
-        """Loads all of the files from a directory. 
+        """Generator that lazy loads all of the files from a directory.
 
         Args:
             dirPath: full path of the directory to load files from.
-            recursive: If True, will recurse down file tree. 
-                Otherwise, only loads files from next level down.
-        
+
         Returns:
-            A list of json objects representing the contents of the files.
+            A generator that yields each paper in the following form:
+                (paper json object, conference acronym, path).
         """
-        objs = []  # List of json objects found in the specified directory.
         for child in os.listdir(dirPath):
             childPath = os.path.join(dirPath, child)
             if not os.path.isdir(childPath):
-                objs.append(
+                yield (
                     (Reader.loadJsonFile(childPath),  # Document json obj.
                      os.path.basename(os.path.dirname(childPath)),  # Conference.
                      childPath)  # File path.
                 )
             else:
-                objs += Reader.loadAllJsonFiles(childPath)
-        return objs
+                for obj in Reader.loadAllJsonFiles(childPath):
+                    yield obj
 
 
 if __name__ == '__main__':
@@ -291,5 +273,6 @@ if __name__ == '__main__':
     path = './parsed'
     db = TmplDB('testReader.db')
     parser = Parser(dlDir='/Users/smacpher/clones/tmpl_venv/acm-data/proceedings')
-    reader = Reader(parser=parser, db=db)
-    documents = reader.readFromParser()
+    # reader = Reader(parser=parser, db=db)
+    reader = Reader(directory='/Users/smacpher/clones/tmpl_venv/acm-data/parsed')
+    documents = reader.read()
