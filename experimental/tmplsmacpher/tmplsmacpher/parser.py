@@ -12,7 +12,7 @@ from utils import makeDir
 
 
 class Parser(object):
-    """Use to parse the DL.
+    """A class used to parse the ACM's XML DL.
 
     Usage:
 
@@ -27,14 +27,14 @@ class Parser(object):
 
         There are two different ways to use a Parser object:
             1) call parse(). Returns a generator that yield the extracted papers and 
-            conference objects dynamically in memory in the form (conference json obj, paper json obj).
+            conference objects dynamically in memory in the form (conference json obj, paper json obj):
 
                 docGenerator = parser.parse()
 
             2) call parseToDisk(). Parses and writes the papers and conference metadata to disk, 
             organizing them into a main directory (path given as a param to the method)
             with subdirectories corresponding to the extracted papers and metadata from a 
-            conference in a specific year.
+            conference in a specific year:
 
                 parser.parseToDisk()
 
@@ -46,7 +46,6 @@ class Parser(object):
         parentLogger: logger to use in the Parser instance. If None, a new Parser object will
             be instantiated for the Parser instance.
     """
-
     def __init__(self, directory, conferences={'POPL', 'PLDI', 'ICFP', 'OOPSLA'}, parentLogger=None):
         self.directory = directory
         self.conferences = conferences
@@ -85,9 +84,9 @@ class Parser(object):
             curConference = None
 
             for obj in Parser._parseXML(self.directory, os.path.join(self.directory, filename)):
-                if 'series_id' in obj: # Found the conference object.
+                if 'series_id' in obj:  # Found the conference object.
                     curConference = obj
-                else: # Found a paper. Pair it with its respective conference's metadata and yield.
+                else:  # Found a paper. Pair it with its respective conference's metadata and yield.
                     yield (curConference, obj)
 
     def parseToDisk(self, destDir):
@@ -148,18 +147,12 @@ class Parser(object):
                 f.write(json.dumps(paper))
             paperNum += 1
 
-        self.logger.info('Finished parsing and writing papers to disk at \'{destDir}\''.format(
-            destDir=destDir
-            )
-        )
+        self.logger.info('Finished parsing and writing papers to disk at \'{destDir}\''.format(destDir=destDir))
         self.logger.debug('{metrics}.'.format(
-            metrics='\n'.join([acronym + ': ' + str(n) + ' papers' for acronym, n in numPapersPerConference.iteritems()])
+            metrics='\n'.join([conf + ': ' + str(n) + ' papers' for conf, n in numPapersPerConference.iteritems()])
             )
         )
-        self.logger.info('Found {numPapers} papers.'.format(
-            numPapers=sum(numPapersPerConference.itervalues())
-            )
-        )
+        self.logger.info('Found {numPapers} papers.'.format(numPapers=sum(numPapersPerConference.itervalues())))
 
     @staticmethod
     def _parseXML(procDir, filepath):
@@ -246,7 +239,10 @@ class Parser(object):
                     fulltext = body.text
 
             if procId is None:
-                self.logger.ERROR("PROC_ID is None for {title} in {conference}-{year}".format(title=title, conference=conference, year=year))
+                self.logger.ERROR("PROC_ID is None for {title} in {conference}-{year}".format(title=title,
+                                                                                              conference=conference,
+                                                                                              year=year))
+
             yield {'conference': conference,
                    'year': year,
                    'article_id': articleId,  # unique key to identify this paper.
@@ -289,12 +285,26 @@ class Parser(object):
 if __name__ == '__main__':
     """
     You can also use this parser class to manually parse the XML DL files
-    into a desired directory. When developing Tmpl, this is probably preferred.
-    That way, you'll only have to parse the DL once, and can use the Reader
-    class to read the parsed version in.
+    into a desired directory on disk. When developing Tmpl, this can be useful to save time when running model 
+    after model. That way, you'll only have to parse the DL once and use the Reader class 
+    (which has an option to use a Parser and read directly from the XML DL files) to read the parsed version in.
+    
+    Usage:
+        (via the command line)
+
+            smacpher$ python parser.py ~/clones/tmpl_venv/acm-data/proceedings/
+        
+        Note: since no '--output_dir' was specified, the output is written to the default
+        location, 'parsed/', in the current working directory.
+        
+        You can also specify an output directory like in the following command:
+
+            smacpher$ python parser.py ~/clones/tmpl_venv/acm-data/proceedings/ --output_dir ~/parsed
     """
+
     parser = ArgumentParser(
-        description='Used to parse the XML files of the ACM DL. Output directory is organized into subdirectories by conference-year.',
+        description='''Used to parse the XML files of the ACM DL. 
+                       Output directory is organized into subdirectories by conference-year.''',
         epilog='Happy parsing!',
     )
 
@@ -318,4 +328,3 @@ if __name__ == '__main__':
         parser = Parser(directory=DL_DIR, conferences=set(CONFERENCES))
 
     parser.parseToDisk(DEST_DIR)
-

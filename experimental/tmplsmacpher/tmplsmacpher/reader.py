@@ -12,12 +12,44 @@ from utils import makeDir
 
 
 class Reader(object):
-    """A class to read in the parsed DL files. Updates the given TmplDB.
+    """A class to read in and insert important corpus data into a TmplDB instance along the way.
+
+    Usage:
+        There are two ways to instantiate a Reader which then dictates how the reader will read
+        in the DL.
+
+            1) instantiate a Reader object by specifying the 'directory' keyword argument as a path
+            to the pre-parsed corpus (parsed using the Parser's 'parseToDisk()' method):
+
+                reader = Reader(directory='~/datasets/parsed')
+
+            2) instantiate a Reader object by specifying the 'parser' keyword argument as a Parser
+            object. You can do this :
+                parser = Parser('~/datasets/acm-dl/proceedings')
+                reader = Reader(parser=parser)
+
+        Now once you've instantiated your Reader object, calling read() will return a generator that iterates
+        over the corpus, pairing fulltext of every paper to their respective metas in the form (fulltext, meta):
+
+            gen = reader.read()
+            for (fulltext, meta) in gen:
+                print(fulltext)
+                print(meta)
+
+        Note: either a directory OR a parser (not neither and not both) must be defined in a Reader
+        or else the read() method will complain (because it has nothing to read...).
+
+    Args:
+        parser: Parser object to use to parse DL and thus read its output.
+        directory: path to pre-parsed DL corpus to read from.
+        db: TmplDB instance to use for this reader. As of now, the current implementation of TopicModel
+            will set this for you so don't worry about passing it in. See 'main.py' for the flow of things.
+        parentLogger: logger to use in the Parser instance. If None, a new Parser object will
+            be instantiated for the Parser instance.
     """
 
     def __init__(self, parser=None, directory=None, db=None, parentLogger=None):
-        if ((parser is None and directory is None) or 
-            (parser is not None and directory is not None)):
+        if ((parser is None and directory is None) or (parser is not None and directory is not None)):
             raise AttributeError('Please specify a parser OR directory.')
 
         self.parser = parser
@@ -92,21 +124,21 @@ class Reader(object):
                     continue
 
                 authorData = (
-                    author['person_id'], # person_id
-                    int(paper.get('article_id')), # article_id
+                    author['person_id'],
+                    int(paper.get('article_id')),
                 )
 
                 if self.db is not None:
                     self.db.insertAuthors(authorData)
 
-                if author['person_id'] and self.db is not None:
+                if author['author_profile_id'] and self.db is not None:
                     personData = (
-                        author['person_id'], # person_id,
-                        author['author_profile_id'], # author_profile_id
-                        author['orcid_id'], # orcid_id
-                        author['affiliation'], # affiliation
-                        author['email_address'], # email_address
-                        author['name'], # name
+                        author['person_id'],
+                        author['author_profile_id'],
+                        author['orcid_id'],
+                        author['affiliation'],
+                        author['email_address'],
+                        author['name'],
                     )
                     self.db.insertPersons(personData)
 
@@ -124,13 +156,13 @@ class Reader(object):
             # Finally, insert paper into db.
             if self.db is not None:
                 paperData = (
-                    int(meta.get('article_id')), # article_id
-                    meta.get('title'), # title
-                    meta.get('abstract'), # abstract
-                    int(meta.get('proc_id')), # proc_id
-                    meta.get('article_publication_date'), # article_publication_date
-                    meta.get('url'), # url
-                    meta.get('doi_number'), # doi_number
+                    int(meta.get('article_id')),
+                    meta.get('title'),
+                    meta.get('abstract'),
+                    int(meta.get('proc_id')),
+                    meta.get('article_publication_date'),
+                    meta.get('url'),
+                    meta.get('doi_number'),
                 )
                 self.db.insertPapers(paperData)
 
@@ -156,16 +188,15 @@ class Reader(object):
             # Check for 'metadata.txt' file that contains conference metadata
             # and insert it into database.
             if 'series_id' in obj and self.db is not None:
-                # Note: comments indicate column name in db table.
                 conferenceData = (
-                    int(obj.get('proc_id')), # proc_id
-                    obj.get('series_id'), # series_id
-                    obj.get('acronym'), # acronym
-                    obj.get('isbn13'), # isbn13
-                    obj.get('year'), # year
-                    obj.get('proc_title'), # proc_title
-                    obj.get('series_title'), # series_title
-                    obj.get('series_vol'), # series_vol
+                    int(obj.get('proc_id')),
+                    obj.get('series_id'),
+                    obj.get('acronym'),
+                    obj.get('isbn13'),
+                    obj.get('year'),
+                    obj.get('proc_title'),
+                    obj.get('series_title'),
+                    obj.get('series_vol'),
                 )
                 self.db.insertConferences(conferenceData)
                 continue
@@ -173,37 +204,40 @@ class Reader(object):
             # Add person and author to database.
             for author in obj.get('authors'):
                 # Need to cast certain fields to match sqlite datatypes.
-                if (author['author_profile_id'] != '' and 
+                if (author['author_profile_id'] != '' and
                         author['author_profile_id'] is not None):
                     author['author_profile_id'] = int(
                         author['author_profile_id']
                     )
                 else:
                     author['author_profile_id'] = -1
+                author['author_profile_id'] = int(author['author_profile_id'])
 
                 if (author['orcid_id'] != '' and
                         author['orcid_id'] is not None):
                     author['orcid_id'] = int(author['orcid_id'])
 
+                # Note: there isn't a field that every author entry in the proceedings is
+                # guaranteed to have so we're just sticking with person_id.
                 if author['person_id'] is None:
                     continue
 
                 authorData = (
-                    author['person_id'], # person_id
-                    int(obj.get('article_id')), # article_id
+                    author['person_id'],
+                    int(obj.get('article_id')),
                 )
 
                 if self.db is not None:
                     self.db.insertAuthors(authorData)
 
-                if author['person_id'] and self.db is not None:
+                if self.db is not None:
                     personData = (
-                        author['person_id'], # person_id,
-                        author['author_profile_id'], # author_profile_id
-                        author['orcid_id'], # orcid_id
-                        author['affiliation'], # affiliation
-                        author['email_address'], # email_address
-                        author['name'], # name
+                        author['person_id'],
+                        author['author_profile_id'],
+                        author['orcid_id'],
+                        author['affiliation'],
+                        author['email_address'],
+                        author['name'],
                     )
                     self.db.insertPersons(personData)
 
@@ -221,13 +255,13 @@ class Reader(object):
             # Finally, insert paper into db.
             if self.db is not None:
                 paperData = (
-                    int(meta.get('article_id')), # article_id
-                    meta.get('title'), # title
-                    meta.get('abstract'), # abstract
-                    int(meta.get('proc_id')), # proc_id
-                    meta.get('article_publication_date'), # article_publication_date
-                    meta.get('url'), # url
-                    meta.get('doi_number'), # doi_number
+                    int(meta.get('article_id')),
+                    meta.get('title'),
+                    meta.get('abstract'),
+                    int(meta.get('proc_id')),
+                    meta.get('article_publication_date'),
+                    meta.get('url'),
+                    meta.get('doi_number'),
                 )
                 self.db.insertPapers(paperData)
 
@@ -268,15 +302,3 @@ class Reader(object):
             else:
                 for obj in Reader.loadAllJsonFiles(childPath):
                     yield obj
-
-
-if __name__ == '__main__':
-    from db import TmplDB
-    from parser import Parser
-
-    path = './parsed'
-    db = TmplDB('testReader.db')
-    parser = Parser(directory='/Users/smacpher/clones/tmpl_venv/acm-data/proceedings')
-    reader = Reader(parser=parser, db=db)
-    # reader = Reader(directory='/Users/smacpher/clones/tmpl_venv/acm-data/parsed', db=db)
-    documents = reader.read()

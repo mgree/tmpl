@@ -282,7 +282,7 @@ class TopicModel(object):
 
         self.logger.info('Saving pickled trained model and summary.')
         self.db.connection.close()
-        # saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
+        saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
         stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
         self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
             outputDir=self.outputDir

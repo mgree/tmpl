@@ -3,18 +3,39 @@ import sqlite3
 
 from settings import TMPLDB_INIT_SCHEMA
 
-class TmplDB(object):
-    """A class to interact with the tmpl sqlite3 database.
 
-    A couple of things to note when using this class or sqlite3 in general:
-        1) sqlite3 dynamically casts fields. 
-            If you pass in, let's say, a string for the field
-            'year' which is defined as a sqlite3 INTEGER, 
-            it will still add the field without error!
+class TmplDB(object):
+    """A wrapper class around sqlite3 to store intermediate data and output
+    of Tmpl topic models.
+
+    Usage:
+        As of now, each TopicModel instance instantiates its own TmplDB instance to store
+        all of the data from a training run (which includes reading in the data).
+
+        If you did want to instantiate a standalone TmplDB (with the current design of the Tmpl model training
+        and data storage pipeline, you wouldn't have to but here's how anyways):
+
+            db = TmplDB('dbfilename.sqlite3')
+            personData = (
+                AB123456789,  # person_id
+                98647,  # author_profile_id
+                834191243,  # orc_id
+                'Pomona College',  # affiliation
+                'bilbo@pomona.edu',  # email_address
+                'Bilbo Baggins',  # name
+            )
+            db.insertPersons(personData)
+
+    Args:
+        path: absolute or relative path of where you want the database to live.
+            eg. 'mydb.sqlite3'
+        parentLogger: logger to use in the Parser instance. If None, a new Parser object will
+            be instantiated for the Parser instance.
+
     """
 
-    def __init__(self, file, parentLogger=None):
-        self.file = file
+    def __init__(self, path, parentLogger=None):
+        self.path = path
 
         self._connection = None
         self._cursor = None
@@ -40,7 +61,7 @@ class TmplDB(object):
             Sqlite3 connection object.
         """
         if self._connection is None:
-            self._connection = sqlite3.connect(self.file)
+            self._connection = sqlite3.connect(self.path)
         return self._connection
 
     @property
@@ -75,6 +96,9 @@ class TmplDB(object):
     def insertPersons(self, *args):
         """Inserts a variable number of persons 
         into the 'person' table of this TmplDB instance.
+        Ignores duplicate entries since we will likely encounter
+        the same people multiple times when we extract authors from
+        papers during the read step of a model pipeline.
 
         Args:
             *args: any number of persons to insert
@@ -91,7 +115,7 @@ class TmplDB(object):
         into the 'paper' table of this TmplDB instance.
 
         Args:
-            *args: any number of papers to insert
+            *args: any number of papers to insert.
         """
         query = (
             'INSERT INTO paper (article_id, title, abstract, proc_id, '
@@ -101,6 +125,12 @@ class TmplDB(object):
         self._insert(query, args)
 
     def insertConferences(self, *args):
+        """Inserts a variable number of conferences into the 'conference' table
+        of this TmplDB instance.
+
+        Args:
+            *args: any number of conferences to insert.
+        """
         query = (
             'INSERT INTO conference (proc_id, series_id, ' 
             'acronym, isbn13, year, proc_title, series_title, series_vol) '
@@ -109,6 +139,12 @@ class TmplDB(object):
         self._insert(query, args)
 
     def insertScores(self, *args):
+        """Inserts a variable number of scores into the 'score' table
+        of this TmplDB instance.
+
+        Args:
+            *args: any number of scores to insert.
+        """
         query = (
             'INSERT INTO score (article_id, topic_id, ' 
             'model_id, score) '
@@ -116,7 +152,13 @@ class TmplDB(object):
         )
         self._insert(query, args)
 
-    def insertModel(self, *args):
+    def insertModels(self, *args):
+        """Inserts a variable number of models into the 'conference' table
+        of this TmplDB instance.
+
+        Args:
+            *args: any number of models to insert.
+        """
         query = (
             'INSERT INTO model (model_id, model_path, run_date, num_topics, '
             'num_features, max_iter, vectorizer, model_type) '
@@ -149,17 +191,4 @@ class TmplDB(object):
         with open(initFile, 'r') as f:
             self.cursor.executescript(f.read())
             self.connection.commit()
-
-
-if __name__ == '__main__':
-    db = TmplDB('tmpl_db.db')
-    row = (51,
-              'series_id_test',
-              'tst',
-              'isbn13_test',
-              2018,
-              'proc_title_test',
-              'series_title_test',
-              'series_vol_test')
-    db.insertConference(row)
 
