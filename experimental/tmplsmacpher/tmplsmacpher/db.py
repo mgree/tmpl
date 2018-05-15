@@ -52,7 +52,6 @@ class TmplDB(object):
             logger = logging.getLogger('TmplDB')
             self.logger = logger
 
-
     @property
     def connection(self):
         """Represents the sqlite2 connection.
@@ -160,7 +159,7 @@ class TmplDB(object):
             *args: any number of models to insert.
         """
         query = (
-            'INSERT INTO model (model_id, model_path, run_date, num_topics, '
+            'INSERT INTO model (model_id, model_path, timestamp, num_topics, '
             'num_features, max_iter, vectorizer, model_type) '
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?);'
         )

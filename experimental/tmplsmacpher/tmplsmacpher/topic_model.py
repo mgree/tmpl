@@ -4,7 +4,9 @@ import os
 import time
 
 from datetime import datetime
-from sklearn.decomposition import LatentDirichletAllocation, NMF
+from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.decomposition import NMF
+from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -34,7 +36,7 @@ class TopicModel(object):
     VALID_MODEL_TYPES = {NMF, LDA}
 
     # Scikit-learn verbosity level (0 - 10: higher values = more verbose logging).
-    SCIKIT_LEARN_VERBOSITY = 10
+    SCIKIT_LEARN_VERBOSITY = 1
 
     # Filenames to save models to
     MODEL_FILENAME = 'model.pkl'
@@ -74,10 +76,23 @@ class TopicModel(object):
         self.noTopics = noTopics
         self.noFeatures = noFeatures
         self.maxIter = maxIter
+
+        # Set some 'private' instance variables that will be set later on.
+        self._documents, self._metas = None, None
+        self._trained = False
+        self._vectorizer = None
+        self._model = None
+        self._feature_names = None
+        self._DTMatrix = None
+        self._W = None
+        self._H = None
+        self._savedModelPath = None
+        self._timestamp = None
+
         # Generate unique name if user doesn't pass in name
         self.name = name or self.uniqueName()
 
-        # Output dir to save model to if save is set to True.
+        # Output dir to save model to.
         self.outputDir = os.path.join(MODELS_DIR, self.name)
 
         # Make necessary directories if they don't already exist.
@@ -88,16 +103,6 @@ class TopicModel(object):
         # Instantiate database and pass along to reader, too.
         self.db = TmplDB(os.path.join(self.outputDir, self.DATABASE_FILENAME))
         self.reader.setDB(self.db)
-
-        # Set some 'private' instance variables for internal use / later use.
-        self._documents, self._metas = None, None
-        self._trained = False
-        self._vectorizer = None
-        self._model = None
-        self._feature_names = None
-        self._DTMatrix = None
-        self._W = None
-        self._H = None
 
         # Initialize some other variables that will be set after training the model.
         self.trainedModel = None  # Trained model is stored here.
@@ -159,6 +164,24 @@ class TopicModel(object):
             (self._documents, self._metas) = zip*(list(self.reader.read()))
         return self._metas
 
+    @property
+    def savedModelPath(self):
+        if self._savedModelPath is None:
+            self._savedModelPath = os.path.join(self.outputDir, self.MODEL_FILENAME)
+        return self._savedModelPath
+
+    @property
+    def summaryFilePath(self):
+        if self._summaryFilePath is None:
+            self._summaryFilePath = os.path.join(self.outputDir, self.SUMMARY_FILENAME)
+        return self._summaryFilePath
+
+    @property
+    def timestamp(self):
+        if self._timestamp is None:
+            self._timestamp = datetime.now().isoformat()
+        return self._timestamp
+
     def uniqueName(self):
         """Creates a unique name representing the model if uniqueName is None."""
         return ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i_{timestamp}'.format(
@@ -167,7 +190,7 @@ class TopicModel(object):
             noTopics=self.noTopics,
             noFeatures=self.noFeatures,
             maxIter=self.maxIter,
-            timestamp=datetime.now().isoformat(),
+            timestamp=self.timestamp,
         ))
 
     def train(self):
@@ -233,6 +256,7 @@ class TopicModel(object):
 
         # Insert paper topic scores into db.
         self.insertPaperScores()
+        self.insertModel()
         return
 
     def topWords(self, n):
@@ -278,12 +302,12 @@ class TopicModel(object):
         if instance variable 'save' is set to True. Can also call manually with desired path.
         """
         if not self._trained:
-            self.logger.warning('You are saving an untrained model. Call model.train() to train first.')
+            self.logger.warning('You are saving an untrained model. Call model.train() to train.')
 
         self.logger.info('Saving pickled trained model and summary.')
         self.db.connection.close()
-        saveObject(self, os.path.join(self.outputDir, self.MODEL_FILENAME))
-        stringToFile(self.summary(), os.path.join(self.outputDir, self.SUMMARY_FILENAME))
+        joblib.dump(self, self.savedModelPath)
+        stringToFile(self.summary(), self.summaryFilePath)
         self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
             outputDir=self.outputDir
             )
@@ -291,14 +315,31 @@ class TopicModel(object):
 
     def insertPaperScores(self):
         """Inserts paper topic vectors into TmplDB instance."""
-        if self._W is None:
-            raise ValueError('Cannot call insertPapers with untrained model. Call model.train() first.')
+        if not self._trained or self._W is None:
+            raise ValueError('Cannot call insertPapers() with an untrained model. Call model.train() first.')
         for i, paper in enumerate(self._W):
             meta = self.metas[i]
             papers = []
             for topic_id, score in enumerate(paper):
                 papers.append((meta['article_id'], topic_id, self.name, score))
             self.db.insertScores(*papers)
+
+    def insertModel(self):
+        """Inserts model data into TmplDB instance."""
+        if not self._trained:
+            raise ValueError('Cannot call insertModel() with an untrained model. Call model.train() first.')
+
+        modelData = (
+            self.name,
+            self.savedModelPath,
+            self.timestamp,
+            self.noTopics,
+            self.noFeatures,
+            self.maxIter,
+            self.vectorizerType,
+            self.modelType,
+        )
+        self.db.insertModels(modelData)
 
     @staticmethod
     def load(path):

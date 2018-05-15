@@ -64,7 +64,7 @@ CREATE TABLE score (
 CREATE TABLE model (
   model_id     TEXT NOT NULL,
   model_path   TEXT,
-  run_date     TEXT,
+  timestamp     TEXT,
   num_topics   INTEGER,
   num_features INTEGER,
   max_iter     INTEGER,
