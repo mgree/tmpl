@@ -12,44 +12,54 @@ from utils import makeDir
 
 
 class Reader(object):
-    """A class to read in and insert important corpus data into a TmplDB instance along the way.
+    """
+    A class to read in and insert important corpus data into a TmplDB
+    instance along the way.
 
     Usage:
-        There are two ways to instantiate a Reader which then dictates how the reader will read
-        in the DL.
+        There are two ways to instantiate a Reader which then dictates
+        how the reader will read in the DL.
 
-            1) instantiate a Reader object by specifying the 'directory' keyword argument as a path
-            to the pre-parsed corpus (parsed using the Parser's 'parseToDisk()' method):
+            1) instantiate a Reader object by specifying the 'directory'
+            keyword argument as a path to the pre-parsed corpus (parsed using
+            the Parser's 'parseToDisk()' method):
 
                 reader = Reader(directory='~/datasets/parsed')
 
-            2) instantiate a Reader object by specifying the 'parser' keyword argument as a Parser
-            object. You can do this :
+            2) instantiate a Reader object by specifying the 'parser' keyword
+            argument as a Parser object. You can do this :
                 parser = Parser('~/datasets/acm-dl/proceedings')
                 reader = Reader(parser=parser)
 
-        Now once you've instantiated your Reader object, calling read() will return a generator that iterates
-        over the corpus, pairing fulltext of every paper to their respective metas in the form (fulltext, meta):
+        Now once you've instantiated your Reader object, calling read()
+        will return a generator that iterates over the corpus,
+        pairing fulltext of every paper to their respective metas
+        in the form (fulltext, meta):
 
             gen = reader.read()
             for (fulltext, meta) in gen:
                 print(fulltext)
                 print(meta)
 
-        Note: either a directory OR a parser (not neither and not both) must be defined in a Reader
-        or else the read() method will complain (because it has nothing to read...).
+        Note: either a directory OR a parser (not neither and not both) must
+        be defined in a Reader or else the read() method will complain
+        (because it has nothing to read...).
 
     Args:
         parser: Parser object to use to parse DL and thus read its output.
         directory: path to pre-parsed DL corpus to read from.
-        db: TmplDB instance to use for this reader. As of now, the current implementation of TopicModel
-            will set this for you so don't worry about passing it in. See 'main.py' for the flow of things.
-        parentLogger: logger to use in the Parser instance. If None, a new Parser object will
+        db: TmplDB instance to use for this reader. As of now, the current
+            implementation of TopicModel
+            will set this for you so don't worry about passing it in.
+            See 'main.py' for the flow of things.
+        parentLogger: logger to use in the Parser instance.
+            If None, a new Parser object will
             be instantiated for the Parser instance.
     """
 
     def __init__(self, parser=None, directory=None, db=None, parentLogger=None):
-        if ((parser is None and directory is None) or (parser is not None and directory is not None)):
+        if ((parser is None and directory is None) or 
+                (parser is not None and directory is not None)):
             raise AttributeError('Please specify a parser OR directory.')
 
         self.parser = parser
@@ -84,13 +94,17 @@ class Reader(object):
     def _readFromParser(self):
         """Reads all paper json objects from a passed in parser."""
         if self.parser is None:
-            raise AttributeError('Parser is None. Perhaps you meant to call readFromDisk?')
+            raise AttributeError(
+                'Parser is None. Perhaps you meant to call readFromDisk?'
+            )
 
         curConference = None
         confSeen = set()
         for (conference, paper) in self.parser.parse():
-            # First conference or found a new conference. Update TmplDB with conference data.
-            if curConference is None or conference.get('proc_id') not in confSeen:
+            # First conference or found a new conference. 
+            # Update TmplDB with conference data.
+            if (curConference is None or 
+                    conference.get('proc_id') not in confSeen):
                 curConference = conference
                 conferenceData = (
                     int(conference.get('proc_id')),
@@ -180,7 +194,10 @@ class Reader(object):
             A tuple of fulltexts and their respective metadata.
         """
         if self.directory is None:
-            raise AttributeError('Directory is None. Perhaps you meant to call readFromParser?')
+            raise AttributeError(
+                'Directory is None. '
+                'Perhaps you meant to call readFromParser?'
+            )
 
         for tup in tqdm(Reader.loadAllJsonFiles(self.directory)):
             (obj, conference, filepath) = tup
@@ -217,8 +234,9 @@ class Reader(object):
                         author['orcid_id'] is not None):
                     author['orcid_id'] = int(author['orcid_id'])
 
-                # Note: there isn't a field that every author entry in the proceedings is
-                # guaranteed to have so we're just sticking with person_id.
+                # Note: there isn't a field that every author entry in 
+                # the proceedings is guaranteed to have so we're just 
+                # sticking with person_id.
                 if author['person_id'] is None:
                     continue
 
@@ -296,7 +314,7 @@ class Reader(object):
             if not os.path.isdir(childPath):
                 yield (
                     (Reader.loadJsonFile(childPath),  # Document json obj.
-                     os.path.basename(os.path.dirname(childPath)),  # Conference.
+                     os.path.basename(os.path.dirname(childPath)),  # Conf.
                      childPath)  # File path.
                 )
             else:

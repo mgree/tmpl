@@ -9,11 +9,13 @@ class TmplDB(object):
     of Tmpl topic models.
 
     Usage:
-        As of now, each TopicModel instance instantiates its own TmplDB instance to store
-        all of the data from a training run (which includes reading in the data).
+        As of now, each TopicModel instance instantiates its own
+        TmplDB instance to store all of the data from a training run
+        (which includes reading in the data).
 
-        If you did want to instantiate a standalone TmplDB (with the current design of the Tmpl model training
-        and data storage pipeline, you wouldn't have to but here's how anyways):
+        If you did want to instantiate a standalone TmplDB (with the current
+        design of the Tmpl model training and data storage pipeline,
+        you wouldn't have to but here's how anyways):
 
             db = TmplDB('dbfilename.sqlite3')
             personData = (
@@ -29,8 +31,9 @@ class TmplDB(object):
     Args:
         path: absolute or relative path of where you want the database to live.
             eg. 'mydb.sqlite3'
-        parentLogger: logger to use in the Parser instance. If None, a new Parser object will
-            be instantiated for the Parser instance.
+        parentLogger: logger to use in the Parser instance.
+            If None, a new Parser object will be instantiated for the
+            Parser instance.
 
     """
 
@@ -54,7 +57,8 @@ class TmplDB(object):
 
     @property
     def connection(self):
-        """Represents the sqlite2 connection.
+        """
+        Represents the sqlite2 connection.
 
         Returns:
             Sqlite3 connection object.
@@ -65,7 +69,7 @@ class TmplDB(object):
 
     @property
     def cursor(self):
-        """Represents the sqlite3 cursor object. 
+        """Represents the sqlite3 cursor object.
         Use to interact with database through sql queries.
 
         Use:
