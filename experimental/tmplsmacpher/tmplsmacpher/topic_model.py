@@ -22,6 +22,19 @@ from utils import stringToFile
 
 
 class TopicModel(object):
+    """Class to train Tmpl topic models using NMF or LDA.
+
+    Usage:
+        This class is meant to make running Tmpl topic models easier for
+        you, the user. It uses two of Scikit-learn's
+        matrix decomposition classes (which are fairly specific to 
+        topic modeling problems), NMF (Non-negative Matrix Factorization) and
+        LDA (Latent Dirichlet Allocation) for the actual topic model training.
+        
+        Instantiating a TopicModel object:
+            
+        See main.py for the best example of how to use a TopicModel class.
+    """
     # Default constructor arguments
     DEFAULT_OUTPUT_DIR = '.'
 
@@ -87,6 +100,7 @@ class TopicModel(object):
         self._W = None
         self._H = None
         self._savedModelPath = None
+        self._summaryFilePath = None
         self._timestamp = None
 
         # Generate unique name if user doesn't pass in name
@@ -330,17 +344,17 @@ class TopicModel(object):
         if instance variable 'save' is set to True. Can also call manually with desired path.
         """
         if not self._trained:
-            self.logger.warning('You are saving an untrained model. Call model.train() to train.')
+            self.logger.warning(
+                ('You are saving an untrained model. ' 
+                 'Call model.train() to train.')
+            )
 
         self.logger.info('Saving pickled trained model and summary.')
-        self.db = None
-        self.logger = None
-        self.trainedModel = None
-        self._vectorizer = None
-        joblib.dump(self, self.savedModelPath)
+        saveObject(self, self.savedModelPath)
         stringToFile(self.summary(), self.summaryFilePath)
-        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
-            outputDir=self.outputDir
+        self.logger.info(
+            ('Successfully saved trained model and summary {outputDir}').format(
+                outputDir=self.outputDir
             )
         )
 

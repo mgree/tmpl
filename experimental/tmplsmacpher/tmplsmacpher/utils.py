@@ -1,6 +1,6 @@
 import logging
 import os
-import pickle
+import dill
 
 
 def getLoggingFormatter():
@@ -43,8 +43,8 @@ def saveObject(obj, path):
         obj: obj to pickle and save to disk.
         path: path to save obj to.
     """
-    with open(path, 'wb') as f:  # Overwrites any existing file.
-        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+    with open(path, 'wb') as f:
+        dill.dump(obj, f)
 
 
 def loadObject(path):
@@ -54,5 +54,5 @@ def loadObject(path):
         path: path of obj to load.
     """
     with open(path, 'rb') as f:
-        return pickle.load(f)
+        return dill.load(f)
 
