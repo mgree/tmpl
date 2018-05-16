@@ -50,3 +50,7 @@ TODO:
 - make author_profile_id primary key in person table.
 - brew install sqlite3 --with-functions
 
+11/15/2018
+- Fix pickling error
+- Do a clean install.
+- Documentation (README and Github Wiki)

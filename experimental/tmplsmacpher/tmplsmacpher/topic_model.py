@@ -90,7 +90,7 @@ class TopicModel(object):
         self._timestamp = None
 
         # Generate unique name if user doesn't pass in name
-        self.name = name or self.uniqueName()
+        self.name = name or self._uniqueName()
 
         # Output dir to save model to.
         self.outputDir = os.path.join(MODELS_DIR, self.name)
@@ -182,7 +182,7 @@ class TopicModel(object):
             self._timestamp = datetime.now().isoformat()
         return self._timestamp
 
-    def uniqueName(self):
+    def _uniqueName(self):
         """Creates a unique name representing the model if uniqueName is None."""
         return ('{modelType}_{vectorizerType}v_{noTopics}n_{noFeatures}f_{maxIter}i_{timestamp}'.format(
             modelType=self.modelType,
@@ -297,22 +297,6 @@ class TopicModel(object):
             result.append([self._metas[i]['title'] for i in topDocIx])
         return result
 
-    def save(self):
-        """Saves the trained TopicModel object to the output path. Called automatically in the train() method
-        if instance variable 'save' is set to True. Can also call manually with desired path.
-        """
-        if not self._trained:
-            self.logger.warning('You are saving an untrained model. Call model.train() to train.')
-
-        self.logger.info('Saving pickled trained model and summary.')
-        self.db.connection.close()
-        joblib.dump(self, self.savedModelPath)
-        stringToFile(self.summary(), self.summaryFilePath)
-        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
-            outputDir=self.outputDir
-            )
-        )
-
     def insertPaperScores(self):
         """Inserts paper topic vectors into TmplDB instance."""
         if not self._trained or self._W is None:
@@ -340,6 +324,25 @@ class TopicModel(object):
             self.modelType,
         )
         self.db.insertModels(modelData)
+
+    def save(self):
+        """Saves the trained TopicModel object to the output path. Called automatically in the train() method
+        if instance variable 'save' is set to True. Can also call manually with desired path.
+        """
+        if not self._trained:
+            self.logger.warning('You are saving an untrained model. Call model.train() to train.')
+
+        self.logger.info('Saving pickled trained model and summary.')
+        self.db = None
+        self.logger = None
+        self.trainedModel = None
+        self._vectorizer = None
+        joblib.dump(self, self.savedModelPath)
+        stringToFile(self.summary(), self.summaryFilePath)
+        self.logger.info('Successfully saved trained model and summary {outputDir}'.format(
+            outputDir=self.outputDir
+            )
+        )
 
     @staticmethod
     def load(path):
