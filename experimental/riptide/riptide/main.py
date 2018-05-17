@@ -107,7 +107,7 @@ if __name__ == '__main__':
         level = logging.INFO
 
     logger = logging.getLogger('Riptide')
-    logger.setLevel(level=level)
+    logging.basicConfig(level=level)
 
     if parsed:
         reader = Reader(directory=pathToCorpus, parentLogger=logger)
