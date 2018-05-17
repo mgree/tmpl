@@ -1,3 +1,34 @@
+"""
+This is the main driver script for riptide.
+
+Usage:
+    Run this script from the command line to train Tmpl topic models
+    over a given corpus.
+
+    All outputs for topic model runs are saved in the 'models' directory
+    in subdirectories corresponding to their respective runs.
+
+Example:
+
+    When running the script, there are various command line arguments that
+    you can pass in. The only command line argument that is required is a
+    path to the corpus. As with the reader, you can either pass in a pre-parsed
+    corpus (and if so, must also include the '--parsed' command line flag), or
+    the raw proceedings directory.
+
+    Train and save a topic model with the default parameters:
+
+        smacpher$ python main.py /Users/smacpher/clones/tmpl_venv/acm-data/proceedings
+
+    Train and save a topic model passing in various parameters:
+
+        smacpher$ python main.py /Users/smacpher/clones/tmpl_venv/acm-data/proceedings \
+            --model nmf --num_topics 20 --vectorizer tfidf --max_iter 50
+
+
+For more information on what each command line argument does,
+see the help blurbs for each argument below.
+"""
 import logging
 
 from argparse import ArgumentParser
@@ -8,7 +39,6 @@ from topic_model import TopicModel
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
     argParser = ArgumentParser(
         description='Used to run LDA or NMF topic models over a corpus.',
         epilog='Happy topic modeling!'
@@ -54,6 +84,10 @@ if __name__ == '__main__':
         default=None, type=str,
         help='Optional name to keep track of your model with.'
     )
+    argParser.add_argument(
+        '--verbose', default=False, action='store_true',
+        help='Whether to print verbose logging or not.'
+    )
     args = argParser.parse_args()
 
     pathToCorpus = args.corpus
@@ -64,13 +98,22 @@ if __name__ == '__main__':
     noFeatures = args.num_features
     maxIter = args.max_iter
     name = args.name
+    verbose = args.verbose
 
-    # Corpus was pre-parsed.
-    if parsed:
-        reader = Reader(directory=pathToCorpus)
+    # Initialize a logger (will be inherited by every module in pipeline).
+    if verbose:
+        level = logging.DEBUG
     else:
-        parser = Parser(directory=pathToCorpus)
-        reader = Reader(parser=parser)
+        level = logging.INFO
+
+    logger = logging.getLogger('Riptide')
+    logger.setLevel(level=level)
+
+    if parsed:
+        reader = Reader(directory=pathToCorpus, parentLogger=logger)
+    else:
+        parser = Parser(directory=pathToCorpus, parentLogger=logger)
+        reader = Reader(parser=parser, parentLogger=logger)
 
     # Instantiate TopicModel object with desired parameters.
     model = TopicModel(reader,
@@ -79,8 +122,7 @@ if __name__ == '__main__':
                        noTopics=noTopics,
                        noFeatures=noFeatures,
                        maxIter=maxIter,
-                       name=name)
+                       name=name,
+                       parentLogger=logger)
     model.train()
     model.save()
-
-    

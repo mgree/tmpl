@@ -21,7 +21,7 @@ class Parser(object):
 
         To instantiate a Parser, you need to pass in the directory containing
         the XML files to parse:
-        
+
             parser = Parser(
                 directory='/Users/smacpher/clones/tmpl_venv/proceedings'
             )
@@ -85,7 +85,7 @@ class Parser(object):
 
             # Parse conference and year from filename so that if it's not
             # a conference we care about, we don't have to waste
-            # time by reading its XML file. 
+            # time by reading its XML file.
             conference, year = Parser._getConferenceAndYear(filename)
 
             # Not a conference that we care about so skip it.
@@ -149,7 +149,7 @@ class Parser(object):
         curOutDir = None
         paperNum = 0
         for (conference, paper) in tqdm(self.parse()):
-            # First conference or found a new conference. 
+            # First conference or found a new conference.
             # Write new conference to disk.
             if (curConference is None or
                 conference.get('proc_id') != curConference.get('proc_id')):
@@ -275,7 +275,7 @@ class Parser(object):
                     # Note: only last_name is a required field.
                     author['name'] = ' '.join(
                         filter(
-                            lambda s: s != '', 
+                            lambda s: s != '',
                             [au.findtext('first_name'),
                              au.findtext('middle_name'),
                              au.findtext('last_name')]
@@ -368,19 +368,17 @@ if __name__ == '__main__':
     after model. That way, you'll only have to parse the DL once and
     use the Reader class (which has an option to use a Parser and
     read directly from the XML DL files) to read the parsed version in.
-    
+
     Usage:
         (via the command line)
 
             smacpher$ python parser.py ~/clones/tmpl_venv/acm-data/proceedings/
-        
+
         Note: since no '--output_dir' was specified, the output is written
-            to the default location, 'parsed/', in the current
-            working directory.
+        to the default location, 'parsed/', in the current working directory.
 
         You can also specify an output directory like in the following command:
-            smacpher$ python parser.py ~/clones/tmpl_venv/acm-data/proceedings/
-                --output_dir ~/parsed
+            smacpher$ python parser.py ~/clones/tmpl_venv/acm-data/proceedings/ --output_dir ~/parsed
     """
 
     parser = ArgumentParser(

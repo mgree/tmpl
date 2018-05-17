@@ -7,4 +7,4 @@ LOG_DIR = 'logs'
 MODELS_DIR = 'models'
 
 # File containing init file to create necessary tables in TmplDB instances.
-TMPLDB_INIT_SCHEMA = 'schemas/init.sql'
+TMPLDB_INIT_SCHEMA_FILEPATH = './schemas/init.sql'

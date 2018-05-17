@@ -1,7 +1,7 @@
 import logging
 import sqlite3
 
-from settings import TMPLDB_INIT_SCHEMA
+from settings import TMPLDB_INIT_SCHEMA_FILEPATH
 
 
 class TmplDB(object):
@@ -47,7 +47,7 @@ class TmplDB(object):
         self.schemas = dict()
 
         # Create database file and necessary tables.
-        self._init_db(TMPLDB_INIT_SCHEMA)
+        self._init_db(TMPLDB_INIT_SCHEMA_FILEPATH)
 
         if parentLogger:
             self.logger = parentLogger.getChild('TmplDB')
@@ -84,7 +84,7 @@ class TmplDB(object):
         return self._cursor
 
     def insertAuthors(self, *args):
-        """Inserts a variable number of authors 
+        """Inserts a variable number of authors
         into the 'author' table of this TmplDB instance.
 
         Args:
@@ -97,7 +97,7 @@ class TmplDB(object):
         self._insert(query, args)
 
     def insertPersons(self, *args):
-        """Inserts a variable number of persons 
+        """Inserts a variable number of persons
         into the 'person' table of this TmplDB instance.
         Ignores duplicate entries since we will likely encounter
         the same people multiple times when we extract authors from
@@ -107,14 +107,14 @@ class TmplDB(object):
             *args: any number of persons to insert
         """
         query = (
-            'INSERT OR IGNORE INTO person (person_id, author_profile_id, ' 
+            'INSERT OR IGNORE INTO person (person_id, author_profile_id, '
             'orcid_id, affiliation, email_address, name) '
             'VALUES (?, ?, ?, ?, ?, ?);'
         )
         self._insert(query, args)
 
     def insertPapers(self, *args):
-        """Inserts a variable number of papers 
+        """Inserts a variable number of papers
         into the 'paper' table of this TmplDB instance.
 
         Args:
@@ -135,7 +135,7 @@ class TmplDB(object):
             *args: any number of conferences to insert.
         """
         query = (
-            'INSERT INTO conference (proc_id, series_id, ' 
+            'INSERT INTO conference (proc_id, series_id, '
             'acronym, isbn13, year, proc_title, series_title, series_vol) '
             'VALUES (?, ?, ?, ?, ?, ?, ?, ?);'
         )
@@ -149,7 +149,7 @@ class TmplDB(object):
             *args: any number of scores to insert.
         """
         query = (
-            'INSERT INTO score (article_id, topic_id, ' 
+            'INSERT INTO score (article_id, topic_id, '
             'model_id, score) '
             'VALUES (?, ?, ?, ?);'
         )
@@ -194,4 +194,3 @@ class TmplDB(object):
         with open(initFile, 'r') as f:
             self.cursor.executescript(f.read())
             self.connection.commit()
-

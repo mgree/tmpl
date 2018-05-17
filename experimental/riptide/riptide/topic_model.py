@@ -17,7 +17,7 @@ from utils import saveObject
 from utils import stringToFile
 
 # TODO: If user chooses tfidf and LDA, use tfidf to filter words first,
-# TODO: then use LDA. As of now, LDA does not support the output format 
+# TODO: then use LDA. As of now, LDA does not support the output format
 # of tfidf.
 
 
@@ -28,7 +28,7 @@ class TopicModel(object):
     Usage:
         This class is meant to make running Tmpl topic models easier for
         you, the user. It uses two of Scikit-learn's
-        matrix decomposition classes (which are fairly specific to 
+        matrix decomposition classes (which are fairly specific to
         topic modeling problems), NMF (Non-negative Matrix Factorization) and
         LDA (Latent Dirichlet Allocation) for the actual topic model training.
 
@@ -132,23 +132,26 @@ class TopicModel(object):
     VALID_MODEL_TYPES = {NMF, LDA}
 
     # Scikit-learn verbosity level (0-10: higher values = more verbose logging).
-    SCIKIT_LEARN_VERBOSITY = 1
+    SCIKIT_LEARN_VERBOSITY = 0
 
     # Filenames to save models to
     MODEL_FILENAME = 'model.pkl'
     SUMMARY_FILENAME = 'summary.txt'
     DATABASE_FILENAME = 'db.sqlite3'
 
-    def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF, 
-                 noTopics=20, noFeatures=1000, maxIter=None, name=None):
+    def __init__(self, reader, vectorizerType=TFIDF_VECTORIZER, modelType=NMF,
+                 noTopics=20, noFeatures=1000, maxIter=None, name=None,
+                 parentLogger=None):
 
         # Save timestamp of when model was instantiated to help uniquely
         # identify this model (not perfect but works).
         self._timestamp = datetime.now().isoformat()
 
-        # Initialize logger
-        logging.basicConfig(level=logging.INFO)
-        self.logger = logging.getLogger('TopicModel')
+        if parentLogger:
+            self.logger = parentLogger.getChild('TopicModel')
+        else:
+            logging.basicConfig(level=logging.INFO)
+            self.logger = logging.getLogger('TopicModel')
 
         # Check that user passed in valid vectorizer types, model types values.
         if vectorizerType not in self.VALID_VECTORIZER_TYPES:
@@ -193,7 +196,6 @@ class TopicModel(object):
         self._H = None
         self._savedModelPath = None
         self._summaryFilePath = None
-        self._timestamp = None
 
         # Generate unique name if user doesn't pass in name
         self.name = name or self._uniqueName()
@@ -273,9 +275,9 @@ class TopicModel(object):
                 )
             elif self.modelType == self.LDA:
                 self._model = LatentDirichletAllocation(
-                    n_components=self.noTopics, 
-                    max_iter=self.maxIter, 
-                    learning_method='online', 
+                    n_components=self.noTopics,
+                    max_iter=self.maxIter,
+                    learning_method='online',
                     learning_offset=50.,
                     random_state=0,
                     verbose=self.SCIKIT_LEARN_VERBOSITY
@@ -320,7 +322,7 @@ class TopicModel(object):
                 eg. metas[i] corresponds to fulltexts[i]
         """
         if self._savedModelPath is None:
-            self._savedModelPath = os.path.join(self.outputDir, 
+            self._savedModelPath = os.path.join(self.outputDir,
                                                 self.MODEL_FILENAME)
         return self._savedModelPath
 
@@ -333,7 +335,7 @@ class TopicModel(object):
             Filepath to summary file.
         """
         if self._summaryFilePath is None:
-            self._summaryFilePath = os.path.join(self.outputDir, 
+            self._summaryFilePath = os.path.join(self.outputDir,
                                                  self.SUMMARY_FILENAME)
         return self._summaryFilePath
 
@@ -378,7 +380,7 @@ class TopicModel(object):
 
         self.logger.info(
             (
-                'Training {modelType} model with {noDocuments} documents ' 
+                'Training {modelType} model with {noDocuments} documents '
                 'with {vectorizerType} vectorizer, '
                 '{noTopics} topics, {noFeatures} features, '
                 'and {maxIter} max iterations.'
@@ -496,7 +498,7 @@ class TopicModel(object):
         modelData = (
             self.name,
             self.savedModelPath,
-            self.timestamp,
+            self._timestamp,
             self.noTopics,
             self.noFeatures,
             self.maxIter,
@@ -514,7 +516,7 @@ class TopicModel(object):
         """
         if not self._trained:
             self.logger.warning(
-                ('You are saving an untrained model. ' 
+                ('You are saving an untrained model. '
                  'Call model.train() to train.')
             )
 
@@ -598,4 +600,3 @@ class TopicModel(object):
                 )
                 output += '\n\n'
         return output
-
