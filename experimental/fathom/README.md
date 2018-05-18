@@ -1,7 +1,6 @@
 # Fathom
 
-Fathom is a Python 2.7 package that makes training topic models over Tmpl corpora
-easy. It takes care of all of the heavy lifting involved with preprocessing Tmpl corpora,
+Fathom is a package that streamlines over Tmpl topic modeling. It takes care of all of the heavy lifting involved with preprocessing Tmpl corpora,
 storing important data throughout a topic model training run, and curating the output
 of the models to be ready-to-use and easy to evaluate and perform analysis on right after training.
 
