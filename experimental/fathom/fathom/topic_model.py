@@ -365,9 +365,11 @@ class TopicModel(object):
         # returns the transformed term-document matrix.
         # TODO: Sklearn doesn't have verbose logging for its vectorizers
         # so let user know whats going on.
+        documents = self.documents
+
         self.logger.info('Vectorizing corpus...')
         start = time.clock()
-        vectorized = self.vectorizer.fit_transform(self.documents)
+        vectorized = self.vectorizer.fit_transform(documents)
         end = time.clock()
 
         # Save document-term matrix for later use.

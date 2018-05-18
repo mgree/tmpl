@@ -6,10 +6,8 @@ with open('requirements.txt') as f:
     required = f.read().splitlines()
 
 setup(
-    name='riptide',
-    description='''\
-This is the second iteration of Tmpl built on top of Scikit-learn.
-Think Tmpl V2!''',
+    name='fathom',
+    description='''A package to streamline Tmpl topic modeling.''',
     author_email='sean.j.macpherson@gmail.com',
     version='0.0.1',
     author='Sean MacPherson',
