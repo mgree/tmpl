@@ -1,5 +1,5 @@
 """
-This is the main driver script for riptide.
+This is the main driver script for fathom.
 
 Usage:
     Run this script from the command line to train Tmpl topic models
@@ -106,8 +106,8 @@ if __name__ == '__main__':
     else:
         level = logging.INFO
 
-    logger = logging.getLogger('Riptide')
-    logger.setLevel(level=level)
+    logger = logging.getLogger('Fathom')
+    logging.basicConfig(level=level)
 
     if parsed:
         reader = Reader(directory=pathToCorpus, parentLogger=logger)
