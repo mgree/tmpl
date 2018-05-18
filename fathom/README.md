@@ -109,3 +109,9 @@ human-readable text file summarizing the results of the topic model (top 10 word
 **Sean MacPherson** - RA Spring 2018 - sean.j.macpherson@gmail.com
 
 **Professor Michael Greenberg** - Advisor
+
+## Resources
+Here's a list of resources that I found particularly helpful when learning
+about topic modeling:
+
+* 
