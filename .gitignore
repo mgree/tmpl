@@ -16,3 +16,10 @@ lda-c
 .idea
 .ipynb_checkpoints
 logs
+build
+dist
+logs
+models
+*.pyc
+*.egg-info
+.idea

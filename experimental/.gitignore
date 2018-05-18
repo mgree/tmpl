@@ -1,7 +1,0 @@
-build
-dist
-logs
-models
-*.pyc
-*.egg-info
-.idea
