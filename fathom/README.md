@@ -114,4 +114,49 @@ human-readable text file summarizing the results of the topic model (top 10 word
 Here's a list of resources that I found particularly helpful when learning
 about topic modeling:
 
-* 
+Python LDA Topic Modeling Script using gensim: https://rstudio-pubs-static.s3.amazonaws.com/79360_850b2a69980c4488b1db95987a24867a.html
+
+Greenberg’s tmpl source code: https://github.com/mgree/tmpl/tree/master/lda
+
+Python gensim (Python distributed Topic Modeling package built on numpy; fast and uses constant memory (via Python generators)) source code: https://github.com/RaRe-Technologies/gensim
+
+LDA-C source code: https://github.com/blei-lab/lda-c
+
+EM (Expectation Maximization; apparently LDA-C is an EM variation for LDA built on C) paper: https://www2.ee.washington.edu/techsite/papers/documents/UWEETR-2010-0002.pdf
+
+Really clear and concise overview of stemming and lemmatization:
+https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html
+
+Attempting to use supervised learning to avoid rule-based tokenization (using rules doesn’t scale well! For NLP applications, preprocessing is very important for solid ML results): http://gmb.let.rug.nl/elephant/about.php
+
+Really good high-level overview of how LDA works (in the context of finding similar magazines in Issuu); also has some cool preprocessing techniques: https://www.youtube.com/watch?v=3mHy4OSyRf0
+
+High-level overview of LSA (Latent Semantic Analysis) / PLSA (Probabilistic Latent Semantic Analysis) / LDA (Latent Dirichlet Allocation): https://cs.stanford.edu/~ppasupat/a9online/1140.html
+
+Great high-level overview of LDA and analogies from Quora: https://www.quora.com/What-is-a-good-explanation-of-Latent-Dirichlet-Allocation
+
+Jupyter Notebook using PyLDAvis (visualization tool for topic models; also uses gensim): http://nbviewer.jupyter.org/github/dsquareindia/gensim/blob/a4b2629c0fdb0a7932db24dfcf06699c928d112f/docs/notebooks/topic_coherence_tutorial.ipynb
+
+Article: “How to choose the best topic model”: https://www.kdnuggets.com/2016/07/americas-next-topic-model.html
+
+Good humanist explanation to LDA: https://www.google.com/amp/s/tedunderwood.com/2012/04/07/topic-modeling-made-just-simple-enough/amp/
+Short description of LDA hyperparameters, alpha and beta: https://www.thoughtvector.io/blog/lda-alpha-and-beta-parameters-the-intuition/
+
+About Gensim Multicore Blog Post: https://rare-technologies.com/multicore-lda-in-python-from-over-night-to-over-lunch/
+
+Gensim Google Group (lots of good answers to questions!!): https://groups.google.com/forum/#!forum/gensim
+
+Gensim FAQ and Recipes: https://github.com/RaRe-Technologies/gensim/wiki/Recipes-&-FAQ
+
+Very helpful tips on using Gensim’s LDA Model from a community user: https://miningthedetails.com/blog/python/lda/GensimLDA/
+
+David Blei Topic Modelling Lecture: http://videolectures.net/mlss09uk_blei_tm/
+
+Google Word2Vec tool: https://code.google.com/archive/p/word2vec/
+
+Good Medium articles on using Scikit-learn’s LDA and NMF topic modeling algorithms: https://medium.com/mlreview/topic-modeling-with-scikit-learn-e80d33668730 and https://towardsdatascience.com/improving-the-interpretation-of-topic-models-87fd2ee3847d
+
+Scikit-learn docs for LDA and NMF and example: http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html#sklearn.decomposition.LatentDirichletAllocation,
+http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF, http://scikit-learn.org/stable/auto_examples/applications/plot_topics_extraction_with_nmf_lda.html#sphx-glr-auto-examples-applications-plot-topics-extraction-with-nmf-lda-py
+
+Really good tutorial on NMF and other pre-existing matrix factorization techniques (PCA and VQ): https://www.youtube.com/watch?v=UQGEB3Q5-fQ
