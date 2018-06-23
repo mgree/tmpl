@@ -110,6 +110,18 @@ human-readable text file summarizing the results of the topic model (top 10 word
 
 **Professor Michael Greenberg** - Advisor
 
+## Known features yet to be added
+1) Adding tfidf support for LDA topic models. I never got arround to adding
+support for using the tfidf vectorizer for LDA topic models. Currently, you
+can only use the tfidif vectorizer with NMF topic models and have to stick to
+using the basic count vectorizer with LDA.
+
+2) Automatically generating metric views. Professor Greenberg walked me through
+a couple of interesting distance metrics for researchers during the last
+couple weeks of the semester. I think a good next feature would be to either
+add another pipeline for generating those metrics off of an existing tmpl run
+or automatically generating those views as the last step in a tmpl run.
+
 ## Resources
 Here's a list of resources that I found particularly helpful when learning
 about topic modeling:
