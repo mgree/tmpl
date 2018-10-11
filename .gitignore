@@ -1,8 +1,10 @@
 *~
 *.hi
 *.o
+*.swp
 sessions
-.DS_STOREscrape
+.DS_STORE
+scrape
 sessions.py
 scrape
 swarat
@@ -11,3 +13,13 @@ snapl
 raw
 .DS_Store
 lda-c
+.idea
+.ipynb_checkpoints
+logs
+build
+dist
+logs
+models
+*.pyc
+*.egg-info
+.idea
